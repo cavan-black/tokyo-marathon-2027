@@ -1,0 +1,2429 @@
+{
+  "meta": {
+    "id": "jamie",
+    "name": "Jamie",
+    "goal": "4:00 (reach 3:30)",
+    "mp_per_km": "5:41",
+    "mp_per_mile": "9:09",
+    "start": "2026-07-20",
+    "race": "2027-03-07",
+    "peak_km": 82,
+    "total_weeks": 33,
+    "goal_note": "MP = current goal pace: start 4:00 (5:41/km), shift toward 3:30 (4:59/km) as checkpoints allow. Football counts as a hard session — shuffle runs around matches."
+  },
+  "weeks": [
+    {
+      "week": 1,
+      "start": "2026-07-20",
+      "phase": "Re-entry / Base",
+      "target_km": 28,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-07-20",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-07-21",
+          "dow": "Tue",
+          "type": "easy",
+          "session": "Easy 5–6 km + 4×20s strides",
+          "target_km": 6
+        },
+        {
+          "date": "2026-07-22",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 3 km",
+          "target_km": 3
+        },
+        {
+          "date": "2026-07-23",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 5–6 km",
+          "target_km": 5
+        },
+        {
+          "date": "2026-07-24",
+          "dow": "Fri",
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
+        },
+        {
+          "date": "2026-07-25",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 2 km",
+          "target_km": 2
+        },
+        {
+          "date": "2026-07-26",
+          "dow": "Sun",
+          "type": "long",
+          "session": "12 km easy",
+          "target_km": 12
+        }
+      ]
+    },
+    {
+      "week": 2,
+      "start": "2026-07-27",
+      "phase": "Re-entry / Base",
+      "target_km": 34,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-07-27",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-07-28",
+          "dow": "Tue",
+          "type": "easy",
+          "session": "Easy 5–6 km + 4×20s strides",
+          "target_km": 6
+        },
+        {
+          "date": "2026-07-29",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 5 km",
+          "target_km": 5
+        },
+        {
+          "date": "2026-07-30",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 5–6 km",
+          "target_km": 5
+        },
+        {
+          "date": "2026-07-31",
+          "dow": "Fri",
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
+        },
+        {
+          "date": "2026-08-01",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 4 km",
+          "target_km": 4
+        },
+        {
+          "date": "2026-08-02",
+          "dow": "Sun",
+          "type": "long",
+          "session": "14 km easy",
+          "target_km": 14
+        }
+      ]
+    },
+    {
+      "week": 3,
+      "start": "2026-08-03",
+      "phase": "Re-entry / Base",
+      "target_km": 40,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-08-03",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-08-04",
+          "dow": "Tue",
+          "type": "easy",
+          "session": "Easy 5–6 km + 4×20s strides",
+          "target_km": 6
+        },
+        {
+          "date": "2026-08-05",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 7 km",
+          "target_km": 7
+        },
+        {
+          "date": "2026-08-06",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 5–6 km",
+          "target_km": 5
+        },
+        {
+          "date": "2026-08-07",
+          "dow": "Fri",
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
+        },
+        {
+          "date": "2026-08-08",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 6 km",
+          "target_km": 6
+        },
+        {
+          "date": "2026-08-09",
+          "dow": "Sun",
+          "type": "long",
+          "session": "16 km easy",
+          "target_km": 16
+        }
+      ]
+    },
+    {
+      "week": 4,
+      "start": "2026-08-10",
+      "phase": "Re-entry / Base",
+      "target_km": 32,
+      "focus": "Cut-back / recovery week",
+      "days": [
+        {
+          "date": "2026-08-10",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-08-11",
+          "dow": "Tue",
+          "type": "easy",
+          "session": "Easy 6–7 km + 6×20s strides",
+          "target_km": 6
+        },
+        {
+          "date": "2026-08-12",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 4 km",
+          "target_km": 4
+        },
+        {
+          "date": "2026-08-13",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 5–6 km",
+          "target_km": 5
+        },
+        {
+          "date": "2026-08-14",
+          "dow": "Fri",
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
+        },
+        {
+          "date": "2026-08-15",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 4 km",
+          "target_km": 4
+        },
+        {
+          "date": "2026-08-16",
+          "dow": "Sun",
+          "type": "long",
+          "session": "13 km easy",
+          "target_km": 13
+        }
+      ]
+    },
+    {
+      "week": 5,
+      "start": "2026-08-17",
+      "phase": "Re-entry / Base",
+      "target_km": 46,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-08-17",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-08-18",
+          "dow": "Tue",
+          "type": "easy",
+          "session": "Easy 6–7 km + 6×20s strides  +S&C A",
+          "target_km": 6
+        },
+        {
+          "date": "2026-08-19",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 9 km",
+          "target_km": 9
+        },
+        {
+          "date": "2026-08-20",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 6 km + strides",
+          "target_km": 5
+        },
+        {
+          "date": "2026-08-21",
+          "dow": "Fri",
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
+        },
+        {
+          "date": "2026-08-22",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 8 km",
+          "target_km": 8
+        },
+        {
+          "date": "2026-08-23",
+          "dow": "Sun",
+          "type": "long",
+          "session": "18 km easy",
+          "target_km": 18
+        }
+      ]
+    },
+    {
+      "week": 6,
+      "start": "2026-08-24",
+      "phase": "Re-entry / Base",
+      "target_km": 52,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-08-24",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-08-25",
+          "dow": "Tue",
+          "type": "easy",
+          "session": "Easy 6–7 km + 6×20s strides  +S&C A",
+          "target_km": 6
+        },
+        {
+          "date": "2026-08-26",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 12 km",
+          "target_km": 12
+        },
+        {
+          "date": "2026-08-27",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 6 km + strides",
+          "target_km": 5
+        },
+        {
+          "date": "2026-08-28",
+          "dow": "Fri",
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
+        },
+        {
+          "date": "2026-08-29",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 9 km",
+          "target_km": 9
+        },
+        {
+          "date": "2026-08-30",
+          "dow": "Sun",
+          "type": "long",
+          "session": "20 km easy",
+          "target_km": 20
+        }
+      ]
+    },
+    {
+      "week": 7,
+      "start": "2026-08-31",
+      "phase": "Re-entry / Base",
+      "target_km": 42,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-08-31",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-09-01",
+          "dow": "Tue",
+          "type": "easy",
+          "session": "Easy 7 km + 6×20s strides + 4×30s hills  +S&C A",
+          "target_km": 6
+        },
+        {
+          "date": "2026-09-02",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 8 km",
+          "target_km": 8
+        },
+        {
+          "date": "2026-09-03",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 6 km + strides",
+          "target_km": 5
+        },
+        {
+          "date": "2026-09-04",
+          "dow": "Fri",
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
+        },
+        {
+          "date": "2026-09-05",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 7 km",
+          "target_km": 7
+        },
+        {
+          "date": "2026-09-06",
+          "dow": "Sun",
+          "type": "long",
+          "session": "16 km easy",
+          "target_km": 16
+        }
+      ]
+    },
+    {
+      "week": 8,
+      "start": "2026-09-07",
+      "phase": "Re-entry / Base",
+      "target_km": 56,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-09-07",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-09-08",
+          "dow": "Tue",
+          "type": "easy",
+          "session": "Easy 7 km + 6×20s strides + 4×30s hills  +S&C A",
+          "target_km": 6
+        },
+        {
+          "date": "2026-09-09",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 13 km",
+          "target_km": 13
+        },
+        {
+          "date": "2026-09-10",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 6 km + strides",
+          "target_km": 5
+        },
+        {
+          "date": "2026-09-11",
+          "dow": "Fri",
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
+        },
+        {
+          "date": "2026-09-12",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 10 km",
+          "target_km": 10
+        },
+        {
+          "date": "2026-09-13",
+          "dow": "Sun",
+          "type": "long",
+          "session": "22 km easy",
+          "target_km": 22
+        }
+      ]
+    },
+    {
+      "week": 9,
+      "start": "2026-09-14",
+      "phase": "Aerobic Base",
+      "target_km": 60,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-09-14",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-09-15",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Tempo: 2×10 min @ T, 2 min jog  +S&C A",
+          "target_km": 9
+        },
+        {
+          "date": "2026-09-16",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 8 km + strides",
+          "target_km": 8
+        },
+        {
+          "date": "2026-09-17",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 8 km + strides",
+          "target_km": 8
+        },
+        {
+          "date": "2026-09-18",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 4 km easy  +S&C B",
+          "target_km": 4
+        },
+        {
+          "date": "2026-09-19",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 7 km + strides",
+          "target_km": 7
+        },
+        {
+          "date": "2026-09-20",
+          "dow": "Sun",
+          "type": "long",
+          "session": "24 km easy + last 4 km @ MP",
+          "target_km": 24
+        }
+      ]
+    },
+    {
+      "week": 10,
+      "start": "2026-09-21",
+      "phase": "Aerobic Base",
+      "target_km": 66,
+      "focus": "5K checkpoint",
+      "days": [
+        {
+          "date": "2026-09-21",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-09-22",
+          "dow": "Tue",
+          "type": "easy",
+          "session": "Easy 8 km + 6×20s strides + 4×30s hills  +S&C A",
+          "target_km": 9
+        },
+        {
+          "date": "2026-09-23",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 6 km + strides",
+          "target_km": 6
+        },
+        {
+          "date": "2026-09-24",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 8–9 km",
+          "target_km": 8
+        },
+        {
+          "date": "2026-09-25",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 3 km easy  +S&C B",
+          "target_km": 3
+        },
+        {
+          "date": "2026-09-26",
+          "dow": "Sat",
+          "type": "tt",
+          "session": "parkrun 5K — TIME TRIAL (checkpoint) + w/u",
+          "target_km": 8
+        },
+        {
+          "date": "2026-09-27",
+          "dow": "Sun",
+          "type": "long",
+          "session": "26 km easy",
+          "target_km": 26
+        }
+      ]
+    },
+    {
+      "week": 11,
+      "start": "2026-09-28",
+      "phase": "Aerobic Base",
+      "target_km": 54,
+      "focus": "Cut-back / recovery week",
+      "days": [
+        {
+          "date": "2026-09-28",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-09-29",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Threshold: 4×5 min @ T, 90s jog  +S&C A",
+          "target_km": 9
+        },
+        {
+          "date": "2026-09-30",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 7 km + strides",
+          "target_km": 7
+        },
+        {
+          "date": "2026-10-01",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 8 km + strides",
+          "target_km": 8
+        },
+        {
+          "date": "2026-10-02",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 4 km easy  +S&C B",
+          "target_km": 4
+        },
+        {
+          "date": "2026-10-03",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 6 km + strides",
+          "target_km": 6
+        },
+        {
+          "date": "2026-10-04",
+          "dow": "Sun",
+          "type": "long",
+          "session": "20 km easy",
+          "target_km": 20
+        }
+      ]
+    },
+    {
+      "week": 12,
+      "start": "2026-10-05",
+      "phase": "Aerobic Base",
+      "target_km": 70,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-10-05",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-10-06",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Cruise: 5×3 min @ T, 75s jog  +S&C A",
+          "target_km": 9
+        },
+        {
+          "date": "2026-10-07",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 10 km + strides",
+          "target_km": 10
+        },
+        {
+          "date": "2026-10-08",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 8–9 km",
+          "target_km": 8
+        },
+        {
+          "date": "2026-10-09",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 6 km easy  +S&C B",
+          "target_km": 6
+        },
+        {
+          "date": "2026-10-10",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 9 km + strides",
+          "target_km": 9
+        },
+        {
+          "date": "2026-10-11",
+          "dow": "Sun",
+          "type": "long",
+          "session": "28 km easy + last 4 km @ MP",
+          "target_km": 28
+        }
+      ]
+    },
+    {
+      "week": 13,
+      "start": "2026-10-12",
+      "phase": "Aerobic Base",
+      "target_km": 74,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-10-12",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-10-13",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Tempo: 20 min continuous @ T  +S&C A",
+          "target_km": 9
+        },
+        {
+          "date": "2026-10-14",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 11 km + strides",
+          "target_km": 11
+        },
+        {
+          "date": "2026-10-15",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 8 km + strides",
+          "target_km": 8
+        },
+        {
+          "date": "2026-10-16",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 6 km easy  +S&C B",
+          "target_km": 6
+        },
+        {
+          "date": "2026-10-17",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 10 km + strides",
+          "target_km": 10
+        },
+        {
+          "date": "2026-10-18",
+          "dow": "Sun",
+          "type": "long",
+          "session": "30 km easy",
+          "target_km": 30
+        }
+      ]
+    },
+    {
+      "week": 14,
+      "start": "2026-10-19",
+      "phase": "Aerobic Base",
+      "target_km": 62,
+      "focus": "Cut-back / recovery week",
+      "days": [
+        {
+          "date": "2026-10-19",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-10-20",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Tempo: 2×10 min @ T, 2 min jog  +S&C A",
+          "target_km": 9
+        },
+        {
+          "date": "2026-10-21",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 9 km + strides",
+          "target_km": 9
+        },
+        {
+          "date": "2026-10-22",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 8–9 km",
+          "target_km": 8
+        },
+        {
+          "date": "2026-10-23",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 5 km easy  +S&C B",
+          "target_km": 5
+        },
+        {
+          "date": "2026-10-24",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 7 km + strides",
+          "target_km": 7
+        },
+        {
+          "date": "2026-10-25",
+          "dow": "Sun",
+          "type": "long",
+          "session": "24 km easy",
+          "target_km": 24
+        }
+      ]
+    },
+    {
+      "week": 15,
+      "start": "2026-10-26",
+      "phase": "Aerobic Base",
+      "target_km": 72,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-10-26",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-10-27",
+          "dow": "Tue",
+          "type": "easy",
+          "session": "Easy 8 km + 6×20s strides + 4×30s hills  +S&C A",
+          "target_km": 9
+        },
+        {
+          "date": "2026-10-28",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 10 km + strides",
+          "target_km": 10
+        },
+        {
+          "date": "2026-10-29",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 8 km + strides",
+          "target_km": 8
+        },
+        {
+          "date": "2026-10-30",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 6 km easy  +S&C B",
+          "target_km": 6
+        },
+        {
+          "date": "2026-10-31",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 9 km + strides",
+          "target_km": 9
+        },
+        {
+          "date": "2026-11-01",
+          "dow": "Sun",
+          "type": "long",
+          "session": "30 km easy + last 4 km @ MP",
+          "target_km": 30
+        }
+      ]
+    },
+    {
+      "week": 16,
+      "start": "2026-11-02",
+      "phase": "Aerobic Base",
+      "target_km": 76,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-11-02",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-11-03",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Threshold: 4×5 min @ T, 90s jog  +S&C A",
+          "target_km": 9
+        },
+        {
+          "date": "2026-11-04",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 11 km + strides",
+          "target_km": 11
+        },
+        {
+          "date": "2026-11-05",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 8–9 km",
+          "target_km": 8
+        },
+        {
+          "date": "2026-11-06",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 6 km easy  +S&C B",
+          "target_km": 6
+        },
+        {
+          "date": "2026-11-07",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 10 km + strides",
+          "target_km": 10
+        },
+        {
+          "date": "2026-11-08",
+          "dow": "Sun",
+          "type": "long",
+          "session": "32 km easy",
+          "target_km": 32
+        }
+      ]
+    },
+    {
+      "week": 17,
+      "start": "2026-11-09",
+      "phase": "Aerobic Base",
+      "target_km": 64,
+      "focus": "Cut-back / recovery week",
+      "days": [
+        {
+          "date": "2026-11-09",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-11-10",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Cruise: 5×3 min @ T, 75s jog  +S&C A",
+          "target_km": 9
+        },
+        {
+          "date": "2026-11-11",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 9 km + strides",
+          "target_km": 9
+        },
+        {
+          "date": "2026-11-12",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 8 km + strides",
+          "target_km": 8
+        },
+        {
+          "date": "2026-11-13",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 5 km easy  +S&C B",
+          "target_km": 5
+        },
+        {
+          "date": "2026-11-14",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 7 km + strides",
+          "target_km": 7
+        },
+        {
+          "date": "2026-11-15",
+          "dow": "Sun",
+          "type": "long",
+          "session": "26 km easy",
+          "target_km": 26
+        }
+      ]
+    },
+    {
+      "week": 18,
+      "start": "2026-11-16",
+      "phase": "Aerobic Base",
+      "target_km": 72,
+      "focus": "10K checkpoint",
+      "days": [
+        {
+          "date": "2026-11-16",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-11-17",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Tempo: 20 min continuous @ T  +S&C A",
+          "target_km": 9
+        },
+        {
+          "date": "2026-11-18",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 5 km + strides",
+          "target_km": 5
+        },
+        {
+          "date": "2026-11-19",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 8–9 km",
+          "target_km": 8
+        },
+        {
+          "date": "2026-11-20",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 2 km easy  +S&C B",
+          "target_km": 2
+        },
+        {
+          "date": "2026-11-21",
+          "dow": "Sat",
+          "type": "tt",
+          "session": "10K TIME TRIAL or local race (checkpoint) + w/u",
+          "target_km": 12
+        },
+        {
+          "date": "2026-11-22",
+          "dow": "Sun",
+          "type": "long",
+          "session": "32 km easy + last 4 km @ MP",
+          "target_km": 32
+        }
+      ]
+    },
+    {
+      "week": 19,
+      "start": "2026-11-23",
+      "phase": "Marathon-Specific",
+      "target_km": 68,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-11-23",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-11-24",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Threshold: 4×6 min @ T, 90s jog  +S&C A",
+          "target_km": 10
+        },
+        {
+          "date": "2026-11-25",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 9 km + strides",
+          "target_km": 9
+        },
+        {
+          "date": "2026-11-26",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 9 km",
+          "target_km": 10
+        },
+        {
+          "date": "2026-11-27",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 5 km easy  +S&C B",
+          "target_km": 5
+        },
+        {
+          "date": "2026-11-28",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 8 km + strides",
+          "target_km": 8
+        },
+        {
+          "date": "2026-11-29",
+          "dow": "Sun",
+          "type": "long",
+          "session": "26 km easy",
+          "target_km": 26
+        }
+      ]
+    },
+    {
+      "week": 20,
+      "start": "2026-11-30",
+      "phase": "Marathon-Specific",
+      "target_km": 78,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-11-30",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-12-01",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "MP reps: 5×1.5 km @ MP, 90s jog  +S&C A",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-02",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 12 km + strides",
+          "target_km": 12
+        },
+        {
+          "date": "2026-12-03",
+          "dow": "Thu",
+          "type": "quality",
+          "session": "MP tempo: 11 km w/ middle 6 km @ MP",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-04",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 6 km easy  +S&C B",
+          "target_km": 6
+        },
+        {
+          "date": "2026-12-05",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 10 km + strides",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-06",
+          "dow": "Sun",
+          "type": "long",
+          "session": "30 km, last 6 km @ MP",
+          "target_km": 30
+        }
+      ]
+    },
+    {
+      "week": 21,
+      "start": "2026-12-07",
+      "phase": "Marathon-Specific",
+      "target_km": 82,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-12-07",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-12-08",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Tempo: 2×15 min @ T, 3 min jog  +S&C A",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-09",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 13 km + strides",
+          "target_km": 13
+        },
+        {
+          "date": "2026-12-10",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 9 km",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-11",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 7 km easy  +S&C B",
+          "target_km": 7
+        },
+        {
+          "date": "2026-12-12",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 10 km + strides",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-13",
+          "dow": "Sun",
+          "type": "long",
+          "session": "32 km easy",
+          "target_km": 32
+        }
+      ]
+    },
+    {
+      "week": 22,
+      "start": "2026-12-14",
+      "phase": "Marathon-Specific",
+      "target_km": 70,
+      "focus": "Cut-back / recovery week",
+      "days": [
+        {
+          "date": "2026-12-14",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-12-15",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "5K reps: 5×1 km @ 5K pace, 90s jog  +S&C A",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-16",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 10 km + strides",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-17",
+          "dow": "Thu",
+          "type": "quality",
+          "session": "MP tempo: 11 km w/ middle 6 km @ MP",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-18",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 5 km easy  +S&C B",
+          "target_km": 5
+        },
+        {
+          "date": "2026-12-19",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 9 km + strides",
+          "target_km": 9
+        },
+        {
+          "date": "2026-12-20",
+          "dow": "Sun",
+          "type": "long",
+          "session": "26 km easy",
+          "target_km": 26
+        }
+      ]
+    },
+    {
+      "week": 23,
+      "start": "2026-12-21",
+      "phase": "Marathon-Specific",
+      "target_km": 80,
+      "focus": "",
+      "days": [
+        {
+          "date": "2026-12-21",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-12-22",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "MP: 6×1 km @ MP, 60s jog  +S&C A",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-23",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 12 km + strides",
+          "target_km": 12
+        },
+        {
+          "date": "2026-12-24",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 9 km",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-25",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 6 km easy  +S&C B",
+          "target_km": 6
+        },
+        {
+          "date": "2026-12-26",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 10 km + strides",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-27",
+          "dow": "Sun",
+          "type": "long",
+          "session": "32 km, last 8 km @ MP",
+          "target_km": 32
+        }
+      ]
+    },
+    {
+      "week": 24,
+      "start": "2026-12-28",
+      "phase": "Marathon-Specific",
+      "target_km": 66,
+      "focus": "Half tune-up (sets your goal)",
+      "days": [
+        {
+          "date": "2026-12-28",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2026-12-29",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Threshold: 4×6 min @ T, 90s jog  +S&C A",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-30",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 10 km + strides",
+          "target_km": 10
+        },
+        {
+          "date": "2026-12-31",
+          "dow": "Thu",
+          "type": "quality",
+          "session": "MP tempo: 11 km w/ middle 6 km @ MP",
+          "target_km": 10
+        },
+        {
+          "date": "2027-01-01",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 6 km easy  +S&C B",
+          "target_km": 6
+        },
+        {
+          "date": "2027-01-02",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 9 km + strides",
+          "target_km": 9
+        },
+        {
+          "date": "2027-01-03",
+          "dow": "Sun",
+          "type": "race",
+          "session": "TUNE-UP: Half-marathon race (all-out — this sets your goal) + w/u & c/d",
+          "target_km": 21
+        }
+      ]
+    },
+    {
+      "week": 25,
+      "start": "2027-01-04",
+      "phase": "Marathon-Specific",
+      "target_km": 78,
+      "focus": "",
+      "days": [
+        {
+          "date": "2027-01-04",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2027-01-05",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "MP reps: 5×1.5 km @ MP, 90s jog  +S&C A",
+          "target_km": 10
+        },
+        {
+          "date": "2027-01-06",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 11 km + strides",
+          "target_km": 11
+        },
+        {
+          "date": "2027-01-07",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 9 km",
+          "target_km": 10
+        },
+        {
+          "date": "2027-01-08",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 6 km easy  +S&C B",
+          "target_km": 6
+        },
+        {
+          "date": "2027-01-09",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 9 km + strides",
+          "target_km": 9
+        },
+        {
+          "date": "2027-01-10",
+          "dow": "Sun",
+          "type": "long",
+          "session": "32 km, last 10 km @ MP",
+          "target_km": 32
+        }
+      ]
+    },
+    {
+      "week": 26,
+      "start": "2027-01-11",
+      "phase": "Marathon-Specific",
+      "target_km": 82,
+      "focus": "",
+      "days": [
+        {
+          "date": "2027-01-11",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2027-01-12",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Tempo: 2×15 min @ T, 3 min jog  +S&C A",
+          "target_km": 10
+        },
+        {
+          "date": "2027-01-13",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 12 km + strides",
+          "target_km": 12
+        },
+        {
+          "date": "2027-01-14",
+          "dow": "Thu",
+          "type": "quality",
+          "session": "MP tempo: 11 km w/ middle 6 km @ MP",
+          "target_km": 10
+        },
+        {
+          "date": "2027-01-15",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 6 km easy  +S&C B",
+          "target_km": 6
+        },
+        {
+          "date": "2027-01-16",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 10 km + strides",
+          "target_km": 10
+        },
+        {
+          "date": "2027-01-17",
+          "dow": "Sun",
+          "type": "long",
+          "session": "34 km, last 10 km @ MP",
+          "target_km": 34
+        }
+      ]
+    },
+    {
+      "week": 27,
+      "start": "2027-01-18",
+      "phase": "Marathon-Specific",
+      "target_km": 72,
+      "focus": "Cut-back / recovery week",
+      "days": [
+        {
+          "date": "2027-01-18",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2027-01-19",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "5K reps: 5×1 km @ 5K pace, 90s jog  +S&C A",
+          "target_km": 10
+        },
+        {
+          "date": "2027-01-20",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 10 km + strides",
+          "target_km": 10
+        },
+        {
+          "date": "2027-01-21",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 9 km",
+          "target_km": 10
+        },
+        {
+          "date": "2027-01-22",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 5 km easy  +S&C B",
+          "target_km": 5
+        },
+        {
+          "date": "2027-01-23",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 9 km + strides",
+          "target_km": 9
+        },
+        {
+          "date": "2027-01-24",
+          "dow": "Sun",
+          "type": "long",
+          "session": "28 km easy",
+          "target_km": 28
+        }
+      ]
+    },
+    {
+      "week": 28,
+      "start": "2027-01-25",
+      "phase": "Marathon-Specific",
+      "target_km": 80,
+      "focus": "Final long run",
+      "days": [
+        {
+          "date": "2027-01-25",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2027-01-26",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "MP: 6×1 km @ MP, 60s jog  +S&C A",
+          "target_km": 10
+        },
+        {
+          "date": "2027-01-27",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 11 km + strides",
+          "target_km": 11
+        },
+        {
+          "date": "2027-01-28",
+          "dow": "Thu",
+          "type": "quality",
+          "session": "MP tempo: 11 km w/ middle 6 km @ MP",
+          "target_km": 10
+        },
+        {
+          "date": "2027-01-29",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 6 km easy  +S&C B",
+          "target_km": 6
+        },
+        {
+          "date": "2027-01-30",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 9 km + strides",
+          "target_km": 9
+        },
+        {
+          "date": "2027-01-31",
+          "dow": "Sun",
+          "type": "long",
+          "session": "34 km, last 12 km @ MP (final long — dress rehearsal)",
+          "target_km": 34
+        }
+      ]
+    },
+    {
+      "week": 29,
+      "start": "2027-02-01",
+      "phase": "Marathon-Specific",
+      "target_km": 70,
+      "focus": "",
+      "days": [
+        {
+          "date": "2027-02-01",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2027-02-02",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Threshold: 4×6 min @ T, 90s jog  +S&C A",
+          "target_km": 10
+        },
+        {
+          "date": "2027-02-03",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 9 km + strides",
+          "target_km": 9
+        },
+        {
+          "date": "2027-02-04",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 9 km",
+          "target_km": 10
+        },
+        {
+          "date": "2027-02-05",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 5 km easy  +S&C B",
+          "target_km": 5
+        },
+        {
+          "date": "2027-02-06",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 7 km + strides",
+          "target_km": 7
+        },
+        {
+          "date": "2027-02-07",
+          "dow": "Sun",
+          "type": "long",
+          "session": "29 km, last 8 km @ MP",
+          "target_km": 29
+        }
+      ]
+    },
+    {
+      "week": 30,
+      "start": "2027-02-08",
+      "phase": "Marathon-Specific",
+      "target_km": 60,
+      "focus": "",
+      "days": [
+        {
+          "date": "2027-02-08",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2027-02-09",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "MP reps: 5×1.5 km @ MP, 90s jog  +S&C A",
+          "target_km": 10
+        },
+        {
+          "date": "2027-02-10",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 7 km + strides",
+          "target_km": 7
+        },
+        {
+          "date": "2027-02-11",
+          "dow": "Thu",
+          "type": "quality",
+          "session": "MP tempo: 11 km w/ middle 6 km @ MP",
+          "target_km": 10
+        },
+        {
+          "date": "2027-02-12",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 4 km easy  +S&C B",
+          "target_km": 4
+        },
+        {
+          "date": "2027-02-13",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 5 km + strides",
+          "target_km": 5
+        },
+        {
+          "date": "2027-02-14",
+          "dow": "Sun",
+          "type": "long",
+          "session": "24 km, last 6 km @ MP",
+          "target_km": 24
+        }
+      ]
+    },
+    {
+      "week": 31,
+      "start": "2027-02-15",
+      "phase": "Taper & Race",
+      "target_km": 52,
+      "focus": "",
+      "days": [
+        {
+          "date": "2027-02-15",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2027-02-16",
+          "dow": "Tue",
+          "type": "quality",
+          "session": "Threshold: 3×5 min @ T, 90s jog",
+          "target_km": 6
+        },
+        {
+          "date": "2027-02-17",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 8 km + strides",
+          "target_km": 8
+        },
+        {
+          "date": "2027-02-18",
+          "dow": "Thu",
+          "type": "quality",
+          "session": "MP: 2×3 km @ MP, 3 min jog",
+          "target_km": 6
+        },
+        {
+          "date": "2027-02-19",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 5 km easy",
+          "target_km": 5
+        },
+        {
+          "date": "2027-02-20",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 8 km + strides",
+          "target_km": 8
+        },
+        {
+          "date": "2027-02-21",
+          "dow": "Sun",
+          "type": "long",
+          "session": "20 km, last 6 km @ MP",
+          "target_km": 20
+        }
+      ]
+    },
+    {
+      "week": 32,
+      "start": "2027-02-22",
+      "phase": "Taper & Race",
+      "target_km": 40,
+      "focus": "",
+      "days": [
+        {
+          "date": "2027-02-22",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest / mobility (see S&C)",
+          "target_km": 0
+        },
+        {
+          "date": "2027-02-23",
+          "dow": "Tue",
+          "type": "easy",
+          "session": "Easy 5 km + 4×20s strides",
+          "target_km": 6
+        },
+        {
+          "date": "2027-02-24",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 5 km + strides",
+          "target_km": 5
+        },
+        {
+          "date": "2027-02-25",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Easy 6 km + strides",
+          "target_km": 6
+        },
+        {
+          "date": "2027-02-26",
+          "dow": "Fri",
+          "type": "recovery",
+          "session": "Recovery 5 km easy",
+          "target_km": 5
+        },
+        {
+          "date": "2027-02-27",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Easy 4 km + strides",
+          "target_km": 4
+        },
+        {
+          "date": "2027-02-28",
+          "dow": "Sun",
+          "type": "long",
+          "session": "16 km easy w/ 4×1 km @ MP",
+          "target_km": 16
+        }
+      ]
+    },
+    {
+      "week": 33,
+      "start": "2027-03-01",
+      "phase": "Taper & Race",
+      "target_km": 30,
+      "focus": "RACE WEEK",
+      "days": [
+        {
+          "date": "2027-03-01",
+          "dow": "Mon",
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
+        },
+        {
+          "date": "2027-03-02",
+          "dow": "Tue",
+          "type": "easy",
+          "session": "Easy 5 km + 4×100 m strides",
+          "target_km": 6
+        },
+        {
+          "date": "2027-03-03",
+          "dow": "Wed",
+          "type": "easy",
+          "session": "Easy 13 km + strides",
+          "target_km": 13
+        },
+        {
+          "date": "2027-03-04",
+          "dow": "Thu",
+          "type": "easy",
+          "session": "Rest or easy 4 km",
+          "target_km": 6
+        },
+        {
+          "date": "2027-03-05",
+          "dow": "Fri",
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
+        },
+        {
+          "date": "2027-03-06",
+          "dow": "Sat",
+          "type": "easy",
+          "session": "Shakeout: easy 4 km + 4×100 m strides",
+          "target_km": 4
+        },
+        {
+          "date": "2027-03-07",
+          "dow": "Sun",
+          "type": "race",
+          "session": "RACE DAY — Tokyo Marathon · goal set by your build (4:00 · floor 4:30 · reach 3:30)",
+          "target_km": 42.2
+        }
+      ]
+    }
+  ],
+  "content": {
+    "banner": "⚽ Football = a hard session. If a match falls on a Tue or Sat: don't also do a hard run that day — move the quality run to the next easy day, or let football BE that week's hard session and keep the runs easy. Never stack quality run + football + long run on 3 straight days; keep the day after a match easy. Max ~2 hard efforts/week (football counts) + the long run.",
+    "paces": {
+      "headers": [
+        "Zone",
+        "per km",
+        "per mile",
+        "Use"
+      ],
+      "rows": [
+        [
+          "Recovery",
+          "6:45–7:20",
+          "10:52–11:48",
+          "Easy/short & day-after runs"
+        ],
+        [
+          "Easy / aerobic",
+          "6:15–7:00",
+          "10:03–11:16",
+          "Bulk of running — keep it TRULY easy"
+        ],
+        [
+          "Long-run easy",
+          "6:20–7:00",
+          "10:11–11:16",
+          "Long-run base portions"
+        ],
+        [
+          "Marathon (MP) — 4:00",
+          "5:41",
+          "9:09",
+          "Race pace — MP blocks & long-run finishes"
+        ],
+        [
+          "Threshold (T)",
+          "5:15–5:25",
+          "8:27–8:43",
+          "Tempo / cruise (comfortably hard)"
+        ],
+        [
+          "5K pace",
+          "4:55–5:05",
+          "7:55–8:09",
+          "Short faster reps"
+        ],
+        [
+          "Strides",
+          "relaxed-fast",
+          "—",
+          "20s pickups, not a workout"
+        ]
+      ],
+      "note": "Sessions say '@ MP' and '@ T' on purpose — run them at your CURRENT goal pace. Start at 4:00 (5:41/km); as checkpoints come in faster, shift MP toward 3:30 (4:59/km) and pull threshold with it."
+    },
+    "goals": {
+      "headers": [
+        "Goal",
+        "Marathon pace /km",
+        "/mile",
+        "Half split"
+      ],
+      "rows": [
+        [
+          "Floor — 4:30",
+          "6:24",
+          "10:18",
+          "2:09:30"
+        ],
+        [
+          "Target — 4:00",
+          "5:41",
+          "9:09",
+          "1:55:00"
+        ],
+        [
+          "Reach — 3:30",
+          "4:59",
+          "8:01",
+          "1:40:45"
+        ]
+      ]
+    },
+    "checkpoints": {
+      "intro": "Run these honestly and set your race goal off the data. The Wk-24 half is the big one — 3:30 needs your half near 1:41; 4:00 needs ~1:55.",
+      "headers": [
+        "Wk / date",
+        "Test",
+        "Floor 4:30",
+        "Target 4:00",
+        "Reach 3:30"
+      ],
+      "rows": [
+        [
+          "Wk 10 · ~21 Sep",
+          "5K time trial",
+          "~28:00",
+          "~25:00",
+          "~21:55"
+        ],
+        [
+          "Wk 18 · ~16 Nov",
+          "10K time trial",
+          "~58:30",
+          "~52:10",
+          "~45:40"
+        ],
+        [
+          "Wk 24 · ~28 Dec",
+          "Half-marathon",
+          "~2:09:30",
+          "~1:55:00",
+          "~1:40:45"
+        ],
+        [
+          "Race · 7 Mar",
+          "Marathon",
+          "4:30 · 6:24/km",
+          "4:00 · 5:41/km",
+          "3:30 · 4:59/km"
+        ]
+      ],
+      "notes": [
+        "This build pushes volume (peak ~82 km) so 3:30 stays achievable — volume is the biggest lever for marathon time.",
+        "Football & other sport count as training load — see the banner above. Don't double up hard efforts or stack three hard days.",
+        "One quality day (Tue) + MP long runs + the long run. Add a 2nd quality only if you're absorbing it cleanly.",
+        "If 82 km proves too much with football, ~68 km still delivers a strong 4:00."
+      ]
+    },
+    "strength": {
+      "intro": "2×/week, 20–35 min. Injury-proof tendons/hips + improve running economy. TIMING: after runs, on your hard day (Tue = Session A) + one easy day (Fri = Session B). Never heavy legs before a long run or a match. Form first, load second.",
+      "blocks": [
+        {
+          "title": "Foundation · Weeks 1–18",
+          "headers": [
+            "Exercise",
+            "Sets × Reps",
+            "Cue / why"
+          ],
+          "note": "Build tissue tolerance, bodyweight → light load. 2×/week.",
+          "rows": [
+            [
+              "Goblet squat",
+              "3 × 10",
+              "Full depth, controlled — base leg strength"
+            ],
+            [
+              "Rear-foot-elevated split squat",
+              "3 × 8 / leg",
+              "Unilateral — knee tracks over toe"
+            ],
+            [
+              "Romanian deadlift (DB/BB)",
+              "3 × 8",
+              "Hip hinge — hamstrings & glutes"
+            ],
+            [
+              "Single-leg calf raise (straight knee)",
+              "3 × 12 / leg",
+              "Slow lower — Achilles/gastroc resilience"
+            ],
+            [
+              "Bent-knee calf raise (soleus)",
+              "3 × 15 / leg",
+              "Soleus — the runner's forgotten muscle"
+            ],
+            [
+              "Glute bridge / hip thrust",
+              "3 × 12",
+              "Squeeze glutes — power & posture"
+            ],
+            [
+              "Copenhagen plank",
+              "3 × 20s / side",
+              "Adductor/groin strength (injury shield)"
+            ],
+            [
+              "Side plank",
+              "3 × 30s / side",
+              "Lateral hip stability"
+            ],
+            [
+              "Dead bug",
+              "3 × 8 / side",
+              "Core without arching the lower back"
+            ]
+          ]
+        },
+        {
+          "title": "Strength & Power · Weeks 19–30",
+          "headers": [
+            "Exercise",
+            "Sets × Reps",
+            "Cue / why"
+          ],
+          "note": "Heavier + a little spring for economy & late-race power. 2×/week.",
+          "rows": [
+            [
+              "Back or front squat",
+              "4 × 5",
+              "Heavier but crisp — max strength"
+            ],
+            [
+              "Trap-bar / conventional deadlift",
+              "3 × 5",
+              "Strong hinge, full body"
+            ],
+            [
+              "Bulgarian split squat (loaded)",
+              "3 × 6 / leg",
+              "Loaded unilateral strength"
+            ],
+            [
+              "Nordic / eccentric hamstring curl",
+              "3 × 5",
+              "#1 hamstring-injury preventer"
+            ],
+            [
+              "Single-leg calf raise (loaded)",
+              "3 × 10 / leg",
+              "Tendon stiffness = economy"
+            ],
+            [
+              "Pogo hops / ankle bounces",
+              "3 × 20",
+              "Springy ankles — free speed"
+            ],
+            [
+              "Box jumps or bounding",
+              "3 × 5",
+              "Power — land soft; skip if legs cooked"
+            ],
+            [
+              "Hip thrust (loaded)",
+              "3 × 8",
+              "Glute power for late-race drive"
+            ]
+          ]
+        },
+        {
+          "title": "Taper · Weeks 31–33",
+          "headers": [
+            "Exercise",
+            "Sets × Reps",
+            "Cue / why"
+          ],
+          "note": "Maintain only — no fatigue. 1×/week max.",
+          "rows": [
+            [
+              "Bodyweight circuit (squat, calf raise, bridge, plank)",
+              "1–2 × light",
+              "Keep the pattern, add zero fatigue"
+            ],
+            [
+              "No plyometrics / heavy loads",
+              "—",
+              "Stop ALL strength 5–7 days before race day"
+            ]
+          ]
+        },
+        {
+          "title": "Daily prehab · 5 min, most days",
+          "headers": [
+            "Exercise",
+            "Sets × Reps",
+            "Cue / why"
+          ],
+          "note": "Little-and-often — keeps you on the road while mileage climbs.",
+          "rows": [
+            [
+              "Calf raises (straight + bent knee)",
+              "2 × 15",
+              "Achilles/soleus armour as load ramps"
+            ],
+            [
+              "Tibialis raises (toes up)",
+              "2 × 20",
+              "Prevent shin splints"
+            ],
+            [
+              "Knee-to-wall ankle mobility",
+              "1 × 10 / side",
+              "Dorsiflexion for stride"
+            ],
+            [
+              "Couch stretch / hip flexor",
+              "30s / side",
+              "Undo desk-sitting"
+            ],
+            [
+              "Foam roll calves, quads, glutes",
+              "2–3 min",
+              "As needed for tight spots"
+            ]
+          ]
+        }
+      ]
+    },
+    "fuel": {
+      "intro": "You can't out-train poor fuelling, sleep or recovery — it matters more with 80 km weeks + football. Fuel the work, protect recovery, be smart about alcohol, and know when NOT to run.",
+      "sections": [
+        {
+          "title": "Daily diet · fuel the work",
+          "headers": [
+            "Topic",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Carbs fuel the work",
+              "Your main running fuel — don't fear it. More around long/quality days."
+            ],
+            [
+              "Protein for repair",
+              "~1.6–2.0 g/kg/day across meals — repairs muscle & tendon as you build."
+            ],
+            [
+              "Don't under-fuel",
+              "As mileage rises, under-eating causes injury, illness and burnout. Eat enough."
+            ],
+            [
+              "Wholefoods base",
+              "Veg, fruit, whole grains, quality protein, healthy fats. Check iron if chronically flat."
+            ]
+          ]
+        },
+        {
+          "title": "Before running · what & when",
+          "headers": [
+            "Topic",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "Easy short runs (<60 min)",
+              "Fine fasted or light — coffee + banana."
+            ],
+            [
+              "Long & quality runs",
+              "Fuel first: a carb meal 2–3 h before (porridge + banana, toast + eggs), low fat/fibre."
+            ],
+            [
+              "30–60 min before",
+              "Quick top-up if needed: banana, toast + jam, or a gel."
+            ],
+            [
+              "Coffee ~45–60 min before",
+              "Caffeine is a legit, legal boost before hard sessions and races."
+            ]
+          ]
+        },
+        {
+          "title": "During & after · refuel & recover",
+          "headers": [
+            "Topic",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "During (>90 min)",
+              "40–60 g carbs/hr (gels/drink) + fluids. Start early, don't wait to feel empty."
+            ],
+            [
+              "Recovery window",
+              "After long/quality runs: carbs + 20–30 g protein within ~60 min."
+            ],
+            [
+              "Rehydrate",
+              "Replace ~1.25–1.5× fluid lost; add salt if you're a salty/heavy sweater."
+            ]
+          ]
+        },
+        {
+          "title": "Alcohol · the honest version",
+          "headers": [
+            "Topic",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "What it costs you",
+              "Wrecks deep sleep, dehydrates, blunts recovery, raises next-day injury risk."
+            ],
+            [
+              "Timing rule",
+              "If you drink, do it after a hard session / before a rest day — never before a long run, quality day or race."
+            ],
+            [
+              "Race week",
+              "Minimise in the last 2 weeks; zero in race week."
+            ]
+          ]
+        },
+        {
+          "title": "Should I run today? · quick guide",
+          "headers": [
+            "Situation",
+            "What to do"
+          ],
+          "rows": [
+            [
+              "Hungover",
+              "Skip quality & long runs (dehydration + poor coordination = injury). Full rest or an easy jog only if mild and rehydrated first. Reschedule the key session; don't cram it back."
+            ],
+            [
+              "Injured — niggle",
+              "Pain that changes your stride or worsens as you run → STOP. 2–3 easy/off days now beats weeks off later. Sharp/one-sided/joint pain → rest & assess. Cross-train pain-free to keep fitness."
+            ],
+            [
+              "Injured — not improving",
+              "Not better in a few days, or worse? See a physio early — don't 'test it' with a hard run."
+            ],
+            [
+              "Ill — neck rule",
+              "Above the neck (runny nose, mild throat) → easy run usually OK. Below the neck (chest, fever, aches) → REST. NEVER run with a fever."
+            ],
+            [
+              "Wrecked / under-recovered",
+              "Heavy legs, rising resting HR, poor sleep = under-recovery. Take the easy day easy or swap to rest. Missing one session to absorb training is smart."
+            ],
+            [
+              "Big football week",
+              "If a match or tournament ate your legs, downgrade the next run to easy/recovery and protect the long run. Two hard efforts a week total — matches included."
+            ]
+          ]
+        }
+      ]
+    },
+    "tips": [
+      [
+        "Volume is the big lever",
+        "Weekly mileage moves your marathon time more than anything — that's why the peak is ~82 km. But it only counts if you stay healthy and consistent."
+      ],
+      [
+        "Football is a hard session",
+        "Treat every match as one of your two weekly hard efforts. No hard run the same day; keep the day after a match easy."
+      ],
+      [
+        "Shuffle, don't skip",
+        "Match Tuesday? Move the quality run to Wednesday and slide the easy days along. Match Saturday? Keep Sunday's long run easy, or push it to Monday if legs are cooked. Protect the long run; don't stack three hard days."
+      ],
+      [
+        "Easy means EASY",
+        "Most running should be conversational — even slower than feels 'proper'. That's where the engine is built."
+      ],
+      [
+        "The niggle rule",
+        "Pain that changes your gait or worsens = stop. 2–3 easy/off days early beats 3 weeks off later."
+      ],
+      [
+        "Guard the long run",
+        "The single most important marathon session — the last thing to sacrifice when the week gets messy."
+      ],
+      [
+        "Sleep is the #1 recovery tool",
+        "7–9 h/night. Higher volume needs more recovery, not less."
+      ],
+      [
+        "Fuel the long ones",
+        "Past 90 min take 40–60 g carbs/hr and rehearse your race-day breakfast on long runs."
+      ],
+      [
+        "Rotate 2 pairs of shoes",
+        "Cuts injury risk, extends shoe life (~500–800 km). Buy race shoes by the tune-up and run 3–4 sessions in them."
+      ],
+      [
+        "Warm up the hard day",
+        "10–15 min easy + a few strides before any tempo/threshold/VO2 work."
+      ],
+      [
+        "Respect cut-back weeks",
+        "The down weeks are when fitness consolidates — don't 'top them up'."
+      ],
+      [
+        "Calibrate at the half",
+        "The tune-up half sets your real race pace. Race the pace you EARNED, not the dream."
+      ],
+      [
+        "Start the race easy",
+        "First few km should feel too easy. Hold back — the marathon starts at 30 km. Even pacing wins."
+      ],
+      [
+        "Race-day fuel clock",
+        "Gel every 30–40 min from ~45 min in, with water. Don't wait until you're empty."
+      ],
+      [
+        "Tokyo in early March",
+        "~8–12°C, flat, fast — a great course. Dress for ~+10°C warmer than standing; throwaway layer at the start."
+      ],
+      [
+        "Nothing new two weeks out",
+        "No new shoes, foods or bonus sessions. Lock the routine and trust the work."
+      ],
+      [
+        "Log everything",
+        "Fill it in after each run — it keeps you honest and shows patterns before they become problems."
+      ]
+    ]
+  }
+}
