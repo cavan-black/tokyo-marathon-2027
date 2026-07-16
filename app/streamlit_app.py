@@ -434,33 +434,52 @@ def render_runner(runner_id):
         except Exception as e:
             st.error(f"Sync failed: {e}")
 
-    # ---- single-page Stevie-style layout ----
+    # ---- hero (facts strip) stays fixed above the subtabs ----
     banner = f'<div class="banner">{esc(content["banner"])}</div>' if content.get("banner") else ""
-    page = ['<div class="sv">', banner, facts_html(plan, wk_rows)]
-    page.append(section("The approach", "Why the plan is shaped the way it is.", approach_html(plan)))
-    page.append(section("Pace zones", f'Anchored on {plan["meta"]["goal"]} (MP {plan["meta"]["mp_per_km"]}/km).', paces_html(plan)))
-    page.append(section("Decision gates", "Checkpoints that confirm the plan is on track.", gates_html(plan)))
-    st.markdown(STYLE + "".join(page) + "</div>", unsafe_allow_html=True)
+    st.markdown(STYLE + '<div class="sv">' + banner + facts_html(plan, wk_rows) + "</div>", unsafe_allow_html=True)
 
-    # weekly volume chart (native Streamlit)
-    if wk_rows:
-        rows = [{"Week": wk["week"], "Planned": wk["target_km"],
-                 "Actual": wk_rows.get(str(wk["week"]), {}).get("actual_km", 0)} for wk in plan["weeks"]]
-        st.markdown('<div class="sv"><div class="sec"><div class="sec-head"><h2>Weekly volume</h2>'
+    # ---- everything else lives in subtabs ----
+    sub = st.tabs(["📋 Plan", "🧭 Approach", "🎯 Paces", "🚦 Gates", "📈 Volume",
+                   "💪 Strength", "🥗 Fuel & life", "💡 Tips", "🔬 Research"])
+
+    with sub[0]:
+        st.markdown(STYLE + '<div class="sv">' +
+                    section("The 33-week plan", "Grouped by phase — open any week for the day-by-day.",
+                            LEGEND + weeks_html(plan, progress, cur)) + "</div>", unsafe_allow_html=True)
+    with sub[1]:
+        st.markdown(STYLE + '<div class="sv">' +
+                    section("The approach", "Why the plan is shaped the way it is.", approach_html(plan))
+                    + "</div>", unsafe_allow_html=True)
+    with sub[2]:
+        st.markdown(STYLE + '<div class="sv">' +
+                    section("Pace zones", f'Anchored on {plan["meta"]["goal"]} (MP {plan["meta"]["mp_per_km"]}/km).',
+                            paces_html(plan)) + "</div>", unsafe_allow_html=True)
+    with sub[3]:
+        st.markdown(STYLE + '<div class="sv">' +
+                    section("Decision gates", "Checkpoints that confirm the plan is on track.", gates_html(plan))
+                    + "</div>", unsafe_allow_html=True)
+    with sub[4]:
+        st.markdown(STYLE + '<div class="sv"><div class="sec"><div class="sec-head"><h2>Weekly volume</h2>'
                     '<p class="sub">Planned vs actual (Strava).</p></div></div></div>', unsafe_allow_html=True)
-        st.bar_chart(pd.DataFrame(rows).set_index("Week"), color=["#c7d2e0", "#2f8f7e"], height=200)
-
-    # the plan
-    plan_page = ['<div class="sv">',
-                 section("The 33-week plan", "Grouped by phase — open any week for the day-by-day.",
-                         LEGEND + weeks_html(plan, progress, cur)),
-                 section("Strength &amp; conditioning", "", strength_html(plan)),
-                 section("Fuel &amp; life", "", fuel_html(plan)),
-                 section("Tips", "", tips_html(plan)),
-                 section("Research &amp; rationale", "Why the plan is shaped this way, and what we've looked at.",
-                         research_html(plan)),
-                 "</div>"]
-    st.markdown(STYLE + "".join(plan_page), unsafe_allow_html=True)
+        if wk_rows:
+            rows = [{"Week": wk["week"], "Planned": wk["target_km"],
+                     "Actual": wk_rows.get(str(wk["week"]), {}).get("actual_km", 0)} for wk in plan["weeks"]]
+            st.bar_chart(pd.DataFrame(rows).set_index("Week"), color=["#c7d2e0", "#2f8f7e"], height=200)
+        else:
+            st.caption("No synced weeks yet.")
+    with sub[5]:
+        st.markdown(STYLE + '<div class="sv">' +
+                    section("Strength &amp; conditioning", "", strength_html(plan)) + "</div>", unsafe_allow_html=True)
+    with sub[6]:
+        st.markdown(STYLE + '<div class="sv">' +
+                    section("Fuel &amp; life", "", fuel_html(plan)) + "</div>", unsafe_allow_html=True)
+    with sub[7]:
+        st.markdown(STYLE + '<div class="sv">' +
+                    section("Tips", "", tips_html(plan)) + "</div>", unsafe_allow_html=True)
+    with sub[8]:
+        st.markdown(STYLE + '<div class="sv">' +
+                    section("Research &amp; rationale", "Why the plan is shaped this way, and what we've looked at.",
+                            research_html(plan)) + "</div>", unsafe_allow_html=True)
 
 
 # ---------------- page ----------------
