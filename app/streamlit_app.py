@@ -141,7 +141,21 @@ STYLE = """<style>
 .sv .wsum .flag{font-weight:600;}
 .sv .banner{padding:.7rem 1rem;border-radius:12px;background:var(--accent-soft);
   border-left:4px solid var(--accent);font-size:13.5px;margin:4px 0 14px;}
+.sv .t-tbd{background:color-mix(in srgb,var(--pD) 16%,transparent);color:var(--pD);}
+.sv .trip-day{display:grid;grid-template-columns:44px 78px 108px 1fr;gap:12px;padding:9px 0;
+  border-bottom:1px solid var(--line);align-items:baseline;}
+.sv .trip-day:last-child{border-bottom:0;}
+.sv .trip-day .dow{font-family:var(--font-mono);font-size:12px;color:var(--muted);font-weight:600;}
+.sv .trip-day .dt{font-family:var(--font-mono);font-size:12px;color:var(--muted);}
+.sv .trip-day .ttl{font-size:13.5px;}
+.sv .trip-day .ttl b{font-weight:650;}
+.sv .trip-day .ttl .dtl{display:block;color:var(--muted);font-size:12.5px;margin-top:2px;}
+@media (max-width:820px){.sv .trip-day{grid-template-columns:38px 1fr;}.sv .trip-day .dt,.sv .trip-day .chip{display:none;}}
 </style>"""
+
+TRIP_TAG = {"travel": ("Travel", "t-rest"), "city": ("Sightseeing", "t-recovery"),
+            "snow": ("Snowboarding", "t-quality"), "tourist": ("Flexible", "t-tbd"),
+            "rest": ("Rest", "t-easy"), "race": ("Race", "t-race")}
 
 PHASE_COLORS = ["var(--pA)", "var(--pB)", "var(--pC)", "var(--pD)", "var(--accent)"]
 
@@ -400,6 +414,48 @@ def tips_html(plan):
     return f'<div class="card"><ul class="tight">{lis}</ul></div>'
 
 
+def trip_facts_html(trip):
+    m = trip["meta"]
+    start = datetime.fromisoformat(m["start"]).date()
+    end = datetime.fromisoformat(m["end"]).date()
+    race = date(2027, 3, 7)
+    cells = [
+        ("Depart", start.strftime("%a %d %b")),
+        ("Return home", end.strftime("%a %d %b")),
+        ("Trip length", f'{(end-start).days + 1} <small>days</small>'),
+        ("Race day", f'{race.strftime("%a %d %b")} <small>Tokyo Marathon</small>'),
+    ]
+    inner = "".join(f'<div class="fact"><div class="k">{k}</div><div class="v">{v}</div></div>' for k, v in cells)
+    return (f'<div class="eyebrow">{esc(m["title"])}</div>'
+            f'<h2 style="font-size:26px;margin:6px 0 2px">Kyoto → Tokyo Marathon → Niseko → Sapporo</h2>'
+            f'<p class="sub">{esc(m.get("note",""))}</p><div class="facts">{inner}</div>')
+
+
+def trip_legs_html(trip):
+    out = ""
+    for i, leg in enumerate(trip["legs"]):
+        color = PHASE_COLORS[i % len(PHASE_COLORS)]
+        blurb = f'<p class="sub" style="margin:2px 0 8px">{esc(leg["blurb"])}</p>' if leg.get("blurb") else ""
+        rows = ""
+        for dd in leg["days"]:
+            dt = datetime.fromisoformat(dd["date"]).date()
+            label, cls = TRIP_TAG.get(dd["tag"], ("Flexible", "t-tbd"))
+            rows += (f'<div class="trip-day"><span class="dow">{dt.strftime("%a")}</span>'
+                     f'<span class="dt">{dt.strftime("%d %b")}</span>'
+                     f'<span class="chip {cls}">{esc(label)}</span>'
+                     f'<span class="ttl"><b>{esc(dd["title"])}</b><span class="dtl">{esc(dd["detail"])}</span></span></div>')
+        out += (f'<div class="phase-group"><div class="phase-bar">'
+                f'<span class="phase-tag" style="background:{color}">{chr(65+i)}</span>'
+                f'<h3>{esc(leg["name"])}</h3></div>{blurb}<div class="days">{rows}</div></div>')
+    return out
+
+
+def render_trip(trip):
+    st.markdown(STYLE + '<div class="sv">' + trip_facts_html(trip) +
+                section("Itinerary", "Open to edit the plan — the 14–20 Mar block is still a placeholder.",
+                        trip_legs_html(trip)) + '</div>', unsafe_allow_html=True)
+
+
 LEGEND = ('<div class="legend">'
           '<span><i class="chip t-easy" style="width:22px">&nbsp;</i> Easy / recovery</span>'
           '<span><i class="chip t-long" style="width:22px">&nbsp;</i> Long run</span>'
@@ -485,12 +541,18 @@ def render_runner(runner_id):
 # ---------------- page ----------------
 st.title("🏃 Tokyo Marathon 2027 — Team dashboard")
 runners = load_json("runners.json", [])
+trip = load_json("trip.json")
 if not runners:
     st.error("No runners.json — run: python plan/plan_generator.py")
 else:
-    for tab, r in zip(st.tabs([f'{r["name"]} · {r["goal"]}' for r in runners]), runners):
+    labels = [f'{r["name"]} · {r["goal"]}' for r in runners] + (["🗾 Trip"] if trip else [])
+    top_tabs = st.tabs(labels)
+    for tab, r in zip(top_tabs, runners):
         with tab:
             render_runner(r["id"])
+    if trip:
+        with top_tabs[len(runners)]:
+            render_trip(trip)
 st.divider()
 st.caption("Adjustments are suggestions — you decide. Data © each runner, via Strava (personal use). "
            "Auto-syncs a few times a day; hit refresh for on-demand. Design adapted from Stevie's Sub-3:15 build.")

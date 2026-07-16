@@ -7,7 +7,7 @@ ROOT = os.path.abspath(os.path.join(HERE, ".."))
 DATA = os.path.join(ROOT, "data")
 sys.path.insert(0, HERE)
 
-import cav, jamie  # noqa: E402
+import cav, jamie, trip  # noqa: E402
 
 RUNNERS = [cav, jamie]
 
@@ -25,3 +25,8 @@ if __name__ == "__main__":
     with open(os.path.join(DATA, "runners.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
     print(f"Wrote {len(manifest)} runner plans + runners.json")
+
+    trip_plan = trip.build()
+    with open(os.path.join(DATA, "trip.json"), "w", encoding="utf-8") as f:
+        json.dump(trip_plan, f, indent=2, ensure_ascii=False)
+    print(f"  Trip: {trip_plan['meta']['days']} days, {trip_plan['meta']['start']} -> {trip_plan['meta']['end']}")
