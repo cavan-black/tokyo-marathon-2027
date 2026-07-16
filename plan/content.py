@@ -104,6 +104,53 @@ def fuel(football=False, volume_note=""):
     }
 
 
+RESEARCH_NOTES = {
+    "intro": "This plan isn't arbitrary — the phase structure, cut-back placement, hard/easy alternation and "
+             "rest-day rules below are each grounded in specific training-science sources, reviewed 2026-07.",
+    "sections": [
+        {"title": "Phase structure (5 mesocycles)",
+         "detail": "Base/Aerobic → Threshold intro → Lactate-Threshold + MP intro → Marathon-Specific (peak) → "
+                    "Taper. This matches the consensus shape across Jack Daniels (Running Formula phases I–IV), "
+                    "Pete Pfitzinger (Advanced Marathoning: Base / LT / Race-Prep / Taper), and Renato Canova's "
+                    "funnel model (General → Fundamental → Special → Specific → short taper) — all converge on "
+                    "4–5 phases for a build this long, with taper length staying fixed at 2–3 weeks regardless "
+                    "of total plan length."},
+        {"title": "Cut-back (deload) weeks",
+         "detail": "Placed every ~3–6 weeks, cutting volume ~15–25%. Sourced from Pfitzinger's step-back weeks "
+                    "and the broader coaching consensus (Laura Norris, RunnersConnect) of 15–33% volume drops "
+                    "every 3–4 weeks to let fitness consolidate before the next load increase."},
+        {"title": "Hard/easy long-run alternation (added 2026-07-16)",
+         "detail": "Marathon-pace long runs now strictly alternate with easy long runs — no two hard long-run "
+                    "weekends back-to-back, and the weekends either side of each tune-up half are forced easy. "
+                    "Basis: single-run distance/intensity spikes are a stronger injury predictor than weekly-"
+                    "volume jumps (JOSPT running-injury literature), and \"shock microcycles\" (stacking hard "
+                    "efforts) are explicitly not recommended for sub-elite runners — steady progressive/"
+                    "undulating loading with regular relief outperforms them for this population."},
+        {"title": "Max 2 hard days per week",
+         "detail": "Quality sessions are capped at two per week (e.g. Tue quality + EITHER Thu quality OR a hard "
+                    "Sunday MP long run, never all three) — consistent with polarized/pyramidal training research "
+                    "(Stephen Seiler) showing the bulk of volume should stay easy even as the marathon-specific "
+                    "phase shifts intensity distribution from ~80/20 toward ~70/30 threshold-and-MP-heavy work."},
+        {"title": "Rest days fixed to Monday + Saturday",
+         "detail": "Runner preference, applied without compromising the two hard-day cap or long-run "
+                    "alternation above."},
+        {"title": "Marathon-pace (MP) progression timing",
+         "detail": "MP segments enter the long run roughly 6–8 weeks before the peak-volume block, starting "
+                    "short and building toward the largest MP-block long runs at peak — the standard Pfitzinger/"
+                    "Hansons/Luke Humphrey pattern for when MP-specific work pays off without excess injury risk."},
+        {"title": "Taper",
+         "detail": "3-week taper, volume cut cumulatively (~roughly 75% → 50% → 30–35% of peak by race week), "
+                    "intensity maintained and session frequency cut ≤20% — the most robust finding in the taper "
+                    "literature (Mujika & Padilla's taper meta-analyses)."},
+        {"title": "Altitude training — considered, not included",
+         "detail": "Discussed 2026-07-16: a single week at altitude gives none of the hematological benefit "
+                    "(EPO/red-cell-mass adaptations need a minimum ~3–4 weeks per Levine & Stray-Gundersen's "
+                    "\"live high, train low\" research) and mostly adds hypoxic stress, poor sleep and slower "
+                    "paces at the wrong moment. Verdict: skip a 1-week trip; a proper 3+ week camp placed in "
+                    "the aerobic-base phase would be worth a separate conversation if it becomes an option."},
+    ],
+}
+
 TIPS_COMMON = [
     ["Easy means EASY", "Most running should be conversational — even slower than feels 'proper'. That's where the engine is built."],
     ["The niggle rule", "Pain that changes your gait or worsens = stop. 2–3 easy/off days early beats 3 weeks off later."],

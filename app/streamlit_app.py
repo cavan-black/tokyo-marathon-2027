@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Shared Tokyo Marathon dashboard — one tab per runner, planned vs actual, Strava-synced."""
+"""Shared Tokyo Marathon dashboard — one tab per runner, planned vs actual, Strava-synced.
+Visual design adapted from Stevie's "Sub-3:15 Build" single-page layout."""
 import os, sys, json, html
 from datetime import date, datetime
 
@@ -12,23 +13,137 @@ sys.path.insert(0, ROOT)
 
 st.set_page_config(page_title="Tokyo 2027 · Team dashboard", page_icon="🏃", layout="wide")
 
-COLOR = {"Done": "#16a34a", "Partial": "#d97706", "Missed": "#dc2626",
-         "Rest": "#9ca3af", "Upcoming": "#cbd5e1", "—": "#cbd5e1"}
+# Wide layout stretches full browser width — cap it so there's breathing room on both sides.
+# Streamlit renames/nests this container across versions, so target every known selector + !important.
+st.markdown(
+    """<style>
+    .block-container, .stMainBlockContainer,
+    div[data-testid="stAppViewContainer"] .main .block-container,
+    div[data-testid="stMainBlockContainer"] {
+        max-width: 1180px !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: 2.5rem !important;
+        padding-right: 2.5rem !important;
+    }
+    </style>""",
+    unsafe_allow_html=True,
+)
 
-st.markdown("""<style>
-.pj-day{display:flex;align-items:center;gap:.65rem;padding:.5rem .8rem;margin:.28rem 0;
-  border-radius:12px;border-left:5px solid #cbd5e1;background:rgba(130,130,150,.07);}
-.pj-dot{width:9px;height:9px;border-radius:50%;flex:0 0 auto}
-.pj-date{font-weight:700;font-size:.72rem;min-width:82px;letter-spacing:.03em;opacity:.7;text-transform:uppercase}
-.pj-sess{flex:1 1 auto;font-size:.9rem;line-height:1.3}
-.pj-pills{display:flex;gap:.35rem;flex:0 0 auto;flex-wrap:wrap;justify-content:flex-end}
-.pj-pill{font-size:.68rem;padding:.13rem .5rem;border-radius:999px;background:rgba(130,130,150,.16);
-  white-space:nowrap;font-weight:600}
-.pj-pill.act{background:rgba(22,163,74,.18);color:#16a34a}
-.pj-rest{opacity:.5}
-.pj-banner{padding:.7rem 1rem;border-radius:12px;background:rgba(217,160,0,.14);
-  border-left:5px solid #d9a200;font-size:.85rem;margin:.3rem 0 .9rem}
-</style>""", unsafe_allow_html=True)
+# ---- workout type -> chip class + label (mirrors Stevie's palette) ----
+TYPE_LABEL = {"rest": "Rest", "recovery": "Recovery", "easy": "Easy", "long": "Long",
+              "quality": "Quality", "race": "Race", "tt": "Time trial"}
+TYPE_CLASS = {"rest": "t-rest", "recovery": "t-recovery", "easy": "t-easy", "long": "t-long",
+              "quality": "t-quality", "race": "t-race", "tt": "t-quality"}
+# progress status -> dot colour
+STATUS_COLOR = {"Done": "var(--good)", "Partial": "var(--warn)", "Missed": "var(--accent)"}
+
+STYLE = """<style>
+.sv{--paper:#f6f5f2;--surface:#fff;--surface-2:#faf9f6;--ink:#191b21;--muted:#6b6e77;--faint:#9a9ca3;
+  --line:#e5e3dc;--line-strong:#d6d3ca;--accent:#ce2e3b;--accent-ink:#ce2e3b;--accent-soft:rgba(206,46,59,.09);
+  --pA:#4f7391;--pB:#2f8f7e;--pC:#bd7a2a;--pD:#8663ad;--good:#2f8f7e;--warn:#bd7a2a;--radius:13px;
+  --font-mono:"Cascadia Code",ui-monospace,"SF Mono","Segoe UI Mono",Menlo,Consolas,monospace;}
+@media (prefers-color-scheme:dark){.sv{--paper:#0e1014;--surface:#171a20;--surface-2:#14161b;--ink:#ecedf0;
+  --muted:#9aa0ab;--faint:#6c7079;--line:#262a33;--line-strong:#333844;--accent:#f2545b;--accent-ink:#f97077;
+  --accent-soft:rgba(242,84,91,.13);--pA:#7aa0bd;--pB:#4fb7a3;--pC:#d99a4e;--pD:#ac8bd0;--good:#4fb7a3;--warn:#d99a4e;}}
+.sv{color:var(--ink);font-size:15px;line-height:1.5;}
+.sv .mono{font-family:var(--font-mono);font-variant-numeric:tabular-nums;}
+.sv .eyebrow{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--accent-ink);}
+.sv h2{font-size:20px;font-weight:750;letter-spacing:-.01em;margin:0;}
+.sv h3{font-size:15px;font-weight:700;margin:0 0 10px;}
+.sv .sub{color:var(--muted);font-size:14.5px;margin:2px 0 0;}
+.sv .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin:14px 0 4px;}
+.sv .fact{background:var(--surface);padding:13px 16px;}
+.sv .fact .k{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
+.sv .fact .v{font-size:20px;font-weight:700;margin-top:3px;letter-spacing:-.01em;}
+.sv .fact .v small{font-size:12px;font-weight:500;color:var(--muted);}
+.sv .sec{padding:22px 0 6px;border-top:1px solid var(--line);margin-top:18px;}
+.sv .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:16px;flex-wrap:wrap;}
+.sv .grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.sv .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+@media (max-width:820px){.sv .grid2,.sv .grid3{grid-template-columns:1fr;}}
+.sv .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:16px 18px;}
+.sv .card p{margin:0;font-size:14px;}
+.sv table.data{width:100%;border-collapse:collapse;}
+.sv table.data th,.sv table.data td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);}
+.sv table.data th{font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);font-weight:600;}
+.sv table.data td.num{text-align:right;font-family:var(--font-mono);font-weight:600;font-variant-numeric:tabular-nums;}
+.sv .zone-dot{display:inline-block;width:8px;height:8px;border-radius:2px;margin-right:8px;vertical-align:middle;}
+.sv ul.tight{margin:0;padding-left:18px;}
+.sv ul.tight li{margin:5px 0;font-size:14px;}
+.sv .tmpl .row{display:grid;grid-template-columns:46px 1fr;gap:12px;padding:7px 0;border-bottom:1px solid var(--line);}
+.sv .tmpl .row:last-child{border-bottom:0;}
+.sv .tmpl .d{font-family:var(--font-mono);font-weight:700;color:var(--muted);font-size:13px;}
+.sv .tmpl .s{font-size:13.5px;}
+.sv .gates{display:flex;flex-direction:column;gap:9px;}
+.sv .gate{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:11px 14px;
+  border:1px solid var(--line);border-radius:11px;background:var(--surface);}
+.sv .gate.decisive{border-color:var(--accent);background:var(--accent-soft);}
+.sv .gate .id{font-family:var(--font-mono);font-weight:700;font-size:15px;}
+.sv .gate .id small{display:block;font-size:10px;color:var(--faint);font-weight:500;}
+.sv .gate .what{font-weight:650;font-size:14px;}
+.sv .gate .blurb{color:var(--muted);font-size:12.5px;}
+.sv .gate .target{text-align:right;font-family:var(--font-mono);font-weight:700;font-size:14px;color:var(--accent-ink);}
+.sv .badge-dec{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--accent-ink);border:1px solid var(--accent);border-radius:20px;padding:1px 8px;margin-left:6px;}
+.sv .legend{display:flex;flex-wrap:wrap;gap:8px 14px;margin:12px 0;}
+.sv .legend span{font-size:12px;color:var(--muted);display:inline-flex;align-items:center;gap:6px;}
+.sv .chip{display:inline-block;font-size:11px;font-weight:650;padding:1px 7px;border-radius:5px;white-space:nowrap;}
+.sv .phase-group{margin-top:22px;}
+.sv .phase-bar{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.sv .phase-tag{font-family:var(--font-mono);font-weight:700;font-size:12px;color:#fff;padding:3px 9px;border-radius:6px;}
+.sv .phase-bar h3{font-size:16px;font-weight:750;margin:0;}
+.sv .phase-bar .rng{color:var(--faint);font-size:12.5px;font-family:var(--font-mono);}
+.sv details.week{border:1px solid var(--line);border-radius:11px;background:var(--surface);margin-bottom:8px;overflow:hidden;}
+.sv details.week[open]{border-color:var(--line-strong);}
+.sv details.week>summary{list-style:none;cursor:pointer;padding:12px 16px;display:grid;
+  grid-template-columns:42px 92px 1fr auto;gap:14px;align-items:center;}
+.sv details.week>summary::-webkit-details-marker{display:none;}
+.sv details.week>summary:hover{background:var(--surface-2);}
+.sv summary .wk{font-family:var(--font-mono);font-weight:700;font-size:15px;}
+.sv summary .wk small{display:block;font-size:10px;color:var(--faint);font-weight:500;}
+.sv summary .dt{font-family:var(--font-mono);font-size:12px;color:var(--muted);}
+.sv summary .keys{font-size:13.5px;}
+.sv summary .keys .mut{color:var(--muted);}
+.sv summary .vol{text-align:right;font-family:var(--font-mono);}
+.sv summary .vol .n{font-weight:700;font-size:15px;}
+.sv summary .vol .n b{color:var(--accent-ink);}
+.sv summary .vol small{display:block;font-size:10.5px;color:var(--faint);}
+@media (max-width:820px){.sv details.week>summary{grid-template-columns:38px 1fr auto;}.sv summary .dt{display:none;}}
+.sv .down-chip{color:var(--warn);border:1px solid var(--warn);border-radius:20px;font-size:10px;padding:0 7px;
+  text-transform:uppercase;letter-spacing:.05em;}
+.sv .gate-chip{color:var(--accent-ink);border:1px solid var(--accent);border-radius:20px;font-size:10px;font-weight:700;padding:0 7px;}
+.sv .days{border-top:1px solid var(--line);padding:4px 16px 12px;}
+.sv .day{display:grid;grid-template-columns:44px 80px 50px 1fr auto;gap:12px;align-items:center;padding:8px 0;
+  border-bottom:1px solid var(--line);}
+.sv .day:last-child{border-bottom:0;}
+.sv .day .dow{font-family:var(--font-mono);font-size:12px;color:var(--muted);font-weight:600;}
+.sv .day .dist{font-family:var(--font-mono);font-weight:700;font-size:13.5px;text-align:right;}
+.sv .day .dist.rest{color:var(--faint);font-weight:500;}
+.sv .day .desc{font-size:13.5px;}
+.sv .day .tags{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;align-items:center;}
+.sv .tag{font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:5px;white-space:nowrap;
+  border:1px solid var(--line-strong);color:var(--muted);}
+.sv .tag.str{color:var(--pA);border-color:color-mix(in srgb,var(--pA) 45%,var(--line));}
+.sv .tag.mp{color:var(--pB);border-color:color-mix(in srgb,var(--pB) 45%,var(--line));}
+.sv .tag.act{color:var(--good);border-color:color-mix(in srgb,var(--good) 50%,var(--line));}
+.sv .sdot{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
+@media (max-width:820px){.sv .day{grid-template-columns:40px 46px 1fr;}.sv .day .type-chip,.sv .day .tags{display:none;}}
+.sv .t-rest{background:transparent;color:var(--faint);border:1px dashed var(--line-strong);}
+.sv .t-recovery{background:color-mix(in srgb,var(--pA) 14%,transparent);color:var(--pA);}
+.sv .t-easy{background:var(--surface-2);color:var(--muted);border:1px solid var(--line);}
+.sv .t-long{background:var(--accent-soft);color:var(--accent-ink);}
+.sv .t-quality{background:color-mix(in srgb,var(--pC) 16%,transparent);color:var(--pC);}
+.sv .t-race{background:var(--accent);color:#fff;}
+.sv .wsum{display:flex;gap:16px;flex-wrap:wrap;padding:10px 16px 2px;font-size:12.5px;color:var(--muted);}
+.sv .wsum b{color:var(--ink);font-family:var(--font-mono);}
+.sv .wsum .flag{font-weight:600;}
+.sv .banner{padding:.7rem 1rem;border-radius:12px;background:var(--accent-soft);
+  border-left:4px solid var(--accent);font-size:13.5px;margin:4px 0 14px;}
+</style>"""
+
+PHASE_COLORS = ["var(--pA)", "var(--pB)", "var(--pC)", "var(--pD)", "var(--accent)"]
 
 
 def load_json(name, default=None):
@@ -49,64 +164,250 @@ def refresh_runner(runner_id):
     return sync_runner(runner_id, write=True)
 
 
-def show_table(headers, rows):
-    st.dataframe(pd.DataFrame(rows, columns=headers), hide_index=True, use_container_width=True)
+def esc(s):
+    return html.escape(str(s))
 
 
-def day_card(d, pd_, today_iso):
-    status = pd_.get("status") or ("Rest" if d["type"] == "rest"
-                                   else ("Upcoming" if d["date"] > today_iso else "—"))
-    color = COLOR.get(status, "#cbd5e1")
-    dt = datetime.fromisoformat(d["date"]).strftime("%a %d %b")
-    pills = f'<span class="pj-pill">🎯 {d["target_km"]:g} km</span>' if d["target_km"] else ""
+# ---------------- HTML builders (Stevie style) ----------------
+
+def facts_html(plan, wk_rows):
+    m = plan["meta"]
+    race = datetime.fromisoformat(m["race"]).date()
+    start = datetime.fromisoformat(m["start"]).date()
+    days_to_go = (race - date.today()).days
+    longest = max((d["target_km"] for wk in plan["weeks"] for d in wk["days"]), default=0)
+    ndays = sum(1 for d in plan["weeks"][max(len(plan["weeks"]) // 2, 0)]["days"] if d["type"] != "rest")
+    logged = sum(w.get("actual_km", 0) for w in wk_rows.values())
+    cells = [
+        ("Goal", f'{esc(m["goal"])} <small>{esc(m["mp_per_km"])} /km</small>'),
+        ("Race day", f'{race.strftime("%a %d %b")} <small>{days_to_go} days to go</small>'),
+        ("Plan starts", f'{start.strftime("%a %d %b")} <small>{start.year}</small>'),
+        ("Duration", f'{m["total_weeks"]} <small>weeks · {ndays} days/wk</small>'),
+        ("Peak volume", f'{m["peak_km"]} <small>km/wk</small>'),
+        ("Longest run", f'{longest:g} <small>km</small>'),
+        ("Km logged", f'{logged:.0f} <small>since start</small>'),
+    ]
+    inner = "".join(f'<div class="fact"><div class="k">{k}</div><div class="v">{v}</div></div>' for k, v in cells)
+    return (f'<div class="eyebrow">Tokyo Marathon 2027 · Team dashboard</div>'
+            f'<h2 style="font-size:26px;margin:6px 0 2px">{esc(m["name"])} — {esc(m["goal"])}</h2>'
+            f'<p class="sub">{esc(m.get("goal_note",""))}</p>'
+            f'<div class="facts">{inner}</div>')
+
+
+def section(title, sub, body):
+    return (f'<div class="sec"><div class="sec-head"><h2>{esc(title)}</h2>'
+            f'{f"<p class=sub>{esc(sub)}</p>" if sub else ""}</div>{body}</div>')
+
+
+def approach_html(plan):
+    phases = []
+    for wk in plan["weeks"]:
+        if not phases or phases[-1][0] != wk["phase"]:
+            phases.append([wk["phase"], wk["week"], wk["week"]])
+        else:
+            phases[-1][2] = wk["week"]
+    plist = "".join(f'<li><b>{esc(p)}</b> <span class="mut">Wk {a}–{b}</span></li>' for p, a, b in phases)
+    c = plan.get("content", {})
+    cp = c.get("checkpoints", {}).get("intro", "")
+    sc = c.get("strength", {}).get("intro", "")
+    return ('<div class="grid3">'
+            f'<div class="card"><h3>Phases</h3><ul class="tight">{plist}</ul></div>'
+            f'<div class="card"><h3>Strength &amp; life</h3><p>{esc(sc)}</p></div>'
+            f'<div class="card"><h3>Checkpoints</h3><p>{esc(cp)}</p></div>'
+            '</div>')
+
+
+def paces_html(plan):
+    c = plan.get("content", {})
+    p = c.get("paces", {})
+    dots = ["var(--pA)", "var(--muted)", "var(--accent-ink)", "var(--accent-ink)",
+            "var(--pC)", "var(--pB)", "var(--pD)", "var(--faint)"]
+    rows = ""
+    for i, r in enumerate(p.get("rows", [])):
+        dot = dots[i % len(dots)]
+        rows += (f'<tr><td><span class="zone-dot" style="background:{dot}"></span>{esc(r[0])}</td>'
+                 f'<td class="num">{esc(r[1])}</td><td class="num">{esc(r[2])}</td></tr>')
+    note = f'<p class="sub" style="margin-top:10px">{esc(p["note"])}</p>' if p.get("note") else ""
+    tbl = (f'<table class="data"><tr><th>Zone</th><th class="num">/km</th><th class="num">/mile</th></tr>{rows}</table>'
+           f'{note}')
+    # weekly structure template from a representative peak week
+    peak = max(plan["weeks"], key=lambda w: w["target_km"])
+    rowt = ""
+    for d in peak["days"]:
+        rowt += f'<div class="row"><div class="d">{esc(d["dow"])}</div><div class="s">{esc(d["session"])}</div></div>'
+    tmpl = f'<h3>Weekly shape · Wk {peak["week"]} (peak)</h3><div class="tmpl">{rowt}</div>'
+    goals = ""
+    if c.get("goals"):
+        g = c["goals"]
+        gr = "".join("<tr>" + "".join(f'<td class="num">{esc(x)}</td>' if i else f"<td>{esc(x)}</td>"
+                     for i, x in enumerate(row)) + "</tr>" for row in g["rows"])
+        gh = "".join(f'<th class="num">{esc(h)}</th>' if i else f"<th>{esc(h)}</th>" for i, h in enumerate(g["headers"]))
+        goals = f'<div class="card" style="margin-top:16px"><h3>Your goals</h3><table class="data"><tr>{gh}</tr>{gr}</table></div>'
+    return f'<div class="grid2"><div class="card">{tbl}</div><div class="card">{tmpl}</div></div>{goals}'
+
+
+def gates_html(plan):
+    cp = plan.get("content", {}).get("checkpoints", {})
+    rows = cp.get("rows", [])
+    intro = f'<p class="banner">{esc(cp["intro"])}</p>' if cp.get("intro") else ""
+    cards = ""
+    for i, r in enumerate(rows):
+        wkdate = r[0]
+        test = r[1]
+        target = r[-1]
+        decisive = "half" in test.lower() or "half" in wkdate.lower()
+        wk = wkdate.split("·")[0].strip() if "·" in wkdate else wkdate
+        dt = wkdate.split("·", 1)[1].strip() if "·" in wkdate else ""
+        badge = '<span class="badge-dec">Decisive</span>' if decisive else ""
+        cards += (f'<div class="gate{" decisive" if decisive else ""}">'
+                  f'<div class="id">G{i}<small>{esc(wk)}</small></div>'
+                  f'<div><div class="what">{esc(test)}{badge}</div>'
+                  f'<div class="blurb">{esc(dt)}</div></div>'
+                  f'<div class="target">{esc(target)}</div></div>')
+    notes = "".join(f"<li>{esc(n)}</li>" for n in cp.get("notes", []))
+    notes = f'<ul class="tight" style="margin-top:14px">{notes}</ul>' if notes else ""
+    return f'{intro}<div class="gates">{cards}</div>{notes}'
+
+
+def day_html(d, pd_, today_iso):
+    typ = d["type"]
+    cls = TYPE_CLASS.get(typ, "t-easy")
+    label = TYPE_LABEL.get(typ, typ.title())
+    dist = "—" if d["type"] == "rest" or not d["target_km"] else f'{d["target_km"]:g}k'
+    distcls = "dist rest" if dist == "—" else "dist"
+    # progress overlay
+    status = pd_.get("status")
+    dot = ""
+    if status in STATUS_COLOR:
+        dot = f'<span class="sdot" style="background:{STATUS_COLOR[status]}" title="{status}"></span>'
+    tags = ""
+    sess = d["session"]
+    if "S&C A" in sess:
+        tags += '<span class="tag str">Str A</span>'
+    if "S&C B" in sess:
+        tags += '<span class="tag str">Str B</span>'
+    if "@ MP" in sess and "no MP" not in sess:
+        tags += '<span class="tag mp">MP</span>'
     actual, pace = pd_.get("actual_km", 0), pd_.get("pace_str")
     if actual:
-        pills += f'<span class="pj-pill act">✓ {actual:.1f} km{(" · " + pace + "/km") if pace else ""}</span>'
-    rest = " pj-rest" if status == "Rest" else ""
-    return (f'<div class="pj-day{rest}" style="border-left-color:{color}">'
-            f'<span class="pj-dot" style="background:{color}"></span>'
-            f'<span class="pj-date">{dt}</span>'
-            f'<span class="pj-sess">{html.escape(d["session"])}</span>'
-            f'<span class="pj-pills">{pills}</span></div>')
+        tags += f'<span class="tag act">✓ {actual:.1f}k{(" · " + pace) if pace else ""}</span>'
+    return (f'<div class="day"><span class="dow">{esc(d["dow"])}</span>'
+            f'<span class="chip type-chip {cls}">{esc(label)}</span>'
+            f'<span class="{distcls}">{dist}</span>'
+            f'<span class="desc">{esc(sess)}</span>'
+            f'<span class="tags">{dot}{tags}</span></div>')
 
 
-def plan_tab(plan, progress):
-    content = plan.get("content", {})
-    if content.get("banner"):
-        st.markdown(f'<div class="pj-banner">{html.escape(content["banner"])}</div>', unsafe_allow_html=True)
-    meta = plan["meta"]; today = date.today(); today_iso = today.isoformat()
+def weeks_html(plan, progress, cur):
     wk_rows = progress.get("weeks", {})
-    tr = progress.get("tracker")
-    if tr and (tr.get("threshold_latest") or tr.get("mp_latest")):
-        t1, t2 = st.columns(2)
-        lt, lm = tr.get("threshold_latest"), tr.get("mp_latest")
-        t1.metric("Latest threshold pace", (lt[1] + "/km") if lt else "—", "comfortably-hard efforts", delta_color="off")
-        t2.metric("Latest MP / long pace", (lm[1] + "/km") if lm else "—", f'MP target {meta["mp_per_km"]}/km', delta_color="off")
-    if wk_rows:
-        rows = [{"Week": wk["week"], "Planned": wk["target_km"],
-                 "Actual": wk_rows.get(str(wk["week"]), {}).get("actual_km", 0)} for wk in plan["weeks"]]
-        st.markdown("**Weekly volume — planned vs actual**")
-        st.bar_chart(pd.DataFrame(rows).set_index("Week"), color=["#c7d2e0", "#16a34a"], height=200)
-    cur = next((wk["week"] for wk in plan["weeks"]
-                if datetime.fromisoformat(wk["start"]).date() <= today
-                <= datetime.fromisoformat(wk["start"]).date() + pd.Timedelta(days=6)), 1)
-    st.caption("🟢 done · 🟠 partial · 🔴 missed · ⚪ rest · ▫️ upcoming · 🎯 target · ✓ actual")
+    days_map = progress.get("days", {})
+    today_iso = date.today().isoformat()
+    # phase groups
+    groups = []
     for wk in plan["weeks"]:
-        wsum = wk_rows.get(str(wk["week"]), {})
-        label = (f"Week {wk['week']} · {wk['start']} · {wk['phase']} · {wk['target_km']} km"
-                 + (f"  —  {wk['focus']}" if wk['focus'] else ""))
-        with st.expander(label, expanded=(wk["week"] == cur)):
+        if not groups or groups[-1]["phase"] != wk["phase"]:
+            groups.append({"phase": wk["phase"], "weeks": []})
+        groups[-1]["weeks"].append(wk)
+    out = ""
+    for gi, g in enumerate(groups):
+        color = PHASE_COLORS[gi % len(PHASE_COLORS)]
+        a, b = g["weeks"][0]["week"], g["weeks"][-1]["week"]
+        out += (f'<div class="phase-group"><div class="phase-bar">'
+                f'<span class="phase-tag" style="background:{color}">{chr(65+gi)}</span>'
+                f'<h3>{esc(g["phase"])}</h3><span class="rng">Wk {a}–{b}</span></div>')
+        for wk in g["weeks"]:
+            w = wk["week"]
+            start = datetime.fromisoformat(wk["start"]).date()
+            end = start + pd.Timedelta(days=6)
+            # summary keys: pull the quality/long headline
+            quality = next((d["session"] for d in wk["days"] if d["type"] in ("quality", "tt")), "")
+            longrun = next((d for d in wk["days"] if d["type"] in ("long", "race")), None)
+            lr = f'LR {longrun["target_km"]:g}k' if longrun else ""
+            keys = esc(quality.split("  +")[0][:44]) if quality else '<span class="mut">easy week</span>'
+            chips = ""
+            foc = wk.get("focus", "")
+            if "Cut-back" in foc or "recovery" in foc.lower():
+                chips += '<span class="down-chip">down</span>'
+            if "checkpoint" in foc.lower() or "tune-up" in foc.lower() or "RACE" in foc:
+                chips += f'<span class="gate-chip">{esc(foc.split("(")[0][:16])}</span>'
+            summary = (f'<summary><div class="wk">{w}<small>WK</small></div>'
+                       f'<div class="dt">{start.strftime("%d %b")}<br>{end.strftime("%d %b")}</div>'
+                       f'<div class="keys">{keys} <span class="mut">·</span> '
+                       f'<span class="mut">{esc(lr)}</span> {chips}</div>'
+                       f'<div class="vol"><div class="n"><b>{wk["target_km"]}k</b></div><small>volume</small></div></summary>')
+            # per-week progress summary line
+            wsum = wk_rows.get(str(w), {})
+            wline = ""
             if wsum:
-                m = st.columns(4)
-                m[0].metric("Planned km", f'{wsum["planned_km"]:.0f}')
-                m[1].metric("Actual km", f'{wsum["actual_km"]:.0f}')
-                m[2].metric("Quality hit", f'{wsum["quality_hit"]}/{wsum["quality_planned"]}')
-                m[3].metric("Sessions ✓", wsum["done"])
                 flag = wsum.get("flag", "")
-                color = "#16a34a" if flag.startswith("✓") else "#d9a200"
-                st.markdown(f"<span style='color:{color};font-weight:600'>{html.escape(flag)}</span>", unsafe_allow_html=True)
-            html_days = "".join(day_card(d, progress.get("days", {}).get(d["date"], {}), today_iso) for d in wk["days"])
-            st.markdown(html_days, unsafe_allow_html=True)
+                fcolor = "var(--good)" if flag.startswith("✓") else "var(--warn)"
+                wline = (f'<div class="wsum"><span>Planned <b>{wsum["planned_km"]:.0f}k</b></span>'
+                         f'<span>Actual <b>{wsum["actual_km"]:.0f}k</b></span>'
+                         f'<span>Quality <b>{wsum["quality_hit"]}/{wsum["quality_planned"]}</b></span>'
+                         f'<span>Done <b>{wsum["done"]}</b></span>'
+                         f'{f"<span class=flag style=color:{fcolor}>{esc(flag)}</span>" if flag else ""}</div>')
+            days = "".join(day_html(d, days_map.get(d["date"], {}), today_iso) for d in wk["days"])
+            openattr = " open" if w == cur else ""
+            out += f'<details class="week"{openattr}>{summary}{wline}<div class="days">{days}</div></details>'
+        out += "</div>"
+    return out
+
+
+def ref_table(headers, rows):
+    th = "".join(f"<th>{esc(h)}</th>" for h in headers)
+    tr = "".join("<tr>" + "".join(f"<td>{esc(c)}</td>" for c in row) + "</tr>" for row in rows)
+    return f'<table class="data"><tr>{th}</tr>{tr}</table>'
+
+
+def strength_html(plan):
+    sc = plan.get("content", {}).get("strength", {})
+    if not sc:
+        return ""
+    body = f'<p class="sub" style="margin-bottom:12px">{esc(sc.get("intro",""))}</p>'
+    for blk in sc.get("blocks", []):
+        note = f'<p class="sub" style="margin-bottom:10px">{esc(blk["note"])}</p>' if blk.get("note") else ""
+        body += (f'<div class="card" style="margin-bottom:14px"><h3>{esc(blk["title"])}</h3>'
+                 f'{note}{ref_table(blk["headers"], blk["rows"])}</div>')
+    return body
+
+
+def fuel_html(plan):
+    fu = plan.get("content", {}).get("fuel", {})
+    if not fu:
+        return ""
+    body = f'<p class="sub" style="margin-bottom:12px">{esc(fu.get("intro",""))}</p>'
+    for sec in fu.get("sections", []):
+        body += (f'<div class="card" style="margin-bottom:14px"><h3>{esc(sec["title"])}</h3>'
+                 f'{ref_table(sec["headers"], sec["rows"])}</div>')
+    return body
+
+
+def research_html(plan):
+    rs = plan.get("content", {}).get("research", {})
+    if not rs:
+        return ""
+    intro = f'<p class="sub" style="margin-bottom:12px">{esc(rs.get("intro",""))}</p>'
+    cards = ""
+    for sec in rs.get("sections", []):
+        cards += (f'<div class="card" style="margin-bottom:12px"><h3>{esc(sec["title"])}</h3>'
+                  f'<p>{esc(sec["detail"])}</p></div>')
+    return intro + cards
+
+
+def tips_html(plan):
+    tips = plan.get("content", {}).get("tips", [])
+    lis = "".join(f'<li><b>{esc(t[0])}</b> — {esc(t[1])}</li>' for t in tips)
+    return f'<div class="card"><ul class="tight">{lis}</ul></div>'
+
+
+LEGEND = ('<div class="legend">'
+          '<span><i class="chip t-easy" style="width:22px">&nbsp;</i> Easy / recovery</span>'
+          '<span><i class="chip t-long" style="width:22px">&nbsp;</i> Long run</span>'
+          '<span><i class="chip t-quality" style="width:22px">&nbsp;</i> Quality</span>'
+          '<span><i class="chip t-race" style="width:22px">&nbsp;</i> Race</span>'
+          '<span><span class="sdot" style="background:var(--good)"></span> done '
+          '<span class="sdot" style="background:var(--warn)"></span> partial '
+          '<span class="sdot" style="background:var(--accent)"></span> missed</span></div>')
 
 
 def render_runner(runner_id):
@@ -115,19 +416,14 @@ def render_runner(runner_id):
         st.error(f"No plan for {runner_id} — run plan/plan_generator.py."); return
     progress = load_json(f"progress_{runner_id}.json",
                          {"days": {}, "weeks": {}, "last_sync": None, "tracker": None})
-    meta = plan["meta"]; content = plan.get("content", {})
-    today = date.today(); race_day = datetime.fromisoformat(meta["race"]).date()
     wk_rows = progress.get("weeks", {})
+    content = plan.get("content", {})
+    today = date.today()
+    cur = next((wk["week"] for wk in plan["weeks"]
+                if datetime.fromisoformat(wk["start"]).date() <= today
+                <= datetime.fromisoformat(wk["start"]).date() + pd.Timedelta(days=6)), 1)
 
-    c = st.columns(4)
-    c[0].metric("Goal", meta["goal"], f'{meta["mp_per_km"]}/km')
-    c[1].metric("Race day", race_day.strftime("%d %b %Y"), f"{(race_day - today).days} days to go")
-    done_total = sum(w["done"] for w in wk_rows.values())
-    due = sum(w["done"] + w["partial"] + w["missed"] for w in wk_rows.values())
-    c[2].metric("Sessions ✓", done_total, f"of {due} due so far" if due else "—")
-    c[3].metric("Km logged", f'{sum(w["actual_km"] for w in wk_rows.values()):.0f}', "since start")
-    st.caption(meta.get("goal_note", ""))
-
+    # Strava control row (native Streamlit)
     a, b = st.columns([3, 1])
     a.caption(f"Last Strava sync: {progress.get('last_sync') or 'never — connect Strava or hit refresh'}")
     if b.button("🔄 Refresh from Strava", key=f"r_{runner_id}", use_container_width=True):
@@ -138,41 +434,33 @@ def render_runner(runner_id):
         except Exception as e:
             st.error(f"Sync failed: {e}")
 
-    tabs = st.tabs(["📋 Plan", "🎯 Paces", "📊 Checkpoints", "💪 Strength", "🥗 Fuel & Life", "💡 Tips"])
-    with tabs[0]:
-        plan_tab(plan, progress)
-    with tabs[1]:
-        p = content.get("paces", {})
-        if p:
-            show_table(p["headers"], p["rows"])
-            if p.get("note"): st.caption(p["note"])
-        if content.get("goals"):
-            st.markdown("**Your goals — pick MP off the checkpoints**")
-            g = content["goals"]; show_table(g["headers"], g["rows"])
-    with tabs[2]:
-        cp = content.get("checkpoints", {})
-        if cp:
-            if cp.get("intro"): st.info(cp["intro"])
-            show_table(cp["headers"], cp["rows"])
-            for n in cp.get("notes", []):
-                st.markdown(f"- {n}")
-    with tabs[3]:
-        sc = content.get("strength", {})
-        if sc:
-            st.caption(sc.get("intro", ""))
-            for blk in sc.get("blocks", []):
-                st.markdown(f"**{blk['title']}**")
-                if blk.get("note"): st.caption(blk["note"])
-                show_table(blk["headers"], blk["rows"])
-    with tabs[4]:
-        fu = content.get("fuel", {})
-        if fu:
-            st.caption(fu.get("intro", ""))
-            for sec in fu.get("sections", []):
-                st.markdown(f"**{sec['title']}**")
-                show_table(sec["headers"], sec["rows"])
-    with tabs[5]:
-        show_table(["Topic", "Detail"], content.get("tips", []))
+    # ---- single-page Stevie-style layout ----
+    banner = f'<div class="banner">{esc(content["banner"])}</div>' if content.get("banner") else ""
+    page = ['<div class="sv">', banner, facts_html(plan, wk_rows)]
+    page.append(section("The approach", "Why the plan is shaped the way it is.", approach_html(plan)))
+    page.append(section("Pace zones", f'Anchored on {plan["meta"]["goal"]} (MP {plan["meta"]["mp_per_km"]}/km).', paces_html(plan)))
+    page.append(section("Decision gates", "Checkpoints that confirm the plan is on track.", gates_html(plan)))
+    st.markdown(STYLE + "".join(page) + "</div>", unsafe_allow_html=True)
+
+    # weekly volume chart (native Streamlit)
+    if wk_rows:
+        rows = [{"Week": wk["week"], "Planned": wk["target_km"],
+                 "Actual": wk_rows.get(str(wk["week"]), {}).get("actual_km", 0)} for wk in plan["weeks"]]
+        st.markdown('<div class="sv"><div class="sec"><div class="sec-head"><h2>Weekly volume</h2>'
+                    '<p class="sub">Planned vs actual (Strava).</p></div></div></div>', unsafe_allow_html=True)
+        st.bar_chart(pd.DataFrame(rows).set_index("Week"), color=["#c7d2e0", "#2f8f7e"], height=200)
+
+    # the plan
+    plan_page = ['<div class="sv">',
+                 section("The 33-week plan", "Grouped by phase — open any week for the day-by-day.",
+                         LEGEND + weeks_html(plan, progress, cur)),
+                 section("Strength &amp; conditioning", "", strength_html(plan)),
+                 section("Fuel &amp; life", "", fuel_html(plan)),
+                 section("Tips", "", tips_html(plan)),
+                 section("Research &amp; rationale", "Why the plan is shaped this way, and what we've looked at.",
+                         research_html(plan)),
+                 "</div>"]
+    st.markdown(STYLE + "".join(plan_page), unsafe_allow_html=True)
 
 
 # ---------------- page ----------------
@@ -186,4 +474,4 @@ else:
             render_runner(r["id"])
 st.divider()
 st.caption("Adjustments are suggestions — you decide. Data © each runner, via Strava (personal use). "
-           "Auto-syncs a few times a day; hit refresh for on-demand.")
+           "Auto-syncs a few times a day; hit refresh for on-demand. Design adapted from Stevie's Sub-3:15 build.")

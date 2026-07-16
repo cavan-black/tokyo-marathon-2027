@@ -37,8 +37,8 @@
           "date": "2026-07-22",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 5 km",
-          "target_km": 5
+          "session": "Easy 7 km",
+          "target_km": 7
         },
         {
           "date": "2026-07-23",
@@ -50,16 +50,16 @@
         {
           "date": "2026-07-24",
           "dow": "Fri",
-          "type": "rest",
-          "session": "Rest",
-          "target_km": 0
+          "type": "easy",
+          "session": "Easy 5 km",
+          "target_km": 5
         },
         {
           "date": "2026-07-25",
           "dow": "Sat",
-          "type": "easy",
-          "session": "Easy 4 km",
-          "target_km": 4
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
         },
         {
           "date": "2026-07-26",
@@ -95,8 +95,8 @@
           "date": "2026-07-29",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 7 km",
-          "target_km": 7
+          "session": "Easy 10 km",
+          "target_km": 10
         },
         {
           "date": "2026-07-30",
@@ -108,16 +108,16 @@
         {
           "date": "2026-07-31",
           "dow": "Fri",
-          "type": "rest",
-          "session": "Rest",
-          "target_km": 0
+          "type": "easy",
+          "session": "Easy 8 km",
+          "target_km": 8
         },
         {
           "date": "2026-08-01",
           "dow": "Sat",
-          "type": "easy",
-          "session": "Easy 6 km",
-          "target_km": 6
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
         },
         {
           "date": "2026-08-02",
@@ -153,8 +153,8 @@
           "date": "2026-08-05",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 9 km",
-          "target_km": 9
+          "session": "Easy 12 km",
+          "target_km": 12
         },
         {
           "date": "2026-08-06",
@@ -166,16 +166,16 @@
         {
           "date": "2026-08-07",
           "dow": "Fri",
-          "type": "rest",
-          "session": "Rest",
-          "target_km": 0
+          "type": "easy",
+          "session": "Easy 10 km",
+          "target_km": 10
         },
         {
           "date": "2026-08-08",
           "dow": "Sat",
-          "type": "easy",
-          "session": "Easy 7 km",
-          "target_km": 7
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
         },
         {
           "date": "2026-08-09",
@@ -211,8 +211,8 @@
           "date": "2026-08-12",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 6 km",
-          "target_km": 6
+          "session": "Easy 9 km",
+          "target_km": 9
         },
         {
           "date": "2026-08-13",
@@ -224,16 +224,16 @@
         {
           "date": "2026-08-14",
           "dow": "Fri",
-          "type": "rest",
-          "session": "Rest",
-          "target_km": 0
+          "type": "easy",
+          "session": "Easy 7 km",
+          "target_km": 7
         },
         {
           "date": "2026-08-15",
           "dow": "Sat",
-          "type": "easy",
-          "session": "Easy 6 km",
-          "target_km": 6
+          "type": "rest",
+          "session": "Rest",
+          "target_km": 0
         },
         {
           "date": "2026-08-16",
@@ -529,7 +529,7 @@
           "date": "2026-09-20",
           "dow": "Sun",
           "type": "long",
-          "session": "24 km easy + last 4 km relaxed @ MP",
+          "session": "24 km easy",
           "target_km": 24
         }
       ]
@@ -913,8 +913,8 @@
         {
           "date": "2026-11-05",
           "dow": "Thu",
-          "type": "quality",
-          "session": "MP tempo: 3×4 km @ MP, 2 min float",
+          "type": "easy",
+          "session": "Medium-long 16 km easy",
           "target_km": 16
         },
         {
@@ -1029,8 +1029,8 @@
         {
           "date": "2026-11-19",
           "dow": "Thu",
-          "type": "quality",
-          "session": "MP tempo: 2×5 km @ 4:01/km (MP), 3 min float",
+          "type": "easy",
+          "session": "Medium-long 16 km easy",
           "target_km": 16
         },
         {
@@ -1109,7 +1109,7 @@
           "date": "2026-11-29",
           "dow": "Sun",
           "type": "long",
-          "session": "32 km w/ 3×5 km @ MP in 2nd half",
+          "session": "32 km easy (recovery weekend — no MP)",
           "target_km": 32
         }
       ]
@@ -1145,8 +1145,8 @@
         {
           "date": "2026-12-03",
           "dow": "Thu",
-          "type": "quality",
-          "session": "MP tempo: 3×4 km @ MP, 2 min float",
+          "type": "easy",
+          "session": "Medium-long 16 km easy",
           "target_km": 16
         },
         {
@@ -1225,7 +1225,7 @@
           "date": "2026-12-13",
           "dow": "Sun",
           "type": "long",
-          "session": "32 km, last 12 km @ MP",
+          "session": "32 km easy (post-race — keep it genuinely easy)",
           "target_km": 32
         }
       ]
@@ -1261,8 +1261,8 @@
         {
           "date": "2026-12-17",
           "dow": "Thu",
-          "type": "quality",
-          "session": "MP tempo: 2×5 km @ 4:01/km (MP), 3 min float",
+          "type": "easy",
+          "session": "Medium-long 16 km easy",
           "target_km": 16
         },
         {
@@ -1399,7 +1399,7 @@
           "date": "2027-01-03",
           "dow": "Sun",
           "type": "long",
-          "session": "32 km w/ 2×10 km @ MP",
+          "session": "32 km easy (recovery weekend — no MP)",
           "target_km": 32
         }
       ]
@@ -1435,8 +1435,8 @@
         {
           "date": "2027-01-07",
           "dow": "Thu",
-          "type": "quality",
-          "session": "Medium-long 18 km w/ 10 km @ MP",
+          "type": "easy",
+          "session": "Medium-long 17 km easy",
           "target_km": 17
         },
         {
@@ -1493,8 +1493,8 @@
         {
           "date": "2027-01-14",
           "dow": "Thu",
-          "type": "quality",
-          "session": "MP: 2×8 km @ MP, 3 min float",
+          "type": "easy",
+          "session": "Medium-long 17 km easy",
           "target_km": 17
         },
         {
@@ -1551,7 +1551,7 @@
         {
           "date": "2027-01-21",
           "dow": "Thu",
-          "type": "quality",
+          "type": "easy",
           "session": "Medium-long 17 km easy",
           "target_km": 17
         },
@@ -1631,7 +1631,7 @@
           "date": "2027-01-31",
           "dow": "Sun",
           "type": "long",
-          "session": "32 km, last 14 km @ MP",
+          "session": "32 km easy (recovery weekend — no MP)",
           "target_km": 32
         }
       ]
@@ -1667,8 +1667,8 @@
         {
           "date": "2027-02-04",
           "dow": "Thu",
-          "type": "quality",
-          "session": "Medium-long 18 km w/ 10 km @ MP",
+          "type": "easy",
+          "session": "Medium-long 17 km easy",
           "target_km": 17
         },
         {
@@ -1747,7 +1747,7 @@
           "date": "2027-02-14",
           "dow": "Sun",
           "type": "long",
-          "session": "30 km steady, last 8 km @ MP — FINAL long run",
+          "session": "30 km easy — FINAL long run, keep it relaxed",
           "target_km": 30
         }
       ]
@@ -1784,7 +1784,7 @@
           "date": "2027-02-18",
           "dow": "Thu",
           "type": "easy",
-          "session": "MP: 2×3 km @ 4:01/km, 3 min jog",
+          "session": "Easy 8 km + 4×20s strides",
           "target_km": 8
         },
         {
@@ -1985,7 +1985,7 @@
           "20s pickups, not a workout"
         ]
       ],
-      "note": "Run easy days and ALL doubles genuinely easy — conversational. Keep the 3 quality days (Tue/Thu/Sun) as the only hard efforts."
+      "note": "Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard long-run weekends always alternate with easy ones."
     },
     "checkpoints": {
       "intro": "2:50 is the A-goal; your PRs predict ~3:06–3:27, and this build targets the gap with volume. Don't lock race-day pace until the Wk-20 half.",
@@ -2023,7 +2023,8 @@
       ],
       "notes": [
         "Peak ~118 km — weekly volume is the biggest lever for marathon time, and the extra should be EASY miles (your endurance lags your speed).",
-        "6 run-days + doubles, Monday kept as a full rest day.",
+        "Rest days are Monday (always) and Saturday in the re-entry weeks; race-week Friday rest is the one exception.",
+        "Hard long runs alternate with easy ones — never two hard long-run weekends in a row, and the weekends before/after the Wk-20 half are easy.",
         "Injury risk is about ramp rate, not the ceiling — ~7–10% weekly steps; respect cut-back weeks (4,8,11,17,23).",
         "If 118 km proves unrealistic, the ~105 km version is still solidly sub-3."
       ]
@@ -2320,6 +2321,43 @@
               "Heavy legs, rising resting HR, poor sleep = under-recovery. Take the easy day easy or swap to rest. Missing one session to absorb training is smart."
             ]
           ]
+        }
+      ]
+    },
+    "research": {
+      "intro": "This plan isn't arbitrary — the phase structure, cut-back placement, hard/easy alternation and rest-day rules below are each grounded in specific training-science sources, reviewed 2026-07.",
+      "sections": [
+        {
+          "title": "Phase structure (5 mesocycles)",
+          "detail": "Base/Aerobic → Threshold intro → Lactate-Threshold + MP intro → Marathon-Specific (peak) → Taper. This matches the consensus shape across Jack Daniels (Running Formula phases I–IV), Pete Pfitzinger (Advanced Marathoning: Base / LT / Race-Prep / Taper), and Renato Canova's funnel model (General → Fundamental → Special → Specific → short taper) — all converge on 4–5 phases for a build this long, with taper length staying fixed at 2–3 weeks regardless of total plan length."
+        },
+        {
+          "title": "Cut-back (deload) weeks",
+          "detail": "Placed every ~3–6 weeks, cutting volume ~15–25%. Sourced from Pfitzinger's step-back weeks and the broader coaching consensus (Laura Norris, RunnersConnect) of 15–33% volume drops every 3–4 weeks to let fitness consolidate before the next load increase."
+        },
+        {
+          "title": "Hard/easy long-run alternation (added 2026-07-16)",
+          "detail": "Marathon-pace long runs now strictly alternate with easy long runs — no two hard long-run weekends back-to-back, and the weekends either side of each tune-up half are forced easy. Basis: single-run distance/intensity spikes are a stronger injury predictor than weekly-volume jumps (JOSPT running-injury literature), and \"shock microcycles\" (stacking hard efforts) are explicitly not recommended for sub-elite runners — steady progressive/undulating loading with regular relief outperforms them for this population."
+        },
+        {
+          "title": "Max 2 hard days per week",
+          "detail": "Quality sessions are capped at two per week (e.g. Tue quality + EITHER Thu quality OR a hard Sunday MP long run, never all three) — consistent with polarized/pyramidal training research (Stephen Seiler) showing the bulk of volume should stay easy even as the marathon-specific phase shifts intensity distribution from ~80/20 toward ~70/30 threshold-and-MP-heavy work."
+        },
+        {
+          "title": "Rest days fixed to Monday + Saturday",
+          "detail": "Runner preference, applied without compromising the two hard-day cap or long-run alternation above."
+        },
+        {
+          "title": "Marathon-pace (MP) progression timing",
+          "detail": "MP segments enter the long run roughly 6–8 weeks before the peak-volume block, starting short and building toward the largest MP-block long runs at peak — the standard Pfitzinger/Hansons/Luke Humphrey pattern for when MP-specific work pays off without excess injury risk."
+        },
+        {
+          "title": "Taper",
+          "detail": "3-week taper, volume cut cumulatively (~roughly 75% → 50% → 30–35% of peak by race week), intensity maintained and session frequency cut ≤20% — the most robust finding in the taper literature (Mujika & Padilla's taper meta-analyses)."
+        },
+        {
+          "title": "Altitude training — considered, not included",
+          "detail": "Discussed 2026-07-16: a single week at altitude gives none of the hematological benefit (EPO/red-cell-mass adaptations need a minimum ~3–4 weeks per Levine & Stray-Gundersen's \"live high, train low\" research) and mostly adds hypoxic stress, poor sleep and slower paces at the wrong moment. Verdict: skip a 1-week trip; a proper 3+ week camp placed in the aerobic-base phase would be worth a separate conversation if it becomes an option."
         }
       ]
     },

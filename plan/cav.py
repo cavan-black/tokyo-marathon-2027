@@ -17,6 +17,10 @@ LR  = [12,14,16,14,
        32,34,28,34,32,35,30,
        26,18,42.195]
 
+# Hard (MP-work) long-run weekends — always followed by an easy long-run weekend.
+HARD_LR = {16, 18, 20, 22, 25, 27, 29, 31}
+TT_WEEKS = {9, 13, 26}
+
 def phase(w):
     if w <= 4:  return "Re-entry / Rebuild"
     if w <= 13: return "Aerobic Base"
@@ -52,19 +56,24 @@ def thu(w):
         lib=["MP: 3×6 km @ 4:01/km, 3 min jog","Medium-long 18 km w/ 10 km @ MP",
              "MP: 2×8 km @ MP, 3 min float","Medium-long 17 km easy"]
         return lib[(w-24)%len(lib)], "quality"
-    return {31:"MP: 2×3 km @ 4:01/km, 3 min jog",32:"Easy 8 km + 6×20s strides",33:"Rest or easy 5 km"}[w], "easy"
+    return {31:"Easy 8 km + 4×20s strides",32:"Easy 8 km + 6×20s strides",33:"Rest or easy 5 km"}[w], "easy"
 
 def sun(w):
     d=LR[w-1]
     txt={16:"30 km, last 8 km @ MP",18:"32 km, last 10 km @ MP",
-        19:"32 km w/ 3×5 km @ MP in 2nd half",20:"TUNE-UP: Half-marathon race (all-out) + w/u & c/d",
-        21:"32 km, last 12 km @ MP",22:"34 km, last 12 km @ MP",
-        24:"32 km w/ 2×10 km @ MP",25:"34 km, MIDDLE 18 km @ MP (key session)",
-        27:"34 km w/ 3×6 km @ MP",28:"32 km, last 14 km @ MP",
-        29:"35 km, last 12 km @ MP (dress rehearsal)",30:"30 km steady, last 8 km @ MP — FINAL long run",
+        19:"32 km easy (recovery weekend — no MP)",
+        20:"TUNE-UP: Half-marathon race (all-out) + w/u & c/d",
+        21:"32 km easy (post-race — keep it genuinely easy)",
+        22:"34 km, last 12 km @ MP",
+        24:"32 km easy (recovery weekend — no MP)",
+        25:"34 km, MIDDLE 18 km @ MP (key session)",
+        27:"34 km w/ 3×6 km @ MP",
+        28:"32 km easy (recovery weekend — no MP)",
+        29:"35 km, last 12 km @ MP (dress rehearsal)",
+        30:"30 km easy — FINAL long run, keep it relaxed",
         31:"26 km, last 8 km @ MP",32:"18 km easy w/ 4×1 km @ MP",
         33:"RACE DAY — Tokyo Marathon · 2:50 target · 4:01/km · 6:29/mi"}
-    t = txt.get(w, f"{d:g} km easy" + (" + last 4 km relaxed @ MP" if 5 <= w <= 13 and w % 3 == 0 else ""))
+    t = txt.get(w, f"{d:g} km easy" + (" + last 4 km relaxed @ MP" if w in (6,12) else ""))
     return t, ("race" if w in (20,33) else "long")
 
 def sat(w):
@@ -89,16 +98,29 @@ def build_week(w):
     days["Mon"]=("Rest" if (reentry or w==33) else "Rest / mobility (full rest day)","rest",0)
     tue_km=qkm(w,"tue"); thu_km=qkm(w,"thu")
     if 4<=w<=30: tue_txt += "  +S&C A"
-    known=lr+tue_km+thu_km+((sat_fixed or 0) if w in (9,13,26) else 0)
+    # Max 2 hard days/week: Thu is quality only when Sunday's long run is easy and there's no Sat TT
+    hard_sun = sun_type == "race" or w in HARD_LR
+    if thu_type == "quality" and (hard_sun or w in TT_WEEKS):
+        thu_txt, thu_type = f"Medium-long {thu_km} km easy", "easy"
+    known=lr+tue_km+thu_km+((sat_fixed or 0) if w in TT_WEEKS else 0)
     if w==33: known=0
     pool=max(v-known,0)
-    fri_km=round(pool*0.28); wed_km=round(pool*0.40); sat_km=max(pool-fri_km-wed_km,0)
+    if reentry:
+        wed_km=round(pool*0.55); fri_km=max(pool-wed_km,0); sat_km=0
+    else:
+        fri_km=round(pool*0.28); wed_km=round(pool*0.40); sat_km=max(pool-fri_km-wed_km,0)
     wed_txt=f"Easy {wed_km} km"+("" if reentry else " + 6×20s strides")
-    fri_txt=("Rest" if (reentry or w==33) else f"Recovery {fri_km} km easy"+("  +light S&C" if 31<=w<=32 else "  +S&C B"))
-    fri_type="rest" if (reentry or w==33) else "recovery"
-    fri_kmv=0 if fri_type=="rest" else fri_km
-    if sat_txt is None:
-        sat_txt=f"Easy {sat_km} km"+("" if reentry else " + strides"); sat_kmv=sat_km
+    if reentry:
+        fri_txt,fri_type,fri_kmv=f"Easy {fri_km} km","easy",fri_km
+    elif w==33:
+        fri_txt,fri_type,fri_kmv="Rest","rest",0
+    else:
+        fri_txt=f"Recovery {fri_km} km easy"+("  +light S&C" if 31<=w<=32 else "  +S&C B")
+        fri_type,fri_kmv="recovery",fri_km
+    if reentry:
+        sat_txt,sat_type,sat_kmv="Rest","rest",0
+    elif sat_txt is None:
+        sat_txt=f"Easy {sat_km} km + strides"; sat_kmv=sat_km
     else:
         sat_kmv=sat_fixed if sat_fixed else sat_km
     if 5<=w<=30:
@@ -128,8 +150,9 @@ def content():
             ["10K pace", "3:36", "5:47", "Longer VO2 / race sharpeners"],
             ["Interval (I, 5K)", "3:24–3:32", "5:29–5:41", "VO2 max reps"],
             ["Strides", "~3:10 feel", "relaxed-fast", "20s pickups, not a workout"]],
-            "note": "Run easy days and ALL doubles genuinely easy — conversational. Keep the 3 quality days "
-                    "(Tue/Thu/Sun) as the only hard efforts."},
+            "note": "Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
+                    "Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard "
+                    "long-run weekends always alternate with easy ones."},
         "checkpoints": {
             "intro": "2:50 is the A-goal; your PRs predict ~3:06–3:27, and this build targets the gap with volume. "
                      "Don't lock race-day pace until the Wk-20 half.",
@@ -140,11 +163,13 @@ def content():
                 ["Race · 7 Mar", "Marathon", "2:50 = 4:01/km", "Start at CONFIRMED pace. Even splits."]],
             "notes": [
                 "Peak ~118 km — weekly volume is the biggest lever for marathon time, and the extra should be EASY miles (your endurance lags your speed).",
-                "6 run-days + doubles, Monday kept as a full rest day.",
+                "Rest days are Monday (always) and Saturday in the re-entry weeks; race-week Friday rest is the one exception.",
+                "Hard long runs alternate with easy ones — never two hard long-run weekends in a row, and the weekends before/after the Wk-20 half are easy.",
                 "Injury risk is about ramp rate, not the ceiling — ~7–10% weekly steps; respect cut-back weeks (4,8,11,17,23).",
                 "If 118 km proves unrealistic, the ~105 km version is still solidly sub-3."]},
         "strength": C.strength("1–13", "14–30", football=False),
         "fuel": C.fuel(football=False, volume_note="it matters more with 100+ km weeks"),
+        "research": C.RESEARCH_NOTES,
         "tips": [
             ["Volume is the big lever", "Marathon time tracks weekly mileage more than any other trainable factor — that's why the peak is ~118 km. Add it as EASY miles."],
             ["Doubles > longer hard runs", "Two short easy runs add volume with less injury risk than lengthening workouts — that's how you reach ~118 km with a rest day intact."],
