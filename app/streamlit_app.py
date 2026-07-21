@@ -195,6 +195,27 @@ STYLE = """<style>
 @keyframes celebrateIn{from{opacity:0;transform:translateY(-8px) scale(.97);}to{opacity:1;transform:translateY(0) scale(1);}}
 @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-4px);}}
 .sv .celebrate.todo{background:linear-gradient(135deg,var(--pA),var(--pB));}
+
+/* ---- analytics ---- */
+.sv .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:16px;}
+.sv .stat{background:var(--surface);padding:13px 16px;}
+.sv .stat .k{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint);}
+.sv .stat .v{font-size:19px;font-weight:700;margin-top:3px;font-family:var(--font-mono);}
+.sv .predict-card{display:flex;align-items:center;gap:20px;padding:20px 22px;background:var(--surface);
+  border:1px solid var(--line);border-radius:var(--radius);flex-wrap:wrap;}
+.sv .predict-time{font-family:var(--font-mono);font-weight:800;font-size:34px;color:var(--accent-ink);line-height:1;}
+.sv .predict-meta{color:var(--muted);font-size:12.5px;}
+.sv .acwr-band{position:relative;height:10px;border-radius:999px;background:linear-gradient(90deg,
+  var(--pC) 0%, var(--good) 32%, var(--good) 56%, var(--pC) 78%, var(--accent) 100%);margin:10px 0 4px;}
+.sv .acwr-marker{position:absolute;top:-4px;width:3px;height:18px;background:var(--ink);border-radius:2px;
+  transform:translateX(-50%);}
+.sv .heatmap-wrap{overflow-x:auto;padding-bottom:8px;}
+.sv .heatmap{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,13px);gap:3px;width:max-content;}
+.sv .hc{width:13px;height:13px;border-radius:3px;background:var(--line);}
+.sv .heatmap-legend{display:flex;align-items:center;gap:5px;margin-top:8px;font-size:11px;color:var(--muted);}
+.sv .heatmap-legend .hc{width:11px;height:11px;}
+@media (max-width:820px){.sv .stat-row{grid-template-columns:repeat(2,1fr);}}
 </style>"""
 
 TRIP_TAG = {"travel": ("Travel", "t-rest"), "city": ("Sightseeing", "t-recovery"),
@@ -642,6 +663,244 @@ LEGEND = ('<div class="legend">'
           '<span class="sdot" style="background:var(--accent)"></span> missed</span></div>')
 
 
+# ---------------- Analytics ----------------
+
+def decode_polyline(encoded):
+    """Google encoded-polyline decoder (Strava's summary_polyline format). No external dep."""
+    if not encoded:
+        return []
+    points, index, lat, lng = [], 0, 0, 0
+    n = len(encoded)
+    while index < n:
+        for is_lat in (True, False):
+            shift, result = 0, 0
+            while True:
+                b = ord(encoded[index]) - 63
+                index += 1
+                result |= (b & 0x1f) << shift
+                shift += 5
+                if b < 0x20:
+                    break
+            d = ~(result >> 1) if (result & 1) else (result >> 1)
+            if is_lat:
+                lat += d
+            else:
+                lng += d
+        points.append((lat / 1e5, lng / 1e5))
+    return points
+
+
+def gather_activities(progress):
+    """Flatten every logged activity out of progress['days'], tagged with the plan day-type."""
+    out = []
+    for dt, d in progress.get("days", {}).items():
+        for a in (d.get("activities") or []):
+            if not a.get("distance_km"):
+                continue
+            out.append({**a, "date": dt, "day_type": d.get("type"), "session": d.get("session")})
+    out.sort(key=lambda a: a["date"])
+    return out
+
+
+def _fmt_hms(secs):
+    if not secs:
+        return "—"
+    secs = int(secs)
+    h, rem = divmod(secs, 3600)
+    m, s = divmod(rem, 60)
+    return f"{h}:{m:02d}:{s:02d}" if h else f"{m}:{s:02d}"
+
+
+def analytics_headline_html(acts):
+    if not acts:
+        return '<p class="sub">No runs logged yet — connect Strava and hit refresh.</p>'
+    total_km = sum(a["distance_km"] for a in acts)
+    total_s = sum(a.get("moving_time_s") or 0 for a in acts)
+    total_elev = sum(a.get("elev_gain_m") or 0 for a in acts)
+    hrs = [a["avg_hr"] for a in acts if a.get("avg_hr")]
+    avg_hr = sum(hrs) / len(hrs) if hrs else None
+    avg_pace = (total_s / 60.0) / total_km if total_km > 0 else None
+    cells = [
+        ("Runs logged", str(len(acts))),
+        ("Total distance", f'{total_km:.0f} km'),
+        ("Total time", _fmt_hms(total_s)),
+        ("Total elevation", f'{total_elev:.0f} m'),
+        ("Avg pace", _fmt_hms(avg_pace * 60) + "/km" if avg_pace else "—"),
+        ("Avg HR", f'{avg_hr:.0f} bpm' if avg_hr else "—"),
+    ]
+    return '<div class="stat-row">' + "".join(
+        f'<div class="stat"><div class="k">{esc(k)}</div><div class="v">{esc(v)}</div></div>' for k, v in cells
+    ) + '</div>'
+
+
+def pace_trend_df(acts):
+    rows = []
+    for a in acts:
+        if not a.get("pace_min_km") or a.get("day_type") == "rest":
+            continue
+        bucket = "Long" if a["day_type"] in ("long", "race") else ("Quality" if a["day_type"] in ("quality", "tt") else "Easy")
+        rows.append({"date": a["date"], "Pace (min/km)": a["pace_min_km"], "Type": bucket})
+    if not rows:
+        return None
+    df = pd.DataFrame(rows)
+    return df.pivot_table(index="date", columns="Type", values="Pace (min/km)", aggfunc="mean")
+
+
+def hr_trend_df(acts):
+    rows = [{"date": a["date"], "Avg HR": a["avg_hr"]} for a in acts if a.get("avg_hr")]
+    if len(rows) < 3:
+        return None
+    df = pd.DataFrame(rows).groupby("date").mean()
+    return df
+
+
+def acwr_series(plan, progress):
+    """Acute:chronic workload ratio — 7-day load vs the 28-day daily average x7, per day."""
+    days = progress.get("days", {})
+    all_dates = sorted(d["date"] for wk in plan["weeks"] for d in wk["days"] if d["date"] <= date.today().isoformat())
+    if len(all_dates) < 8:
+        return None, None
+    load = {dt: days.get(dt, {}).get("actual_km", 0) for dt in all_dates}
+    s = pd.Series(load).sort_index()
+    s.index = pd.to_datetime(s.index)
+    acute = s.rolling(7, min_periods=1).sum()
+    chronic = s.rolling(28, min_periods=7).mean() * 7
+    ratio = (acute / chronic).replace([float("inf")], None).dropna()
+    if ratio.empty:
+        return None, None
+    return ratio, ratio.iloc[-1]
+
+
+def acwr_band_html(current):
+    pct = max(0, min(100, (current / 2.0) * 100))
+    if current < 0.8:
+        status, color = "Undertraining a little slack", "var(--pC)"
+    elif current <= 1.3:
+        status, color = "Sweet spot", "var(--good)"
+    elif current <= 1.5:
+        status, color = "Elevated — keep an eye on it", "var(--pC)"
+    else:
+        status, color = "High spike — injury-risk zone", "var(--accent)"
+    return (f'<div class="acwr-band"><div class="acwr-marker" style="left:{pct}%"></div></div>'
+            f'<p class="sub"><b style="color:{color}">{current:.2f}</b> · {esc(status)} '
+            f'<span class="mut">(0.8–1.3 is the commonly-cited safe zone)</span></p>')
+
+
+def predict_race_time(progress):
+    days = progress.get("days", {})
+    candidates = []
+    for dt, d in days.items():
+        if d.get("type") not in ("tt", "race") or d.get("status") not in ("Done", "Partial"):
+            continue
+        for a in (d.get("activities") or []):
+            dist, t = a.get("distance_km"), a.get("moving_time_s")
+            if dist and t and dist > 1:
+                candidates.append({"date": dt, "session": d.get("session", ""), "distance_km": dist,
+                                    "time_s": t, "predicted_marathon_s": t * (42.195 / dist) ** 1.06})
+    if not candidates:
+        return None
+    return min(candidates, key=lambda c: c["predicted_marathon_s"])
+
+
+def predict_html(pred, goal_note):
+    if not pred:
+        return ('<p class="sub">No time-trial or race results logged yet — a prediction appears here once you '
+                'log a 5K/10K/half checkpoint or race. In the meantime, see the Gates tab for planned checkpoints.</p>')
+    m_s = pred["predicted_marathon_s"]
+    mp_pace = _fmt_hms((m_s / 42.195))
+    return (f'<div class="predict-card"><div><div class="predict-time">{_fmt_hms(m_s)}</div>'
+            f'<div class="predict-meta">Predicted marathon time (Riegel formula)</div></div>'
+            f'<div class="predict-meta">From {pred["distance_km"]:.1f} km in {_fmt_hms(pred["time_s"])} '
+            f'on {pred["date"]} — {esc(pred["session"][:60])}<br>Implied MP: {mp_pace}/km<br>'
+            f'{esc(goal_note)}</div></div>')
+
+
+def calendar_heatmap_html(plan, progress):
+    days_map = progress.get("days", {})
+    today_iso = date.today().isoformat()
+    all_days = [d for wk in plan["weeks"] for d in wk["days"] if d["date"] <= today_iso]
+    if not all_days:
+        return '<p class="sub">Nothing logged yet.</p>'
+    max_km = max((days_map.get(d["date"], {}).get("actual_km", 0) for d in all_days), default=0) or 1
+    cells = ""
+    for d in all_days:
+        km = days_map.get(d["date"], {}).get("actual_km", 0)
+        if d["type"] == "rest" and km <= 0:
+            bg = "var(--line)"
+        else:
+            ratio = min(1, km / max_km) if km > 0 else 0
+            bg = "var(--line)" if ratio == 0 else f"color-mix(in srgb, var(--good) {round(20+ratio*80)}%, var(--line))"
+        title = f'{d["date"]} — {km:.1f} km' if km else f'{d["date"]} — rest/no run'
+        cells += f'<div class="hc" style="background:{bg}" title="{esc(title)}"></div>'
+    return (f'<div class="heatmap-wrap"><div class="heatmap">{cells}</div>'
+            f'<div class="heatmap-legend">Less <span class="hc" style="background:var(--line)"></span>'
+            f'<span class="hc" style="background:color-mix(in srgb, var(--good) 40%, var(--line))"></span>'
+            f'<span class="hc" style="background:color-mix(in srgb, var(--good) 70%, var(--line))"></span>'
+            f'<span class="hc" style="background:color-mix(in srgb, var(--good) 100%, var(--line))"></span> More</div></div>')
+
+
+def render_analytics(plan, progress):
+    acts = gather_activities(progress)
+    st.markdown(STYLE + '<div class="sv">' +
+                section("Headline stats", "Everything logged so far this build.", analytics_headline_html(acts))
+                + "</div>", unsafe_allow_html=True)
+
+    st.markdown(STYLE + '<div class="sv"><div class="sec"><div class="sec-head"><h2>Pace trend</h2>'
+                '<p class="sub">Logged pace by session type over time.</p></div></div></div>', unsafe_allow_html=True)
+    pdf = pace_trend_df(acts)
+    if pdf is not None and not pdf.empty:
+        st.line_chart(pdf, height=260)
+    else:
+        st.caption("Not enough paced runs logged yet.")
+
+    st.markdown(STYLE + '<div class="sv"><div class="sec"><div class="sec-head"><h2>Heart rate trend</h2>'
+                '<p class="sub">Average HR per run — falling HR at the same pace is a fitness signal.</p></div></div></div>',
+                unsafe_allow_html=True)
+    hdf = hr_trend_df(acts)
+    if hdf is not None:
+        st.line_chart(hdf, height=220, color=["#ce2e3b"])
+    else:
+        st.caption("Not enough heart-rate data logged yet (needs a HR strap/watch on Strava).")
+
+    ratio_series, current_ratio = acwr_series(plan, progress)
+    st.markdown(STYLE + '<div class="sv">' +
+                section("Training load (ACWR)", "Acute (7-day) vs chronic (28-day) load ratio.",
+                        acwr_band_html(current_ratio) if current_ratio is not None else
+                        '<p class="sub">Not enough logged history yet — needs a few weeks of runs.</p>')
+                + "</div>", unsafe_allow_html=True)
+    if ratio_series is not None:
+        st.line_chart(ratio_series.rename("ACWR"), height=200)
+
+    st.markdown(STYLE + '<div class="sv">' +
+                section("Race-time prediction", "Riegel formula from your best logged checkpoint/race effort.",
+                        predict_html(predict_race_time(progress), plan["meta"].get("goal_note", "")))
+                + "</div>", unsafe_allow_html=True)
+
+    st.markdown(STYLE + '<div class="sv">' +
+                section("Consistency heatmap", "Every day of the plan so far — darker = more distance.",
+                        calendar_heatmap_html(plan, progress)) + "</div>", unsafe_allow_html=True)
+
+    st.markdown(STYLE + '<div class="sv"><div class="sec"><div class="sec-head"><h2>Route map</h2>'
+                '<p class="sub">Every logged run with GPS data, plotted together.</p></div></div></div>',
+                unsafe_allow_html=True)
+    paths = []
+    for a in acts:
+        pts = decode_polyline(a.get("polyline"))
+        if len(pts) > 1:
+            paths.append({"path": [[lng, lat] for lat, lng in pts], "name": a.get("name", "")})
+    if paths:
+        import pydeck as pdk
+        all_lats = [p[1] for path in paths for p in path["path"]]
+        all_lngs = [p[0] for path in paths for p in path["path"]]
+        view = pdk.ViewState(latitude=sum(all_lats) / len(all_lats), longitude=sum(all_lngs) / len(all_lngs), zoom=10)
+        layer = pdk.Layer("PathLayer", data=paths, get_path="path", get_color=[206, 46, 59, 160],
+                           width_min_pixels=2, pickable=True)
+        st.pydeck_chart(pdk.Deck(layers=[layer], initial_view_state=view, map_style=None,
+                                  tooltip={"text": "{name}"}))
+    else:
+        st.caption("No GPS routes logged yet — these appear automatically once Strava activities include location data.")
+
+
 def render_runner(runner_id):
     plan = load_json(f"plan_{runner_id}.json")
     if not plan:
@@ -677,7 +936,7 @@ def render_runner(runner_id):
 
     # ---- everything else lives in subtabs (Diet Plan only shows up if a runner has one) ----
     has_diet = bool(content.get("diet"))
-    labels = ["📋 Plan", "🧭 Approach", "🎯 Paces", "🚦 Gates", "📈 Volume",
+    labels = ["📋 Plan", "🧭 Approach", "🎯 Paces", "🚦 Gates", "📈 Volume", "📊 Analytics",
               "💪 Strength", "🥗 Fuel & life"] + (["🍽️ Diet Plan"] if has_diet else []) + ["💡 Tips", "🔬 Research"]
     sub = st.tabs(labels)
     i = iter(range(len(labels)))
@@ -707,6 +966,8 @@ def render_runner(runner_id):
             st.bar_chart(pd.DataFrame(rows).set_index("Week"), color=["#c7d2e0", "#2f8f7e"], height=200)
         else:
             st.caption("No synced weeks yet.")
+    with sub[next(i)]:
+        render_analytics(plan, progress)
     with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
                     section("Strength &amp; conditioning", "", strength_html(plan)) + "</div>", unsafe_allow_html=True)

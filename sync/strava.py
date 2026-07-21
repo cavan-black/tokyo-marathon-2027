@@ -59,6 +59,9 @@ def simplify(activities):
             "moving_time_s": moving,
             "pace_min_km": round(pace, 3) if pace else None,
             "avg_hr": a.get("average_heartrate"),
+            "max_hr": a.get("max_heartrate"),
             "elev_gain_m": a.get("total_elevation_gain"),
+            "start_latlng": a.get("start_latlng") or None,
+            "polyline": (a.get("map") or {}).get("summary_polyline") or None,
         })
     return runs
