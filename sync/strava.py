@@ -42,6 +42,43 @@ def get_activities(access_token, after_epoch=None, before_epoch=None, per_page=1
     return out
 
 
+def decode_polyline(encoded):
+    """Google encoded-polyline decoder (Strava's summary_polyline format)."""
+    if not encoded:
+        return []
+    points, index, lat, lng = [], 0, 0, 0
+    n = len(encoded)
+    while index < n:
+        for is_lat in (True, False):
+            shift, result = 0, 0
+            while True:
+                b = ord(encoded[index]) - 63
+                index += 1
+                result |= (b & 0x1f) << shift
+                shift += 5
+                if b < 0x20:
+                    break
+            d = ~(result >> 1) if (result & 1) else (result >> 1)
+            if is_lat:
+                lat += d
+            else:
+                lng += d
+        points.append((round(lat / 1e5, 5), round(lng / 1e5, 5)))
+    return points
+
+
+def _privacy_trimmed_route(encoded, frac=0.12, min_drop=5):
+    """Decode a route and drop a chunk off BOTH ends so the exact start/finish (often
+    home) is never stored — only the middle of the route, which is what we persist."""
+    pts = decode_polyline(encoded)
+    n = len(pts)
+    if n < 20:
+        return []  # too short to trim safely and still be meaningfully private — skip it
+    drop = max(min_drop, int(n * frac))
+    trimmed = pts[drop:n - drop]
+    return trimmed if len(trimmed) >= 5 else []
+
+
 def simplify(activities):
     """Keep only running activities and the fields we need for matching."""
     runs = []
@@ -61,7 +98,8 @@ def simplify(activities):
             "avg_hr": a.get("average_heartrate"),
             "max_hr": a.get("max_heartrate"),
             "elev_gain_m": a.get("total_elevation_gain"),
-            "start_latlng": a.get("start_latlng") or None,
-            "polyline": (a.get("map") or {}).get("summary_polyline") or None,
+            # Privacy: never store the raw start point or full polyline — only a
+            # trimmed middle section (start/finish, usually home, is dropped).
+            "route": _privacy_trimmed_route((a.get("map") or {}).get("summary_polyline")),
         })
     return runs

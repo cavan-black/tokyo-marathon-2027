@@ -215,6 +215,18 @@ STYLE = """<style>
 .sv .hc{width:13px;height:13px;border-radius:3px;background:var(--line);}
 .sv .heatmap-legend{display:flex;align-items:center;gap:5px;margin-top:8px;font-size:11px;color:var(--muted);}
 .sv .heatmap-legend .hc{width:11px;height:11px;}
+.sv .matrix-wrap{overflow-x:auto;padding-bottom:8px;}
+.sv table.matrix{border-collapse:collapse;}
+.sv table.matrix td{padding:1px;}
+.sv .mx-lbl{font-size:10px;color:var(--muted);font-family:var(--font-mono);padding-right:8px !important;
+  white-space:nowrap;position:sticky;left:0;background:var(--paper);}
+.sv .mx-wk{font-size:8.5px;color:var(--faint);text-align:center;font-family:var(--font-mono);}
+.sv .mx-cell{width:12px;height:12px;border-radius:2px;}
+.sv .dp-row{display:flex;gap:6px;}
+.sv .dp-cell{flex:1;padding:12px 4px;border-radius:10px;text-align:center;font-size:11px;font-weight:700;
+  color:var(--ink);display:flex;flex-direction:column;gap:4px;}
+.sv .dp-cell b{font-family:var(--font-mono);font-weight:800;font-size:12.5px;}
+.sv .dp-cell.empty{background:var(--line);color:var(--faint);}
 @media (max-width:820px){.sv .stat-row{grid-template-columns:repeat(2,1fr);}}
 </style>"""
 
@@ -665,31 +677,6 @@ LEGEND = ('<div class="legend">'
 
 # ---------------- Analytics ----------------
 
-def decode_polyline(encoded):
-    """Google encoded-polyline decoder (Strava's summary_polyline format). No external dep."""
-    if not encoded:
-        return []
-    points, index, lat, lng = [], 0, 0, 0
-    n = len(encoded)
-    while index < n:
-        for is_lat in (True, False):
-            shift, result = 0, 0
-            while True:
-                b = ord(encoded[index]) - 63
-                index += 1
-                result |= (b & 0x1f) << shift
-                shift += 5
-                if b < 0x20:
-                    break
-            d = ~(result >> 1) if (result & 1) else (result >> 1)
-            if is_lat:
-                lat += d
-            else:
-                lng += d
-        points.append((lat / 1e5, lng / 1e5))
-    return points
-
-
 def gather_activities(progress):
     """Flatten every logged activity out of progress['days'], tagged with the plan day-type."""
     out = []
@@ -839,6 +826,59 @@ def calendar_heatmap_html(plan, progress):
             f'<span class="hc" style="background:color-mix(in srgb, var(--good) 100%, var(--line))"></span> More</div></div>')
 
 
+DOW_ORDER = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
+
+def week_day_matrix_html(plan, progress):
+    """Week (columns) x day-of-week (rows) distance matrix — a true grid, not a linear strip."""
+    days_map = progress.get("days", {})
+    today_iso = date.today().isoformat()
+    weeks = [wk for wk in plan["weeks"] if wk["days"][0]["date"] <= today_iso]
+    if not weeks:
+        return '<p class="sub">Nothing logged yet.</p>'
+    max_km = max((days_map.get(d["date"], {}).get("actual_km", 0) for wk in weeks for d in wk["days"]), default=0) or 1
+    header = "<tr><td></td>" + "".join(f'<td class="mx-wk">{wk["week"]}</td>' for wk in weeks) + "</tr>"
+    rows = ""
+    for dow in DOW_ORDER:
+        cells = f'<td class="mx-lbl">{dow}</td>'
+        for wk in weeks:
+            d = next((dd for dd in wk["days"] if dd["dow"] == dow), None)
+            km = days_map.get(d["date"], {}).get("actual_km", 0) if d else 0
+            ratio = min(1, km / max_km) if km > 0 else 0
+            bg = "var(--line)" if ratio == 0 else f"color-mix(in srgb, var(--pB) {round(20+ratio*80)}%, var(--line))"
+            title = f'Wk {wk["week"]} {dow} ({d["date"] if d else ""}) — {km:.1f} km' if d else ""
+            cells += f'<td><div class="mx-cell" style="background:{bg}" title="{esc(title)}"></div></td>'
+        rows += f"<tr>{cells}</tr>"
+    return f'<div class="matrix-wrap"><table class="matrix">{header}{rows}</table></div>'
+
+
+def dow_pace_html(acts):
+    """Average pace by day-of-week — a one-row heat strip showing your fastest/slowest days."""
+    from collections import defaultdict
+    sums = defaultdict(list)
+    for a in acts:
+        if not a.get("pace_min_km"):
+            continue
+        dow = datetime.fromisoformat(a["date"]).strftime("%a")
+        sums[dow].append(a["pace_min_km"])
+    if not sums:
+        return '<p class="sub">Not enough paced runs logged yet.</p>'
+    paces = {k: sum(v) / len(v) for k, v in sums.items()}
+    vals = list(paces.values())
+    lo, hi = min(vals), max(vals)
+    cells = ""
+    for dow in DOW_ORDER:
+        if dow not in paces:
+            cells += f'<div class="dp-cell empty"><span>{dow}</span></div>'
+            continue
+        p = paces[dow]
+        ratio = 1 - ((p - lo) / (hi - lo) if hi > lo else 0.5)  # faster => more saturated
+        bg = f"color-mix(in srgb, var(--good) {round(25+ratio*75)}%, var(--line))"
+        cells += (f'<div class="dp-cell" style="background:{bg}" title="{esc(dow)}: {_fmt_hms(p*60)}/km">'
+                  f'<span>{dow}</span><b>{_fmt_hms(p*60)}</b></div>')
+    return f'<div class="dp-row">{cells}</div>'
+
+
 def render_analytics(plan, progress):
     acts = gather_activities(progress)
     st.markdown(STYLE + '<div class="sv">' +
@@ -880,14 +920,20 @@ def render_analytics(plan, progress):
                 section("Consistency heatmap", "Every day of the plan so far — darker = more distance.",
                         calendar_heatmap_html(plan, progress)) + "</div>", unsafe_allow_html=True)
 
+    st.markdown(STYLE + '<div class="sv">' +
+                section("Week × day-of-week matrix", "Same data, laid out as a true grid — spot which weekday slips first.",
+                        week_day_matrix_html(plan, progress)) + "</div>", unsafe_allow_html=True)
+
+    st.markdown(STYLE + '<div class="sv">' +
+                section("Pace by day of week", "Where you're fastest/slowest across the week.",
+                        dow_pace_html(acts)) + "</div>", unsafe_allow_html=True)
+
     st.markdown(STYLE + '<div class="sv"><div class="sec"><div class="sec-head"><h2>Route map</h2>'
-                '<p class="sub">Every logged run with GPS data, plotted together.</p></div></div></div>',
+                '<p class="sub">Every logged run with GPS, plotted together — start/finish points are trimmed '
+                'off each route before it\'s ever stored, so home isn\'t pinpointed.</p></div></div></div>',
                 unsafe_allow_html=True)
-    paths = []
-    for a in acts:
-        pts = decode_polyline(a.get("polyline"))
-        if len(pts) > 1:
-            paths.append({"path": [[lng, lat] for lat, lng in pts], "name": a.get("name", "")})
+    paths = [{"path": [[lng, lat] for lat, lng in a["route"]], "name": a.get("name", "")}
+             for a in acts if a.get("route") and len(a["route"]) > 1]
     if paths:
         import pydeck as pdk
         all_lats = [p[1] for path in paths for p in path["path"]]
@@ -898,7 +944,8 @@ def render_analytics(plan, progress):
         st.pydeck_chart(pdk.Deck(layers=[layer], initial_view_state=view, map_style=None,
                                   tooltip={"text": "{name}"}))
     else:
-        st.caption("No GPS routes logged yet — these appear automatically once Strava activities include location data.")
+        st.caption("No GPS routes logged yet — these appear automatically once Strava activities include location data "
+                   "(short runs under ~1-2 km are skipped so trimming stays meaningful).")
 
 
 def render_runner(runner_id):

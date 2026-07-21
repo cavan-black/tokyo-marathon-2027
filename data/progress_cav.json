@@ -31,7 +31,9 @@
           "moving_time_s": 3314,
           "pace_min_km": 5.521,
           "avg_hr": 141.9,
-          "elev_gain_m": 0
+          "max_hr": 152.0,
+          "elev_gain_m": 0,
+          "route": []
         }
       ]
     },
@@ -3182,7 +3184,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-07-21T13:31:33+00:00",
+  "last_sync": "2026-07-21T13:55:15+00:00",
   "tracker": {
     "threshold_latest": null,
     "mp_latest": null
