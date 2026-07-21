@@ -486,7 +486,11 @@ def render_runner(runner_id):
         try:
             with st.spinner("Pulling from Strava…"):
                 res = refresh_runner(runner_id)
-            st.warning("No Strava creds for this runner (see README).") if res is None else (st.success("Synced!"), st.rerun())
+            if res is None:
+                st.warning("No Strava creds for this runner (see README).")
+            else:
+                st.success("Synced!")
+                st.rerun()
         except Exception as e:
             st.error(f"Sync failed: {e}")
 
