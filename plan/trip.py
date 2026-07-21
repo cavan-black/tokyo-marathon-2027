@@ -159,20 +159,24 @@ def budget():
             ["Domestic rail", "€150", "€225", "€400"],
             ["Domestic flights", "€180", "€265", "€550"],
             ["Accommodation", "€700", "€1,090", "€7,000"],
-            ["Niseko lift passes (3 days)", "€150", "€162", "€350"],
+            ["Niseko lift passes (3 days)", "€200", "€200", "€200"],
             ["Food / local transport / incidentals", "€1,600", "€2,175", "€6,000"],
-            ["Activities & tours", "€85", "€120", "€600"],
+            ["Activities & tours (incl. private lessons/guide in Luxury)", "€85", "€120", "€850"],
         ]},
         "durations": {"headers": ["Duration", "Bare minimum", "Middle", "Luxury"], "rows": [
-            ["4-week (30 days, full itinerary)", "≈€3,600", "≈€5,000", "≈€18,800"],
-            ["3-week (~23 days)*", "≈€3,100", "≈€4,000", "≈€15,600"],
+            ["4-week (30 days, full itinerary)", "≈€3,650", "≈€5,050", "≈€18,900"],
+            ["3-week (~23 days)*", "≈€3,150", "≈€4,050", "≈€15,750"],
         ]},
         "notes": [
             "*3-week = drop the Ishigaki extension entirely, and trim Tokyo (7→5 nights), Naha (3→2), "
             "Sendai (2→1), and the Nakasendo stop (2→1 day) — same core route, tighter stays.",
             "The swing between tiers is almost entirely flights and accommodation — food and activities "
             "barely move the needle by comparison.",
-            "Niseko lift passes are essentially fixed regardless of tier — it's a set daily rate.",
+            "Niseko lift passes are essentially fixed regardless of tier (it's a set resort rate) — "
+            "€200 pp for a 3-day pass (¥36,800 regular-season rate, official niseko.ne.jp pricing, "
+            "checked 2026). Niseko/Hakuba lift prices have risen ~30-40% over the last ~2 years — mostly "
+            "resorts pricing to heavy international demand (80-90% of Niseko visitors are foreign), not "
+            "just yen weakness — so re-verify this closer to booking, it moves fast.",
             "The luxury total is dominated by business-class flights (~4x economy) and 30 nights of "
             "5★/ryokan. \"Luxury lodging but economy flights\" comes out to roughly €8,000–9,500 pp — a "
             "more common real-world middle ground if the full luxury number is too steep.",
