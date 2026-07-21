@@ -713,10 +713,28 @@ def trip_legs_html(trip):
     return out
 
 
+def budget_html(trip):
+    b = trip.get("budget")
+    if not b:
+        return ""
+    body = f'<p class="sub" style="margin-bottom:12px">{esc(b.get("intro",""))}</p>'
+    if b.get("tiers"):
+        body += f'<div class="card" style="margin-bottom:14px"><h3>Tiers</h3>{ref_table(b["tiers"]["headers"], b["tiers"]["rows"])}</div>'
+    if b.get("table"):
+        body += f'<div class="card" style="margin-bottom:14px"><h3>Cost per category (per person)</h3>{ref_table(b["table"]["headers"], b["table"]["rows"])}</div>'
+    if b.get("durations"):
+        body += f'<div class="card" style="margin-bottom:14px"><h3>Total by trip length</h3>{ref_table(b["durations"]["headers"], b["durations"]["rows"])}</div>'
+    notes = "".join(f"<li>{esc(n)}</li>" for n in b.get("notes", []))
+    if notes:
+        body += f'<ul class="tight">{notes}</ul>'
+    return body
+
+
 def render_trip(trip):
     st.markdown(STYLE + '<div class="sv">' + trip_facts_html(trip) +
                 section("At a glance", "One row per leg — where we are, on which days.", gantt_html(trip)) +
                 section("Itinerary", "Day-by-day detail for each leg.", trip_legs_html(trip)) +
+                section("Budget", "Per-person cost estimate across 3 tiers and 2 trip lengths.", budget_html(trip)) +
                 '</div>', unsafe_allow_html=True)
 
 
