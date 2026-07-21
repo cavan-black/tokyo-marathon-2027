@@ -152,6 +152,21 @@ STYLE = """<style>
 .sv .trip-day .ttl .dtl{display:block;color:var(--muted);font-size:12.5px;margin-top:2px;}
 @media (max-width:820px){.sv .trip-day{grid-template-columns:38px 1fr;}.sv .trip-day .dt,.sv .trip-day .chip{display:none;}}
 
+/* ---- Gantt chart ---- */
+.sv .gantt-wrap{overflow-x:auto;padding-bottom:10px;}
+.sv table.gantt{border-collapse:collapse;table-layout:fixed;}
+.sv table.gantt td{padding:0;}
+.sv .g-corner{position:sticky;left:0;background:var(--paper);z-index:2;}
+.sv .g-head{height:32px;font-size:8.5px;color:var(--faint);text-align:center;font-family:var(--font-mono);
+  line-height:1.3;border-bottom:1px solid var(--line);}
+.sv .g-head-race{color:var(--accent-ink);font-weight:800;}
+.sv .g-head-today{background:var(--accent-soft);}
+.sv .g-leglabel{font-size:11px;font-weight:650;white-space:nowrap;padding-right:8px !important;
+  position:sticky;left:0;background:var(--paper);z-index:1;overflow:hidden;text-overflow:ellipsis;}
+.sv .g-bar{height:22px;border-radius:5px;font-size:9px;font-weight:700;color:#fff;text-align:center;
+  overflow:hidden;white-space:nowrap;}
+.sv .g-bar-race{outline:2px solid var(--ink);outline-offset:-2px;}
+
 /* ---- glam: progress rings, tier/streak badges, celebratory pills ---- */
 .sv{--glam-grad:linear-gradient(135deg,var(--accent),#ff9a56);
     --glam-gold:linear-gradient(135deg,#ffe29a,#ffb347);
@@ -636,8 +651,47 @@ def trip_facts_html(trip):
     ]
     inner = "".join(f'<div class="fact"><div class="k">{k}</div><div class="v">{v}</div></div>' for k, v in cells)
     return (f'<div class="eyebrow">{esc(m["title"])}</div>'
-            f'<h2 style="font-size:26px;margin:6px 0 2px">Osaka → Kyoto → Tokyo Marathon → Sendai → Niseko → Sapporo → Okinawa</h2>'
+            f'<h2 style="font-size:26px;margin:6px 0 2px">Tokyo → Kyoto → Osaka → Niseko → Sapporo → Sendai → Okinawa</h2>'
             f'<p class="sub">{esc(m.get("note",""))}</p><div class="facts">{inner}</div>')
+
+
+def gantt_html(trip):
+    """A real Gantt chart — one row per leg, a bar spanning its date range, columns = days."""
+    m = trip["meta"]
+    start = datetime.fromisoformat(m["start"]).date()
+    end = datetime.fromisoformat(m["end"]).date()
+    total_days = (end - start).days + 1
+    today = date.today()
+    race_day = date(2027, 3, 7)
+
+    head = "<td class='g-corner'></td>"
+    for i in range(total_days):
+        dt = start + pd.Timedelta(days=i)
+        cls = "g-head"
+        if dt == race_day: cls += " g-head-race"
+        if dt == today: cls += " g-head-today"
+        head += f'<td class="{cls}">{dt.day}<br>{dt.strftime("%a")[0]}</td>'
+    rows = f"<tr>{head}</tr>"
+
+    for li, leg in enumerate(trip["legs"]):
+        color = PHASE_COLORS[li % len(PHASE_COLORS)]
+        leg_dates = [datetime.fromisoformat(d["date"]).date() for d in leg["days"]]
+        lo, hi = min(leg_dates), max(leg_dates)
+        offset = (lo - start).days
+        span = (hi - lo).days + 1
+        after = total_days - offset - span
+        label = f'<td class="g-leglabel">{esc(leg["name"])}</td>'
+        pre = f'<td colspan="{offset}"></td>' if offset > 0 else ""
+        title = f'{esc(leg["name"])}: {lo.strftime("%d %b")}–{hi.strftime("%d %b")}'
+        is_race = any(d["tag"] == "race" for d in leg["days"])
+        bar_cls = "g-bar g-bar-race" if is_race else "g-bar"
+        bar_txt = esc(leg["name"]) if span >= 3 else ""
+        bar = f'<td colspan="{span}" class="{bar_cls}" style="background:{color}" title="{title}">{bar_txt}</td>'
+        post = f'<td colspan="{after}"></td>' if after > 0 else ""
+        rows += f"<tr>{label}{pre}{bar}{post}</tr>"
+
+    colgroup = '<colgroup><col style="width:150px">' + ''.join(f'<col style="width:22px">' for _ in range(total_days)) + '</colgroup>'
+    return f'<div class="gantt-wrap"><table class="gantt">{colgroup}{rows}</table></div>'
 
 
 def trip_legs_html(trip):
@@ -661,8 +715,9 @@ def trip_legs_html(trip):
 
 def render_trip(trip):
     st.markdown(STYLE + '<div class="sv">' + trip_facts_html(trip) +
-                section("Itinerary", "Open to edit the plan — the 14–20 Mar block is still a placeholder.",
-                        trip_legs_html(trip)) + '</div>', unsafe_allow_html=True)
+                section("At a glance", "One row per leg — where we are, on which days.", gantt_html(trip)) +
+                section("Itinerary", "Day-by-day detail for each leg.", trip_legs_html(trip)) +
+                '</div>', unsafe_allow_html=True)
 
 
 LEGEND = ('<div class="legend">'
