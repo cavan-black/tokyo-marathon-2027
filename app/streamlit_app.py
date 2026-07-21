@@ -151,6 +151,50 @@ STYLE = """<style>
 .sv .trip-day .ttl b{font-weight:650;}
 .sv .trip-day .ttl .dtl{display:block;color:var(--muted);font-size:12.5px;margin-top:2px;}
 @media (max-width:820px){.sv .trip-day{grid-template-columns:38px 1fr;}.sv .trip-day .dt,.sv .trip-day .chip{display:none;}}
+
+/* ---- glam: progress rings, tier/streak badges, celebratory pills ---- */
+.sv{--glam-grad:linear-gradient(135deg,var(--accent),#ff9a56);
+    --glam-gold:linear-gradient(135deg,#ffe29a,#ffb347);
+    --glam-glow:0 0 22px rgba(255,140,66,.4);}
+.sv .glam-row{display:flex;gap:14px;flex-wrap:wrap;align-items:stretch;margin:12px 0 4px;}
+.sv .ring-card{flex:1 1 180px;display:flex;align-items:center;gap:14px;padding:14px 18px;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);}
+.sv .ring{--pct:0;--ring-color:var(--accent);width:76px;height:76px;border-radius:50%;flex:0 0 auto;
+  display:grid;place-items:center;position:relative;
+  background:conic-gradient(var(--ring-color) calc(var(--pct)*1%), var(--line) 0);
+  animation:ringFade .7s ease both;}
+.sv .ring::before{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--surface);}
+.sv .ring-val{position:relative;z-index:1;font-family:var(--font-mono);font-weight:800;font-size:16px;line-height:1;}
+.sv .ring-txt{display:flex;flex-direction:column;gap:2px;}
+.sv .ring-title{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;}
+.sv .ring-cap{font-size:12.5px;color:var(--muted);}
+.sv .tier-badge{display:inline-block;margin-top:2px;padding:2px 11px;border-radius:999px;font-size:10.5px;
+  font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#fff;background:var(--glam-grad);
+  box-shadow:0 2px 10px rgba(255,140,66,.35);width:fit-content;}
+.sv .streak-card{flex:1 1 180px;display:flex;align-items:center;gap:12px;padding:14px 18px;
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);}
+.sv .streak-badge{display:inline-flex;align-items:center;gap:6px;padding:6px 16px;border-radius:999px;
+  font-weight:800;font-size:15px;background:var(--glam-gold);color:#3d2a00;box-shadow:0 2px 14px rgba(255,179,71,.45);
+  animation:ringFade .7s ease both;}
+.sv .streak-sub{font-size:12.5px;color:var(--muted);}
+@keyframes ringFade{from{opacity:0;transform:scale(.85);}to{opacity:1;transform:scale(1);}}
+@keyframes popIn{from{transform:scale(.7);opacity:0;}to{transform:scale(1);opacity:1;}}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 0 rgba(47,143,126,0);}50%{box-shadow:0 0 12px rgba(47,143,126,.45);}}
+.sv .tag.act{background:linear-gradient(135deg,color-mix(in srgb,var(--good) 80%,white 20%),var(--good));
+  color:#fff;border:none;animation:popIn .35s ease both, glowPulse 2.6s ease-in-out infinite;}
+.sv .crushed-chip{display:inline-flex;align-items:center;gap:4px;padding:2px 10px;border-radius:999px;
+  font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#3d2a00;
+  background:var(--glam-gold);box-shadow:0 2px 10px rgba(255,179,71,.45);animation:popIn .4s ease both;}
+@media (max-width:820px){.sv .glam-row{flex-direction:column;}}
+.sv .celebrate{display:flex;align-items:center;gap:14px;padding:14px 20px;border-radius:var(--radius);
+  background:linear-gradient(135deg,var(--accent),#ff9a56);color:#fff;margin:4px 0 14px;
+  box-shadow:var(--glam-glow);animation:celebrateIn .5s cubic-bezier(.22,1,.36,1) both;}
+.sv .celebrate .ce-emoji{font-size:30px;line-height:1;animation:bounce 1.6s ease-in-out infinite;}
+.sv .celebrate .ce-title{font-weight:800;font-size:16px;}
+.sv .celebrate .ce-sub{font-size:13px;opacity:.9;margin-top:2px;}
+@keyframes celebrateIn{from{opacity:0;transform:translateY(-8px) scale(.97);}to{opacity:1;transform:translateY(0) scale(1);}}
+@keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-4px);}}
+.sv .celebrate.todo{background:linear-gradient(135deg,var(--pA),var(--pB));}
 </style>"""
 
 TRIP_TAG = {"travel": ("Travel", "t-rest"), "city": ("Sightseeing", "t-recovery"),
@@ -183,6 +227,106 @@ def esc(s):
 
 
 # ---------------- HTML builders (Stevie style) ----------------
+
+TIERS = [(90, "Legend"), (75, "Elite"), (55, "Grinding"), (35, "Building"), (15, "Rookie"), (0, "Just started")]
+
+
+def tier_for(pct):
+    for min_p, label in TIERS:
+        if pct >= min_p:
+            return label
+    return "Just started"
+
+
+def ring_html(pct, big, title, caption, color="var(--accent)"):
+    pct = max(0, min(100, round(pct)))
+    return (f'<div class="ring-card"><div class="ring" style="--pct:{pct};--ring-color:{color}">'
+            f'<div class="ring-val">{pct}%</div></div>'
+            f'<div class="ring-txt"><div class="ring-title">{esc(title)}</div>'
+            f'<div class="ring-cap">{esc(caption)}</div>'
+            f'<div class="tier-badge">{esc(big)}</div></div></div>')
+
+
+def compute_streak(plan, wk_rows):
+    """Consecutive on-track weeks ending at the most recent week that's actually started."""
+    streak = 0
+    started = False
+    for wk in sorted(plan["weeks"], key=lambda w: -w["week"]):
+        w = wk_rows.get(str(wk["week"]))
+        if not w or w.get("planned_km_due", 0) <= 0:
+            continue
+        started = True
+        if w.get("flag", "").startswith("✓"):
+            streak += 1
+        else:
+            break
+    return streak if started else 0
+
+
+def glam_row_html(plan, progress, cur):
+    wk_rows = progress.get("weeks", {})
+    cur_w = wk_rows.get(str(cur), {})
+    due = cur_w.get("planned_km_due", 0)
+    week_pct = (cur_w.get("actual_km", 0) / due * 100) if due > 0 else 0
+    week_ring = ring_html(week_pct, tier_for(week_pct), "This week", f'{cur_w.get("actual_km",0):.0f} of {due:.0f} km due', "var(--good)")
+
+    done_total = sum(w["done"] for w in wk_rows.values())
+    due_total = sum(w["done"] + w["partial"] + w["missed"] for w in wk_rows.values())
+    consist_pct = (done_total / due_total * 100) if due_total > 0 else 0
+    consist_ring = ring_html(consist_pct, tier_for(consist_pct), "Consistency",
+                              f'{done_total} of {due_total} sessions done', "var(--accent)")
+
+    streak = compute_streak(plan, wk_rows)
+    streak_html = ""
+    if streak > 0:
+        streak_html = (f'<div class="streak-card"><span class="streak-badge">🔥 {streak}</span>'
+                        f'<span class="streak-sub">week{"s" if streak != 1 else ""} on track in a row</span></div>')
+    return f'<div class="glam-row">{week_ring}{consist_ring}{streak_html}</div>'
+
+
+def _format_duration(secs):
+    if not secs:
+        return None
+    secs = int(secs)
+    h, rem = divmod(secs, 3600)
+    m, s = divmod(rem, 60)
+    return f"{h}:{m:02d}:{s:02d}" if h else f"{m}:{s:02d}"
+
+
+def celebration_html(plan, progress):
+    """Today's status: a call-to-action if the run's still to do, a dopamine hit with
+    stats once it's logged. Silent on rest days."""
+    today_iso = date.today().isoformat()
+    d = progress.get("days", {}).get(today_iso)
+    if not d or d.get("type") == "rest":
+        return ""
+    status = d.get("status")
+    sess = d.get("session", "today's run")
+    target = d.get("target_km", 0)
+    if status in ("Done", "Partial"):
+        acts = d.get("activities") or []
+        lead = max(acts, key=lambda a: a.get("distance_km", 0)) if acts else {}
+        actual, pace = d.get("actual_km", 0), d.get("pace_str")
+        dur = _format_duration(lead.get("moving_time_s"))
+        hr, elev = lead.get("avg_hr"), lead.get("elev_gain_m")
+        stats = [f'{actual:.1f} km']
+        if pace: stats.append(f'{pace}/km')
+        if dur: stats.append(dur)
+        if hr: stats.append(f'{round(hr)} bpm avg')
+        if elev: stats.append(f'{round(elev)} m elev')
+        if status == "Done":
+            title, emoji, cls = "Nice work — today's session is done! 🎉", "🏅", "celebrate"
+        else:
+            title, emoji, cls = "Good start today — a bit more would seal it 💪", "⏱️", "celebrate"
+        sub = f'{sess} — ' + " · ".join(stats)
+    elif status == "Upcoming":
+        title, emoji, cls = "Today's session", "🎯", "celebrate todo"
+        sub = sess + (f' — {target:g} km planned' if target else '')
+    else:
+        return ""
+    return (f'<div class="{cls}"><span class="ce-emoji">{emoji}</span>'
+            f'<div><div class="ce-title">{esc(title)}</div><div class="ce-sub">{esc(sub)}</div></div></div>')
+
 
 def facts_html(plan, wk_rows):
     m = plan["meta"]
@@ -344,6 +488,11 @@ def weeks_html(plan, progress, cur):
                 chips += '<span class="down-chip">down</span>'
             if "checkpoint" in foc.lower() or "tune-up" in foc.lower() or "RACE" in foc:
                 chips += f'<span class="gate-chip">{esc(foc.split("(")[0][:16])}</span>'
+            wsum_peek = wk_rows.get(str(w), {})
+            total_sessions = wsum_peek.get("done", 0) + wsum_peek.get("partial", 0) + wsum_peek.get("missed", 0)
+            if (total_sessions and wsum_peek.get("missed", 0) == 0 and wsum_peek.get("partial", 0) == 0
+                    and wsum_peek.get("actual_km", 0) >= 0.95 * wsum_peek.get("planned_km", 1)):
+                chips += '<span class="crushed-chip">🏆 Crushed</span>'
             summary = (f'<summary><div class="wk">{w}<small>WK</small></div>'
                        f'<div class="dt">{start.strftime("%d %b")}<br>{end.strftime("%d %b")}</div>'
                        f'<div class="keys">{keys} <span class="mut">·</span> '
@@ -406,6 +555,29 @@ def research_html(plan):
         cards += (f'<div class="card" style="margin-bottom:12px"><h3>{esc(sec["title"])}</h3>'
                   f'<p>{esc(sec["detail"])}</p></div>')
     return intro + cards
+
+
+def diet_html(plan):
+    d = plan.get("content", {}).get("diet", {})
+    if not d:
+        return ""
+    body = f'<p class="sub" style="margin-bottom:12px">{esc(d.get("intro",""))}</p>'
+    if d.get("targets"):
+        body += f'<div class="card" style="margin-bottom:14px"><h3>Targets</h3>{ref_table(d["targets"]["headers"], d["targets"]["rows"])}</div>'
+    if d.get("smoothie"):
+        sm = d["smoothie"]
+        ing = "".join(f"<li>{esc(i)}</li>" for i in sm.get("ingredients", []))
+        body += (f'<div class="card" style="margin-bottom:14px"><h3>{esc(sm["title"])}</h3>'
+                 f'<ul class="tight">{ing}</ul>'
+                 f'<p class="sub" style="margin-top:10px">{esc(sm.get("note",""))}</p></div>')
+    if d.get("additions"):
+        body += f'<div class="card" style="margin-bottom:14px"><h3>Recommended add-ins</h3>{ref_table(d["additions"]["headers"], d["additions"]["rows"])}</div>'
+    if d.get("meals"):
+        body += f'<div class="card" style="margin-bottom:14px"><h3>Meals by time of day</h3>{ref_table(d["meals"]["headers"], d["meals"]["rows"])}</div>'
+    notes = "".join(f"<li>{esc(n)}</li>" for n in d.get("notes", []))
+    if notes:
+        body += f'<ul class="tight">{notes}</ul>'
+    return body
 
 
 def tips_html(plan):
@@ -494,31 +666,35 @@ def render_runner(runner_id):
         except Exception as e:
             st.error(f"Sync failed: {e}")
 
-    # ---- hero (facts strip) stays fixed above the subtabs ----
+    # ---- hero (facts strip + glam progress rings) stays fixed above the subtabs ----
     banner = f'<div class="banner">{esc(content["banner"])}</div>' if content.get("banner") else ""
-    st.markdown(STYLE + '<div class="sv">' + banner + facts_html(plan, wk_rows) + "</div>", unsafe_allow_html=True)
+    st.markdown(STYLE + '<div class="sv">' + celebration_html(plan, progress) + banner + facts_html(plan, wk_rows) +
+                glam_row_html(plan, progress, cur) + "</div>", unsafe_allow_html=True)
 
-    # ---- everything else lives in subtabs ----
-    sub = st.tabs(["📋 Plan", "🧭 Approach", "🎯 Paces", "🚦 Gates", "📈 Volume",
-                   "💪 Strength", "🥗 Fuel & life", "💡 Tips", "🔬 Research"])
+    # ---- everything else lives in subtabs (Diet Plan only shows up if a runner has one) ----
+    has_diet = bool(content.get("diet"))
+    labels = ["📋 Plan", "🧭 Approach", "🎯 Paces", "🚦 Gates", "📈 Volume",
+              "💪 Strength", "🥗 Fuel & life"] + (["🍽️ Diet Plan"] if has_diet else []) + ["💡 Tips", "🔬 Research"]
+    sub = st.tabs(labels)
+    i = iter(range(len(labels)))
 
-    with sub[0]:
+    with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
                     section("The 33-week plan", "Grouped by phase — open any week for the day-by-day.",
                             LEGEND + weeks_html(plan, progress, cur)) + "</div>", unsafe_allow_html=True)
-    with sub[1]:
+    with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
                     section("The approach", "Why the plan is shaped the way it is.", approach_html(plan))
                     + "</div>", unsafe_allow_html=True)
-    with sub[2]:
+    with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
                     section("Pace zones", f'Anchored on {plan["meta"]["goal"]} (MP {plan["meta"]["mp_per_km"]}/km).',
                             paces_html(plan)) + "</div>", unsafe_allow_html=True)
-    with sub[3]:
+    with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
                     section("Decision gates", "Checkpoints that confirm the plan is on track.", gates_html(plan))
                     + "</div>", unsafe_allow_html=True)
-    with sub[4]:
+    with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv"><div class="sec"><div class="sec-head"><h2>Weekly volume</h2>'
                     '<p class="sub">Planned vs actual (Strava).</p></div></div></div>', unsafe_allow_html=True)
         if wk_rows:
@@ -527,16 +703,21 @@ def render_runner(runner_id):
             st.bar_chart(pd.DataFrame(rows).set_index("Week"), color=["#c7d2e0", "#2f8f7e"], height=200)
         else:
             st.caption("No synced weeks yet.")
-    with sub[5]:
+    with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
                     section("Strength &amp; conditioning", "", strength_html(plan)) + "</div>", unsafe_allow_html=True)
-    with sub[6]:
+    with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
                     section("Fuel &amp; life", "", fuel_html(plan)) + "</div>", unsafe_allow_html=True)
-    with sub[7]:
+    if has_diet:
+        with sub[next(i)]:
+            st.markdown(STYLE + '<div class="sv">' +
+                        section("Diet plan — building a surplus", "Meals, add-ins and targets to gain weight safely as volume climbs.",
+                                diet_html(plan)) + "</div>", unsafe_allow_html=True)
+    with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
                     section("Tips", "", tips_html(plan)) + "</div>", unsafe_allow_html=True)
-    with sub[8]:
+    with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
                     section("Research &amp; rationale", "Why the plan is shaped this way, and what we've looked at.",
                             research_html(plan)) + "</div>", unsafe_allow_html=True)
