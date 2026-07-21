@@ -266,9 +266,13 @@ def compute_streak(plan, wk_rows):
 def glam_row_html(plan, progress, cur):
     wk_rows = progress.get("weeks", {})
     cur_w = wk_rows.get(str(cur), {})
-    due = cur_w.get("planned_km_due", 0)
-    week_pct = (cur_w.get("actual_km", 0) / due * 100) if due > 0 else 0
-    week_ring = ring_html(week_pct, tier_for(week_pct), "This week", f'{cur_w.get("actual_km",0):.0f} of {due:.0f} km due', "var(--good)")
+    # Ring tracks progress toward the FULL week's target so it fills up gradually across
+    # the week (day 2 of 7 isn't "100% done") — the under/over-target text flag elsewhere
+    # still judges against km due so far, which is the right comparison for that message.
+    planned = cur_w.get("planned_km", 0)
+    week_pct = (cur_w.get("actual_km", 0) / planned * 100) if planned > 0 else 0
+    week_ring = ring_html(week_pct, tier_for(week_pct), "This week",
+                           f'{cur_w.get("actual_km",0):.0f} of {planned:.0f} km this week', "var(--good)")
 
     done_total = sum(w["done"] for w in wk_rows.values())
     due_total = sum(w["done"] + w["partial"] + w["missed"] for w in wk_rows.values())
