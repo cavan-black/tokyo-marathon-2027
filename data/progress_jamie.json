@@ -19,7 +19,7 @@
       "session": "Easy 5–6 km + 4×20s strides",
       "target_km": 6,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": []
@@ -2776,10 +2776,11 @@
   "weeks": {
     "1": {
       "planned_km": 28,
+      "planned_km_due": 6,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
-      "missed": 0,
+      "missed": 1,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -2787,6 +2788,7 @@
     },
     "2": {
       "planned_km": 34,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
@@ -2794,10 +2796,11 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "3": {
       "planned_km": 40,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
@@ -2805,10 +2808,11 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "4": {
       "planned_km": 32,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
@@ -2816,10 +2820,11 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "5": {
       "planned_km": 46,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
@@ -2827,10 +2832,11 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "6": {
       "planned_km": 52,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
@@ -2838,10 +2844,11 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "7": {
       "planned_km": 42,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
@@ -2849,10 +2856,11 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "8": {
       "planned_km": 56,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
@@ -2860,21 +2868,23 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "9": {
       "planned_km": 60,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "10": {
       "planned_km": 60,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
@@ -2882,54 +2892,59 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "11": {
       "planned_km": 54,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "12": {
       "planned_km": 70,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "13": {
       "planned_km": 74,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "14": {
       "planned_km": 62,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "15": {
       "planned_km": 72,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
@@ -2937,186 +2952,203 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "16": {
       "planned_km": 76,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "17": {
       "planned_km": 64,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "18": {
       "planned_km": 68,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "19": {
       "planned_km": 68,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "20": {
       "planned_km": 78,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 2,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "21": {
       "planned_km": 82,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "22": {
       "planned_km": 70,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 2,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "23": {
       "planned_km": 80,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "24": {
       "planned_km": 66,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "25": {
       "planned_km": 78,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "26": {
       "planned_km": 82,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "27": {
       "planned_km": 72,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 2,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "28": {
       "planned_km": 80,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "29": {
       "planned_km": 70,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 2,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "30": {
       "planned_km": 60,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "31": {
       "planned_km": 53,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
       "missed": 0,
       "quality_hit": 0,
-      "quality_planned": 2,
+      "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "32": {
       "planned_km": 42,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
@@ -3124,10 +3156,11 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "33": {
       "planned_km": 71.2,
+      "planned_km_due": 0,
       "actual_km": 0,
       "done": 0,
       "partial": 0,
@@ -3135,10 +3168,10 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-07-16T12:54:33+00:00",
+  "last_sync": "2026-07-21T13:31:33+00:00",
   "tracker": {
     "threshold_latest": null,
     "mp_latest": null
