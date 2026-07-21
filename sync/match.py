@@ -42,7 +42,7 @@ def match(plan, runs):
     days = {}
     weeks = {}
     for wk in plan["weeks"]:
-        pk = ak = done = partial = missed = quality_hit = quality_planned = 0
+        pk = ak = pk_due = done = partial = missed = quality_hit = quality_planned = 0
         long_done = None
         for d in wk["days"]:
             acts = by_date.get(d["date"], [])
@@ -65,27 +65,31 @@ def match(plan, runs):
                 "activities": acts,
             }
             pk += d["target_km"]; ak += actual_km
+            if not future:
+                pk_due += d["target_km"]
             if d["type"] == "rest":
                 continue
             if status == "Done": done += 1
             elif status == "Partial": partial += 1
             elif status == "Missed": missed += 1
-            if d["type"] == "quality":
+            if d["type"] == "quality" and not future:
                 quality_planned += 1
                 if status == "Done": quality_hit += 1
             if d["type"] in ("long", "race") and d["dow"] == "Sun":
                 long_done = (status == "Done")
-        # coach-rule flag (suggestion, not auto-change)
-        if pk > 0 and ak < 0.70 * pk:
+        # coach-rule flag (suggestion, not auto-change) — judged against km DUE so
+        # far this week, not the full week's target, so a Tuesday check-in doesn't
+        # read as "under-target" just because the week isn't finished yet.
+        if pk_due > 0 and ak < 0.70 * pk_due:
             flag = "⚠ Under-target — consider holding volume / repeating the week"
         elif quality_planned and (quality_planned - quality_hit) >= 2:
             flag = "⚠ ≥2 quality sessions missed — prioritise them next week"
-        elif pk > 0 and ak > 1.15 * pk:
+        elif pk_due > 0 and ak > 1.15 * pk_due:
             flag = "⚠ Over-target — watch fatigue/injury; don't overcook"
         else:
             flag = "✓ On track"
         weeks[str(wk["week"])] = {
-            "planned_km": round(pk, 1), "actual_km": round(ak, 1),
+            "planned_km": round(pk, 1), "planned_km_due": round(pk_due, 1), "actual_km": round(ak, 1),
             "done": done, "partial": partial, "missed": missed,
             "quality_hit": quality_hit, "quality_planned": quality_planned,
             "long_done": long_done, "flag": flag,
