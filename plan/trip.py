@@ -149,7 +149,16 @@ def build():
             {"date": d(2027, 3, 23), "title": "Sapporo → Miyazaki",
              "detail": "Connects via Osaka (Itami) or Haneda — a long travel day, arriving Miyazaki in the "
                        "evening.", "tag": "travel"},
-            {"date": d(2027, 3, 24), "title": "Aoshima Shrine & on to Naha",
+            {"date": d(2027, 3, 24), "title": "Golf — Phoenix Country Club",
+             "detail": "THE nice round: home of the Dunlop Phoenix Tournament (JGTO), 27 holes along the "
+                       "Hitotsuba pine coast, ranked among Japan's top courses. Members-club in name but "
+                       "visitors are genuinely welcome — book via GDO/Rakuten GORA/Jalan golf, or ask the "
+                       "Sheraton Grande Ocean Resort/Seagaia concierge next door. Green fee ≈¥31,000-58,000 "
+                       "(≈€190-350) depending on day/season; caddie is compulsory (adds to cost), jacket needed "
+                       "in the clubhouse outside summer. ~20 min from JR Miyazaki Station/the airport. Given the "
+                       "compulsory caddie pace + clubhouse time it eats most of a day — that's why Miyazaki got "
+                       "a 3rd day rather than squeezing this in alongside Aoshima.", "tag": "tourist"},
+            {"date": d(2027, 3, 25), "title": "Aoshima Shrine & on to Naha",
              "detail": "Aoshima Shrine and the \"Devil's Washboard\" (Oni no Sentakuita) tide-carved rock "
                        "formations, an easy couple of hours near the city. (Takachiho Gorge is ~2.5h further "
                        "with no train access — skipped to keep this a single efficient stop; would need its own "
@@ -157,60 +166,71 @@ def build():
         ]},
         {"name": "Okinawa — Naha & Kerama", "blurb": "Trimmed down and spread out rather than 12 days in one "
                                                        "block. March suits sightseeing/snorkelling more than "
-                                                       "full beach season (water ~22°C).", "days": [
-            {"date": d(2027, 3, 25), "title": "Naha — a proper night out",
+                                                       "full beach season (water ~22°C). 4th day added for a "
+                                                       "good-value round of golf.", "days": [
+            {"date": d(2027, 3, 26), "title": "Naha — a proper night out",
              "detail": "Shuri Castle by day. By night: Kokusai-dori's main strip, or for something more local, "
                        "Sakaemachi Market (15 min walk / one monorail stop to Asato) — tiny hole-in-the-wall "
                        "izakayas threaded between market stalls, awamori and ¥300 yakitori, comes alive after "
                        "6pm, mostly no English menus. The better night out of the two.", "tag": "city"},
-            {"date": d(2027, 3, 26), "title": "Churaumi Aquarium day-trip",
+            {"date": d(2027, 3, 27), "title": "Golf — Okinawa Country Club",
+             "detail": "The good-value round: ~15-20 min taxi from Naha (Nishihara). Green fee ≈¥12,000-18,000 "
+                       "(≈€75-110, official-site discounts knock off ¥500-1,000). Club rental from ¥5,500, "
+                       "shoes ¥1,100 — no need to bring clubs. No handicap certificate required; that's an old "
+                       "private-club norm, not a real barrier for visitor/resort play in Japan anymore.",
+             "tag": "tourist"},
+            {"date": d(2027, 3, 28), "title": "Churaumi Aquarium day-trip",
              "detail": "North-island day trip (rental car preferred): Churaumi Aquarium, Ocean Expo Park, "
                        "Bise Fukugi Tree Road.", "tag": "tourist"},
-            {"date": d(2027, 3, 27), "title": "Kerama Islands day-trip",
+            {"date": d(2027, 3, 29), "title": "Kerama Islands day-trip",
              "detail": "Ferry to Zamami/Aka (50-70 min). Snorkelling at Furuzamami Beach — March is within "
                        "Kerama whale-watching season.", "tag": "tourist"},
         ]},
         {"name": "Ishigaki taste", "blurb": "A compact 2 days rather than a full extra region — the \"other "
                                              "really cool option\" without over-extending the Okinawa block.", "days": [
-            {"date": d(2027, 3, 28), "title": "Naha → Ishigaki",
+            {"date": d(2027, 3, 30), "title": "Naha → Ishigaki",
              "detail": "~1h domestic flight south to the Yaeyama Islands.", "tag": "travel"},
-            {"date": d(2027, 3, 29), "title": "Kabira Bay & Taketomi Island",
+            {"date": d(2027, 3, 31), "title": "Kabira Bay & Taketomi Island",
              "detail": "Morning: Kabira Bay glass-bottom boat. Afternoon: Taketomi Island (10 min ferry) — "
                        "buffalo-cart village, red-tile roofs, white coral-sand streets.", "tag": "tourist"},
         ]},
         {"name": "Travel home", "blurb": "", "days": [
-            {"date": d(2027, 3, 30), "title": "Ishigaki → Naha",
+            {"date": d(2027, 4, 1), "title": "Ishigaki → Naha",
              "detail": "Fly back to Naha to connect for the international leg home.", "tag": "travel"},
-            {"date": d(2027, 3, 31), "title": "Fly home", "detail": "Depart Japan.", "tag": "travel"},
+            {"date": d(2027, 4, 2), "title": "Fly home", "detail": "Depart Japan.", "tag": "travel"},
         ]},
     ]
     ndays = sum(len(l["days"]) for l in legs)
-    return {"meta": {"title": "Japan Trip 2027", "start": d(2027, 2, 27), "end": d(2027, 3, 31),
+    return {"meta": {"title": "Japan Trip 2027", "start": d(2027, 2, 27), "end": d(2027, 4, 2),
                      "days": ndays,
                      "note": "Tokyo (race week: Golden Gai on the Monday, snow monkeys day trip, Ghibli Museum) "
-                             "-> RACE -> Shibuya/Harajuku the day after -> a night on the Nakasendo Trail "
-                             "(Magome-Tsumago) -> 3 days Kyoto/Nara (incl. Fushimi sake brewery) -> 3 days Osaka "
-                             "(incl. NPB preseason baseball) -> Niseko -> Sapporo -> Miyazaki (1 night) -> "
-                             "Okinawa (Naha/Kerama) -> Ishigaki taste -> home. Sendai/Matsushima dropped in "
-                             "favour of the extra Kyoto/Osaka day each. The pre-race Tokyo week is still exactly "
-                             "7 days — Shibuya moving out and snow monkeys moving in cancel out — so the trip "
-                             "start stays 27 Feb; the one net new day (Shibuya's post-race slot) pushed the end "
-                             "date from 30 to 31 Mar. Note: cherry blossoms are a coin-flip — current estimate "
-                             "has peak bloom ~28 Mar-5 Apr, right around this trip's end date — reconfirm closer "
-                             "to the time. Ghibli Museum tickets (4 Mar) need booking ~1-3 months ahead — the "
-                             "one hard deadline here."},
+                             "-> RACE -> Shibuya/Harajuku + go-karting the day after -> a night on the Nakasendo "
+                             "Trail (Magome-Tsumago) -> 3 days Kyoto/Nara (incl. Fushimi sake brewery) -> 3 days "
+                             "Osaka (incl. NPB baseball + Boat Race Suminoe) -> Niseko -> Sapporo -> Miyazaki "
+                             "(3 nights, incl. golf at Phoenix Country Club) -> Okinawa (4 nights, incl. golf at "
+                             "Okinawa Country Club) -> Ishigaki taste -> home. Sendai/Matsushima dropped in "
+                             "favour of the extra Kyoto/Osaka day each. Miyazaki and Naha each grew by a day to "
+                             "fit a round of golf properly (compulsory-caddie rounds eat most of a day) rather "
+                             "than compressing them into already-packed sightseeing days — 35 days total now "
+                             "(was 33), end date pushed from 31 Mar to 2 Apr. Silver lining: that now sits "
+                             "squarely inside the ~28 Mar-5 Apr estimated cherry blossom peak-bloom window "
+                             "(still a coin-flip 8+ months out — reconfirm closer to the time, but the odds just "
+                             "improved). Ghibli Museum tickets (4 Mar) need booking ~1-3 months ahead, and the "
+                             "go-karting needs an International Driving Permit sorted before departure — the "
+                             "two hard deadlines here."},
             "legs": legs, "budget": budget()}
 
 
 def budget():
     return {
         "intro": "Per person, 2 people sharing rooms, departing Málaga. FX rate used: 1 EUR ≈ ¥185.5 "
-                 "(current). Costed for the full 33-day route (Miyazaki + snow monkeys + the extra Kyoto/Osaka "
-                 "days) — includes the Sapporo->Miyazaki->Naha flight chain, the Tokyo->Nagano->Yudanaka rail "
-                 "round trip, and the sake brewery/baseball tickets. The Middle column is anchored on "
-                 "live-researched current prices (flights, JR fares, hotel/lift-pass rates); Bare minimum and "
-                 "Luxury are reasoned extrapolations using standard hostel/ryokan/business-class ratios — worth "
-                 "re-checking closer to booking rather than treating as independently sourced.",
+                 "(current). Costed for the full 35-day route (Miyazaki + snow monkeys + the extra Kyoto/Osaka "
+                 "days + a golf day each in Miyazaki and Naha) — includes the Sapporo->Miyazaki->Naha flight "
+                 "chain, the Tokyo->Nagano->Yudanaka rail round trip, the sake brewery/baseball tickets, and "
+                 "both green fees. The Middle column is anchored on live-researched current prices (flights, JR "
+                 "fares, hotel/lift-pass/green fee rates); Bare minimum and Luxury are reasoned extrapolations "
+                 "using standard hostel/ryokan/business-class ratios — worth re-checking closer to booking "
+                 "rather than treating as independently sourced.",
         "tiers": {"headers": ["Tier", "What it gets you"], "rows": [
             ["Bare minimum", "Hostel dorms/capsules, conbini + casual meals, budget/no-frills flights, self-guided everything."],
             ["Middle", "Business hotels, casual-to-mid restaurants, standard economy flights — the itinerary as planned."],
@@ -220,21 +240,27 @@ def budget():
             ["Int'l flights (Málaga↔Naha, open-jaw)", "€700", "€975", "€3,900"],
             ["Domestic rail (incl. Nagano/snow monkeys)", "€160", "€235", "€420"],
             ["Domestic flights (incl. Sapporo→Miyazaki→Naha chain)", "€280", "€415", "€800"],
-            ["Accommodation (32 nights)", "€770", "€1,200", "€7,720"],
+            ["Accommodation (34 nights)", "€820", "€1,275", "€8,200"],
             ["Niseko lift passes (3 days)", "€200", "€200", "€200"],
-            ["Food / local transport / incidentals (33 days)", "€1,760", "€2,390", "€6,600"],
-            ["Activities & tours (sake brewery, baseball, Aoshima, private guide/box in Luxury)", "€135", "€190", "€1,000"],
+            ["Food / local transport / incidentals (35 days)", "€1,870", "€2,535", "€7,000"],
+            ["Golf (Phoenix CC + Okinawa CC, incl. caddie/rental)", "€290", "€350", "€500"],
+            ["Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting)", "€135", "€190", "€1,000"],
         ]},
         "durations": {"headers": ["Duration", "Bare minimum", "Middle", "Luxury"], "rows": [
-            ["Full itinerary (33 days, 27 Feb-31 Mar)", "≈€4,000", "≈€5,600", "≈€20,600"],
-            ["3-week (~23 days)*", "≈€3,200", "≈€4,100", "≈€15,900"],
+            ["Full itinerary (35 days, 27 Feb-2 Apr)", "≈€4,450", "≈€6,200", "≈€22,000"],
+            ["3-week (~23 days)*", "≈€3,300", "≈€4,200", "≈€16,000"],
         ]},
         "notes": [
-            "*3-week = drop Miyazaki and the Ishigaki extension entirely, and trim Tokyo (8→6 nights, keep the "
-            "snow monkeys, drop nothing else), Naha (3→2) — same core route, tighter stays. The cheap add-ons "
-            "(sake brewery, baseball) stay in even at 3 weeks since they cost almost nothing extra.",
+            "*3-week = drop Miyazaki (and its Phoenix CC round) and the Ishigaki extension entirely, and trim "
+            "Tokyo (8→6 nights, keep the snow monkeys, drop nothing else), Naha (4→2, keeping the Okinawa CC "
+            "round since it's cheap and easy) — same core route, tighter stays. The cheap add-ons (sake "
+            "brewery, baseball, boat racing) stay in even at 3 weeks since they cost almost nothing extra.",
             "The swing between tiers is almost entirely flights and accommodation — food and activities "
             "barely move the needle by comparison.",
+            "Golf is two fixed-price rounds, not really tier-scalable — Phoenix Country Club (Miyazaki, the "
+            "splurge round: ¥31,000-58,000/≈€190-350 green fee depending on day/season, compulsory caddie) and "
+            "Okinawa Country Club (Naha, the good-value round: ¥12,000-18,000/≈€75-110, club rental from "
+            "¥5,500). The Luxury figure assumes premium-date booking + better caddie tip, not a different course.",
             "Niseko lift passes are essentially fixed regardless of tier (it's a set resort rate) — "
             "€200 pp for a 3-day pass (¥36,800 regular-season rate, official niseko.ne.jp pricing, "
             "checked 2026). Niseko/Hakuba lift prices have risen ~30-40% over the last ~2 years — mostly "
@@ -243,8 +269,8 @@ def budget():
             "The Miyazaki insertion is the single biggest domestic-flight cost driver here — three short hops "
             "(Sapporo→Osaka/Haneda→Miyazaki→Naha) instead of one direct Sendai→Naha routing from the earlier "
             "version. Worth knowing that's what you're paying for the detour.",
-            "The luxury total is dominated by business-class flights (~4x economy) and 32 nights of "
-            "5★/ryokan. \"Luxury lodging but economy flights\" comes out to roughly €8,700–10,200 pp — a "
+            "The luxury total is dominated by business-class flights (~4x economy) and 34 nights of "
+            "5★/ryokan. \"Luxury lodging but economy flights\" comes out to roughly €9,700–11,300 pp — a "
             "more common real-world middle ground if the full luxury number is too steep.",
         ],
     }
