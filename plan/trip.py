@@ -101,12 +101,17 @@ def build():
             {"date": d(2027, 3, 15), "title": "Namba & Shinsekai by night",
              "detail": "Namba's bars and arcades, Shinsekai's retro streets and Tsutenkaku tower — Osaka's "
                        "nightlife is a genuine highlight, not an afterthought.", "tag": "city"},
-            {"date": d(2027, 3, 16), "title": "NPB baseball",
+            {"date": d(2027, 3, 16), "title": "NPB baseball & boat racing",
              "detail": "NPB preseason (\"open-sen\") games run into ~22 Mar — catch the Orix Buffaloes at Kyocera "
                        "Dome (in the city, most convenient) or the Hanshin Tigers at Koshien Stadium (short "
                        "Hanshin Line ride). Bonus: Spring Koshien, the high-school tournament at the same "
                        "stadium, typically runs ~19-31 Mar — tantalisingly close to these dates; push Osaka a "
-                       "few days later if you'd rather catch that instead.", "tag": "city"},
+                       "few days later if you'd rather catch that instead. FOR A FLUTTER: Boat Race Suminoe "
+                       "(kyotei) runs near-daily, cash betting, English signage, no ID/account needed — 3 min "
+                       "walk from Suminoekoen Station. The reliable bet regardless of the baseball/Koshien "
+                       "calendar. Also worth checking closer to the time: Hanshin (Nishinomiya) or Kyoto "
+                       "Racecourse — JRA horse racing alternates between the two most Sat/Sundays in season, "
+                       "so there's a decent chance of a meeting on the Sunday (14 Mar).", "tag": "city"},
         ]},
         {"name": "To Niseko", "blurb": "A full travel day, not a quick hop — budget for it.", "days": [
             {"date": d(2027, 3, 17), "title": "Osaka → Niseko",
@@ -120,11 +125,16 @@ def build():
             {"date": d(2027, 3, 20), "title": "Snowboarding", "detail": "Last day riding.", "tag": "snow"},
         ]},
         {"name": "Sapporo", "blurb": "Clock Tower by day, Susukino — one of Japan's biggest entertainment "
-                                      "districts — by night.", "days": [
+                                      "districts — by night. No racing here though: Sapporo Racecourse is "
+                                      "summer-only (roughly late Jul-early Sep) and closed in March.", "days": [
             {"date": d(2027, 3, 21), "title": "Niseko → Sapporo",
              "detail": "Transfer to Sapporo. Clock Tower, Odori Park, Nijo Market.", "tag": "city"},
             {"date": d(2027, 3, 22), "title": "Susukino by night",
-             "detail": "Ramen alley, izakayas, bars — Susukino is Hokkaido's nightlife capital.", "tag": "city"},
+             "detail": "Ramen alley, izakayas, bars — Susukino is Hokkaido's nightlife capital. (No gambling "
+                       "detour worth it near here: Obihiro's unique Banei Keiba — draft horses pulling sleds, "
+                       "only venue of its kind in the world — is ~2h15-2h45 each way by JR, a full day round "
+                       "trip. A genuine curiosity if it's a bucket-list item, but not worth it for a 2-day stop.)",
+             "tag": "city"},
         ]},
         {"name": "Miyazaki", "blurb": "One night, inserted here on purpose: Miyazaki has no useful Hokkaido "
                                        "link, but good direct flights to both Osaka (~1h) and Naha (~1h37m) — "
