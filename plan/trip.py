@@ -1,13 +1,16 @@
 """Japan trip itinerary — Tokyo (race week, incl. Ghibli Museum), the Nakasendo Trail
-(Magome-Tsumago) between Tokyo and Kyoto, Kyoto/Nara, Osaka, Niseko, Sapporo,
-Sendai/Matsushima on the way back south, then Okinawa/Ishigaki. build() -> trip dict.
+(Magome-Tsumago) between Tokyo and Kyoto, Kyoto/Nara (incl. a Fushimi sake brewery),
+Osaka (incl. NPB preseason baseball), Niseko, Sapporo, Miyazaki (Kyushu) on the way
+south, then Okinawa/Ishigaki. build() -> trip dict.
 
-Route (27 Feb - 28 Mar 2027, 30 days): arrive & stay in Tokyo for race week (incl. the
-Ghibli Museum) -> RACE -> day after, a night on the old Nakasendo Trail (Magome to
-Tsumago) on the way to Kyoto -> a couple of days Kyoto/Nara -> a couple of days Osaka ->
-Niseko -> Sapporo -> back down through Sendai/Matsushima -> Okinawa (trimmed to ~6 days:
-Naha/Kerama + a taste of Ishigaki) -> home. Nightlife stops folded in at Tokyo
-(Shinjuku), Osaka (Dotonbori/Namba), Sapporo (Susukino) and Naha (Kokusai-dori)."""
+Route (27 Feb - 30 Mar 2027, 32 days): Tokyo race week (incl. Ghibli Museum) -> RACE ->
+a night on the Nakasendo Trail -> 3 days Kyoto/Nara (incl. a Fushimi sake brewery) ->
+3 days Osaka (incl. NPB preseason baseball) -> Niseko -> Sapporo -> Miyazaki (1 night,
+inserted here specifically because it has good direct flights to/from Osaka AND Naha but
+nothing useful to Hokkaido, so this is the lowest-backtrack slot) -> Okinawa (Naha/Kerama,
+incl. a proper night out) -> Ishigaki -> home. Sendai/Matsushima dropped in favour of the
+extra Kyoto/Osaka day each. Nightlife stops: Tokyo (Shinjuku), Osaka (Dotonbori/Namba),
+Sapporo (Susukino), Naha (Kokusai-dori + Sakaemachi Market)."""
 from datetime import date
 
 
@@ -34,8 +37,7 @@ def build():
              "detail": "Studio Ghibli Museum + a wander through Inokashira Park and Kichijoji town. BOOK EARLY: "
                        "tickets are timed-entry, released monthly (typically the 10th, ~1-3 months ahead) and "
                        "sell out fast — this is the one thing on the whole trip that needs a calendar reminder "
-                       "well before 2027. (Ghibli Park near Nagoya is a possible bolt-on to the Nakasendo travel "
-                       "day below if you want more Ghibli — would need an extra day.)", "tag": "city"},
+                       "well before 2027.", "tag": "city"},
             {"date": d(2027, 3, 4), "title": "Expo & bib pickup",
              "detail": "Collect race kit, carb-load begins.", "tag": "city"},
             {"date": d(2027, 3, 5), "title": "Free day — Shinjuku by night",
@@ -61,84 +63,108 @@ def build():
                        "checkpoints — genuinely one of Japan's best short walks. Then bus/train to Nagiso, "
                        "limited express to Nagoya, shinkansen on to Kyoto by evening.", "tag": "city"},
         ]},
-        {"name": "Kyoto & Nara", "blurb": "A couple of days — temples, and Nara's Omizutori fire ritual if timing allows (1-14 Mar).", "days": [
+        {"name": "Kyoto & Nara", "blurb": "Three days now instead of two (traded for Sendai/Matsushima) — "
+                                           "temples, a sake brewery, and Nara's Omizutori fire ritual if timing "
+                                           "allows (1-14 Mar).", "days": [
             {"date": d(2027, 3, 10), "title": "Kyoto sightseeing",
              "detail": "Fushimi Inari, Gion, Kiyomizu-dera.", "tag": "city"},
-            {"date": d(2027, 3, 11), "title": "Nara day-trip — Omizutori",
+            {"date": d(2027, 3, 11), "title": "Fushimi sake brewery",
+             "detail": "Fushimi is Kyoto's historic sake-brewing district (40+ breweries, famously soft water). "
+                       "Gekkeikan Okura Sake Museum for the history + tasting, Kizakura Kappa Country as a second "
+                       "stop, and a walk along the willow-lined Fushimi canal past the old sake warehouses — "
+                       "right next to Fushimi Inari, so it pairs naturally with yesterday.", "tag": "city"},
+            {"date": d(2027, 3, 12), "title": "Nara day-trip — Omizutori",
              "detail": "Todai-ji + the Omizutori fire ritual (torches on the temple veranda each evening, "
                        "runs 1-14 Mar — check that year's exact times).", "tag": "city"},
         ]},
-        {"name": "Osaka", "blurb": "A couple of days — castle by day, some of Japan's best nightlife by night.", "days": [
-            {"date": d(2027, 3, 12), "title": "Osaka Castle & Dotonbori",
+        {"name": "Osaka", "blurb": "Three days now instead of two — castle, baseball, and some of Japan's best "
+                                    "nightlife.", "days": [
+            {"date": d(2027, 3, 13), "title": "Osaka Castle & Dotonbori",
              "detail": "Osaka Castle in the afternoon, then Dotonbori for a street-food crawl "
                        "(takoyaki, okonomiyaki, kushikatsu) once the neon's on.", "tag": "city"},
-            {"date": d(2027, 3, 13), "title": "Namba & Shinsekai by night",
+            {"date": d(2027, 3, 14), "title": "Namba & Shinsekai by night",
              "detail": "Namba's bars and arcades, Shinsekai's retro streets and Tsutenkaku tower — Osaka's "
                        "nightlife is a genuine highlight, not an afterthought.", "tag": "city"},
+            {"date": d(2027, 3, 15), "title": "NPB baseball",
+             "detail": "NPB preseason (\"open-sen\") games run into ~22 Mar — catch the Orix Buffaloes at Kyocera "
+                       "Dome (in the city, most convenient) or the Hanshin Tigers at Koshien Stadium (short "
+                       "Hanshin Line ride). Bonus: Spring Koshien, the high-school tournament at the same "
+                       "stadium, typically runs ~19-31 Mar — tantalisingly close to these dates; push Osaka a "
+                       "few days later if you'd rather catch that instead.", "tag": "city"},
         ]},
-        {"name": "To Niseko", "blurb": "Long travel day, west coast to Hokkaido.", "days": [
-            {"date": d(2027, 3, 14), "title": "Osaka → Niseko",
-             "detail": "Shinkansen/flight combo up to Hokkaido, then transfer to Niseko.", "tag": "travel"},
+        {"name": "To Niseko", "blurb": "A full travel day, not a quick hop — budget for it.", "days": [
+            {"date": d(2027, 3, 16), "title": "Osaka → Niseko",
+             "detail": "Fly Kansai (KIX) → New Chitose (~2.5h), then intercity bus to Niseko (~2.5-3h via "
+                       "Rusutsu) — ~6.5-7.5h door to door. Shinkansen isn't competitive on this route; flying "
+                       "is unambiguously the better option.", "tag": "travel"},
         ]},
         {"name": "Niseko — snowboarding", "blurb": "A few days on the mountain.", "days": [
-            {"date": d(2027, 3, 15), "title": "Snowboarding", "detail": "Full day on the mountain.", "tag": "snow"},
-            {"date": d(2027, 3, 16), "title": "Snowboarding", "detail": "Full day on the mountain.", "tag": "snow"},
-            {"date": d(2027, 3, 17), "title": "Snowboarding", "detail": "Last day riding.", "tag": "snow"},
+            {"date": d(2027, 3, 17), "title": "Snowboarding", "detail": "Full day on the mountain.", "tag": "snow"},
+            {"date": d(2027, 3, 18), "title": "Snowboarding", "detail": "Full day on the mountain.", "tag": "snow"},
+            {"date": d(2027, 3, 19), "title": "Snowboarding", "detail": "Last day riding.", "tag": "snow"},
         ]},
         {"name": "Sapporo", "blurb": "Clock Tower by day, Susukino — one of Japan's biggest entertainment "
                                       "districts — by night.", "days": [
-            {"date": d(2027, 3, 18), "title": "Niseko → Sapporo",
+            {"date": d(2027, 3, 20), "title": "Niseko → Sapporo",
              "detail": "Transfer to Sapporo. Clock Tower, Odori Park, Nijo Market.", "tag": "city"},
-            {"date": d(2027, 3, 19), "title": "Susukino by night",
+            {"date": d(2027, 3, 21), "title": "Susukino by night",
              "detail": "Ramen alley, izakayas, bars — Susukino is Hokkaido's nightlife capital.", "tag": "city"},
         ]},
-        {"name": "Sendai & Matsushima", "blurb": "Heading back south — directly on the Tohoku Shinkansen, "
-                                                   "and Matsushima Bay is one of Japan's official Three Views.", "days": [
-            {"date": d(2027, 3, 20), "title": "Sapporo → Sendai",
-             "detail": "Hokkaido Shinkansen back down via Shin-Hakodate-Hokuto/Shin-Aomori to Sendai.", "tag": "travel"},
-            {"date": d(2027, 3, 21), "title": "Matsushima day-trip",
-             "detail": "~40 min local train from Sendai. Boat cruise through the pine-covered islets.", "tag": "city"},
+        {"name": "Miyazaki", "blurb": "One night, inserted here on purpose: Miyazaki has no useful Hokkaido "
+                                       "link, but good direct flights to both Osaka (~1h) and Naha (~1h37m) — "
+                                       "this is the lowest-backtrack place in the whole route to fit it in.", "days": [
+            {"date": d(2027, 3, 22), "title": "Sapporo → Miyazaki",
+             "detail": "Connects via Osaka (Itami) or Haneda — a long travel day, arriving Miyazaki in the "
+                       "evening.", "tag": "travel"},
+            {"date": d(2027, 3, 23), "title": "Aoshima Shrine & on to Naha",
+             "detail": "Aoshima Shrine and the \"Devil's Washboard\" (Oni no Sentakuita) tide-carved rock "
+                       "formations, an easy couple of hours near the city. (Takachiho Gorge is ~2.5h further "
+                       "with no train access — skipped to keep this a single efficient stop; would need its own "
+                       "overnight to do properly.) Fly on to Naha in the afternoon/evening.", "tag": "tourist"},
         ]},
         {"name": "Okinawa — Naha & Kerama", "blurb": "Trimmed down and spread out rather than 12 days in one "
                                                        "block. March suits sightseeing/snorkelling more than "
                                                        "full beach season (water ~22°C).", "days": [
-            {"date": d(2027, 3, 22), "title": "Sendai → Naha",
-             "detail": "Fly south (likely connecting via Tokyo). Shuri Castle if there's time, Kokusai-dori's "
-                       "bars and izakayas by night.", "tag": "travel"},
-            {"date": d(2027, 3, 23), "title": "Churaumi Aquarium day-trip",
+            {"date": d(2027, 3, 24), "title": "Naha — a proper night out",
+             "detail": "Shuri Castle by day. By night: Kokusai-dori's main strip, or for something more local, "
+                       "Sakaemachi Market (15 min walk / one monorail stop to Asato) — tiny hole-in-the-wall "
+                       "izakayas threaded between market stalls, awamori and ¥300 yakitori, comes alive after "
+                       "6pm, mostly no English menus. The better night out of the two.", "tag": "city"},
+            {"date": d(2027, 3, 25), "title": "Churaumi Aquarium day-trip",
              "detail": "North-island day trip (rental car preferred): Churaumi Aquarium, Ocean Expo Park, "
                        "Bise Fukugi Tree Road.", "tag": "tourist"},
-            {"date": d(2027, 3, 24), "title": "Kerama Islands day-trip",
+            {"date": d(2027, 3, 26), "title": "Kerama Islands day-trip",
              "detail": "Ferry to Zamami/Aka (50-70 min). Snorkelling at Furuzamami Beach — March is within "
                        "Kerama whale-watching season.", "tag": "tourist"},
         ]},
         {"name": "Ishigaki taste", "blurb": "A compact 2 days rather than a full extra region — the \"other "
                                              "really cool option\" without over-extending the Okinawa block.", "days": [
-            {"date": d(2027, 3, 25), "title": "Naha → Ishigaki",
+            {"date": d(2027, 3, 27), "title": "Naha → Ishigaki",
              "detail": "~1h domestic flight south to the Yaeyama Islands.", "tag": "travel"},
-            {"date": d(2027, 3, 26), "title": "Kabira Bay & Taketomi Island",
+            {"date": d(2027, 3, 28), "title": "Kabira Bay & Taketomi Island",
              "detail": "Morning: Kabira Bay glass-bottom boat. Afternoon: Taketomi Island (10 min ferry) — "
                        "buffalo-cart village, red-tile roofs, white coral-sand streets.", "tag": "tourist"},
         ]},
         {"name": "Travel home", "blurb": "", "days": [
-            {"date": d(2027, 3, 27), "title": "Ishigaki → Naha",
+            {"date": d(2027, 3, 29), "title": "Ishigaki → Naha",
              "detail": "Fly back to Naha to connect for the international leg home.", "tag": "travel"},
-            {"date": d(2027, 3, 28), "title": "Fly home", "detail": "Depart Japan.", "tag": "travel"},
+            {"date": d(2027, 3, 30), "title": "Fly home", "detail": "Depart Japan.", "tag": "travel"},
         ]},
     ]
     ndays = sum(len(l["days"]) for l in legs)
-    return {"meta": {"title": "Japan Trip 2027", "start": d(2027, 2, 27), "end": d(2027, 3, 28),
+    return {"meta": {"title": "Japan Trip 2027", "start": d(2027, 2, 27), "end": d(2027, 3, 30),
                      "days": ndays,
                      "note": "Tokyo (race week + Ghibli Museum) -> RACE -> a night on the Nakasendo Trail "
-                             "(Magome-Tsumago) -> Kyoto/Nara -> Osaka -> Niseko -> Sapporo -> Sendai/Matsushima "
-                             "(heading back south) -> Okinawa (Naha/Kerama) -> Ishigaki taste -> home. Okinawa "
-                             "trimmed from ~12 days down to ~6, with nightlife stops folded in at Tokyo "
-                             "(Shinjuku), Osaka (Dotonbori/Namba), Sapporo (Susukino) and Naha (Kokusai-dori). "
-                             "Note: the Osaka Grand Sumo tournament (~13-28 Mar 2027) overlaps this trip's dates "
-                             "but not the Osaka leg itself (we're there 12-13 Mar) — a known trade-off. Cherry "
-                             "blossoms are a coin-flip: current estimate has peak bloom ~28 Mar-5 Apr, right "
-                             "at/after this trip's end — reconfirm closer to the time. Ghibli Museum tickets "
-                             "(3 Mar) need booking ~1-3 months ahead — the one hard deadline in this itinerary."},
+                             "(Magome-Tsumago) -> 3 days Kyoto/Nara (incl. Fushimi sake brewery) -> 3 days Osaka "
+                             "(incl. NPB preseason baseball) -> Niseko -> Sapporo -> Miyazaki (1 night) -> "
+                             "Okinawa (Naha/Kerama) -> Ishigaki taste -> home. Sendai/Matsushima dropped in "
+                             "favour of the extra Kyoto/Osaka day each; Miyazaki added 2 new days net (32 total, "
+                             "was 30) since it's a genuinely new stop, not a reshuffle of freed days. Note: "
+                             "cherry blossoms are a coin-flip — current estimate has peak bloom ~28 Mar-5 Apr, "
+                             "right around this trip's new end date — reconfirm closer to the time. Ghibli "
+                             "Museum tickets (3 Mar) need booking ~1-3 months ahead — the one hard deadline in "
+                             "this itinerary. Budget section below was costed against the 30-day route before "
+                             "this reshuffle — directionally still right, but treat as pending a refresh."},
             "legs": legs, "budget": budget()}
 
 
@@ -148,7 +174,10 @@ def budget():
                  "(current). The Middle column is built from live-researched current prices (flights, JR "
                  "fares, hotel/lift-pass rates); Bare minimum and Luxury are reasoned extrapolations from "
                  "that anchor using standard hostel/ryokan/business-class ratios — worth re-checking closer "
-                 "to booking rather than treating as independently sourced.",
+                 "to booking rather than treating as independently sourced. NOTE: costed against the earlier "
+                 "30-day route; the current 32-day version (Miyazaki added, Sendai dropped) adds roughly "
+                 "2 extra nights + 2 extra short domestic flight hops on top of the figures below — call it "
+                 "+€150-250 pp on every tier/duration cell as a rough placeholder pending a proper refresh.",
         "tiers": {"headers": ["Tier", "What it gets you"], "rows": [
             ["Bare minimum", "Hostel dorms/capsules, conbini + casual meals, budget/no-frills flights, self-guided everything."],
             ["Middle", "Business hotels, casual-to-mid restaurants, standard economy flights — the itinerary as planned."],
@@ -164,12 +193,13 @@ def budget():
             ["Activities & tours (incl. private lessons/guide in Luxury)", "€85", "€120", "€850"],
         ]},
         "durations": {"headers": ["Duration", "Bare minimum", "Middle", "Luxury"], "rows": [
-            ["4-week (30 days, full itinerary)", "≈€3,650", "≈€5,050", "≈€18,900"],
+            ["4-week (30 days, pre-Miyazaki route)", "≈€3,650", "≈€5,050", "≈€18,900"],
             ["3-week (~23 days)*", "≈€3,150", "≈€4,050", "≈€15,750"],
         ]},
         "notes": [
             "*3-week = drop the Ishigaki extension entirely, and trim Tokyo (7→5 nights), Naha (3→2), "
-            "Sendai (2→1), and the Nakasendo stop (2→1 day) — same core route, tighter stays.",
+            "Sendai (2→1), and the Nakasendo stop (2→1 day) — same core route, tighter stays. Predates the "
+            "Sendai-for-Miyazaki swap, so treat as an approximate baseline too.",
             "The swing between tiers is almost entirely flights and accommodation — food and activities "
             "barely move the needle by comparison.",
             "Niseko lift passes are essentially fixed regardless of tier (it's a set resort rate) — "

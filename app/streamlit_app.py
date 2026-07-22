@@ -651,7 +651,7 @@ def trip_facts_html(trip):
     ]
     inner = "".join(f'<div class="fact"><div class="k">{k}</div><div class="v">{v}</div></div>' for k, v in cells)
     return (f'<div class="eyebrow">{esc(m["title"])}</div>'
-            f'<h2 style="font-size:26px;margin:6px 0 2px">Tokyo → Kyoto → Osaka → Niseko → Sapporo → Sendai → Okinawa</h2>'
+            f'<h2 style="font-size:26px;margin:6px 0 2px">Tokyo → Kyoto → Osaka → Niseko → Sapporo → Miyazaki → Okinawa</h2>'
             f'<p class="sub">{esc(m.get("note",""))}</p><div class="facts">{inner}</div>')
 
 
