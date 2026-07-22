@@ -272,5 +272,20 @@ def budget():
             "The luxury total is dominated by business-class flights (~4x economy) and 34 nights of "
             "5★/ryokan. \"Luxury lodging but economy flights\" comes out to roughly €9,700–11,300 pp — a "
             "more common real-world middle ground if the full luxury number is too steep.",
+            "WHEN TO BOOK — international flights: aim for Sept-Nov 2026 (5-6 months out). Google/Hopper fare "
+            "data favours this window for Asia long-haul specifically over generic 'book last minute' advice; "
+            "don't wait past Dec 2026. Tokyo Marathon weekend (7 Mar, 20th anniversary, ~40,000 runners) pushes "
+            "Tokyo-area hotel prices ~7-13% above the otherwise-low shoulder season, so book Tokyo lodging on "
+            "the earlier side of that window too, not on general 'low season, no rush' logic.",
+            "WHEN TO BOOK — domestic Japan flights: ANA/JAL open bookings 355 days out (~Feb-Mar 2026) and "
+            "their cheapest fare tiers (e.g. ANA SUPER VALUE 75/55/45/28/21) are inventory-limited, not "
+            "fixed-price — the cheap seats sell out first even with the window still open. Book as soon as it "
+            "opens if possible, and no later than ~75 days before each flight (~mid-Dec 2026) for the cheapest "
+            "bucket. The Sapporo leg carries extra sellout risk from ski-season demand. Peach/Jetstar are pure "
+            "dynamic pricing with no advance-purchase discount — just book as soon as they open seat sales for "
+            "the season (~late Jan 2026).",
+            "The 'book on a Tuesday' day-of-week folklore is debunked by the largest datasets (Google: "
+            "1.3-1.9% difference; CheapAir: <$1 across 1B+ fares) — don't plan around it, the booking-window "
+            "timing above matters far more.",
         ],
     }
