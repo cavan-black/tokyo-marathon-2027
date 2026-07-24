@@ -97,6 +97,11 @@ STYLE = """<style>
 .sv .phase-bar .rng{color:var(--faint);font-size:12.5px;font-family:var(--font-mono);}
 .sv details.week{border:1px solid var(--line);border-radius:11px;background:var(--surface);margin-bottom:8px;overflow:hidden;}
 .sv details.week[open]{border-color:var(--line-strong);}
+.sv details.current-week{border-color:var(--accent);border-width:2px;background:var(--accent-soft);
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 15%,transparent);}
+.sv .now-chip{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
+  color:#fff;background:var(--glam-grad);border-radius:20px;padding:2px 9px;margin-left:2px;
+  animation:popIn .4s ease both;}
 .sv details.week>summary{list-style:none;cursor:pointer;padding:12px 16px;display:grid;
   grid-template-columns:42px 92px 1fr auto;gap:14px;align-items:center;}
 .sv details.week>summary::-webkit-details-marker{display:none;}
@@ -339,7 +344,14 @@ def race_progress_html(plan):
 
 def glam_row_html(plan, progress, cur):
     wk_rows = progress.get("weeks", {})
-    progress_bar = race_progress_html(plan)
+    cur_w = wk_rows.get(str(cur), {})
+    # Ring tracks progress toward the FULL week's target so it fills up gradually across
+    # the week (day 2 of 7 isn't "100% done") — the under/over-target text flag elsewhere
+    # still judges against km due so far, which is the right comparison for that message.
+    planned = cur_w.get("planned_km", 0)
+    week_pct = (cur_w.get("actual_km", 0) / planned * 100) if planned > 0 else 0
+    week_ring = ring_html(week_pct, tier_for(week_pct), "This week",
+                           f'{cur_w.get("actual_km",0):.0f} of {planned:.0f} km this week', "var(--good)")
 
     done_total = sum(w["done"] for w in wk_rows.values())
     due_total = sum(w["done"] + w["partial"] + w["missed"] for w in wk_rows.values())
@@ -347,12 +359,8 @@ def glam_row_html(plan, progress, cur):
     consist_ring = ring_html(consist_pct, tier_for(consist_pct), "Consistency",
                               f'{done_total} of {due_total} sessions done', "var(--accent)")
 
-    streak = compute_streak(plan, wk_rows)
-    streak_html = ""
-    if streak > 0:
-        streak_html = (f'<div class="streak-card"><span class="streak-badge">🔥 {streak}</span>'
-                        f'<span class="streak-sub">week{"s" if streak != 1 else ""} on track in a row</span></div>')
-    return f'<div class="glam-row">{progress_bar}{consist_ring}{streak_html}</div>'
+    progress_bar = race_progress_html(plan)
+    return f'<div class="glam-row">{week_ring}{consist_ring}{progress_bar}</div>'
 
 
 def _format_duration(secs):
@@ -564,6 +572,8 @@ def weeks_html(plan, progress, cur):
             if (total_sessions and wsum_peek.get("missed", 0) == 0 and wsum_peek.get("partial", 0) == 0
                     and wsum_peek.get("actual_km", 0) >= 0.95 * wsum_peek.get("planned_km", 1)):
                 chips += '<span class="crushed-chip">🏆 Crushed</span>'
+            if w == cur:
+                chips += '<span class="now-chip">📍 This week</span>'
             summary = (f'<summary><div class="wk">{w}<small>WK</small></div>'
                        f'<div class="dt">{start.strftime("%d %b")}<br>{end.strftime("%d %b")}</div>'
                        f'<div class="keys">{keys} <span class="mut">·</span> '
@@ -582,7 +592,8 @@ def weeks_html(plan, progress, cur):
                          f'{f"<span class=flag style=color:{fcolor}>{esc(flag)}</span>" if flag else ""}</div>')
             days = "".join(day_html(d, days_map.get(d["date"], {}), today_iso) for d in wk["days"])
             openattr = " open" if w == cur else ""
-            out += f'<details class="week"{openattr}>{summary}{wline}<div class="days">{days}</div></details>'
+            weekcls = "week current-week" if w == cur else "week"
+            out += f'<details class="{weekcls}"{openattr}>{summary}{wline}<div class="days">{days}</div></details>'
         out += "</div>"
     return out
 
