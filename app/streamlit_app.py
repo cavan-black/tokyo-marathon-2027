@@ -192,6 +192,14 @@ STYLE = """<style>
   font-weight:800;font-size:15px;background:var(--glam-gold);color:#3d2a00;box-shadow:0 2px 14px rgba(255,179,71,.45);
   animation:ringFade .7s ease both;}
 .sv .streak-sub{font-size:12.5px;color:var(--muted);}
+.sv .race-progress{flex:1 1 260px;display:flex;flex-direction:column;justify-content:center;gap:8px;
+  padding:14px 18px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);}
+.sv .race-progress .rp-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px;
+  font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;}
+.sv .race-progress .rp-head b{color:var(--ink);font-family:var(--font-mono);font-size:12.5px;
+  text-transform:none;letter-spacing:0;font-weight:700;}
+.sv .race-track{position:relative;height:14px;border-radius:999px;background:var(--line);overflow:hidden;}
+.sv .race-fill{height:100%;border-radius:999px;background:var(--glam-grad);animation:ringFade .7s ease both;}
 @keyframes ringFade{from{opacity:0;transform:scale(.85);}to{opacity:1;transform:scale(1);}}
 @keyframes popIn{from{transform:scale(.7);opacity:0;}to{transform:scale(1);opacity:1;}}
 @keyframes glowPulse{0%,100%{box-shadow:0 0 0 rgba(47,143,126,0);}50%{box-shadow:0 0 12px rgba(47,143,126,.45);}}
@@ -311,16 +319,27 @@ def compute_streak(plan, wk_rows):
     return streak if started else 0
 
 
+def race_progress_html(plan):
+    """A linear progress bar spanning the whole training block, plan start -> race day."""
+    m = plan["meta"]
+    start = datetime.fromisoformat(m["start"]).date()
+    race = datetime.fromisoformat(m["race"]).date()
+    today = date.today()
+    total = max((race - start).days, 1)
+    elapsed = (today - start).days
+    pct = max(0, min(100, elapsed / total * 100))
+    if today >= race:
+        sub = "🏁 Race day done!"
+    else:
+        cur_week = min(m["total_weeks"], max(1, elapsed // 7 + 1))
+        sub = f'Week {cur_week} of {m["total_weeks"]} · {(race - today).days} days to race'
+    return (f'<div class="race-progress"><div class="rp-head"><span>Training block</span><b>{esc(sub)}</b></div>'
+            f'<div class="race-track"><div class="race-fill" style="width:{pct:.1f}%"></div></div></div>')
+
+
 def glam_row_html(plan, progress, cur):
     wk_rows = progress.get("weeks", {})
-    cur_w = wk_rows.get(str(cur), {})
-    # Ring tracks progress toward the FULL week's target so it fills up gradually across
-    # the week (day 2 of 7 isn't "100% done") — the under/over-target text flag elsewhere
-    # still judges against km due so far, which is the right comparison for that message.
-    planned = cur_w.get("planned_km", 0)
-    week_pct = (cur_w.get("actual_km", 0) / planned * 100) if planned > 0 else 0
-    week_ring = ring_html(week_pct, tier_for(week_pct), "This week",
-                           f'{cur_w.get("actual_km",0):.0f} of {planned:.0f} km this week', "var(--good)")
+    progress_bar = race_progress_html(plan)
 
     done_total = sum(w["done"] for w in wk_rows.values())
     due_total = sum(w["done"] + w["partial"] + w["missed"] for w in wk_rows.values())
@@ -333,7 +352,7 @@ def glam_row_html(plan, progress, cur):
     if streak > 0:
         streak_html = (f'<div class="streak-card"><span class="streak-badge">🔥 {streak}</span>'
                         f'<span class="streak-sub">week{"s" if streak != 1 else ""} on track in a row</span></div>')
-    return f'<div class="glam-row">{week_ring}{consist_ring}{streak_html}</div>'
+    return f'<div class="glam-row">{progress_bar}{consist_ring}{streak_html}</div>'
 
 
 def _format_duration(secs):
@@ -422,7 +441,7 @@ def approach_html(plan):
     sc = c.get("strength", {}).get("intro", "")
     return ('<div class="grid3">'
             f'<div class="card"><h3>Phases</h3><ul class="tight">{plist}</ul></div>'
-            f'<div class="card"><h3>Strength &amp; life</h3><p>{esc(sc)}</p></div>'
+            f'<div class="card"><h3>Strength & life</h3><p>{esc(sc)}</p></div>'
             f'<div class="card"><h3>Checkpoints</h3><p>{esc(cp)}</p></div>'
             '</div>')
 
@@ -1090,10 +1109,10 @@ def render_runner(runner_id):
         render_analytics(plan, progress)
     with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
-                    section("Strength &amp; conditioning", "", strength_html(plan)) + "</div>", unsafe_allow_html=True)
+                    section("Strength & conditioning", "", strength_html(plan)) + "</div>", unsafe_allow_html=True)
     with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
-                    section("Fuel &amp; life", "", fuel_html(plan)) + "</div>", unsafe_allow_html=True)
+                    section("Fuel & life", "", fuel_html(plan)) + "</div>", unsafe_allow_html=True)
     if has_diet:
         with sub[next(i)]:
             st.markdown(STYLE + '<div class="sv">' +
@@ -1104,7 +1123,7 @@ def render_runner(runner_id):
                     section("Tips", "", tips_html(plan)) + "</div>", unsafe_allow_html=True)
     with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
-                    section("Research &amp; rationale", "Why the plan is shaped this way, and what we've looked at.",
+                    section("Research & rationale", "Why the plan is shaped this way, and what we've looked at.",
                             research_html(plan)) + "</div>", unsafe_allow_html=True)
 
 
