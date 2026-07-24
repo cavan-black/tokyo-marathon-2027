@@ -97,10 +97,12 @@ STYLE = """<style>
 .sv .phase-bar .rng{color:var(--faint);font-size:12.5px;font-family:var(--font-mono);}
 .sv details.week{border:1px solid var(--line);border-radius:11px;background:var(--surface);margin-bottom:8px;overflow:hidden;}
 .sv details.week[open]{border-color:var(--line-strong);}
-.sv details.current-week{border-color:var(--accent);border-width:2px;background:var(--accent-soft);
-  box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 15%,transparent);}
+.sv details.current-week{border-color:var(--good);border-width:2px;
+  background:color-mix(in srgb,var(--good) 10%,var(--surface));
+  box-shadow:0 0 0 3px color-mix(in srgb,var(--good) 15%,transparent);}
 .sv .now-chip{display:inline-block;font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;
-  color:#fff;background:var(--glam-grad);border-radius:20px;padding:2px 9px;margin-left:2px;
+  color:#fff;background:linear-gradient(135deg,var(--good),color-mix(in srgb,var(--good) 70%,black));
+  border-radius:20px;padding:2px 9px;margin-left:2px;
   animation:popIn .4s ease both;}
 .sv details.week>summary{list-style:none;cursor:pointer;padding:12px 16px;display:grid;
   grid-template-columns:42px 92px 1fr auto;gap:14px;align-items:center;}
