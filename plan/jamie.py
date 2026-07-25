@@ -52,7 +52,7 @@ def thu(w):
 def sun(w):
     d=LR[w-1]
     txt={19:"26 km, last 6 km @ MP",
-        20:"30 km easy (recovery weekend — no MP)",
+        20:"Sevilla Half Marathon — run it CONTROLLED at easy pace, not all-out (no MP)",
         21:"32 km, last 8 km @ MP",
         23:"32 km easy — keep it genuinely easy (half race next weekend)",
         24:"TUNE-UP: Half-marathon race (all-out — this sets your goal) + w/u & c/d",

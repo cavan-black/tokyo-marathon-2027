@@ -65,7 +65,7 @@ def sun(w):
     d=LR[w-1]
     txt={16:"30 km, last 8 km @ MP",18:"32 km, last 10 km @ MP",
         19:"32 km easy (recovery weekend — no MP)",
-        20:"TUNE-UP: Half-marathon race (all-out) + w/u & c/d",
+        20:"TUNE-UP: Sevilla Half Marathon (all-out) + w/u & c/d",
         21:"30 km easy (post-race — keep it genuinely easy)",
         22:"32 km, last 10 km @ MP",
         23:"20 km easy — Christmas week, keep it light",
