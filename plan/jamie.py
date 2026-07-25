@@ -150,7 +150,10 @@ def content():
                 "Football & other sport count as training load — see the banner above. Don't double up hard efforts or stack three hard days.",
                 "Max 2 hard run-efforts per week: Tue quality plus EITHER the Thu MP tempo OR a Sunday MP long run — never both. Hard long-run weekends always alternate with easy ones (and football still counts on top).",
                 "Rest days are Monday (always) and Saturday through week 8; race-week Friday rest is the one exception.",
-                "If 82 km proves too much with football, ~68 km still delivers a strong 4:00."]},
+                "If 82 km proves too much with football, ~68 km still delivers a strong 4:00.",
+                "Sevilla Half (Sun 6 Dec, Wk 20) — signed up alongside Cav, but it lands on YOUR easy no-MP "
+                "week, not your real checkpoint. Run it controlled at easy/long-run pace, not all-out; the real "
+                "goal-setting test is still the Wk-24 half."]},
         "strength": C.strength("1–18", "19–30", football=True),
         "fuel": C.fuel(football=True, volume_note="it matters more with 80 km weeks + football"),
         "research": C.RESEARCH_NOTES,

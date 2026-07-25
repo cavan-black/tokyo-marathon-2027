@@ -165,7 +165,7 @@ def content():
             "headers": ["Wk / date", "Test", "On-track for 2:50", "If short — likely target"], "rows": [
                 ["Wk 9 · ~14 Sep", "5K time trial", "≤ 18:05", "18:05–18:45 → ~2:55-3:00 · >19:00 → 3:05+"],
                 ["Wk 13 · ~12 Oct", "10K time trial", "≤ 37:45", "37:45–39:00 → sub-3 · >40:00 → 3:05+"],
-                ["Wk 20 · ~30 Nov", "Half-marathon", "≤ 1:23:30", "1:23:30–1:26 → sub-3 · >1:27 → 3:05–3:10"],
+                ["Wk 20 · Sun 6 Dec", "Half-marathon — Sevilla Half, signed up", "≤ 1:23:30", "1:23:30–1:26 → sub-3 · >1:27 → 3:05–3:10"],
                 ["Race · 7 Mar", "Marathon", "2:50 = 4:01/km", "Start at CONFIRMED pace. Even splits."]],
             "notes": [
                 "Peak ~116 km — weekly volume is the biggest lever for marathon time, and the extra should be EASY km (your endurance lags your speed).",
