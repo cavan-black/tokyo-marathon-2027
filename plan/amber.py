@@ -61,7 +61,7 @@ def wed(w):
 
 def thu(w):
     if w == 1:
-        return "Rest — recover from the time trial", "rest"
+        return "Rest — legs fresh for Saturday's time trial", "rest"
     if w <= 4:
         return "Easy 20-25 min", "easy"
     if w <= 16:
