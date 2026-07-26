@@ -7,9 +7,9 @@ ROOT = os.path.abspath(os.path.join(HERE, ".."))
 DATA = os.path.join(ROOT, "data")
 sys.path.insert(0, HERE)
 
-import cav, jamie, trip  # noqa: E402
+import cav, jamie, stephen, amber, trip  # noqa: E402
 
-RUNNERS = [cav, jamie]
+RUNNERS = [cav, jamie, stephen, amber]
 
 if __name__ == "__main__":
     os.makedirs(DATA, exist_ok=True)
@@ -21,7 +21,7 @@ if __name__ == "__main__":
             json.dump(plan, f, indent=2, ensure_ascii=False)
         manifest.append({"id": m["id"], "name": m["name"], "goal": m["goal"]})
         nd = sum(1 for wk in plan["weeks"] for d in wk["days"] if d["type"] != "rest")
-        print(f"  {m['name']}: 33 weeks, {nd} training days, peak {m['peak_km']} km")
+        print(f"  {m['name']}: {m['total_weeks']} weeks, {nd} training days, peak {m['peak_km']} km")
     with open(os.path.join(DATA, "runners.json"), "w", encoding="utf-8") as f:
         json.dump(manifest, f, indent=2, ensure_ascii=False)
     print(f"Wrote {len(manifest)} runner plans + runners.json")

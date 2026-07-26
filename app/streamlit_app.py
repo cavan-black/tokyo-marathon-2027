@@ -274,7 +274,8 @@ def load_json(name, default=None):
 
 def push_secrets_to_env():
     for k in ("STRAVA_CLIENT_ID", "STRAVA_CLIENT_SECRET", "STRAVA_REFRESH_TOKEN",
-              "STRAVA_REFRESH_TOKEN_CAV", "STRAVA_REFRESH_TOKEN_JAMIE"):
+              "STRAVA_REFRESH_TOKEN_CAV", "STRAVA_REFRESH_TOKEN_JAMIE",
+              "STRAVA_REFRESH_TOKEN_STEPHEN", "STRAVA_REFRESH_TOKEN_AMBER"):
         if k in st.secrets:
             os.environ[k] = str(st.secrets[k])
 
