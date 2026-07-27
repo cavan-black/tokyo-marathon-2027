@@ -1,33 +1,39 @@
-"""Japan trip itinerary — Tokyo (race week incl. Ghibli Museum, snow monkeys & Golden
-Gai), Shibuya/Harajuku the day after the race, the Nakasendo Trail (Magome-Tsumago)
-between Tokyo and Kyoto, Kyoto/Nara (incl. a Fushimi sake brewery, Ichijoji Sagarimatsu,
-a Yamazaki whisky day and an Arima Onsen day), Osaka (incl. the Haru Basho sumo
-tournament + NPB preseason baseball), Niseko, Sapporo, Miyazaki (Kyushu) on the way
-south, then Okinawa. build() -> trip dict.
+"""Japan trip itinerary — Tokyo (race week incl. Ghibli Museum, snow monkeys, Shibuya/
+Harajuku/teamLab/go-karting all moved to before the race, and Golden Gai moved to after
+it), a 3-day Nakasendo Trail (Magome-Tsumago, incl. a recovery day) between Tokyo and
+Kyoto, Kyoto/Nara (incl. a Fushimi sake brewery, Ichijoji Sagarimatsu, a Yamazaki whisky
+day and an Arima Onsen day), Osaka (incl. the Haru Basho sumo tournament + NPB preseason
+baseball), Niseko, Sapporo, Miyazaki (Kyushu) on the way south, then Okinawa.
+build() -> trip dict.
 
-Route (27 Feb - 30 Mar 2027, 32 days): Tokyo race week (Ghibli Museum, Golden Gai on the
-Monday — 6 days clear of the race so no need to hold back, snow monkeys day trip to
-Jigokudani/Nagano) -> RACE -> Shibuya/Harajuku the day after (moved here on request) ->
-a night on the Nakasendo Trail -> 5 days Kyoto/Nara (incl. a Fushimi sake brewery, the
-Ichijoji Sagarimatsu/Musashi duel site + Kyoto's quiet northeast, a Yamazaki Distillery
-whisky day trip, and an Arima Onsen day that doubles as the transfer to Osaka) -> 3 days
-Osaka (incl. the Haru Basho Grand Sumo Tournament + NPB preseason baseball) -> Niseko ->
-Sapporo (one night now, was two) -> Miyazaki (two days now, was three, inserted here
-specifically because it has good direct flights to/from Osaka AND Naha but nothing
-useful to Hokkaido, so this is the lowest-backtrack slot) -> Okinawa (Naha/Kerama, incl.
-a proper night out) -> home. Ishigaki dropped from the route entirely (on request)
-rather than trimmed, so Okinawa now flies straight home from Naha instead of via a
-Naha<->Ishigaki hop. Sendai/Matsushima dropped in favour of the extra Kyoto/Osaka day
-each; Kyoto/Nara grew by two extra days for the Ichijoji and Arima Onsen additions, then
-condensed back to one net extra day by pairing sights that sit next to each other
-(Fushimi Inari + the sake brewery; Gion/Kiyomizu-dera + Ichijoji); the whisky day, having
-originally been swapped out for the onsen day, is back in as its own day trip (on
-request) since neither should be rushed by needing to catch a train onward. Sapporo
-condensed from two nights to one (arrive, sightsee, one night out in Susukino, depart
-the next afternoon) and Miyazaki from three days to two (golf and Aoshima Shrine now
-share a day, timed around an early tee slot). Net effect on the END date across all
-these changes: 31 Mar (original) -> 2 Apr (Ishigaki) -> 31 Mar (Ishigaki dropped) -> 29
-Mar (Sapporo/Miyazaki trims) -> 30 Mar (whisky day back in)."""
+Route (27 Feb - 30 Mar 2027, 32 days): Tokyo race week (Ghibli Museum, snow monkeys day
+trip to Jigokudani/Nagano, and — moved here from the day after the race, on request —
+Shibuya, Harajuku, teamLab and street go-karting, all stacked onto 1 March since it's 6
+days clear of the race) -> RACE -> Golden Gai that evening instead (once legs have had a
+few hours to settle — a better fit for an actual celebration than a pre-race outing) ->
+3 days on the Nakasendo Trail, starting the day after the race (was 1 day Tokyo + 2 days
+Nakasendo; with Tokyo's day freed up by the reshuffle above, it becomes a 3rd Nakasendo
+day instead — a rest day in Magome before the Tsumago walk, so marathon legs get 3 days
+to recover before the 7.8km forest walk instead of 1) -> 5 days Kyoto/Nara (incl. a
+Fushimi sake brewery, the Ichijoji Sagarimatsu/Musashi duel site + Kyoto's quiet
+northeast, a Yamazaki Distillery whisky day trip, and an Arima Onsen day that doubles as
+the transfer to Osaka) -> 3 days Osaka (incl. the Haru Basho Grand Sumo Tournament + NPB
+preseason baseball) -> Niseko -> Sapporo (one night now, was two) -> Miyazaki (two days
+now, was three, inserted here specifically because it has good direct flights to/from
+Osaka AND Naha but nothing useful to Hokkaido, so this is the lowest-backtrack slot) ->
+Okinawa (Naha/Kerama, incl. a proper night out) -> home. Ishigaki dropped from the route
+entirely (on request) rather than trimmed, so Okinawa now flies straight home from Naha
+instead of via a Naha<->Ishigaki hop. Sendai/Matsushima dropped in favour of the extra
+Kyoto/Osaka day each; Kyoto/Nara grew by two extra days for the Ichijoji and Arima Onsen
+additions, then condensed back to one net extra day by pairing sights that sit next to
+each other (Fushimi Inari + the sake brewery; Gion/Kiyomizu-dera + Ichijoji); the whisky
+day, having originally been swapped out for the onsen day, is back in as its own day
+trip (on request) since neither should be rushed by needing to catch a train onward.
+Sapporo condensed from two nights to one (arrive, sightsee, one night out in Susukino,
+depart the next afternoon) and Miyazaki from three days to two (golf and Aoshima Shrine
+now share a day, timed around an early tee slot). The Tokyo/Nakasendo reshuffle above is
+day-count-neutral overall (1 day Tokyo + 2 days Nakasendo -> 0 + 3 days Nakasendo), so
+it doesn't move the END date at all — that's still 30 Mar after all the other changes."""
 from datetime import date
 
 
@@ -45,11 +51,20 @@ def build():
                                                  "explore properly, no rushing.", "days": [
             {"date": d(2027, 2, 28), "title": "Arrive & settle",
              "detail": "Land, transfer into Tokyo, check in. Easy walk only — race is 7 days out.", "tag": "travel"},
-            {"date": d(2027, 3, 1), "title": "Asakusa & Senso-ji by day, Golden Gai by night",
-             "detail": "Daytime: Senso-ji temple, Nakamise shopping street, Sumida river walk. Then Shinjuku's "
-                       "Golden Gai and Omoide Yokocho for a proper night out — one of Tokyo's best nightlife "
-                       "pockets. The night out is deliberately on the Monday: 6 days clear of the race instead "
-                       "of 2, so there's no need to hold back.", "tag": "city"},
+            {"date": d(2027, 3, 1), "title": "Asakusa, Shibuya, Harajuku, teamLab & go-karting",
+             "detail": "Daytime: Senso-ji temple, Nakamise shopping street, Sumida river walk in Asakusa, then "
+                       "across town to Shibuya Crossing and Harajuku's Takeshita Street. In the evening: "
+                       "teamLab (Planets or Borderless) if tickets allow, then real-life Mario Kart — "
+                       "public-road go-karting through Tokyo in costume (the original \"MariCAR\" brand was "
+                       "sued by Nintendo and rebranded, now mainly trading as \"Street Kart\"; costumes are no "
+                       "longer Nintendo characters but the karting itself is the same). SORT BEFORE YOU FLY: "
+                       "you need an International Driving Permit (1949 Geneva Convention) arranged in your "
+                       "home country before departure — this can't be sorted in Japan, same category of hard "
+                       "deadline as the Ghibli tickets. A genuinely big day, but it's deliberately on the "
+                       "Monday: 6 days clear of the race, so there's no need to hold back — that's exactly why "
+                       "it's stacked here rather than closer to race day. (Golden Gai's moved to after the "
+                       "race instead — better suited to a proper celebration than a school-night pre-race "
+                       "outing.)", "tag": "city"},
             {"date": d(2027, 3, 2), "title": "Snow monkeys — Jigokudani, Nagano",
              "detail": "Jigokudani Monkey Park (Yudanaka): wild Japanese macaques bathing in hot springs, one of "
                        "Japan's most famous wildlife sights. Hokuriku Shinkansen Tokyo→Nagano (~1h20-1h30), then "
@@ -86,8 +101,13 @@ def build():
                        "swinging motion — save that physical stuff for after the marathon, back at Round1 Osaka "
                        "if you want the full batting-cage experience. Keep the pace unhurried overall — browsing, "
                        "not a walking tour, and definitely not a workout.", "tag": "city"},
-            {"date": d(2027, 3, 6), "title": "Shakeout & rest + sushi omakase carb-load",
-             "detail": "Short shakeout + strides, lay out kit, early night. For the carb-load dinner: Kyubey "
+            {"date": d(2027, 3, 6), "title": "Shakeout, rest, Nakiryu ramen & sushi omakase carb-load",
+             "detail": "Short shakeout + strides, lay out kit, early night. Lunch stop: Nakiryu in Sangenjaya — "
+                       "the tantanmen shop that made history alongside Tsuta as one of Tokyo's first "
+                       "Michelin-starred ramen restaurants (2017; Michelin has since folded the ramen category "
+                       "out of its star listings, but the food and reputation haven't gone anywhere). Only 10 "
+                       "seats, no reservations, so go early or expect a queue — genuinely low-impact the day "
+                       "before the race since it's just standing, not walking. For the carb-load dinner: Kyubey "
                        "Ginza (Ginza Honten) — a long-established, genuinely foreigner-friendly omakase counter, "
                        "not an intimidating impossible-to-book legend like Jiro. Nigiri-only omakase from "
                        "¥10,000, full set courses ¥15,000-30,000; 17 seats means a reservation is sensible but "
@@ -97,38 +117,36 @@ def build():
         ]},
         {"name": "Race day", "blurb": "", "days": [
             {"date": d(2027, 3, 7), "title": "🏁 TOKYO MARATHON",
-             "detail": "Race day. Then eat, drink (in moderation) and celebrate.", "tag": "race"},
-        ]},
-        {"name": "Tokyo — after the race", "blurb": "One more Tokyo day before heading out — legs are trashed, "
-                                                       "so keep it to easy walking, people-watching, and sitting "
-                                                       "down to drive things.", "days": [
-            {"date": d(2027, 3, 8), "title": "Shibuya, Harajuku, Michelin ramen & street go-karting",
-             "detail": "Shibuya Crossing, Harajuku's Takeshita Street, teamLab (Planets or Borderless) if tickets "
-                       "allow. Lunch detour: Nakiryu in Sangenjaya, one stop from Shibuya on the Tokyu Denentoshi "
-                       "Line — the tantanmen shop that made history alongside Tsuta as one of Tokyo's first "
-                       "Michelin-starred ramen restaurants (2017; Michelin has since folded the ramen category "
-                       "out of its star listings, but the food and the reputation haven't gone anywhere). Only "
-                       "10 seats, no reservations, so go early or expect a queue — fine on trashed legs since "
-                       "it's just standing, not walking. Then real-life Mario Kart: public-road go-karting "
-                       "through Tokyo in costume — the "
-                       "original \"MariCAR\" brand was sued by Nintendo and rebranded (now mainly trading as "
-                       "\"Street Kart\"; costumes are no longer Nintendo characters but the karting itself is "
-                       "the same). SORT BEFORE YOU FLY: you need an International Driving Permit (1949 Geneva "
-                       "Convention) arranged in your home country before departure — this can't be sorted in "
-                       "Japan, same category of hard deadline as the Ghibli tickets. Low-impact seated activity, "
-                       "fine the day after the race even with sore legs.", "tag": "city"},
+             "detail": "Race day. Refuel, shower and rest up for a few hours first, then Shinjuku's Golden Gai "
+                       "and Omoide Yokocho for the real celebration once the legs have had a chance to settle — "
+                       "one of Tokyo's best nightlife pockets, and there's no better excuse for a proper night "
+                       "out than just finishing a marathon. Gentle, seated drinking rather than a bar-hopping "
+                       "crawl — cobblestone alleys and sore quads don't mix a few hours post-race.",
+             "tag": "race"},
         ]},
         {"name": "Nakasendo Trail — Magome to Tsumago", "blurb": "The old Edo-period highway between Tokyo and "
-                                                                   "Kyoto — a night in a preserved post town and "
-                                                                   "a forest walk between two of Japan's "
-                                                                   "best-kept historic villages.", "days": [
-            {"date": d(2027, 3, 9), "title": "Tokyo → Magome",
-             "detail": "Shinkansen to Nagoya, limited express to Nakatsugawa, bus to Magome. Explore the post "
-                       "town in the afternoon, overnight in a traditional minshuku. Recovery-mode legs, no rush.",
-             "tag": "travel"},
+                                                                   "Kyoto — three days now instead of two, with "
+                                                                   "an extra rest day worked in right after the "
+                                                                   "marathon before tackling the walk. A night "
+                                                                   "in a preserved post town and a forest walk "
+                                                                   "between two of Japan's best-kept historic "
+                                                                   "villages.", "days": [
+            {"date": d(2027, 3, 8), "title": "Tokyo → Magome",
+             "detail": "The day after the race, genuinely easy on purpose: shinkansen to Nagoya, limited "
+                       "express to Nakatsugawa, bus to Magome. A gentle look around the post town in the late "
+                       "afternoon if legs allow, overnight in a traditional minshuku. Recovery-mode legs, no "
+                       "rush — this slot used to be a full Tokyo sightseeing day (Shibuya, Harajuku, "
+                       "go-karting), but with those moved earlier in the week to 1 March, the day after the "
+                       "race is now free to just be a quiet travel day.", "tag": "travel"},
+            {"date": d(2027, 3, 9), "title": "Rest day in Magome",
+             "detail": "A full extra day worked in specifically to let marathon legs recover before the "
+                       "Tsumago walk — properly explore Magome without rushing: the old waterwheel, the "
+                       "Shimazaki Toson Memorial Museum (the post town's most famous son), the viewpoint at the "
+                       "top of the village. Steep but short streets, easy pace, sit down a lot.", "tag": "city"},
             {"date": d(2027, 3, 10), "title": "Walk to Tsumago, on to Kyoto",
              "detail": "The Magome-Tsumago walk: ~7.8 km, ~2.5-3 h through forest, waterfalls and Edo-period "
-                       "checkpoints — genuinely one of Japan's best short walks. Then bus/train to Nagiso, "
+                       "checkpoints — genuinely one of Japan's best short walks, and legs have now had 3 days "
+                       "to recover since the race instead of 1. Then bus/train to Nagiso, "
                        "limited express to Nagoya, shinkansen on to Kyoto by evening.", "tag": "city"},
         ]},
         {"name": "Kyoto & Nara", "blurb": "Five days now (was four, three, briefly five again) — temples, a "
@@ -297,10 +315,14 @@ def build():
     ndays = sum(len(l["days"]) for l in legs)
     return {"meta": {"title": "Japan Trip 2027", "start": d(2027, 2, 27), "end": d(2027, 3, 30),
                      "days": ndays,
-                     "note": "Tokyo (race week: Asakusa by day + Golden Gai by night on the Monday, snow monkeys "
-                             "day trip, golf at Daiatsugi CC, Ghibli Museum + Kichijoji/Shimokitazawa shopping, "
-                             "Akihabara + Round1 Ikebukuro) -> RACE -> Shibuya/Harajuku + go-karting the day "
-                             "after -> a night on the Nakasendo Trail (Magome-Tsumago) -> 5 days Kyoto/Nara "
+                     "note": "Tokyo (race week: Asakusa by day + Shibuya/Harajuku/teamLab/go-karting all "
+                             "stacked onto the Monday — 6 days clear of the race, no need to hold back — snow "
+                             "monkeys day trip, golf at Daiatsugi CC, Ghibli Museum + Kichijoji/Shimokitazawa "
+                             "shopping, Akihabara + Round1 Ikebukuro, Nakiryu ramen the day before the race) -> "
+                             "RACE -> Golden Gai that evening instead (moved here on request — a proper "
+                             "celebration fits post-race better than a pre-race outing) -> 3 days on the "
+                             "Nakasendo Trail (Magome-Tsumago), starting the day after the race and including a "
+                             "rest day in Magome before the walk -> 5 days Kyoto/Nara "
                              "(incl. Fushimi sake brewery, Ichijoji Sagarimatsu & Kyoto's quiet northeast, a "
                              "Yamazaki whisky day trip, Arima Onsen) -> 3 days Osaka (incl. the Haru Basho Grand "
                              "Sumo Tournament + NPB "
@@ -317,8 +339,11 @@ def build():
                              "(compulsory-caddie rounds eat most of a day); Miyazaki's extra day has since come "
                              "back out again (on request) by pairing golf with Aoshima instead of splitting "
                              "them. Tokyo's golf slot needed no extra day at all — moving "
-                             "Asakusa onto the same day as Golden Gai freed up the Wednesday for it, so the "
-                             "week is back to its original 7 days. Kyoto/Nara grew from 3 to 5 days for the "
+                             "Asakusa onto the same day as what was then Golden Gai freed up the Wednesday for "
+                             "it, so the week stayed at its original 7 days. Golden Gai itself has since moved "
+                             "again — off the Monday entirely and onto race-day evening instead (on request), "
+                             "with Shibuya/Harajuku/teamLab/go-karting taking over the freed-up Monday slot. "
+                             "Kyoto/Nara grew from 3 to 5 days for the "
                              "Ichijoji/Musashi history day and a proper onsen day (Arima, swapped in for the "
                              "whisky distillery tour at the time — nicer not to be tipsy right before hauling "
                              "bags onto a train), then condensed "
@@ -333,7 +358,8 @@ def build():
                              "right through the whole Osaka stay. Three proper food "
                              "experiences folded into existing days rather than given their own: sushi omakase "
                              "at Kyubey Ginza the night before the race, Michelin-pedigree tantanmen at Nakiryu "
-                             "the day after, and Kobe beef teppanyaki in Dotonbori on the first Osaka night. 32 "
+                             "for lunch that same day, and Kobe beef teppanyaki in Dotonbori on the first Osaka "
+                             "night. 32 "
                              "days total: the original 33 dropped to 31 after Ishigaki was removed and "
                              "Sapporo/Miyazaki were condensed, then +1 again for the whisky day coming back in "
                              "as its own day. Cherry blossoms are still a coin-flip: current "
