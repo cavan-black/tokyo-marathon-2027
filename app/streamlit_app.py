@@ -14,10 +14,11 @@ sys.path.insert(0, ROOT)
 
 st.set_page_config(page_title="Tokyo 2027 · Team dashboard", page_icon="🏃", layout="wide")
 
-# Custom "Add to Home Screen" icon for iOS/Android — Streamlit doesn't expose a way to set
-# apple-touch-icon directly, so inject the link tags via markdown. Browsers still pick up
-# <link rel="..."> for icon purposes even injected into the body, which is what iOS Safari's
-# "Add to Home Screen" actually reads (not the tab favicon).
+# Custom "Add to Home Screen" icon for iOS/Android. Streamlit's own frontend already ships a
+# real apple-touch-icon link in the true document <head> (pointing at their logo), and
+# st.markdown can only inject into the page body — iOS reads the head tag first, so the
+# body-injected one loses. Fix: components.html runs unsandboxed (same-origin), so its script
+# can reach window.parent.document.head directly, remove Streamlit's icon tags, and add ours.
 def _icon_data_uri(filename):
     path = os.path.join(STATIC, filename)
     if not os.path.exists(path):
@@ -29,14 +30,33 @@ def _icon_data_uri(filename):
 _apple_icon = _icon_data_uri("apple-touch-icon.png")
 _icon_192 = _icon_data_uri("icon-192.png")
 if _apple_icon:
-    st.markdown(
-        f"""<link rel="apple-touch-icon" href="{_apple_icon}">
-        <link rel="icon" type="image/png" sizes="192x192" href="{_icon_192 or _apple_icon}">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-title" content="Tokyo 2027">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-        <meta name="theme-color" content="#ce2e3b">""",
-        unsafe_allow_html=True,
+    import streamlit.components.v1 as components
+    components.html(
+        f"""<script>
+        (function() {{
+            var doc = window.parent.document;
+            doc.querySelectorAll('link[rel="apple-touch-icon"], link[rel="apple-touch-icon-precomposed"], '
+                + 'link[rel="icon"], link[rel="shortcut icon"]').forEach(function(el) {{ el.remove(); }});
+            function addLink(rel, href, extra) {{
+                var l = doc.createElement('link');
+                l.rel = rel; l.href = href;
+                if (extra) for (var k in extra) l.setAttribute(k, extra[k]);
+                doc.head.appendChild(l);
+            }}
+            addLink('apple-touch-icon', {_apple_icon!r});
+            addLink('icon', {_icon_192 or _apple_icon!r}, {{type: 'image/png', sizes: '192x192'}});
+            function addMeta(name, content) {{
+                var m = doc.createElement('meta');
+                m.name = name; m.content = content;
+                doc.head.appendChild(m);
+            }}
+            addMeta('apple-mobile-web-app-capable', 'yes');
+            addMeta('apple-mobile-web-app-title', 'Tokyo 2027');
+            addMeta('apple-mobile-web-app-status-bar-style', 'black-translucent');
+            addMeta('theme-color', '#ce2e3b');
+        }})();
+        </script>""",
+        height=0,
     )
 
 # Wide layout stretches full browser width — cap it so there's breathing room on both sides.
