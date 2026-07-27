@@ -341,6 +341,40 @@ def refresh_runner(runner_id):
     return sync_runner(runner_id, write=True)
 
 
+GITHUB_REPO = "cavan-black/tokyo-marathon-2027"
+
+
+def commit_progress_to_github(runner_id, progress):
+    """Persist a manual refresh back to the repo. Streamlit Cloud's filesystem is ephemeral —
+    a local-only write (what sync_runner does) gets wiped the next time the app redeploys,
+    which happens on every push to the repo, including the scheduled sync running again a
+    few hours later. Without this, manual refreshes look like they worked but never survive."""
+    token = st.secrets.get("GH_PAT")
+    if not token:
+        return False, "no GH_PAT secret set — see README"
+    import requests
+    path = f"data/progress_{runner_id}.json"
+    api = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{path}"
+    headers = {"Authorization": f"token {token}", "Accept": "application/vnd.github+json"}
+    try:
+        r = requests.get(api, headers=headers, timeout=15)
+        sha = r.json().get("sha") if r.status_code == 200 else None
+        content = json.dumps(progress, indent=2, ensure_ascii=False)
+        payload = {
+            "message": f"chore: manual Strava refresh ({runner_id})",
+            "content": base64.b64encode(content.encode("utf-8")).decode("ascii"),
+            "branch": "main",
+        }
+        if sha:
+            payload["sha"] = sha
+        r2 = requests.put(api, headers=headers, json=payload, timeout=15)
+        if r2.status_code in (200, 201):
+            return True, None
+        return False, f"GitHub API {r2.status_code}: {r2.text[:200]}"
+    except Exception as e:
+        return False, str(e)
+
+
 def esc(s):
     return html.escape(str(s))
 
@@ -1132,7 +1166,13 @@ def render_runner(runner_id):
             if res is None:
                 st.warning("No Strava creds for this runner (see README).")
             else:
-                st.success("Synced!")
+                saved, err = commit_progress_to_github(runner_id, res)
+                if saved:
+                    st.success("Synced and saved!")
+                else:
+                    st.success("Synced!")
+                    st.caption(f"⚠ Not saved permanently ({err}) — this'll be overwritten by the "
+                               f"next redeploy. Add a GH_PAT secret to persist manual refreshes.")
                 st.rerun()
         except Exception as e:
             st.error(f"Sync failed: {e}")

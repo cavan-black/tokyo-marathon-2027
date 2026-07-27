@@ -67,8 +67,20 @@ the correct pre-start state. Connect Strava to light it up.
    STRAVA_CLIENT_SECRET = "…"
    STRAVA_REFRESH_TOKEN_CAV = "…"
    STRAVA_REFRESH_TOKEN_JAMIE = "…"
+   GH_PAT = "…"
    ```
    The **🔄 Refresh from Strava** button now works live.
+
+   `GH_PAT` is optional but recommended: Streamlit Cloud's filesystem is ephemeral, so a
+   manual refresh that only writes locally gets **wiped the next time the app redeploys**
+   (which happens on every push to the repo, including the scheduled sync a few hours
+   later) — it'll look like it worked, then quietly revert. With `GH_PAT` set, a manual
+   refresh commits `data/progress_<id>.json` straight to GitHub via their API, so it
+   persists the same way the scheduled sync's commits do. Create one at
+   <https://github.com/settings/tokens> (fine-grained token scoped to just this repo,
+   **Contents: Read and write** permission is enough) and paste it in as `GH_PAT`.
+   Without it, the button still works for the current session — you just won't see it
+   survive a redeploy.
 
 ## 4. Auto-sync a few times a day (GitHub Actions)
 
