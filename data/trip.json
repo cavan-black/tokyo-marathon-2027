@@ -2,9 +2,9 @@
   "meta": {
     "title": "Japan Trip 2027",
     "start": "2027-02-27",
-    "end": "2027-04-03",
-    "days": 36,
-    "note": "Tokyo (race week: Asakusa by day + Golden Gai by night on the Monday, snow monkeys day trip, golf at Daiatsugi CC, Ghibli Museum + Kichijoji/Shimokitazawa shopping, Akihabara + Round1 Ikebukuro) -> RACE -> Shibuya/Harajuku + go-karting the day after -> a night on the Nakasendo Trail (Magome-Tsumago) -> 4 days Kyoto/Nara (incl. Fushimi sake brewery, Ichijoji Sagarimatsu & Kyoto's quiet northeast, Arima Onsen) -> 3 days Osaka (incl. the Haru Basho Grand Sumo Tournament + NPB baseball + Boat Race Suminoe + Round1 Stadium Sennichimae) -> Niseko -> Sapporo -> Miyazaki (3 nights, incl. golf at Phoenix Country Club) -> Okinawa (4 nights, incl. golf at Okinawa Country Club) -> Ishigaki taste -> home. Sendai/Matsushima dropped in favour of the extra Kyoto/Osaka day each. Miyazaki and Naha each grew by a day to fit a round of golf properly (compulsory-caddie rounds eat most of a day); Tokyo's golf slot needed no extra day at all — moving Asakusa onto the same day as Golden Gai freed up the Wednesday for it, so the week is back to its original 7 days. Kyoto/Nara grew from 3 to 5 days for the Ichijoji/Musashi history day and a proper onsen day (Arima, swapped in for a whisky distillery tour — nicer not to be tipsy right before hauling bags onto a train), then condensed back to 4: Fushimi Inari now shares a day with the Fushimi sake brewery next door, and Gion/Kiyomizu-dera now shares a day with Ichijoji (both fit better with each other than the original split did, and the onsen day still doubles as the Kyoto->Osaka travel day, so it's not fully 'extra'). Osaka's dates now line up with the Haru Basho — Osaka's Grand Sumo Tournament, running 14-28 Mar 2027 at EDION Arena, right through the whole Osaka stay. Three proper food experiences folded into existing days rather than given their own: sushi omakase at Kyubey Ginza the night before the race, Michelin-pedigree tantanmen at Nakiryu the day after, and Kobe beef teppanyaki in Dotonbori on the first Osaka night. 36 days total, up from the original 33. Cherry blossoms are still a coin-flip: current estimate has peak bloom ~28 Mar-5 Apr, comfortably inside this trip's now-longer tail — reconfirm closer to the time. Ghibli Museum tickets (4 Mar) need booking ~1-3 months ahead, sumo tickets go on sale roughly a month out (grab them the moment they do — Haru Basho is popular), and the go-karting needs an International Driving Permit sorted before departure — the three hard deadlines here."
+    "end": "2027-03-31",
+    "days": 33,
+    "note": "Tokyo (race week: Asakusa by day + Golden Gai by night on the Monday, snow monkeys day trip, golf at Daiatsugi CC, Ghibli Museum + Kichijoji/Shimokitazawa shopping, Akihabara + Round1 Ikebukuro) -> RACE -> Shibuya/Harajuku + go-karting the day after -> a night on the Nakasendo Trail (Magome-Tsumago) -> 4 days Kyoto/Nara (incl. Fushimi sake brewery, Ichijoji Sagarimatsu & Kyoto's quiet northeast, Arima Onsen) -> 3 days Osaka (incl. the Haru Basho Grand Sumo Tournament + NPB baseball + Boat Race Suminoe + Round1 Stadium Sennichimae) -> Niseko -> Sapporo -> Miyazaki (3 nights, incl. golf at Phoenix Country Club) -> Okinawa (4 nights, incl. golf at Okinawa Country Club) -> home direct from Naha. Ishigaki dropped from the route entirely (on request), so there's no Naha<->Ishigaki hop at the end any more. Sendai/Matsushima dropped in favour of the extra Kyoto/Osaka day each. Miyazaki and Naha each grew by a day to fit a round of golf properly (compulsory-caddie rounds eat most of a day); Tokyo's golf slot needed no extra day at all — moving Asakusa onto the same day as Golden Gai freed up the Wednesday for it, so the week is back to its original 7 days. Kyoto/Nara grew from 3 to 5 days for the Ichijoji/Musashi history day and a proper onsen day (Arima, swapped in for a whisky distillery tour — nicer not to be tipsy right before hauling bags onto a train), then condensed back to 4: Fushimi Inari now shares a day with the Fushimi sake brewery next door, and Gion/Kiyomizu-dera now shares a day with Ichijoji (both fit better with each other than the original split did, and the onsen day still doubles as the Kyoto->Osaka travel day, so it's not fully 'extra'). Osaka's dates now line up with the Haru Basho — Osaka's Grand Sumo Tournament, running 14-28 Mar 2027 at EDION Arena, right through the whole Osaka stay. Three proper food experiences folded into existing days rather than given their own: sushi omakase at Kyubey Ginza the night before the race, Michelin-pedigree tantanmen at Nakiryu the day after, and Kobe beef teppanyaki in Dotonbori on the first Osaka night. 33 days total — net unchanged from the original 33 once Ishigaki's 3 days (2 there + 1 transfer) came back out; the Kyoto/Nara growth and the Ishigaki removal happen to cancel out almost exactly. Cherry blossoms are still a coin-flip: current estimate has peak bloom ~28 Mar-5 Apr — this trip now ends right at the start of that window rather than comfortably inside it, so it's more likely you land home just before peak bloom than during it; reconfirm closer to the time. Ghibli Museum tickets (4 Mar) need booking ~1-3 months ahead, sumo tickets go on sale roughly a month out (grab them the moment they do — Haru Basho is popular), and the go-karting needs an International Driving Permit sorted before departure — the three hard deadlines here."
   },
   "legs": [
     {
@@ -272,44 +272,20 @@
       ]
     },
     {
-      "name": "Ishigaki taste",
-      "blurb": "A compact 2 days rather than a full extra region — the \"other really cool option\" without over-extending the Okinawa block.",
-      "days": [
-        {
-          "date": "2027-03-31",
-          "title": "Naha → Ishigaki",
-          "detail": "~1h domestic flight south to the Yaeyama Islands.",
-          "tag": "travel"
-        },
-        {
-          "date": "2027-04-01",
-          "title": "Kabira Bay & Taketomi Island",
-          "detail": "Morning: Kabira Bay glass-bottom boat. Afternoon: Taketomi Island (10 min ferry) — buffalo-cart village, red-tile roofs, white coral-sand streets.",
-          "tag": "tourist"
-        }
-      ]
-    },
-    {
       "name": "Travel home",
       "blurb": "",
       "days": [
         {
-          "date": "2027-04-02",
-          "title": "Ishigaki → Naha",
-          "detail": "Fly back to Naha to connect for the international leg home.",
-          "tag": "travel"
-        },
-        {
-          "date": "2027-04-03",
+          "date": "2027-03-31",
           "title": "Fly home",
-          "detail": "Depart Japan.",
+          "detail": "Depart Japan from Naha.",
           "tag": "travel"
         }
       ]
     }
   ],
   "budget": {
-    "intro": "Per person, 2 people sharing rooms, departing Málaga. FX rate used: 1 EUR ≈ ¥185.5 (current). Costed for the full 36-day route (Miyazaki + snow monkeys + the extra Kyoto/Osaka days, incl. the Ichijoji/Musashi day, the Arima Onsen day and Haru Basho sumo tickets + three golf rounds: Daiatsugi in Tokyo, Phoenix in Miyazaki, Okinawa CC in Naha) — includes the Sapporo->Miyazaki->Naha flight chain, the Tokyo->Nagano->Yudanaka rail round trip, the sake brewery/baseball tickets, and all three green fees. The Middle column is anchored on live-researched current prices (flights, JR fares, hotel/lift-pass/green fee rates); Bare minimum and Luxury are reasoned extrapolations using standard hostel/ryokan/business-class ratios — worth re-checking closer to booking rather than treating as independently sourced.",
+    "intro": "Per person, 2 people sharing rooms, departing Málaga. FX rate used: 1 EUR ≈ ¥185.5 (current). Costed for the full 33-day route (Ishigaki dropped from the route entirely — Okinawa now flies straight home from Naha — Miyazaki + snow monkeys + the extra Kyoto/Osaka days, incl. the Ichijoji/Musashi day, the Arima Onsen day and Haru Basho sumo tickets + three golf rounds: Daiatsugi in Tokyo, Phoenix in Miyazaki, Okinawa CC in Naha) — includes the Sapporo->Miyazaki->Naha flight chain, the Tokyo->Nagano->Yudanaka rail round trip, the sake brewery/baseball tickets, and all three green fees. The Middle column is anchored on live-researched current prices (flights, JR fares, hotel/lift-pass/green fee rates); Bare minimum and Luxury are reasoned extrapolations using standard hostel/ryokan/business-class ratios — worth re-checking closer to booking rather than treating as independently sourced.",
     "tiers": {
       "headers": [
         "Tier",
@@ -352,15 +328,15 @@
         ],
         [
           "Domestic flights (incl. Sapporo→Miyazaki→Naha chain)",
-          "€280",
-          "€415",
-          "€800"
+          "€235",
+          "€330",
+          "€640"
         ],
         [
-          "Accommodation (35 nights)",
-          "€845",
-          "€1,310",
-          "€8,460"
+          "Accommodation (32 nights)",
+          "€770",
+          "€1,200",
+          "€7,740"
         ],
         [
           "Niseko lift passes (3 days)",
@@ -369,10 +345,10 @@
           "€200"
         ],
         [
-          "Food / local transport / incidentals (36 days)",
-          "€1,930",
-          "€2,610",
-          "€7,200"
+          "Food / local transport / incidentals (33 days)",
+          "€1,770",
+          "€2,390",
+          "€6,600"
         ],
         [
           "Golf (Daiatsugi + Phoenix CC + Okinawa CC, incl. caddie/rental)",
@@ -415,26 +391,26 @@
       ],
       "rows": [
         [
-          "Full itinerary (36 days, 27 Feb-3 Apr)",
-          "≈€4,720",
-          "≈€6,630",
-          "≈€23,150"
+          "Full itinerary (33 days, 27 Feb-31 Mar)",
+          "≈€4,480",
+          "≈€6,180",
+          "≈€21,600"
         ],
         [
           "3-week (~24 days)*",
-          "≈€3,570",
-          "≈€4,530",
-          "≈€16,750"
+          "≈€3,400",
+          "≈€4,220",
+          "≈€15,600"
         ]
       ]
     },
     "notes": [
-      "*3-week = drop Miyazaki (and its Phoenix CC round), the Ishigaki extension, and the Tokyo golf day entirely, and trim Tokyo (7→6 nights, keep the snow monkeys, drop nothing else), Naha (4→2, keeping the Okinawa CC round since it's cheap and easy) — same core route otherwise, including the Ichijoji and onsen days, tighter stays. The cheap add-ons (sake brewery, baseball, boat racing, onsen day, sumo tickets) and all three food experiences stay in even at 3 weeks since none of them cost much or need a dedicated day.",
+      "*3-week = drop Miyazaki (and its Phoenix CC round) and the Tokyo golf day entirely, and trim Tokyo (7→6 nights, keep the snow monkeys, drop nothing else), Naha (4→2, keeping the Okinawa CC round since it's cheap and easy) — same core route otherwise, including the Ichijoji and onsen days, tighter stays. The cheap add-ons (sake brewery, baseball, boat racing, onsen day, sumo tickets) and all three food experiences stay in even at 3 weeks since none of them cost much or need a dedicated day.",
       "The swing between tiers is almost entirely flights and accommodation — food and activities barely move the needle by comparison.",
       "Golf is three fixed-price rounds, not really tier-scalable — Daiatsugi Country Club (Kanagawa, the \"proper club\" Tokyo option: ¥11,850-16,350/≈€64-88, ~1.5-1.75h out via Odakyu Line), Phoenix Country Club (Miyazaki, the splurge round: ¥31,000-58,000/≈€190-350, compulsory caddie), and Okinawa Country Club (Naha, the good-value round: ¥12,000-18,000/≈€75-110, club rental from ¥5,500). The Luxury figure assumes premium-date booking + better caddie tips, not different courses.",
       "Niseko lift passes are essentially fixed regardless of tier (it's a set resort rate) — €200 pp for a 3-day pass (¥36,800 regular-season rate, official niseko.ne.jp pricing, checked 2026). Niseko/Hakuba lift prices have risen ~30-40% over the last ~2 years — mostly resorts pricing to heavy international demand (80-90% of Niseko visitors are foreign), not just yen weakness — so re-verify this closer to booking, it moves fast.",
       "The Miyazaki insertion is the single biggest domestic-flight cost driver here — three short hops (Sapporo→Osaka/Haneda→Miyazaki→Naha) instead of one direct Sendai→Naha routing from the earlier version. Worth knowing that's what you're paying for the detour.",
-      "The luxury total is dominated by business-class flights (~4x economy) and 35 nights of 5★/ryokan. \"Luxury lodging but economy flights\" comes out to roughly €9,950–11,500 pp — a more common real-world middle ground if the full luxury number is too steep.",
+      "The luxury total is dominated by business-class flights (~4x economy) and 32 nights of 5★/ryokan. \"Luxury lodging but economy flights\" comes out to roughly €9,100–10,500 pp — a more common real-world middle ground if the full luxury number is too steep.",
       "WHEN TO BOOK — international flights: aim for Sept-Nov 2026 (5-6 months out). Google/Hopper fare data favours this window for Asia long-haul specifically over generic 'book last minute' advice; don't wait past Dec 2026. Tokyo Marathon weekend (7 Mar, 20th anniversary, ~40,000 runners) pushes Tokyo-area hotel prices ~7-13% above the otherwise-low shoulder season, so book Tokyo lodging on the earlier side of that window too, not on general 'low season, no rush' logic.",
       "WHEN TO BOOK — domestic Japan flights: ANA/JAL open bookings 355 days out (~Feb-Mar 2026) and their cheapest fare tiers (e.g. ANA SUPER VALUE 75/55/45/28/21) are inventory-limited, not fixed-price — the cheap seats sell out first even with the window still open. Book as soon as it opens if possible, and no later than ~75 days before each flight (~mid-Dec 2026) for the cheapest bucket. The Sapporo leg carries extra sellout risk from ski-season demand. Peach/Jetstar are pure dynamic pricing with no advance-purchase discount — just book as soon as they open seat sales for the season (~late Jan 2026).",
       "The 'book on a Tuesday' day-of-week folklore is debunked by the largest datasets (Google: 1.3-1.9% difference; CheapAir: <$1 across 1B+ fares) — don't plan around it, the booking-window timing above matters far more."
