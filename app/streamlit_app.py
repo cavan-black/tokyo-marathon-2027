@@ -59,6 +59,15 @@ if _apple_icon:
         height=0,
     )
 
+# Auto-reload every 10 min. Streamlit doesn't re-run an idle tab's script just because new
+# data landed on the server (the GitHub Actions sync writes fresh progress files in the
+# background every few hours) — it only re-runs on interaction or a page reload. Without this,
+# an open tab silently goes stale until someone clicks something.
+st.components.v1.html(
+    """<script>setInterval(function() { window.parent.location.reload(); }, 600000);</script>""",
+    height=0,
+)
+
 # Wide layout stretches full browser width — cap it so there's breathing room on both sides.
 # Streamlit renames/nests this container across versions, so target every known selector + !important.
 st.markdown(
