@@ -35,6 +35,24 @@ SC_PREHAB = [
 ]
 SC_HEADERS = ["Exercise", "Sets × Reps", "Cue / why"]
 
+WARMUP_ROUTINE = [
+    ["Easy cardio (bike/row/jog)", "2 min", "Raise pulse and core temperature before anything else — "
+     "cold muscles/tendons are exactly when niggles start."],
+    ["Leg swings — front-to-back", "10 / leg", "Dynamic hip mobility, sagittal plane."],
+    ["Leg swings — side-to-side", "10 / leg", "Dynamic hip/adductor mobility, frontal plane."],
+    ["Walking lunge with a twist", "8 / leg", "Hip flexor + quad prep, plus a bit of rotational core."],
+    ["Glute bridge (fast, bodyweight)", "15", "Wake the glutes up before they get asked to work — "
+     "quiet glutes are how load ends up somewhere it shouldn't."],
+    ["Banded lateral walks (monster walks)", "10 steps / direction", "Glute medius + hip stability — "
+     "directly protects against the lateral ankle/peroneal issues that come from poor hip control."],
+    ["Ankle eversion band work", "15 / side", "Peroneal activation — the specific prehab for the outside-"
+     "ankle stiffness/soreness, do this one even on days it feels fine."],
+    ["Single-leg balance", "20s / side", "Proprioception — the single best-evidenced intervention for "
+     "lateral ankle stability generally, not just when something's already sore."],
+    ["Dynamic calf raises", "15", "Ankle/Achilles complex prep — last thing before you load anything heavier."],
+]
+WARMUP_HEADERS = ["Exercise", "Duration / Reps", "Why"]
+
 
 def strength(found_weeks, power_weeks, football=False):
     extra = " or a match" if football else ""
@@ -84,6 +102,19 @@ FUEL_DECIDE = [
     ["Ill — neck rule", "Above the neck (runny nose, mild throat) → easy run usually OK. Below the neck (chest, fever, aches) → REST. NEVER run with a fever."],
     ["Wrecked / under-recovered", "Heavy legs, rising resting HR, poor sleep = under-recovery. Take the easy day easy or swap to rest. Missing one session to absorb training is smart."],
 ]
+
+
+def warmup(niggle_note=None):
+    """A ~8 min dynamic warm-up/activation routine to do before EVERY gym session — not a
+    substitute for the strength blocks above, the thing that comes before them."""
+    intro = ("Do this before every gym session (3-4x/week), before you touch a bar or a run. "
+             "~8 minutes. Dynamic movement, not static stretching — static holds before training "
+             "don't reduce injury risk the way people assume, and can blunt power output short-term. "
+             "Consistency matters more than any single exercise here — this only works if it happens "
+             "every time, not just when something already hurts.")
+    if niggle_note:
+        intro += f" {niggle_note}"
+    return {"intro": intro, "headers": WARMUP_HEADERS, "rows": WARMUP_ROUTINE}
 
 
 def fuel(football=False, volume_note=""):

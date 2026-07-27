@@ -731,6 +731,15 @@ def research_html(plan):
     return intro + cards
 
 
+def warmup_html(plan):
+    w = plan.get("content", {}).get("warmup", {})
+    if not w:
+        return ""
+    intro = f'<p class="sub" style="margin-bottom:12px">{esc(w.get("intro",""))}</p>'
+    table = ref_table(w["headers"], w["rows"]) if w.get("rows") else ""
+    return intro + f'<div class="card">{table}</div>'
+
+
 def diet_html(plan):
     d = plan.get("content", {}).get("diet", {})
     if not d:
@@ -1217,10 +1226,12 @@ def render_runner(runner_id):
     st.markdown(STYLE + '<div class="sv">' + celebration_html(plan, progress) + banner + facts_html(plan, wk_rows) +
                 glam_row_html(plan, progress, cur) + "</div>", unsafe_allow_html=True)
 
-    # ---- everything else lives in subtabs (Diet Plan only shows up if a runner has one) ----
+    # ---- everything else lives in subtabs (Warm-up/Diet Plan only show up if a runner has one) ----
     has_diet = bool(content.get("diet"))
-    labels = ["📋 Plan", "🧭 Approach", "🎯 Paces", "🚦 Gates", "📈 Volume", "📊 Analytics",
-              "💪 Strength", "🥗 Fuel & life"] + (["🍽️ Diet Plan"] if has_diet else []) + ["💡 Tips", "🔬 Research"]
+    has_warmup = bool(content.get("warmup"))
+    labels = (["📋 Plan", "🧭 Approach", "🎯 Paces", "🚦 Gates", "📈 Volume", "📊 Analytics", "💪 Strength"]
+              + (["🔥 Warm-up"] if has_warmup else [])
+              + ["🥗 Fuel & life"] + (["🍽️ Diet Plan"] if has_diet else []) + ["💡 Tips", "🔬 Research"])
     sub = st.tabs(labels)
     i = iter(range(len(labels)))
 
@@ -1254,6 +1265,11 @@ def render_runner(runner_id):
     with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
                     section("Strength & conditioning", "", strength_html(plan)) + "</div>", unsafe_allow_html=True)
+    if has_warmup:
+        with sub[next(i)]:
+            st.markdown(STYLE + '<div class="sv">' +
+                        section("Pre-gym warm-up", "Every session, before anything else — ~8 minutes.",
+                                warmup_html(plan)) + "</div>", unsafe_allow_html=True)
     with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
                     section("Fuel & life", "", fuel_html(plan)) + "</div>", unsafe_allow_html=True)

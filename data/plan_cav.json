@@ -2199,6 +2199,61 @@
         }
       ]
     },
+    "warmup": {
+      "intro": "Do this before every gym session (3-4x/week), before you touch a bar or a run. ~8 minutes. Dynamic movement, not static stretching — static holds before training don't reduce injury risk the way people assume, and can blunt power output short-term. Consistency matters more than any single exercise here — this only works if it happens every time, not just when something already hurts. Given the outside-left-ankle/Achilles soreness flagged in week 1, the banded eversion work and single-leg balance in this routine aren't optional extras for you right now — do them every session regardless of whether it's currently bothering you.",
+      "headers": [
+        "Exercise",
+        "Duration / Reps",
+        "Why"
+      ],
+      "rows": [
+        [
+          "Easy cardio (bike/row/jog)",
+          "2 min",
+          "Raise pulse and core temperature before anything else — cold muscles/tendons are exactly when niggles start."
+        ],
+        [
+          "Leg swings — front-to-back",
+          "10 / leg",
+          "Dynamic hip mobility, sagittal plane."
+        ],
+        [
+          "Leg swings — side-to-side",
+          "10 / leg",
+          "Dynamic hip/adductor mobility, frontal plane."
+        ],
+        [
+          "Walking lunge with a twist",
+          "8 / leg",
+          "Hip flexor + quad prep, plus a bit of rotational core."
+        ],
+        [
+          "Glute bridge (fast, bodyweight)",
+          "15",
+          "Wake the glutes up before they get asked to work — quiet glutes are how load ends up somewhere it shouldn't."
+        ],
+        [
+          "Banded lateral walks (monster walks)",
+          "10 steps / direction",
+          "Glute medius + hip stability — directly protects against the lateral ankle/peroneal issues that come from poor hip control."
+        ],
+        [
+          "Ankle eversion band work",
+          "15 / side",
+          "Peroneal activation — the specific prehab for the outside-ankle stiffness/soreness, do this one even on days it feels fine."
+        ],
+        [
+          "Single-leg balance",
+          "20s / side",
+          "Proprioception — the single best-evidenced intervention for lateral ankle stability generally, not just when something's already sore."
+        ],
+        [
+          "Dynamic calf raises",
+          "15",
+          "Ankle/Achilles complex prep — last thing before you load anything heavier."
+        ]
+      ]
+    },
     "fuel": {
       "intro": "You can't out-train poor fuelling, sleep or recovery — it matters more with 100+ km weeks. Fuel the work, protect recovery, be smart about alcohol, and know when NOT to run.",
       "sections": [

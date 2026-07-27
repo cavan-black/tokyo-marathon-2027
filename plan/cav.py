@@ -175,6 +175,10 @@ def content():
                 "Injury risk is about ramp rate, not the ceiling — ~7–10% weekly steps; respect cut-back weeks (4,8,11,17) and the holiday dip (23,24).",
                 "If 116 km proves unrealistic, the ~105 km version is still solidly sub-3."]},
         "strength": C.strength("1–13", "14–30", football=False),
+        "warmup": C.warmup(niggle_note="Given the outside-left-ankle/Achilles soreness flagged in week 1, "
+                                        "the banded eversion work and single-leg balance in this routine "
+                                        "aren't optional extras for you right now — do them every session "
+                                        "regardless of whether it's currently bothering you."),
         "fuel": C.fuel(football=False, volume_note="it matters more with 100+ km weeks"),
         "research": C.RESEARCH_NOTES,
         "diet": {
