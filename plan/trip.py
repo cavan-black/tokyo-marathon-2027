@@ -1,21 +1,26 @@
 """Japan trip itinerary — Tokyo (race week incl. Ghibli Museum, snow monkeys, Shibuya/
-Harajuku/teamLab/go-karting all moved to before the race, Golden Gai moved to after it),
-a 2-day Nakasendo Trail (Magome-Tsumago) between Tokyo and Kyoto, Kyoto/Nara (incl. a
-Fushimi sake brewery, a Yamazaki whisky day, and Ichijoji Sagarimatsu doubling as the
-transfer to Osaka), Osaka (Haru Basho sumo, NPB baseball and boat racing spread one per
-day, with the last day's evening folded straight into the Niseko transfer), Niseko,
-Sapporo, Miyazaki (Kyushu) on the way south, then Okinawa. build() -> trip dict.
+Harajuku/teamLab/go-karting all moved to before the race, Golden Gai moved to after it,
+and NPB baseball done here rather than Osaka), a 2-day Nakasendo Trail (Magome-Tsumago)
+between Tokyo and Kyoto, Kyoto/Nara (incl. a Fushimi sake brewery, a Yamazaki whisky day,
+and Ichijoji Sagarimatsu doubling as the transfer to Osaka), Osaka (Haru Basho sumo +
+Boat Race Suminoe spread across two of its three days, the third left free for recovery
+before the Niseko transfer), Niseko, Sapporo, Miyazaki (Kyushu) on the way south, then
+Okinawa. build() -> trip dict.
 
-Route (27 Feb - 27 Mar 2027, 29 days): Tokyo race week (Ghibli Museum, snow monkeys day
-trip, and Shibuya/Harajuku/teamLab/go-karting all stacked onto 1 March, 6 days clear of
-the race) -> RACE -> Golden Gai that evening -> 2 days on the Nakasendo Trail (Tokyo ->
-Magome -> Tsumago walk -> Kyoto) -> 4 days Kyoto/Nara (Fushimi Inari + sake brewery,
-Yamazaki Distillery whisky day trip, Nara/Omizutori, then Gion/Kiyomizu-dera/Ichijoji
-Sagarimatsu doubling as the Osaka transfer — leave Kyoto that evening, arrive Osaka late)
--> 3 days Osaka (Haru Basho sumo, NPB baseball and Boat Race Suminoe spread one per day
-instead of stacked on the last one, freeing that evening for an early, direct transfer
-to Niseko rather than a dedicated travel day) -> Niseko -> Sapporo (1 night) -> Miyazaki
-(2 days) -> Okinawa (Naha/Kerama, 4 nights) -> home direct from Naha.
+Route (27 Feb - 27 Mar 2027, 29 days): Tokyo race week (Ghibli Museum + Kichijoji/
+Shimokitazawa shopping, snow monkeys day trip, Shibuya/Harajuku/teamLab/go-karting all
+stacked onto 1 March 6 days clear of the race, and bib pickup/Tokyo baseball (Giants at
+Tokyo Dome or Swallows at Jingu)/Round1 Ikebukuro now on the Thursday instead of Friday,
+swapped with the Ghibli/shopping day so the busier evening lands 3 days out instead of 2)
+-> RACE -> Golden Gai that evening -> 2 days on the Nakasendo Trail (Tokyo -> Magome ->
+Tsumago walk -> Kyoto) -> 4 days Kyoto/Nara (Fushimi Inari + sake brewery, Yamazaki
+Distillery whisky day trip, Nara/Omizutori, then Gion/Kiyomizu-dera/Ichijoji Sagarimatsu
+doubling as the Osaka transfer — leave Kyoto that evening, arrive Osaka late) -> 3 days
+Osaka (Haru Basho sumo and Boat Race Suminoe spread across the first two days; baseball's
+moved to Tokyo, so the third day is now a genuinely free recovery morning before an
+evening transfer to Niseko rather than a dedicated travel day) -> Niseko -> Sapporo
+(1 night) -> Miyazaki (2 days) -> Okinawa (Naha/Kerama, 4 nights) -> home direct from
+Naha.
 
 This itinerary has been reworked several times in the same places, so worth tracking the
 net effect rather than each individual change: Nakasendo went 2 -> 3 days (a rest day
@@ -23,15 +28,18 @@ added post-marathon) -> back to 2 (freed up again, on request, since the point w
 free a day rather than spend it here). Kyoto/Nara went 3 -> 5 days (Ichijoji + Arima
 Onsen added) -> 4 (Arima Onsen dropped entirely; Ichijoji now doubles as the Osaka
 transfer instead, saving the day Arima Onsen would have used). Osaka's sumo/baseball/
-boat racing were stacked on one day, then spread across all three specifically so the
-last evening could be freed for the Niseko transfer, eliminating the old dedicated "To
-Niseko" travel day. Whisky was swapped for Arima Onsen, then brought back as its own day
-(Arima Onsen has since been dropped instead, so whisky is the one that stuck). Ishigaki
-was dropped from the route entirely. Sapporo went from 2 nights to 1, Miyazaki from 3
-days to 2. Net effect on the trip length across ALL of this: 33 (original) -> 37 (peak,
-mid-additions) -> 31 -> 32 -> 29 (this round: Nakasendo -1, Kyoto/Nara -1, "To Niseko"
-folded into Osaka -1) — 4 days shorter than the original 33, even after everything added
-along the way."""
+boat racing were originally stacked on one day, then spread across all three specifically
+so the last evening could be freed for the Niseko transfer, eliminating the old dedicated
+"To Niseko" travel day; baseball has since moved out of Osaka entirely and into Tokyo
+instead (on request), leaving just sumo + boat racing spread across Osaka's first two
+days and a genuinely free recovery morning on the third. Whisky was swapped for Arima
+Onsen, then brought back as its own day (Arima Onsen has since been dropped instead, so
+whisky is the one that stuck). Ishigaki was dropped from the route entirely. Sapporo went
+from 2 nights to 1, Miyazaki from 3 days to 2. Net effect on the trip length across ALL of
+this: 33 (original) -> 37 (peak, mid-additions) -> 31 -> 32 -> 29 (Nakasendo -1, Kyoto/
+Nara -1, "To Niseko" folded into Osaka -1) -> still 29 (the Tokyo baseball move and
+Thursday/Friday swap are day-count-neutral) — 4 days shorter than the original 33, even
+after everything added along the way."""
 from datetime import date
 
 
@@ -78,27 +86,30 @@ def build():
                        "Japan runs 5-6h including a mandatory sit-down lunch break after the front nine, plus "
                        "transit each way — leave ~6:30-7am, back ~7-8pm. (Kanagawa Country Club is a solid "
                        "backup in the same area/price band if Daiatsugi's booked out.)", "tag": "tourist"},
-            {"date": d(2027, 3, 4), "title": "Ghibli Museum, Mitaka + Kichijoji & Shimokitazawa shopping",
+            {"date": d(2027, 3, 4), "title": "Expo & bib pickup, Tokyo baseball & Round1",
+             "detail": "Collect race kit, carb-load begins. Then NPB preseason (\"open-sen\") baseball, done in "
+                       "Tokyo instead of Osaka this time — the Yomiuri Giants at Tokyo Dome or the Tokyo Yakult "
+                       "Swallows at Meiji Jingu Stadium, both easy to reach; check the day's fixture and kick-off "
+                       "time. In the evening, a few Yamanote Line stops to Round1 Ikebukuro "
+                       "(open 24h, 4 min walk from the station) for the full \"everything in one building\" "
+                       "experience — bowling, arcade floors, karaoke, billiards, darts. THREE DAYS OUT FROM THE "
+                       "RACE now rather than two (swapped with the Ghibli/shopping day below, on request, "
+                       "specifically for this extra buffer) — still worth going easy on batting cages or "
+                       "bowling's actual swinging motion, but there's a little more recovery room than before. "
+                       "Akihabara's dropped from this day to keep it manageable alongside the baseball; it's "
+                       "an easy add-on to the Round1 Osaka evening later in the trip if you miss it.",
+             "tag": "city"},
+            {"date": d(2027, 3, 5), "title": "Ghibli Museum, Mitaka + Kichijoji & Shimokitazawa shopping",
              "detail": "Studio Ghibli Museum, then Inokashira Park — the Benzaiten Shrine on the pond's island, "
                        "paddleboats if the queue's short — and Kichijoji town itself, which has a genuinely good "
                        "vintage/select-shop scene of its own. Then one stop further on the Keio Inokashira Line "
                        "to Shimokitazawa — Tokyo's best thrift/vintage/indie-designer shopping district, dense "
                        "with small boutiques and secondhand stores, plus good cafes to break it up. BOOK GHIBLI "
                        "EARLY: tickets are timed-entry, released monthly (typically the 10th, ~1-3 months "
-                       "ahead) and sell out fast — the one hard calendar reminder on this whole trip.", "tag": "city"},
-            {"date": d(2027, 3, 5), "title": "Expo & bib pickup + Akihabara + Round1",
-             "detail": "Collect race kit, carb-load begins. Then Akihabara for an anime/gaming/tech afternoon — "
-                       "genuinely easy on the legs two days out since it's almost entirely indoor, multi-floor "
-                       "browsing rather than distance walking: Yodobashi Akiba (cavernous electronics store), "
-                       "the Mandarake Complex (8 floors of manga/anime/figures), Super Potato (retro gaming, "
-                       "delightfully niche), an arcade for claw machines and rhythm games, and the Radio Kaikan "
-                       "building for good measure. In the evening, a few Yamanote Line stops to Round1 Ikebukuro "
-                       "(open 24h, 4 min walk from the station) for the full \"everything in one building\" "
-                       "experience — bowling, arcade floors, karaoke, billiards, darts. TWO DAYS OUT FROM THE "
-                       "RACE: stick to the arcade/karaoke/darts side and skip batting cages or bowling's actual "
-                       "swinging motion — save that physical stuff for after the marathon, back at Round1 Osaka "
-                       "if you want the full batting-cage experience. Keep the pace unhurried overall — browsing, "
-                       "not a walking tour, and definitely not a workout.", "tag": "city"},
+                       "ahead) and sell out fast — the one hard calendar reminder on this whole trip. Now the "
+                       "day before Round1/baseball moves to Thursday, this genuinely low-key browsing day sits "
+                       "two days out from the race instead — a better fit than the busier Round1 day used to "
+                       "be this close to race day.", "tag": "city"},
             {"date": d(2027, 3, 6), "title": "Shakeout, rest, Nakiryu ramen & sushi omakase carb-load",
              "detail": "Short shakeout + strides, lay out kit, early night. Lunch stop: Nakiryu in Sangenjaya — "
                        "the tantanmen shop that made history alongside Tsuta as one of Tokyo's first "
@@ -187,9 +198,9 @@ def build():
                        "well served by bus, and a taxi hop between them is cheap if the legs are done by "
                        "mid-afternoon.", "tag": "city"},
         ]},
-        {"name": "Osaka", "blurb": "Three days — castle, sumo, baseball, boat racing and some of Japan's best "
-                                    "nightlife, spread out one headline per day instead of stacked on the last "
-                                    "one, which frees up that evening to head straight to Niseko.", "days": [
+        {"name": "Osaka", "blurb": "Three days — castle, sumo, boat racing and some of Japan's best nightlife "
+                                    "(baseball's moved to Tokyo instead), spread across the first two days so "
+                                    "the third can be a genuine free morning before heading to Niseko.", "days": [
             {"date": d(2027, 3, 14), "title": "Osaka Castle, boat racing, Kobe beef & Dotonbori",
              "detail": "Osaka Castle in the afternoon. FOR A FLUTTER on the way: Boat Race Suminoe (kyotei) "
                        "runs near-daily, cash betting, English signage, no ID/account needed — 3 min walk from "
@@ -217,17 +228,14 @@ def build():
                        "the front desk. Flat-rate \"free time\" pass ~¥2,000-2,900 for 2-3h, or pay per activity "
                        "(bowling ~¥500-800/game, batting ~¥100/set). English signage, easy for tourists.",
              "tag": "city"},
-            {"date": d(2027, 3, 16), "title": "NPB baseball, then on to Niseko",
-             "detail": "NPB preseason (\"open-sen\") games run into ~22 Mar — catch the Orix Buffaloes at Kyocera "
-                       "Dome (in the city, most convenient) or the Hanshin Tigers at Koshien Stadium (short "
-                       "Hanshin Line ride); Spring Koshien, the high-school tournament at the same stadium, "
-                       "typically runs ~19-31 Mar too. Check the day's fixture/kick-off time — an early or "
-                       "afternoon game leaves the evening free for the Niseko transfer below (this day used to "
-                       "be its own separate travel day; spreading sumo/baseball/boat racing across all three "
-                       "Osaka days instead of stacking them on this one frees up the evening for it instead). "
-                       "Also worth checking closer to the time: Hanshin (Nishinomiya) or Kyoto Racecourse — JRA "
-                       "horse racing alternates between the two most Sat/Sundays in season, though these "
-                       "particular Osaka days fall midweek, so a meeting isn't guaranteed. THE TRANSFER: fly "
+            {"date": d(2027, 3, 16), "title": "Free morning, then on to Niseko",
+             "detail": "A genuinely free morning — a proper recovery gap before the transfer, now that baseball "
+                       "has moved to Tokyo instead (fewer things stacked into this last Osaka day). Sleep in, "
+                       "wander, second coffee, whatever's needed; the only fixed point is leaving with enough "
+                       "time for the transfer below. Worth checking closer to the time regardless: Hanshin "
+                       "(Nishinomiya) or Kyoto Racecourse — JRA horse racing alternates between the two most "
+                       "Sat/Sundays in season, though these particular Osaka days fall midweek, so a meeting "
+                       "isn't guaranteed. THE TRANSFER: fly "
                        "Kansai (KIX) → New Chitose (~2.5h), then intercity bus to Niseko (~2.5-3h via Rusutsu) "
                        "— ~6.5-7.5h door to door, so an evening departure means a late arrival (past midnight is "
                        "realistic) — check in and go straight to bed, first day on the mountain starts fresh "
@@ -313,16 +321,20 @@ def build():
                      "days": ndays,
                      "note": "Tokyo (race week: Asakusa by day + Shibuya/Harajuku/teamLab/go-karting all "
                              "stacked onto the Monday — 6 days clear of the race, no need to hold back — snow "
-                             "monkeys day trip, golf at Daiatsugi CC, Ghibli Museum + Kichijoji/Shimokitazawa "
-                             "shopping, Akihabara + Round1 Ikebukuro, Nakiryu ramen the day before the race) -> "
+                             "monkeys day trip, golf at Daiatsugi CC, bib pickup + Tokyo baseball (Giants at "
+                             "Tokyo Dome or Swallows at Jingu) + Round1 Ikebukuro on the Thursday, Ghibli "
+                             "Museum + Kichijoji/Shimokitazawa shopping on the Friday (swapped from the "
+                             "original order, on request, so the busier Round1/baseball evening lands 3 days "
+                             "out instead of 2), Nakiryu ramen the day before the race) -> "
                              "RACE -> Golden Gai that evening (a proper celebration fits post-race better than "
                              "a pre-race outing) -> 2 days on the Nakasendo Trail (Tokyo -> Magome, then the "
                              "Tsumago walk on to Kyoto) -> 4 days Kyoto/Nara (Fushimi Inari + sake brewery, a "
                              "Yamazaki whisky day trip, Nara/Omizutori, then Gion/Kiyomizu-dera/Ichijoji "
                              "Sagarimatsu doubling as the transfer to Osaka — leave that evening, arrive Osaka "
-                             "late) -> 3 days Osaka (Haru Basho Grand Sumo Tournament, NPB baseball and Boat "
-                             "Race Suminoe spread one per day rather than stacked, freeing the last evening for "
-                             "a direct transfer to Niseko instead of a dedicated travel day; Kobe beef "
+                             "late) -> 3 days Osaka (Haru Basho Grand Sumo Tournament and Boat Race Suminoe "
+                             "spread across the first two days rather than stacked; baseball's moved to Tokyo "
+                             "above, so the third day is now a genuinely free recovery morning before the "
+                             "evening transfer to Niseko instead of a dedicated travel day; Kobe beef "
                              "teppanyaki + Round1 Stadium Sennichimae folded into the other two days) -> Niseko "
                              "(arriving late, drinks/dinner in Niseko town moved to the first full evening "
                              "instead of arrival night) -> Sapporo (1 night — arrive, sightsee, one night out "
