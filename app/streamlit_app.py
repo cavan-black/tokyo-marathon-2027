@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Shared Tokyo Marathon dashboard — one tab per runner, planned vs actual, Strava-synced.
 Visual design adapted from Stevie's "Sub-3:15 Build" single-page layout."""
-import os, sys, json, html
+import os, sys, json, html, base64
 from datetime import date, datetime
 
 import pandas as pd
@@ -9,9 +9,35 @@ import streamlit as st
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 DATA = os.path.join(ROOT, "data")
+STATIC = os.path.join(os.path.dirname(__file__), "static")
 sys.path.insert(0, ROOT)
 
 st.set_page_config(page_title="Tokyo 2027 · Team dashboard", page_icon="🏃", layout="wide")
+
+# Custom "Add to Home Screen" icon for iOS/Android — Streamlit doesn't expose a way to set
+# apple-touch-icon directly, so inject the link tags via markdown. Browsers still pick up
+# <link rel="..."> for icon purposes even injected into the body, which is what iOS Safari's
+# "Add to Home Screen" actually reads (not the tab favicon).
+def _icon_data_uri(filename):
+    path = os.path.join(STATIC, filename)
+    if not os.path.exists(path):
+        return None
+    with open(path, "rb") as f:
+        return "data:image/png;base64," + base64.b64encode(f.read()).decode("ascii")
+
+
+_apple_icon = _icon_data_uri("apple-touch-icon.png")
+_icon_192 = _icon_data_uri("icon-192.png")
+if _apple_icon:
+    st.markdown(
+        f"""<link rel="apple-touch-icon" href="{_apple_icon}">
+        <link rel="icon" type="image/png" sizes="192x192" href="{_icon_192 or _apple_icon}">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-title" content="Tokyo 2027">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="theme-color" content="#ce2e3b">""",
+        unsafe_allow_html=True,
+    )
 
 # Wide layout stretches full browser width — cap it so there's breathing room on both sides.
 # Streamlit renames/nests this container across versions, so target every known selector + !important.
