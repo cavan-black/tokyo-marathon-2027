@@ -61,12 +61,14 @@ def build():
                        "with small boutiques and secondhand stores, plus good cafes to break it up. BOOK GHIBLI "
                        "EARLY: tickets are timed-entry, released monthly (typically the 10th, ~1-3 months "
                        "ahead) and sell out fast — the one hard calendar reminder on this whole trip.", "tag": "city"},
-            {"date": d(2027, 3, 5), "title": "Expo & bib pickup + Sumida River cruise",
-             "detail": "Collect race kit, carb-load begins. Then something touristy and properly easy on the "
-                       "legs two days out: the Tokyo Water Bus down the Sumida River, finishing at Hama-Rikyu "
-                       "Gardens — a classic Edo-period landscape garden with flat, gentle paths and a tea house "
-                       "on the pond (matcha + wagashi break). Fully seated cruise + a stroll, nothing that taxes "
-                       "the legs before Sunday.", "tag": "city"},
+            {"date": d(2027, 3, 5), "title": "Expo & bib pickup + Akihabara",
+             "detail": "Collect race kit, carb-load begins. Then Akihabara for an anime/gaming/tech afternoon — "
+                       "genuinely easy on the legs two days out since it's almost entirely indoor, multi-floor "
+                       "browsing rather than distance walking: Yodobashi Akiba (cavernous electronics store), "
+                       "the Mandarake Complex (8 floors of manga/anime/figures), Super Potato (retro gaming, "
+                       "delightfully niche), an arcade for claw machines and rhythm games, and the Radio Kaikan "
+                       "building for good measure. A themed cafe if you want a sit-down break. Keep the pace "
+                       "unhurried — browsing, not a walking tour.", "tag": "city"},
             {"date": d(2027, 3, 6), "title": "Shakeout & rest",
              "detail": "Short shakeout + strides, full carb-load, lay out kit, early night.", "tag": "rest"},
         ]},
@@ -219,7 +221,7 @@ def build():
                      "days": ndays,
                      "note": "Tokyo (race week: Asakusa by day + Golden Gai by night on the Monday, snow monkeys "
                              "day trip, golf at Daiatsugi CC, Ghibli Museum + Kichijoji/Shimokitazawa shopping, "
-                             "Sumida River cruise) -> RACE -> Shibuya/Harajuku + go-karting the day after -> a "
+                             "Akihabara) -> RACE -> Shibuya/Harajuku + go-karting the day after -> a "
                              "night on the Nakasendo Trail (Magome-Tsumago) -> 3 days Kyoto/Nara (incl. Fushimi "
                              "sake brewery) -> 3 days Osaka (incl. NPB baseball + Boat Race Suminoe) -> Niseko -> "
                              "Sapporo -> Miyazaki (3 nights, incl. golf at Phoenix Country Club) -> Okinawa "
@@ -260,7 +262,7 @@ def budget():
             ["Niseko lift passes (3 days)", "€200", "€200", "€200"],
             ["Food / local transport / incidentals (35 days)", "€1,870", "€2,535", "€7,000"],
             ["Golf (Daiatsugi + Phoenix CC + Okinawa CC, incl. caddie/rental)", "€330", "€400", "€560"],
-            ["Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting, river cruise)", "€145", "€200", "€1,050"],
+            ["Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting, Akihabara arcades)", "€145", "€200", "€1,050"],
         ]},
         "durations": {"headers": ["Duration", "Bare minimum", "Middle", "Luxury"], "rows": [
             ["Full itinerary (35 days, 27 Feb-2 Apr)", "≈€4,500", "≈€6,200", "≈€22,100"],
