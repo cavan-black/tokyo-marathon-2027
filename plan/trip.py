@@ -26,28 +26,18 @@ def d(y, m, dd):
 def build():
     legs = [
         {"name": "Travel out", "blurb": "Depart & fly to Japan.", "days": [
-            {"date": d(2027, 2, 26), "title": "Depart for Japan",
+            {"date": d(2027, 2, 27), "title": "Depart for Japan",
              "detail": "Long-haul out — arrive the next day depending on route.", "tag": "travel"},
         ]},
         {"name": "Tokyo — race week", "blurb": "A full week based in Tokyo before the race — settle in, "
                                                  "explore properly, no rushing.", "days": [
-            {"date": d(2027, 2, 27), "title": "Arrive & settle",
-             "detail": "Land, transfer into Tokyo, check in. Easy walk only — race is 8 days out.", "tag": "travel"},
-            {"date": d(2027, 2, 28), "title": "Golf — Tokyo Sobu Country Club",
-             "detail": "The realistic Tokyo option: within Tokyo prefecture itself (Hachioji), unlike most "
-                       "courses near the city which are 60-90+ min out. JR Yokohama Line to Hachioji-Minamino "
-                       "(or Keio Takao Line to Mejirodai), then a free shuttle. Book via Accordia Golf's English "
-                       "site (reserve.accordiagolf.com) — genuinely walk-up bookable, no member introduction "
-                       "needed, club rental available. Green fee ~¥10,000-15,000 (~€54-81) weekday. Budget the "
-                       "WHOLE day for this: an 18-hole round in Japan runs 5-6h including a mandatory sit-down "
-                       "lunch break after the front nine, plus transit each way — leave ~6:30-7am, back ~7-8pm. "
-                       "(Aspirational mention: Kasumigaseki Country Club, Saitama, hosted the 2020 Olympics golf "
-                       "— genuinely excellent, but needs a member's introduction, not simple walk-up booking.)",
-             "tag": "tourist"},
-            {"date": d(2027, 3, 1), "title": "Shinjuku by night — Golden Gai",
-             "detail": "Shinjuku's Golden Gai and Omoide Yokocho for a proper night out — one of Tokyo's best "
-                       "nightlife pockets. Deliberately on the Monday: 6 days clear of the race instead of 2, so "
-                       "there's no need to hold back.", "tag": "city"},
+            {"date": d(2027, 2, 28), "title": "Arrive & settle",
+             "detail": "Land, transfer into Tokyo, check in. Easy walk only — race is 7 days out.", "tag": "travel"},
+            {"date": d(2027, 3, 1), "title": "Asakusa & Senso-ji by day, Golden Gai by night",
+             "detail": "Daytime: Senso-ji temple, Nakamise shopping street, Sumida river walk. Then Shinjuku's "
+                       "Golden Gai and Omoide Yokocho for a proper night out — one of Tokyo's best nightlife "
+                       "pockets. The night out is deliberately on the Monday: 6 days clear of the race instead "
+                       "of 2, so there's no need to hold back.", "tag": "city"},
             {"date": d(2027, 3, 2), "title": "Snow monkeys — Jigokudani, Nagano",
              "detail": "Jigokudani Monkey Park (Yudanaka): wild Japanese macaques bathing in hot springs, one of "
                        "Japan's most famous wildlife sights. Hokuriku Shinkansen Tokyo→Nagano (~1h20-1h30), then "
@@ -55,15 +45,28 @@ def build():
                        "walk to the park. A long day (~10-12h door to door) but a genuine highlight, and a good "
                        "low-intensity day the morning after a big night out. Race is still 5 days out.",
              "tag": "tourist"},
-            {"date": d(2027, 3, 3), "title": "Asakusa & Senso-ji",
-             "detail": "Senso-ji temple, Nakamise shopping street, Sumida river walk.", "tag": "city"},
-            {"date": d(2027, 3, 4), "title": "Ghibli Museum, Mitaka",
-             "detail": "Studio Ghibli Museum + a wander through Inokashira Park and Kichijoji town. BOOK EARLY: "
-                       "tickets are timed-entry, released monthly (typically the 10th, ~1-3 months ahead) and "
-                       "sell out fast — this is the one thing on the whole trip that needs a calendar reminder "
-                       "well before 2027.", "tag": "city"},
-            {"date": d(2027, 3, 5), "title": "Expo & bib pickup",
-             "detail": "Collect race kit, carb-load begins.", "tag": "city"},
+            {"date": d(2027, 3, 3), "title": "Golf — Daiatsugi Country Club",
+             "detail": "A proper Japanese golf club experience, not just the convenient option: Daiatsugi CC "
+                       "(Sakura Course), Kanagawa — Odakyu Line from Shinjuku to Hon-Atsugi (~1h), then a taxi/"
+                       "shuttle (~1.5-1.75h door to door). Book via golf-in-japan.com. Green fee ~¥11,850-16,350 "
+                       "(~€64-88) weekday, club rental available. Budget the WHOLE day: an 18-hole round in "
+                       "Japan runs 5-6h including a mandatory sit-down lunch break after the front nine, plus "
+                       "transit each way — leave ~6:30-7am, back ~7-8pm. (Kanagawa Country Club is a solid "
+                       "backup in the same area/price band if Daiatsugi's booked out.)", "tag": "tourist"},
+            {"date": d(2027, 3, 4), "title": "Ghibli Museum, Mitaka + Kichijoji & Shimokitazawa shopping",
+             "detail": "Studio Ghibli Museum, then Inokashira Park — the Benzaiten Shrine on the pond's island, "
+                       "paddleboats if the queue's short — and Kichijoji town itself, which has a genuinely good "
+                       "vintage/select-shop scene of its own. Then one stop further on the Keio Inokashira Line "
+                       "to Shimokitazawa — Tokyo's best thrift/vintage/indie-designer shopping district, dense "
+                       "with small boutiques and secondhand stores, plus good cafes to break it up. BOOK GHIBLI "
+                       "EARLY: tickets are timed-entry, released monthly (typically the 10th, ~1-3 months "
+                       "ahead) and sell out fast — the one hard calendar reminder on this whole trip.", "tag": "city"},
+            {"date": d(2027, 3, 5), "title": "Expo & bib pickup + Sumida River cruise",
+             "detail": "Collect race kit, carb-load begins. Then something touristy and properly easy on the "
+                       "legs two days out: the Tokyo Water Bus down the Sumida River, finishing at Hama-Rikyu "
+                       "Gardens — a classic Edo-period landscape garden with flat, gentle paths and a tea house "
+                       "on the pond (matcha + wagashi break). Fully seated cruise + a stroll, nothing that taxes "
+                       "the legs before Sunday.", "tag": "city"},
             {"date": d(2027, 3, 6), "title": "Shakeout & rest",
              "detail": "Short shakeout + strides, full carb-load, lay out kit, early night.", "tag": "rest"},
         ]},
@@ -212,38 +215,38 @@ def build():
         ]},
     ]
     ndays = sum(len(l["days"]) for l in legs)
-    return {"meta": {"title": "Japan Trip 2027", "start": d(2027, 2, 26), "end": d(2027, 4, 2),
+    return {"meta": {"title": "Japan Trip 2027", "start": d(2027, 2, 27), "end": d(2027, 4, 2),
                      "days": ndays,
-                     "note": "Tokyo (race week: golf at Tokyo Sobu CC, Golden Gai on the Monday, snow monkeys "
-                             "day trip, Ghibli Museum) -> RACE -> Shibuya/Harajuku + go-karting the day after -> "
-                             "a night on the Nakasendo Trail (Magome-Tsumago) -> 3 days Kyoto/Nara (incl. Fushimi "
+                     "note": "Tokyo (race week: Asakusa by day + Golden Gai by night on the Monday, snow monkeys "
+                             "day trip, golf at Daiatsugi CC, Ghibli Museum + Kichijoji/Shimokitazawa shopping, "
+                             "Sumida River cruise) -> RACE -> Shibuya/Harajuku + go-karting the day after -> a "
+                             "night on the Nakasendo Trail (Magome-Tsumago) -> 3 days Kyoto/Nara (incl. Fushimi "
                              "sake brewery) -> 3 days Osaka (incl. NPB baseball + Boat Race Suminoe) -> Niseko -> "
                              "Sapporo -> Miyazaki (3 nights, incl. golf at Phoenix Country Club) -> Okinawa "
                              "(4 nights, incl. golf at Okinawa Country Club) -> Ishigaki taste -> home. "
                              "Sendai/Matsushima dropped in favour of the extra Kyoto/Osaka day each. Miyazaki "
                              "and Naha each grew by a day to fit a round of golf properly (compulsory-caddie "
-                             "rounds eat most of a day); Tokyo's golf day was inserted by starting the trip one "
-                             "day earlier (26 Feb) rather than displacing anything, so it's the ONLY day that "
-                             "shifted — Golden Gai stays on the Monday, Ghibli stays on 4 Mar, race day and "
-                             "everything after it is completely unaffected — 36 days total now (was 33), end "
-                             "date pushed from 31 Mar to 2 Apr. Silver lining: that now sits squarely inside the "
-                             "~28 Mar-5 Apr estimated cherry blossom peak-bloom window (still a coin-flip 8+ "
-                             "months out — reconfirm closer to the time, but the odds just improved). Ghibli "
-                             "Museum tickets (4 Mar) need booking ~1-3 months ahead, and the go-karting needs an "
-                             "International Driving Permit sorted before departure — the two hard deadlines here."},
+                             "rounds eat most of a day); Tokyo's golf slot needed no extra day at all — moving "
+                             "Asakusa onto the same day as Golden Gai freed up the Wednesday for it, so the "
+                             "week is back to its original 7 days. 35 days total, unchanged. Cherry blossoms "
+                             "are still a coin-flip: current estimate has peak bloom ~28 Mar-5 Apr, right around "
+                             "this trip's end date — reconfirm closer to the time. Ghibli Museum tickets (4 Mar) "
+                             "need booking ~1-3 months ahead, and the go-karting needs an International Driving "
+                             "Permit sorted before departure — the two hard deadlines here."},
             "legs": legs, "budget": budget()}
 
 
 def budget():
     return {
         "intro": "Per person, 2 people sharing rooms, departing Málaga. FX rate used: 1 EUR ≈ ¥185.5 "
-                 "(current). Costed for the full 36-day route (Miyazaki + snow monkeys + the extra Kyoto/Osaka "
-                 "days + three golf rounds: Tokyo, Miyazaki, Naha) — includes the Sapporo->Miyazaki->Naha flight "
-                 "chain, the Tokyo->Nagano->Yudanaka rail round trip, the sake brewery/baseball tickets, and "
-                 "all three green fees. The Middle column is anchored on live-researched current prices (flights, "
-                 "JR fares, hotel/lift-pass/green fee rates); Bare minimum and Luxury are reasoned extrapolations "
-                 "using standard hostel/ryokan/business-class ratios — worth re-checking closer to booking "
-                 "rather than treating as independently sourced.",
+                 "(current). Costed for the full 35-day route (Miyazaki + snow monkeys + the extra Kyoto/Osaka "
+                 "days + three golf rounds: Daiatsugi in Tokyo, Phoenix in Miyazaki, Okinawa CC in Naha) — "
+                 "includes the Sapporo->Miyazaki->Naha flight chain, the Tokyo->Nagano->Yudanaka rail round "
+                 "trip, the sake brewery/baseball tickets, and all three green fees. The Middle column is "
+                 "anchored on live-researched current prices (flights, JR fares, hotel/lift-pass/green fee "
+                 "rates); Bare minimum and Luxury are reasoned extrapolations using standard hostel/ryokan/"
+                 "business-class ratios — worth re-checking closer to booking rather than treating as "
+                 "independently sourced.",
         "tiers": {"headers": ["Tier", "What it gets you"], "rows": [
             ["Bare minimum", "Hostel dorms/capsules, conbini + casual meals, budget/no-frills flights, self-guided everything."],
             ["Middle", "Business hotels, casual-to-mid restaurants, standard economy flights — the itinerary as planned."],
@@ -253,29 +256,29 @@ def budget():
             ["Int'l flights (Málaga↔Naha, open-jaw)", "€700", "€975", "€3,900"],
             ["Domestic rail (incl. Nagano/snow monkeys)", "€160", "€235", "€420"],
             ["Domestic flights (incl. Sapporo→Miyazaki→Naha chain)", "€280", "€415", "€800"],
-            ["Accommodation (35 nights)", "€845", "€1,310", "€8,440"],
+            ["Accommodation (34 nights)", "€820", "€1,275", "€8,200"],
             ["Niseko lift passes (3 days)", "€200", "€200", "€200"],
-            ["Food / local transport / incidentals (36 days)", "€1,925", "€2,610", "€7,200"],
-            ["Golf (Tokyo Sobu + Phoenix CC + Okinawa CC, incl. caddie/rental)", "€345", "€420", "€600"],
-            ["Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting)", "€135", "€190", "€1,000"],
+            ["Food / local transport / incidentals (35 days)", "€1,870", "€2,535", "€7,000"],
+            ["Golf (Daiatsugi + Phoenix CC + Okinawa CC, incl. caddie/rental)", "€330", "€400", "€560"],
+            ["Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting, river cruise)", "€145", "€200", "€1,050"],
         ]},
         "durations": {"headers": ["Duration", "Bare minimum", "Middle", "Luxury"], "rows": [
-            ["Full itinerary (36 days, 26 Feb-2 Apr)", "≈€4,600", "≈€6,350", "≈€22,600"],
+            ["Full itinerary (35 days, 27 Feb-2 Apr)", "≈€4,500", "≈€6,200", "≈€22,100"],
             ["3-week (~23 days)*", "≈€3,300", "≈€4,200", "≈€16,000"],
         ]},
         "notes": [
             "*3-week = drop Miyazaki (and its Phoenix CC round), the Ishigaki extension, and the Tokyo golf day "
-            "entirely, and trim Tokyo (8→6 nights, keep the snow monkeys, drop nothing else), Naha (4→2, "
+            "entirely, and trim Tokyo (7→6 nights, keep the snow monkeys, drop nothing else), Naha (4→2, "
             "keeping the Okinawa CC round since it's cheap and easy) — same core route, tighter stays. The "
             "cheap add-ons (sake brewery, baseball, boat racing) stay in even at 3 weeks since they cost almost "
             "nothing extra.",
             "The swing between tiers is almost entirely flights and accommodation — food and activities "
             "barely move the needle by comparison.",
-            "Golf is three fixed-price rounds, not really tier-scalable — Tokyo Sobu Country Club (the easy "
-            "add-on: ¥10,000-15,000/≈€54-81, within Tokyo itself), Phoenix Country Club (Miyazaki, the splurge "
-            "round: ¥31,000-58,000/≈€190-350, compulsory caddie), and Okinawa Country Club (Naha, the "
-            "good-value round: ¥12,000-18,000/≈€75-110, club rental from ¥5,500). The Luxury figure assumes "
-            "premium-date booking + better caddie tips, not different courses.",
+            "Golf is three fixed-price rounds, not really tier-scalable — Daiatsugi Country Club (Kanagawa, the "
+            "\"proper club\" Tokyo option: ¥11,850-16,350/≈€64-88, ~1.5-1.75h out via Odakyu Line), Phoenix "
+            "Country Club (Miyazaki, the splurge round: ¥31,000-58,000/≈€190-350, compulsory caddie), and "
+            "Okinawa Country Club (Naha, the good-value round: ¥12,000-18,000/≈€75-110, club rental from "
+            "¥5,500). The Luxury figure assumes premium-date booking + better caddie tips, not different courses.",
             "Niseko lift passes are essentially fixed regardless of tier (it's a set resort rate) — "
             "€200 pp for a 3-day pass (¥36,800 regular-season rate, official niseko.ne.jp pricing, "
             "checked 2026). Niseko/Hakuba lift prices have risen ~30-40% over the last ~2 years — mostly "
