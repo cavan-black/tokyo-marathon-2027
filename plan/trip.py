@@ -1,39 +1,37 @@
 """Japan trip itinerary — Tokyo (race week incl. Ghibli Museum, snow monkeys, Shibuya/
-Harajuku/teamLab/go-karting all moved to before the race, and Golden Gai moved to after
-it), a 3-day Nakasendo Trail (Magome-Tsumago, incl. a recovery day) between Tokyo and
-Kyoto, Kyoto/Nara (incl. a Fushimi sake brewery, Ichijoji Sagarimatsu, a Yamazaki whisky
-day and an Arima Onsen day), Osaka (incl. the Haru Basho sumo tournament + NPB preseason
-baseball), Niseko, Sapporo, Miyazaki (Kyushu) on the way south, then Okinawa.
-build() -> trip dict.
+Harajuku/teamLab/go-karting all moved to before the race, Golden Gai moved to after it),
+a 2-day Nakasendo Trail (Magome-Tsumago) between Tokyo and Kyoto, Kyoto/Nara (incl. a
+Fushimi sake brewery, a Yamazaki whisky day, and Ichijoji Sagarimatsu doubling as the
+transfer to Osaka), Osaka (Haru Basho sumo, NPB baseball and boat racing spread one per
+day, with the last day's evening folded straight into the Niseko transfer), Niseko,
+Sapporo, Miyazaki (Kyushu) on the way south, then Okinawa. build() -> trip dict.
 
-Route (27 Feb - 30 Mar 2027, 32 days): Tokyo race week (Ghibli Museum, snow monkeys day
-trip to Jigokudani/Nagano, and — moved here from the day after the race, on request —
-Shibuya, Harajuku, teamLab and street go-karting, all stacked onto 1 March since it's 6
-days clear of the race) -> RACE -> Golden Gai that evening instead (once legs have had a
-few hours to settle — a better fit for an actual celebration than a pre-race outing) ->
-3 days on the Nakasendo Trail, starting the day after the race (was 1 day Tokyo + 2 days
-Nakasendo; with Tokyo's day freed up by the reshuffle above, it becomes a 3rd Nakasendo
-day instead — a rest day in Magome before the Tsumago walk, so marathon legs get 3 days
-to recover before the 7.8km forest walk instead of 1) -> 5 days Kyoto/Nara (incl. a
-Fushimi sake brewery, the Ichijoji Sagarimatsu/Musashi duel site + Kyoto's quiet
-northeast, a Yamazaki Distillery whisky day trip, and an Arima Onsen day that doubles as
-the transfer to Osaka) -> 3 days Osaka (incl. the Haru Basho Grand Sumo Tournament + NPB
-preseason baseball) -> Niseko -> Sapporo (one night now, was two) -> Miyazaki (two days
-now, was three, inserted here specifically because it has good direct flights to/from
-Osaka AND Naha but nothing useful to Hokkaido, so this is the lowest-backtrack slot) ->
-Okinawa (Naha/Kerama, incl. a proper night out) -> home. Ishigaki dropped from the route
-entirely (on request) rather than trimmed, so Okinawa now flies straight home from Naha
-instead of via a Naha<->Ishigaki hop. Sendai/Matsushima dropped in favour of the extra
-Kyoto/Osaka day each; Kyoto/Nara grew by two extra days for the Ichijoji and Arima Onsen
-additions, then condensed back to one net extra day by pairing sights that sit next to
-each other (Fushimi Inari + the sake brewery; Gion/Kiyomizu-dera + Ichijoji); the whisky
-day, having originally been swapped out for the onsen day, is back in as its own day
-trip (on request) since neither should be rushed by needing to catch a train onward.
-Sapporo condensed from two nights to one (arrive, sightsee, one night out in Susukino,
-depart the next afternoon) and Miyazaki from three days to two (golf and Aoshima Shrine
-now share a day, timed around an early tee slot). The Tokyo/Nakasendo reshuffle above is
-day-count-neutral overall (1 day Tokyo + 2 days Nakasendo -> 0 + 3 days Nakasendo), so
-it doesn't move the END date at all — that's still 30 Mar after all the other changes."""
+Route (27 Feb - 27 Mar 2027, 29 days): Tokyo race week (Ghibli Museum, snow monkeys day
+trip, and Shibuya/Harajuku/teamLab/go-karting all stacked onto 1 March, 6 days clear of
+the race) -> RACE -> Golden Gai that evening -> 2 days on the Nakasendo Trail (Tokyo ->
+Magome -> Tsumago walk -> Kyoto) -> 4 days Kyoto/Nara (Fushimi Inari + sake brewery,
+Yamazaki Distillery whisky day trip, Nara/Omizutori, then Gion/Kiyomizu-dera/Ichijoji
+Sagarimatsu doubling as the Osaka transfer — leave Kyoto that evening, arrive Osaka late)
+-> 3 days Osaka (Haru Basho sumo, NPB baseball and Boat Race Suminoe spread one per day
+instead of stacked on the last one, freeing that evening for an early, direct transfer
+to Niseko rather than a dedicated travel day) -> Niseko -> Sapporo (1 night) -> Miyazaki
+(2 days) -> Okinawa (Naha/Kerama, 4 nights) -> home direct from Naha.
+
+This itinerary has been reworked several times in the same places, so worth tracking the
+net effect rather than each individual change: Nakasendo went 2 -> 3 days (a rest day
+added post-marathon) -> back to 2 (freed up again, on request, since the point was to
+free a day rather than spend it here). Kyoto/Nara went 3 -> 5 days (Ichijoji + Arima
+Onsen added) -> 4 (Arima Onsen dropped entirely; Ichijoji now doubles as the Osaka
+transfer instead, saving the day Arima Onsen would have used). Osaka's sumo/baseball/
+boat racing were stacked on one day, then spread across all three specifically so the
+last evening could be freed for the Niseko transfer, eliminating the old dedicated "To
+Niseko" travel day. Whisky was swapped for Arima Onsen, then brought back as its own day
+(Arima Onsen has since been dropped instead, so whisky is the one that stuck). Ishigaki
+was dropped from the route entirely. Sapporo went from 2 nights to 1, Miyazaki from 3
+days to 2. Net effect on the trip length across ALL of this: 33 (original) -> 37 (peak,
+mid-additions) -> 31 -> 32 -> 29 (this round: Nakasendo -1, Kyoto/Nara -1, "To Niseko"
+folded into Osaka -1) — 4 days shorter than the original 33, even after everything added
+along the way."""
 from datetime import date
 
 
@@ -125,9 +123,9 @@ def build():
              "tag": "race"},
         ]},
         {"name": "Nakasendo Trail — Magome to Tsumago", "blurb": "The old Edo-period highway between Tokyo and "
-                                                                   "Kyoto — three days now instead of two, with "
-                                                                   "an extra rest day worked in right after the "
-                                                                   "marathon before tackling the walk. A night "
+                                                                   "Kyoto — back to two days (the rest-day "
+                                                                   "experiment was nice but the day was needed "
+                                                                   "elsewhere). A night "
                                                                    "in a preserved post town and a forest walk "
                                                                    "between two of Japan's best-kept historic "
                                                                    "villages.", "days": [
@@ -138,49 +136,29 @@ def build():
                        "rush — this slot used to be a full Tokyo sightseeing day (Shibuya, Harajuku, "
                        "go-karting), but with those moved earlier in the week to 1 March, the day after the "
                        "race is now free to just be a quiet travel day.", "tag": "travel"},
-            {"date": d(2027, 3, 9), "title": "Rest day in Magome",
-             "detail": "A full extra day worked in specifically to let marathon legs recover before the "
-                       "Tsumago walk — properly explore Magome without rushing: the old waterwheel, the "
-                       "Shimazaki Toson Memorial Museum (the post town's most famous son), the viewpoint at the "
-                       "top of the village. Steep but short streets, easy pace, sit down a lot.", "tag": "city"},
-            {"date": d(2027, 3, 10), "title": "Walk to Tsumago, on to Kyoto",
+            {"date": d(2027, 3, 9), "title": "Walk to Tsumago, on to Kyoto",
              "detail": "The Magome-Tsumago walk: ~7.8 km, ~2.5-3 h through forest, waterfalls and Edo-period "
-                       "checkpoints — genuinely one of Japan's best short walks, and legs have now had 3 days "
-                       "to recover since the race instead of 1. Then bus/train to Nagiso, "
+                       "checkpoints — genuinely one of Japan's best short walks, and legs have had 2 days to "
+                       "recover since the race. Then bus/train to Nagiso, "
                        "limited express to Nagoya, shinkansen on to Kyoto by evening.", "tag": "city"},
         ]},
-        {"name": "Kyoto & Nara", "blurb": "Five days now (was four, three, briefly five again) — temples, a "
-                                           "sake brewery, Nara's Omizutori fire ritual if timing allows (1-14 "
-                                           "Mar), Musashi history, a proper whisky day, and an onsen day, with "
+        {"name": "Kyoto & Nara", "blurb": "Four days now (the Arima Onsen day has been dropped, and the "
+                                           "Ichijoji day now doubles as the transfer to Osaka instead) — "
+                                           "temples, a sake brewery, Nara's Omizutori fire ritual if timing "
+                                           "allows (1-14 Mar), a proper whisky day, and Musashi history, with "
                                            "the sightseeing condensed by pairing sights that sit right next to "
                                            "each other.", "days": [
-            {"date": d(2027, 3, 11), "title": "Fushimi Inari & Fushimi sake brewery",
+            {"date": d(2027, 3, 10), "title": "Fushimi Inari & Fushimi sake brewery",
              "detail": "Fushimi Inari's torii-gate trail in the morning, then straight into Fushimi's historic "
                        "sake-brewing district (40+ breweries, famously soft water) right next door: Gekkeikan "
                        "Okura Sake Museum for the history + tasting, Kizakura Kappa Country as a second stop, "
                        "and a walk along the willow-lined Fushimi canal past the old sake warehouses. One "
                        "compact South Kyoto day instead of two, since the shrine and the sake district are "
                        "genuinely a short walk apart.", "tag": "city"},
-            {"date": d(2027, 3, 12), "title": "Gion, Kiyomizu-dera & Ichijoji Sagarimatsu",
-             "detail": "Morning/early afternoon in Higashiyama: Gion's old streets, Kiyomizu-dera. Then across "
-                       "to Ichijoji in Sakyo-ku for Ichijoji Sagarimatsu — the pine and stone monument marking "
-                       "the site of Musashi Miyamoto's most famous duel, alone against ~70 swordsmen of the "
-                       "Yoshioka School (1604), the story that made his legend before Ganryujima. The current "
-                       "pine is a later-generation descendant; the little Hachidai Shrine right next to it is "
-                       "where Musashi is said to have paused before the fight. Quiet and non-touristy — if "
-                       "there's time/energy left, the rest of the Ichijoji neighbourhood is worth it too: "
-                       "Shisen-do (Ishikawa Jozan's Edo-period hermitage), Enko-ji (bamboo grove + hilltop view) "
-                       "and Manshu-in, all a short walk apart. Ichijoji is also Kyoto's unofficial ramen street, "
-                       "so it doubles as a good dinner stop to close out a full day. Busier than a dedicated "
-                       "Ichijoji day would have been, but Higashiyama and Sakyo-ku are both well served by bus "
-                       "and a taxi hop between them is cheap if the legs are done by mid-afternoon.", "tag": "city"},
-            {"date": d(2027, 3, 13), "title": "Nara day-trip — Omizutori",
-             "detail": "Todai-ji + the Omizutori fire ritual (torches on the temple veranda each evening, "
-                       "runs 1-14 Mar — check that year's exact times).", "tag": "city"},
-            {"date": d(2027, 3, 14), "title": "Yamazaki Distillery whisky tour",
+            {"date": d(2027, 3, 11), "title": "Yamazaki Distillery whisky tour",
              "detail": "Suntory Yamazaki — Japan's oldest whisky distillery (1923) and the birthplace of "
                        "Japanese whisky, sitting almost exactly on the Kyoto/Osaka border. JR Yamazaki Station "
-                       "is ~15 min from Kyoto Station on the JR Kyoto Line. This time it's a proper day trip out "
+                       "is ~15 min from Kyoto Station on the JR Kyoto Line. A proper day trip out "
                        "and back to Kyoto rather than doubling as the transfer to Osaka — no bags to haul, no "
                        "trains to catch, just the tour and however long you want in the Whisky Library after. "
                        "Guided tours (English slots available) need advance online booking through Suntory's "
@@ -190,70 +168,88 @@ def build():
                        "depending on which whiskies are poured; the Whisky Library tasting counter and shop "
                        "(single-cask and distillery-exclusive bottlings) are open to walk-ins without a tour "
                        "reservation if the tour itself is sold out. Back to Kyoto for the night.", "tag": "tourist"},
-            {"date": d(2027, 3, 15), "title": "Arima Onsen, on to Osaka",
-             "detail": "Arima Onsen: one of Japan's oldest and most famous hot spring towns, tucked in the "
-                       "hills above Kobe, en route to Osaka rather than a "
-                       "detour. ~1h from Kyoto (Hankyu + Kobe Dentetsu lines, ~¥800-900) or a direct highway "
-                       "bus with no transfers. Arima Grand Hotel does day-use bathing (kannai-riyouken) without "
-                       "a reservation — ¥4,000 weekday/¥4,500 weekend, which includes a ¥2,000 facility "
-                       "voucher — or pick any of the other ryokan offering day baths if it's booked. Try both "
-                       "of Arima's two distinct spring types: kinsen (\"gold spring\", iron-rich, rust-coloured) "
-                       "and ginsen (\"silver spring\", clear, radium/carbonate). Wander the old town's narrow "
-                       "streets and Taiko-no-Yu footbath after soaking, then continue on to Osaka by train in "
-                       "the afternoon/evening (~1h).", "tag": "tourist"},
+            {"date": d(2027, 3, 12), "title": "Nara day-trip — Omizutori",
+             "detail": "Todai-ji + the Omizutori fire ritual (torches on the temple veranda each evening, "
+                       "runs 1-14 Mar — check that year's exact times).", "tag": "city"},
+            {"date": d(2027, 3, 13), "title": "Gion, Kiyomizu-dera & Ichijoji Sagarimatsu, on to Osaka",
+             "detail": "Morning/early afternoon in Higashiyama: Gion's old streets, Kiyomizu-dera. Then across "
+                       "to Ichijoji in Sakyo-ku for Ichijoji Sagarimatsu — the pine and stone monument marking "
+                       "the site of Musashi Miyamoto's most famous duel, alone against ~70 swordsmen of the "
+                       "Yoshioka School (1604), the story that made his legend before Ganryujima. The current "
+                       "pine is a later-generation descendant; the little Hachidai Shrine right next to it is "
+                       "where Musashi is said to have paused before the fight. Quiet and non-touristy — if "
+                       "there's time/energy left, the rest of the Ichijoji neighbourhood is worth it too: "
+                       "Shisen-do (Ishikawa Jozan's Edo-period hermitage), Enko-ji (bamboo grove + hilltop view) "
+                       "and Manshu-in, all a short walk apart. Ichijoji is also Kyoto's unofficial ramen street, "
+                       "so grab something there before heading out. This is now also the Kyoto->Osaka transfer "
+                       "day (the Arima Onsen day has been dropped) — leave Kyoto in the evening once you're "
+                       "done in Ichijoji, arriving Osaka late that night. Higashiyama and Sakyo-ku are both "
+                       "well served by bus, and a taxi hop between them is cheap if the legs are done by "
+                       "mid-afternoon.", "tag": "city"},
         ]},
-        {"name": "Osaka", "blurb": "Three days now instead of two — castle, baseball, and some of Japan's best "
-                                    "nightlife.", "days": [
-            {"date": d(2027, 3, 16), "title": "Osaka Castle, Kobe beef teppanyaki & Dotonbori",
-             "detail": "Osaka Castle in the afternoon. Dinner: a proper A5 Kobe beef teppanyaki course right in "
+        {"name": "Osaka", "blurb": "Three days — castle, sumo, baseball, boat racing and some of Japan's best "
+                                    "nightlife, spread out one headline per day instead of stacked on the last "
+                                    "one, which frees up that evening to head straight to Niseko.", "days": [
+            {"date": d(2027, 3, 14), "title": "Osaka Castle, boat racing, Kobe beef & Dotonbori",
+             "detail": "Osaka Castle in the afternoon. FOR A FLUTTER on the way: Boat Race Suminoe (kyotei) "
+                       "runs near-daily, cash betting, English signage, no ID/account needed — 3 min walk from "
+                       "Suminoekoen Station, an easy detour before or after the castle. Dinner: a proper A5 "
+                       "Kobe beef teppanyaki course right in "
                        "Dotonbori — Kobe Beef Wanomiya Dotonbori is well-regarded and easy to book, courses from "
                        "¥7,500, counter seating so you watch it cooked in front of you; no need to trek out to "
                        "Kobe itself (~30 min by train if you'd rather do the pilgrimage properly, but the beef "
                        "in Osaka is the same grade). Then straight into Dotonbori's street-food crawl for "
                        "afters (takoyaki, okonomiyaki, kushikatsu) once the neon's on.", "tag": "city"},
-            {"date": d(2027, 3, 17), "title": "Namba & Shinsekai by night + Round1 Stadium",
-             "detail": "Namba's bars, Shinsekai's retro streets and Tsutenkaku tower — Osaka's nightlife is a "
-                       "genuine highlight, not an afterthought. Then Round1 Stadium Sennichimae, right at the "
-                       "edge of Namba/Dotonbori (Kintetsu Nippombashi Sta., exit B20) — the real \"everything in "
-                       "one multi-storey building\" experience: 11 floors of bowling, batting cages, 5 floors of "
-                       "arcade games, karaoke, darts, ping-pong, ice skating and Spo-Cha (basketball, archery, "
-                       "mechanical bull). Bowling + the arcade floors run 24h; a few individual attractions "
-                       "(batting, karaoke) have narrower hours, worth a quick check at the front desk. Flat-rate "
-                       "\"free time\" pass ~¥2,000-2,900 for 2-3h, or pay per activity (bowling ~¥500-800/game, "
-                       "batting ~¥100/set). English signage, easy for tourists.", "tag": "city"},
-            {"date": d(2027, 3, 18), "title": "Grand Sumo, NPB baseball & boat racing",
+            {"date": d(2027, 3, 15), "title": "Grand Sumo, Namba & Shinsekai by night + Round1 Stadium",
              "detail": "THE real headline: the Haru Basho (Osaka's Grand Sumo Tournament) runs 14-28 Mar 2027 "
                        "at EDION Arena Osaka (formerly Osaka Prefectural Gymnasium), right in the middle of "
                        "this Osaka stay — book tickets as soon as they go on sale (roughly a month or so out, "
                        "via the official Sumo Association site or a ticket reseller). Cheap balcony/arena seats "
-                       "from ~¥3,600-8,000; ringside box seats are pricier and sell out first, but any seat gets "
-                       "you the full day's under-card through the top-division bouts in the evening. NPB "
-                       "preseason (\"open-sen\") games also run into ~22 Mar if baseball's more your thing — "
-                       "Orix Buffaloes at Kyocera Dome (in the city) or Hanshin Tigers at Koshien Stadium (short "
-                       "Hanshin Line ride); Spring Koshien, the high-school tournament at the same stadium, "
-                       "typically runs ~19-31 Mar too. FOR A FLUTTER: Boat Race Suminoe (kyotei) runs "
-                       "near-daily, cash betting, English signage, no ID/account needed — 3 min walk from "
-                       "Suminoekoen Station. Also worth checking closer to the time: Hanshin (Nishinomiya) or "
-                       "Kyoto Racecourse — JRA horse racing alternates between the two most Sat/Sundays in "
-                       "season, though these particular Osaka days now fall midweek, so a meeting isn't "
-                       "guaranteed — check the JRA calendar and shift a day or two if it matters to you.",
+                       "from ~¥3,600-8,000; ringside box seats are pricier and sell out first. Bouts run all "
+                       "afternoon into the top-division matches around 6pm, which times out nicely into the "
+                       "evening: Namba's bars, Shinsekai's retro streets and Tsutenkaku tower — Osaka's "
+                       "nightlife is a genuine highlight, not an afterthought. Then Round1 Stadium Sennichimae, "
+                       "right at the edge of Namba/Dotonbori (Kintetsu Nippombashi Sta., exit B20) — the real "
+                       "\"everything in one multi-storey building\" experience: 11 floors of bowling, batting "
+                       "cages, 5 floors of arcade games, karaoke, darts, ping-pong, ice skating and Spo-Cha "
+                       "(basketball, archery, mechanical bull). Bowling + the arcade floors run 24h; a few "
+                       "individual attractions (batting, karaoke) have narrower hours, worth a quick check at "
+                       "the front desk. Flat-rate \"free time\" pass ~¥2,000-2,900 for 2-3h, or pay per activity "
+                       "(bowling ~¥500-800/game, batting ~¥100/set). English signage, easy for tourists.",
              "tag": "city"},
-        ]},
-        {"name": "To Niseko", "blurb": "A full travel day, not a quick hop — budget for it.", "days": [
-            {"date": d(2027, 3, 19), "title": "Osaka → Niseko",
-             "detail": "Fly Kansai (KIX) → New Chitose (~2.5h), then intercity bus to Niseko (~2.5-3h via "
-                       "Rusutsu) — ~6.5-7.5h door to door. Shinkansen isn't competitive on this route; flying "
-                       "is unambiguously the better option.", "tag": "travel"},
+            {"date": d(2027, 3, 16), "title": "NPB baseball, then on to Niseko",
+             "detail": "NPB preseason (\"open-sen\") games run into ~22 Mar — catch the Orix Buffaloes at Kyocera "
+                       "Dome (in the city, most convenient) or the Hanshin Tigers at Koshien Stadium (short "
+                       "Hanshin Line ride); Spring Koshien, the high-school tournament at the same stadium, "
+                       "typically runs ~19-31 Mar too. Check the day's fixture/kick-off time — an early or "
+                       "afternoon game leaves the evening free for the Niseko transfer below (this day used to "
+                       "be its own separate travel day; spreading sumo/baseball/boat racing across all three "
+                       "Osaka days instead of stacking them on this one frees up the evening for it instead). "
+                       "Also worth checking closer to the time: Hanshin (Nishinomiya) or Kyoto Racecourse — JRA "
+                       "horse racing alternates between the two most Sat/Sundays in season, though these "
+                       "particular Osaka days fall midweek, so a meeting isn't guaranteed. THE TRANSFER: fly "
+                       "Kansai (KIX) → New Chitose (~2.5h), then intercity bus to Niseko (~2.5-3h via Rusutsu) "
+                       "— ~6.5-7.5h door to door, so an evening departure means a late arrival (past midnight is "
+                       "realistic) — check in and go straight to bed, first day on the mountain starts fresh "
+                       "the next morning. Shinkansen isn't competitive on this route; flying is unambiguously "
+                       "the better option.", "tag": "travel"},
         ]},
         {"name": "Niseko — snowboarding", "blurb": "A few days on the mountain.", "days": [
-            {"date": d(2027, 3, 20), "title": "Snowboarding", "detail": "Full day on the mountain.", "tag": "snow"},
-            {"date": d(2027, 3, 21), "title": "Snowboarding", "detail": "Full day on the mountain.", "tag": "snow"},
-            {"date": d(2027, 3, 22), "title": "Snowboarding", "detail": "Last day riding.", "tag": "snow"},
+            {"date": d(2027, 3, 17), "title": "Snowboarding, drinks & dinner in Niseko town",
+             "detail": "Full day on the mountain. In the evening: drinks and dinner in Niseko town — plenty of "
+                       "good izakayas, ramen and international spots catering to the ski crowd. (This was "
+                       "originally meant to be arrival-night plans, but with the Niseko transfer now folded "
+                       "into the last Osaka evening and landing well past midnight, there's no realistic window "
+                       "for a proper night out on arrival — moved to this first full evening instead, once "
+                       "everyone's actually awake and the legs have had a day on the mountain to loosen up.)",
+             "tag": "snow"},
+            {"date": d(2027, 3, 18), "title": "Snowboarding", "detail": "Full day on the mountain.", "tag": "snow"},
+            {"date": d(2027, 3, 19), "title": "Snowboarding", "detail": "Last day riding.", "tag": "snow"},
         ]},
         {"name": "Sapporo", "blurb": "Just the one night now (was two) — Clock Tower by day, Susukino by night, "
                                       "then off after lunch. No racing here anyway: Sapporo Racecourse is "
                                       "summer-only (roughly late Jul-early Sep) and closed in March.", "days": [
-            {"date": d(2027, 3, 23), "title": "Niseko → Sapporo, Susukino by night",
+            {"date": d(2027, 3, 20), "title": "Niseko → Sapporo, Susukino by night",
              "detail": "Transfer to Sapporo. Clock Tower, Odori Park, Nijo Market by day, then straight into "
                        "Susukino by night — ramen alley, izakayas, bars, Hokkaido's nightlife capital. Depart "
                        "the next afternoon, so no need to spread this over two full days: sightsee, eat, drink, "
@@ -265,13 +261,13 @@ def build():
         {"name": "Miyazaki", "blurb": "Two days now (was three) — Miyazaki has no useful Hokkaido link, but "
                                        "good direct flights to both Osaka (~1h) and Naha (~1h37m), so it's still "
                                        "the lowest-backtrack place in the whole route to fit it in.", "days": [
-            {"date": d(2027, 3, 24), "title": "Sapporo → Miyazaki, night out with friends",
+            {"date": d(2027, 3, 21), "title": "Sapporo → Miyazaki, night out with friends",
              "detail": "Depart Sapporo in the afternoon, connecting via Osaka (Itami) or Haneda — a long travel "
                        "day, arriving Miyazaki in the evening. NIGHT OUT: catching up with our Japanese friends "
                        "there — let them pick the spot, they'll know better than any guidebook. Worth keeping "
                        "the golf/Aoshima day after a little flexible on start time if it runs late.",
              "tag": "city"},
-            {"date": d(2027, 3, 25), "title": "Golf — Phoenix Country Club, Aoshima Shrine & on to Naha",
+            {"date": d(2027, 3, 22), "title": "Golf — Phoenix Country Club, Aoshima Shrine & on to Naha",
              "detail": "THE nice round: home of the Dunlop Phoenix Tournament (JGTO), 27 holes along the "
                        "Hitotsuba pine coast, ranked among Japan's top courses. Members-club in name but "
                        "visitors are genuinely welcome — book via GDO/Rakuten GORA/Jalan golf, or ask the "
@@ -290,98 +286,77 @@ def build():
                                                        "block. March suits sightseeing/snorkelling more than "
                                                        "full beach season (water ~22°C). 4th day added for a "
                                                        "good-value round of golf.", "days": [
-            {"date": d(2027, 3, 26), "title": "Naha — a proper night out",
+            {"date": d(2027, 3, 23), "title": "Naha — a proper night out",
              "detail": "Shuri Castle by day. By night: Kokusai-dori's main strip, or for something more local, "
                        "Sakaemachi Market (15 min walk / one monorail stop to Asato) — tiny hole-in-the-wall "
                        "izakayas threaded between market stalls, awamori and ¥300 yakitori, comes alive after "
                        "6pm, mostly no English menus. The better night out of the two.", "tag": "city"},
-            {"date": d(2027, 3, 27), "title": "Golf — Okinawa Country Club",
+            {"date": d(2027, 3, 24), "title": "Golf — Okinawa Country Club",
              "detail": "The good-value round: ~15-20 min taxi from Naha (Nishihara). Green fee ≈¥12,000-18,000 "
                        "(≈€75-110, official-site discounts knock off ¥500-1,000). Club rental from ¥5,500, "
                        "shoes ¥1,100 — no need to bring clubs. No handicap certificate required; that's an old "
                        "private-club norm, not a real barrier for visitor/resort play in Japan anymore.",
              "tag": "tourist"},
-            {"date": d(2027, 3, 28), "title": "Churaumi Aquarium day-trip",
+            {"date": d(2027, 3, 25), "title": "Churaumi Aquarium day-trip",
              "detail": "North-island day trip (rental car preferred): Churaumi Aquarium, Ocean Expo Park, "
                        "Bise Fukugi Tree Road.", "tag": "tourist"},
-            {"date": d(2027, 3, 29), "title": "Kerama Islands day-trip",
+            {"date": d(2027, 3, 26), "title": "Kerama Islands day-trip",
              "detail": "Ferry to Zamami/Aka (50-70 min). Snorkelling at Furuzamami Beach — March is within "
                        "Kerama whale-watching season.", "tag": "tourist"},
         ]},
         {"name": "Travel home", "blurb": "", "days": [
-            {"date": d(2027, 3, 30), "title": "Fly home", "detail": "Depart Japan from Naha.", "tag": "travel"},
+            {"date": d(2027, 3, 27), "title": "Fly home", "detail": "Depart Japan from Naha.", "tag": "travel"},
         ]},
     ]
     ndays = sum(len(l["days"]) for l in legs)
-    return {"meta": {"title": "Japan Trip 2027", "start": d(2027, 2, 27), "end": d(2027, 3, 30),
+    return {"meta": {"title": "Japan Trip 2027", "start": d(2027, 2, 27), "end": d(2027, 3, 27),
                      "days": ndays,
                      "note": "Tokyo (race week: Asakusa by day + Shibuya/Harajuku/teamLab/go-karting all "
                              "stacked onto the Monday — 6 days clear of the race, no need to hold back — snow "
                              "monkeys day trip, golf at Daiatsugi CC, Ghibli Museum + Kichijoji/Shimokitazawa "
                              "shopping, Akihabara + Round1 Ikebukuro, Nakiryu ramen the day before the race) -> "
-                             "RACE -> Golden Gai that evening instead (moved here on request — a proper "
-                             "celebration fits post-race better than a pre-race outing) -> 3 days on the "
-                             "Nakasendo Trail (Magome-Tsumago), starting the day after the race and including a "
-                             "rest day in Magome before the walk -> 5 days Kyoto/Nara "
-                             "(incl. Fushimi sake brewery, Ichijoji Sagarimatsu & Kyoto's quiet northeast, a "
-                             "Yamazaki whisky day trip, Arima Onsen) -> 3 days Osaka (incl. the Haru Basho Grand "
-                             "Sumo Tournament + NPB "
-                             "baseball + Boat Race Suminoe + Round1 Stadium Sennichimae) -> Niseko -> "
-                             "Sapporo (1 night, condensed from 2 — arrive, sightsee, one night out in Susukino, "
-                             "depart the next afternoon) -> Miyazaki (2 days, condensed from 3 — golf at Phoenix "
-                             "Country Club now shares a day with Aoshima Shrine, timed around an early tee slot) "
-                             "-> Okinawa (4 nights, incl. golf at Okinawa Country Club) -> home direct from "
-                             "Naha. Ishigaki "
-                             "dropped from the route entirely (on request), so there's no Naha<->Ishigaki hop "
-                             "at the end any more. Sendai/Matsushima dropped in favour of the extra Kyoto/Osaka "
-                             "day each. Miyazaki "
-                             "and Naha originally each grew by a day to fit a round of golf properly "
-                             "(compulsory-caddie rounds eat most of a day); Miyazaki's extra day has since come "
-                             "back out again (on request) by pairing golf with Aoshima instead of splitting "
-                             "them. Tokyo's golf slot needed no extra day at all — moving "
-                             "Asakusa onto the same day as what was then Golden Gai freed up the Wednesday for "
-                             "it, so the week stayed at its original 7 days. Golden Gai itself has since moved "
-                             "again — off the Monday entirely and onto race-day evening instead (on request), "
-                             "with Shibuya/Harajuku/teamLab/go-karting taking over the freed-up Monday slot. "
-                             "Kyoto/Nara grew from 3 to 5 days for the "
-                             "Ichijoji/Musashi history day and a proper onsen day (Arima, swapped in for the "
-                             "whisky distillery tour at the time — nicer not to be tipsy right before hauling "
-                             "bags onto a train), then condensed "
-                             "to 4: Fushimi Inari shares a day with the Fushimi sake brewery next door, and "
-                             "Gion/Kiyomizu-dera shares a day with Ichijoji (both fit better with each other "
-                             "than the original split did). The whisky tour is now back in too (on request), as "
-                             "its own day trip out and back to Kyoto rather than combined with the Osaka "
-                             "transfer, so nobody's rushing a distillery visit to catch a train — that puts "
-                             "Kyoto/Nara at 5 days again, this time for good reason rather than a temporary "
-                             "overlap. Osaka's dates still line up with the Haru "
-                             "Basho — Osaka's Grand Sumo Tournament, running 14-28 Mar 2027 at EDION Arena, "
-                             "right through the whole Osaka stay. Three proper food "
-                             "experiences folded into existing days rather than given their own: sushi omakase "
-                             "at Kyubey Ginza the night before the race, Michelin-pedigree tantanmen at Nakiryu "
-                             "for lunch that same day, and Kobe beef teppanyaki in Dotonbori on the first Osaka "
-                             "night. 32 "
-                             "days total: the original 33 dropped to 31 after Ishigaki was removed and "
-                             "Sapporo/Miyazaki were condensed, then +1 again for the whisky day coming back in "
-                             "as its own day. Cherry blossoms are still a coin-flip: current "
-                             "estimate has peak bloom ~28 "
-                             "Mar-5 Apr — this trip now ends right at the start of that window, so it's a "
-                             "genuine coin-flip whether you catch the very start of peak bloom or land home "
-                             "just ahead of it; reconfirm closer to the time. Ghibli Museum tickets (4 Mar) and "
-                             "the Yamazaki Distillery tour (14 Mar) both need booking ~1-3 months ahead, sumo "
-                             "tickets go on sale roughly a month out (grab them the moment they do — Haru Basho "
-                             "is popular), and the go-karting needs an "
-                             "International Driving Permit sorted before departure — the four hard deadlines "
-                             "here."},
+                             "RACE -> Golden Gai that evening (a proper celebration fits post-race better than "
+                             "a pre-race outing) -> 2 days on the Nakasendo Trail (Tokyo -> Magome, then the "
+                             "Tsumago walk on to Kyoto) -> 4 days Kyoto/Nara (Fushimi Inari + sake brewery, a "
+                             "Yamazaki whisky day trip, Nara/Omizutori, then Gion/Kiyomizu-dera/Ichijoji "
+                             "Sagarimatsu doubling as the transfer to Osaka — leave that evening, arrive Osaka "
+                             "late) -> 3 days Osaka (Haru Basho Grand Sumo Tournament, NPB baseball and Boat "
+                             "Race Suminoe spread one per day rather than stacked, freeing the last evening for "
+                             "a direct transfer to Niseko instead of a dedicated travel day; Kobe beef "
+                             "teppanyaki + Round1 Stadium Sennichimae folded into the other two days) -> Niseko "
+                             "(arriving late, drinks/dinner in Niseko town moved to the first full evening "
+                             "instead of arrival night) -> Sapporo (1 night — arrive, sightsee, one night out "
+                             "in Susukino, depart the next afternoon) -> Miyazaki (2 days — golf at Phoenix "
+                             "Country Club shares a day with Aoshima Shrine, timed around an early tee slot; "
+                             "night out with friends on arrival) -> Okinawa (4 nights, incl. golf at Okinawa "
+                             "Country Club) -> home direct from Naha (Ishigaki dropped from the route "
+                             "entirely). Sendai/Matsushima dropped throughout in favour of the extra Kyoto/"
+                             "Osaka time. Three proper food experiences folded into existing days rather than "
+                             "given their own: sushi omakase at Kyubey Ginza the night before the race, "
+                             "Michelin-pedigree tantanmen at Nakiryu for lunch that same day, and Kobe beef "
+                             "teppanyaki in Dotonbori. 29 days total — 4 shorter than the original 33, even "
+                             "after everything added along the way (peaked at 37 mid-trip before this round of "
+                             "trims: Nakasendo back to 2 days, Kyoto/Nara to 4 with Arima Onsen dropped, and "
+                             "the old \"To Niseko\" travel day folded into Osaka's last evening). Cherry "
+                             "blossoms are still a coin-flip: current estimate has peak bloom ~28 Mar-5 Apr, "
+                             "and this trip now ends 27 Mar — a little ahead of that window rather than during "
+                             "it; reconfirm closer to the time. Ghibli Museum tickets (4 Mar) and the Yamazaki "
+                             "Distillery tour (11 Mar) both need booking ~1-3 months ahead, sumo tickets go on "
+                             "sale roughly a month out (grab them the moment they do — Haru Basho is popular), "
+                             "and the go-karting needs an International Driving Permit sorted before departure "
+                             "— the four hard deadlines here."},
             "legs": legs, "budget": budget()}
 
 
 def budget():
     return {
         "intro": "Per person, 2 people sharing rooms, departing Málaga. FX rate used: 1 EUR ≈ ¥185.5 "
-                 "(current). Costed for the full 32-day route (Ishigaki dropped from the route entirely — "
-                 "Okinawa now flies straight home from Naha — Sapporo trimmed to 1 night and Miyazaki to 2 days "
+                 "(current). Costed for the full 29-day route (Ishigaki dropped from the route entirely — "
+                 "Okinawa now flies straight home from Naha — Sapporo trimmed to 1 night, Miyazaki to 2 days, "
+                 "Nakasendo back to 2 days, Kyoto/Nara to 4 days with Arima Onsen dropped and Ichijoji doubling "
+                 "as the Osaka transfer, and the old \"To Niseko\" travel day folded into Osaka's last evening "
                  "— Miyazaki + snow monkeys + the extra Kyoto/Osaka "
-                 "days, incl. the Ichijoji/Musashi day, the Yamazaki whisky tour, the Arima Onsen day and Haru "
+                 "days, incl. the Yamazaki whisky tour and Haru "
                  "Basho sumo tickets + three "
                  "golf rounds: "
                  "Daiatsugi in Tokyo, Phoenix in Miyazaki, Okinawa CC in Naha) — includes the "
@@ -400,26 +375,25 @@ def budget():
             ["Int'l flights (Málaga↔Naha, open-jaw)", "€700", "€975", "€3,900"],
             ["Domestic rail (incl. Nagano/snow monkeys, Kyoto→Osaka)", "€165", "€240", "€430"],
             ["Domestic flights (incl. Sapporo→Miyazaki→Naha chain)", "€235", "€330", "€640"],
-            ["Accommodation (31 nights)", "€745", "€1,160", "€7,500"],
+            ["Accommodation (28 nights)", "€675", "€1,045", "€6,770"],
             ["Niseko lift passes (3 days)", "€200", "€200", "€200"],
-            ["Food / local transport / incidentals (32 days)", "€1,710", "€2,310", "€6,400"],
+            ["Food / local transport / incidentals (29 days)", "€1,550", "€2,090", "€5,800"],
             ["Golf (Daiatsugi + Phoenix CC + Okinawa CC, incl. caddie/rental)", "€330", "€400", "€560"],
             ["Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting, Akihabara arcades, Round1 x2, Ichijoji-area temple entries)", "€180", "€235", "€1,100"],
             ["Yamazaki Distillery whisky tour", "€10", "€25", "€110"],
-            ["Arima Onsen day-use bathing", "€10", "€22", "€55"],
             ["Haru Basho sumo tournament tickets", "€19", "€32", "€85"],
             ["Food experiences (Kyubey sushi omakase, Nakiryu ramen, Kobe beef teppanyaki)", "€100", "€155", "€310"],
         ]},
         "durations": {"headers": ["Duration", "Bare minimum", "Middle", "Luxury"], "rows": [
-            ["Full itinerary (32 days, 27 Feb-30 Mar)", "≈€4,400", "≈€6,080", "≈€21,300"],
-            ["3-week (~25 days)*", "≈€3,340", "≈€4,150", "≈€15,400"],
+            ["Full itinerary (29 days, 27 Feb-27 Mar)", "≈€4,150", "≈€5,730", "≈€19,900"],
+            ["3-week (~22 days)*", "≈€3,150", "≈€3,900", "≈€14,400"],
         ]},
         "notes": [
             "*3-week = drop Miyazaki (and its Phoenix CC round) and the Tokyo golf day entirely, and trim Tokyo "
             "(7→6 nights, keep the snow monkeys, drop nothing else), Naha (4→2, "
             "keeping the Okinawa CC round since it's cheap and easy) — same core route otherwise, including the "
-            "Ichijoji, whisky and onsen days, tighter stays. The cheap add-ons (sake brewery, baseball, boat "
-            "racing, whisky tour, onsen day, sumo tickets) and all three food experiences stay in even at 3 "
+            "Ichijoji and whisky days, tighter stays. The cheap add-ons (sake brewery, baseball, boat "
+            "racing, whisky tour, sumo tickets) and all three food experiences stay in even at 3 "
             "weeks since none of them cost much or need a dedicated day.",
             "The swing between tiers is almost entirely flights and accommodation — food and activities "
             "barely move the needle by comparison.",
@@ -436,8 +410,8 @@ def budget():
             "The Miyazaki insertion is the single biggest domestic-flight cost driver here — three short hops "
             "(Sapporo→Osaka/Haneda→Miyazaki→Naha) instead of one direct Sendai→Naha routing from the earlier "
             "version. Worth knowing that's what you're paying for the detour.",
-            "The luxury total is dominated by business-class flights (~4x economy) and 31 nights of "
-            "5★/ryokan. \"Luxury lodging but economy flights\" comes out to roughly €8,780–10,180 pp — a "
+            "The luxury total is dominated by business-class flights (~4x economy) and 28 nights of "
+            "5★/ryokan. \"Luxury lodging but economy flights\" comes out to roughly €7,930–9,200 pp — a "
             "more common real-world middle ground if the full luxury number is too steep.",
             "WHEN TO BOOK — international flights: aim for Sept-Nov 2026 (5-6 months out). Google/Hopper fare "
             "data favours this window for Asia long-haul specifically over generic 'book last minute' advice; "
