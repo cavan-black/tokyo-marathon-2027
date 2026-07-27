@@ -61,14 +61,19 @@ def build():
                        "with small boutiques and secondhand stores, plus good cafes to break it up. BOOK GHIBLI "
                        "EARLY: tickets are timed-entry, released monthly (typically the 10th, ~1-3 months "
                        "ahead) and sell out fast — the one hard calendar reminder on this whole trip.", "tag": "city"},
-            {"date": d(2027, 3, 5), "title": "Expo & bib pickup + Akihabara",
+            {"date": d(2027, 3, 5), "title": "Expo & bib pickup + Akihabara + Round1",
              "detail": "Collect race kit, carb-load begins. Then Akihabara for an anime/gaming/tech afternoon — "
                        "genuinely easy on the legs two days out since it's almost entirely indoor, multi-floor "
                        "browsing rather than distance walking: Yodobashi Akiba (cavernous electronics store), "
                        "the Mandarake Complex (8 floors of manga/anime/figures), Super Potato (retro gaming, "
                        "delightfully niche), an arcade for claw machines and rhythm games, and the Radio Kaikan "
-                       "building for good measure. A themed cafe if you want a sit-down break. Keep the pace "
-                       "unhurried — browsing, not a walking tour.", "tag": "city"},
+                       "building for good measure. In the evening, a few Yamanote Line stops to Round1 Ikebukuro "
+                       "(open 24h, 4 min walk from the station) for the full \"everything in one building\" "
+                       "experience — bowling, arcade floors, karaoke, billiards, darts. TWO DAYS OUT FROM THE "
+                       "RACE: stick to the arcade/karaoke/darts side and skip batting cages or bowling's actual "
+                       "swinging motion — save that physical stuff for after the marathon, back at Round1 Osaka "
+                       "if you want the full batting-cage experience. Keep the pace unhurried overall — browsing, "
+                       "not a walking tour, and definitely not a workout.", "tag": "city"},
             {"date": d(2027, 3, 6), "title": "Shakeout & rest",
              "detail": "Short shakeout + strides, full carb-load, lay out kit, early night.", "tag": "rest"},
         ]},
@@ -121,9 +126,16 @@ def build():
             {"date": d(2027, 3, 14), "title": "Osaka Castle & Dotonbori",
              "detail": "Osaka Castle in the afternoon, then Dotonbori for a street-food crawl "
                        "(takoyaki, okonomiyaki, kushikatsu) once the neon's on.", "tag": "city"},
-            {"date": d(2027, 3, 15), "title": "Namba & Shinsekai by night",
-             "detail": "Namba's bars and arcades, Shinsekai's retro streets and Tsutenkaku tower — Osaka's "
-                       "nightlife is a genuine highlight, not an afterthought.", "tag": "city"},
+            {"date": d(2027, 3, 15), "title": "Namba & Shinsekai by night + Round1 Stadium",
+             "detail": "Namba's bars, Shinsekai's retro streets and Tsutenkaku tower — Osaka's nightlife is a "
+                       "genuine highlight, not an afterthought. Then Round1 Stadium Sennichimae, right at the "
+                       "edge of Namba/Dotonbori (Kintetsu Nippombashi Sta., exit B20) — the real \"everything in "
+                       "one multi-storey building\" experience: 11 floors of bowling, batting cages, 5 floors of "
+                       "arcade games, karaoke, darts, ping-pong, ice skating and Spo-Cha (basketball, archery, "
+                       "mechanical bull). Bowling + the arcade floors run 24h; a few individual attractions "
+                       "(batting, karaoke) have narrower hours, worth a quick check at the front desk. Flat-rate "
+                       "\"free time\" pass ~¥2,000-2,900 for 2-3h, or pay per activity (bowling ~¥500-800/game, "
+                       "batting ~¥100/set). English signage, easy for tourists.", "tag": "city"},
             {"date": d(2027, 3, 16), "title": "NPB baseball & boat racing",
              "detail": "NPB preseason (\"open-sen\") games run into ~22 Mar — catch the Orix Buffaloes at Kyocera "
                        "Dome (in the city, most convenient) or the Hanshin Tigers at Koshien Stadium (short "
@@ -221,9 +233,10 @@ def build():
                      "days": ndays,
                      "note": "Tokyo (race week: Asakusa by day + Golden Gai by night on the Monday, snow monkeys "
                              "day trip, golf at Daiatsugi CC, Ghibli Museum + Kichijoji/Shimokitazawa shopping, "
-                             "Akihabara) -> RACE -> Shibuya/Harajuku + go-karting the day after -> a "
-                             "night on the Nakasendo Trail (Magome-Tsumago) -> 3 days Kyoto/Nara (incl. Fushimi "
-                             "sake brewery) -> 3 days Osaka (incl. NPB baseball + Boat Race Suminoe) -> Niseko -> "
+                             "Akihabara + Round1 Ikebukuro) -> RACE -> Shibuya/Harajuku + go-karting the day "
+                             "after -> a night on the Nakasendo Trail (Magome-Tsumago) -> 3 days Kyoto/Nara "
+                             "(incl. Fushimi sake brewery) -> 3 days Osaka (incl. NPB baseball + Boat Race "
+                             "Suminoe + Round1 Stadium Sennichimae) -> Niseko -> "
                              "Sapporo -> Miyazaki (3 nights, incl. golf at Phoenix Country Club) -> Okinawa "
                              "(4 nights, incl. golf at Okinawa Country Club) -> Ishigaki taste -> home. "
                              "Sendai/Matsushima dropped in favour of the extra Kyoto/Osaka day each. Miyazaki "
@@ -262,7 +275,7 @@ def budget():
             ["Niseko lift passes (3 days)", "€200", "€200", "€200"],
             ["Food / local transport / incidentals (35 days)", "€1,870", "€2,535", "€7,000"],
             ["Golf (Daiatsugi + Phoenix CC + Okinawa CC, incl. caddie/rental)", "€330", "€400", "€560"],
-            ["Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting, Akihabara arcades)", "€145", "€200", "€1,050"],
+            ["Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting, Akihabara arcades, Round1 x2)", "€165", "€220", "€1,080"],
         ]},
         "durations": {"headers": ["Duration", "Bare minimum", "Middle", "Luxury"], "rows": [
             ["Full itinerary (35 days, 27 Feb-2 Apr)", "≈€4,500", "≈€6,200", "≈€22,100"],

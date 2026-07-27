@@ -4,7 +4,7 @@
     "start": "2027-02-27",
     "end": "2027-04-02",
     "days": 35,
-    "note": "Tokyo (race week: Asakusa by day + Golden Gai by night on the Monday, snow monkeys day trip, golf at Daiatsugi CC, Ghibli Museum + Kichijoji/Shimokitazawa shopping, Akihabara) -> RACE -> Shibuya/Harajuku + go-karting the day after -> a night on the Nakasendo Trail (Magome-Tsumago) -> 3 days Kyoto/Nara (incl. Fushimi sake brewery) -> 3 days Osaka (incl. NPB baseball + Boat Race Suminoe) -> Niseko -> Sapporo -> Miyazaki (3 nights, incl. golf at Phoenix Country Club) -> Okinawa (4 nights, incl. golf at Okinawa Country Club) -> Ishigaki taste -> home. Sendai/Matsushima dropped in favour of the extra Kyoto/Osaka day each. Miyazaki and Naha each grew by a day to fit a round of golf properly (compulsory-caddie rounds eat most of a day); Tokyo's golf slot needed no extra day at all — moving Asakusa onto the same day as Golden Gai freed up the Wednesday for it, so the week is back to its original 7 days. 35 days total, unchanged. Cherry blossoms are still a coin-flip: current estimate has peak bloom ~28 Mar-5 Apr, right around this trip's end date — reconfirm closer to the time. Ghibli Museum tickets (4 Mar) need booking ~1-3 months ahead, and the go-karting needs an International Driving Permit sorted before departure — the two hard deadlines here."
+    "note": "Tokyo (race week: Asakusa by day + Golden Gai by night on the Monday, snow monkeys day trip, golf at Daiatsugi CC, Ghibli Museum + Kichijoji/Shimokitazawa shopping, Akihabara + Round1 Ikebukuro) -> RACE -> Shibuya/Harajuku + go-karting the day after -> a night on the Nakasendo Trail (Magome-Tsumago) -> 3 days Kyoto/Nara (incl. Fushimi sake brewery) -> 3 days Osaka (incl. NPB baseball + Boat Race Suminoe + Round1 Stadium Sennichimae) -> Niseko -> Sapporo -> Miyazaki (3 nights, incl. golf at Phoenix Country Club) -> Okinawa (4 nights, incl. golf at Okinawa Country Club) -> Ishigaki taste -> home. Sendai/Matsushima dropped in favour of the extra Kyoto/Osaka day each. Miyazaki and Naha each grew by a day to fit a round of golf properly (compulsory-caddie rounds eat most of a day); Tokyo's golf slot needed no extra day at all — moving Asakusa onto the same day as Golden Gai freed up the Wednesday for it, so the week is back to its original 7 days. 35 days total, unchanged. Cherry blossoms are still a coin-flip: current estimate has peak bloom ~28 Mar-5 Apr, right around this trip's end date — reconfirm closer to the time. Ghibli Museum tickets (4 Mar) need booking ~1-3 months ahead, and the go-karting needs an International Driving Permit sorted before departure — the two hard deadlines here."
   },
   "legs": [
     {
@@ -55,8 +55,8 @@
         },
         {
           "date": "2027-03-05",
-          "title": "Expo & bib pickup + Akihabara",
-          "detail": "Collect race kit, carb-load begins. Then Akihabara for an anime/gaming/tech afternoon — genuinely easy on the legs two days out since it's almost entirely indoor, multi-floor browsing rather than distance walking: Yodobashi Akiba (cavernous electronics store), the Mandarake Complex (8 floors of manga/anime/figures), Super Potato (retro gaming, delightfully niche), an arcade for claw machines and rhythm games, and the Radio Kaikan building for good measure. A themed cafe if you want a sit-down break. Keep the pace unhurried — browsing, not a walking tour.",
+          "title": "Expo & bib pickup + Akihabara + Round1",
+          "detail": "Collect race kit, carb-load begins. Then Akihabara for an anime/gaming/tech afternoon — genuinely easy on the legs two days out since it's almost entirely indoor, multi-floor browsing rather than distance walking: Yodobashi Akiba (cavernous electronics store), the Mandarake Complex (8 floors of manga/anime/figures), Super Potato (retro gaming, delightfully niche), an arcade for claw machines and rhythm games, and the Radio Kaikan building for good measure. In the evening, a few Yamanote Line stops to Round1 Ikebukuro (open 24h, 4 min walk from the station) for the full \"everything in one building\" experience — bowling, arcade floors, karaoke, billiards, darts. TWO DAYS OUT FROM THE RACE: stick to the arcade/karaoke/darts side and skip batting cages or bowling's actual swinging motion — save that physical stuff for after the marathon, back at Round1 Osaka if you want the full batting-cage experience. Keep the pace unhurried overall — browsing, not a walking tour, and definitely not a workout.",
           "tag": "city"
         },
         {
@@ -145,8 +145,8 @@
         },
         {
           "date": "2027-03-15",
-          "title": "Namba & Shinsekai by night",
-          "detail": "Namba's bars and arcades, Shinsekai's retro streets and Tsutenkaku tower — Osaka's nightlife is a genuine highlight, not an afterthought.",
+          "title": "Namba & Shinsekai by night + Round1 Stadium",
+          "detail": "Namba's bars, Shinsekai's retro streets and Tsutenkaku tower — Osaka's nightlife is a genuine highlight, not an afterthought. Then Round1 Stadium Sennichimae, right at the edge of Namba/Dotonbori (Kintetsu Nippombashi Sta., exit B20) — the real \"everything in one multi-storey building\" experience: 11 floors of bowling, batting cages, 5 floors of arcade games, karaoke, darts, ping-pong, ice skating and Spo-Cha (basketball, archery, mechanical bull). Bowling + the arcade floors run 24h; a few individual attractions (batting, karaoke) have narrower hours, worth a quick check at the front desk. Flat-rate \"free time\" pass ~¥2,000-2,900 for 2-3h, or pay per activity (bowling ~¥500-800/game, batting ~¥100/set). English signage, easy for tourists.",
           "tag": "city"
         },
         {
@@ -375,10 +375,10 @@
           "€560"
         ],
         [
-          "Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting, Akihabara arcades)",
-          "€145",
-          "€200",
-          "€1,050"
+          "Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting, Akihabara arcades, Round1 x2)",
+          "€165",
+          "€220",
+          "€1,080"
         ]
       ]
     },
