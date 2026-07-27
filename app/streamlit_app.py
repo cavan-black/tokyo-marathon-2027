@@ -1143,12 +1143,47 @@ def render_analytics(plan, progress):
                    "(short runs under ~1-2 km are skipped so trimming stays meaningful).")
 
 
+AUTO_SYNC_MIN_INTERVAL_MIN = 8  # just under the 10-min auto-reload cadence
+
+
+def maybe_auto_sync(runner_id, progress):
+    """Silently sync from Strava on page load. Throttled two ways so repeated reruns and the
+    10-min auto-reload don't hammer Strava's API rate limit (100 req/15min): once per browser
+    session (session_state — a full page reload starts a new session, so this mainly guards
+    against redundant reruns within one load), and never more than once every ~8 min based on
+    the last actual sync time. Persists via GitHub if GH_PAT is set, same as the manual button;
+    fails silently since this is a background action, not something the user asked for directly."""
+    session_key = f"_auto_synced_{runner_id}"
+    if st.session_state.get(session_key):
+        return progress
+    st.session_state[session_key] = True
+
+    last_sync = progress.get("last_sync")
+    if last_sync:
+        try:
+            last_dt = datetime.fromisoformat(last_sync)
+            now = datetime.now(last_dt.tzinfo) if last_dt.tzinfo else datetime.now()
+            if (now - last_dt).total_seconds() / 60 < AUTO_SYNC_MIN_INTERVAL_MIN:
+                return progress
+        except Exception:
+            pass
+    try:
+        res = refresh_runner(runner_id)
+    except Exception:
+        return progress
+    if res is None:
+        return progress
+    commit_progress_to_github(runner_id, res)
+    return res
+
+
 def render_runner(runner_id):
     plan = load_json(f"plan_{runner_id}.json")
     if not plan:
         st.error(f"No plan for {runner_id} — run plan/plan_generator.py."); return
     progress = load_json(f"progress_{runner_id}.json",
                          {"days": {}, "weeks": {}, "last_sync": None, "tracker": None})
+    progress = maybe_auto_sync(runner_id, progress)
     wk_rows = progress.get("weeks", {})
     content = plan.get("content", {})
     today = date.today()

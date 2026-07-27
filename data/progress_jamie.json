@@ -18,11 +18,24 @@
       "type": "easy",
       "session": "Easy 5–6 km + 4×20s strides",
       "target_km": 6,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": []
+      "actual_km": 5.65,
+      "status": "Done",
+      "pace_min_km": 7.176,
+      "pace_str": "7:11",
+      "activities": [
+        {
+          "id": 19406551061,
+          "date": "2026-07-21",
+          "name": "Evening Run",
+          "distance_km": 5.65,
+          "moving_time_s": 2433,
+          "pace_min_km": 7.176,
+          "avg_hr": 161.1,
+          "max_hr": 178.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ]
     },
     "2026-07-22": {
       "week": 1,
@@ -30,11 +43,24 @@
       "type": "easy",
       "session": "Easy 3 km",
       "target_km": 3,
-      "actual_km": 0,
-      "status": "Upcoming",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": []
+      "actual_km": 2.95,
+      "status": "Done",
+      "pace_min_km": 6.128,
+      "pace_str": "6:08",
+      "activities": [
+        {
+          "id": 19421176026,
+          "date": "2026-07-22",
+          "name": "Evening Run",
+          "distance_km": 2.95,
+          "moving_time_s": 1086,
+          "pace_min_km": 6.128,
+          "avg_hr": 159.4,
+          "max_hr": 184.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ]
     },
     "2026-07-23": {
       "week": 1,
@@ -42,11 +68,24 @@
       "type": "easy",
       "session": "Easy 5–6 km",
       "target_km": 5,
-      "actual_km": 0,
-      "status": "Upcoming",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": []
+      "actual_km": 5.62,
+      "status": "Done",
+      "pace_min_km": 6.689,
+      "pace_str": "6:41",
+      "activities": [
+        {
+          "id": 19434999265,
+          "date": "2026-07-23",
+          "name": "Evening Run",
+          "distance_km": 5.62,
+          "moving_time_s": 2257,
+          "pace_min_km": 6.689,
+          "avg_hr": 159.4,
+          "max_hr": 176.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ]
     },
     "2026-07-24": {
       "week": 1,
@@ -54,11 +93,24 @@
       "type": "easy",
       "session": "Easy 2 km",
       "target_km": 2,
-      "actual_km": 0,
-      "status": "Upcoming",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": []
+      "actual_km": 2.18,
+      "status": "Done",
+      "pace_min_km": 6.374,
+      "pace_str": "6:22",
+      "activities": [
+        {
+          "id": 19445547337,
+          "date": "2026-07-24",
+          "name": "Afternoon Run",
+          "distance_km": 2.18,
+          "moving_time_s": 835,
+          "pace_min_km": 6.374,
+          "avg_hr": 133.6,
+          "max_hr": 145.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ]
     },
     "2026-07-25": {
       "week": 1,
@@ -78,11 +130,24 @@
       "type": "long",
       "session": "12 km easy",
       "target_km": 12,
-      "actual_km": 0,
-      "status": "Upcoming",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": []
+      "actual_km": 12.04,
+      "status": "Done",
+      "pace_min_km": 7.354,
+      "pace_str": "7:21",
+      "activities": [
+        {
+          "id": 19469935517,
+          "date": "2026-07-26",
+          "name": "Morning Run",
+          "distance_km": 12.04,
+          "moving_time_s": 5312,
+          "pace_min_km": 7.354,
+          "avg_hr": 153.6,
+          "max_hr": 178.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ]
     },
     "2026-07-27": {
       "week": 2,
@@ -1672,7 +1737,7 @@
       "week": 20,
       "dow": "Sun",
       "type": "long",
-      "session": "30 km easy (recovery weekend — no MP)",
+      "session": "Sevilla Half Marathon — run it CONTROLLED at easy pace, not all-out (no MP)",
       "target_km": 30,
       "actual_km": 0,
       "status": "Upcoming",
@@ -2776,15 +2841,15 @@
   "weeks": {
     "1": {
       "planned_km": 28,
-      "planned_km_due": 6,
-      "actual_km": 0,
-      "done": 0,
+      "planned_km_due": 28,
+      "actual_km": 28.4,
+      "done": 5,
       "partial": 0,
-      "missed": 1,
+      "missed": 0,
       "quality_hit": 0,
       "quality_planned": 0,
-      "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "long_done": true,
+      "flag": "✓ On track"
     },
     "2": {
       "planned_km": 34,
@@ -3171,9 +3236,13 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-07-21T13:55:16+00:00",
+  "last_sync": "2026-07-27T10:02:22+00:00",
   "tracker": {
     "threshold_latest": null,
-    "mp_latest": null
+    "mp_latest": [
+      "2026-07-26",
+      "7:21",
+      7.354
+    ]
   }
 }
