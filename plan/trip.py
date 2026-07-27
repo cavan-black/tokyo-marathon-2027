@@ -5,14 +5,14 @@ an Arima Onsen day), Osaka (incl. the Haru Basho sumo tournament + NPB preseason
 baseball), Niseko, Sapporo, Miyazaki (Kyushu) on the way south, then Okinawa.
 build() -> trip dict.
 
-Route (27 Feb - 31 Mar 2027, 33 days): Tokyo race week (Ghibli Museum, Golden Gai on the
+Route (27 Feb - 29 Mar 2027, 31 days): Tokyo race week (Ghibli Museum, Golden Gai on the
 Monday — 6 days clear of the race so no need to hold back, snow monkeys day trip to
 Jigokudani/Nagano) -> RACE -> Shibuya/Harajuku the day after (moved here on request) ->
 a night on the Nakasendo Trail -> 4 days Kyoto/Nara (incl. a Fushimi sake brewery, the
 Ichijoji Sagarimatsu/Musashi duel site + Kyoto's quiet northeast, and an Arima Onsen day
 that doubles as the transfer to Osaka) -> 3 days Osaka (incl. the Haru Basho Grand Sumo
-Tournament + NPB preseason baseball) -> Niseko -> Sapporo -> Miyazaki (1 night, inserted
-here specifically
+Tournament + NPB preseason baseball) -> Niseko -> Sapporo (one night now, was two) ->
+Miyazaki (two days now, was three, inserted here specifically
 because it has good direct flights to/from Osaka AND Naha but nothing useful to Hokkaido,
 so this is the lowest-backtrack slot) -> Okinawa (Naha/Kerama, incl. a proper night out)
 -> home. Ishigaki dropped from the route entirely (on request) rather than trimmed, so
@@ -20,8 +20,10 @@ Okinawa now flies straight home from Naha instead of via a Naha<->Ishigaki hop. 
 Matsushima dropped in favour of the extra Kyoto/Osaka day each; Kyoto/Nara grew by two
 extra days for the Ichijoji and Arima Onsen additions, then condensed back to one net
 extra day by pairing sights that sit next to each other (Fushimi Inari + the sake
-brewery; Gion/Kiyomizu-dera + Ichijoji), pushing the END date from 2 Apr to 31 Mar overall
-once Ishigaki's 3 days (2 there + 1 transfer) came back out."""
+brewery; Gion/Kiyomizu-dera + Ichijoji). Sapporo condensed from two nights to one (arrive,
+sightsee, one night out in Susukino, depart the next afternoon) and Miyazaki from three
+days to two (golf and Aoshima Shrine now share a day, timed around an early tee slot),
+trimming 2 more days off the END date, from 31 Mar to 29 Mar."""
 from datetime import date
 
 
@@ -213,67 +215,67 @@ def build():
             {"date": d(2027, 3, 20), "title": "Snowboarding", "detail": "Full day on the mountain.", "tag": "snow"},
             {"date": d(2027, 3, 21), "title": "Snowboarding", "detail": "Last day riding.", "tag": "snow"},
         ]},
-        {"name": "Sapporo", "blurb": "Clock Tower by day, Susukino — one of Japan's biggest entertainment "
-                                      "districts — by night. No racing here though: Sapporo Racecourse is "
+        {"name": "Sapporo", "blurb": "Just the one night now (was two) — Clock Tower by day, Susukino by night, "
+                                      "then off after lunch. No racing here anyway: Sapporo Racecourse is "
                                       "summer-only (roughly late Jul-early Sep) and closed in March.", "days": [
-            {"date": d(2027, 3, 22), "title": "Niseko → Sapporo",
-             "detail": "Transfer to Sapporo. Clock Tower, Odori Park, Nijo Market.", "tag": "city"},
-            {"date": d(2027, 3, 23), "title": "Susukino by night",
-             "detail": "Ramen alley, izakayas, bars — Susukino is Hokkaido's nightlife capital. (No gambling "
-                       "detour worth it near here: Obihiro's unique Banei Keiba — draft horses pulling sleds, "
-                       "only venue of its kind in the world — is ~2h15-2h45 each way by JR, a full day round "
-                       "trip. A genuine curiosity if it's a bucket-list item, but not worth it for a 2-day stop.)",
-             "tag": "city"},
+            {"date": d(2027, 3, 22), "title": "Niseko → Sapporo, Susukino by night",
+             "detail": "Transfer to Sapporo. Clock Tower, Odori Park, Nijo Market by day, then straight into "
+                       "Susukino by night — ramen alley, izakayas, bars, Hokkaido's nightlife capital. Depart "
+                       "the next afternoon, so no need to spread this over two full days: sightsee, eat, drink, "
+                       "sleep it off in the morning. (No gambling detour worth it near here: Obihiro's unique "
+                       "Banei Keiba — draft horses pulling sleds, only venue of its kind in the world — is "
+                       "~2h15-2h45 each way by JR, a full day round trip. A genuine curiosity if it's a "
+                       "bucket-list item, but not worth it for a one-night stop.)", "tag": "city"},
         ]},
-        {"name": "Miyazaki", "blurb": "One night, inserted here on purpose: Miyazaki has no useful Hokkaido "
-                                       "link, but good direct flights to both Osaka (~1h) and Naha (~1h37m) — "
-                                       "this is the lowest-backtrack place in the whole route to fit it in.", "days": [
-            {"date": d(2027, 3, 24), "title": "Sapporo → Miyazaki",
-             "detail": "Connects via Osaka (Itami) or Haneda — a long travel day, arriving Miyazaki in the "
-                       "evening.", "tag": "travel"},
-            {"date": d(2027, 3, 25), "title": "Golf — Phoenix Country Club",
+        {"name": "Miyazaki", "blurb": "Two days now (was three) — Miyazaki has no useful Hokkaido link, but "
+                                       "good direct flights to both Osaka (~1h) and Naha (~1h37m), so it's still "
+                                       "the lowest-backtrack place in the whole route to fit it in.", "days": [
+            {"date": d(2027, 3, 23), "title": "Sapporo → Miyazaki",
+             "detail": "Depart Sapporo in the afternoon, connecting via Osaka (Itami) or Haneda — a long travel "
+                       "day, arriving Miyazaki in the evening.", "tag": "travel"},
+            {"date": d(2027, 3, 24), "title": "Golf — Phoenix Country Club, Aoshima Shrine & on to Naha",
              "detail": "THE nice round: home of the Dunlop Phoenix Tournament (JGTO), 27 holes along the "
                        "Hitotsuba pine coast, ranked among Japan's top courses. Members-club in name but "
                        "visitors are genuinely welcome — book via GDO/Rakuten GORA/Jalan golf, or ask the "
                        "Sheraton Grande Ocean Resort/Seagaia concierge next door. Green fee ≈¥31,000-58,000 "
                        "(≈€190-350) depending on day/season; caddie is compulsory (adds to cost), jacket needed "
-                       "in the clubhouse outside summer. ~20 min from JR Miyazaki Station/the airport. Given the "
-                       "compulsory caddie pace + clubhouse time it eats most of a day — that's why Miyazaki got "
-                       "a 3rd day rather than squeezing this in alongside Aoshima.", "tag": "tourist"},
-            {"date": d(2027, 3, 26), "title": "Aoshima Shrine & on to Naha",
-             "detail": "Aoshima Shrine and the \"Devil's Washboard\" (Oni no Sentakuita) tide-carved rock "
-                       "formations, an easy couple of hours near the city. (Takachiho Gorge is ~2.5h further "
-                       "with no train access — skipped to keep this a single efficient stop; would need its own "
-                       "overnight to do properly.) Fly on to Naha in the afternoon/evening.", "tag": "tourist"},
+                       "in the clubhouse outside summer. ~20 min from JR Miyazaki Station/the airport. Book an "
+                       "early tee time (7-8am) — 18 holes with the compulsory caddie pace + clubhouse lunch "
+                       "break runs 5-6h, so an early start gets you off the course by early-mid afternoon with "
+                       "just enough left for Aoshima Shrine and the \"Devil's Washboard\" (Oni no Sentakuita) "
+                       "tide-carved rock formations, an easy couple of hours nearby, before flying on to Naha in "
+                       "the evening. A full day, but a doable one. (Takachiho Gorge is ~2.5h further with no "
+                       "train access — skipped to keep this a single efficient stop; would need its own "
+                       "overnight to do properly.)", "tag": "tourist"},
         ]},
         {"name": "Okinawa — Naha & Kerama", "blurb": "Trimmed down and spread out rather than 12 days in one "
                                                        "block. March suits sightseeing/snorkelling more than "
                                                        "full beach season (water ~22°C). 4th day added for a "
                                                        "good-value round of golf.", "days": [
-            {"date": d(2027, 3, 27), "title": "Naha — a proper night out",
+            {"date": d(2027, 3, 25), "title": "Naha — a proper night out",
              "detail": "Shuri Castle by day. By night: Kokusai-dori's main strip, or for something more local, "
                        "Sakaemachi Market (15 min walk / one monorail stop to Asato) — tiny hole-in-the-wall "
                        "izakayas threaded between market stalls, awamori and ¥300 yakitori, comes alive after "
                        "6pm, mostly no English menus. The better night out of the two.", "tag": "city"},
-            {"date": d(2027, 3, 28), "title": "Golf — Okinawa Country Club",
+            {"date": d(2027, 3, 26), "title": "Golf — Okinawa Country Club",
              "detail": "The good-value round: ~15-20 min taxi from Naha (Nishihara). Green fee ≈¥12,000-18,000 "
                        "(≈€75-110, official-site discounts knock off ¥500-1,000). Club rental from ¥5,500, "
                        "shoes ¥1,100 — no need to bring clubs. No handicap certificate required; that's an old "
                        "private-club norm, not a real barrier for visitor/resort play in Japan anymore.",
              "tag": "tourist"},
-            {"date": d(2027, 3, 29), "title": "Churaumi Aquarium day-trip",
+            {"date": d(2027, 3, 27), "title": "Churaumi Aquarium day-trip",
              "detail": "North-island day trip (rental car preferred): Churaumi Aquarium, Ocean Expo Park, "
                        "Bise Fukugi Tree Road.", "tag": "tourist"},
-            {"date": d(2027, 3, 30), "title": "Kerama Islands day-trip",
+            {"date": d(2027, 3, 28), "title": "Kerama Islands day-trip",
              "detail": "Ferry to Zamami/Aka (50-70 min). Snorkelling at Furuzamami Beach — March is within "
                        "Kerama whale-watching season.", "tag": "tourist"},
         ]},
         {"name": "Travel home", "blurb": "", "days": [
-            {"date": d(2027, 3, 31), "title": "Fly home", "detail": "Depart Japan from Naha.", "tag": "travel"},
+            {"date": d(2027, 3, 29), "title": "Fly home", "detail": "Depart Japan from Naha.", "tag": "travel"},
         ]},
     ]
     ndays = sum(len(l["days"]) for l in legs)
-    return {"meta": {"title": "Japan Trip 2027", "start": d(2027, 2, 27), "end": d(2027, 3, 31),
+    return {"meta": {"title": "Japan Trip 2027", "start": d(2027, 2, 27), "end": d(2027, 3, 29),
                      "days": ndays,
                      "note": "Tokyo (race week: Asakusa by day + Golden Gai by night on the Monday, snow monkeys "
                              "day trip, golf at Daiatsugi CC, Ghibli Museum + Kichijoji/Shimokitazawa shopping, "
@@ -282,13 +284,18 @@ def build():
                              "(incl. Fushimi sake brewery, Ichijoji Sagarimatsu & Kyoto's quiet northeast, "
                              "Arima Onsen) -> 3 days Osaka (incl. the Haru Basho Grand Sumo Tournament + NPB "
                              "baseball + Boat Race Suminoe + Round1 Stadium Sennichimae) -> Niseko -> "
-                             "Sapporo -> Miyazaki (3 nights, incl. golf at Phoenix Country Club) -> Okinawa "
-                             "(4 nights, incl. golf at Okinawa Country Club) -> home direct from Naha. Ishigaki "
+                             "Sapporo (1 night, condensed from 2 — arrive, sightsee, one night out in Susukino, "
+                             "depart the next afternoon) -> Miyazaki (2 days, condensed from 3 — golf at Phoenix "
+                             "Country Club now shares a day with Aoshima Shrine, timed around an early tee slot) "
+                             "-> Okinawa (4 nights, incl. golf at Okinawa Country Club) -> home direct from "
+                             "Naha. Ishigaki "
                              "dropped from the route entirely (on request), so there's no Naha<->Ishigaki hop "
                              "at the end any more. Sendai/Matsushima dropped in favour of the extra Kyoto/Osaka "
                              "day each. Miyazaki "
-                             "and Naha each grew by a day to fit a round of golf properly (compulsory-caddie "
-                             "rounds eat most of a day); Tokyo's golf slot needed no extra day at all — moving "
+                             "and Naha originally each grew by a day to fit a round of golf properly "
+                             "(compulsory-caddie rounds eat most of a day); Miyazaki's extra day has since come "
+                             "back out again (on request) by pairing golf with Aoshima instead of splitting "
+                             "them. Tokyo's golf slot needed no extra day at all — moving "
                              "Asakusa onto the same day as Golden Gai freed up the Wednesday for it, so the "
                              "week is back to its original 7 days. Kyoto/Nara grew from 3 to 5 days for the "
                              "Ichijoji/Musashi history day and a proper onsen day (Arima, swapped in for a "
@@ -302,14 +309,14 @@ def build():
                              "right through the whole Osaka stay. Three proper food "
                              "experiences folded into existing days rather than given their own: sushi omakase "
                              "at Kyubey Ginza the night before the race, Michelin-pedigree tantanmen at Nakiryu "
-                             "the day after, and Kobe beef teppanyaki in Dotonbori on the first Osaka night. 33 "
-                             "days total — net unchanged from the original 33 once Ishigaki's 3 days (2 there + "
-                             "1 transfer) came back out; the Kyoto/Nara growth and the Ishigaki removal happen "
-                             "to cancel out almost exactly. Cherry blossoms are still a coin-flip: current "
+                             "the day after, and Kobe beef teppanyaki in Dotonbori on the first Osaka night. 31 "
+                             "days total — 2 days shorter than the original 33 after condensing Sapporo and "
+                             "Miyazaki (Kyoto/Nara's growth, the Ishigaki removal, and these last two trims add "
+                             "up to a net -2 overall). Cherry blossoms are still a coin-flip: current "
                              "estimate has peak bloom ~28 "
-                             "Mar-5 Apr — this trip now ends right at the start of that window rather than "
-                             "comfortably inside it, so it's more likely you land home just before peak bloom "
-                             "than during it; reconfirm closer to the time. Ghibli Museum tickets (4 Mar) need "
+                             "Mar-5 Apr — this trip now ends just before that window rather than inside it, so "
+                             "you'll most likely be home a few days ahead of peak bloom rather than during it; "
+                             "reconfirm closer to the time. Ghibli Museum tickets (4 Mar) need "
                              "booking ~1-3 months ahead, sumo "
                              "tickets go on sale roughly a month out (grab them the moment they do — Haru Basho "
                              "is popular), and the go-karting needs an "
@@ -321,8 +328,9 @@ def build():
 def budget():
     return {
         "intro": "Per person, 2 people sharing rooms, departing Málaga. FX rate used: 1 EUR ≈ ¥185.5 "
-                 "(current). Costed for the full 33-day route (Ishigaki dropped from the route entirely — "
-                 "Okinawa now flies straight home from Naha — Miyazaki + snow monkeys + the extra Kyoto/Osaka "
+                 "(current). Costed for the full 31-day route (Ishigaki dropped from the route entirely — "
+                 "Okinawa now flies straight home from Naha — Sapporo trimmed to 1 night and Miyazaki to 2 days "
+                 "— Miyazaki + snow monkeys + the extra Kyoto/Osaka "
                  "days, incl. the Ichijoji/Musashi day, the Arima Onsen day and Haru Basho sumo tickets + three "
                  "golf rounds: "
                  "Daiatsugi in Tokyo, Phoenix in Miyazaki, Okinawa CC in Naha) — includes the "
@@ -341,9 +349,9 @@ def budget():
             ["Int'l flights (Málaga↔Naha, open-jaw)", "€700", "€975", "€3,900"],
             ["Domestic rail (incl. Nagano/snow monkeys, Kyoto→Osaka)", "€165", "€240", "€430"],
             ["Domestic flights (incl. Sapporo→Miyazaki→Naha chain)", "€235", "€330", "€640"],
-            ["Accommodation (32 nights)", "€770", "€1,200", "€7,740"],
+            ["Accommodation (30 nights)", "€720", "€1,125", "€7,260"],
             ["Niseko lift passes (3 days)", "€200", "€200", "€200"],
-            ["Food / local transport / incidentals (33 days)", "€1,770", "€2,390", "€6,600"],
+            ["Food / local transport / incidentals (31 days)", "€1,660", "€2,240", "€6,200"],
             ["Golf (Daiatsugi + Phoenix CC + Okinawa CC, incl. caddie/rental)", "€330", "€400", "€560"],
             ["Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting, Akihabara arcades, Round1 x2, Ichijoji-area temple entries)", "€180", "€235", "€1,100"],
             ["Arima Onsen day-use bathing", "€10", "€22", "€55"],
@@ -351,8 +359,8 @@ def budget():
             ["Food experiences (Kyubey sushi omakase, Nakiryu ramen, Kobe beef teppanyaki)", "€100", "€155", "€310"],
         ]},
         "durations": {"headers": ["Duration", "Bare minimum", "Middle", "Luxury"], "rows": [
-            ["Full itinerary (33 days, 27 Feb-31 Mar)", "≈€4,480", "≈€6,180", "≈€21,600"],
-            ["3-week (~24 days)*", "≈€3,400", "≈€4,220", "≈€15,600"],
+            ["Full itinerary (31 days, 27 Feb-29 Mar)", "≈€4,320", "≈€5,950", "≈€20,750"],
+            ["3-week (~25 days)*", "≈€3,280", "≈€4,060", "≈€15,000"],
         ]},
         "notes": [
             "*3-week = drop Miyazaki (and its Phoenix CC round) and the Tokyo golf day entirely, and trim Tokyo "
@@ -376,8 +384,8 @@ def budget():
             "The Miyazaki insertion is the single biggest domestic-flight cost driver here — three short hops "
             "(Sapporo→Osaka/Haneda→Miyazaki→Naha) instead of one direct Sendai→Naha routing from the earlier "
             "version. Worth knowing that's what you're paying for the detour.",
-            "The luxury total is dominated by business-class flights (~4x economy) and 32 nights of "
-            "5★/ryokan. \"Luxury lodging but economy flights\" comes out to roughly €9,100–10,500 pp — a "
+            "The luxury total is dominated by business-class flights (~4x economy) and 30 nights of "
+            "5★/ryokan. \"Luxury lodging but economy flights\" comes out to roughly €8,500–9,850 pp — a "
             "more common real-world middle ground if the full luxury number is too steep.",
             "WHEN TO BOOK — international flights: aim for Sept-Nov 2026 (5-6 months out). Google/Hopper fare "
             "data favours this window for Asia long-haul specifically over generic 'book last minute' advice; "
