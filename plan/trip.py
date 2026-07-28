@@ -137,8 +137,14 @@ def build():
         ]},
         {"name": "Race day", "blurb": "", "days": [
             {"date": d(2027, 3, 7), "title": "🏁 TOKYO MARATHON",
-             "detail": "Race day. Refuel, shower and rest up for a few hours first, then Shinjuku's Golden Gai "
-                       "and Omoide Yokocho for the real celebration once the legs have had a chance to settle — "
+             "detail": "Race day. Refuel, shower and rest up for a few hours first. For dinner: Menya Nishikawa "
+                       "in Shinjuku (1 min walk from Akebonobashi Station) — a proper, hearty bowl of beef bone "
+                       "broth ramen, a rarer style than the usual pork/chicken base and widely rated among "
+                       "Tokyo's best. Exactly what a trashed post-marathon body wants: filling, restorative, "
+                       "no ceremony. Small shop, likely a queue — worth going early evening rather than peak "
+                       "dinner hour. Then on to Shinjuku's Golden Gai "
+                       "and Omoide Yokocho (a short walk/one stop away) for the real celebration once the legs "
+                       "have had a chance to settle — "
                        "one of Tokyo's best nightlife pockets, and there's no better excuse for a proper night "
                        "out than just finishing a marathon. Gentle, seated drinking rather than a bar-hopping "
                        "crawl — cobblestone alleys and sore quads don't mix a few hours post-race.",
@@ -368,10 +374,12 @@ def build():
                              "night out with friends on arrival) -> Okinawa (4 nights, incl. golf at Okinawa "
                              "Country Club) -> home direct from Naha (Ishigaki dropped from the route "
                              "entirely). Sendai/Matsushima dropped throughout in favour of the extra Kyoto/"
-                             "Osaka time. Three proper food experiences folded into existing days rather than "
+                             "Osaka time. Four proper food experiences folded into existing days rather than "
                              "given their own: sushi omakase at Kyubey Ginza the night before the race, "
-                             "Michelin-pedigree tantanmen at Nakiryu for lunch that same day, and Kobe beef "
-                             "teppanyaki in Dotonbori. 29 days total — 4 shorter than the original 33, even "
+                             "Michelin-pedigree tantanmen at Nakiryu for lunch that same day, beef bone broth "
+                             "ramen at Menya Nishikawa for dinner on race day itself (before Golden Gai), and "
+                             "Kobe beef teppanyaki in Dotonbori. 29 days total — 4 shorter than the original 33, "
+                             "even "
                              "after everything added along the way (peaked at 37 mid-trip before this round of "
                              "trims: Nakasendo back to 2 days, Kyoto/Nara to 4 with Arima Onsen dropped, and "
                              "the old \"To Niseko\" travel day folded into Osaka's last evening). Cherry "
@@ -419,11 +427,11 @@ def budget():
             ["Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting, Akihabara arcades, Round1 x2, Ichijoji-area temple entries)", "€180", "€235", "€1,100"],
             ["Yamazaki Distillery whisky tour", "€10", "€25", "€110"],
             ["Haru Basho sumo tournament tickets", "€19", "€32", "€85"],
-            ["Food experiences (Kyubey sushi omakase, Nakiryu ramen, Kobe beef teppanyaki)", "€100", "€155", "€310"],
+            ["Food experiences (Kyubey sushi omakase, Nakiryu ramen, Menya Nishikawa ramen, Kobe beef teppanyaki)", "€107", "€165", "€320"],
         ]},
         "durations": {"headers": ["Duration", "Bare minimum", "Middle", "Luxury"], "rows": [
-            ["Full itinerary (29 days, 27 Feb-27 Mar)", "≈€4,270", "≈€5,860", "≈€20,060"],
-            ["3-week (~22 days)*", "≈€3,270", "≈€4,030", "≈€14,560"],
+            ["Full itinerary (29 days, 27 Feb-27 Mar)", "≈€4,280", "≈€5,870", "≈€20,070"],
+            ["3-week (~22 days)*", "≈€3,280", "≈€4,040", "≈€14,570"],
         ]},
         "notes": [
             "*3-week = drop Miyazaki (and its Phoenix CC round) and the Tokyo Daiatsugi golf day entirely, and "
