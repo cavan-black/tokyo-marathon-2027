@@ -4,7 +4,7 @@
     "start": "2027-02-27",
     "end": "2027-03-27",
     "days": 29,
-    "note": "Tokyo (race week: Asakusa by day + Shibuya/Harajuku/teamLab/go-karting all stacked onto the Monday — 6 days clear of the race, no need to hold back — snow monkeys day trip, golf at Daiatsugi CC, bib pickup + Tokyo baseball (Giants at Tokyo Dome or Swallows at Jingu) + Round1 Ikebukuro on the Thursday, Ghibli Museum + Kichijoji/Shimokitazawa shopping on the Friday (swapped from the original order, on request, so the busier Round1/baseball evening lands 3 days out instead of 2), Nakiryu ramen the day before the race) -> RACE -> Golden Gai that evening (a proper celebration fits post-race better than a pre-race outing) -> 2 days on the Nakasendo Trail (Tokyo -> Magome, then the Tsumago walk on to Kyoto) -> 4 days Kyoto/Nara (Fushimi Inari + sake brewery, a Yamazaki whisky day trip, Nara/Omizutori, then Gion/Kiyomizu-dera/Ichijoji Sagarimatsu doubling as the transfer to Osaka — leave that evening, arrive Osaka late) -> 3 days Osaka (Haru Basho Grand Sumo Tournament and Boat Race Suminoe spread across the first two days rather than stacked; baseball's moved to Tokyo above, so the third day is now a genuinely free recovery morning before the evening transfer to Niseko instead of a dedicated travel day; Kobe beef teppanyaki + Round1 Stadium Sennichimae folded into the other two days) -> Niseko (arriving late, drinks/dinner in Niseko town moved to the first full evening instead of arrival night) -> Sapporo (1 night — arrive, sightsee, one night out in Susukino, depart the next afternoon) -> Miyazaki (2 days — golf at Phoenix Country Club shares a day with Aoshima Shrine, timed around an early tee slot; night out with friends on arrival) -> Okinawa (4 nights, incl. golf at Okinawa Country Club) -> home direct from Naha (Ishigaki dropped from the route entirely). Sendai/Matsushima dropped throughout in favour of the extra Kyoto/Osaka time. Three proper food experiences folded into existing days rather than given their own: sushi omakase at Kyubey Ginza the night before the race, Michelin-pedigree tantanmen at Nakiryu for lunch that same day, and Kobe beef teppanyaki in Dotonbori. 29 days total — 4 shorter than the original 33, even after everything added along the way (peaked at 37 mid-trip before this round of trims: Nakasendo back to 2 days, Kyoto/Nara to 4 with Arima Onsen dropped, and the old \"To Niseko\" travel day folded into Osaka's last evening). Cherry blossoms are still a coin-flip: current estimate has peak bloom ~28 Mar-5 Apr, and this trip now ends 27 Mar — a little ahead of that window rather than during it; reconfirm closer to the time. Ghibli Museum tickets (4 Mar) and the Yamazaki Distillery tour (11 Mar) both need booking ~1-3 months ahead, sumo tickets go on sale roughly a month out (grab them the moment they do — Haru Basho is popular), and the go-karting needs an International Driving Permit sorted before departure — the four hard deadlines here."
+    "note": "Tokyo (race week: Asakusa by day + Shibuya/Harajuku/teamLab/go-karting all stacked onto the Monday — 6 days clear of the race, no need to hold back — snow monkeys day trip, golf at Daiatsugi CC, bib pickup + Tokyo baseball (Giants at Tokyo Dome or Swallows at Jingu) + Round1 Ikebukuro on the Thursday, Ghibli Museum + Kichijoji/Shimokitazawa shopping on the Friday (swapped from the original order, on request, so the busier Round1/baseball evening lands 3 days out instead of 2), Nakiryu ramen the day before the race) -> RACE -> Golden Gai that evening (a proper celebration fits post-race better than a pre-race outing) -> 2 days on the Nakasendo Trail (Tokyo -> Magome, then the Tsumago walk on to Kyoto) -> 4 days Kyoto/Nara (Fushimi Inari + sake brewery + Gion/Kiyomizu-dera/Ichijoji Sagarimatsu all combined onto one big day, a Yamazaki whisky day trip, Nara/Omizutori, then golf at Ryosen Golf Club (Inabe, Mie) doubling as the transfer to Osaka — leave for Osaka that evening once the round's done, arrive late) -> 3 days Osaka (Haru Basho Grand Sumo Tournament and Boat Race Suminoe spread across the first two days rather than stacked; baseball's moved to Tokyo above, so the third day is now a genuinely free recovery morning before the evening transfer to Niseko instead of a dedicated travel day; Kobe beef teppanyaki + Round1 Stadium Sennichimae folded into the other two days) -> Niseko (arriving late, drinks/dinner in Niseko town moved to the first full evening instead of arrival night) -> Sapporo (1 night — arrive, sightsee, one night out in Susukino, depart the next afternoon) -> Miyazaki (2 days — golf at Phoenix Country Club shares a day with Aoshima Shrine, timed around an early tee slot; night out with friends on arrival) -> Okinawa (4 nights, incl. golf at Okinawa Country Club) -> home direct from Naha (Ishigaki dropped from the route entirely). Sendai/Matsushima dropped throughout in favour of the extra Kyoto/Osaka time. Three proper food experiences folded into existing days rather than given their own: sushi omakase at Kyubey Ginza the night before the race, Michelin-pedigree tantanmen at Nakiryu for lunch that same day, and Kobe beef teppanyaki in Dotonbori. 29 days total — 4 shorter than the original 33, even after everything added along the way (peaked at 37 mid-trip before this round of trims: Nakasendo back to 2 days, Kyoto/Nara to 4 with Arima Onsen dropped, and the old \"To Niseko\" travel day folded into Osaka's last evening). Cherry blossoms are still a coin-flip: current estimate has peak bloom ~28 Mar-5 Apr, and this trip now ends 27 Mar — a little ahead of that window rather than during it; reconfirm closer to the time. Ghibli Museum tickets (4 Mar) and the Yamazaki Distillery tour (11 Mar) both need booking ~1-3 months ahead, sumo tickets go on sale roughly a month out (grab them the moment they do — Haru Basho is popular), and the go-karting needs an International Driving Permit sorted before departure — the four hard deadlines here."
   },
   "legs": [
     {
@@ -99,12 +99,12 @@
     },
     {
       "name": "Kyoto & Nara",
-      "blurb": "Four days now (the Arima Onsen day has been dropped, and the Ichijoji day now doubles as the transfer to Osaka instead) — temples, a sake brewery, Nara's Omizutori fire ritual if timing allows (1-14 Mar), a proper whisky day, and Musashi history, with the sightseeing condensed by pairing sights that sit right next to each other.",
+      "blurb": "Four days — the Arima Onsen day has been dropped, all the Kyoto-city sightseeing (Fushimi, Gion, Kiyomizu-dera, Ichijoji) is combined onto one big day, and a Ryosen Golf Club round now doubles as the transfer to Osaka instead — temples, a sake brewery, Musashi history, Nara's Omizutori fire ritual if timing allows (1-14 Mar), a proper whisky day, and a round of golf.",
       "days": [
         {
           "date": "2027-03-10",
-          "title": "Fushimi Inari & Fushimi sake brewery",
-          "detail": "Fushimi Inari's torii-gate trail in the morning, then straight into Fushimi's historic sake-brewing district (40+ breweries, famously soft water) right next door: Gekkeikan Okura Sake Museum for the history + tasting, Kizakura Kappa Country as a second stop, and a walk along the willow-lined Fushimi canal past the old sake warehouses. One compact South Kyoto day instead of two, since the shrine and the sake district are genuinely a short walk apart.",
+          "title": "Fushimi Inari, sake brewery, Gion, Kiyomizu-dera & Ichijoji",
+          "detail": "Fushimi Inari's torii-gate trail in the morning, then straight into Fushimi's historic sake-brewing district (40+ breweries, famously soft water) right next door: Gekkeikan Okura Sake Museum for the history + tasting, Kizakura Kappa Country as a second stop, and a walk along the willow-lined Fushimi canal past the old sake warehouses — the shrine and the sake district are genuinely a short walk apart. Then on to Higashiyama for Gion's old streets and Kiyomizu-dera, and across to Ichijoji in Sakyo-ku for Ichijoji Sagarimatsu — the pine and stone monument marking the site of Musashi Miyamoto's most famous duel, alone against ~70 swordsmen of the Yoshioka School (1604), the story that made his legend before Ganryujima. The current pine is a later-generation descendant; the little Hachidai Shrine right next to it is where Musashi is said to have paused before the fight. If there's time/energy left, the rest of the Ichijoji neighbourhood is worth it too: Shisen-do (Ishikawa Jozan's Edo-period hermitage), Enko-ji (bamboo grove + hilltop view) and Manshu-in, all a short walk apart — it's also Kyoto's unofficial ramen street, so grab dinner there. A genuinely big day — Fushimi, Higashiyama and Sakyo-ku are all well served by bus/train and a taxi hop between them is cheap, but this is now everything that used to be split across two days combined into one, freeing up the 13th for golf instead.",
           "tag": "city"
         },
         {
@@ -121,9 +121,9 @@
         },
         {
           "date": "2027-03-13",
-          "title": "Gion, Kiyomizu-dera & Ichijoji Sagarimatsu, on to Osaka",
-          "detail": "Morning/early afternoon in Higashiyama: Gion's old streets, Kiyomizu-dera. Then across to Ichijoji in Sakyo-ku for Ichijoji Sagarimatsu — the pine and stone monument marking the site of Musashi Miyamoto's most famous duel, alone against ~70 swordsmen of the Yoshioka School (1604), the story that made his legend before Ganryujima. The current pine is a later-generation descendant; the little Hachidai Shrine right next to it is where Musashi is said to have paused before the fight. Quiet and non-touristy — if there's time/energy left, the rest of the Ichijoji neighbourhood is worth it too: Shisen-do (Ishikawa Jozan's Edo-period hermitage), Enko-ji (bamboo grove + hilltop view) and Manshu-in, all a short walk apart. Ichijoji is also Kyoto's unofficial ramen street, so grab something there before heading out. This is now also the Kyoto->Osaka transfer day (the Arima Onsen day has been dropped) — leave Kyoto in the evening once you're done in Ichijoji, arriving Osaka late that night. Higashiyama and Sakyo-ku are both well served by bus, and a taxi hop between them is cheap if the legs are done by mid-afternoon.",
-          "tag": "city"
+          "title": "Golf — Ryosen Golf Club, on to Osaka",
+          "detail": "Ryosen Golf Club, out toward Inabe in Mie — technically closer to the Kyoto/Nagoya/Lake Biwa corridor than to Osaka, so this genuinely is a there-and-back-through-Kyoto day rather than a quick hop. Green fee ≈¥23,000 weekday/¥33,000 weekend (this Saturday round lands on the weekend rate) — ≈€125-180 depending on the day. Confirm exact transit closer to booking (roughly Kintetsu/JR plus a taxi from the nearest station, similar in shape to the Daiatsugi CC day this replaced — leave early, budget the whole day). Continue on to Osaka in the evening once the round's done rather than looping back through Kyoto first — worth checking the most direct route from the course itself when booking. This is now the Kyoto->Osaka transfer day (Gion/Kiyomizu-dera/Ichijoji moved to the 10th to free this day up for golf), arriving Osaka late that night.",
+          "tag": "tourist"
         }
       ]
     },
@@ -249,7 +249,7 @@
     }
   ],
   "budget": {
-    "intro": "Per person, 2 people sharing rooms, departing Málaga. FX rate used: 1 EUR ≈ ¥185.5 (current). Costed for the full 29-day route (Ishigaki dropped from the route entirely — Okinawa now flies straight home from Naha — Sapporo trimmed to 1 night, Miyazaki to 2 days, Nakasendo back to 2 days, Kyoto/Nara to 4 days with Arima Onsen dropped and Ichijoji doubling as the Osaka transfer, and the old \"To Niseko\" travel day folded into Osaka's last evening — Miyazaki + snow monkeys + the extra Kyoto/Osaka days, incl. the Yamazaki whisky tour and Haru Basho sumo tickets + three golf rounds: Daiatsugi in Tokyo, Phoenix in Miyazaki, Okinawa CC in Naha) — includes the Sapporo->Miyazaki->Naha flight chain, the Tokyo->Nagano->Yudanaka rail round trip, the sake brewery/baseball tickets, and all three green fees. The Middle column is anchored on live-researched current prices (flights, JR fares, hotel/lift-pass/green fee rates); Bare minimum and Luxury are reasoned extrapolations using standard hostel/ryokan/business-class ratios — worth re-checking closer to booking rather than treating as independently sourced.",
+    "intro": "Per person, 2 people sharing rooms, departing Málaga. FX rate used: 1 EUR ≈ ¥185.5 (current). Costed for the full 29-day route (Ishigaki dropped from the route entirely — Okinawa now flies straight home from Naha — Sapporo trimmed to 1 night, Miyazaki to 2 days, Nakasendo back to 2 days, Kyoto/Nara to 4 days with Arima Onsen dropped and Ichijoji doubling as the Osaka transfer, and the old \"To Niseko\" travel day folded into Osaka's last evening — Miyazaki + snow monkeys + the extra Kyoto/Osaka days, incl. the Yamazaki whisky tour and Haru Basho sumo tickets + four golf rounds: Daiatsugi in Tokyo, Ryosen near Kyoto, Phoenix in Miyazaki, Okinawa CC in Naha) — includes the Sapporo->Miyazaki->Naha flight chain, the Tokyo->Nagano->Yudanaka rail round trip, the sake brewery/baseball tickets, and all three green fees. The Middle column is anchored on live-researched current prices (flights, JR fares, hotel/lift-pass/green fee rates); Bare minimum and Luxury are reasoned extrapolations using standard hostel/ryokan/business-class ratios — worth re-checking closer to booking rather than treating as independently sourced.",
     "tiers": {
       "headers": [
         "Tier",
@@ -315,10 +315,10 @@
           "€5,800"
         ],
         [
-          "Golf (Daiatsugi + Phoenix CC + Okinawa CC, incl. caddie/rental)",
-          "€330",
-          "€400",
-          "€560"
+          "Golf (Daiatsugi + Ryosen + Phoenix CC + Okinawa CC, incl. caddie/rental)",
+          "€490",
+          "€580",
+          "€780"
         ],
         [
           "Other activities & tours (sake brewery, baseball/boat racing, Aoshima, go-karting, Akihabara arcades, Round1 x2, Ichijoji-area temple entries)",
@@ -356,22 +356,22 @@
       "rows": [
         [
           "Full itinerary (29 days, 27 Feb-27 Mar)",
-          "≈€4,150",
-          "≈€5,730",
-          "≈€19,900"
+          "≈€4,310",
+          "≈€5,910",
+          "≈€20,120"
         ],
         [
           "3-week (~22 days)*",
-          "≈€3,150",
-          "≈€3,900",
-          "≈€14,400"
+          "≈€3,310",
+          "≈€4,080",
+          "≈€14,620"
         ]
       ]
     },
     "notes": [
-      "*3-week = drop Miyazaki (and its Phoenix CC round) and the Tokyo golf day entirely, and trim Tokyo (7→6 nights, keep the snow monkeys, drop nothing else), Naha (4→2, keeping the Okinawa CC round since it's cheap and easy) — same core route otherwise, including the Ichijoji and whisky days, tighter stays. The cheap add-ons (sake brewery, baseball, boat racing, whisky tour, sumo tickets) and all three food experiences stay in even at 3 weeks since none of them cost much or need a dedicated day.",
+      "*3-week = drop Miyazaki (and its Phoenix CC round) and the Tokyo Daiatsugi golf day entirely, and trim Tokyo (7→6 nights, keep the snow monkeys, drop nothing else), Naha (4→2, keeping the Okinawa CC round since it's cheap and easy) — same core route otherwise, including the combined sightseeing day, whisky day and Ryosen golf/Osaka-transfer day, tighter stays. The cheap add-ons (sake brewery, baseball, boat racing, whisky tour, sumo tickets) and all three food experiences stay in even at 3 weeks since none of them cost much or need a dedicated day.",
       "The swing between tiers is almost entirely flights and accommodation — food and activities barely move the needle by comparison.",
-      "Golf is three fixed-price rounds, not really tier-scalable — Daiatsugi Country Club (Kanagawa, the \"proper club\" Tokyo option: ¥11,850-16,350/≈€64-88, ~1.5-1.75h out via Odakyu Line), Phoenix Country Club (Miyazaki, the splurge round: ¥31,000-58,000/≈€190-350, compulsory caddie), and Okinawa Country Club (Naha, the good-value round: ¥12,000-18,000/≈€75-110, club rental from ¥5,500). The Luxury figure assumes premium-date booking + better caddie tips, not different courses.",
+      "Golf is four fixed-price rounds, not really tier-scalable — Daiatsugi Country Club (Kanagawa, the \"proper club\" Tokyo option: ¥11,850-16,350/≈€64-88, ~1.5-1.75h out via Odakyu Line), Ryosen Golf Club (Inabe, Mie, played as a Kyoto->Osaka transfer day: ¥23,000 weekday/¥33,000 weekend, this particular round landing on the Saturday rate/≈€125-180), Phoenix Country Club (Miyazaki, the splurge round: ¥31,000-58,000/≈€190-350, compulsory caddie), and Okinawa Country Club (Naha, the good-value round: ¥12,000-18,000/≈€75-110, club rental from ¥5,500). The Luxury figure assumes premium-date booking + better caddie tips, not different courses.",
       "Niseko lift passes are essentially fixed regardless of tier (it's a set resort rate) — €200 pp for a 3-day pass (¥36,800 regular-season rate, official niseko.ne.jp pricing, checked 2026). Niseko/Hakuba lift prices have risen ~30-40% over the last ~2 years — mostly resorts pricing to heavy international demand (80-90% of Niseko visitors are foreign), not just yen weakness — so re-verify this closer to booking, it moves fast.",
       "The Miyazaki insertion is the single biggest domestic-flight cost driver here — three short hops (Sapporo→Osaka/Haneda→Miyazaki→Naha) instead of one direct Sendai→Naha routing from the earlier version. Worth knowing that's what you're paying for the detour.",
       "The luxury total is dominated by business-class flights (~4x economy) and 28 nights of 5★/ryokan. \"Luxury lodging but economy flights\" comes out to roughly €7,930–9,200 pp — a more common real-world middle ground if the full luxury number is too steep.",
