@@ -93,7 +93,7 @@ TYPE_CLASS = {"rest": "t-rest", "recovery": "t-recovery", "easy": "t-easy", "lon
 # progress status -> dot colour (Substituted = same as Done: a logged cross-training
 # session, e.g. football, that satisfied the day counts as full consistency, not a lesser
 # outcome — see sync/match.py)
-STATUS_COLOR = {"Done": "var(--good)", "Substituted": "var(--good)", "Partial": "var(--warn)", "Missed": "var(--accent)"}
+STATUS_COLOR = {"Done": "var(--good)", "Substituted": "var(--pA)", "Partial": "var(--warn)", "Missed": "var(--accent)"}
 
 STYLE = """<style>
 .sv{--paper:#f6f5f2;--surface:#fff;--surface-2:#faf9f6;--ink:#191b21;--muted:#6b6e77;--faint:#9a9ca3;
@@ -192,6 +192,7 @@ STYLE = """<style>
 .sv .tag.str{color:var(--pA);border-color:color-mix(in srgb,var(--pA) 45%,var(--line));}
 .sv .tag.mp{color:var(--pB);border-color:color-mix(in srgb,var(--pB) 45%,var(--line));}
 .sv .tag.act{color:var(--good);border-color:color-mix(in srgb,var(--good) 50%,var(--line));}
+.sv .tag.sub{color:var(--pA);border-color:color-mix(in srgb,var(--pA) 50%,var(--line));}
 .sv .sdot{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
 @media (max-width:820px){.sv .day{grid-template-columns:40px 46px 1fr;}.sv .day .type-chip,.sv .day .tags{display:none;}}
 .sv .t-rest{background:transparent;color:var(--faint);border:1px dashed var(--line-strong);}
@@ -269,6 +270,8 @@ STYLE = """<style>
 @keyframes glowPulse{0%,100%{box-shadow:0 0 0 rgba(47,143,126,0);}50%{box-shadow:0 0 12px rgba(47,143,126,.45);}}
 .sv .tag.act{background:linear-gradient(135deg,color-mix(in srgb,var(--good) 80%,white 20%),var(--good));
   color:#fff;border:none;animation:popIn .35s ease both, glowPulse 2.6s ease-in-out infinite;}
+.sv .tag.sub{background:linear-gradient(135deg,color-mix(in srgb,var(--pA) 80%,white 20%),var(--pA));
+  color:#fff;border:none;animation:popIn .35s ease both;}
 .sv .crushed-chip{display:inline-flex;align-items:center;gap:4px;padding:2px 10px;border-radius:999px;
   font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#3d2a00;
   background:var(--glam-gold);box-shadow:0 2px 10px rgba(255,179,71,.45);animation:popIn .4s ease both;}
@@ -282,6 +285,7 @@ STYLE = """<style>
 @keyframes celebrateIn{from{opacity:0;transform:translateY(-8px) scale(.97);}to{opacity:1;transform:translateY(0) scale(1);}}
 @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-4px);}}
 .sv .celebrate.todo{background:linear-gradient(135deg,var(--pA),var(--pB));}
+.sv .celebrate.sub{background:linear-gradient(135deg,var(--pA),color-mix(in srgb,var(--pA) 60%,black));}
 
 /* ---- analytics ---- */
 .sv .stat-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1px;
@@ -497,7 +501,9 @@ def celebration_html(plan, progress):
         lead = cross[0] if cross else {}
         what = lead.get("activity_type", "cross-training")
         dur = _format_duration(lead.get("moving_time_s"))
-        title, emoji, cls = "Nice work — today's session is done! 🎉", "🏅", "celebrate"
+        emoji = {"Soccer": "⚽", "WeightTraining": "🏋️", "Workout": "💪", "Hike": "🥾",
+                 "Walk": "🚶", "Ride": "🚴", "Swim": "🏊"}.get(what, "🔁")
+        title, cls = f"Substituted with {what} — still counts! 🔁", "celebrate sub"
         sub = f'{sess} — substituted with {what}' + (f' ({dur})' if dur else '')
     elif status == "Upcoming":
         title, emoji, cls = "Today's session", "🎯", "celebrate todo"
@@ -615,13 +621,11 @@ def day_html(d, pd_, today_iso):
     distcls = "dist rest" if dist == "—" else "dist"
     # progress overlay
     status = pd_.get("status")
+    cross = pd_.get("cross_activities") or []
+    sub_what = cross[0].get("activity_type", "cross-training") if cross else "cross-training"
     dot = ""
     if status in STATUS_COLOR:
-        title = status
-        if status == "Substituted":
-            cross = pd_.get("cross_activities") or []
-            if cross:
-                title = f"Substituted — {cross[0].get('activity_type', 'cross-training')}"
+        title = f"Substituted — {sub_what}" if status == "Substituted" else status
         dot = f'<span class="sdot" style="background:{STATUS_COLOR[status]}" title="{esc(title)}"></span>'
     tags = ""
     sess = d["session"]
@@ -632,7 +636,11 @@ def day_html(d, pd_, today_iso):
     if "@ MP" in sess and "no MP" not in sess:
         tags += '<span class="tag mp">MP</span>'
     actual, pace = pd_.get("actual_km", 0), pd_.get("pace_str")
-    if actual:
+    if status == "Substituted":
+        emoji = {"Soccer": "⚽", "WeightTraining": "🏋️", "Workout": "💪", "Hike": "🥾",
+                 "Walk": "🚶", "Ride": "🚴", "Swim": "🏊"}.get(sub_what, "🔁")
+        tags += f'<span class="tag sub">{emoji} Substituted — {esc(sub_what)}</span>'
+    elif actual:
         tags += f'<span class="tag act">✓ {actual:.1f}k{(" · " + pace) if pace else ""}</span>'
     return (f'<div class="day"><span class="dow">{esc(d["dow"])}</span>'
             f'<span class="chip type-chip {cls}">{esc(label)}</span>'
