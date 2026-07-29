@@ -49,8 +49,10 @@ def sync_runner(runner_id, write=True):
     # never ask Strava for a future window (plan may not have started yet)
     after = min(start.timestamp(), now.timestamp())
     access, new_refresh = strava.refresh_access_token(cid, csecret, rtoken)
-    runs = strava.simplify(strava.get_activities(access, after_epoch=after))
-    progress = match.match(plan, runs)
+    activities = strava.get_activities(access, after_epoch=after)
+    runs = strava.simplify(activities)
+    cross = strava.simplify_cross(activities)
+    progress = match.match(plan, runs, cross_runs=cross)
     progress["last_sync"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     progress["tracker"] = match.tracker(progress)
     if write:

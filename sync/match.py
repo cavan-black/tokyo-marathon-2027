@@ -31,21 +31,31 @@ def classify(target_km, actual_km, typ):
     return "Missed"
 
 
-def match(plan, runs):
-    """Return a progress dict keyed by date + weekly rollups."""
+def match(plan, runs, cross_runs=None):
+    """Return a progress dict keyed by date + weekly rollups.
+
+    cross_runs: non-running activities (football, gym, etc. — see strava.simplify_cross)
+    that can substitute for a planned run day. They never count toward actual_km/ACWR
+    (that stays running-load-only) but a same-day cross activity on a non-rest day with
+    no run logged is marked "Substituted" instead of "Missed"."""
     by_date = defaultdict(list)
     for r in runs:
         if r["date"]:
             by_date[r["date"]].append(r)
+    cross_by_date = defaultdict(list)
+    for c in (cross_runs or []):
+        if c["date"]:
+            cross_by_date[c["date"]].append(c)
 
     today_iso = date.today().isoformat()
     days = {}
     weeks = {}
     for wk in plan["weeks"]:
-        pk = ak = pk_due = done = partial = missed = quality_hit = quality_planned = 0
+        pk = ak = pk_due = done = partial = missed = substituted = quality_hit = quality_planned = 0
         long_done = None
         for d in wk["days"]:
             acts = by_date.get(d["date"], [])
+            cross_acts = cross_by_date.get(d["date"], [])
             actual_km = round(sum(a["distance_km"] for a in acts), 2)
             # session-weighted pace (longest activity that day)
             pace = None
@@ -53,7 +63,11 @@ def match(plan, runs):
                 lead = max(acts, key=lambda a: a["distance_km"])
                 pace = lead.get("pace_min_km")
             future = d["date"] > today_iso
-            if future and d["type"] != "rest" and actual_km <= 0.05:
+            if d["type"] != "rest" and actual_km <= 0.05 and cross_acts:
+                # a logged cross-training activity always resolves the day, even if the
+                # date is nominally "future" relative to today — it already happened.
+                status = "Substituted"
+            elif future and d["type"] != "rest" and actual_km <= 0.05:
                 status = "Upcoming"
             else:
                 status = classify(d["target_km"], actual_km, d["type"])
@@ -62,19 +76,24 @@ def match(plan, runs):
                 "session": d["session"], "target_km": d["target_km"],
                 "actual_km": actual_km, "status": status,
                 "pace_min_km": pace, "pace_str": _fmt_pace(pace),
-                "activities": acts,
+                "activities": acts, "cross_activities": cross_acts,
             }
             pk += d["target_km"]; ak += actual_km
             if not future:
                 pk_due += d["target_km"]
             if d["type"] == "rest":
                 continue
+            # a substituted cross-training session (e.g. football) counts toward
+            # consistency exactly like "Done" — it satisfied the day, just not with
+            # running km, so it's tracked separately (substituted) purely for display,
+            # never as a lesser outcome.
             if status == "Done": done += 1
+            elif status == "Substituted": done += 1; substituted += 1
             elif status == "Partial": partial += 1
             elif status == "Missed": missed += 1
             if d["type"] == "quality" and not future:
                 quality_planned += 1
-                if status == "Done": quality_hit += 1
+                if status in ("Done", "Substituted"): quality_hit += 1
             if d["type"] in ("long", "race") and d["dow"] == "Sun":
                 long_done = (status == "Done")
         # coach-rule flag (suggestion, not auto-change) — judged against km DUE so
@@ -90,7 +109,7 @@ def match(plan, runs):
             flag = "✓ On track"
         weeks[str(wk["week"])] = {
             "planned_km": round(pk, 1), "planned_km_due": round(pk_due, 1), "actual_km": round(ak, 1),
-            "done": done, "partial": partial, "missed": missed,
+            "done": done, "partial": partial, "missed": missed, "substituted": substituted,
             "quality_hit": quality_hit, "quality_planned": quality_planned,
             "long_done": long_done, "flag": flag,
         }

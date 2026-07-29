@@ -90,8 +90,10 @@ TYPE_LABEL = {"rest": "Rest", "recovery": "Recovery", "easy": "Easy", "long": "L
               "quality": "Quality", "race": "Race", "tt": "Time trial"}
 TYPE_CLASS = {"rest": "t-rest", "recovery": "t-recovery", "easy": "t-easy", "long": "t-long",
               "quality": "t-quality", "race": "t-race", "tt": "t-quality"}
-# progress status -> dot colour
-STATUS_COLOR = {"Done": "var(--good)", "Partial": "var(--warn)", "Missed": "var(--accent)"}
+# progress status -> dot colour (Substituted = same as Done: a logged cross-training
+# session, e.g. football, that satisfied the day counts as full consistency, not a lesser
+# outcome — see sync/match.py)
+STATUS_COLOR = {"Done": "var(--good)", "Substituted": "var(--good)", "Partial": "var(--warn)", "Missed": "var(--accent)"}
 
 STYLE = """<style>
 .sv{--paper:#f6f5f2;--surface:#fff;--surface-2:#faf9f6;--ink:#191b21;--muted:#6b6e77;--faint:#9a9ca3;
@@ -490,6 +492,13 @@ def celebration_html(plan, progress):
         else:
             title, emoji, cls = "Good start today — a bit more would seal it 💪", "⏱️", "celebrate"
         sub = f'{sess} — ' + " · ".join(stats)
+    elif status == "Substituted":
+        cross = d.get("cross_activities") or []
+        lead = cross[0] if cross else {}
+        what = lead.get("activity_type", "cross-training")
+        dur = _format_duration(lead.get("moving_time_s"))
+        title, emoji, cls = "Nice work — today's session is done! 🎉", "🏅", "celebrate"
+        sub = f'{sess} — substituted with {what}' + (f' ({dur})' if dur else '')
     elif status == "Upcoming":
         title, emoji, cls = "Today's session", "🎯", "celebrate todo"
         sub = sess + (f' — {target:g} km planned' if target else '')
@@ -608,7 +617,12 @@ def day_html(d, pd_, today_iso):
     status = pd_.get("status")
     dot = ""
     if status in STATUS_COLOR:
-        dot = f'<span class="sdot" style="background:{STATUS_COLOR[status]}" title="{status}"></span>'
+        title = status
+        if status == "Substituted":
+            cross = pd_.get("cross_activities") or []
+            if cross:
+                title = f"Substituted — {cross[0].get('activity_type', 'cross-training')}"
+        dot = f'<span class="sdot" style="background:{STATUS_COLOR[status]}" title="{esc(title)}"></span>'
     tags = ""
     sess = d["session"]
     if "S&C A" in sess:

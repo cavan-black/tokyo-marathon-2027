@@ -79,27 +79,39 @@ def _privacy_trimmed_route(encoded, frac=0.12, min_drop=5):
     return trimmed if len(trimmed) >= 5 else []
 
 
+RUN_TYPES = ("Run", "TrailRun", "VirtualRun")
+# Non-running activities that can stand in for a planned run day (e.g. Jamie's football)
+# without being counted as running km — see sync/match.py's "Substituted" status.
+CROSS_TYPES = ("Soccer", "Workout", "WeightTraining", "Hike", "Walk", "Ride", "Swim")
+
+
+def _simplify_one(a):
+    dist_km = (a.get("distance") or 0) / 1000.0
+    moving = a.get("moving_time") or 0
+    pace = (moving / 60.0) / dist_km if dist_km > 0.3 else None  # min/km
+    return {
+        "id": a.get("id"),
+        "date": (a.get("start_date_local") or "")[:10],
+        "name": a.get("name"),
+        "activity_type": a.get("type"),
+        "distance_km": round(dist_km, 2),
+        "moving_time_s": moving,
+        "pace_min_km": round(pace, 3) if pace else None,
+        "avg_hr": a.get("average_heartrate"),
+        "max_hr": a.get("max_heartrate"),
+        "elev_gain_m": a.get("total_elevation_gain"),
+        # Privacy: never store the raw start point or full polyline — only a
+        # trimmed middle section (start/finish, usually home, is dropped).
+        "route": _privacy_trimmed_route((a.get("map") or {}).get("summary_polyline")),
+    }
+
+
 def simplify(activities):
     """Keep only running activities and the fields we need for matching."""
-    runs = []
-    for a in activities:
-        if a.get("type") not in ("Run", "TrailRun", "VirtualRun"):
-            continue
-        dist_km = (a.get("distance") or 0) / 1000.0
-        moving = a.get("moving_time") or 0
-        pace = (moving / 60.0) / dist_km if dist_km > 0.3 else None  # min/km
-        runs.append({
-            "id": a.get("id"),
-            "date": (a.get("start_date_local") or "")[:10],
-            "name": a.get("name"),
-            "distance_km": round(dist_km, 2),
-            "moving_time_s": moving,
-            "pace_min_km": round(pace, 3) if pace else None,
-            "avg_hr": a.get("average_heartrate"),
-            "max_hr": a.get("max_heartrate"),
-            "elev_gain_m": a.get("total_elevation_gain"),
-            # Privacy: never store the raw start point or full polyline — only a
-            # trimmed middle section (start/finish, usually home, is dropped).
-            "route": _privacy_trimmed_route((a.get("map") or {}).get("summary_polyline")),
-        })
-    return runs
+    return [_simplify_one(a) for a in activities if a.get("type") in RUN_TYPES]
+
+
+def simplify_cross(activities):
+    """Non-running activities (football, gym, etc.) that can substitute for a planned
+    run day — tracked separately so they never inflate running km/ACWR."""
+    return [_simplify_one(a) for a in activities if a.get("type") in CROSS_TYPES]
