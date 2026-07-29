@@ -10,7 +10,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-07-21": {
       "week": 1,
@@ -27,6 +28,7 @@
           "id": 19400311316,
           "date": "2026-07-21",
           "name": "Lunch Run",
+          "activity_type": "Run",
           "distance_km": 10.0,
           "moving_time_s": 3314,
           "pace_min_km": 5.521,
@@ -35,7 +37,8 @@
           "elev_gain_m": 0,
           "route": []
         }
-      ]
+      ],
+      "cross_activities": []
     },
     "2026-07-22": {
       "week": 1,
@@ -52,6 +55,7 @@
           "id": 19422132483,
           "date": "2026-07-22",
           "name": "Evening Run",
+          "activity_type": "Run",
           "distance_km": 7.04,
           "moving_time_s": 2253,
           "pace_min_km": 5.332,
@@ -773,7 +777,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "cross_activities": []
     },
     "2026-07-23": {
       "week": 1,
@@ -790,6 +795,7 @@
           "id": 19436867072,
           "date": "2026-07-23",
           "name": "Night Run",
+          "activity_type": "Run",
           "distance_km": 8.04,
           "moving_time_s": 2604,
           "pace_min_km": 5.396,
@@ -1559,6 +1565,21 @@
             ]
           ]
         }
+      ],
+      "cross_activities": [
+        {
+          "id": 19431710960,
+          "date": "2026-07-23",
+          "name": "Afternoon Weight Training",
+          "activity_type": "WeightTraining",
+          "distance_km": 0.0,
+          "moving_time_s": 2872,
+          "pace_min_km": null,
+          "avg_hr": 86.0,
+          "max_hr": 122.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
       ]
     },
     "2026-07-24": {
@@ -1576,6 +1597,7 @@
           "id": 19449674056,
           "date": "2026-07-24",
           "name": "Evening Run",
+          "activity_type": "Run",
           "distance_km": 5.01,
           "moving_time_s": 1530,
           "pace_min_km": 5.092,
@@ -1584,7 +1606,8 @@
           "elev_gain_m": 0,
           "route": []
         }
-      ]
+      ],
+      "cross_activities": []
     },
     "2026-07-25": {
       "week": 1,
@@ -1596,7 +1619,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-07-26": {
       "week": 1,
@@ -1613,6 +1637,7 @@
           "id": 19477703556,
           "date": "2026-07-26",
           "name": "Evening Run",
+          "activity_type": "Run",
           "distance_km": 12.06,
           "moving_time_s": 3730,
           "pace_min_km": 5.155,
@@ -2686,7 +2711,8 @@
             ]
           ]
         }
-      ]
+      ],
+      "cross_activities": []
     },
     "2026-07-27": {
       "week": 2,
@@ -2698,7 +2724,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-07-28": {
       "week": 2,
@@ -2706,11 +2733,971 @@
       "type": "easy",
       "session": "Easy 10 km + 6×20s strides",
       "target_km": 10,
-      "actual_km": 0,
-      "status": "Upcoming",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": []
+      "actual_km": 10.6,
+      "status": "Done",
+      "pace_min_km": 5.272,
+      "pace_str": "5:16",
+      "activities": [
+        {
+          "id": 19504552456,
+          "date": "2026-07-28",
+          "name": "Evening Run",
+          "activity_type": "Run",
+          "distance_km": 10.6,
+          "moving_time_s": 3354,
+          "pace_min_km": 5.272,
+          "avg_hr": 148.1,
+          "max_hr": 164.0,
+          "elev_gain_m": 31.6,
+          "route": [
+            [
+              36.47791,
+              -4.97835
+            ],
+            [
+              36.47808,
+              -4.97799
+            ],
+            [
+              36.47815,
+              -4.97774
+            ],
+            [
+              36.47831,
+              -4.97711
+            ],
+            [
+              36.47847,
+              -4.97664
+            ],
+            [
+              36.47858,
+              -4.97611
+            ],
+            [
+              36.47865,
+              -4.97499
+            ],
+            [
+              36.47865,
+              -4.9747
+            ],
+            [
+              36.47867,
+              -4.97437
+            ],
+            [
+              36.47864,
+              -4.97411
+            ],
+            [
+              36.47861,
+              -4.97376
+            ],
+            [
+              36.47863,
+              -4.9733
+            ],
+            [
+              36.47862,
+              -4.97308
+            ],
+            [
+              36.47866,
+              -4.97305
+            ],
+            [
+              36.47875,
+              -4.97307
+            ],
+            [
+              36.47916,
+              -4.97308
+            ],
+            [
+              36.47921,
+              -4.97305
+            ],
+            [
+              36.47923,
+              -4.97299
+            ],
+            [
+              36.47926,
+              -4.97263
+            ],
+            [
+              36.47926,
+              -4.97239
+            ],
+            [
+              36.47922,
+              -4.97236
+            ],
+            [
+              36.47903,
+              -4.9723
+            ],
+            [
+              36.47895,
+              -4.97225
+            ],
+            [
+              36.47892,
+              -4.9722
+            ],
+            [
+              36.47882,
+              -4.97181
+            ],
+            [
+              36.47882,
+              -4.97175
+            ],
+            [
+              36.479,
+              -4.97112
+            ],
+            [
+              36.47907,
+              -4.97103
+            ],
+            [
+              36.4792,
+              -4.97096
+            ],
+            [
+              36.47961,
+              -4.97046
+            ],
+            [
+              36.48006,
+              -4.97017
+            ],
+            [
+              36.4803,
+              -4.96982
+            ],
+            [
+              36.48049,
+              -4.96962
+            ],
+            [
+              36.48091,
+              -4.96901
+            ],
+            [
+              36.48092,
+              -4.96894
+            ],
+            [
+              36.48091,
+              -4.9689
+            ],
+            [
+              36.48077,
+              -4.96879
+            ],
+            [
+              36.48079,
+              -4.9687
+            ],
+            [
+              36.48093,
+              -4.96851
+            ],
+            [
+              36.48167,
+              -4.96729
+            ],
+            [
+              36.48171,
+              -4.96725
+            ],
+            [
+              36.48184,
+              -4.96716
+            ],
+            [
+              36.48187,
+              -4.96711
+            ],
+            [
+              36.48213,
+              -4.96661
+            ],
+            [
+              36.48217,
+              -4.96657
+            ],
+            [
+              36.48225,
+              -4.96654
+            ],
+            [
+              36.48229,
+              -4.9665
+            ],
+            [
+              36.48259,
+              -4.96593
+            ],
+            [
+              36.48265,
+              -4.96577
+            ],
+            [
+              36.48261,
+              -4.96563
+            ],
+            [
+              36.48261,
+              -4.96556
+            ],
+            [
+              36.48285,
+              -4.96508
+            ],
+            [
+              36.48305,
+              -4.96473
+            ],
+            [
+              36.4832,
+              -4.96437
+            ],
+            [
+              36.48331,
+              -4.96416
+            ],
+            [
+              36.4835,
+              -4.96368
+            ],
+            [
+              36.48363,
+              -4.96323
+            ],
+            [
+              36.48386,
+              -4.96265
+            ],
+            [
+              36.48396,
+              -4.96242
+            ],
+            [
+              36.48412,
+              -4.96214
+            ],
+            [
+              36.48438,
+              -4.96159
+            ],
+            [
+              36.48455,
+              -4.96117
+            ],
+            [
+              36.4847,
+              -4.96075
+            ],
+            [
+              36.48486,
+              -4.96014
+            ],
+            [
+              36.48491,
+              -4.96007
+            ],
+            [
+              36.485,
+              -4.96
+            ],
+            [
+              36.48504,
+              -4.95995
+            ],
+            [
+              36.4851,
+              -4.95965
+            ],
+            [
+              36.48512,
+              -4.95944
+            ],
+            [
+              36.48528,
+              -4.9589
+            ],
+            [
+              36.48541,
+              -4.9583
+            ],
+            [
+              36.48548,
+              -4.95807
+            ],
+            [
+              36.48546,
+              -4.95785
+            ],
+            [
+              36.48547,
+              -4.95779
+            ],
+            [
+              36.48573,
+              -4.95688
+            ],
+            [
+              36.48581,
+              -4.95646
+            ],
+            [
+              36.48601,
+              -4.95603
+            ],
+            [
+              36.48604,
+              -4.95598
+            ],
+            [
+              36.48614,
+              -4.95592
+            ],
+            [
+              36.48627,
+              -4.95578
+            ],
+            [
+              36.48649,
+              -4.95569
+            ],
+            [
+              36.48653,
+              -4.95564
+            ],
+            [
+              36.48663,
+              -4.95545
+            ],
+            [
+              36.48664,
+              -4.95537
+            ],
+            [
+              36.48662,
+              -4.95519
+            ],
+            [
+              36.48663,
+              -4.9551
+            ],
+            [
+              36.48674,
+              -4.95489
+            ],
+            [
+              36.48683,
+              -4.95467
+            ],
+            [
+              36.48702,
+              -4.95428
+            ],
+            [
+              36.48727,
+              -4.95394
+            ],
+            [
+              36.48754,
+              -4.95368
+            ],
+            [
+              36.48772,
+              -4.95342
+            ],
+            [
+              36.48811,
+              -4.95294
+            ],
+            [
+              36.48835,
+              -4.9525
+            ],
+            [
+              36.4885,
+              -4.95232
+            ],
+            [
+              36.48864,
+              -4.9521
+            ],
+            [
+              36.4888,
+              -4.95192
+            ],
+            [
+              36.48935,
+              -4.95102
+            ],
+            [
+              36.4896,
+              -4.95067
+            ],
+            [
+              36.48977,
+              -4.95034
+            ],
+            [
+              36.48996,
+              -4.95003
+            ],
+            [
+              36.48999,
+              -4.94993
+            ],
+            [
+              36.48997,
+              -4.94983
+            ],
+            [
+              36.48999,
+              -4.94978
+            ],
+            [
+              36.49015,
+              -4.94956
+            ],
+            [
+              36.49028,
+              -4.94948
+            ],
+            [
+              36.49037,
+              -4.94938
+            ],
+            [
+              36.49061,
+              -4.94901
+            ],
+            [
+              36.49073,
+              -4.94887
+            ],
+            [
+              36.49081,
+              -4.94874
+            ],
+            [
+              36.49073,
+              -4.94878
+            ],
+            [
+              36.4906,
+              -4.94901
+            ],
+            [
+              36.49044,
+              -4.94919
+            ],
+            [
+              36.49028,
+              -4.94944
+            ],
+            [
+              36.49022,
+              -4.9495
+            ],
+            [
+              36.49013,
+              -4.94956
+            ],
+            [
+              36.49008,
+              -4.9496
+            ],
+            [
+              36.49002,
+              -4.94985
+            ],
+            [
+              36.48993,
+              -4.94996
+            ],
+            [
+              36.48977,
+              -4.95025
+            ],
+            [
+              36.48955,
+              -4.95058
+            ],
+            [
+              36.48931,
+              -4.95102
+            ],
+            [
+              36.48894,
+              -4.95157
+            ],
+            [
+              36.48851,
+              -4.95211
+            ],
+            [
+              36.48846,
+              -4.95221
+            ],
+            [
+              36.48832,
+              -4.95233
+            ],
+            [
+              36.48815,
+              -4.95253
+            ],
+            [
+              36.48803,
+              -4.95273
+            ],
+            [
+              36.48781,
+              -4.953
+            ],
+            [
+              36.4877,
+              -4.95316
+            ],
+            [
+              36.4876,
+              -4.95342
+            ],
+            [
+              36.48751,
+              -4.95353
+            ],
+            [
+              36.48737,
+              -4.95366
+            ],
+            [
+              36.48707,
+              -4.95412
+            ],
+            [
+              36.48687,
+              -4.95437
+            ],
+            [
+              36.48664,
+              -4.95477
+            ],
+            [
+              36.48651,
+              -4.95511
+            ],
+            [
+              36.48649,
+              -4.95521
+            ],
+            [
+              36.48657,
+              -4.95549
+            ],
+            [
+              36.48654,
+              -4.95564
+            ],
+            [
+              36.48649,
+              -4.95568
+            ],
+            [
+              36.48636,
+              -4.95565
+            ],
+            [
+              36.48628,
+              -4.9557
+            ],
+            [
+              36.486,
+              -4.95596
+            ],
+            [
+              36.4859,
+              -4.95615
+            ],
+            [
+              36.48583,
+              -4.95625
+            ],
+            [
+              36.48575,
+              -4.95649
+            ],
+            [
+              36.48566,
+              -4.95691
+            ],
+            [
+              36.48564,
+              -4.95701
+            ],
+            [
+              36.48567,
+              -4.95701
+            ],
+            [
+              36.48548,
+              -4.95768
+            ],
+            [
+              36.48545,
+              -4.95814
+            ],
+            [
+              36.48537,
+              -4.9584
+            ],
+            [
+              36.48523,
+              -4.95903
+            ],
+            [
+              36.48509,
+              -4.95943
+            ],
+            [
+              36.48507,
+              -4.95967
+            ],
+            [
+              36.48499,
+              -4.96
+            ],
+            [
+              36.48496,
+              -4.96004
+            ],
+            [
+              36.48486,
+              -4.96011
+            ],
+            [
+              36.48483,
+              -4.96017
+            ],
+            [
+              36.48479,
+              -4.96037
+            ],
+            [
+              36.48461,
+              -4.96094
+            ],
+            [
+              36.48435,
+              -4.96159
+            ],
+            [
+              36.48404,
+              -4.96225
+            ],
+            [
+              36.48375,
+              -4.96279
+            ],
+            [
+              36.48357,
+              -4.96328
+            ],
+            [
+              36.48352,
+              -4.96348
+            ],
+            [
+              36.48338,
+              -4.96387
+            ],
+            [
+              36.48299,
+              -4.96483
+            ],
+            [
+              36.48274,
+              -4.96525
+            ],
+            [
+              36.48257,
+              -4.96558
+            ],
+            [
+              36.48255,
+              -4.96568
+            ],
+            [
+              36.48258,
+              -4.96581
+            ],
+            [
+              36.48257,
+              -4.96587
+            ],
+            [
+              36.48251,
+              -4.96596
+            ],
+            [
+              36.48236,
+              -4.96631
+            ],
+            [
+              36.48224,
+              -4.96652
+            ],
+            [
+              36.48208,
+              -4.96665
+            ],
+            [
+              36.48189,
+              -4.96707
+            ],
+            [
+              36.48183,
+              -4.96714
+            ],
+            [
+              36.48171,
+              -4.96725
+            ],
+            [
+              36.48154,
+              -4.96748
+            ],
+            [
+              36.48118,
+              -4.96809
+            ],
+            [
+              36.48077,
+              -4.96873
+            ],
+            [
+              36.48075,
+              -4.96883
+            ],
+            [
+              36.48078,
+              -4.96889
+            ],
+            [
+              36.48088,
+              -4.96896
+            ],
+            [
+              36.48088,
+              -4.96902
+            ],
+            [
+              36.48087,
+              -4.96905
+            ],
+            [
+              36.48049,
+              -4.9696
+            ],
+            [
+              36.48028,
+              -4.96982
+            ],
+            [
+              36.48002,
+              -4.97019
+            ],
+            [
+              36.47996,
+              -4.97024
+            ],
+            [
+              36.4798,
+              -4.97032
+            ],
+            [
+              36.47958,
+              -4.97049
+            ],
+            [
+              36.47919,
+              -4.97093
+            ],
+            [
+              36.47904,
+              -4.97105
+            ],
+            [
+              36.47894,
+              -4.97121
+            ],
+            [
+              36.47882,
+              -4.97173
+            ],
+            [
+              36.47881,
+              -4.97187
+            ],
+            [
+              36.47885,
+              -4.97204
+            ],
+            [
+              36.47894,
+              -4.97231
+            ],
+            [
+              36.47899,
+              -4.97235
+            ],
+            [
+              36.4792,
+              -4.97241
+            ],
+            [
+              36.47925,
+              -4.97245
+            ],
+            [
+              36.4792,
+              -4.97299
+            ],
+            [
+              36.47919,
+              -4.97306
+            ],
+            [
+              36.47915,
+              -4.9731
+            ],
+            [
+              36.47897,
+              -4.97306
+            ],
+            [
+              36.47866,
+              -4.97305
+            ],
+            [
+              36.47861,
+              -4.97306
+            ],
+            [
+              36.47858,
+              -4.97311
+            ],
+            [
+              36.4786,
+              -4.97331
+            ],
+            [
+              36.47858,
+              -4.97395
+            ],
+            [
+              36.47864,
+              -4.97453
+            ],
+            [
+              36.47861,
+              -4.97519
+            ],
+            [
+              36.47856,
+              -4.9758
+            ],
+            [
+              36.47856,
+              -4.97603
+            ],
+            [
+              36.47854,
+              -4.97617
+            ],
+            [
+              36.47847,
+              -4.97635
+            ],
+            [
+              36.47839,
+              -4.97668
+            ],
+            [
+              36.47836,
+              -4.9769
+            ],
+            [
+              36.47823,
+              -4.97719
+            ],
+            [
+              36.47817,
+              -4.97746
+            ],
+            [
+              36.47811,
+              -4.97784
+            ],
+            [
+              36.47798,
+              -4.97815
+            ],
+            [
+              36.47773,
+              -4.97862
+            ],
+            [
+              36.47753,
+              -4.97895
+            ],
+            [
+              36.47726,
+              -4.97934
+            ],
+            [
+              36.47675,
+              -4.98026
+            ],
+            [
+              36.4763,
+              -4.98091
+            ],
+            [
+              36.47582,
+              -4.98171
+            ],
+            [
+              36.4754,
+              -4.98231
+            ],
+            [
+              36.47528,
+              -4.98254
+            ],
+            [
+              36.47502,
+              -4.9829
+            ],
+            [
+              36.47493,
+              -4.98308
+            ]
+          ]
+        }
+      ],
+      "cross_activities": []
     },
     "2026-07-29": {
       "week": 2,
@@ -2719,10 +3706,11 @@
       "session": "Easy 10 km",
       "target_km": 10,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-07-30": {
       "week": 2,
@@ -2734,7 +3722,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-07-31": {
       "week": 2,
@@ -2746,7 +3735,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-01": {
       "week": 2,
@@ -2758,7 +3748,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-02": {
       "week": 2,
@@ -2770,7 +3761,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-03": {
       "week": 3,
@@ -2782,7 +3774,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-04": {
       "week": 3,
@@ -2794,7 +3787,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-05": {
       "week": 3,
@@ -2806,7 +3800,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-06": {
       "week": 3,
@@ -2818,7 +3813,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-07": {
       "week": 3,
@@ -2830,7 +3826,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-08": {
       "week": 3,
@@ -2842,7 +3839,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-09": {
       "week": 3,
@@ -2854,7 +3852,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-10": {
       "week": 4,
@@ -2866,7 +3865,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-11": {
       "week": 4,
@@ -2878,7 +3878,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-12": {
       "week": 4,
@@ -2890,7 +3891,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-13": {
       "week": 4,
@@ -2902,7 +3904,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-14": {
       "week": 4,
@@ -2914,7 +3917,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-15": {
       "week": 4,
@@ -2926,7 +3930,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-16": {
       "week": 4,
@@ -2938,7 +3943,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-17": {
       "week": 5,
@@ -2950,7 +3956,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-18": {
       "week": 5,
@@ -2962,7 +3969,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-19": {
       "week": 5,
@@ -2974,7 +3982,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-20": {
       "week": 5,
@@ -2986,7 +3995,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-21": {
       "week": 5,
@@ -2998,7 +4008,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-22": {
       "week": 5,
@@ -3010,7 +4021,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-23": {
       "week": 5,
@@ -3022,7 +4034,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-24": {
       "week": 6,
@@ -3034,7 +4047,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-25": {
       "week": 6,
@@ -3046,7 +4060,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-26": {
       "week": 6,
@@ -3058,7 +4073,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-27": {
       "week": 6,
@@ -3070,7 +4086,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-28": {
       "week": 6,
@@ -3082,7 +4099,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-29": {
       "week": 6,
@@ -3094,7 +4112,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-30": {
       "week": 6,
@@ -3106,7 +4125,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-31": {
       "week": 7,
@@ -3118,7 +4138,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-01": {
       "week": 7,
@@ -3130,7 +4151,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-02": {
       "week": 7,
@@ -3142,7 +4164,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-03": {
       "week": 7,
@@ -3154,7 +4177,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-04": {
       "week": 7,
@@ -3166,7 +4190,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-05": {
       "week": 7,
@@ -3178,7 +4203,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-06": {
       "week": 7,
@@ -3190,7 +4216,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-07": {
       "week": 8,
@@ -3202,7 +4229,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-08": {
       "week": 8,
@@ -3214,7 +4242,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-09": {
       "week": 8,
@@ -3226,7 +4255,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-10": {
       "week": 8,
@@ -3238,7 +4268,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-11": {
       "week": 8,
@@ -3250,7 +4281,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-12": {
       "week": 8,
@@ -3262,7 +4294,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-13": {
       "week": 8,
@@ -3274,7 +4307,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-14": {
       "week": 9,
@@ -3286,7 +4320,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-15": {
       "week": 9,
@@ -3298,7 +4333,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-16": {
       "week": 9,
@@ -3310,7 +4346,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-17": {
       "week": 9,
@@ -3322,7 +4359,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-18": {
       "week": 9,
@@ -3334,7 +4372,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-19": {
       "week": 9,
@@ -3346,7 +4385,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-20": {
       "week": 9,
@@ -3358,7 +4398,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-21": {
       "week": 10,
@@ -3370,7 +4411,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-22": {
       "week": 10,
@@ -3382,7 +4424,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-23": {
       "week": 10,
@@ -3394,7 +4437,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-24": {
       "week": 10,
@@ -3406,7 +4450,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-25": {
       "week": 10,
@@ -3418,7 +4463,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-26": {
       "week": 10,
@@ -3430,7 +4476,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-27": {
       "week": 10,
@@ -3442,7 +4489,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-28": {
       "week": 11,
@@ -3454,7 +4502,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-29": {
       "week": 11,
@@ -3466,7 +4515,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-30": {
       "week": 11,
@@ -3478,7 +4528,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-01": {
       "week": 11,
@@ -3490,7 +4541,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-02": {
       "week": 11,
@@ -3502,7 +4554,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-03": {
       "week": 11,
@@ -3514,7 +4567,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-04": {
       "week": 11,
@@ -3526,7 +4580,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-05": {
       "week": 12,
@@ -3538,7 +4593,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-06": {
       "week": 12,
@@ -3550,7 +4606,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-07": {
       "week": 12,
@@ -3562,7 +4619,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-08": {
       "week": 12,
@@ -3574,7 +4632,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-09": {
       "week": 12,
@@ -3586,7 +4645,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-10": {
       "week": 12,
@@ -3598,7 +4658,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-11": {
       "week": 12,
@@ -3610,7 +4671,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-12": {
       "week": 13,
@@ -3622,7 +4684,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-13": {
       "week": 13,
@@ -3634,7 +4697,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-14": {
       "week": 13,
@@ -3646,7 +4710,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-15": {
       "week": 13,
@@ -3658,7 +4723,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-16": {
       "week": 13,
@@ -3670,7 +4736,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-17": {
       "week": 13,
@@ -3682,7 +4749,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-18": {
       "week": 13,
@@ -3694,7 +4762,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-19": {
       "week": 14,
@@ -3706,7 +4775,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-20": {
       "week": 14,
@@ -3718,7 +4788,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-21": {
       "week": 14,
@@ -3730,7 +4801,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-22": {
       "week": 14,
@@ -3742,7 +4814,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-23": {
       "week": 14,
@@ -3754,7 +4827,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-24": {
       "week": 14,
@@ -3766,7 +4840,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-25": {
       "week": 14,
@@ -3778,7 +4853,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-26": {
       "week": 15,
@@ -3790,7 +4866,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-27": {
       "week": 15,
@@ -3802,7 +4879,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-28": {
       "week": 15,
@@ -3814,7 +4892,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-29": {
       "week": 15,
@@ -3826,7 +4905,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-30": {
       "week": 15,
@@ -3838,7 +4918,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-10-31": {
       "week": 15,
@@ -3850,7 +4931,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-01": {
       "week": 15,
@@ -3862,7 +4944,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-02": {
       "week": 16,
@@ -3874,7 +4957,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-03": {
       "week": 16,
@@ -3886,7 +4970,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-04": {
       "week": 16,
@@ -3898,7 +4983,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-05": {
       "week": 16,
@@ -3910,7 +4996,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-06": {
       "week": 16,
@@ -3922,7 +5009,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-07": {
       "week": 16,
@@ -3934,7 +5022,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-08": {
       "week": 16,
@@ -3946,7 +5035,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-09": {
       "week": 17,
@@ -3958,7 +5048,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-10": {
       "week": 17,
@@ -3970,7 +5061,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-11": {
       "week": 17,
@@ -3982,7 +5074,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-12": {
       "week": 17,
@@ -3994,7 +5087,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-13": {
       "week": 17,
@@ -4006,7 +5100,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-14": {
       "week": 17,
@@ -4018,7 +5113,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-15": {
       "week": 17,
@@ -4030,7 +5126,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-16": {
       "week": 18,
@@ -4042,7 +5139,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-17": {
       "week": 18,
@@ -4054,7 +5152,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-18": {
       "week": 18,
@@ -4066,7 +5165,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-19": {
       "week": 18,
@@ -4078,7 +5178,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-20": {
       "week": 18,
@@ -4090,7 +5191,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-21": {
       "week": 18,
@@ -4102,7 +5204,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-22": {
       "week": 18,
@@ -4114,7 +5217,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-23": {
       "week": 19,
@@ -4126,7 +5230,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-24": {
       "week": 19,
@@ -4138,7 +5243,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-25": {
       "week": 19,
@@ -4150,7 +5256,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-26": {
       "week": 19,
@@ -4162,7 +5269,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-27": {
       "week": 19,
@@ -4174,7 +5282,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-28": {
       "week": 19,
@@ -4186,7 +5295,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-29": {
       "week": 19,
@@ -4198,7 +5308,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-30": {
       "week": 20,
@@ -4210,7 +5321,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-01": {
       "week": 20,
@@ -4222,7 +5334,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-02": {
       "week": 20,
@@ -4234,7 +5347,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-03": {
       "week": 20,
@@ -4246,7 +5360,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-04": {
       "week": 20,
@@ -4258,7 +5373,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-05": {
       "week": 20,
@@ -4270,7 +5386,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-06": {
       "week": 20,
@@ -4282,7 +5399,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-07": {
       "week": 21,
@@ -4294,7 +5412,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-08": {
       "week": 21,
@@ -4306,7 +5425,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-09": {
       "week": 21,
@@ -4318,7 +5438,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-10": {
       "week": 21,
@@ -4330,7 +5451,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-11": {
       "week": 21,
@@ -4342,7 +5464,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-12": {
       "week": 21,
@@ -4354,7 +5477,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-13": {
       "week": 21,
@@ -4366,7 +5490,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-14": {
       "week": 22,
@@ -4378,7 +5503,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-15": {
       "week": 22,
@@ -4390,7 +5516,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-16": {
       "week": 22,
@@ -4402,7 +5529,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-17": {
       "week": 22,
@@ -4414,7 +5542,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-18": {
       "week": 22,
@@ -4426,7 +5555,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-19": {
       "week": 22,
@@ -4438,7 +5568,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-20": {
       "week": 22,
@@ -4450,7 +5581,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-21": {
       "week": 23,
@@ -4462,7 +5594,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-22": {
       "week": 23,
@@ -4474,7 +5607,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-23": {
       "week": 23,
@@ -4486,7 +5620,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-24": {
       "week": 23,
@@ -4498,7 +5633,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-25": {
       "week": 23,
@@ -4510,7 +5646,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-26": {
       "week": 23,
@@ -4522,7 +5659,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-27": {
       "week": 23,
@@ -4534,7 +5672,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-28": {
       "week": 24,
@@ -4546,7 +5685,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-29": {
       "week": 24,
@@ -4558,7 +5698,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-30": {
       "week": 24,
@@ -4570,7 +5711,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2026-12-31": {
       "week": 24,
@@ -4582,7 +5724,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-01": {
       "week": 24,
@@ -4594,7 +5737,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-02": {
       "week": 24,
@@ -4606,7 +5750,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-03": {
       "week": 24,
@@ -4618,7 +5763,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-04": {
       "week": 25,
@@ -4630,7 +5776,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-05": {
       "week": 25,
@@ -4642,7 +5789,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-06": {
       "week": 25,
@@ -4654,7 +5802,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-07": {
       "week": 25,
@@ -4666,7 +5815,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-08": {
       "week": 25,
@@ -4678,7 +5828,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-09": {
       "week": 25,
@@ -4690,7 +5841,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-10": {
       "week": 25,
@@ -4702,7 +5854,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-11": {
       "week": 26,
@@ -4714,7 +5867,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-12": {
       "week": 26,
@@ -4726,7 +5880,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-13": {
       "week": 26,
@@ -4738,7 +5893,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-14": {
       "week": 26,
@@ -4750,7 +5906,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-15": {
       "week": 26,
@@ -4762,7 +5919,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-16": {
       "week": 26,
@@ -4774,7 +5932,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-17": {
       "week": 26,
@@ -4786,7 +5945,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-18": {
       "week": 27,
@@ -4798,7 +5958,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-19": {
       "week": 27,
@@ -4810,7 +5971,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-20": {
       "week": 27,
@@ -4822,7 +5984,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-21": {
       "week": 27,
@@ -4834,7 +5997,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-22": {
       "week": 27,
@@ -4846,7 +6010,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-23": {
       "week": 27,
@@ -4858,7 +6023,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-24": {
       "week": 27,
@@ -4870,7 +6036,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-25": {
       "week": 28,
@@ -4882,7 +6049,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-26": {
       "week": 28,
@@ -4894,7 +6062,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-27": {
       "week": 28,
@@ -4906,7 +6075,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-28": {
       "week": 28,
@@ -4918,7 +6088,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-29": {
       "week": 28,
@@ -4930,7 +6101,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-30": {
       "week": 28,
@@ -4942,7 +6114,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-01-31": {
       "week": 28,
@@ -4954,7 +6127,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-01": {
       "week": 29,
@@ -4966,7 +6140,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-02": {
       "week": 29,
@@ -4978,7 +6153,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-03": {
       "week": 29,
@@ -4990,7 +6166,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-04": {
       "week": 29,
@@ -5002,7 +6179,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-05": {
       "week": 29,
@@ -5014,7 +6192,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-06": {
       "week": 29,
@@ -5026,7 +6205,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-07": {
       "week": 29,
@@ -5038,7 +6218,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-08": {
       "week": 30,
@@ -5050,7 +6231,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-09": {
       "week": 30,
@@ -5062,7 +6244,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-10": {
       "week": 30,
@@ -5074,7 +6257,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-11": {
       "week": 30,
@@ -5086,7 +6270,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-12": {
       "week": 30,
@@ -5098,7 +6283,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-13": {
       "week": 30,
@@ -5110,7 +6296,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-14": {
       "week": 30,
@@ -5122,7 +6309,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-15": {
       "week": 31,
@@ -5134,7 +6322,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-16": {
       "week": 31,
@@ -5146,7 +6335,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-17": {
       "week": 31,
@@ -5158,7 +6348,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-18": {
       "week": 31,
@@ -5170,7 +6361,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-19": {
       "week": 31,
@@ -5182,7 +6374,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-20": {
       "week": 31,
@@ -5194,7 +6387,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-21": {
       "week": 31,
@@ -5206,7 +6400,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-22": {
       "week": 32,
@@ -5218,7 +6413,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-23": {
       "week": 32,
@@ -5230,7 +6426,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-24": {
       "week": 32,
@@ -5242,7 +6439,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-25": {
       "week": 32,
@@ -5254,7 +6452,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-26": {
       "week": 32,
@@ -5266,7 +6465,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-27": {
       "week": 32,
@@ -5278,7 +6478,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-02-28": {
       "week": 32,
@@ -5290,7 +6491,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-03-01": {
       "week": 33,
@@ -5302,7 +6504,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-03-02": {
       "week": 33,
@@ -5314,7 +6517,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-03-03": {
       "week": 33,
@@ -5326,7 +6530,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-03-04": {
       "week": 33,
@@ -5338,7 +6543,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-03-05": {
       "week": 33,
@@ -5350,7 +6556,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-03-06": {
       "week": 33,
@@ -5362,7 +6569,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     },
     "2027-03-07": {
       "week": 33,
@@ -5374,7 +6582,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
-      "activities": []
+      "activities": [],
+      "cross_activities": []
     }
   },
   "weeks": {
@@ -5385,6 +6594,7 @@
       "done": 5,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": true,
@@ -5392,15 +6602,16 @@
     },
     "2": {
       "planned_km": 50,
-      "planned_km_due": 0,
-      "actual_km": 0,
-      "done": 0,
+      "planned_km_due": 20,
+      "actual_km": 10.6,
+      "done": 1,
       "partial": 0,
-      "missed": 0,
+      "missed": 1,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "✓ On track"
+      "flag": "⚠ Under-target — consider holding volume / repeating the week"
     },
     "3": {
       "planned_km": 56,
@@ -5409,6 +6620,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5421,6 +6633,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5433,6 +6646,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5445,6 +6659,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5457,6 +6672,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5469,6 +6685,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5481,6 +6698,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5493,6 +6711,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5505,6 +6724,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5517,6 +6737,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5529,6 +6750,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5541,6 +6763,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5553,6 +6776,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5565,6 +6789,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5577,6 +6802,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5589,6 +6815,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5601,6 +6828,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5613,6 +6841,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5625,6 +6854,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5637,6 +6867,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5649,6 +6880,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5661,6 +6893,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5673,6 +6906,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5685,6 +6919,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5697,6 +6932,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5709,6 +6945,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5721,6 +6958,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5733,6 +6971,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5745,6 +6984,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5757,6 +6997,7 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -5769,13 +7010,14 @@
       "done": 0,
       "partial": 0,
       "missed": 0,
+      "substituted": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-07-27T10:02:17+00:00",
+  "last_sync": "2026-07-29T13:51:52+00:00",
   "tracker": {
     "threshold_latest": null,
     "mp_latest": [
