@@ -94,6 +94,12 @@ TYPE_CLASS = {"rest": "t-rest", "recovery": "t-recovery", "easy": "t-easy", "lon
 # session, e.g. football, that satisfied the day counts as full consistency, not a lesser
 # outcome — see sync/match.py)
 STATUS_COLOR = {"Done": "var(--good)", "Substituted": "var(--pA)", "Partial": "var(--warn)", "Missed": "var(--accent)"}
+# Strava's activity type is "Soccer" (API-level, used for matching in sync/strava.py) —
+# never shown to the user as that. Display label + emoji for cross-training substitutions.
+CROSS_LABEL = {"Soccer": "Football", "WeightTraining": "Weight training", "Workout": "Workout",
+               "Hike": "Hike", "Walk": "Walk", "Ride": "Cycling", "Swim": "Swim"}
+CROSS_EMOJI = {"Soccer": "⚽", "WeightTraining": "🏋️", "Workout": "💪", "Hike": "🥾",
+               "Walk": "🚶", "Ride": "🚴", "Swim": "🏊"}
 
 STYLE = """<style>
 .sv{--paper:#f6f5f2;--surface:#fff;--surface-2:#faf9f6;--ink:#191b21;--muted:#6b6e77;--faint:#9a9ca3;
@@ -499,10 +505,10 @@ def celebration_html(plan, progress):
     elif status == "Substituted":
         cross = d.get("cross_activities") or []
         lead = cross[0] if cross else {}
-        what = lead.get("activity_type", "cross-training")
+        raw = lead.get("activity_type", "cross-training")
+        what = CROSS_LABEL.get(raw, raw)
         dur = _format_duration(lead.get("moving_time_s"))
-        emoji = {"Soccer": "⚽", "WeightTraining": "🏋️", "Workout": "💪", "Hike": "🥾",
-                 "Walk": "🚶", "Ride": "🚴", "Swim": "🏊"}.get(what, "🔁")
+        emoji = CROSS_EMOJI.get(raw, "🔁")
         title, cls = f"Substituted with {what} — still counts! 🔁", "celebrate sub"
         sub = f'{sess} — substituted with {what}' + (f' ({dur})' if dur else '')
     elif status == "Upcoming":
@@ -622,7 +628,8 @@ def day_html(d, pd_, today_iso):
     # progress overlay
     status = pd_.get("status")
     cross = pd_.get("cross_activities") or []
-    sub_what = cross[0].get("activity_type", "cross-training") if cross else "cross-training"
+    sub_raw = cross[0].get("activity_type", "cross-training") if cross else "cross-training"
+    sub_what = CROSS_LABEL.get(sub_raw, sub_raw)
     dot = ""
     if status in STATUS_COLOR:
         title = f"Substituted — {sub_what}" if status == "Substituted" else status
@@ -637,8 +644,7 @@ def day_html(d, pd_, today_iso):
         tags += '<span class="tag mp">MP</span>'
     actual, pace = pd_.get("actual_km", 0), pd_.get("pace_str")
     if status == "Substituted":
-        emoji = {"Soccer": "⚽", "WeightTraining": "🏋️", "Workout": "💪", "Hike": "🥾",
-                 "Walk": "🚶", "Ride": "🚴", "Swim": "🏊"}.get(sub_what, "🔁")
+        emoji = CROSS_EMOJI.get(sub_raw, "🔁")
         tags += f'<span class="tag sub">{emoji} Substituted — {esc(sub_what)}</span>'
     elif actual:
         tags += f'<span class="tag act">✓ {actual:.1f}k{(" · " + pace) if pace else ""}</span>'
