@@ -1,6 +1,7 @@
 """Minimal Strava API client — personal single-user use.
 Needs a Strava API app (client id/secret) and a one-time refresh token (see get_token.py)."""
 import time
+from datetime import datetime, timedelta
 import requests
 
 TOKEN_URL = "https://www.strava.com/oauth/token"
@@ -85,13 +86,33 @@ RUN_TYPES = ("Run", "TrailRun", "VirtualRun")
 CROSS_TYPES = ("Soccer", "Workout", "WeightTraining", "Hike", "Walk", "Ride", "Swim")
 
 
+EARLY_HOUR_CUTOFF = 4  # activities starting before this hour count as the night before
+
+
+def _training_date(start_date_local):
+    """Which day an activity 'counts' as. A session logged starting in the small hours
+    (e.g. 03:00) is almost always a night-before session that crossed midnight — either
+    it genuinely ran late, or Strava/the watch uploaded it with a shifted timestamp —
+    rather than someone training before 4am. Bucket those onto the previous calendar day."""
+    raw = start_date_local or ""
+    if not raw:
+        return ""
+    try:
+        dt = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+    except ValueError:
+        return raw[:10]
+    if dt.hour < EARLY_HOUR_CUTOFF:
+        dt -= timedelta(days=1)
+    return dt.date().isoformat()
+
+
 def _simplify_one(a):
     dist_km = (a.get("distance") or 0) / 1000.0
     moving = a.get("moving_time") or 0
     pace = (moving / 60.0) / dist_km if dist_km > 0.3 else None  # min/km
     return {
         "id": a.get("id"),
-        "date": (a.get("start_date_local") or "")[:10],
+        "date": _training_date(a.get("start_date_local")),
         "name": a.get("name"),
         "activity_type": a.get("type"),
         "distance_km": round(dist_km, 2),

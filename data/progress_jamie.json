@@ -199,7 +199,21 @@
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": 19487856512,
+          "date": "2026-07-27",
+          "name": "Night Weight Training",
+          "activity_type": "WeightTraining",
+          "distance_km": 0.0,
+          "moving_time_s": 4500,
+          "pace_min_km": null,
+          "avg_hr": 69.7,
+          "max_hr": 101.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ]
     },
     "2026-07-28": {
       "week": 2,
@@ -214,15 +228,15 @@
       "activities": [],
       "cross_activities": [
         {
-          "id": 19487856512,
+          "id": 19504728992,
           "date": "2026-07-28",
-          "name": "Night Weight Training",
-          "activity_type": "WeightTraining",
+          "name": "Night Football (Soccer)",
+          "activity_type": "Soccer",
           "distance_km": 0.0,
-          "moving_time_s": 4500,
+          "moving_time_s": 3614,
           "pace_min_km": null,
-          "avg_hr": 69.7,
-          "max_hr": 101.0,
+          "avg_hr": 148.7,
+          "max_hr": 186.0,
           "elev_gain_m": 0,
           "route": []
         }
@@ -235,25 +249,11 @@
       "session": "Easy 5 km",
       "target_km": 5,
       "actual_km": 0,
-      "status": "Substituted",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": [
-        {
-          "id": 19504728992,
-          "date": "2026-07-29",
-          "name": "Night Football (Soccer)",
-          "activity_type": "Soccer",
-          "distance_km": 0.0,
-          "moving_time_s": 3614,
-          "pace_min_km": null,
-          "avg_hr": 148.7,
-          "max_hr": 186.0,
-          "elev_gain_m": 0,
-          "route": []
-        }
-      ]
+      "cross_activities": []
     },
     "2026-07-30": {
       "week": 2,
@@ -3147,10 +3147,10 @@
       "planned_km": 34,
       "planned_km_due": 11,
       "actual_km": 0,
-      "done": 2,
+      "done": 1,
       "partial": 0,
-      "missed": 0,
-      "substituted": 2,
+      "missed": 1,
+      "substituted": 1,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
@@ -3560,7 +3560,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-07-29T13:51:53+00:00",
+  "last_sync": "2026-07-29T15:15:50+00:00",
   "tracker": {
     "threshold_latest": null,
     "mp_latest": [
