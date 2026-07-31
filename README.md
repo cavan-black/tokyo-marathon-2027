@@ -67,8 +67,12 @@ the correct pre-start state. Connect Strava to light it up.
    STRAVA_CLIENT_SECRET = "…"
    STRAVA_REFRESH_TOKEN_CAV = "…"
    STRAVA_REFRESH_TOKEN_JAMIE = "…"
+   STRAVA_REFRESH_TOKEN_STEPHEN = "…"
+   STRAVA_REFRESH_TOKEN_AMBER = "…"
    GH_PAT = "…"
    ```
+   (Only set the tokens for runners who've actually connected Strava — a missing one
+   just means that runner's tab shows everything as "upcoming" until they do.)
    The **🔄 Refresh from Strava** button now works live.
 
    `GH_PAT` is optional but recommended: Streamlit Cloud's filesystem is ephemeral, so a
