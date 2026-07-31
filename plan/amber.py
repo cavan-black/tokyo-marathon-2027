@@ -1,8 +1,9 @@
 """Amber's half marathon plan as structured data. build() -> plan dict.
-28, starting from scratch, no fixed time goal — "best she can". Week 1 includes a
-time trial to set a real baseline; pace zones are effort-based until that lands.
-19-week build to the Sevilla Half (6 Dec 2026), same race Cav is tuning up at and
-Jamie is using as a training run."""
+28, starting from scratch, no fixed time goal — "best she can". Week 1's 5K time
+trial landed at 40:40 (8:08/km), which now calibrates the real training pace
+zones below (still no half-marathon goal time — that stays open for the Wk 9/15
+checkpoints to inform). 19-week build to the Sevilla Half (6 Dec 2026), same race
+Cav is tuning up at and Jamie is using as a training run."""
 from datetime import date, timedelta
 import content as C
 
@@ -153,19 +154,20 @@ DOW = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
 
 def content():
     return {
-        "paces": {"headers": ["Zone", "Effort", "Use"], "rows": [
-            ["Easy / aerobic", "Fully conversational — could hold a chat", "Bulk of every week"],
-            ["Long-run easy", "Conversational, slightly more effort by the end", "Long-run base pace"],
-            ["Steady / controlled", "Comfortably hard — a sentence at a time, not a chat", "Long-run finishes, tempo work"],
-            ["Time-trial / race effort", "All-out, sustainable for the distance", "Week 1 & 9 checkpoints, race day"]],
-            "note": "No fixed pace numbers here on purpose — week 1's time trial sets your real baseline, and "
-                    "from there effort (not a number picked before you'd run a step) drives every session. "
-                    "Once you have a few checkpoints in, ask for actual pace targets and they can be added."},
+        "paces": {"headers": ["Zone", "per km", "per mile", "Use"], "rows": [
+            ["Easy / aerobic", "10:20–11:01", "16:37–17:44", "Bulk of every week — fully conversational"],
+            ["Long-run easy", "10:30–11:16", "16:53–18:08", "Long-run base pace, slightly more forgiving late on"],
+            ["Steady / controlled", "8:49–9:09", "14:12–14:44", "Long-run finishes, tempo work — comfortably hard"],
+            ["5K time-trial pace", "8:08", "13:05", "Week 1 baseline (40:40) — today's all-out effort, not a training pace"]],
+            "note": "These come straight from the Week 1 time trial (40:40 for 5K, 8:08/km) — real numbers now "
+                    "instead of effort-only zones. Still not a half-marathon goal pace: that stays open until "
+                    "the Wk 9 and Wk 15 checkpoints show how the aerobic base is actually moving. As those land, "
+                    "these zones will tighten and shift down — re-check them rather than treating today's as fixed."},
         "checkpoints": {
             "intro": "No fixed goal time — the point of these is simply to show you the trend, so race day is "
                      "informed by real data, not a guess made in week 1.",
             "headers": ["Wk / date", "Test", "What it tells you"], "rows": [
-                ["Wk 1 · this Saturday", "5K time trial / parkrun", "Sets your real baseline — everything else calibrates off this"],
+                ["Wk 1 · done", "5K time trial — 40:40 (8:08/km)", "Baseline set — training paces above are calibrated off this"],
                 ["Wk 9 · ~27 Sep", "10K time trial (optional)", "Shows how much the aerobic base has moved the needle"],
                 ["Wk 15 · ~1 Nov", "Peak long run (19 km, last 6 km steady)", "The honest read on race-day pacing strategy"],
                 ["Race · 6 Dec", "Sevilla Half Marathon", "Run it off what training actually showed, not a number from July"]],
@@ -182,7 +184,7 @@ def content():
         "fuel": C.fuel(football=False, volume_note=""),
         "research": C.RESEARCH_NOTES,
         "tips": [
-            ["The time trial matters more than it feels like", "Week 1's 5K sets the baseline for everything else in this plan — go in fresh and actually push it, don't just jog it."],
+            ["That 40:40 was worth it", "Week 1's 5K (40:40, 8:08/km) now sets the real training pace zones for everything else in this plan, instead of guesswork."],
             ["No goal time is a real goal", "\"Best I can, off real training\" is a completely legitimate target — it just means racing off what the checkpoints actually show, not a number guessed before a single run."],
             ["Consistency over the first month is everything", "The first 4 weeks are about building the habit as much as the fitness — showing up matters more than any single session's quality."],
         ] + C.TIPS_COMMON,
@@ -204,6 +206,8 @@ def build():
     return {"meta": {"id": ID, "name": NAME, "goal": GOAL, "mp_per_km": "TBD", "mp_per_mile": "TBD",
                     "start": START.isoformat(), "race": RACE.isoformat(),
                     "peak_km": max(VOL), "total_weeks": 19,
-                    "goal_note": "No fixed goal pace — Week 1's time trial sets the real baseline, and the "
-                                 "checkpoints (Wk 9, Wk 15) build the picture from there."},
+                    "goal_note": "No fixed goal pace — Week 1's 5K time trial (40:40, 8:08/km) set the real "
+                                 "baseline training paces, and the checkpoints (Wk 9, Wk 15) build the fuller "
+                                 "picture from here. Still deliberately no half-marathon target time — that "
+                                 "stays open until training actually shows what's realistic."},
             "weeks": weeks, "content": content()}
