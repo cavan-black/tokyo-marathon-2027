@@ -93,7 +93,8 @@ TYPE_CLASS = {"rest": "t-rest", "recovery": "t-recovery", "easy": "t-easy", "lon
 # progress status -> dot colour (Substituted = same as Done: a logged cross-training
 # session, e.g. football, that satisfied the day counts as full consistency, not a lesser
 # outcome — see sync/match.py)
-STATUS_COLOR = {"Done": "var(--good)", "Substituted": "var(--pA)", "Partial": "var(--warn)", "Missed": "var(--accent)"}
+STATUS_COLOR = {"Done": "var(--good)", "Substituted": "var(--pA)", "Replaced": "var(--pD)",
+                 "Partial": "var(--warn)", "Missed": "var(--accent)"}
 # Strava's activity type is "Soccer" (API-level, used for matching in sync/strava.py) —
 # never shown to the user as that. Display label + emoji for cross-training substitutions.
 CROSS_LABEL = {"Soccer": "Football", "WeightTraining": "Weight training", "Workout": "Workout",
@@ -199,6 +200,7 @@ STYLE = """<style>
 .sv .tag.mp{color:var(--pB);border-color:color-mix(in srgb,var(--pB) 45%,var(--line));}
 .sv .tag.act{color:var(--good);border-color:color-mix(in srgb,var(--good) 50%,var(--line));}
 .sv .tag.sub{color:var(--pA);border-color:color-mix(in srgb,var(--pA) 50%,var(--line));}
+.sv .tag.rep{color:var(--pD);border-color:color-mix(in srgb,var(--pD) 50%,var(--line));}
 .sv .sdot{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
 @media (max-width:820px){.sv .day{grid-template-columns:40px 46px 1fr;}.sv .day .type-chip,.sv .day .tags{display:none;}}
 .sv .t-rest{background:transparent;color:var(--faint);border:1px dashed var(--line-strong);}
@@ -277,6 +279,8 @@ STYLE = """<style>
 .sv .tag.act{background:linear-gradient(135deg,color-mix(in srgb,var(--good) 80%,white 20%),var(--good));
   color:#fff;border:none;animation:popIn .35s ease both, glowPulse 2.6s ease-in-out infinite;}
 .sv .tag.sub{background:linear-gradient(135deg,color-mix(in srgb,var(--pA) 80%,white 20%),var(--pA));
+  color:#fff;border:none;animation:popIn .35s ease both;}
+.sv .tag.rep{background:linear-gradient(135deg,color-mix(in srgb,var(--pD) 80%,white 20%),var(--pD));
   color:#fff;border:none;animation:popIn .35s ease both;}
 .sv .crushed-chip{display:inline-flex;align-items:center;gap:4px;padding:2px 10px;border-radius:999px;
   font-size:10px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#3d2a00;
@@ -478,11 +482,28 @@ def _format_duration(secs):
 
 def celebration_html(plan, progress):
     """Today's status: a call-to-action if the run's still to do, a dopamine hit with
-    stats once it's logged. Silent on rest days."""
+    stats once it's logged. Silent on rest days — except a rest day that ended up
+    hosting a different day's moved session (see sync/match.py's "replaces"), which
+    gets its own celebration instead of being silently skipped."""
     today_iso = date.today().isoformat()
     d = progress.get("days", {}).get(today_iso)
-    if not d or d.get("type") == "rest":
+    if not d:
         return ""
+    replaces = d.get("replaces")
+    if d.get("type") == "rest" and not (replaces and d.get("actual_km", 0) > 0.5):
+        return ""
+    if replaces and d.get("actual_km", 0) > 0.5:
+        acts = d.get("activities") or []
+        lead = max(acts, key=lambda a: a.get("distance_km", 0)) if acts else {}
+        actual, pace = d.get("actual_km", 0), d.get("pace_str")
+        dur = _format_duration(lead.get("moving_time_s"))
+        title, emoji, cls = f"{replaces['dow']}'s session, done today instead — nice recovery! 🔁", "🔁", "celebrate sub"
+        stats = [f'{actual:.1f} km']
+        if pace: stats.append(f'{pace}/km')
+        if dur: stats.append(dur)
+        sub = f"{replaces['session']} — " + " · ".join(stats)
+        return (f'<div class="{cls}"><span class="ce-emoji">{emoji}</span>'
+                f'<div><div class="ce-title">{esc(title)}</div><div class="ce-sub">{esc(sub)}</div></div></div>')
     status = d.get("status")
     sess = d.get("session", "today's run")
     target = d.get("target_km", 0)
@@ -630,9 +651,16 @@ def day_html(d, pd_, today_iso):
     cross = pd_.get("cross_activities") or []
     sub_raw = cross[0].get("activity_type", "cross-training") if cross else "cross-training"
     sub_what = CROSS_LABEL.get(sub_raw, sub_raw)
+    replaced_by = pd_.get("replaced_by")  # this day's session was missed, done elsewhere instead
+    replaces = pd_.get("replaces")        # this day (usually rest) hosted another day's session
     dot = ""
     if status in STATUS_COLOR:
-        title = f"Substituted — {sub_what}" if status == "Substituted" else status
+        if status == "Substituted":
+            title = f"Substituted — {sub_what}"
+        elif status == "Replaced" and replaced_by:
+            title = f"Replaced — ran {replaced_by['dow']} instead"
+        else:
+            title = status
         dot = f'<span class="sdot" style="background:{STATUS_COLOR[status]}" title="{esc(title)}"></span>'
     tags = ""
     sess = d["session"]
@@ -646,6 +674,11 @@ def day_html(d, pd_, today_iso):
     if status == "Substituted":
         emoji = CROSS_EMOJI.get(sub_raw, "🔁")
         tags += f'<span class="tag sub">{emoji} Substituted — {esc(sub_what)}</span>'
+    elif status == "Replaced" and replaced_by:
+        km = replaced_by.get("actual_km", 0)
+        tags += f'<span class="tag rep">↔ Ran {esc(replaced_by["dow"])} instead ({km:.1f}k)</span>'
+    elif replaces:
+        tags += f'<span class="tag rep">↔ Covered {esc(replaces["dow"])}\'s session ({actual:.1f}k)</span>'
     elif actual:
         tags += f'<span class="tag act">✓ {actual:.1f}k{(" · " + pace) if pace else ""}</span>'
     return (f'<div class="day"><span class="dow">{esc(d["dow"])}</span>'
