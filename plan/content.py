@@ -58,10 +58,14 @@ def strength(found_weeks, power_weeks, football=False, a_day="Tue", b_day="Fri")
     extra = " or a match" if football else ""
     return {
         "intro": ("2×/week, 20–35 min. Injury-proof tendons/hips + improve running economy. Same exercises "
-                  "both times — the A/B split is just which day, not different content. "
-                  f"TIMING: after runs, on your hard day ({a_day} = Session A) + one easy day "
-                  f"({b_day} = Session B). "
+                  "both times — the A/B split below is just which day, not different content. "
                   f"Never heavy legs before a long run{extra}. Form first, load second."),
+        "sessions": {"headers": ["Session", "Day", "What it is"], "rows": [
+            ["Session A", a_day, "Your hard-day slot — same exercises as Session B below (whichever "
+                                  "phase block you're currently in)"],
+            ["Session B", b_day, "Your easy-day slot — identical exercises to Session A, just the other "
+                                  "day of the week"],
+        ]},
         "blocks": [
             {"title": f"Foundation · Weeks {found_weeks}", "headers": SC_HEADERS,
              "note": "Build tissue tolerance, bodyweight → light load. 2×/week.", "rows": SC_FOUNDATION},

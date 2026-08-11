@@ -762,6 +762,9 @@ def strength_html(plan):
     if not sc:
         return ""
     body = f'<p class="sub" style="margin-bottom:12px">{esc(sc.get("intro",""))}</p>'
+    if sc.get("sessions"):
+        body += (f'<div class="card" style="margin-bottom:14px"><h3>Session A vs Session B</h3>'
+                  f'{ref_table(sc["sessions"]["headers"], sc["sessions"]["rows"])}</div>')
     for blk in sc.get("blocks", []):
         note = f'<p class="sub" style="margin-bottom:10px">{esc(blk["note"])}</p>' if blk.get("note") else ""
         body += (f'<div class="card" style="margin-bottom:14px"><h3>{esc(blk["title"])}</h3>'

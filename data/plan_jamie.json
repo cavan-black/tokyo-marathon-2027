@@ -2059,7 +2059,26 @@
       ]
     },
     "strength": {
-      "intro": "2×/week, 20–35 min. Injury-proof tendons/hips + improve running economy. Same exercises both times — the A/B split is just which day, not different content. TIMING: after runs, on your hard day (Tue = Session A) + one easy day (Fri = Session B). Never heavy legs before a long run or a match. Form first, load second.",
+      "intro": "2×/week, 20–35 min. Injury-proof tendons/hips + improve running economy. Same exercises both times — the A/B split below is just which day, not different content. Never heavy legs before a long run or a match. Form first, load second.",
+      "sessions": {
+        "headers": [
+          "Session",
+          "Day",
+          "What it is"
+        ],
+        "rows": [
+          [
+            "Session A",
+            "Tue",
+            "Your hard-day slot — same exercises as Session B below (whichever phase block you're currently in)"
+          ],
+          [
+            "Session B",
+            "Fri",
+            "Your easy-day slot — identical exercises to Session A, just the other day of the week"
+          ]
+        ]
+      },
       "blocks": [
         {
           "title": "Foundation · Weeks 1–18",
