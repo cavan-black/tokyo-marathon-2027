@@ -244,6 +244,47 @@ def content():
                 "General sports-nutrition guidance, not individualised medical advice — adjust to how your body actually responds.",
             ],
         },
+        "layover": {
+            "intro": "Long-haul connection through Beijing (PEK) on the way to Seoul, ~04:00-18:50 on the "
+                     "ground. Long run gets done mid-layover instead of losing the day to travel — British "
+                     "passport, so no advance visa needed for either stop: China's 30-day visa-free entry "
+                     "(in effect through 31 Dec 2026) or the 240-hour transit rule covers Beijing, processed "
+                     "at a dedicated counter on arrival; Korea's K-ETA is waived for UK passports through "
+                     "31 Dec 2026, so nothing needed there either unless leaving the terminal, in which case "
+                     "it's just the free digital e-Arrival Card.",
+            "schedule": {"headers": ["Time", "What"], "rows": [
+                ["04:00-04:45", "Land, visa-free entry counter"],
+                ["04:45-05:00", "Customs, drop bag at T3 2F left-luggage — free for visa-free transit passengers"],
+                ["05:00-05:35", "Airport Express + taxi to Olympic Green"],
+                ["05:35-05:55", "Change, warm up"],
+                ["05:55-07:40", "Long run — Olympic Forest Park loop(s), ~15-16 km"],
+                ["07:40-08:00", "Cooldown/stretch"],
+                ["08:00-08:45", "Shower/change (day-use hotel near the park, booked on Ctrip/Meituan same-day) + food"],
+                ["08:45-09:00", "Subway to Line 8 (Olympic Sports Center station)"],
+                ["09:00-10:00", "Shichahai/Houhai — lake, hutongs"],
+                ["10:00-10:45", "Nanluoguxiang — hutong walk, food stalls"],
+                ["10:45-11:30", "Jingshan Park — panoramic view over the Forbidden City roofs"],
+                ["11:30-12:30", "Tiananmen Square / Qianmen — walk the square, lunch"],
+                ["12:30-13:00", "Buffer / extra wandering"],
+                ["13:00-13:45", "Subway/taxi back toward the airport"],
+                ["13:45-14:30", "Arrive airport, retrieve bag"],
+                ["14:30-15:15", "Check-in, security, exit immigration"],
+                ["15:15-18:50", "Buffer / boarding"],
+            ]},
+            "notes": [
+                "One line (Line 8) covers Olympic Green → Shichahai → Nanluoguxiang → Jingshan Park → Qianmen — "
+                "no transfers, ~13 min Olympic Green to the hutongs.",
+                "Skips the Forbidden City itself (needs a pre-booked ticket, easy to get caught out on short "
+                "notice) — Jingshan Park gives the classic skyline shot without the queue/booking risk.",
+                "Beijing in mid-August is hot and humid even early — lows ~22-24°C at 6am — hydrate well before "
+                "the run, not just during.",
+                "Day-use hotel rate near Olympic Green wasn't confirmed in advance research — estimated "
+                "¥150-350 (~€20-45) by extrapolating from nightly rates; check live prices on Ctrip/Meituan "
+                "on the ground.",
+                "Assumes both legs route through PEK (Capital), not PKX (Daxing) — Daxing is much further from "
+                "Olympic Green and would blow this schedule; double-check the boarding pass.",
+            ],
+        },
         "tips": [
             ["Volume is the big lever", "Marathon time tracks weekly mileage more than any other trainable factor — that's why the peak is ~116 km. Add it as EASY km."],
             ["Doubles > longer hard runs", "Two short easy runs add volume with less injury risk than lengthening workouts — that's how you reach ~116 km with a rest day intact."],

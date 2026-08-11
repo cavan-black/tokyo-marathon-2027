@@ -824,6 +824,19 @@ def diet_html(plan):
     return body
 
 
+def layover_html(plan):
+    lo = plan.get("content", {}).get("layover", {})
+    if not lo:
+        return ""
+    body = f'<p class="sub" style="margin-bottom:12px">{esc(lo.get("intro",""))}</p>'
+    if lo.get("schedule"):
+        body += f'<div class="card" style="margin-bottom:14px">{ref_table(lo["schedule"]["headers"], lo["schedule"]["rows"])}</div>'
+    notes = "".join(f"<li>{esc(n)}</li>" for n in lo.get("notes", []))
+    if notes:
+        body += f'<ul class="tight">{notes}</ul>'
+    return body
+
+
 def tips_html(plan):
     tips = plan.get("content", {}).get("tips", [])
     lis = "".join(f'<li><b>{esc(t[0])}</b> — {esc(t[1])}</li>' for t in tips)
@@ -1287,12 +1300,14 @@ def render_runner(runner_id):
     st.markdown(STYLE + '<div class="sv">' + celebration_html(plan, progress) + banner + facts_html(plan, wk_rows) +
                 glam_row_html(plan, progress, cur) + "</div>", unsafe_allow_html=True)
 
-    # ---- everything else lives in subtabs (Warm-up/Diet Plan only show up if a runner has one) ----
+    # ---- everything else lives in subtabs (Warm-up/Diet Plan/Layover only show up if a runner has one) ----
     has_diet = bool(content.get("diet"))
     has_warmup = bool(content.get("warmup"))
+    has_layover = bool(content.get("layover"))
     labels = (["📋 Plan", "🧭 Approach", "🎯 Paces", "🚦 Gates", "📈 Volume", "📊 Analytics", "💪 Strength"]
               + (["🔥 Warm-up"] if has_warmup else [])
-              + ["🥗 Fuel & life"] + (["🍽️ Diet Plan"] if has_diet else []) + ["💡 Tips", "🔬 Research"])
+              + ["🥗 Fuel & life"] + (["🍽️ Diet Plan"] if has_diet else [])
+              + (["✈️ Beijing layover"] if has_layover else []) + ["💡 Tips", "🔬 Research"])
     sub = st.tabs(labels)
     i = iter(range(len(labels)))
 
@@ -1339,6 +1354,11 @@ def render_runner(runner_id):
             st.markdown(STYLE + '<div class="sv">' +
                         section("Diet plan — building a surplus", "Meals, add-ins and targets to gain weight safely as volume climbs.",
                                 diet_html(plan)) + "</div>", unsafe_allow_html=True)
+    if has_layover:
+        with sub[next(i)]:
+            st.markdown(STYLE + '<div class="sv">' +
+                        section("Beijing layover — long run + city", "17 Aug, 04:00-18:50 connecting through Beijing (PEK) to Seoul.",
+                                layover_html(plan)) + "</div>", unsafe_allow_html=True)
     with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
                     section("Tips", "", tips_html(plan)) + "</div>", unsafe_allow_html=True)
