@@ -128,9 +128,9 @@ def build_week(w):
         known = lr
     sat_pool = max(round(v - known, 1), 0)
 
-    days["Tue"] = (tue_txt + ("  +S&C A (hard-day session)" if w >= 3 and tue_type != "rest" else ""), tue_type, tue_km)
+    days["Tue"] = (tue_txt + ("  +S&C (hard-day session)" if w >= 3 and tue_type != "rest" else ""), tue_type, tue_km)
     days["Wed"] = (wed_txt, wed_type, wed_km)
-    days["Thu"] = (thu_txt + ("  +S&C B (easy-day session)" if w >= 3 and thu_type != "rest" else ""), thu_type, thu_km)
+    days["Thu"] = (thu_txt + ("  +S&C (easy-day session)" if w >= 3 and thu_type != "rest" else ""), thu_type, thu_km)
     days["Fri"] = ("Rest — always", "rest", 0)
     if w == 19:
         days["Sat"] = (sat_txt, sat_type, 3)

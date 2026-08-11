@@ -664,10 +664,10 @@ def day_html(d, pd_, today_iso):
         dot = f'<span class="sdot" style="background:{STATUS_COLOR[status]}" title="{esc(title)}"></span>'
     tags = ""
     sess = d["session"]
-    if "S&C A" in sess:
-        tags += '<span class="tag str">Str A</span>'
-    if "S&C B" in sess:
-        tags += '<span class="tag str">Str B</span>'
+    if "hard-day session" in sess:
+        tags += '<span class="tag str">Str (hard day)</span>'
+    if "easy-day session" in sess:
+        tags += '<span class="tag str">Str (easy day)</span>'
     if "@ MP" in sess and "no MP" not in sess:
         tags += '<span class="tag mp">MP</span>'
     actual, pace = pd_.get("actual_km", 0), pd_.get("pace_str")
@@ -763,7 +763,7 @@ def strength_html(plan):
         return ""
     body = f'<p class="sub" style="margin-bottom:12px">{esc(sc.get("intro",""))}</p>'
     if sc.get("sessions"):
-        body += (f'<div class="card" style="margin-bottom:14px"><h3>Session A vs Session B</h3>'
+        body += (f'<div class="card" style="margin-bottom:14px"><h3>Your two weekly sessions</h3>'
                   f'{ref_table(sc["sessions"]["headers"], sc["sessions"]["rows"])}</div>')
     for blk in sc.get("blocks", []):
         note = f'<p class="sub" style="margin-bottom:10px">{esc(blk["note"])}</p>' if blk.get("note") else ""

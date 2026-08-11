@@ -102,7 +102,7 @@ def build_week(w):
     days={}
     days["Mon"]=("Rest" if (reentry or w==33) else "Rest / mobility (full rest day)","rest",0)
     tue_km=qkm(w,"tue"); thu_km=qkm(w,"thu")
-    if 4<=w<=30: tue_txt += "  +S&C A (hard-day session)"
+    if 4<=w<=30: tue_txt += "  +S&C (hard-day session)"
     # Max 2 hard days/week: Thu is quality only when Sunday's long run is easy and there's no Sat TT
     hard_sun = sun_type == "race" or w in HARD_LR
     if thu_type == "quality" and (hard_sun or w in TT_WEEKS):
@@ -120,7 +120,7 @@ def build_week(w):
     elif w==33:
         fri_txt,fri_type,fri_kmv="Rest","rest",0
     else:
-        fri_txt=f"Recovery {fri_km} km easy"+("  +light S&C (taper)" if 31<=w<=32 else "  +S&C B (easy-day session)")
+        fri_txt=f"Recovery {fri_km} km easy"+("  +light S&C (taper)" if 31<=w<=32 else "  +S&C (easy-day session)")
         fri_type,fri_kmv="recovery",fri_km
     if reentry:
         sat_txt,sat_type,sat_kmv="Rest","rest",0

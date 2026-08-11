@@ -113,10 +113,10 @@ def build_week(w):
     thu_km = 0 if thu_type == "rest" else q
     days = {}
     days["Mon"] = ("Rest — always", "rest", 0)
-    days["Tue"] = (tue_txt + ("  +S&C A (hard-day session, joint-friendly)" if w >= 3 else ""), tue_type, tue_km)
+    days["Tue"] = (tue_txt + ("  +S&C (hard-day session, joint-friendly)" if w >= 3 else ""), tue_type, tue_km)
     days["Wed"] = ("Rest, or an easy 20-30 min walk/swim/bike (low impact, protects the weight-loss deficit"
                    " without adding running-specific fatigue)", "rest", 0)
-    days["Thu"] = (thu_txt + ("  +S&C B (easy-day session, joint-friendly)" if w >= 3 and w != 18 and w != 19 else ""),
+    days["Thu"] = (thu_txt + ("  +S&C (easy-day session, joint-friendly)" if w >= 3 and w != 18 and w != 19 else ""),
                    thu_type, thu_km)
     days["Fri"] = ("Rest — always", "rest", 0)
     if w == 19:
