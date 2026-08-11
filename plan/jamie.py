@@ -85,7 +85,7 @@ def build_week(w):
     days={}
     days["Mon"]=("Rest / mobility (see S&C)" if w!=33 else "Rest","rest",0)
     tue_km=qkm(w,"tue"); thu_km=qkm(w,"thu")
-    if 5<=w<=30: tue_txt+="  +S&C A"
+    if 5<=w<=30: tue_txt+="  +S&C A (hard-day session)"
     known=lr+tue_km+thu_km+((sat_fixed or 0) if w in (10,18) else 0)
     if w==33: known=0
     pool=max(v-known,0)
@@ -95,7 +95,7 @@ def build_week(w):
     else:
         fri_km=round(pool*0.22); wed_km=round(pool*0.42); sat_km=max(pool-fri_km-wed_km,0)
         if w<=30:
-            fri_txt=f"Recovery {fri_km} km easy  +S&C B"; fri_type="recovery"; fri_kmv=fri_km
+            fri_txt=f"Recovery {fri_km} km easy  +S&C B (easy-day session)"; fri_type="recovery"; fri_kmv=fri_km
         else:
             fri_txt="Rest" if w==33 else "Recovery 5 km easy"
             fri_type="rest" if w==33 else "recovery"; fri_kmv=0 if w==33 else 5

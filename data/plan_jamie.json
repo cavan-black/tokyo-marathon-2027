@@ -262,7 +262,7 @@
           "date": "2026-08-18",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 6–7 km + 6×20s strides  +S&C A",
+          "session": "Easy 6–7 km + 6×20s strides  +S&C A (hard-day session)",
           "target_km": 6
         },
         {
@@ -320,7 +320,7 @@
           "date": "2026-08-25",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 6–7 km + 6×20s strides  +S&C A",
+          "session": "Easy 6–7 km + 6×20s strides  +S&C A (hard-day session)",
           "target_km": 6
         },
         {
@@ -378,7 +378,7 @@
           "date": "2026-09-01",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 7 km + 6×20s strides + 4×30s hills  +S&C A",
+          "session": "Easy 7 km + 6×20s strides + 4×30s hills  +S&C A (hard-day session)",
           "target_km": 6
         },
         {
@@ -436,7 +436,7 @@
           "date": "2026-09-08",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 7 km + 6×20s strides + 4×30s hills  +S&C A",
+          "session": "Easy 7 km + 6×20s strides + 4×30s hills  +S&C A (hard-day session)",
           "target_km": 6
         },
         {
@@ -494,7 +494,7 @@
           "date": "2026-09-15",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 2×10 min @ T, 2 min jog  +S&C A",
+          "session": "Tempo: 2×10 min @ T, 2 min jog  +S&C A (hard-day session)",
           "target_km": 9
         },
         {
@@ -515,7 +515,7 @@
           "date": "2026-09-18",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 4 km easy  +S&C B",
+          "session": "Recovery 4 km easy  +S&C B (easy-day session)",
           "target_km": 4
         },
         {
@@ -552,7 +552,7 @@
           "date": "2026-09-22",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 8 km + 6×20s strides + 4×30s hills  +S&C A",
+          "session": "Easy 8 km + 6×20s strides + 4×30s hills  +S&C A (hard-day session)",
           "target_km": 9
         },
         {
@@ -573,7 +573,7 @@
           "date": "2026-09-25",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 3 km easy  +S&C B",
+          "session": "Recovery 3 km easy  +S&C B (easy-day session)",
           "target_km": 3
         },
         {
@@ -610,7 +610,7 @@
           "date": "2026-09-29",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×5 min @ T, 90s jog  +S&C A",
+          "session": "Threshold: 4×5 min @ T, 90s jog  +S&C A (hard-day session)",
           "target_km": 9
         },
         {
@@ -631,7 +631,7 @@
           "date": "2026-10-02",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 4 km easy  +S&C B",
+          "session": "Recovery 4 km easy  +S&C B (easy-day session)",
           "target_km": 4
         },
         {
@@ -668,7 +668,7 @@
           "date": "2026-10-06",
           "dow": "Tue",
           "type": "quality",
-          "session": "Cruise: 5×3 min @ T, 75s jog  +S&C A",
+          "session": "Cruise: 5×3 min @ T, 75s jog  +S&C A (hard-day session)",
           "target_km": 9
         },
         {
@@ -689,7 +689,7 @@
           "date": "2026-10-09",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C B",
+          "session": "Recovery 6 km easy  +S&C B (easy-day session)",
           "target_km": 6
         },
         {
@@ -726,7 +726,7 @@
           "date": "2026-10-13",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 20 min continuous @ T  +S&C A",
+          "session": "Tempo: 20 min continuous @ T  +S&C A (hard-day session)",
           "target_km": 9
         },
         {
@@ -747,7 +747,7 @@
           "date": "2026-10-16",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C B",
+          "session": "Recovery 6 km easy  +S&C B (easy-day session)",
           "target_km": 6
         },
         {
@@ -784,7 +784,7 @@
           "date": "2026-10-20",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 2×10 min @ T, 2 min jog  +S&C A",
+          "session": "Tempo: 2×10 min @ T, 2 min jog  +S&C A (hard-day session)",
           "target_km": 9
         },
         {
@@ -805,7 +805,7 @@
           "date": "2026-10-23",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 5 km easy  +S&C B",
+          "session": "Recovery 5 km easy  +S&C B (easy-day session)",
           "target_km": 5
         },
         {
@@ -842,7 +842,7 @@
           "date": "2026-10-27",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 8 km + 6×20s strides + 4×30s hills  +S&C A",
+          "session": "Easy 8 km + 6×20s strides + 4×30s hills  +S&C A (hard-day session)",
           "target_km": 9
         },
         {
@@ -863,7 +863,7 @@
           "date": "2026-10-30",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C B",
+          "session": "Recovery 6 km easy  +S&C B (easy-day session)",
           "target_km": 6
         },
         {
@@ -900,7 +900,7 @@
           "date": "2026-11-03",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×5 min @ T, 90s jog  +S&C A",
+          "session": "Threshold: 4×5 min @ T, 90s jog  +S&C A (hard-day session)",
           "target_km": 9
         },
         {
@@ -921,7 +921,7 @@
           "date": "2026-11-06",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C B",
+          "session": "Recovery 6 km easy  +S&C B (easy-day session)",
           "target_km": 6
         },
         {
@@ -958,7 +958,7 @@
           "date": "2026-11-10",
           "dow": "Tue",
           "type": "quality",
-          "session": "Cruise: 5×3 min @ T, 75s jog  +S&C A",
+          "session": "Cruise: 5×3 min @ T, 75s jog  +S&C A (hard-day session)",
           "target_km": 9
         },
         {
@@ -979,7 +979,7 @@
           "date": "2026-11-13",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 5 km easy  +S&C B",
+          "session": "Recovery 5 km easy  +S&C B (easy-day session)",
           "target_km": 5
         },
         {
@@ -1016,7 +1016,7 @@
           "date": "2026-11-17",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 20 min continuous @ T  +S&C A",
+          "session": "Tempo: 20 min continuous @ T  +S&C A (hard-day session)",
           "target_km": 9
         },
         {
@@ -1037,7 +1037,7 @@
           "date": "2026-11-20",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 2 km easy  +S&C B",
+          "session": "Recovery 2 km easy  +S&C B (easy-day session)",
           "target_km": 2
         },
         {
@@ -1074,7 +1074,7 @@
           "date": "2026-11-24",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×6 min @ T, 90s jog  +S&C A",
+          "session": "Threshold: 4×6 min @ T, 90s jog  +S&C A (hard-day session)",
           "target_km": 10
         },
         {
@@ -1095,7 +1095,7 @@
           "date": "2026-11-27",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 5 km easy  +S&C B",
+          "session": "Recovery 5 km easy  +S&C B (easy-day session)",
           "target_km": 5
         },
         {
@@ -1132,7 +1132,7 @@
           "date": "2026-12-01",
           "dow": "Tue",
           "type": "quality",
-          "session": "MP reps: 5×1.5 km @ MP, 90s jog  +S&C A",
+          "session": "MP reps: 5×1.5 km @ MP, 90s jog  +S&C A (hard-day session)",
           "target_km": 10
         },
         {
@@ -1153,7 +1153,7 @@
           "date": "2026-12-04",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C B",
+          "session": "Recovery 6 km easy  +S&C B (easy-day session)",
           "target_km": 6
         },
         {
@@ -1190,7 +1190,7 @@
           "date": "2026-12-08",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 2×15 min @ T, 3 min jog  +S&C A",
+          "session": "Tempo: 2×15 min @ T, 3 min jog  +S&C A (hard-day session)",
           "target_km": 10
         },
         {
@@ -1211,7 +1211,7 @@
           "date": "2026-12-11",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 7 km easy  +S&C B",
+          "session": "Recovery 7 km easy  +S&C B (easy-day session)",
           "target_km": 7
         },
         {
@@ -1248,7 +1248,7 @@
           "date": "2026-12-15",
           "dow": "Tue",
           "type": "quality",
-          "session": "5K reps: 5×1 km @ 5K pace, 90s jog  +S&C A",
+          "session": "5K reps: 5×1 km @ 5K pace, 90s jog  +S&C A (hard-day session)",
           "target_km": 10
         },
         {
@@ -1269,7 +1269,7 @@
           "date": "2026-12-18",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 5 km easy  +S&C B",
+          "session": "Recovery 5 km easy  +S&C B (easy-day session)",
           "target_km": 5
         },
         {
@@ -1306,7 +1306,7 @@
           "date": "2026-12-22",
           "dow": "Tue",
           "type": "quality",
-          "session": "MP: 6×1 km @ MP, 60s jog  +S&C A",
+          "session": "MP: 6×1 km @ MP, 60s jog  +S&C A (hard-day session)",
           "target_km": 10
         },
         {
@@ -1327,7 +1327,7 @@
           "date": "2026-12-25",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C B",
+          "session": "Recovery 6 km easy  +S&C B (easy-day session)",
           "target_km": 6
         },
         {
@@ -1364,7 +1364,7 @@
           "date": "2026-12-29",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×6 min @ T, 90s jog  +S&C A",
+          "session": "Threshold: 4×6 min @ T, 90s jog  +S&C A (hard-day session)",
           "target_km": 10
         },
         {
@@ -1385,7 +1385,7 @@
           "date": "2027-01-01",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C B",
+          "session": "Recovery 6 km easy  +S&C B (easy-day session)",
           "target_km": 6
         },
         {
@@ -1422,7 +1422,7 @@
           "date": "2027-01-05",
           "dow": "Tue",
           "type": "quality",
-          "session": "MP reps: 5×1.5 km @ MP, 90s jog  +S&C A",
+          "session": "MP reps: 5×1.5 km @ MP, 90s jog  +S&C A (hard-day session)",
           "target_km": 10
         },
         {
@@ -1443,7 +1443,7 @@
           "date": "2027-01-08",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C B",
+          "session": "Recovery 6 km easy  +S&C B (easy-day session)",
           "target_km": 6
         },
         {
@@ -1480,7 +1480,7 @@
           "date": "2027-01-12",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 2×15 min @ T, 3 min jog  +S&C A",
+          "session": "Tempo: 2×15 min @ T, 3 min jog  +S&C A (hard-day session)",
           "target_km": 10
         },
         {
@@ -1501,7 +1501,7 @@
           "date": "2027-01-15",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C B",
+          "session": "Recovery 6 km easy  +S&C B (easy-day session)",
           "target_km": 6
         },
         {
@@ -1538,7 +1538,7 @@
           "date": "2027-01-19",
           "dow": "Tue",
           "type": "quality",
-          "session": "5K reps: 5×1 km @ 5K pace, 90s jog  +S&C A",
+          "session": "5K reps: 5×1 km @ 5K pace, 90s jog  +S&C A (hard-day session)",
           "target_km": 10
         },
         {
@@ -1559,7 +1559,7 @@
           "date": "2027-01-22",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 5 km easy  +S&C B",
+          "session": "Recovery 5 km easy  +S&C B (easy-day session)",
           "target_km": 5
         },
         {
@@ -1596,7 +1596,7 @@
           "date": "2027-01-26",
           "dow": "Tue",
           "type": "quality",
-          "session": "MP: 6×1 km @ MP, 60s jog  +S&C A",
+          "session": "MP: 6×1 km @ MP, 60s jog  +S&C A (hard-day session)",
           "target_km": 10
         },
         {
@@ -1617,7 +1617,7 @@
           "date": "2027-01-29",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C B",
+          "session": "Recovery 6 km easy  +S&C B (easy-day session)",
           "target_km": 6
         },
         {
@@ -1654,7 +1654,7 @@
           "date": "2027-02-02",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×6 min @ T, 90s jog  +S&C A",
+          "session": "Threshold: 4×6 min @ T, 90s jog  +S&C A (hard-day session)",
           "target_km": 10
         },
         {
@@ -1675,7 +1675,7 @@
           "date": "2027-02-05",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 5 km easy  +S&C B",
+          "session": "Recovery 5 km easy  +S&C B (easy-day session)",
           "target_km": 5
         },
         {
@@ -1712,7 +1712,7 @@
           "date": "2027-02-09",
           "dow": "Tue",
           "type": "quality",
-          "session": "MP reps: 5×1.5 km @ MP, 90s jog  +S&C A",
+          "session": "MP reps: 5×1.5 km @ MP, 90s jog  +S&C A (hard-day session)",
           "target_km": 10
         },
         {
@@ -1733,7 +1733,7 @@
           "date": "2027-02-12",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 4 km easy  +S&C B",
+          "session": "Recovery 4 km easy  +S&C B (easy-day session)",
           "target_km": 4
         },
         {
@@ -2059,7 +2059,7 @@
       ]
     },
     "strength": {
-      "intro": "2×/week, 20–35 min. Injury-proof tendons/hips + improve running economy. TIMING: after runs, on your hard day (Tue = Session A) + one easy day (Fri = Session B). Never heavy legs before a long run or a match. Form first, load second.",
+      "intro": "2×/week, 20–35 min. Injury-proof tendons/hips + improve running economy. Same exercises both times — the A/B split is just which day, not different content. TIMING: after runs, on your hard day (Tue = Session A) + one easy day (Fri = Session B). Never heavy legs before a long run or a match. Form first, load second.",
       "blocks": [
         {
           "title": "Foundation · Weeks 1–18",

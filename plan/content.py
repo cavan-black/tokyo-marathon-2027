@@ -54,11 +54,13 @@ WARMUP_ROUTINE = [
 WARMUP_HEADERS = ["Exercise", "Duration / Reps", "Why"]
 
 
-def strength(found_weeks, power_weeks, football=False):
+def strength(found_weeks, power_weeks, football=False, a_day="Tue", b_day="Fri"):
     extra = " or a match" if football else ""
     return {
-        "intro": ("2×/week, 20–35 min. Injury-proof tendons/hips + improve running economy. "
-                  f"TIMING: after runs, on your hard day (Tue = Session A) + one easy day (Fri = Session B). "
+        "intro": ("2×/week, 20–35 min. Injury-proof tendons/hips + improve running economy. Same exercises "
+                  "both times — the A/B split is just which day, not different content. "
+                  f"TIMING: after runs, on your hard day ({a_day} = Session A) + one easy day "
+                  f"({b_day} = Session B). "
                   f"Never heavy legs before a long run{extra}. Form first, load second."),
         "blocks": [
             {"title": f"Foundation · Weeks {found_weeks}", "headers": SC_HEADERS,

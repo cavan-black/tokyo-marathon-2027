@@ -113,10 +113,10 @@ def build_week(w):
     thu_km = 0 if thu_type == "rest" else q
     days = {}
     days["Mon"] = ("Rest — always", "rest", 0)
-    days["Tue"] = (tue_txt + ("  +S&C A (joint-friendly)" if w >= 3 else ""), tue_type, tue_km)
+    days["Tue"] = (tue_txt + ("  +S&C A (hard-day session, joint-friendly)" if w >= 3 else ""), tue_type, tue_km)
     days["Wed"] = ("Rest, or an easy 20-30 min walk/swim/bike (low impact, protects the weight-loss deficit"
                    " without adding running-specific fatigue)", "rest", 0)
-    days["Thu"] = (thu_txt + ("  +S&C B (joint-friendly)" if w >= 3 and w != 18 and w != 19 else ""),
+    days["Thu"] = (thu_txt + ("  +S&C B (easy-day session, joint-friendly)" if w >= 3 and w != 18 and w != 19 else ""),
                    thu_type, thu_km)
     days["Fri"] = ("Rest — always", "rest", 0)
     if w == 19:
@@ -174,7 +174,7 @@ def content():
                 "up 4x/week beats occasional heroics.",
                 "Long run peaks at 18 km, not the full 21.1 — race-day adrenaline, taper freshness and crowd "
                 "energy reliably cover the gap; you don't need to have run the full distance in training."]},
-        "strength": C.strength("1–8", "9–16", football=False),
+        "strength": C.strength("1–8", "9–16", football=False, b_day="Thu"),
         "fuel": {
             "intro": "Two goals at once — losing weight AND building running fitness — are compatible, but only "
                      "with a moderate deficit. Aggressive dieting on top of a new training load is how people "
