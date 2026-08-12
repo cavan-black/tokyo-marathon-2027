@@ -109,7 +109,11 @@ def match(plan, runs, cross_runs=None):
                 lead = max(acts, key=lambda a: a["distance_km"])
                 pace = lead.get("pace_min_km")
             future = d["date"] > today_iso
-            if d["type"] != "rest" and actual_km <= 0.05 and cross_acts:
+            # Only CARDIO cross-training can stand in for a run (football yes, gym no —
+            # see strava.CARDIO_CROSS_TYPES). Non-cardio activities still ride along in
+            # cross_activities for display, they just never resolve the day.
+            sub_acts = [c for c in cross_acts if c.get("counts_as_substitute", True)]
+            if d["type"] != "rest" and actual_km <= 0.05 and sub_acts:
                 # a logged cross-training activity always resolves the day, even if the
                 # date is nominally "future" relative to today — it already happened.
                 status = "Substituted"
@@ -135,6 +139,7 @@ def match(plan, runs, cross_runs=None):
     weeks = {}
     for wk in plan["weeks"]:
         pk = ak = pk_due = done = partial = missed = substituted = replaced = quality_hit = quality_planned = 0
+        sub_km = 0  # target km of days covered by cross-training — never runnable, see below
         long_done = None
         for dd in by_week[wk["week"]]:
             future = dd.pop("future")
@@ -152,7 +157,7 @@ def match(plan, runs, cross_runs=None):
             # date, so they're tracked separately purely for display, never as a lesser
             # outcome.
             if status == "Done": done += 1
-            elif status == "Substituted": done += 1; substituted += 1
+            elif status == "Substituted": done += 1; substituted += 1; sub_km += dd["target_km"]
             elif status == "Replaced": done += 1; replaced += 1
             elif status == "Partial": partial += 1
             elif status == "Missed": missed += 1
@@ -163,17 +168,26 @@ def match(plan, runs, cross_runs=None):
                 long_done = (status in ("Done", "Replaced"))
         # coach-rule flag (suggestion, not auto-change) — judged against km DUE so
         # far this week, not the full week's target, so a Tuesday check-in doesn't
-        # read as "under-target" just because the week isn't finished yet.
-        if pk_due > 0 and ak < 0.70 * pk_due:
+        # read as "under-target" just because the week isn't finished yet. Substituted
+        # km come off the denominator too: those km were deliberately covered by
+        # cross-training and are never going to appear as running load, so counting
+        # them would flag an honoured week as under-target.
+        due_runnable = max(pk_due - sub_km, 0)
+        if due_runnable > 0 and ak < 0.70 * due_runnable:
             flag = "⚠ Under-target — consider holding volume / repeating the week"
         elif quality_planned and (quality_planned - quality_hit) >= 2:
             flag = "⚠ ≥2 quality sessions missed — prioritise them next week"
-        elif pk_due > 0 and ak > 1.15 * pk_due:
+        elif due_runnable > 0 and ak > 1.15 * due_runnable:
             flag = "⚠ Over-target — watch fatigue/injury; don't overcook"
         else:
             flag = "✓ On track"
         weeks[str(wk["week"])] = {
             "planned_km": round(pk, 1), "planned_km_due": round(pk_due, 1), "actual_km": round(ak, 1),
+            # km that were planned but got covered by cross-training, so they can never
+            # show up as running km. Anything judging volume-hit (e.g. the dashboard's
+            # "Crushed" chip) must measure against planned_km MINUS this, otherwise a week
+            # containing a substitution is mathematically incapable of hitting target.
+            "substituted_km": round(sub_km, 1),
             "done": done, "partial": partial, "missed": missed,
             "substituted": substituted, "replaced": replaced,
             "quality_hit": quality_hit, "quality_planned": quality_planned,

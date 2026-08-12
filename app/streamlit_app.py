@@ -201,6 +201,7 @@ STYLE = """<style>
 .sv .tag.act{color:var(--good);border-color:color-mix(in srgb,var(--good) 50%,var(--line));}
 .sv .tag.sub{color:var(--pA);border-color:color-mix(in srgb,var(--pA) 50%,var(--line));}
 .sv .tag.rep{color:var(--pD);border-color:color-mix(in srgb,var(--pD) 50%,var(--line));}
+.sv .tag.nosub{color:var(--muted);border-color:var(--line-strong);border-style:dashed;}
 .sv .sdot{width:9px;height:9px;border-radius:50%;flex:0 0 auto;}
 @media (max-width:820px){.sv .day{grid-template-columns:40px 46px 1fr;}.sv .day .type-chip,.sv .day .tags{display:none;}}
 .sv .t-rest{background:transparent;color:var(--faint);border:1px dashed var(--line-strong);}
@@ -525,7 +526,8 @@ def celebration_html(plan, progress):
         sub = f'{sess} — ' + " · ".join(stats)
     elif status == "Substituted":
         cross = d.get("cross_activities") or []
-        lead = cross[0] if cross else {}
+        # the cardio one is what actually covered the session — see day_html
+        lead = next((c for c in cross if c.get("counts_as_substitute", True)), cross[0] if cross else {})
         raw = lead.get("activity_type", "cross-training")
         what = CROSS_LABEL.get(raw, raw)
         dur = _format_duration(lead.get("moving_time_s"))
@@ -649,8 +651,14 @@ def day_html(d, pd_, today_iso):
     # progress overlay
     status = pd_.get("status")
     cross = pd_.get("cross_activities") or []
-    sub_raw = cross[0].get("activity_type", "cross-training") if cross else "cross-training"
+    # The activity that actually did the substituting is the cardio one — on a day with
+    # both (gym + football), cross[0] could easily be the gym session, which never
+    # substitutes for anything. Fall back to cross[0] for pre-split synced data.
+    sub_act = next((c for c in cross if c.get("counts_as_substitute", True)), cross[0] if cross else {})
+    sub_raw = sub_act.get("activity_type", "cross-training")
     sub_what = CROSS_LABEL.get(sub_raw, sub_raw)
+    # cardio-less activity sitting on an unfulfilled run day — shown, but it covers nothing
+    non_sub = [c for c in cross if not c.get("counts_as_substitute", True)]
     replaced_by = pd_.get("replaced_by")  # this day's session was missed, done elsewhere instead
     replaces = pd_.get("replaces")        # this day (usually rest) hosted another day's session
     dot = ""
@@ -681,6 +689,12 @@ def day_html(d, pd_, today_iso):
         tags += f'<span class="tag rep">↔ Covered {esc(replaces["dow"])}\'s session ({actual:.1f}k)</span>'
     elif actual:
         tags += f'<span class="tag act">✓ {actual:.1f}k{(" · " + pace) if pace else ""}</span>'
+    elif non_sub and typ != "rest":
+        # e.g. a gym session logged on a run day — say why it didn't cover the run rather
+        # than showing a bare "Missed" with no explanation for the activity sitting there.
+        nraw = non_sub[0].get("activity_type", "cross-training")
+        tags += (f'<span class="tag nosub">{CROSS_EMOJI.get(nraw, "🏋️")} '
+                 f'{esc(CROSS_LABEL.get(nraw, nraw))} — not cardio, doesn\'t cover the run</span>')
     return (f'<div class="day"><span class="dow">{esc(d["dow"])}</span>'
             f'<span class="chip type-chip {cls}">{esc(label)}</span>'
             f'<span class="{distcls}">{dist}</span>'
@@ -722,8 +736,13 @@ def weeks_html(plan, progress, cur):
                 chips += f'<span class="gate-chip">{esc(foc.split("(")[0][:16])}</span>'
             wsum_peek = wk_rows.get(str(w), {})
             total_sessions = wsum_peek.get("done", 0) + wsum_peek.get("partial", 0) + wsum_peek.get("missed", 0)
+            # Volume is judged against the km that were actually RUNNABLE — planned minus
+            # anything covered by cross-training. Substituted km can never show up as
+            # running load, so leaving them in the denominator made any week containing a
+            # substitution incapable of ever being "crushed", however well it was honoured.
+            runnable = max(wsum_peek.get("planned_km", 1) - wsum_peek.get("substituted_km", 0), 0)
             if (total_sessions and wsum_peek.get("missed", 0) == 0 and wsum_peek.get("partial", 0) == 0
-                    and wsum_peek.get("actual_km", 0) >= 0.95 * wsum_peek.get("planned_km", 1)):
+                    and (runnable <= 0 or wsum_peek.get("actual_km", 0) >= 0.95 * runnable)):
                 chips += '<span class="crushed-chip">🏆 Crushed</span>'
             if w == cur:
                 chips += '<span class="now-chip">📍 This week</span>'
@@ -953,7 +972,12 @@ LEGEND = ('<div class="legend">'
           '<span><i class="chip t-race" style="width:22px">&nbsp;</i> Race</span>'
           '<span><span class="sdot" style="background:var(--good)"></span> done '
           '<span class="sdot" style="background:var(--warn)"></span> partial '
-          '<span class="sdot" style="background:var(--accent)"></span> missed</span></div>')
+          '<span class="sdot" style="background:var(--accent)"></span> missed '
+          '<span class="sdot" style="background:var(--pA)"></span> substituted '
+          '<span class="sdot" style="background:var(--pD)"></span> replaced</span>'
+          '<span class="mut">A substitution has to be <b>cardio</b> to cover a run — football, '
+          'cycling, swimming all count; a gym/weights session doesn\'t (it\'s a different '
+          'stimulus, and it\'s already scheduled separately as your S&amp;C).</span></div>')
 
 
 # ---------------- Analytics ----------------

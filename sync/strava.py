@@ -81,9 +81,18 @@ def _privacy_trimmed_route(encoded, frac=0.12, min_drop=5):
 
 
 RUN_TYPES = ("Run", "TrailRun", "VirtualRun")
-# Non-running activities that can stand in for a planned run day (e.g. Jamie's football)
-# without being counted as running km — see sync/match.py's "Substituted" status.
-CROSS_TYPES = ("Soccer", "Workout", "WeightTraining", "Hike", "Walk", "Ride", "Swim")
+# Cardio cross-training that CAN stand in for a planned run day (e.g. Jamie's football)
+# without being counted as running km — see sync/match.py's "Substituted" status. The
+# aerobic stimulus is comparable enough that the day counts as satisfied.
+CARDIO_CROSS_TYPES = ("Soccer", "Ride", "Swim", "Hike", "Walk", "Rowing", "Elliptical",
+                      "StairStepper", "Kayaking", "NordicSki", "BackcountrySki", "Snowboard")
+# Logged and shown on the day, but NEVER a valid substitute for a run: strength work is a
+# different stimulus entirely, and it's already separately scheduled as the S&C session —
+# counting it would both excuse a missed run and double-count the gym. "Workout" is
+# Strava's generic catch-all bucket, so it can't be affirmatively verified as cardio and
+# is treated the same way.
+NON_CARDIO_CROSS_TYPES = ("WeightTraining", "Workout", "Crossfit", "Yoga")
+CROSS_TYPES = CARDIO_CROSS_TYPES + NON_CARDIO_CROSS_TYPES
 
 
 EARLY_HOUR_CUTOFF = 4  # activities starting before this hour count as the night before
@@ -133,6 +142,15 @@ def simplify(activities):
 
 
 def simplify_cross(activities):
-    """Non-running activities (football, gym, etc.) that can substitute for a planned
-    run day — tracked separately so they never inflate running km/ACWR."""
-    return [_simplify_one(a) for a in activities if a.get("type") in CROSS_TYPES]
+    """Non-running activities (football, gym, etc.) — tracked separately so they never
+    inflate running km/ACWR. Each carries counts_as_substitute so sync/match.py can tell
+    a cardio session that genuinely covers a missed run from a gym session that doesn't."""
+    out = []
+    for a in activities:
+        typ = a.get("type")
+        if typ not in CROSS_TYPES:
+            continue
+        s = _simplify_one(a)
+        s["counts_as_substitute"] = typ in CARDIO_CROSS_TYPES
+        out.append(s)
+    return out
