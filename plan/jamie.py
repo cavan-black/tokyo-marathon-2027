@@ -81,6 +81,7 @@ def qkm(w, which):
 def build_week(w):
     v=VOL[w-1]; lr=LR[w-1]; early=w<=8
     tue_txt,tue_type=tue(w); thu_txt,thu_type=thu(w); sun_txt,sun_type=sun(w)
+    tue_txt = C.note_wu(tue_txt, tue_type); thu_txt = C.note_wu(thu_txt, thu_type)
     sat_txt,sat_type,sat_fixed=sat(w)
     days={}
     days["Mon"]=("Rest / mobility (see S&C)" if w!=33 else "Rest","rest",0)

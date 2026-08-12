@@ -54,6 +54,20 @@ WARMUP_ROUTINE = [
 WARMUP_HEADERS = ["Exercise", "Duration / Reps", "Why"]
 
 
+def note_wu(txt, typ):
+    """A quality session's km target is the WHOLE session (warm-up + reps/tempo + jog
+    recoveries + cooldown), not just the structured work described in the text — e.g. a
+    13 km session built around 5x1km reps has ~7 km of warm-up/cooldown/jog around that
+    5 km of hard running. Flag it in the text so the number doesn't read as a mismatch.
+    Skip sessions that already state their own total ("Medium-long 16 km w/ middle 8 km
+    @ MP") — adding the note there would double up rather than clarify."""
+    if typ != "quality" or "w/u" in txt:
+        return txt
+    if txt.startswith("Medium-long") or " km w/" in txt:
+        return txt
+    return txt + " + w/u & c/d"
+
+
 def strength(found_weeks, power_weeks, football=False, a_day="Tue", b_day="Fri"):
     extra = " or a match" if football else ""
     return {

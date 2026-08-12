@@ -494,7 +494,7 @@
           "date": "2026-09-15",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 2×10 min @ T, 2 min jog  +S&C (hard-day session)",
+          "session": "Tempo: 2×10 min @ T, 2 min jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 9
         },
         {
@@ -610,7 +610,7 @@
           "date": "2026-09-29",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×5 min @ T, 90s jog  +S&C (hard-day session)",
+          "session": "Threshold: 4×5 min @ T, 90s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 9
         },
         {
@@ -668,7 +668,7 @@
           "date": "2026-10-06",
           "dow": "Tue",
           "type": "quality",
-          "session": "Cruise: 5×3 min @ T, 75s jog  +S&C (hard-day session)",
+          "session": "Cruise: 5×3 min @ T, 75s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 9
         },
         {
@@ -726,7 +726,7 @@
           "date": "2026-10-13",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 20 min continuous @ T  +S&C (hard-day session)",
+          "session": "Tempo: 20 min continuous @ T + w/u & c/d  +S&C (hard-day session)",
           "target_km": 9
         },
         {
@@ -784,7 +784,7 @@
           "date": "2026-10-20",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 2×10 min @ T, 2 min jog  +S&C (hard-day session)",
+          "session": "Tempo: 2×10 min @ T, 2 min jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 9
         },
         {
@@ -900,7 +900,7 @@
           "date": "2026-11-03",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×5 min @ T, 90s jog  +S&C (hard-day session)",
+          "session": "Threshold: 4×5 min @ T, 90s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 9
         },
         {
@@ -958,7 +958,7 @@
           "date": "2026-11-10",
           "dow": "Tue",
           "type": "quality",
-          "session": "Cruise: 5×3 min @ T, 75s jog  +S&C (hard-day session)",
+          "session": "Cruise: 5×3 min @ T, 75s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 9
         },
         {
@@ -1016,7 +1016,7 @@
           "date": "2026-11-17",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 20 min continuous @ T  +S&C (hard-day session)",
+          "session": "Tempo: 20 min continuous @ T + w/u & c/d  +S&C (hard-day session)",
           "target_km": 9
         },
         {
@@ -1074,7 +1074,7 @@
           "date": "2026-11-24",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×6 min @ T, 90s jog  +S&C (hard-day session)",
+          "session": "Threshold: 4×6 min @ T, 90s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1132,7 +1132,7 @@
           "date": "2026-12-01",
           "dow": "Tue",
           "type": "quality",
-          "session": "MP reps: 5×1.5 km @ MP, 90s jog  +S&C (hard-day session)",
+          "session": "MP reps: 5×1.5 km @ MP, 90s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1190,7 +1190,7 @@
           "date": "2026-12-08",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 2×15 min @ T, 3 min jog  +S&C (hard-day session)",
+          "session": "Tempo: 2×15 min @ T, 3 min jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1248,7 +1248,7 @@
           "date": "2026-12-15",
           "dow": "Tue",
           "type": "quality",
-          "session": "5K reps: 5×1 km @ 5K pace, 90s jog  +S&C (hard-day session)",
+          "session": "5K reps: 5×1 km @ 5K pace, 90s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1306,7 +1306,7 @@
           "date": "2026-12-22",
           "dow": "Tue",
           "type": "quality",
-          "session": "MP: 6×1 km @ MP, 60s jog  +S&C (hard-day session)",
+          "session": "MP: 6×1 km @ MP, 60s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1364,7 +1364,7 @@
           "date": "2026-12-29",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×6 min @ T, 90s jog  +S&C (hard-day session)",
+          "session": "Threshold: 4×6 min @ T, 90s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1422,7 +1422,7 @@
           "date": "2027-01-05",
           "dow": "Tue",
           "type": "quality",
-          "session": "MP reps: 5×1.5 km @ MP, 90s jog  +S&C (hard-day session)",
+          "session": "MP reps: 5×1.5 km @ MP, 90s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1480,7 +1480,7 @@
           "date": "2027-01-12",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 2×15 min @ T, 3 min jog  +S&C (hard-day session)",
+          "session": "Tempo: 2×15 min @ T, 3 min jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1538,7 +1538,7 @@
           "date": "2027-01-19",
           "dow": "Tue",
           "type": "quality",
-          "session": "5K reps: 5×1 km @ 5K pace, 90s jog  +S&C (hard-day session)",
+          "session": "5K reps: 5×1 km @ 5K pace, 90s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1596,7 +1596,7 @@
           "date": "2027-01-26",
           "dow": "Tue",
           "type": "quality",
-          "session": "MP: 6×1 km @ MP, 60s jog  +S&C (hard-day session)",
+          "session": "MP: 6×1 km @ MP, 60s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1654,7 +1654,7 @@
           "date": "2027-02-02",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×6 min @ T, 90s jog  +S&C (hard-day session)",
+          "session": "Threshold: 4×6 min @ T, 90s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1712,7 +1712,7 @@
           "date": "2027-02-09",
           "dow": "Tue",
           "type": "quality",
-          "session": "MP reps: 5×1.5 km @ MP, 90s jog  +S&C (hard-day session)",
+          "session": "MP reps: 5×1.5 km @ MP, 90s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1770,7 +1770,7 @@
           "date": "2027-02-16",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 3×5 min @ T, 90s jog",
+          "session": "Threshold: 3×5 min @ T, 90s jog + w/u & c/d",
           "target_km": 6
         },
         {
@@ -1784,7 +1784,7 @@
           "date": "2027-02-18",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP: 2×3 km @ MP, 3 min jog",
+          "session": "MP: 2×3 km @ MP, 3 min jog + w/u & c/d",
           "target_km": 6
         },
         {
