@@ -88,11 +88,24 @@ the correct pre-start state. Connect Strava to light it up.
 
 ## 4. Auto-sync a few times a day (GitHub Actions)
 
-Already configured in `.github/workflows/sync.yml` (06:00 / 13:00 / 21:00 UTC + manual).
-In your GitHub repo → **Settings → Secrets and variables → Actions**, add the same four
-secrets as above. The workflow pulls Strava, rebuilds `data/*.json`, and commits it;
+`.github/workflows/sync.yml` runs at 06:00 / 13:00 / 21:00 UTC and on demand. In your
+GitHub repo → **Settings → Secrets and variables → Actions**, add `STRAVA_CLIENT_ID`,
+`STRAVA_CLIENT_SECRET` and one `STRAVA_REFRESH_TOKEN_<RUNNER>` per connected runner —
+the same values as the `.env` above, minus `GH_PAT` (Actions commits with its own
+token). The workflow pulls Strava, rebuilds `data/progress_*.json`, and commits it;
 Streamlit Cloud auto-redeploys on the new commit. Trigger a manual run any time from the
 **Actions** tab → *Strava sync* → *Run workflow*.
+
+Three things worth knowing about it:
+
+- It commits on **every** run, because `last_sync` changes each time — that's what keeps
+  the dashboard's "last synced" honest, at the cost of three commits a day.
+- GitHub **disables scheduled workflows after 60 days with no repo activity**, and queues
+  scheduled runs on a best-effort basis, so they drift by a few minutes. Neither matters
+  much for a training log, but a silently-paused sync looks identical to a quiet week.
+- If Strava ever rotates a refresh token, the run can only *print* the new one — nothing
+  in Actions can rewrite a repo secret. The workflow raises a warning on the run summary
+  when that happens; update the secret or every later run fails to authenticate.
 
 ## Sessions with no device behind them
 
