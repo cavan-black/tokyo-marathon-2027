@@ -1,0 +1,89 @@
+name: Strava sync
+
+# Pulls each runner's Strava activities, rematches them against the plan, and commits
+# data/progress_*.json. Streamlit Community Cloud redeploys on the new commit, so the
+# dashboard follows along without anyone running the sync by hand.
+
+on:
+  schedule:
+    # 06:00 / 13:00 / 21:00 UTC — morning, midday and evening sessions all land the same
+    # day. GitHub queues scheduled runs on a best-effort basis and they can drift by a
+    # good few minutes under load, which is fine for a training log.
+    - cron: "0 6,13,21 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Never let two syncs race: both would write data/progress_*.json off the same base and
+# the loser's push would be rejected.
+concurrency:
+  group: strava-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.txt
+
+      - run: pip install -r requirements.txt
+
+      - name: Check credentials are configured
+        env:
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+        run: |
+          # run_sync.py skips a runner with no credentials and exits 0, so without this a
+          # missing or misnamed secret looks exactly like a healthy no-op sync forever.
+          if [ -z "$STRAVA_CLIENT_ID" ] || [ -z "$STRAVA_CLIENT_SECRET" ]; then
+            echo "::error::STRAVA_CLIENT_ID / STRAVA_CLIENT_SECRET are not set in this repo's Actions secrets."
+            exit 1
+          fi
+
+      - name: Sync from Strava
+        env:
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          STRAVA_REFRESH_TOKEN_CAV: ${{ secrets.STRAVA_REFRESH_TOKEN_CAV }}
+          STRAVA_REFRESH_TOKEN_JAMIE: ${{ secrets.STRAVA_REFRESH_TOKEN_JAMIE }}
+          STRAVA_REFRESH_TOKEN_STEPHEN: ${{ secrets.STRAVA_REFRESH_TOKEN_STEPHEN }}
+          STRAVA_REFRESH_TOKEN_AMBER: ${{ secrets.STRAVA_REFRESH_TOKEN_AMBER }}
+        run: |
+          set -o pipefail
+          python sync/run_sync.py 2>&1 | tee sync.log
+
+      - name: Flag a rotated refresh token
+        if: always()
+        run: |
+          # Strava may hand back a new refresh token; run_sync.py can only print it, since
+          # nothing here can write a repo secret. Left unnoticed, every later run fails to
+          # authenticate — so surface it in the run summary rather than burying it in logs.
+          if [ -f sync.log ] && grep -q "refresh token rotated" sync.log; then
+            echo "::warning::A Strava refresh token rotated — update the matching Actions secret (see the sync step's log for the new value)."
+            grep "refresh token rotated" sync.log >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Commit refreshed progress
+        run: |
+          rm -f sync.log
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # Only data/ is ever written by a sync; staging anything else would mean the
+          # workflow had modified code, which it has no business doing.
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No change to commit."
+            exit 0
+          fi
+          git commit -m "Refresh synced progress data"
+          # A run that started before someone pushed would otherwise fail here.
+          git pull --rebase --autostash origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
