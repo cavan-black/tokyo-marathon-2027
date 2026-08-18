@@ -481,6 +481,35 @@ def _format_duration(secs):
     return f"{h}:{m:02d}:{s:02d}" if h else f"{m}:{s:02d}"
 
 
+def _cross_summary(cross):
+    """Roll a day's substitute-eligible cross-training up into the same shape sync/match.py
+    stores in substituted_by, so both ends of a day-shifted substitution read identically."""
+    acts = [c for c in (cross or []) if c.get("counts_as_substitute", True)]
+    if not acts:
+        return {}
+    lead = max(acts, key=lambda a: a.get("moving_time_s") or 0)
+    return {"count": len(acts), "activity_type": lead.get("activity_type"),
+            "moving_time_s": sum((a.get("moving_time_s") or 0) for a in acts),
+            "distance_km": round(sum((a.get("distance_km") or 0) for a in acts), 2)}
+
+
+def _shifted_sub_text(info):
+    """"3× walk · 2:10:00 · 14.2 km" — a day-shifted substitution is usually several
+    activities (a rucking day gets logged in chunks), so the count and the day totals are
+    the honest summary, not the single longest one."""
+    raw = info.get("activity_type") or "cross-training"
+    what = CROSS_LABEL.get(raw, raw)
+    n = info.get("count") or 1
+    bits = [f"{n}× {what.lower()}" if n > 1 else what]
+    dur = _format_duration(info.get("moving_time_s"))
+    if dur:
+        bits.append(dur)
+    km = info.get("distance_km") or 0
+    if km >= 0.1:
+        bits.append(f"{km:.1f} km")
+    return " · ".join(bits)
+
+
 def celebration_html(plan, progress):
     """Today's status: a call-to-action if the run's still to do, a dopamine hit with
     stats once it's logged. Silent on rest days — except a rest day that ended up
@@ -491,8 +520,16 @@ def celebration_html(plan, progress):
     if not d:
         return ""
     replaces = d.get("replaces")
-    if d.get("type") == "rest" and not (replaces and d.get("actual_km", 0) > 0.5):
+    substitutes = d.get("substitutes")  # rest day whose cross-training covered another day
+    if d.get("type") == "rest" and not (replaces and d.get("actual_km", 0) > 0.5) and not substitutes:
         return ""
+    if substitutes and d.get("actual_km", 0) <= 0.5:
+        info = _cross_summary(d.get("cross_activities"))
+        emoji = CROSS_EMOJI.get(info.get("activity_type"), "🔁")
+        title = f"{substitutes['dow']}'s session, covered today instead — still counts! 🔁"
+        sub = f"{substitutes['session']} — {_shifted_sub_text(info)}"
+        return (f'<div class="celebrate sub"><span class="ce-emoji">{emoji}</span>'
+                f'<div><div class="ce-title">{esc(title)}</div><div class="ce-sub">{esc(sub)}</div></div></div>')
     if replaces and d.get("actual_km", 0) > 0.5:
         acts = d.get("activities") or []
         lead = max(acts, key=lambda a: a.get("distance_km", 0)) if acts else {}
@@ -525,15 +562,21 @@ def celebration_html(plan, progress):
             title, emoji, cls = "Good start today — a bit more would seal it 💪", "⏱️", "celebrate"
         sub = f'{sess} — ' + " · ".join(stats)
     elif status == "Substituted":
-        cross = d.get("cross_activities") or []
-        # the cardio one is what actually covered the session — see day_html
-        lead = next((c for c in cross if c.get("counts_as_substitute", True)), cross[0] if cross else {})
-        raw = lead.get("activity_type", "cross-training")
-        what = CROSS_LABEL.get(raw, raw)
-        dur = _format_duration(lead.get("moving_time_s"))
-        emoji = CROSS_EMOJI.get(raw, "🔁")
-        title, cls = f"Substituted with {what} — still counts! 🔁", "celebrate sub"
-        sub = f'{sess} — substituted with {what}' + (f' ({dur})' if dur else '')
+        sub_by = d.get("substituted_by")  # covered by cross-training on a different day
+        if sub_by:
+            emoji, cls = CROSS_EMOJI.get(sub_by.get("activity_type"), "🔁"), "celebrate sub"
+            title = f"Covered on {sub_by['dow']} instead — still counts! 🔁"
+            sub = f'{sess} — {_shifted_sub_text(sub_by)} on {sub_by["dow"]}'
+        else:
+            cross = d.get("cross_activities") or []
+            # the cardio one is what actually covered the session — see day_html
+            lead = next((c for c in cross if c.get("counts_as_substitute", True)), cross[0] if cross else {})
+            raw = lead.get("activity_type", "cross-training")
+            what = CROSS_LABEL.get(raw, raw)
+            dur = _format_duration(lead.get("moving_time_s"))
+            emoji = CROSS_EMOJI.get(raw, "🔁")
+            title, cls = f"Substituted with {what} — still counts! 🔁", "celebrate sub"
+            sub = f'{sess} — substituted with {what}' + (f' ({dur})' if dur else '')
     elif status == "Upcoming":
         title, emoji, cls = "Today's session", "🎯", "celebrate todo"
         sub = sess + (f' — {target:g} km planned' if target else '')
@@ -661,9 +704,15 @@ def day_html(d, pd_, today_iso):
     non_sub = [c for c in cross if not c.get("counts_as_substitute", True)]
     replaced_by = pd_.get("replaced_by")  # this day's session was missed, done elsewhere instead
     replaces = pd_.get("replaces")        # this day (usually rest) hosted another day's session
+    # cross-training on a *different* day that covered this session, and the mirror of it:
+    # this (rest) day's cross-training covering another day — see sync/match.py
+    sub_by = pd_.get("substituted_by")
+    substitutes = pd_.get("substitutes")
     dot = ""
     if status in STATUS_COLOR:
-        if status == "Substituted":
+        if status == "Substituted" and sub_by:
+            title = f"Substituted — {_shifted_sub_text(sub_by)} on {sub_by['dow']}"
+        elif status == "Substituted":
             title = f"Substituted — {sub_what}"
         elif status == "Replaced" and replaced_by:
             title = f"Replaced — ran {replaced_by['dow']} instead"
@@ -679,7 +728,11 @@ def day_html(d, pd_, today_iso):
     if "@ MP" in sess and "no MP" not in sess:
         tags += '<span class="tag mp">MP</span>'
     actual, pace = pd_.get("actual_km", 0), pd_.get("pace_str")
-    if status == "Substituted":
+    if status == "Substituted" and sub_by:
+        emoji = CROSS_EMOJI.get(sub_by.get("activity_type"), "🔁")
+        tags += (f'<span class="tag sub">{emoji} {esc(sub_by["dow"])} instead — '
+                 f'{esc(_shifted_sub_text(sub_by))}</span>')
+    elif status == "Substituted":
         emoji = CROSS_EMOJI.get(sub_raw, "🔁")
         tags += f'<span class="tag sub">{emoji} Substituted — {esc(sub_what)}</span>'
     elif status == "Replaced" and replaced_by:
@@ -687,6 +740,9 @@ def day_html(d, pd_, today_iso):
         tags += f'<span class="tag rep">↔ Ran {esc(replaced_by["dow"])} instead ({km:.1f}k)</span>'
     elif replaces:
         tags += f'<span class="tag rep">↔ Covered {esc(replaces["dow"])}\'s session ({actual:.1f}k)</span>'
+    elif substitutes:
+        tags += (f'<span class="tag sub">↔ Covered {esc(substitutes["dow"])}\'s session — '
+                 f'{esc(_shifted_sub_text(_cross_summary(cross)))}</span>')
     elif actual:
         tags += f'<span class="tag act">✓ {actual:.1f}k{(" · " + pace) if pace else ""}</span>'
     elif non_sub and typ != "rest":
