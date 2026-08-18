@@ -33,8 +33,22 @@ def classify(target_km, actual_km, typ):
 
 REPLACEMENT_WINDOW_DAYS = 3  # how far a missed session's real make-up day can be searched
 
+# Bar a day-shifted CROSS-TRAINING make-up has to clear before it covers a missed run
+# (e.g. Sunday's long run walked on Monday's rest day with a loaded pack). Same-day
+# substitution needs no size test — being logged on the day is evidence enough that it
+# was the session — but a make-up on a *different* day is a claim about a day that
+# otherwise reads "Missed", so it has to look like a real session: this many minutes
+# total, and at least this share of the missed session's time on feet. Without a bar a
+# 15-minute stroll on a rest day would silently retire a 20 km long run.
+MIN_SHIFTED_SUB_MINUTES = 30
+MIN_SHIFTED_SUB_TIME_RATIO = 0.5
+# Coarse min/km used only to turn a session's target km into "roughly this long on
+# foot" for the test above. Deliberately a mid-field easy pace rather than any one
+# runner's, since it's a threshold, not a number anyone sees.
+EASY_PACE_MIN_KM = 5.5
 
-def _reconcile_replacements(all_days):
+
+def _reconcile_replacements(all_days, today_iso):
     """Detect a missed session that actually got run on a different (rest) day nearby —
     e.g. Sunday's long run missed, then run on Monday's rest day instead. Deliberately a
     global date-window search rather than per-plan-week: a Sun->Mon swap, the single most
@@ -42,8 +56,15 @@ def _reconcile_replacements(all_days):
     Only matches rest days absorbing real running km against a missed non-rest day with a
     similarly-sized target, within REPLACEMENT_WINDOW_DAYS either direction, preferring
     the closest date and then the closest km match. Mutates all_days (a date-sorted list)
-    in place."""
-    missed = [dd for dd in all_days if dd["type"] != "rest" and dd["status"] == "Missed" and dd["target_km"] > 0]
+    in place.
+
+    Only sessions strictly BEFORE today can be claimed. Today's own session reads "Missed"
+    until something is logged against it, so without this guard a make-up run gets credited
+    to a session that hasn't had its chance yet — and on a tie (yesterday's rest day sits
+    one day from both Sunday's long run and today's quality) the km match alone decides it,
+    which is how Sunday's long run ends up still marked missed."""
+    missed = [dd for dd in all_days if dd["type"] != "rest" and dd["status"] == "Missed"
+              and dd["target_km"] > 0 and dd["date"] < today_iso]
     surplus = [dd for dd in all_days if dd["type"] == "rest" and dd["actual_km"] > 0.5]
     used = set()
     for sd in surplus:
@@ -71,6 +92,77 @@ def _reconcile_replacements(all_days):
                                "type": best["type"], "target_km": best["target_km"]}
 
 
+def _cardio_cross(day):
+    """The cross-training logged on a day that's actually eligible to stand in for a run."""
+    return [c for c in day.get("cross_activities") or [] if c.get("counts_as_substitute", True)]
+
+
+def _cross_minutes(acts):
+    return sum((a.get("moving_time_s") or 0) for a in acts) / 60.0
+
+
+def _reconcile_shifted_substitutions(all_days, today_iso):
+    """Detect a missed session covered by CROSS-TRAINING done on a nearby rest day — e.g.
+    Sunday's long run missed, then walked on Monday's rest day with a heavy pack.
+
+    Same shape as _reconcile_replacements, but the make-up isn't a run, so the outcome is
+    "Substituted", not "Replaced": the km never join actual_km/ACWR (walking is not
+    running load, however loaded the bag), they only come off the week's runnable
+    denominator via substituted_km — exactly like a same-day substitution.
+
+    ALL eligible activities on the covering day are aggregated, not just the longest: a
+    rucking or walking day is normally logged as several separate activities, and judging
+    it on one of them would throw away most of the effort. Only days strictly in the past
+    can be covered — a session that hasn't had its chance yet is "Upcoming", not something
+    yesterday's walk retroactively retires. Mutates all_days (a date-sorted list) in place."""
+    missed = [dd for dd in all_days
+              if dd["type"] != "rest" and dd["status"] == "Missed"
+              and dd["target_km"] > 0 and dd["date"] < today_iso]
+    if not missed:
+        return
+    # Only an otherwise-empty rest day donates: cross-training on a run day is already
+    # resolved same-day, and a rest day that hosted a real run is _reconcile_replacements'
+    # case and has been claimed by it already (this runs second, so runs win).
+    donors = []
+    for dd in all_days:
+        if dd["type"] != "rest" or dd["actual_km"] > 0.05 or dd.get("replaces"):
+            continue
+        acts = _cardio_cross(dd)
+        minutes = _cross_minutes(acts)
+        if acts and minutes >= MIN_SHIFTED_SUB_MINUTES:
+            donors.append((dd, acts, minutes))
+
+    used = set()
+    for dd, acts, minutes in donors:
+        dd_date = date.fromisoformat(dd["date"])
+        candidates = []
+        for md in missed:
+            if md["date"] in used:
+                continue
+            gap = abs((date.fromisoformat(md["date"]) - dd_date).days)
+            if gap > REPLACEMENT_WINDOW_DAYS:
+                continue
+            est_minutes = md["target_km"] * EASY_PACE_MIN_KM
+            if minutes < MIN_SHIFTED_SUB_TIME_RATIO * est_minutes:
+                continue
+            candidates.append((gap, abs(minutes - est_minutes), md))
+        if not candidates:
+            continue
+        # closest date first, then the session this effort most closely resembles in time
+        _, _, best = min(candidates, key=lambda c: (c[0], c[1]))
+        used.add(best["date"])
+        lead = max(acts, key=lambda a: a.get("moving_time_s") or 0)
+        best["status"] = "Substituted"
+        best["substituted_by"] = {
+            "date": dd["date"], "dow": dd["dow"], "count": len(acts),
+            "activity_type": lead.get("activity_type"),
+            "moving_time_s": int(round(minutes * 60)),
+            "distance_km": round(sum(a.get("distance_km") or 0 for a in acts), 2),
+        }
+        dd["substitutes"] = {"date": best["date"], "dow": best["dow"], "session": best["session"],
+                             "type": best["type"], "target_km": best["target_km"]}
+
+
 def match(plan, runs, cross_runs=None):
     """Return a progress dict keyed by date + weekly rollups.
 
@@ -83,7 +175,11 @@ def match(plan, runs, cross_runs=None):
     Monday's rest day) and marks the missed day "Replaced" instead — see
     _reconcile_replacements. Unlike a substitution, the km already counts toward
     actual_km/ACWR as normal since it's a real run, just logged against its own real
-    calendar day."""
+    calendar day.
+
+    Cross-training make-ups shift too: a missed session covered by cardio cross-training
+    on a nearby rest day (Sunday's long run walked on Monday) is "Substituted" with the
+    covering day recorded in substituted_by — see _reconcile_shifted_substitutions."""
     by_date = defaultdict(list)
     for r in runs:
         if r["date"]:
@@ -128,7 +224,9 @@ def match(plan, runs, cross_runs=None):
                 "pace_min_km": pace, "pace_str": _fmt_pace(pace),
                 "activities": acts, "cross_activities": cross_acts,
             })
-    _reconcile_replacements(all_days)
+    # runs first: a real make-up run always beats a cross-training one for the same day
+    _reconcile_replacements(all_days, today_iso)
+    _reconcile_shifted_substitutions(all_days, today_iso)
 
     # Pass 2: regroup by week and aggregate.
     by_week = defaultdict(list)
