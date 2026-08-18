@@ -13,7 +13,7 @@ ROOT = os.path.abspath(os.path.join(HERE, ".."))
 DATA = os.path.join(ROOT, "data")
 sys.path.insert(0, ROOT)
 
-from sync import strava, match  # noqa: E402
+from sync import strava, match, manual  # noqa: E402
 
 
 def load_env():
@@ -42,7 +42,10 @@ def sync_runner(runner_id, write=True):
         print(f"[{runner_id}] no plan_{runner_id}.json — run plan_generator first."); return None
     plan = json.load(open(plan_path, encoding="utf-8"))
     if not (cid and csecret and rtoken):
-        print(f"[{runner_id}] no Strava credentials — leaving progress untouched."); return None
+        pending = len(manual.load(DATA, runner_id))
+        extra = f" ({pending} hand-entered session(s) waiting on a sync)" if pending else ""
+        print(f"[{runner_id}] no Strava credentials — leaving progress untouched.{extra}")
+        return None
 
     start = datetime.fromisoformat(plan["meta"]["start"]).replace(tzinfo=timezone.utc)
     now = datetime.now(timezone.utc)
@@ -52,6 +55,10 @@ def sync_runner(runner_id, write=True):
     activities = strava.get_activities(access, after_epoch=after)
     runs = strava.simplify(activities)
     cross = strava.simplify_cross(activities)
+    # sessions with no device behind them, written down by hand — cross-training only, so
+    # they can satisfy a day but never add running km/ACWR. See sync/manual.py.
+    hand = manual.load(DATA, runner_id, synced=cross)
+    cross += hand
     progress = match.match(plan, runs, cross_runs=cross)
     progress["last_sync"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
     progress["tracker"] = match.tracker(progress)
@@ -61,7 +68,8 @@ def sync_runner(runner_id, write=True):
     if new_refresh != rtoken:
         print(f"[{runner_id}] NOTE: refresh token rotated → update secret to: {new_refresh}")
     logged = sum(1 for d in progress["days"].values() if d["status"] not in ("Rest", "Missed", "Upcoming"))
-    print(f"[{runner_id}] {len(runs)} runs · {logged} sessions logged · {progress['last_sync']}")
+    byhand = f" · {len(hand)} by hand" if hand else ""
+    print(f"[{runner_id}] {len(runs)} runs{byhand} · {logged} sessions logged · {progress['last_sync']}")
     return progress
 
 
