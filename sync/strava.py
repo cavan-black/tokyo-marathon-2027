@@ -85,7 +85,12 @@ RUN_TYPES = ("Run", "TrailRun", "VirtualRun")
 # without being counted as running km — see sync/match.py's "Substituted" status. The
 # aerobic stimulus is comparable enough that the day counts as satisfied.
 CARDIO_CROSS_TYPES = ("Soccer", "Ride", "Swim", "Hike", "Walk", "Rowing", "Elliptical",
-                      "StairStepper", "Kayaking", "NordicSki", "BackcountrySki", "Snowboard")
+                      "StairStepper", "Kayaking", "NordicSki", "BackcountrySki", "Snowboard",
+                      # Strava has no martial-arts type, so nothing synced ever arrives as
+                      # this — it exists for sync/manual.py, where grappling and sparring
+                      # get written down by hand. Kept out of the "Workout" catch-all on
+                      # purpose: a named entry is affirmatively cardio, "Workout" isn't.
+                      "MartialArts")
 # Logged and shown on the day, but NEVER a valid substitute for a run: strength work is a
 # different stimulus entirely, and it's already separately scheduled as the S&C session —
 # counting it would both excuse a missed run and double-count the gym. "Workout" is

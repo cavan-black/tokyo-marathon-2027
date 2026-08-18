@@ -14,7 +14,7 @@ of truth behind the Excel plans. Edit a plan there and re-run the generator.
 ```
 marathon-dash/
   plan/       cav.py, jamie.py, plan_generator.py   # plans as data -> data/plan_<id>.json
-  sync/       strava.py, match.py, run_sync.py, get_token.py
+  sync/       strava.py, match.py, manual.py, run_sync.py, get_token.py
   app/        streamlit_app.py                       # the dashboard (tabs per runner)
   data/       plan_*.json, progress_*.json, runners.json
   .github/workflows/sync.yml                         # scheduled + on-demand sync
@@ -93,6 +93,31 @@ In your GitHub repo → **Settings → Secrets and variables → Actions**, add 
 secrets as above. The workflow pulls Strava, rebuilds `data/*.json`, and commits it;
 Streamlit Cloud auto-redeploys on the new commit. Trigger a manual run any time from the
 **Actions** tab → *Strava sync* → *Run workflow*.
+
+## Sessions with no device behind them
+
+A BJJ class, a pickup game, a swim on a dead watch — nothing reaches Strava, so the day
+reads "Missed" and drags the week's coach flag with it. Write those down in
+`data/manual_<runner>.json` and the sync folds them in:
+
+```json
+[
+  {"date": "2026-08-18", "activity_type": "MartialArts",
+   "name": "BJJ sparring", "moving_time_s": 10800, "note": "3 h, no device"}
+]
+```
+
+`date`, `activity_type` and `moving_time_s` are required; `activity_type` must be one of
+`sync/strava.py`'s `CROSS_TYPES`. The file is read on every sync, so an entry keeps
+applying — and it's dropped automatically if the same activity type later turns up from
+Strava on that date, so a late-syncing watch doesn't double-count the day.
+
+Two deliberate limits. **Manual entries are cross-training only** — they can satisfy a day
+(a "Substituted" status, whose km come off the week's runnable denominator) but never add
+running km or ACWR load, because a training-load signal you can type into isn't a signal.
+And **writing an entry by hand grants it no privilege a recorded one wouldn't have**: the
+same cardio rule applies, so a hand-entered gym session still doesn't cover a run. Every
+such session is marked "✎ by hand" in the dashboard rather than passing as measured.
 
 ## Editing the plan
 

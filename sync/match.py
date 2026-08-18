@@ -155,7 +155,8 @@ def _reconcile_shifted_substitutions(all_days, today_iso):
         best["status"] = "Substituted"
         best["substituted_by"] = {
             "date": dd["date"], "dow": dd["dow"], "count": len(acts),
-            "activity_type": lead.get("activity_type"),
+            "activity_type": lead.get("activity_type"), "name": lead.get("name"),
+            "manual": any(a.get("manual") for a in acts),
             "moving_time_s": int(round(minutes * 60)),
             "distance_km": round(sum(a.get("distance_km") or 0 for a in acts), 2),
         }
