@@ -5,5 +5,12 @@
     "name": "BJJ sparring",
     "moving_time_s": 10800,
     "note": "3 h sparring, no device to record it"
+  },
+  {
+    "date": "2026-08-20",
+    "activity_type": "MartialArts",
+    "name": "BJJ — hard double session",
+    "moving_time_s": 10800,
+    "note": "two sessions, ~3 h mat time total, no device to record it"
   }
 ]
