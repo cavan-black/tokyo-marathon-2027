@@ -6,14 +6,20 @@ ID, NAME, GOAL = "cav", "Cav", "2:50:00"
 START = date(2026, 7, 20)
 RACE  = date(2027, 3, 7)
 
+# Re-planned 2026-08-20. Weeks 1-4 are history and untouched. Wk 6 is a week off (see
+# OFF_WEEKS), and the original ramp — 70/76/66/82/88 through the base phase — assumed a
+# ~56 km/wk starting point that never materialised: weeks 1-5 actually ran 42, 29, 70, ~27
+# and ~38, a ~40 km/wk chronic load. Rebuilding from where the runner IS rather than where
+# the old array assumed he'd be, at 7-11% peak-to-peak steps. Peak is still 116, one week
+# later (Wk 28 rather than 27), which is still 5 weeks out from the race.
 VOL = [42,50,56,48,
-       62,70,76,66,82,88,74,92,96,
-       80,100,106,90,108,112,92,104,108,76,
-       86,106,112,116,110,106,90,
+       62,0,45,54,60,50,66,72,64,
+       76,84,90,76,92,96,80,88,98,76,
+       88,102,94,110,116,110,94,
        74,56,38]
 LR  = [12,14,16,14,
-       18,20,22,18,24,26,22,28,30,
-       24,28,30,26,32,32,21,30,32,20,
+       18,0,14,16,18,16,20,22,18,
+       24,26,28,24,30,30,21,28,32,20,
        24,30,28,34,32,35,30,
        26,18,42.195]
 # Wk 23 (21-27 Dec, Christmas) and Wk 24 (28 Dec-3 Jan, New Year) are a deliberate
@@ -23,6 +29,20 @@ LR  = [12,14,16,14,
 # Hard (MP-work) long-run weekends — always followed by an easy long-run weekend.
 HARD_LR = {16, 18, 20, 22, 25, 27, 29, 31}
 TT_WEEKS = {9, 13, 26}
+
+# Weeks written off in advance — travel, festivals, anything where training genuinely isn't
+# happening. Planned downtime beats a week of sessions marked missed: the ramp steps down
+# into it and rebuilds out of it, instead of pretending the week existed and leaving the
+# runner to "catch up", which is how a break turns into an injury.
+OFF_WEEKS = {6: "Lost Village"}
+# First week back. Volume returns before intensity does — reintroducing threshold work in
+# the same week as the mileage is the classic way to convert a planned break into a strain.
+EASY_RETURN_WEEKS = {7}
+# qkm() sizes the quality sessions per phase, which assumes the phase's usual volume. In the
+# rebuild weeks the week is far smaller than the base phase assumes, so the two quality runs
+# would eat it whole and leave the easy days rounding to two or three km each.
+QKM_OVERRIDE = {7: {"tue": 9, "thu": 9}, 8: {"tue": 10, "thu": 10},
+                9: {"tue": 12, "thu": 10}, 10: {"tue": 11, "thu": 10}, 13: {"tue": 12, "thu": 11}}
 
 def phase(w):
     if w <= 4:  return "Re-entry / Rebuild"
@@ -50,7 +70,14 @@ def tue(w):
 
 def thu(w):
     if w <= 4:   return "Easy 8 km", "easy"
-    if w <= 13:  return ("Hill strides: easy 11 km + 8×15s hill sprints" if w%2 else "Medium easy 12 km + 6×20s strides"), "easy"
+    if w <= 13:
+        # distance comes from qkm so the text can't drift from target_km when a rebuild
+        # week overrides it (see QKM_OVERRIDE)
+        k = qkm(w, "thu")
+        if w in EASY_RETURN_WEEKS:  # no hill sprints in the first week back
+            return f"Easy {k} km + 6×20s strides", "easy"
+        return (f"Hill strides: easy {k} km + 8×15s hill sprints" if w % 2
+                else f"Medium easy {k} km + 6×20s strides"), "easy"
     if w <= 23:
         lib=["MP tempo: 2×5 km @ 4:01/km (MP), 3 min float","Medium-long 16 km w/ middle 8 km @ MP",
              "MP tempo: 3×4 km @ MP, 2 min float","Medium-long 16 km easy + 8×15s hill sprints"]
@@ -63,10 +90,10 @@ def thu(w):
 
 def sun(w):
     d=LR[w-1]
-    txt={16:"30 km, last 8 km @ MP",18:"32 km, last 10 km @ MP",
-        19:"32 km easy (recovery weekend — no MP)",
+    txt={16:"28 km, last 8 km @ MP",18:"30 km, last 10 km @ MP",
+        19:"30 km easy (recovery weekend — no MP)",
         20:"TUNE-UP: Sevilla Half Marathon (all-out) + w/u & c/d",
-        21:"30 km easy (post-race — keep it genuinely easy)",
+        21:"28 km easy (post-race — keep it genuinely easy)",
         22:"32 km, last 10 km @ MP",
         23:"20 km easy — Christmas week, keep it light",
         24:"24 km easy — New Year week, ease back in",
@@ -78,7 +105,7 @@ def sun(w):
         30:"30 km easy — FINAL long run, keep it relaxed",
         31:"26 km, last 8 km @ MP",32:"18 km easy w/ 4×1 km @ MP",
         33:"RACE DAY — Tokyo Marathon · 2:50 target · 4:01/km · 6:29/mi"}
-    t = txt.get(w, f"{d:g} km easy" + (" + last 4 km relaxed @ MP" if w in (6,12) else ""))
+    t = txt.get(w, f"{d:g} km easy" + (" + last 4 km relaxed @ MP" if w == 12 else ""))
     return t, ("race" if w in (20,33) else "long")
 
 def sat(w):
@@ -89,6 +116,7 @@ def sat(w):
     return None, "easy", None
 
 def qkm(w, which):
+    if w in QKM_OVERRIDE: return QKM_OVERRIDE[w][which]
     if w <= 4:  return {"tue":10,"thu":8}[which]
     if w <= 13: return {"tue":13,"thu":11}[which]
     if w <= 23: return {"tue":14,"thu":16}[which]
@@ -97,13 +125,27 @@ def qkm(w, which):
 
 def build_week(w):
     v=VOL[w-1]; lr=LR[w-1]; reentry = w<=4
+    if w in OFF_WEEKS:
+        # Written off deliberately, so it reads as a plan rather than as seven missed
+        # sessions. Nothing is carried over into the week either side — a week's training
+        # can't be banked, and trying to make it up is what causes the damage.
+        why = OFF_WEEKS[w]
+        days = {d: (f"Off — {why}", "rest", 0) for d in DOW}
+        days["Sun"] = (f"Off — {why}. Easy running resumes Monday; don't make this week up.",
+                       "rest", 0)
+        return days
     tue_txt,tue_type = tue(w); thu_txt,thu_type = thu(w); sun_txt,sun_type = sun(w)
+    tue_km=qkm(w,"tue"); thu_km=qkm(w,"thu")
+    # Volume comes back before intensity does — see EASY_RETURN_WEEKS.
+    easy_return = w in EASY_RETURN_WEEKS and tue_type == "quality"
+    if easy_return:
+        tue_txt, tue_type = f"Easy {tue_km} km + 6×20s strides (first week back — no quality yet)", "easy"
     tue_txt = C.note_wu(tue_txt, tue_type); thu_txt = C.note_wu(thu_txt, thu_type)
     sat_txt,sat_type,sat_fixed = sat(w)
     days={}
     days["Mon"]=("Rest" if (reentry or w==33) else "Rest / mobility (full rest day)","rest",0)
-    tue_km=qkm(w,"tue"); thu_km=qkm(w,"thu")
-    if 4<=w<=30: tue_txt += "  +S&C (hard-day session)"
+    if 4<=w<=30:
+        tue_txt += "  +S&C (easy-day session)" if easy_return else "  +S&C (hard-day session)"
     # Max 2 hard days/week: Thu is quality only when Sunday's long run is easy and there's no Sat TT
     hard_sun = sun_type == "race" or w in HARD_LR
     if thu_type == "quality" and (hard_sun or w in TT_WEEKS):
@@ -139,10 +181,12 @@ def build_week(w):
     return days
 
 def focus(w):
-    return {9:"5K time-trial checkpoint",13:"10K time-trial checkpoint",
+    return {6:"🎪 Lost Village — planned week off",7:"Back from the break — rebuild, no quality",
+            9:"5K time-trial checkpoint",13:"10K time-trial checkpoint",
             20:"Half tune-up (calibrate goal)",23:"🎄 Christmas week — deliberate holiday dip",
             24:"🎆 New Year week — easing back in",25:"Ramp resumes (from the day after NYD)",
-            29:"Peak long run",33:"RACE WEEK"}.get(w, "Cut-back / recovery week" if w in (4,8,11,17) else "")
+            28:"Peak volume week",
+            29:"Peak long run",33:"RACE WEEK"}.get(w, "Cut-back / recovery week" if w in (4,10,17) else "")
 
 DOW=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 
@@ -172,8 +216,10 @@ def content():
                 "Peak ~116 km — weekly volume is the biggest lever for marathon time, and the extra should be EASY km (your endurance lags your speed).",
                 "Rest days are Monday (always) and Saturday in the re-entry weeks; race-week Friday rest is the one exception.",
                 "Hard long runs alternate with easy ones — never two hard long-run weekends in a row, and the weekends before/after the Wk-20 half are easy.",
-                "Wk 23 (Christmas) and Wk 24 (New Year) are a deliberate holiday dip — volume drops to ~76-86 km so the block doesn't fight the festive season. The ramp resumes from Wk 25, the week starting the day after New Year's Day.",
-                "Injury risk is about ramp rate, not the ceiling — ~7–10% weekly steps; respect cut-back weeks (4,8,11,17) and the holiday dip (23,24).",
+                "Wk 23 (Christmas) and Wk 24 (New Year) are a deliberate holiday dip — volume drops to ~76-88 km so the block doesn't fight the festive season. The ramp resumes from Wk 25, the week starting the day after New Year's Day.",
+                "Injury risk is about ramp rate, not the ceiling — ~7–10% weekly steps; respect cut-back weeks (4,10,17) and the holiday dip (23,24).",
+                "Wk 6 is Lost Village — a planned week off, not a missed week. Wk 7 comes back at 45 km with no quality session; volume returns before intensity does. Do NOT try to make up Wk 5 or Wk 6 — the rebuild already accounts for both.",
+                "Re-planned Wk 20 Aug: the original ramp assumed ~56 km/wk by Wk 5, but weeks 1-5 actually averaged ~40. The new curve rebuilds from that, reaching the same 116 km peak at Wk 28 instead of Wk 27 — still 5 weeks out from the race.",
                 "If 116 km proves unrealistic, the ~105 km version is still solidly sub-3."]},
         "strength": C.strength("1–13", "14–30", football=False),
         "warmup": C.warmup(niggle_note="Given the outside-left-ankle/Achilles soreness flagged in week 1, "

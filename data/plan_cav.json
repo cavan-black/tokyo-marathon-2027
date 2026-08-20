@@ -306,57 +306,57 @@
       "week": 6,
       "start": "2026-08-24",
       "phase": "Aerobic Base",
-      "target_km": 70,
-      "focus": "",
+      "target_km": 0,
+      "focus": "🎪 Lost Village — planned week off",
       "days": [
         {
           "date": "2026-08-24",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest / mobility (full rest day)",
+          "session": "Off — Lost Village",
           "target_km": 0
         },
         {
           "date": "2026-08-25",
           "dow": "Tue",
-          "type": "quality",
-          "session": "Tempo: 2×12 min @ 3:52/km, 3 min jog + w/u & c/d  +S&C (hard-day session)",
-          "target_km": 13
+          "type": "rest",
+          "session": "Off — Lost Village",
+          "target_km": 0
         },
         {
           "date": "2026-08-26",
           "dow": "Wed",
-          "type": "easy",
-          "session": "Easy 10 km + 6×20s strides",
-          "target_km": 10
+          "type": "rest",
+          "session": "Off — Lost Village",
+          "target_km": 0
         },
         {
           "date": "2026-08-27",
           "dow": "Thu",
-          "type": "easy",
-          "session": "Medium easy 12 km + 6×20s strides",
-          "target_km": 11
+          "type": "rest",
+          "session": "Off — Lost Village",
+          "target_km": 0
         },
         {
           "date": "2026-08-28",
           "dow": "Fri",
-          "type": "recovery",
-          "session": "Recovery 7 km easy  +S&C (easy-day session)",
-          "target_km": 7
+          "type": "rest",
+          "session": "Off — Lost Village",
+          "target_km": 0
         },
         {
           "date": "2026-08-29",
           "dow": "Sat",
-          "type": "easy",
-          "session": "Easy 9 km + strides",
-          "target_km": 9
+          "type": "rest",
+          "session": "Off — Lost Village",
+          "target_km": 0
         },
         {
           "date": "2026-08-30",
           "dow": "Sun",
-          "type": "long",
-          "session": "20 km easy + last 4 km relaxed @ MP",
-          "target_km": 20
+          "type": "rest",
+          "session": "Off — Lost Village. Easy running resumes Monday; don't make this week up.",
+          "target_km": 0
         }
       ]
     },
@@ -364,8 +364,8 @@
       "week": 7,
       "start": "2026-08-31",
       "phase": "Aerobic Base",
-      "target_km": 76,
-      "focus": "",
+      "target_km": 45,
+      "focus": "Back from the break — rebuild, no quality",
       "days": [
         {
           "date": "2026-08-31",
@@ -377,44 +377,44 @@
         {
           "date": "2026-09-01",
           "dow": "Tue",
-          "type": "quality",
-          "session": "Threshold: 6×1 km @ 3:48/km, 75s jog + w/u & c/d  +S&C (hard-day session)",
-          "target_km": 13
+          "type": "easy",
+          "session": "Easy 9 km + 6×20s strides (first week back — no quality yet)  +S&C (easy-day session)",
+          "target_km": 9
         },
         {
           "date": "2026-09-02",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 12 km + 6×20s strides",
-          "target_km": 12
+          "session": "Easy 5 km + 6×20s strides",
+          "target_km": 5
         },
         {
           "date": "2026-09-03",
           "dow": "Thu",
           "type": "easy",
-          "session": "Hill strides: easy 11 km + 8×15s hill sprints",
-          "target_km": 11
+          "session": "Easy 9 km + 6×20s strides",
+          "target_km": 9
         },
         {
           "date": "2026-09-04",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 8 km easy  +S&C (easy-day session)",
-          "target_km": 8
+          "session": "Recovery 4 km easy  +S&C (easy-day session)",
+          "target_km": 4
         },
         {
           "date": "2026-09-05",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 10 km + strides",
-          "target_km": 10
+          "session": "Easy 4 km + strides",
+          "target_km": 4
         },
         {
           "date": "2026-09-06",
           "dow": "Sun",
           "type": "long",
-          "session": "22 km easy",
-          "target_km": 22
+          "session": "14 km easy",
+          "target_km": 14
         }
       ]
     },
@@ -422,8 +422,8 @@
       "week": 8,
       "start": "2026-09-07",
       "phase": "Aerobic Base",
-      "target_km": 66,
-      "focus": "Cut-back / recovery week",
+      "target_km": 54,
+      "focus": "",
       "days": [
         {
           "date": "2026-09-07",
@@ -437,42 +437,42 @@
           "dow": "Tue",
           "type": "quality",
           "session": "Tempo: 25 min continuous @ 3:52/km + w/u & c/d  +S&C (hard-day session)",
-          "target_km": 13
+          "target_km": 10
         },
         {
           "date": "2026-09-09",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10 km + 6×20s strides",
-          "target_km": 10
+          "session": "Easy 7 km + 6×20s strides",
+          "target_km": 7
         },
         {
           "date": "2026-09-10",
           "dow": "Thu",
           "type": "easy",
-          "session": "Medium easy 12 km + 6×20s strides",
-          "target_km": 11
+          "session": "Medium easy 10 km + 6×20s strides",
+          "target_km": 10
         },
         {
           "date": "2026-09-11",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 7 km easy  +S&C (easy-day session)",
-          "target_km": 7
+          "session": "Recovery 5 km easy  +S&C (easy-day session)",
+          "target_km": 5
         },
         {
           "date": "2026-09-12",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 7 km + strides",
-          "target_km": 7
+          "session": "Easy 6 km + strides",
+          "target_km": 6
         },
         {
           "date": "2026-09-13",
           "dow": "Sun",
           "type": "long",
-          "session": "18 km easy",
-          "target_km": 18
+          "session": "16 km easy",
+          "target_km": 16
         }
       ]
     },
@@ -480,7 +480,7 @@
       "week": 9,
       "start": "2026-09-14",
       "phase": "Aerobic Base",
-      "target_km": 82,
+      "target_km": 60,
       "focus": "5K time-trial checkpoint",
       "days": [
         {
@@ -495,28 +495,28 @@
           "dow": "Tue",
           "type": "quality",
           "session": "Threshold: 5×1 km @ 3:50/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
-          "target_km": 13
+          "target_km": 12
         },
         {
           "date": "2026-09-16",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10 km + 6×20s strides",
-          "target_km": 10
+          "session": "Easy 4 km + 6×20s strides",
+          "target_km": 4
         },
         {
           "date": "2026-09-17",
           "dow": "Thu",
           "type": "easy",
-          "session": "Hill strides: easy 11 km + 8×15s hill sprints",
-          "target_km": 11
+          "session": "Hill strides: easy 10 km + 8×15s hill sprints",
+          "target_km": 10
         },
         {
           "date": "2026-09-18",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 7 km easy  +S&C (easy-day session)",
-          "target_km": 7
+          "session": "Recovery 3 km easy  +S&C (easy-day session)",
+          "target_km": 3
         },
         {
           "date": "2026-09-19",
@@ -529,8 +529,8 @@
           "date": "2026-09-20",
           "dow": "Sun",
           "type": "long",
-          "session": "24 km easy",
-          "target_km": 24
+          "session": "18 km easy",
+          "target_km": 18
         }
       ]
     },
@@ -538,8 +538,8 @@
       "week": 10,
       "start": "2026-09-21",
       "phase": "Aerobic Base",
-      "target_km": 88,
-      "focus": "",
+      "target_km": 50,
+      "focus": "Cut-back / recovery week",
       "days": [
         {
           "date": "2026-09-21",
@@ -553,42 +553,42 @@
           "dow": "Tue",
           "type": "quality",
           "session": "Tempo: 2×12 min @ 3:52/km, 3 min jog + w/u & c/d  +S&C (hard-day session)",
-          "target_km": 13
+          "target_km": 11
         },
         {
           "date": "2026-09-23",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 15 km + 6×20s strides",
-          "target_km": 15
+          "session": "Easy 5 km + 6×20s strides",
+          "target_km": 5
         },
         {
           "date": "2026-09-24",
           "dow": "Thu",
           "type": "easy",
-          "session": "Medium easy 12 km + 6×20s strides",
-          "target_km": 11
+          "session": "Medium easy 10 km + 6×20s strides",
+          "target_km": 10
         },
         {
           "date": "2026-09-25",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 11 km easy  +S&C (easy-day session)",
-          "target_km": 11
+          "session": "Recovery 4 km easy  +S&C (easy-day session)",
+          "target_km": 4
         },
         {
           "date": "2026-09-26",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 12 km + strides",
-          "target_km": 12
+          "session": "Easy 4 km + strides",
+          "target_km": 4
         },
         {
           "date": "2026-09-27",
           "dow": "Sun",
           "type": "long",
-          "session": "26 km easy",
-          "target_km": 26
+          "session": "16 km easy",
+          "target_km": 16
         }
       ]
     },
@@ -596,8 +596,8 @@
       "week": 11,
       "start": "2026-09-28",
       "phase": "Aerobic Base",
-      "target_km": 74,
-      "focus": "Cut-back / recovery week",
+      "target_km": 66,
+      "focus": "",
       "days": [
         {
           "date": "2026-09-28",
@@ -617,8 +617,8 @@
           "date": "2026-09-30",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 11 km + 6×20s strides",
-          "target_km": 11
+          "session": "Easy 9 km + 6×20s strides",
+          "target_km": 9
         },
         {
           "date": "2026-10-01",
@@ -631,22 +631,22 @@
           "date": "2026-10-02",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 8 km easy  +S&C (easy-day session)",
-          "target_km": 8
+          "session": "Recovery 6 km easy  +S&C (easy-day session)",
+          "target_km": 6
         },
         {
           "date": "2026-10-03",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 9 km + strides",
-          "target_km": 9
+          "session": "Easy 7 km + strides",
+          "target_km": 7
         },
         {
           "date": "2026-10-04",
           "dow": "Sun",
           "type": "long",
-          "session": "22 km easy",
-          "target_km": 22
+          "session": "20 km easy",
+          "target_km": 20
         }
       ]
     },
@@ -654,7 +654,7 @@
       "week": 12,
       "start": "2026-10-05",
       "phase": "Aerobic Base",
-      "target_km": 92,
+      "target_km": 72,
       "focus": "",
       "days": [
         {
@@ -675,36 +675,36 @@
           "date": "2026-10-07",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 16 km + 6×20s strides",
-          "target_km": 16
+          "session": "Easy 10 km + 6×20s strides",
+          "target_km": 10
         },
         {
           "date": "2026-10-08",
           "dow": "Thu",
           "type": "easy",
-          "session": "Medium easy 12 km + 6×20s strides",
+          "session": "Medium easy 11 km + 6×20s strides",
           "target_km": 11
         },
         {
           "date": "2026-10-09",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 11 km easy  +S&C (easy-day session)",
-          "target_km": 11
+          "session": "Recovery 7 km easy  +S&C (easy-day session)",
+          "target_km": 7
         },
         {
           "date": "2026-10-10",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 13 km + strides",
-          "target_km": 13
+          "session": "Easy 9 km + strides",
+          "target_km": 9
         },
         {
           "date": "2026-10-11",
           "dow": "Sun",
           "type": "long",
-          "session": "28 km easy + last 4 km relaxed @ MP",
-          "target_km": 28
+          "session": "22 km easy + last 4 km relaxed @ MP",
+          "target_km": 22
         }
       ]
     },
@@ -712,7 +712,7 @@
       "week": 13,
       "start": "2026-10-12",
       "phase": "Aerobic Base",
-      "target_km": 96,
+      "target_km": 64,
       "focus": "10K time-trial checkpoint",
       "days": [
         {
@@ -727,14 +727,14 @@
           "dow": "Tue",
           "type": "quality",
           "session": "Threshold: 5×1 km @ 3:50/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
-          "target_km": 13
+          "target_km": 12
         },
         {
           "date": "2026-10-14",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 12 km + 6×20s strides",
-          "target_km": 12
+          "session": "Easy 4 km + 6×20s strides",
+          "target_km": 4
         },
         {
           "date": "2026-10-15",
@@ -747,8 +747,8 @@
           "date": "2026-10-16",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 8 km easy  +S&C (easy-day session)",
-          "target_km": 8
+          "session": "Recovery 3 km easy  +S&C (easy-day session)",
+          "target_km": 3
         },
         {
           "date": "2026-10-17",
@@ -761,8 +761,8 @@
           "date": "2026-10-18",
           "dow": "Sun",
           "type": "long",
-          "session": "30 km easy",
-          "target_km": 30
+          "session": "18 km easy",
+          "target_km": 18
         }
       ]
     },
@@ -770,7 +770,7 @@
       "week": 14,
       "start": "2026-10-19",
       "phase": "Marathon-Specific I",
-      "target_km": 80,
+      "target_km": 76,
       "focus": "",
       "days": [
         {
@@ -791,8 +791,8 @@
           "date": "2026-10-21",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10 km + 6×20s strides",
-          "target_km": 10
+          "session": "Easy 9 km + 6×20s strides",
+          "target_km": 9
         },
         {
           "date": "2026-10-22",
@@ -805,15 +805,15 @@
           "date": "2026-10-23",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 7 km easy  +S&C (easy-day session)",
-          "target_km": 7
+          "session": "Recovery 6 km easy  +S&C (easy-day session)",
+          "target_km": 6
         },
         {
           "date": "2026-10-24",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 9 km + strides",
-          "target_km": 9
+          "session": "Easy 7 km + strides",
+          "target_km": 7
         },
         {
           "date": "2026-10-25",
@@ -828,7 +828,7 @@
       "week": 15,
       "start": "2026-10-26",
       "phase": "Marathon-Specific I",
-      "target_km": 100,
+      "target_km": 84,
       "focus": "",
       "days": [
         {
@@ -849,8 +849,8 @@
           "date": "2026-10-28",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 17 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 17
+          "session": "Easy 11 km + 6×20s strides",
+          "target_km": 11
         },
         {
           "date": "2026-10-29",
@@ -863,22 +863,22 @@
           "date": "2026-10-30",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 12 km easy  +S&C (easy-day session)",
-          "target_km": 12
+          "session": "Recovery 8 km easy  +S&C (easy-day session)",
+          "target_km": 8
         },
         {
           "date": "2026-10-31",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 13 km + strides",
-          "target_km": 13
+          "session": "Easy 9 km + strides",
+          "target_km": 9
         },
         {
           "date": "2026-11-01",
           "dow": "Sun",
           "type": "long",
-          "session": "28 km easy",
-          "target_km": 28
+          "session": "26 km easy",
+          "target_km": 26
         }
       ]
     },
@@ -886,7 +886,7 @@
       "week": 16,
       "start": "2026-11-02",
       "phase": "Marathon-Specific I",
-      "target_km": 106,
+      "target_km": 90,
       "focus": "",
       "days": [
         {
@@ -907,8 +907,8 @@
           "date": "2026-11-04",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 18 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 18
+          "session": "Easy 13 km + 6×20s strides",
+          "target_km": 13
         },
         {
           "date": "2026-11-05",
@@ -921,22 +921,22 @@
           "date": "2026-11-06",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 13 km easy  +S&C (easy-day session)",
-          "target_km": 13
+          "session": "Recovery 9 km easy  +S&C (easy-day session)",
+          "target_km": 9
         },
         {
           "date": "2026-11-07",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 15 km + strides",
-          "target_km": 15
+          "session": "Easy 10 km + strides",
+          "target_km": 10
         },
         {
           "date": "2026-11-08",
           "dow": "Sun",
           "type": "long",
-          "session": "30 km, last 8 km @ MP",
-          "target_km": 30
+          "session": "28 km, last 8 km @ MP",
+          "target_km": 28
         }
       ]
     },
@@ -944,7 +944,7 @@
       "week": 17,
       "start": "2026-11-09",
       "phase": "Marathon-Specific I",
-      "target_km": 90,
+      "target_km": 76,
       "focus": "Cut-back / recovery week",
       "days": [
         {
@@ -965,8 +965,8 @@
           "date": "2026-11-11",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 14 km + 6×20s strides",
-          "target_km": 14
+          "session": "Easy 9 km + 6×20s strides",
+          "target_km": 9
         },
         {
           "date": "2026-11-12",
@@ -979,22 +979,22 @@
           "date": "2026-11-13",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 10 km easy  +S&C (easy-day session)",
-          "target_km": 10
+          "session": "Recovery 6 km easy  +S&C (easy-day session)",
+          "target_km": 6
         },
         {
           "date": "2026-11-14",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 10 km + strides",
-          "target_km": 10
+          "session": "Easy 7 km + strides",
+          "target_km": 7
         },
         {
           "date": "2026-11-15",
           "dow": "Sun",
           "type": "long",
-          "session": "26 km easy",
-          "target_km": 26
+          "session": "24 km easy",
+          "target_km": 24
         }
       ]
     },
@@ -1002,7 +1002,7 @@
       "week": 18,
       "start": "2026-11-16",
       "phase": "Marathon-Specific I",
-      "target_km": 108,
+      "target_km": 92,
       "focus": "",
       "days": [
         {
@@ -1023,8 +1023,8 @@
           "date": "2026-11-18",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 18 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 18
+          "session": "Easy 13 km + 6×20s strides",
+          "target_km": 13
         },
         {
           "date": "2026-11-19",
@@ -1037,22 +1037,22 @@
           "date": "2026-11-20",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 13 km easy  +S&C (easy-day session)",
-          "target_km": 13
+          "session": "Recovery 9 km easy  +S&C (easy-day session)",
+          "target_km": 9
         },
         {
           "date": "2026-11-21",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 15 km + strides  (double)",
-          "target_km": 15
+          "session": "Easy 10 km + strides",
+          "target_km": 10
         },
         {
           "date": "2026-11-22",
           "dow": "Sun",
           "type": "long",
-          "session": "32 km, last 10 km @ MP",
-          "target_km": 32
+          "session": "30 km, last 10 km @ MP",
+          "target_km": 30
         }
       ]
     },
@@ -1060,7 +1060,7 @@
       "week": 19,
       "start": "2026-11-23",
       "phase": "Marathon-Specific I",
-      "target_km": 112,
+      "target_km": 96,
       "focus": "",
       "days": [
         {
@@ -1081,8 +1081,8 @@
           "date": "2026-11-25",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 20 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 20
+          "session": "Easy 14 km + 6×20s strides",
+          "target_km": 14
         },
         {
           "date": "2026-11-26",
@@ -1095,22 +1095,22 @@
           "date": "2026-11-27",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 14 km easy  +S&C (easy-day session)",
-          "target_km": 14
+          "session": "Recovery 10 km easy  +S&C (easy-day session)",
+          "target_km": 10
         },
         {
           "date": "2026-11-28",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 16 km + strides  (double)",
-          "target_km": 16
+          "session": "Easy 12 km + strides",
+          "target_km": 12
         },
         {
           "date": "2026-11-29",
           "dow": "Sun",
           "type": "long",
-          "session": "32 km easy (recovery weekend — no MP)",
-          "target_km": 32
+          "session": "30 km easy (recovery weekend — no MP)",
+          "target_km": 30
         }
       ]
     },
@@ -1118,7 +1118,7 @@
       "week": 20,
       "start": "2026-11-30",
       "phase": "Marathon-Specific I",
-      "target_km": 92,
+      "target_km": 80,
       "focus": "Half tune-up (calibrate goal)",
       "days": [
         {
@@ -1139,8 +1139,8 @@
           "date": "2026-12-02",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 16 km + 6×20s strides",
-          "target_km": 16
+          "session": "Easy 12 km + 6×20s strides",
+          "target_km": 12
         },
         {
           "date": "2026-12-03",
@@ -1153,15 +1153,15 @@
           "date": "2026-12-04",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 11 km easy  +S&C (easy-day session)",
-          "target_km": 11
+          "session": "Recovery 8 km easy  +S&C (easy-day session)",
+          "target_km": 8
         },
         {
           "date": "2026-12-05",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 14 km + strides",
-          "target_km": 14
+          "session": "Easy 9 km + strides",
+          "target_km": 9
         },
         {
           "date": "2026-12-06",
@@ -1176,7 +1176,7 @@
       "week": 21,
       "start": "2026-12-07",
       "phase": "Marathon-Specific I",
-      "target_km": 104,
+      "target_km": 88,
       "focus": "",
       "days": [
         {
@@ -1197,8 +1197,8 @@
           "date": "2026-12-09",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 18 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 18
+          "session": "Easy 12 km + 6×20s strides",
+          "target_km": 12
         },
         {
           "date": "2026-12-10",
@@ -1211,22 +1211,22 @@
           "date": "2026-12-11",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 12 km easy  +S&C (easy-day session)",
-          "target_km": 12
+          "session": "Recovery 8 km easy  +S&C (easy-day session)",
+          "target_km": 8
         },
         {
           "date": "2026-12-12",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 14 km + strides",
-          "target_km": 14
+          "session": "Easy 10 km + strides",
+          "target_km": 10
         },
         {
           "date": "2026-12-13",
           "dow": "Sun",
           "type": "long",
-          "session": "30 km easy (post-race — keep it genuinely easy)",
-          "target_km": 30
+          "session": "28 km easy (post-race — keep it genuinely easy)",
+          "target_km": 28
         }
       ]
     },
@@ -1234,7 +1234,7 @@
       "week": 22,
       "start": "2026-12-14",
       "phase": "Marathon-Specific I",
-      "target_km": 108,
+      "target_km": 98,
       "focus": "",
       "days": [
         {
@@ -1255,8 +1255,8 @@
           "date": "2026-12-16",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 18 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 18
+          "session": "Easy 14 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 14
         },
         {
           "date": "2026-12-17",
@@ -1269,15 +1269,15 @@
           "date": "2026-12-18",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 13 km easy  +S&C (easy-day session)",
-          "target_km": 13
+          "session": "Recovery 10 km easy  +S&C (easy-day session)",
+          "target_km": 10
         },
         {
           "date": "2026-12-19",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 15 km + strides  (double)",
-          "target_km": 15
+          "session": "Easy 12 km + strides",
+          "target_km": 12
         },
         {
           "date": "2026-12-20",
@@ -1350,7 +1350,7 @@
       "week": 24,
       "start": "2026-12-28",
       "phase": "Specific II / Peak",
-      "target_km": 86,
+      "target_km": 88,
       "focus": "🎆 New Year week — easing back in",
       "days": [
         {
@@ -1371,8 +1371,8 @@
           "date": "2026-12-30",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 12 km + 6×20s strides",
-          "target_km": 12
+          "session": "Easy 13 km + 6×20s strides",
+          "target_km": 13
         },
         {
           "date": "2026-12-31",
@@ -1385,8 +1385,8 @@
           "date": "2027-01-01",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 8 km easy  +S&C (easy-day session)",
-          "target_km": 8
+          "session": "Recovery 9 km easy  +S&C (easy-day session)",
+          "target_km": 9
         },
         {
           "date": "2027-01-02",
@@ -1408,7 +1408,7 @@
       "week": 25,
       "start": "2027-01-04",
       "phase": "Specific II / Peak",
-      "target_km": 106,
+      "target_km": 102,
       "focus": "Ramp resumes (from the day after NYD)",
       "days": [
         {
@@ -1429,8 +1429,8 @@
           "date": "2027-01-06",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 18 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 18
+          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 16
         },
         {
           "date": "2027-01-07",
@@ -1443,15 +1443,15 @@
           "date": "2027-01-08",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 12 km easy  +S&C (easy-day session)",
-          "target_km": 12
+          "session": "Recovery 11 km easy  +S&C (easy-day session)",
+          "target_km": 11
         },
         {
           "date": "2027-01-09",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 14 km + strides",
-          "target_km": 14
+          "session": "Easy 13 km + strides",
+          "target_km": 13
         },
         {
           "date": "2027-01-10",
@@ -1466,7 +1466,7 @@
       "week": 26,
       "start": "2027-01-11",
       "phase": "Specific II / Peak",
-      "target_km": 112,
+      "target_km": 94,
       "focus": "",
       "days": [
         {
@@ -1487,8 +1487,8 @@
           "date": "2027-01-13",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 15 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 15
+          "session": "Easy 8 km + 6×20s strides",
+          "target_km": 8
         },
         {
           "date": "2027-01-14",
@@ -1501,14 +1501,14 @@
           "date": "2027-01-15",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 11 km easy  +S&C (easy-day session)",
-          "target_km": 11
+          "session": "Recovery 6 km easy  +S&C (easy-day session)",
+          "target_km": 6
         },
         {
           "date": "2027-01-16",
           "dow": "Sat",
           "type": "tt",
-          "session": "10K / 16 km sharpener race (optional) + w/u  (double)",
+          "session": "10K / 16 km sharpener race (optional) + w/u",
           "target_km": 14
         },
         {
@@ -1524,7 +1524,7 @@
       "week": 27,
       "start": "2027-01-18",
       "phase": "Specific II / Peak",
-      "target_km": 116,
+      "target_km": 110,
       "focus": "",
       "days": [
         {
@@ -1538,15 +1538,15 @@
           "date": "2027-01-19",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog + w/u & c/d  +S&C (hard-day session)  (PM easy double)",
+          "session": "VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 15
         },
         {
           "date": "2027-01-20",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 20 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 20
+          "session": "Easy 18 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 18
         },
         {
           "date": "2027-01-21",
@@ -1559,15 +1559,15 @@
           "date": "2027-01-22",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 14 km easy  +S&C (easy-day session)",
-          "target_km": 14
+          "session": "Recovery 12 km easy  +S&C (easy-day session)",
+          "target_km": 12
         },
         {
           "date": "2027-01-23",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 16 km + strides  (double)",
-          "target_km": 16
+          "session": "Easy 14 km + strides  (double)",
+          "target_km": 14
         },
         {
           "date": "2027-01-24",
@@ -1582,8 +1582,8 @@
       "week": 28,
       "start": "2027-01-25",
       "phase": "Specific II / Peak",
-      "target_km": 110,
-      "focus": "",
+      "target_km": 116,
+      "focus": "Peak volume week",
       "days": [
         {
           "date": "2027-01-25",
@@ -1596,15 +1596,15 @@
           "date": "2027-01-26",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog + w/u & c/d  +S&C (hard-day session)  (PM easy double)",
           "target_km": 15
         },
         {
           "date": "2027-01-27",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 18 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 18
+          "session": "Easy 21 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 21
         },
         {
           "date": "2027-01-28",
@@ -1617,15 +1617,15 @@
           "date": "2027-01-29",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 13 km easy  +S&C (easy-day session)",
-          "target_km": 13
+          "session": "Recovery 15 km easy  +S&C (easy-day session)",
+          "target_km": 15
         },
         {
           "date": "2027-01-30",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 15 km + strides  (double)",
-          "target_km": 15
+          "session": "Easy 16 km + strides  (double)",
+          "target_km": 16
         },
         {
           "date": "2027-01-31",
@@ -1640,7 +1640,7 @@
       "week": 29,
       "start": "2027-02-01",
       "phase": "Specific II / Peak",
-      "target_km": 106,
+      "target_km": 110,
       "focus": "Peak long run",
       "days": [
         {
@@ -1661,8 +1661,8 @@
           "date": "2027-02-03",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 16
+          "session": "Easy 17 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 17
         },
         {
           "date": "2027-02-04",
@@ -1675,15 +1675,15 @@
           "date": "2027-02-05",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 11 km easy  +S&C (easy-day session)",
-          "target_km": 11
+          "session": "Recovery 12 km easy  +S&C (easy-day session)",
+          "target_km": 12
         },
         {
           "date": "2027-02-06",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 12 km + strides",
-          "target_km": 12
+          "session": "Easy 14 km + strides  (double)",
+          "target_km": 14
         },
         {
           "date": "2027-02-07",
@@ -1698,7 +1698,7 @@
       "week": 30,
       "start": "2027-02-08",
       "phase": "Specific II / Peak",
-      "target_km": 90,
+      "target_km": 94,
       "focus": "",
       "days": [
         {
@@ -1719,8 +1719,8 @@
           "date": "2027-02-10",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 11 km + 6×20s strides",
-          "target_km": 11
+          "session": "Easy 13 km + 6×20s strides",
+          "target_km": 13
         },
         {
           "date": "2027-02-11",
@@ -1733,15 +1733,15 @@
           "date": "2027-02-12",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 8 km easy  +S&C (easy-day session)",
-          "target_km": 8
+          "session": "Recovery 9 km easy  +S&C (easy-day session)",
+          "target_km": 9
         },
         {
           "date": "2027-02-13",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 9 km + strides",
-          "target_km": 9
+          "session": "Easy 10 km + strides",
+          "target_km": 10
         },
         {
           "date": "2027-02-14",
@@ -2025,8 +2025,10 @@
         "Peak ~116 km — weekly volume is the biggest lever for marathon time, and the extra should be EASY km (your endurance lags your speed).",
         "Rest days are Monday (always) and Saturday in the re-entry weeks; race-week Friday rest is the one exception.",
         "Hard long runs alternate with easy ones — never two hard long-run weekends in a row, and the weekends before/after the Wk-20 half are easy.",
-        "Wk 23 (Christmas) and Wk 24 (New Year) are a deliberate holiday dip — volume drops to ~76-86 km so the block doesn't fight the festive season. The ramp resumes from Wk 25, the week starting the day after New Year's Day.",
-        "Injury risk is about ramp rate, not the ceiling — ~7–10% weekly steps; respect cut-back weeks (4,8,11,17) and the holiday dip (23,24).",
+        "Wk 23 (Christmas) and Wk 24 (New Year) are a deliberate holiday dip — volume drops to ~76-88 km so the block doesn't fight the festive season. The ramp resumes from Wk 25, the week starting the day after New Year's Day.",
+        "Injury risk is about ramp rate, not the ceiling — ~7–10% weekly steps; respect cut-back weeks (4,10,17) and the holiday dip (23,24).",
+        "Wk 6 is Lost Village — a planned week off, not a missed week. Wk 7 comes back at 45 km with no quality session; volume returns before intensity does. Do NOT try to make up Wk 5 or Wk 6 — the rebuild already accounts for both.",
+        "Re-planned Wk 20 Aug: the original ramp assumed ~56 km/wk by Wk 5, but weeks 1-5 actually averaged ~40. The new curve rebuilds from that, reaching the same 116 km peak at Wk 28 instead of Wk 27 — still 5 weeks out from the race.",
         "If 116 km proves unrealistic, the ~105 km version is still solidly sub-3."
       ]
     },
