@@ -43,6 +43,12 @@ EASY_RETURN_WEEKS = {7}
 # would eat it whole and leave the easy days rounding to two or three km each.
 QKM_OVERRIDE = {7: {"tue": 9, "thu": 9}, 8: {"tue": 10, "thu": 10},
                 9: {"tue": 12, "thu": 10}, 10: {"tue": 11, "thu": 10}, 13: {"tue": 12, "thu": 11}}
+# Days whose sessions trade places in a given week, applied after the week is built so the
+# sizing logic above still sees its normal Tue/Thu quality slots. Wk 8: Sunday's long run
+# was run on Monday, so Tuesday's tempo would have landed on tired legs — the session moves
+# to Wednesday and Wednesday's easy run comes forward. The S&C tag travels with the session
+# it's attached to, which is correct: the hard-day block belongs with the quality run.
+DAY_SWAPS = {8: (("Tue", "Wed"),)}
 
 def phase(w):
     if w <= 4:  return "Re-entry / Rebuild"
@@ -178,6 +184,8 @@ def build_week(w):
     days["Tue"]=(tue_txt,tue_type,tue_km); days["Wed"]=(wed_txt,"easy",wed_km)
     days["Thu"]=(thu_txt,thu_type,thu_km); days["Fri"]=(fri_txt,fri_type,fri_kmv)
     days["Sat"]=(sat_txt,sat_type,sat_kmv); days["Sun"]=(sun_txt,sun_type,round(lr,1))
+    for a,b in DAY_SWAPS.get(w,()):
+        days[a],days[b]=days[b],days[a]
     return days
 
 def focus(w):

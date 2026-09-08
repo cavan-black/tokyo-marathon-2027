@@ -435,16 +435,16 @@
         {
           "date": "2026-09-08",
           "dow": "Tue",
-          "type": "quality",
-          "session": "Tempo: 25 min continuous @ 3:52/km + w/u & c/d  +S&C (hard-day session)",
-          "target_km": 10
+          "type": "easy",
+          "session": "Easy 7 km + 6×20s strides",
+          "target_km": 7
         },
         {
           "date": "2026-09-09",
           "dow": "Wed",
-          "type": "easy",
-          "session": "Easy 7 km + 6×20s strides",
-          "target_km": 7
+          "type": "quality",
+          "session": "Tempo: 25 min continuous @ 3:52/km + w/u & c/d  +S&C (hard-day session)",
+          "target_km": 10
         },
         {
           "date": "2026-09-10",

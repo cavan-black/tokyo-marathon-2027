@@ -239,14 +239,34 @@ def match(plan, runs, cross_runs=None):
     for wk in plan["weeks"]:
         pk = ak = pk_due = done = partial = missed = substituted = replaced = quality_hit = quality_planned = 0
         sub_km = 0  # target km of days covered by cross-training — never runnable, see below
+        rep_km = 0  # net km moved between weeks by a "Replaced" session, see below
         long_done = None
         for dd in by_week[wk["week"]]:
             future = dd.pop("future")
             date_key = dd.pop("date")
             days[date_key] = dd
             pk += dd["target_km"]; ak += dd["actual_km"]
-            if not future:
+            # Today's target only joins the "due so far" denominator once the day has
+            # actually been addressed. Until then the session is still ahead of you, and
+            # counting it made a week read under-target on a Tuesday morning purely
+            # because Tuesday's run hadn't happened yet. Substituted and Replaced count
+            # as addressed — the day was satisfied — and a Substituted day in particular
+            # MUST stay in pk_due, or the sub_km subtraction below has nothing to cancel
+            # against and the denominator goes negative.
+            addressed = dd["actual_km"] > 0.05 or dd["status"] in ("Substituted", "Replaced")
+            if not future and (date_key != today_iso or addressed):
                 pk_due += dd["target_km"]
+            # A "Replaced" session was run on a different date, and a Sun->Mon swap — the
+            # commonest case by far — always lands that run in the NEXT plan week. The km
+            # are recorded against the host day's own date, so left alone the week that
+            # owned the target reads under-target while the week that merely hosted the
+            # run reads over-target, both wrongly. Move the km to the week whose target
+            # they actually satisfied. A swap inside one week credits and debits the same
+            # week, netting to zero, so this is a no-op there rather than a special case.
+            if dd.get("replaced_by"):
+                ak += dd["replaced_by"]["actual_km"]; rep_km += dd["replaced_by"]["actual_km"]
+            if dd.get("replaces"):
+                ak -= dd["actual_km"]; rep_km -= dd["actual_km"]
             if dd["type"] == "rest":
                 continue
             status = dd["status"]
@@ -287,6 +307,10 @@ def match(plan, runs, cross_runs=None):
             # "Crushed" chip) must measure against planned_km MINUS this, otherwise a week
             # containing a substitution is mathematically incapable of hitting target.
             "substituted_km": round(sub_km, 1),
+            # net km this week gained (+) or gave up (-) because a session was run on a
+            # date belonging to another week. Already folded into actual_km above; kept
+            # for display so a week's total can be reconciled against its own days.
+            "replaced_km": round(rep_km, 1),
             "done": done, "partial": partial, "missed": missed,
             "substituted": substituted, "replaced": replaced,
             "quality_hit": quality_hit, "quality_planned": quality_planned,

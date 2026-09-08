@@ -810,7 +810,16 @@ def weeks_html(plan, progress, cur):
             # running load, so leaving them in the denominator made any week containing a
             # substitution incapable of ever being "crushed", however well it was honoured.
             runnable = max(wsum_peek.get("planned_km", 1) - wsum_peek.get("substituted_km", 0), 0)
-            if (total_sessions and wsum_peek.get("missed", 0) == 0 and wsum_peek.get("partial", 0) == 0
+            # A deliberate week off (planned 0 km, every day a rest day) has no sessions to
+            # tick, so the session-count guard below would deny it a chip no matter how
+            # faithfully it was kept. Once it has fully elapsed with no running logged it
+            # WAS crushed — resting completely is the entire assignment. Requires the week
+            # to be over, so a future week (also sessionless) can't claim it early.
+            off_week_kept = (not total_sessions and end.isoformat() < today_iso
+                             and wsum_peek.get("planned_km", 0) == 0
+                             and wsum_peek.get("actual_km", 0) <= 0.05)
+            if off_week_kept or (total_sessions and wsum_peek.get("missed", 0) == 0
+                    and wsum_peek.get("partial", 0) == 0
                     and (runnable <= 0 or wsum_peek.get("actual_km", 0) >= 0.95 * runnable)):
                 chips += '<span class="crushed-chip">🏆 Crushed</span>'
             if w == cur:
