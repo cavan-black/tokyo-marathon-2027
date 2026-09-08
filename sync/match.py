@@ -246,7 +246,15 @@ def match(plan, runs, cross_runs=None):
             date_key = dd.pop("date")
             days[date_key] = dd
             pk += dd["target_km"]; ak += dd["actual_km"]
-            if not future:
+            # Today's target only joins the "due so far" denominator once the day has
+            # actually been addressed. Until then the session is still ahead of you, and
+            # counting it made a week read under-target on a Tuesday morning purely
+            # because Tuesday's run hadn't happened yet. Substituted and Replaced count
+            # as addressed — the day was satisfied — and a Substituted day in particular
+            # MUST stay in pk_due, or the sub_km subtraction below has nothing to cancel
+            # against and the denominator goes negative.
+            addressed = dd["actual_km"] > 0.05 or dd["status"] in ("Substituted", "Replaced")
+            if not future and (date_key != today_iso or addressed):
                 pk_due += dd["target_km"]
             # A "Replaced" session was run on a different date, and a Sun->Mon swap — the
             # commonest case by far — always lands that run in the NEXT plan week. The km
