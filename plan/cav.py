@@ -28,7 +28,7 @@ LR  = [12,14,16,14,
 
 # Hard (MP-work) long-run weekends — always followed by an easy long-run weekend.
 HARD_LR = {16, 18, 20, 22, 25, 27, 29, 31}
-TT_WEEKS = {9, 13, 26}
+TT_WEEKS = {10, 13, 26}
 
 # Weeks written off in advance — travel, festivals, anything where training genuinely isn't
 # happening. Planned downtime beats a week of sessions marked missed: the ramp steps down
@@ -69,8 +69,8 @@ def phase(w):
 def tue(w):
     if w <= 4:   return "Easy 10 km + 6×20s strides", "easy"
     if w <= 13:
-        lib=["Threshold: 5×1 km @ 3:50/km (T), 90s jog","Tempo: 2×12 min @ 3:52/km, 3 min jog",
-             "Threshold: 6×1 km @ 3:48/km, 75s jog","Tempo: 25 min continuous @ 3:52/km"]
+        lib=["Threshold: 5×1 km @ 4:10/km (T), 90s jog","Tempo: 2×3 km @ 4:15/km, 3 min jog",
+             "Threshold: 6×1 km @ 4:08/km, 75s jog","Tempo: 6 km continuous @ 4:15/km"]
         return lib[(w-5)%len(lib)], "quality"
     if w <= 23:
         lib=["VO2: 5×1000 m @ 3:28/km (I), 2:30 jog","Threshold: 4×2 km @ 3:50/km, 90s jog",
@@ -125,7 +125,7 @@ def sun(w):
     return t, ("race" if w in (20,33) else "long")
 
 def sat(w):
-    if w == 9:  return "parkrun 5K — TIME TRIAL (fitness check) + w/u & c/d", "tt", 9
+    if w == 10: return "parkrun 5K — TIME TRIAL (fitness check) + w/u & c/d", "tt", 9
     if w == 13: return "10K TIME TRIAL or local race (fitness check) + w/u", "tt", 13
     if w == 26: return "10K / 16 km sharpener race (optional) + w/u", "tt", 14
     if w == 33: return "Shakeout: easy 4 km + 4×100 m strides", "easy", 4
@@ -200,11 +200,11 @@ def build_week(w):
 
 def focus(w):
     return {6:"🎪 Lost Village — planned week off",7:"Back from the break — rebuild, no quality",
-            9:"5K time-trial checkpoint",13:"10K time-trial checkpoint",
+            10:"5K time-trial checkpoint (cut-back week — fresh legs)",13:"10K time-trial checkpoint",
             20:"Half tune-up (calibrate goal)",23:"🎄 Christmas week — deliberate holiday dip",
             24:"🎆 New Year week — easing back in",25:"Ramp resumes (from the day after NYD)",
             28:"Peak volume week",
-            29:"Peak long run",33:"RACE WEEK"}.get(w, "Cut-back / recovery week" if w in (4,10,17) else "")
+            29:"Peak long run",33:"RACE WEEK"}.get(w, "Cut-back / recovery week" if w in (4,17) else "")
 
 DOW=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 
@@ -215,18 +215,18 @@ def content():
             ["Easy / aerobic", "5:00–5:35", "8:03–8:59", "Bulk of weekly volume (incl. doubles)"],
             ["Long-run easy", "4:55–5:30", "7:55–8:51", "Long-run base portions"],
             ["Marathon (MP)", "4:01", "6:29", "Race pace — MP blocks & long-run finishes"],
-            ["Threshold (T)", "3:45–3:52", "6:02–6:13", "Tempo / cruise intervals (15K–HM effort)"],
-            ["10K pace", "3:36", "5:47", "Longer VO2 / race sharpeners"],
-            ["Interval (I, 5K)", "3:24–3:32", "5:29–5:41", "VO2 max reps"],
+            ["Threshold (T)", "4:08–4:15", "6:39–6:50", "Tempo / cruise intervals (15K–HM effort)"],
+            ["10K pace", "4:04", "6:33", "Longer VO2 / race sharpeners"],
+            ["Interval (I, 5K)", "3:50–3:56", "6:10–6:22", "VO2 max reps"],
             ["Strides", "~3:10 feel", "relaxed-fast", "20s pickups, not a workout"]],
-            "note": "Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
+            "note": "T/10K/I paces come from the 19:40 5K (5 Mar 2026), NOT from the 2:50 goal — training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. MP stays at goal pace. Recalibrate everything at the Wk-10 5K. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
                     "Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard "
                     "long-run weekends always alternate with easy ones."},
         "checkpoints": {
             "intro": "2:50 is the A-goal; your PRs predict ~3:06–3:27, and this build targets the gap with volume. "
                      "Don't lock race-day pace until the Wk-20 half.",
             "headers": ["Wk / date", "Test", "On-track for 2:50", "If short — likely target"], "rows": [
-                ["Wk 9 · ~14 Sep", "5K time trial", "≤ 18:05", "18:05–18:45 → ~2:55-3:00 · >19:00 → 3:05+"],
+                ["Wk 10 · Sat 26 Sep", "5K time trial (PR 19:40, 5 Mar)", "≤ 18:05", "18:05–18:45 → ~2:55-3:00 · >19:00 → 3:05+"],
                 ["Wk 13 · ~12 Oct", "10K time trial", "≤ 37:45", "37:45–39:00 → sub-3 · >40:00 → 3:05+"],
                 ["Wk 20 · Sun 6 Dec", "Half-marathon — Sevilla Half, signed up", "≤ 1:23:30", "1:23:30–1:26 → sub-3 · >1:27 → 3:05–3:10"],
                 ["Race · 7 Mar", "Marathon", "2:50 = 4:01/km", "Start at CONFIRMED pace. Even splits."]],
