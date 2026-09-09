@@ -17,6 +17,12 @@ LR  = [12,14,16,13,18,20,16,22,
 
 # Hard (MP-work) long-run weekends — always followed by an easy long-run weekend.
 HARD_LR = {19, 21, 24, 26, 28, 30}
+# Weeks cut back to only the listed days, everything else turned into rest. Unlike
+# OFF_WEEKS this keeps the named sessions at full distance — it's for a week where the
+# midweek running has to go but the long run and one supporting run stay. The week's
+# target_km follows the days that survive rather than the VOL array, or the dashboard
+# would show the week under-target against volume that was deliberately removed.
+KEEP_ONLY = {8: ("Fri", "Sun")}
 
 def phase(w):
     if w<=8:  return "Re-entry / Base"
@@ -110,6 +116,13 @@ def build_week(w):
     days["Tue"]=(tue_txt,tue_type,tue_km); days["Wed"]=(wed_txt,"easy",wed_km)
     days["Thu"]=(thu_txt,thu_type,thu_km); days["Fri"]=(fri_txt,fri_type,fri_kmv)
     days["Sat"]=(sat_txt,sat_type,sat_kmv); days["Sun"]=(sun_txt,sun_type,round(lr,1))
+    keep=KEEP_ONLY.get(w)
+    if keep:
+        # Days that were already rest keep their own wording (Monday's mobility note);
+        # only actual sessions get cleared, so the week still reads as a plan.
+        for d in DOW:
+            if d not in keep and days[d][1]!="rest":
+                days[d]=("Rest","rest",0)
     return days
 
 def focus(w):
@@ -174,8 +187,11 @@ def build():
             txt,typ,km=dm[dow]
             days.append({"date":(monday+timedelta(days=i)).isoformat(),"dow":dow,
                          "type":typ,"session":txt,"target_km":km})
+        # A KEEP_ONLY week's volume is whatever the surviving days add up to; using VOL
+        # would flag it under-target against km that were deliberately taken out.
+        vol=sum(d["target_km"] for d in days) if w in KEEP_ONLY else VOL[w-1]
         weeks.append({"week":w,"start":monday.isoformat(),"phase":phase(w),
-                      "target_km":VOL[w-1],"focus":focus(w),"days":days})
+                      "target_km":vol,"focus":focus(w),"days":days})
     return {"meta":{"id":ID,"name":NAME,"goal":GOAL,"mp_per_km":"5:41","mp_per_mile":"9:09",
                     "start":START.isoformat(),"race":RACE.isoformat(),
                     "peak_km":max(VOL),"total_weeks":33,
