@@ -22776,8 +22776,8 @@
       "week": 10,
       "dow": "Wed",
       "type": "tt",
-      "session": "5K TIME TRIAL (fitness check) + long w/u & c/d",
-      "target_km": 13,
+      "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d",
+      "target_km": 7,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -22827,11 +22827,11 @@
     "2026-09-27": {
       "week": 10,
       "dow": "Sun",
-      "type": "rest",
-      "session": "Rest — travel home; back to it Monday",
-      "target_km": 0,
+      "type": "easy",
+      "session": "Easy 8 km — evening, back from Ibiza. Genuinely easy; skip it if the trip took more out of you than expected",
+      "target_km": 8,
       "actual_km": 0,
-      "status": "Rest",
+      "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -25077,7 +25077,7 @@
       "flag": "✓ On track"
     },
     "10": {
-      "planned_km": 31,
+      "planned_km": 33,
       "planned_km_due": 0,
       "actual_km": 0,
       "substituted_km": 0,
@@ -25461,7 +25461,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-09T12:03:18+00:00",
+  "last_sync": "2026-09-09T14:04:45+00:00",
   "tracker": {
     "threshold_latest": null,
     "mp_latest": [

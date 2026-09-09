@@ -52,17 +52,18 @@ QKM_OVERRIDE = {7: {"tue": 9, "thu": 9}, 8: {"tue": 10, "thu": 10},
 DAY_SWAPS = {8: (("Tue", "Wed"),)}
 # Individual days rewritten wholesale, applied after the week is otherwise built. Wk 10:
 # Ibiza 24-26 Sep, so the 5K test moves to Wednesday the 23rd — the last clear day. The
-# three days that remain carry as much volume as they can without wrecking the test:
-# Monday takes the bulk (furthest from it), Tuesday stays short (a quality session the day
-# before a time trial costs more than it gives), and Wednesday absorbs the rest through a
-# longer warm-up and cool-down around the 5K itself.
+# days that remain carry as much volume as they can without wrecking the test: Monday takes
+# the bulk (furthest from it), Tuesday stays short (a quality session the day before a time
+# trial costs more than it gives), the test day is just 1 km either side of the 5K, and the
+# Sunday travel day picks up an easy evening run instead of being written off.
 DAY_OVERRIDE = {10: {"Mon": ("Easy 12 km + 6×20s strides", "easy", 12),
                      "Tue": ("Easy 6 km + 4×20s strides (TT primer)", "easy", 6),
-                     "Wed": ("5K TIME TRIAL (fitness check) + long w/u & c/d", "tt", 13),
-                     "Sun": ("Rest — travel home; back to it Monday", "rest", 0)}}
+                     "Wed": ("5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d", "tt", 7),
+                     "Sun": ("Easy 8 km — evening, back from Ibiza. Genuinely easy; "
+                             "skip it if the trip took more out of you than expected", "easy", 8)}}
 # Weeks cut to only the listed days; every other day becomes rest. Distinct from OFF_WEEKS,
 # which writes off a whole week — here the surviving sessions are the point of the week.
-KEEP_ONLY = {10: ("Mon", "Tue", "Wed")}
+KEEP_ONLY = {10: ("Mon", "Tue", "Wed", "Sun")}
 KEEP_ONLY_WHY = {10: "Ibiza"}
 # Long runs set by hand for a given week, overriding the LR array. The week's volume moves
 # by the same delta so the midweek days keep their own distances instead of being squeezed

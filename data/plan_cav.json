@@ -538,7 +538,7 @@
       "week": 10,
       "start": "2026-09-21",
       "phase": "Aerobic Base",
-      "target_km": 31,
+      "target_km": 33,
       "focus": "5K time trial Wed, then Ibiza 24-26 Sep",
       "days": [
         {
@@ -559,8 +559,8 @@
           "date": "2026-09-23",
           "dow": "Wed",
           "type": "tt",
-          "session": "5K TIME TRIAL (fitness check) + long w/u & c/d",
-          "target_km": 13
+          "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d",
+          "target_km": 7
         },
         {
           "date": "2026-09-24",
@@ -586,9 +586,9 @@
         {
           "date": "2026-09-27",
           "dow": "Sun",
-          "type": "rest",
-          "session": "Rest — travel home; back to it Monday",
-          "target_km": 0
+          "type": "easy",
+          "session": "Easy 8 km — evening, back from Ibiza. Genuinely easy; skip it if the trip took more out of you than expected",
+          "target_km": 8
         }
       ]
     },
