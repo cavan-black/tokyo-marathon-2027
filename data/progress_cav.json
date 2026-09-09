@@ -22762,9 +22762,9 @@
     "2026-09-22": {
       "week": 10,
       "dow": "Tue",
-      "type": "quality",
-      "session": "Tempo: 2×3 km @ 4:15/km, 3 min jog + w/u & c/d  +S&C (hard-day session)",
-      "target_km": 11,
+      "type": "easy",
+      "session": "Easy 5 km + 4×20s strides (TT primer)",
+      "target_km": 5,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -22775,9 +22775,9 @@
     "2026-09-23": {
       "week": 10,
       "dow": "Wed",
-      "type": "easy",
-      "session": "Easy 2 km + 6×20s strides",
-      "target_km": 2,
+      "type": "tt",
+      "session": "5K TIME TRIAL (fitness check) + w/u & c/d",
+      "target_km": 9,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -22788,11 +22788,11 @@
     "2026-09-24": {
       "week": 10,
       "dow": "Thu",
-      "type": "easy",
-      "session": "Medium easy 10 km + 6×20s strides",
-      "target_km": 10,
+      "type": "rest",
+      "session": "Rest — Ibiza",
+      "target_km": 0,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -22801,11 +22801,11 @@
     "2026-09-25": {
       "week": 10,
       "dow": "Fri",
-      "type": "recovery",
-      "session": "Recovery 1 km easy  +S&C (easy-day session)",
-      "target_km": 1,
+      "type": "rest",
+      "session": "Rest — Ibiza",
+      "target_km": 0,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -22814,11 +22814,11 @@
     "2026-09-26": {
       "week": 10,
       "dow": "Sat",
-      "type": "tt",
-      "session": "parkrun 5K — TIME TRIAL (fitness check) + w/u & c/d",
-      "target_km": 9,
+      "type": "rest",
+      "session": "Rest — Ibiza",
+      "target_km": 0,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -22827,11 +22827,11 @@
     "2026-09-27": {
       "week": 10,
       "dow": "Sun",
-      "type": "long",
-      "session": "16 km easy",
-      "target_km": 16,
+      "type": "rest",
+      "session": "Rest — travel home; back to it Monday",
+      "target_km": 0,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -25077,7 +25077,7 @@
       "flag": "✓ On track"
     },
     "10": {
-      "planned_km": 49,
+      "planned_km": 14,
       "planned_km_due": 0,
       "actual_km": 0,
       "substituted_km": 0,
@@ -25089,7 +25089,7 @@
       "replaced": 0,
       "quality_hit": 0,
       "quality_planned": 0,
-      "long_done": false,
+      "long_done": null,
       "flag": "✓ On track"
     },
     "11": {
@@ -25461,7 +25461,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-09T11:53:38+00:00",
+  "last_sync": "2026-09-09T11:58:53+00:00",
   "tracker": {
     "threshold_latest": null,
     "mp_latest": [

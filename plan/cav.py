@@ -49,6 +49,17 @@ QKM_OVERRIDE = {7: {"tue": 9, "thu": 9}, 8: {"tue": 10, "thu": 10},
 # to Wednesday and Wednesday's easy run comes forward. The S&C tag travels with the session
 # it's attached to, which is correct: the hard-day block belongs with the quality run.
 DAY_SWAPS = {8: (("Tue", "Wed"),)}
+# Individual days rewritten wholesale, applied after the week is otherwise built. Wk 10:
+# Ibiza 24-26 Sep, so the 5K test moves to Wednesday the 23rd — the last clear day — and
+# Tuesday drops to a short primer instead of its tempo, because a quality session the day
+# before a time trial costs more than it gives.
+DAY_OVERRIDE = {10: {"Tue": ("Easy 5 km + 4×20s strides (TT primer)", "easy", 5),
+                     "Wed": ("5K TIME TRIAL (fitness check) + w/u & c/d", "tt", 9),
+                     "Sun": ("Rest — travel home; back to it Monday", "rest", 0)}}
+# Weeks cut to only the listed days; every other day becomes rest. Distinct from OFF_WEEKS,
+# which writes off a whole week — here the surviving sessions are the point of the week.
+KEEP_ONLY = {10: ("Mon", "Tue", "Wed")}
+KEEP_ONLY_WHY = {10: "Ibiza"}
 # Long runs set by hand for a given week, overriding the LR array. The week's volume moves
 # by the same delta so the midweek days keep their own distances instead of being squeezed
 # to pay for a longer Sunday. Wk 8: half-marathon long run, run on request — note this is
@@ -196,11 +207,20 @@ def build_week(w):
     days["Sat"]=(sat_txt,sat_type,sat_kmv); days["Sun"]=(sun_txt,sun_type,round(lr,1))
     for a,b in DAY_SWAPS.get(w,()):
         days[a],days[b]=days[b],days[a]
+    for dow,spec in DAY_OVERRIDE.get(w,{}).items():
+        days[dow]=spec
+    keep=KEEP_ONLY.get(w)
+    if keep:
+        why=KEEP_ONLY_WHY.get(w)
+        for dow in DOW:
+            # days already resting keep their own wording; only real sessions are cleared
+            if dow not in keep and days[dow][1]!="rest":
+                days[dow]=(f"Rest — {why}" if why else "Rest","rest",0)
     return days
 
 def focus(w):
     return {6:"🎪 Lost Village — planned week off",7:"Back from the break — rebuild, no quality",
-            10:"5K time-trial checkpoint (cut-back week — fresh legs)",13:"10K time-trial checkpoint",
+            10:"5K time trial Wed, then Ibiza 24-26 Sep",13:"10K time-trial checkpoint",
             20:"Half tune-up (calibrate goal)",23:"🎄 Christmas week — deliberate holiday dip",
             24:"🎆 New Year week — easing back in",25:"Ramp resumes (from the day after NYD)",
             28:"Peak volume week",
@@ -226,7 +246,7 @@ def content():
             "intro": "2:50 is the A-goal; your PRs predict ~3:06–3:27, and this build targets the gap with volume. "
                      "Don't lock race-day pace until the Wk-20 half.",
             "headers": ["Wk / date", "Test", "On-track for 2:50", "If short — likely target"], "rows": [
-                ["Wk 10 · Sat 26 Sep", "5K time trial (PR 19:40, 5 Mar)", "≤ 18:05", "18:05–18:45 → ~2:55-3:00 · >19:00 → 3:05+"],
+                ["Wk 10 · Wed 23 Sep", "5K time trial (PR 19:40, 5 Mar)", "≤ 18:05", "18:05–18:45 → ~2:55-3:00 · >19:00 → 3:05+"],
                 ["Wk 13 · ~12 Oct", "10K time trial", "≤ 37:45", "37:45–39:00 → sub-3 · >40:00 → 3:05+"],
                 ["Wk 20 · Sun 6 Dec", "Half-marathon — Sevilla Half, signed up", "≤ 1:23:30", "1:23:30–1:26 → sub-3 · >1:27 → 3:05–3:10"],
                 ["Race · 7 Mar", "Marathon", "2:50 = 4:01/km", "Start at CONFIRMED pace. Even splits."]],
@@ -367,7 +387,9 @@ def build():
             days.append({"date":(monday+timedelta(days=i)).isoformat(),"dow":dow,
                          "type":typ,"session":txt,"target_km":km})
         weeks.append({"week":w,"start":monday.isoformat(),"phase":phase(w),
-                      "target_km":vol_for(w),"focus":focus(w),"days":days})
+                      # a KEEP_ONLY week's volume is whatever survives, not the VOL array
+                      "target_km":(round(sum(x["target_km"] for x in days),1) if w in KEEP_ONLY
+                                   else vol_for(w)),"focus":focus(w),"days":days})
     return {"meta":{"id":ID,"name":NAME,"goal":GOAL,"mp_per_km":"4:01","mp_per_mile":"6:29",
                     "start":START.isoformat(),"race":RACE.isoformat(),
                     "peak_km":max(VOL),"total_weeks":33,
