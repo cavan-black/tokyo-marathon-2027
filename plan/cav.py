@@ -50,11 +50,14 @@ QKM_OVERRIDE = {7: {"tue": 9, "thu": 9}, 8: {"tue": 10, "thu": 10},
 # it's attached to, which is correct: the hard-day block belongs with the quality run.
 DAY_SWAPS = {8: (("Tue", "Wed"),)}
 # Individual days rewritten wholesale, applied after the week is otherwise built. Wk 10:
-# Ibiza 24-26 Sep, so the 5K test moves to Wednesday the 23rd — the last clear day — and
-# Tuesday drops to a short primer instead of its tempo, because a quality session the day
-# before a time trial costs more than it gives.
-DAY_OVERRIDE = {10: {"Tue": ("Easy 5 km + 4×20s strides (TT primer)", "easy", 5),
-                     "Wed": ("5K TIME TRIAL (fitness check) + w/u & c/d", "tt", 9),
+# Ibiza 24-26 Sep, so the 5K test moves to Wednesday the 23rd — the last clear day. The
+# three days that remain carry as much volume as they can without wrecking the test:
+# Monday takes the bulk (furthest from it), Tuesday stays short (a quality session the day
+# before a time trial costs more than it gives), and Wednesday absorbs the rest through a
+# longer warm-up and cool-down around the 5K itself.
+DAY_OVERRIDE = {10: {"Mon": ("Easy 12 km + 6×20s strides", "easy", 12),
+                     "Tue": ("Easy 6 km + 4×20s strides (TT primer)", "easy", 6),
+                     "Wed": ("5K TIME TRIAL (fitness check) + long w/u & c/d", "tt", 13),
                      "Sun": ("Rest — travel home; back to it Monday", "rest", 0)}}
 # Weeks cut to only the listed days; every other day becomes rest. Distinct from OFF_WEEKS,
 # which writes off a whole week — here the surviving sessions are the point of the week.

@@ -538,29 +538,29 @@
       "week": 10,
       "start": "2026-09-21",
       "phase": "Aerobic Base",
-      "target_km": 14,
+      "target_km": 31,
       "focus": "5K time trial Wed, then Ibiza 24-26 Sep",
       "days": [
         {
           "date": "2026-09-21",
           "dow": "Mon",
-          "type": "rest",
-          "session": "Rest / mobility (full rest day)",
-          "target_km": 0
+          "type": "easy",
+          "session": "Easy 12 km + 6×20s strides",
+          "target_km": 12
         },
         {
           "date": "2026-09-22",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 5 km + 4×20s strides (TT primer)",
-          "target_km": 5
+          "session": "Easy 6 km + 4×20s strides (TT primer)",
+          "target_km": 6
         },
         {
           "date": "2026-09-23",
           "dow": "Wed",
           "type": "tt",
-          "session": "5K TIME TRIAL (fitness check) + w/u & c/d",
-          "target_km": 9
+          "session": "5K TIME TRIAL (fitness check) + long w/u & c/d",
+          "target_km": 13
         },
         {
           "date": "2026-09-24",
