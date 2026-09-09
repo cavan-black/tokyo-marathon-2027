@@ -14905,11 +14905,11 @@
     "2026-09-08": {
       "week": 8,
       "dow": "Tue",
-      "type": "easy",
-      "session": "Easy 7 km + 6×20s strides + 4×30s hills  +S&C (hard-day session)",
-      "target_km": 6,
+      "type": "rest",
+      "session": "Rest",
+      "target_km": 0,
       "actual_km": 0,
-      "status": "Missed",
+      "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -14918,11 +14918,11 @@
     "2026-09-09": {
       "week": 8,
       "dow": "Wed",
-      "type": "easy",
-      "session": "Easy 13 km",
-      "target_km": 13,
+      "type": "rest",
+      "session": "Rest",
+      "target_km": 0,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -14931,11 +14931,11 @@
     "2026-09-10": {
       "week": 8,
       "dow": "Thu",
-      "type": "easy",
-      "session": "Easy 6 km + strides",
-      "target_km": 5,
+      "type": "rest",
+      "session": "Rest",
+      "target_km": 0,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -17370,14 +17370,14 @@
       "flag": "⚠ Under-target — consider holding volume / repeating the week"
     },
     "8": {
-      "planned_km": 56,
+      "planned_km": 32,
       "planned_km_due": 0,
       "actual_km": 0,
       "substituted_km": 0,
       "replaced_km": 0,
       "done": 0,
       "partial": 0,
-      "missed": 1,
+      "missed": 0,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -17786,7 +17786,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-08T23:15:06+00:00",
+  "last_sync": "2026-09-09T09:04:41+00:00",
   "tracker": {
     "threshold_latest": null,
     "mp_latest": [

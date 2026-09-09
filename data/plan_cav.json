@@ -422,7 +422,7 @@
       "week": 8,
       "start": "2026-09-07",
       "phase": "Aerobic Base",
-      "target_km": 54,
+      "target_km": 59.1,
       "focus": "",
       "days": [
         {
@@ -464,15 +464,15 @@
           "date": "2026-09-12",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 6 km + strides",
-          "target_km": 6
+          "session": "Easy 6.0 km + strides",
+          "target_km": 6.0
         },
         {
           "date": "2026-09-13",
           "dow": "Sun",
           "type": "long",
-          "session": "16 km easy",
-          "target_km": 16
+          "session": "21.1 km easy",
+          "target_km": 21.1
         }
       ]
     },
@@ -1872,7 +1872,7 @@
       "week": 33,
       "start": "2027-03-01",
       "phase": "Taper & Race",
-      "target_km": 38,
+      "target_km": 38.0,
       "focus": "RACE WEEK",
       "days": [
         {

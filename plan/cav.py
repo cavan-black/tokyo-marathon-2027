@@ -49,6 +49,15 @@ QKM_OVERRIDE = {7: {"tue": 9, "thu": 9}, 8: {"tue": 10, "thu": 10},
 # to Wednesday and Wednesday's easy run comes forward. The S&C tag travels with the session
 # it's attached to, which is correct: the hard-day block belongs with the quality run.
 DAY_SWAPS = {8: (("Tue", "Wed"),)}
+# Long runs set by hand for a given week, overriding the LR array. The week's volume moves
+# by the same delta so the midweek days keep their own distances instead of being squeezed
+# to pay for a longer Sunday. Wk 8: half-marathon long run, run on request — note this is
+# a 51% jump on the 14 km actually run the week before, and longer than every long run
+# scheduled up to Wk 12.
+LR_OVERRIDE = {8: 21.1}
+
+def lr_for(w):   return LR_OVERRIDE.get(w, LR[w-1])
+def vol_for(w):  return VOL[w-1] + (lr_for(w) - LR[w-1])
 
 def phase(w):
     if w <= 4:  return "Re-entry / Rebuild"
@@ -95,7 +104,8 @@ def thu(w):
     return {31:"Easy 8 km + 4×20s strides",32:"Easy 8 km + 6×20s strides",33:"Rest or easy 5 km"}[w], "easy"
 
 def sun(w):
-    d=LR[w-1]
+    # via lr_for so the text can't drift from target_km when a week overrides its long run
+    d=lr_for(w)
     txt={16:"28 km, last 8 km @ MP",18:"30 km, last 10 km @ MP",
         19:"30 km easy (recovery weekend — no MP)",
         20:"TUNE-UP: Sevilla Half Marathon (all-out) + w/u & c/d",
@@ -130,7 +140,7 @@ def qkm(w, which):
     return {"tue":9,"thu":8}[which]
 
 def build_week(w):
-    v=VOL[w-1]; lr=LR[w-1]; reentry = w<=4
+    v=vol_for(w); lr=lr_for(w); reentry = w<=4
     if w in OFF_WEEKS:
         # Written off deliberately, so it reads as a plan rather than as seven missed
         # sessions. Nothing is carried over into the week either side — a week's training
@@ -357,7 +367,7 @@ def build():
             days.append({"date":(monday+timedelta(days=i)).isoformat(),"dow":dow,
                          "type":typ,"session":txt,"target_km":km})
         weeks.append({"week":w,"start":monday.isoformat(),"phase":phase(w),
-                      "target_km":VOL[w-1],"focus":focus(w),"days":days})
+                      "target_km":vol_for(w),"focus":focus(w),"days":days})
     return {"meta":{"id":ID,"name":NAME,"goal":GOAL,"mp_per_km":"4:01","mp_per_mile":"6:29",
                     "start":START.isoformat(),"race":RACE.isoformat(),
                     "peak_km":max(VOL),"total_weeks":33,
