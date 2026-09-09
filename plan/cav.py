@@ -42,7 +42,8 @@ EASY_RETURN_WEEKS = {7}
 # rebuild weeks the week is far smaller than the base phase assumes, so the two quality runs
 # would eat it whole and leave the easy days rounding to two or three km each.
 QKM_OVERRIDE = {7: {"tue": 9, "thu": 9}, 8: {"tue": 10, "thu": 10},
-                9: {"tue": 12, "thu": 10}, 10: {"tue": 11, "thu": 10}, 13: {"tue": 12, "thu": 11}}
+                9: {"tue": 12, "thu": 10}, 10: {"tue": 11, "thu": 10},
+                11: {"tue": 11, "thu": 9}, 13: {"tue": 12, "thu": 11}}
 # Days whose sessions trade places in a given week, applied after the week is built so the
 # sizing logic above still sees its normal Tue/Thu quality slots. Wk 8: Sunday's long run
 # was run on Monday, so Tuesday's tempo would have landed on tired legs — the session moves
@@ -69,9 +70,15 @@ KEEP_ONLY_WHY = {10: "Ibiza"}
 # a 51% jump on the 14 km actually run the week before, and longer than every long run
 # scheduled up to Wk 12.
 LR_OVERRIDE = {8: 21.1}
+# Weekly volume set by hand, overriding VOL. Wk 11 is the week back from Ibiza: the array
+# had 66 km, which is a doubling on the 31 km week before it and triple the ~22 km/wk
+# actually being run through late Aug/early Sep. Trimmed to 52 with the 20 km long run
+# kept intact — the long run is the part worth protecting, so the midweek days absorb
+# the cut.
+VOL_OVERRIDE = {11: 52}
 
 def lr_for(w):   return LR_OVERRIDE.get(w, LR[w-1])
-def vol_for(w):  return VOL[w-1] + (lr_for(w) - LR[w-1])
+def vol_for(w):  return VOL_OVERRIDE.get(w, VOL[w-1]) + (lr_for(w) - LR[w-1])
 
 def phase(w):
     if w <= 4:  return "Re-entry / Rebuild"
