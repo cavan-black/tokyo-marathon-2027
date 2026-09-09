@@ -22828,8 +22828,8 @@
       "week": 10,
       "dow": "Sun",
       "type": "easy",
-      "session": "Easy 8 km — evening, back from Ibiza. Genuinely easy; skip it if the trip took more out of you than expected",
-      "target_km": 8,
+      "session": "Easy 10 km — evening, back from Ibiza. Genuinely easy; skip it if the trip took more out of you than expected",
+      "target_km": 10,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -25077,7 +25077,7 @@
       "flag": "✓ On track"
     },
     "10": {
-      "planned_km": 33,
+      "planned_km": 35,
       "planned_km_due": 0,
       "actual_km": 0,
       "substituted_km": 0,
@@ -25461,7 +25461,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-09T14:04:45+00:00",
+  "last_sync": "2026-09-09T14:05:52+00:00",
   "tracker": {
     "threshold_latest": null,
     "mp_latest": [

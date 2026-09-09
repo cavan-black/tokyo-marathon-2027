@@ -59,8 +59,8 @@ DAY_SWAPS = {8: (("Tue", "Wed"),)}
 DAY_OVERRIDE = {10: {"Mon": ("Easy 12 km + 6×20s strides", "easy", 12),
                      "Tue": ("Easy 6 km + 4×20s strides (TT primer)", "easy", 6),
                      "Wed": ("5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d", "tt", 7),
-                     "Sun": ("Easy 8 km — evening, back from Ibiza. Genuinely easy; "
-                             "skip it if the trip took more out of you than expected", "easy", 8)}}
+                     "Sun": ("Easy 10 km — evening, back from Ibiza. Genuinely easy; "
+                             "skip it if the trip took more out of you than expected", "easy", 10)}}
 # Weeks cut to only the listed days; every other day becomes rest. Distinct from OFF_WEEKS,
 # which writes off a whole week — here the surviving sessions are the point of the week.
 KEEP_ONLY = {10: ("Mon", "Tue", "Wed", "Sun")}
