@@ -449,16 +449,16 @@
         {
           "date": "2026-09-10",
           "dow": "Thu",
-          "type": "easy",
-          "session": "Medium easy 10 km + 6×20s strides",
-          "target_km": 10
+          "type": "rest",
+          "session": "Rest — Thursday's run moved to Friday (no time)",
+          "target_km": 0
         },
         {
           "date": "2026-09-11",
           "dow": "Fri",
-          "type": "recovery",
-          "session": "Recovery 5 km easy  +S&C (easy-day session)",
-          "target_km": 5
+          "type": "easy",
+          "session": "Easy 15 km + 6×20s strides (Thu + Fri combined)  +S&C (easy-day session)",
+          "target_km": 15
         },
         {
           "date": "2026-09-12",

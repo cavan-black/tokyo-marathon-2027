@@ -56,7 +56,10 @@ DAY_SWAPS = {8: (("Tue", "Wed"),)}
 # the bulk (furthest from it), Tuesday stays short (a quality session the day before a time
 # trial costs more than it gives), the test day is just 1 km either side of the 5K, and the
 # Sunday travel day picks up an easy evening run instead of being written off.
-DAY_OVERRIDE = {10: {"Mon": ("Easy 12 km + 6×20s strides", "easy", 12),
+DAY_OVERRIDE = {8: {"Thu": ("Rest — Thursday's run moved to Friday (no time)", "rest", 0),
+                    "Fri": ("Easy 15 km + 6×20s strides (Thu + Fri combined)  "
+                            "+S&C (easy-day session)", "easy", 15)},
+                10: {"Mon": ("Easy 12 km + 6×20s strides", "easy", 12),
                      "Tue": ("Easy 6 km + 4×20s strides (TT primer)", "easy", 6),
                      "Wed": ("5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d", "tt", 7),
                      "Sun": ("Easy 10 km — evening, back from Ibiza. Genuinely easy; "
