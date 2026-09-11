@@ -14967,7 +14967,22 @@
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": 20131998629,
+          "date": "2026-09-11",
+          "name": "Night Padel",
+          "activity_type": "Workout",
+          "distance_km": 0.0,
+          "moving_time_s": 3954,
+          "pace_min_km": null,
+          "avg_hr": 120.9,
+          "max_hr": 163.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-09-12": {
       "week": 8,
@@ -17801,7 +17816,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-11T10:52:15+00:00",
+  "last_sync": "2026-09-11T16:57:06+00:00",
   "tracker": {
     "threshold_latest": null,
     "mp_latest": [
