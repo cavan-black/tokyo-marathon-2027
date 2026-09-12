@@ -15008,7 +15008,22 @@
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": 20149898871,
+          "date": "2026-09-13",
+          "name": "Morning Workout",
+          "activity_type": "Workout",
+          "distance_km": 0.0,
+          "moving_time_s": 1199,
+          "pace_min_km": null,
+          "avg_hr": 108.2,
+          "max_hr": 132.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-09-14": {
       "week": 9,
@@ -17816,7 +17831,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-12T16:05:34+00:00",
+  "last_sync": "2026-09-12T22:53:43+00:00",
   "tracker": {
     "threshold_latest": null,
     "mp_latest": [
