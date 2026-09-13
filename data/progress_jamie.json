@@ -15004,7 +15004,7 @@
       "session": "22 km easy",
       "target_km": 22,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -17422,7 +17422,7 @@
       "replaced_km": 0,
       "done": 0,
       "partial": 0,
-      "missed": 1,
+      "missed": 2,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -17831,7 +17831,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-12T22:53:43+00:00",
+  "last_sync": "2026-09-13T11:20:25+00:00",
   "tracker": {
     "threshold_latest": null,
     "mp_latest": [
