@@ -493,16 +493,16 @@
         {
           "date": "2026-09-15",
           "dow": "Tue",
-          "type": "quality",
-          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
-          "target_km": 12
+          "type": "easy",
+          "session": "Easy 8 km + 6×20s strides",
+          "target_km": 8
         },
         {
           "date": "2026-09-16",
           "dow": "Wed",
-          "type": "easy",
-          "session": "Easy 8 km + 6×20s strides",
-          "target_km": 8
+          "type": "quality",
+          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "target_km": 12
         },
         {
           "date": "2026-09-17",
