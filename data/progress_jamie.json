@@ -15044,12 +15044,41 @@
       "type": "quality",
       "session": "Tempo: 2×10 min @ T, 2 min jog + w/u & c/d  +S&C (hard-day session)",
       "target_km": 9,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
-      "cross_activities": []
+      "actual_km": 8.17,
+      "status": "Done",
+      "pace_min_km": 6.616,
+      "pace_str": "6:37",
+      "activities": [
+        {
+          "id": 20189006094,
+          "date": "2026-09-15",
+          "name": "Evening Run",
+          "activity_type": "Run",
+          "distance_km": 8.17,
+          "moving_time_s": 3243,
+          "pace_min_km": 6.616,
+          "avg_hr": 152.6,
+          "max_hr": 173.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ],
+      "cross_activities": [
+        {
+          "id": 20189030700,
+          "date": "2026-09-15",
+          "name": "Night Weight Training",
+          "activity_type": "WeightTraining",
+          "distance_km": 0.0,
+          "moving_time_s": 1042,
+          "pace_min_km": null,
+          "avg_hr": 74.3,
+          "max_hr": 106.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-09-16": {
       "week": 9,
@@ -17432,16 +17461,16 @@
     },
     "9": {
       "planned_km": 60,
-      "planned_km_due": 0,
-      "actual_km": 0,
+      "planned_km_due": 9,
+      "actual_km": 8.2,
       "substituted_km": 0,
       "replaced_km": 0,
-      "done": 0,
+      "done": 1,
       "partial": 0,
-      "missed": 1,
+      "missed": 0,
       "substituted": 0,
       "replaced": 0,
-      "quality_hit": 0,
+      "quality_hit": 1,
       "quality_planned": 1,
       "long_done": false,
       "flag": "✓ On track"
@@ -17831,9 +17860,13 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-15T17:32:55+00:00",
+  "last_sync": "2026-09-15T23:27:36+00:00",
   "tracker": {
-    "threshold_latest": null,
+    "threshold_latest": [
+      "2026-09-15",
+      "6:37",
+      6.616
+    ],
     "mp_latest": [
       "2026-08-30",
       "6:24",
