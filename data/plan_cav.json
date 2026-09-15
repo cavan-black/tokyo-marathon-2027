@@ -507,16 +507,16 @@
         {
           "date": "2026-09-17",
           "dow": "Thu",
-          "type": "easy",
-          "session": "Hill strides: easy 10 km + 8×15s hill sprints",
-          "target_km": 10
+          "type": "recovery",
+          "session": "Recovery 6 km easy  +S&C (easy-day session)",
+          "target_km": 6
         },
         {
           "date": "2026-09-18",
           "dow": "Fri",
-          "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C (easy-day session)",
-          "target_km": 6
+          "type": "easy",
+          "session": "Hill strides: easy 10 km + 8×15s hill sprints",
+          "target_km": 10
         },
         {
           "date": "2026-09-19",

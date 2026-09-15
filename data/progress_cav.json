@@ -25784,9 +25784,9 @@
     "2026-09-17": {
       "week": 9,
       "dow": "Thu",
-      "type": "easy",
-      "session": "Hill strides: easy 10 km + 8×15s hill sprints",
-      "target_km": 10,
+      "type": "recovery",
+      "session": "Recovery 6 km easy  +S&C (easy-day session)",
+      "target_km": 6,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -25797,9 +25797,9 @@
     "2026-09-18": {
       "week": 9,
       "dow": "Fri",
-      "type": "recovery",
-      "session": "Recovery 6 km easy  +S&C (easy-day session)",
-      "target_km": 6,
+      "type": "easy",
+      "session": "Hill strides: easy 10 km + 8×15s hill sprints",
+      "target_km": 10,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -28548,7 +28548,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-15T15:36:47+00:00",
+  "last_sync": "2026-09-15T15:40:41+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-09",
