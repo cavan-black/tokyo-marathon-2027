@@ -500,16 +500,16 @@
         {
           "date": "2026-09-16",
           "dow": "Wed",
-          "type": "quality",
-          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
-          "target_km": 12
+          "type": "recovery",
+          "session": "Recovery 6 km easy  +S&C (easy-day session)",
+          "target_km": 6
         },
         {
           "date": "2026-09-17",
           "dow": "Thu",
-          "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C (easy-day session)",
-          "target_km": 6
+          "type": "quality",
+          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "target_km": 12
         },
         {
           "date": "2026-09-18",
