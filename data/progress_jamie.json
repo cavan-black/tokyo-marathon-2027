@@ -15086,11 +15086,25 @@
       "type": "easy",
       "session": "Easy 8 km + strides",
       "target_km": 8,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
+      "actual_km": 8.5,
+      "status": "Done",
+      "pace_min_km": 6.025,
+      "pace_str": "6:02",
+      "activities": [
+        {
+          "id": 20202911495,
+          "date": "2026-09-16",
+          "name": "Evening Run",
+          "activity_type": "Run",
+          "distance_km": 8.5,
+          "moving_time_s": 3073,
+          "pace_min_km": 6.025,
+          "avg_hr": 138.1,
+          "max_hr": 149.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ],
       "cross_activities": [
         {
           "id": 20202010771,
@@ -17476,13 +17490,13 @@
     },
     "9": {
       "planned_km": 60,
-      "planned_km_due": 9,
-      "actual_km": 8.2,
+      "planned_km_due": 17,
+      "actual_km": 16.7,
       "substituted_km": 0,
       "replaced_km": 0,
-      "done": 1,
+      "done": 2,
       "partial": 0,
-      "missed": 1,
+      "missed": 0,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 1,
@@ -17875,7 +17889,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-16T17:11:27+00:00",
+  "last_sync": "2026-09-16T17:32:45+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
