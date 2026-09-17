@@ -538,36 +538,36 @@
       "week": 10,
       "start": "2026-09-21",
       "phase": "Aerobic Base",
-      "target_km": 35,
+      "target_km": 55,
       "focus": "5K time trial Wed, then Ibiza 24-26 Sep",
       "days": [
         {
           "date": "2026-09-21",
           "dow": "Mon",
           "type": "easy",
-          "session": "Easy 12 km + 6×20s strides",
-          "target_km": 12
+          "session": "Easy 8 km + 6×20s strides (TT primer)",
+          "target_km": 8
         },
         {
           "date": "2026-09-22",
           "dow": "Tue",
-          "type": "easy",
-          "session": "Easy 6 km + 4×20s strides (TT primer)",
-          "target_km": 6
-        },
-        {
-          "date": "2026-09-23",
-          "dow": "Wed",
           "type": "tt",
           "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d",
           "target_km": 7
         },
         {
+          "date": "2026-09-23",
+          "dow": "Wed",
+          "type": "long",
+          "session": "Long slow 22 km @ 5:30–5:50/km — new longest run ever, and the day after a time trial, so it has to be genuinely slow the whole way. Conversational or you're doing it wrong",
+          "target_km": 22
+        },
+        {
           "date": "2026-09-24",
           "dow": "Thu",
-          "type": "rest",
-          "session": "Rest — Ibiza",
-          "target_km": 0
+          "type": "recovery",
+          "session": "Recovery 8 km very easy — morning, before the flight",
+          "target_km": 8
         },
         {
           "date": "2026-09-25",

@@ -27183,8 +27183,8 @@
       "week": 10,
       "dow": "Mon",
       "type": "easy",
-      "session": "Easy 12 km + 6×20s strides",
-      "target_km": 12,
+      "session": "Easy 8 km + 6×20s strides (TT primer)",
+      "target_km": 8,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -27195,19 +27195,6 @@
     "2026-09-22": {
       "week": 10,
       "dow": "Tue",
-      "type": "easy",
-      "session": "Easy 6 km + 4×20s strides (TT primer)",
-      "target_km": 6,
-      "actual_km": 0,
-      "status": "Upcoming",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
-      "cross_activities": []
-    },
-    "2026-09-23": {
-      "week": 10,
-      "dow": "Wed",
       "type": "tt",
       "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d",
       "target_km": 7,
@@ -27218,14 +27205,27 @@
       "activities": [],
       "cross_activities": []
     },
+    "2026-09-23": {
+      "week": 10,
+      "dow": "Wed",
+      "type": "long",
+      "session": "Long slow 22 km @ 5:30–5:50/km — new longest run ever, and the day after a time trial, so it has to be genuinely slow the whole way. Conversational or you're doing it wrong",
+      "target_km": 22,
+      "actual_km": 0,
+      "status": "Upcoming",
+      "pace_min_km": null,
+      "pace_str": null,
+      "activities": [],
+      "cross_activities": []
+    },
     "2026-09-24": {
       "week": 10,
       "dow": "Thu",
-      "type": "rest",
-      "session": "Rest — Ibiza",
-      "target_km": 0,
+      "type": "recovery",
+      "session": "Recovery 8 km very easy — morning, before the flight",
+      "target_km": 8,
       "actual_km": 0,
-      "status": "Rest",
+      "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -29510,7 +29510,7 @@
       "flag": "✓ On track"
     },
     "10": {
-      "planned_km": 35,
+      "planned_km": 55,
       "planned_km_due": 0,
       "actual_km": 0,
       "substituted_km": 0,
@@ -29894,7 +29894,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-17T14:01:27+00:00",
+  "last_sync": "2026-09-17T14:25:21+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-16",

@@ -59,14 +59,17 @@ DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri"))}
 DAY_OVERRIDE = {8: {"Thu": ("Rest — Thursday's run moved to Friday (no time)", "rest", 0),
                     "Fri": ("Easy 15 km + 6×20s strides (Thu + Fri combined)  "
                             "+S&C (easy-day session)", "easy", 15)},
-                10: {"Mon": ("Easy 12 km + 6×20s strides", "easy", 12),
-                     "Tue": ("Easy 6 km + 4×20s strides (TT primer)", "easy", 6),
-                     "Wed": ("5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d", "tt", 7),
+                10: {"Mon": ("Easy 8 km + 6×20s strides (TT primer)", "easy", 8),
+                     "Tue": ("5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d", "tt", 7),
+                     "Wed": ("Long slow 22 km @ 5:30–5:50/km — new longest run ever, and the "
+                             "day after a time trial, so it has to be genuinely slow the "
+                             "whole way. Conversational or you're doing it wrong", "long", 22),
+                     "Thu": ("Recovery 8 km very easy — morning, before the flight", "recovery", 8),
                      "Sun": ("Easy 10 km — evening, back from Ibiza. Genuinely easy; "
                              "skip it if the trip took more out of you than expected", "easy", 10)}}
 # Weeks cut to only the listed days; every other day becomes rest. Distinct from OFF_WEEKS,
 # which writes off a whole week — here the surviving sessions are the point of the week.
-KEEP_ONLY = {10: ("Mon", "Tue", "Wed", "Sun")}
+KEEP_ONLY = {10: ("Mon", "Tue", "Wed", "Thu", "Sun")}
 KEEP_ONLY_WHY = {10: "Ibiza"}
 # Long runs set by hand for a given week, overriding the LR array. The week's volume moves
 # by the same delta so the midweek days keep their own distances instead of being squeezed
