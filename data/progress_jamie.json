@@ -15133,7 +15133,22 @@
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": 20216264415,
+          "date": "2026-09-17",
+          "name": "Night Weight Training",
+          "activity_type": "WeightTraining",
+          "distance_km": 0.0,
+          "moving_time_s": 3780,
+          "pace_min_km": null,
+          "avg_hr": 78.0,
+          "max_hr": 115.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-09-18": {
       "week": 9,
@@ -17889,7 +17904,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-17T14:45:28+00:00",
+  "last_sync": "2026-09-17T17:32:20+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
