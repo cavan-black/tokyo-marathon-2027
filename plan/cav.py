@@ -82,7 +82,7 @@ LR_OVERRIDE = {8: 21.1}
 # actually being run through late Aug/early Sep. Trimmed to 52 with the 20 km long run
 # kept intact — the long run is the part worth protecting, so the midweek days absorb
 # the cut.
-VOL_OVERRIDE = {9: 57, 11: 52}
+VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69}
 
 def lr_for(w):   return LR_OVERRIDE.get(w, LR[w-1])
 def vol_for(w):  return VOL_OVERRIDE.get(w, VOL[w-1]) + (lr_for(w) - LR[w-1])
@@ -199,6 +199,11 @@ def build_week(w):
     pool=max(v-known,0)
     if reentry:
         wed_km=round(pool*0.55); fri_km=max(pool-wed_km,0); sat_km=0
+    elif w in TT_WEEKS and sat_fixed:
+        # Saturday's distance is set by the test, so the residual that would normally
+        # land there has nowhere to go and silently vanished — the week's days stopped
+        # summing to its own target_km. Split the pool between Wed and Fri instead.
+        fri_km=round(pool*0.40); wed_km=max(pool-fri_km,0); sat_km=0
     else:
         fri_km=round(pool*0.28); wed_km=round(pool*0.40); sat_km=max(pool-fri_km-wed_km,0)
     wed_txt=f"Easy {wed_km} km"+("" if reentry else " + 6×20s strides")
