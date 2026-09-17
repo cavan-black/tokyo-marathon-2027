@@ -27134,7 +27134,7 @@
       "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
       "target_km": 12,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -29501,11 +29501,11 @@
       "replaced_km": -21.2,
       "done": 2,
       "partial": 0,
-      "missed": 0,
+      "missed": 1,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
-      "quality_planned": 0,
+      "quality_planned": 1,
       "long_done": false,
       "flag": "⚠ Over-target — watch fatigue/injury; don't overcook"
     },
@@ -29894,7 +29894,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-16T23:35:01+00:00",
+  "last_sync": "2026-09-17T11:15:46+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-09",
