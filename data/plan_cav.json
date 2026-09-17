@@ -480,7 +480,7 @@
       "week": 9,
       "start": "2026-09-14",
       "phase": "Aerobic Base",
-      "target_km": 60,
+      "target_km": 57,
       "focus": "",
       "days": [
         {
@@ -502,7 +502,7 @@
           "dow": "Wed",
           "type": "quality",
           "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
-          "target_km": 12
+          "target_km": 9
         },
         {
           "date": "2026-09-17",

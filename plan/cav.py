@@ -42,7 +42,7 @@ EASY_RETURN_WEEKS = {7}
 # rebuild weeks the week is far smaller than the base phase assumes, so the two quality runs
 # would eat it whole and leave the easy days rounding to two or three km each.
 QKM_OVERRIDE = {7: {"tue": 9, "thu": 9}, 8: {"tue": 10, "thu": 10},
-                9: {"tue": 12, "thu": 10}, 10: {"tue": 11, "thu": 10},
+                9: {"tue": 9, "thu": 10}, 10: {"tue": 11, "thu": 10},
                 11: {"tue": 11, "thu": 9}, 13: {"tue": 12, "thu": 11}}
 # Days whose sessions trade places in a given week, applied after the week is built so the
 # sizing logic above still sees its normal Tue/Thu quality slots. Wk 8: Sunday's long run
@@ -79,7 +79,7 @@ LR_OVERRIDE = {8: 21.1}
 # actually being run through late Aug/early Sep. Trimmed to 52 with the 20 km long run
 # kept intact — the long run is the part worth protecting, so the midweek days absorb
 # the cut.
-VOL_OVERRIDE = {11: 52}
+VOL_OVERRIDE = {9: 57, 11: 52}
 
 def lr_for(w):   return LR_OVERRIDE.get(w, LR[w-1])
 def vol_for(w):  return VOL_OVERRIDE.get(w, VOL[w-1]) + (lr_for(w) - LR[w-1])
