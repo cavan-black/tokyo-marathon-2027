@@ -508,22 +508,22 @@
           "date": "2026-09-17",
           "dow": "Thu",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C (easy-day session)",
-          "target_km": 6
+          "session": "Recovery 9 km easy (half of Saturday's run moved here)  +S&C (easy-day session)",
+          "target_km": 9
         },
         {
           "date": "2026-09-18",
           "dow": "Fri",
           "type": "easy",
-          "session": "Hill strides: easy 10 km + 8×15s hill sprints",
-          "target_km": 10
+          "session": "Hill strides: easy 13 km + 8×15s hill sprints (half of Saturday's run moved here)",
+          "target_km": 13
         },
         {
           "date": "2026-09-19",
           "dow": "Sat",
-          "type": "easy",
-          "session": "Easy 6 km + strides",
-          "target_km": 6
+          "type": "rest",
+          "session": "Rest — Saturday's 6 km split across Thursday and Friday",
+          "target_km": 0
         },
         {
           "date": "2026-09-20",

@@ -27131,8 +27131,8 @@
       "week": 9,
       "dow": "Thu",
       "type": "recovery",
-      "session": "Recovery 6 km easy  +S&C (easy-day session)",
-      "target_km": 6,
+      "session": "Recovery 9 km easy (half of Saturday's run moved here)  +S&C (easy-day session)",
+      "target_km": 9,
       "actual_km": 0,
       "status": "Missed",
       "pace_min_km": null,
@@ -27144,8 +27144,8 @@
       "week": 9,
       "dow": "Fri",
       "type": "easy",
-      "session": "Hill strides: easy 10 km + 8×15s hill sprints",
-      "target_km": 10,
+      "session": "Hill strides: easy 13 km + 8×15s hill sprints (half of Saturday's run moved here)",
+      "target_km": 13,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -27156,11 +27156,11 @@
     "2026-09-19": {
       "week": 9,
       "dow": "Sat",
-      "type": "easy",
-      "session": "Easy 6 km + strides",
-      "target_km": 6,
+      "type": "rest",
+      "session": "Rest — Saturday's 6 km split across Thursday and Friday",
+      "target_km": 0,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -29894,7 +29894,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-17T14:34:57+00:00",
+  "last_sync": "2026-09-17T14:45:27+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-16",
