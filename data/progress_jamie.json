@@ -15197,7 +15197,7 @@
       "session": "24 km easy + last 4 km @ MP",
       "target_km": 24,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -17519,19 +17519,19 @@
     },
     "9": {
       "planned_km": 60,
-      "planned_km_due": 29,
+      "planned_km_due": 36,
       "actual_km": 24.7,
       "substituted_km": 0,
       "replaced_km": 0,
       "done": 3,
       "partial": 0,
-      "missed": 2,
+      "missed": 3,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 1,
       "quality_planned": 1,
       "long_done": false,
-      "flag": "✓ On track"
+      "flag": "⚠ Under-target — consider holding volume / repeating the week"
     },
     "10": {
       "planned_km": 60,
@@ -17918,7 +17918,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-19T22:45:16+00:00",
+  "last_sync": "2026-09-20T10:55:02+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
