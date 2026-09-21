@@ -104,9 +104,46 @@ FUEL_PRE = [
     ["Coffee ~45–60 min before", "Caffeine is a legit, legal boost before hard sessions and races."],
 ]
 FUEL_POST = [
-    ["During (>90 min)", "40–60 g carbs/hr (gels/drink) + fluids. Start early, don't wait to feel empty."],
     ["Recovery window", "After long/quality runs: carbs + 20–30 g protein within ~60 min."],
     ["Rehydrate", "Replace ~1.25–1.5× fluid lost; add salt if you're a salty/heavy sweater."],
+]
+# Carbs DURING the run. The ceiling here is your gut, not your legs, and unlike most of
+# this page it's a skill that has to be trained over months — which means it belongs in
+# the plan from the first long run, not bolted on in race week.
+FUEL_CARBS = [
+    ["Under 75 min", "Nothing needed. Water only."],
+    ["75–120 min", "30–40 g carbs/hr — one feed around 45 min, one around 90."],
+    ["2:00–2:30", "50–60 g/hr, something every 25–30 min."],
+    ["2:30 and beyond", "70–90 g/hr, every 20 min. Needs glucose AND fructose together — glucose alone saturates its transporter near 60 g/hr, however much you swallow."],
+    ["Start at 40–45 min", "Not when you feel empty. Absorption is rate-limited, so once you're behind you cannot catch up — you can only slow down."],
+    ["Train the gut", "Tolerance takes months, and it's pace-specific: carbs you handle fine at easy pace can come straight back up at MP. Build from 30–40 g/hr now toward 70–90 by the peak block."],
+    ["Rehearse at race pace", "At least two long runs with MP segments AND full race fuelling. A gel at easy pace proves nothing about a gel at marathon pace."],
+    ["Slower finish, more total fuel", "Per-hour rates don't change, but a 4:00 marathon is four hours of fuelling against three. Total need scales with time on feet, not distance."],
+]
+# Fluid and sodium are a separate problem from carbs and in heat they bite first.
+FUEL_FLUID = [
+    ["Measure yours — once", "Weigh yourself naked before and after a long run and note what you drank. Sweat loss (L) = kg lost + litres drunk. Do it on a hot run and a cool one; those two numbers beat any general guidance here."],
+    ["Cool, 15–18°C", "300–400 ml/hr."],
+    ["Warm, 22–25°C", "500–700 ml/hr."],
+    ["Hot, ~30°C", "700–1,000 ml/hr — and accept you'll still finish down on the day."],
+    ["The 2% rule", "Lose more than 2% of body weight in fluid and both performance and heat regulation fall away sharply."],
+    ["Don't overdrink either", "Large volumes of plain water in heat dilute blood sodium. That is genuinely dangerous, not merely suboptimal."],
+    ["Sodium 500–1,000 mg/hr", "In heat. White crust on your cap or sunglasses and stinging eyes mean you're a salty sweater — work at the top of that range."],
+    ["Heat distorts the data", "A run finishing above ~25°C measures heat tolerance, not fitness: HR sits 10–15 bpm higher for the same effort. Judge sessions, and time trials, on the cool ones."],
+]
+# Almost none of this needs branded product. Sucrose is glucose+fructose bonded 1:1,
+# which is the ratio the expensive mixes are sold on.
+FUEL_CHEAP = [
+    ["Table sugar is the answer", "Sucrose IS glucose + fructose, bonded 1:1 — essentially the ratio brands charge a premium for, and it performs the same in head-to-head studies."],
+    ["The recipe, per 750 ml", "45 g sugar (3 heaped tbsp) + ¼ tsp table salt (~590 mg sodium) + squash or lemon to make it drinkable. That's 45 g carb at ~6%."],
+    ["Keep it at 6% or below", "Stronger than that in heat and it sits in your stomach instead of emptying into the gut."],
+    ["What it costs", "About €0.03 per 25 g of carbohydrate, against €1.80–4.00 for a gel. A €1 bag of sugar covers most of a training block."],
+    ["Cheap solid options", "Dates (~75 g carb/100 g — best value real food), jelly babies or Haribo, fig rolls, raisins, white bread and jam."],
+    ["Flat Coca-Cola", "Late in long runs. Sugar plus caffeine, and it goes down when nothing else will."],
+    ["Caffeine tablets", "Pennies against caffeinated gels. ~3 mg/kg an hour before a hard session or race."],
+    ["Electrolyte on the cheap", "Oral rehydration sachets from any pharmacy (in Spain, ask for 'suero oral') — same ingredients as tablets at a fraction of the price."],
+    ["Still buy one or two gels", "Try them once, so you know whether you can stomach what's on the course table when that's all there is."],
+    ["Carrying it for nothing", "Loop the route past home or the car and stash a bottle — a 7 km loop run three times needs no kit at all. A 500 ml soft flask (~€10) is the only thing worth buying before you're running 30 km in heat."],
 ]
 FUEL_ALC = [
     ["What it costs you", "Wrecks deep sleep, dehydrates, blunts recovery, raises next-day injury risk."],
@@ -140,13 +177,18 @@ def fuel(football=False, volume_note=""):
     if football:
         decide.append(["Big football week", "If a match or tournament ate your legs, downgrade the next run to easy/recovery and protect the long run. Two hard efforts a week total — matches included."])
     intro = ("You can't out-train poor fuelling, sleep or recovery" + (f" — {volume_note}" if volume_note else "") +
-             ". Fuel the work, protect recovery, be smart about alcohol, and know when NOT to run.")
+             ". Fuel the work, protect recovery, be smart about alcohol, and know when NOT to run. "
+             "Fuelling a long run is a trained skill, not a race-day decision: the gut adapts over "
+             "months, so practise it from the first long run rather than discovering your limits at 30 km.")
     return {
         "intro": intro,
         "sections": [
             {"title": "Daily diet · fuel the work", "headers": ["Topic", "Detail"], "rows": FUEL_DIET},
             {"title": "Before running · what & when", "headers": ["Topic", "Detail"], "rows": FUEL_PRE},
-            {"title": "During & after · refuel & recover", "headers": ["Topic", "Detail"], "rows": FUEL_POST},
+            {"title": "During the run · carbs", "headers": ["Duration / rule", "Detail"], "rows": FUEL_CARBS},
+            {"title": "During the run · fluid & sodium", "headers": ["Conditions / rule", "Detail"], "rows": FUEL_FLUID},
+            {"title": "Doing it cheaply · sugar beats gels", "headers": ["Topic", "Detail"], "rows": FUEL_CHEAP},
+            {"title": "After · recover & rehydrate", "headers": ["Topic", "Detail"], "rows": FUEL_POST},
             {"title": "Alcohol · the honest version", "headers": ["Topic", "Detail"], "rows": FUEL_ALC},
             {"title": "Should I run today? · quick guide", "headers": ["Situation", "What to do"], "rows": decide},
         ],
@@ -205,13 +247,13 @@ TIPS_COMMON = [
     ["The niggle rule", "Pain that changes your gait or worsens = stop. 2–3 easy/off days early beats 3 weeks off later."],
     ["Guard the long run", "The single most important marathon session — the last thing to sacrifice when the week gets messy."],
     ["Sleep is the #1 recovery tool", "7–9 h/night. Higher volume needs more recovery, not less."],
-    ["Fuel the long ones", "Past 90 min take 40–60 g carbs/hr and rehearse your race-day breakfast on long runs."],
+    ["Fuel the long ones", "Past 75 min take carbs on board and rehearse your race-day breakfast. Rates scale with duration — see Fuel & life for the full table."],
     ["Rotate 2 pairs of shoes", "Cuts injury risk, extends shoe life (~500–800 km). Buy race shoes by the tune-up and run 3–4 sessions in them."],
     ["Warm up the hard day", "10–15 min easy + a few strides before any tempo/threshold/VO2 work."],
     ["Respect cut-back weeks", "The down weeks are when fitness consolidates — don't 'top them up'."],
     ["Calibrate at the half", "The tune-up half sets your real race pace. Race the pace you EARNED, not the dream."],
     ["Start the race easy", "First few km should feel too easy. Hold back — the marathon starts at 30 km. Even pacing wins."],
-    ["Race-day fuel clock", "Gel every 30–40 min from ~45 min in, with water. Don't wait until you're empty."],
+    ["Race-day fuel clock", "Feed every 20–30 min from ~45 min in, with water — target 70–90 g carbs/hr over a marathon. Don't wait until you're empty."],
     ["Tokyo in early March", "~8–12°C, flat, fast — a great course. Dress for ~+10°C warmer than standing; throwaway layer at the start."],
     ["Nothing new two weeks out", "No new shoes, foods or bonus sessions. Lock the routine and trust the work."],
     ["Log everything", "Fill it in after each run — it keeps you honest and shows patterns before they become problems."],
