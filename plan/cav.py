@@ -43,7 +43,7 @@ EASY_RETURN_WEEKS = {7}
 # would eat it whole and leave the easy days rounding to two or three km each.
 QKM_OVERRIDE = {7: {"tue": 9, "thu": 9}, 8: {"tue": 10, "thu": 10},
                 9: {"tue": 9, "thu": 10}, 10: {"tue": 11, "thu": 10},
-                11: {"tue": 11, "thu": 9}, 13: {"tue": 12, "thu": 11}}
+                11: {"tue": 7, "thu": 9}, 13: {"tue": 12, "thu": 11}}
 # Days whose sessions trade places in a given week, applied after the week is built so the
 # sizing logic above still sees its normal Tue/Thu quality slots. Wk 8: Sunday's long run
 # was run on Monday, so Tuesday's tempo would have landed on tired legs — the session moves
@@ -56,7 +56,10 @@ DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri"))}
 # the bulk (furthest from it), Tuesday stays short (a quality session the day before a time
 # trial costs more than it gives), the test day is just 1 km either side of the 5K, and the
 # Sunday travel day picks up an easy evening run instead of being written off.
-DAY_OVERRIDE = {9: {"Thu": ("Recovery 9 km easy (half of Saturday's run moved here)  "
+DAY_OVERRIDE = {11: {"Tue": ("5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — "
+                             "moved from wk 10. Evening if you can; daytime heat costs 15–25s "
+                             "and mis-anchors every pace that follows", "tt", 7)},
+                9: {"Thu": ("Recovery 9 km easy (half of Saturday's run moved here)  "
                             "+S&C (easy-day session)", "recovery", 9),
                     "Fri": ("Hill strides: easy 13 km + 8×15s hill sprints "
                             "(half of Saturday's run moved here)", "easy", 13),
@@ -66,10 +69,13 @@ DAY_OVERRIDE = {9: {"Thu": ("Recovery 9 km easy (half of Saturday's run moved he
                     "Fri": ("Easy 15 km + 6×20s strides (Thu + Fri combined)  "
                             "+S&C (easy-day session)", "easy", 15)},
                 10: {"Mon": ("Easy 8 km + 6×20s strides (TT primer)", "easy", 8),
-                     "Tue": ("5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d", "tt", 7),
-                     "Wed": ("Long slow 22 km @ 5:30–5:50/km — new longest run ever, and the "
-                             "day after a time trial, so it has to be genuinely slow the "
-                             "whole way. Conversational or you're doing it wrong", "long", 22),
+                     "Tue": ("Easy 7 km — genuinely easy, Z1 (130–140 bpm). Moving house + bad "
+                             "sleep, so the 5K test moves to Tue 29th rather than being wasted", "easy", 7),
+                     "Wed": ("Long slow 22 km — new longest run ever. Cap HR at 155 and let "
+                             "pace be whatever that needs (evening ~5:05–5:15, daytime heat "
+                             "5:30+). Conversational throughout or you're doing it wrong. "
+                             "Fuel it: 750 ml with 45 g sugar + ¼ tsp salt, sipped from 40 min. "
+                             "If the house move has left you wrecked, 16–18 km still counts", "long", 22),
                      "Thu": ("Recovery 8 km very easy — morning, before the flight", "recovery", 8),
                      "Sun": ("Easy 10 km — evening, back from Ibiza. Genuinely easy; "
                              "skip it if the trip took more out of you than expected", "easy", 10)}}

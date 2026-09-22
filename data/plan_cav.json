@@ -551,15 +551,15 @@
         {
           "date": "2026-09-22",
           "dow": "Tue",
-          "type": "tt",
-          "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d",
+          "type": "easy",
+          "session": "Easy 7 km — genuinely easy, Z1 (130–140 bpm). Moving house + bad sleep, so the 5K test moves to Tue 29th rather than being wasted",
           "target_km": 7
         },
         {
           "date": "2026-09-23",
           "dow": "Wed",
           "type": "long",
-          "session": "Long slow 22 km @ 5:30–5:50/km — new longest run ever, and the day after a time trial, so it has to be genuinely slow the whole way. Conversational or you're doing it wrong",
+          "session": "Long slow 22 km — new longest run ever. Cap HR at 155 and let pace be whatever that needs (evening ~5:05–5:15, daytime heat 5:30+). Conversational throughout or you're doing it wrong. Fuel it: 750 ml with 45 g sugar + ¼ tsp salt, sipped from 40 min. If the house move has left you wrecked, 16–18 km still counts",
           "target_km": 22
         },
         {
@@ -609,16 +609,16 @@
         {
           "date": "2026-09-29",
           "dow": "Tue",
-          "type": "quality",
-          "session": "Threshold: 6×1 km @ 4:08/km, 75s jog + w/u & c/d  +S&C (hard-day session)",
-          "target_km": 11
+          "type": "tt",
+          "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved from wk 10. Evening if you can; daytime heat costs 15–25s and mis-anchors every pace that follows",
+          "target_km": 7
         },
         {
           "date": "2026-09-30",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 7 km + 6×20s strides",
-          "target_km": 7
+          "session": "Easy 8 km + 6×20s strides",
+          "target_km": 8
         },
         {
           "date": "2026-10-01",
@@ -631,15 +631,15 @@
           "date": "2026-10-02",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 5 km easy  +S&C (easy-day session)",
-          "target_km": 5
+          "session": "Recovery 6 km easy  +S&C (easy-day session)",
+          "target_km": 6
         },
         {
           "date": "2026-10-03",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 5 km + strides",
-          "target_km": 5
+          "session": "Easy 7 km + strides",
+          "target_km": 7
         },
         {
           "date": "2026-10-04",
