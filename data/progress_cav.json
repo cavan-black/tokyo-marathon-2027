@@ -30652,9 +30652,9 @@
     "2026-09-29": {
       "week": 11,
       "dow": "Tue",
-      "type": "tt",
-      "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved from wk 10. Evening if you can; daytime heat costs 15–25s and mis-anchors every pace that follows",
-      "target_km": 7,
+      "type": "easy",
+      "session": "Hill strides: easy 9 km + 8×15s hill sprints",
+      "target_km": 9,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -30678,9 +30678,9 @@
     "2026-10-01": {
       "week": 11,
       "dow": "Thu",
-      "type": "easy",
-      "session": "Hill strides: easy 9 km + 8×15s hill sprints",
-      "target_km": 9,
+      "type": "tt",
+      "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved from wk 10, and late in the week to leave four days' recovery after Ibiza. Evening if you can; daytime heat costs 15–25s and mis-anchors every pace that follows",
+      "target_km": 7,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -33260,7 +33260,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-22T12:38:19+00:00",
+  "last_sync": "2026-09-22T12:42:16+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-16",
