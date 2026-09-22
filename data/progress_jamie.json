@@ -15222,12 +15222,41 @@
       "type": "easy",
       "session": "Easy 8 km + 6×20s strides + 4×30s hills  +S&C (hard-day session)",
       "target_km": 9,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
-      "cross_activities": []
+      "actual_km": 9.01,
+      "status": "Done",
+      "pace_min_km": 5.416,
+      "pace_str": "5:25",
+      "activities": [
+        {
+          "id": 20284944637,
+          "date": "2026-09-22",
+          "name": "Evening Run",
+          "activity_type": "Run",
+          "distance_km": 9.01,
+          "moving_time_s": 2928,
+          "pace_min_km": 5.416,
+          "avg_hr": 152.8,
+          "max_hr": 168.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ],
+      "cross_activities": [
+        {
+          "id": 20283922599,
+          "date": "2026-09-22",
+          "name": "Night Weight Training",
+          "activity_type": "WeightTraining",
+          "distance_km": 0.0,
+          "moving_time_s": 3960,
+          "pace_min_km": null,
+          "avg_hr": 69.0,
+          "max_hr": 102.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-09-23": {
       "week": 10,
@@ -17535,13 +17564,13 @@
     },
     "10": {
       "planned_km": 60,
-      "planned_km_due": 0,
-      "actual_km": 0,
+      "planned_km_due": 9,
+      "actual_km": 9.0,
       "substituted_km": 0,
       "replaced_km": 0,
-      "done": 0,
+      "done": 1,
       "partial": 0,
-      "missed": 1,
+      "missed": 0,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -17918,7 +17947,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-22T12:42:17+00:00",
+  "last_sync": "2026-09-22T17:33:52+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
