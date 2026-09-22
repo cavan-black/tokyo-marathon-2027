@@ -30565,7 +30565,7 @@
       "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d",
       "target_km": 7,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -32883,7 +32883,7 @@
       "replaced_km": 0,
       "done": 1,
       "partial": 0,
-      "missed": 0,
+      "missed": 1,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -33260,7 +33260,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-21T23:55:05+00:00",
+  "last_sync": "2026-09-22T11:12:04+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-16",
