@@ -31001,7 +31001,7 @@
       "session": "Long slow 22 km — new longest run ever. Cap HR at 155 and let pace be whatever that needs (evening ~5:05–5:15, daytime heat 5:30+). Conversational throughout or you're doing it wrong. Fuel it: 750 ml with 45 g sugar + ¼ tsp salt, sipped from 40 min. If the house move has left you wrecked, 16–18 km still counts",
       "target_km": 22,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -33306,7 +33306,7 @@
       "replaced_km": 0,
       "done": 2,
       "partial": 0,
-      "missed": 0,
+      "missed": 1,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -33683,7 +33683,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-22T23:32:12+00:00",
+  "last_sync": "2026-09-23T11:03:27+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-16",
