@@ -32073,11 +32073,11 @@
     "2026-09-24": {
       "week": 10,
       "dow": "Thu",
-      "type": "recovery",
-      "session": "Recovery 8 km very easy — morning, before the flight",
-      "target_km": 8,
+      "type": "rest",
+      "session": "Rest — no time before the flight; the 8 km moves to Sunday",
+      "target_km": 0,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -32113,8 +32113,8 @@
       "week": 10,
       "dow": "Sun",
       "type": "easy",
-      "session": "Easy 10 km — evening, back from Ibiza. Genuinely easy; skip it if the trip took more out of you than expected",
-      "target_km": 10,
+      "session": "Easy 18 km — evening, back from Ibiza (10 km + Thursday's 8). Genuinely easy, HR under 150. Three days off running means the legs will be fine; sleep and alcohol are the limiter. Bail to 12 km without hesitation if Ibiza took more than expected — Thursday's 5K test is worth far more than these 6 km",
+      "target_km": 18,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -34746,7 +34746,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-23T23:27:58+00:00",
+  "last_sync": "2026-09-24T07:36:11+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-16",

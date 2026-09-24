@@ -565,9 +565,9 @@
         {
           "date": "2026-09-24",
           "dow": "Thu",
-          "type": "recovery",
-          "session": "Recovery 8 km very easy — morning, before the flight",
-          "target_km": 8
+          "type": "rest",
+          "session": "Rest — no time before the flight; the 8 km moves to Sunday",
+          "target_km": 0
         },
         {
           "date": "2026-09-25",
@@ -587,8 +587,8 @@
           "date": "2026-09-27",
           "dow": "Sun",
           "type": "easy",
-          "session": "Easy 10 km — evening, back from Ibiza. Genuinely easy; skip it if the trip took more out of you than expected",
-          "target_km": 10
+          "session": "Easy 18 km — evening, back from Ibiza (10 km + Thursday's 8). Genuinely easy, HR under 150. Three days off running means the legs will be fine; sleep and alcohol are the limiter. Bail to 12 km without hesitation if Ibiza took more than expected — Thursday's 5K test is worth far more than these 6 km",
+          "target_km": 18
         }
       ]
     },

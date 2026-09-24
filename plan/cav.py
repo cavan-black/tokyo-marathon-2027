@@ -77,9 +77,12 @@ DAY_OVERRIDE = {11: {"Thu": ("5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/
                              "5:30+). Conversational throughout or you're doing it wrong. "
                              "Fuel it: 750 ml with 45 g sugar + ¼ tsp salt, sipped from 40 min. "
                              "If the house move has left you wrecked, 16–18 km still counts", "long", 22),
-                     "Thu": ("Recovery 8 km very easy — morning, before the flight", "recovery", 8),
-                     "Sun": ("Easy 10 km — evening, back from Ibiza. Genuinely easy; "
-                             "skip it if the trip took more out of you than expected", "easy", 10)}}
+                     "Thu": ("Rest — no time before the flight; the 8 km moves to Sunday", "rest", 0),
+                     "Sun": ("Easy 18 km — evening, back from Ibiza (10 km + Thursday's 8). "
+                             "Genuinely easy, HR under 150. Three days off running means the legs "
+                             "will be fine; sleep and alcohol are the limiter. Bail to 12 km without "
+                             "hesitation if Ibiza took more than expected — Thursday's 5K test is "
+                             "worth far more than these 6 km", "easy", 18)}}
 # Weeks cut to only the listed days; every other day becomes rest. Distinct from OFF_WEEKS,
 # which writes off a whole week — here the surviving sessions are the point of the week.
 KEEP_ONLY = {10: ("Mon", "Tue", "Wed", "Thu", "Sun")}
