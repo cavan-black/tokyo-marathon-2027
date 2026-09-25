@@ -15306,11 +15306,26 @@
       "session": "Recovery 3 km easy  +S&C (easy-day session)",
       "target_km": 3,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": 20317902293,
+          "date": "2026-09-25",
+          "name": "Morning Workout",
+          "activity_type": "Workout",
+          "distance_km": 0.0,
+          "moving_time_s": 5039,
+          "pace_min_km": null,
+          "avg_hr": 117.5,
+          "max_hr": 140.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-09-26": {
       "week": 10,
@@ -17579,13 +17594,13 @@
     },
     "10": {
       "planned_km": 60,
-      "planned_km_due": 15,
+      "planned_km_due": 23,
       "actual_km": 9.0,
       "substituted_km": 0,
       "replaced_km": 0,
       "done": 1,
       "partial": 0,
-      "missed": 2,
+      "missed": 3,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -17962,7 +17977,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-24T23:48:00+00:00",
+  "last_sync": "2026-09-25T11:26:58+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
