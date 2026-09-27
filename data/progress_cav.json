@@ -32116,7 +32116,7 @@
       "session": "Easy 18 km — evening, back from Ibiza (10 km + Thursday's 8). Genuinely easy, HR under 150. Three days off running means the legs will be fine; sleep and alcohol are the limiter. Bail to 12 km without hesitation if Ibiza took more than expected — Thursday's 5K test is worth far more than these 6 km",
       "target_km": 18,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -34369,7 +34369,7 @@
       "replaced_km": 0,
       "done": 3,
       "partial": 0,
-      "missed": 0,
+      "missed": 1,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -34746,7 +34746,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-09-26T23:25:10+00:00",
+  "last_sync": "2026-09-27T11:41:02+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-16",
