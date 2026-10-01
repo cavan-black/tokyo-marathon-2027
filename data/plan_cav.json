@@ -623,16 +623,16 @@
         {
           "date": "2026-10-01",
           "dow": "Thu",
-          "type": "tt",
-          "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved from wk 10, and late in the week to leave four days' recovery after Ibiza. Evening if you can; daytime heat costs 15–25s and mis-anchors every pace that follows",
-          "target_km": 7
+          "type": "recovery",
+          "session": "Recovery 6 km easy — feeling rough, so the 5K test moves to Friday  +S&C (easy-day session)",
+          "target_km": 6
         },
         {
           "date": "2026-10-02",
           "dow": "Fri",
-          "type": "recovery",
-          "session": "Recovery 6 km easy  +S&C (easy-day session)",
-          "target_km": 6
+          "type": "tt",
+          "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved from Thursday. Friday evening is also the better air: ~76% humidity against Thursday's 88%",
+          "target_km": 7
         },
         {
           "date": "2026-10-03",

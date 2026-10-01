@@ -35195,9 +35195,9 @@
     "2026-10-01": {
       "week": 11,
       "dow": "Thu",
-      "type": "tt",
-      "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved from wk 10, and late in the week to leave four days' recovery after Ibiza. Evening if you can; daytime heat costs 15–25s and mis-anchors every pace that follows",
-      "target_km": 7,
+      "type": "recovery",
+      "session": "Recovery 6 km easy — feeling rough, so the 5K test moves to Friday  +S&C (easy-day session)",
+      "target_km": 6,
       "actual_km": 0,
       "status": "Missed",
       "pace_min_km": null,
@@ -35208,9 +35208,9 @@
     "2026-10-02": {
       "week": 11,
       "dow": "Fri",
-      "type": "recovery",
-      "session": "Recovery 6 km easy  +S&C (easy-day session)",
-      "target_km": 6,
+      "type": "tt",
+      "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved from Thursday. Friday evening is also the better air: ~76% humidity against Thursday's 88%",
+      "target_km": 7,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -37777,7 +37777,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-01T12:43:22+00:00",
+  "last_sync": "2026-10-01T15:50:28+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-16",
