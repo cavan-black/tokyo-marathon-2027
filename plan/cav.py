@@ -278,14 +278,14 @@ def content():
             ["10K pace", "4:04", "6:33", "Longer VO2 / race sharpeners"],
             ["Interval (I, 5K)", "3:50–3:56", "6:10–6:22", "VO2 max reps"],
             ["Strides", "~3:10 feel", "relaxed-fast", "20s pickups, not a workout"]],
-            "note": "T/10K/I paces come from the 19:40 5K (5 Mar 2026), NOT from the 2:50 goal — training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. MP stays at goal pace. Recalibrate everything at the Wk-10 5K. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
+            "note": "T/10K/I paces come from the 19:22 5K PR, NOT from the 2:50 goal — training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. MP stays at goal pace. Recalibrate everything at the Wk-10 5K. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
                     "Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard "
                     "long-run weekends always alternate with easy ones."},
         "checkpoints": {
             "intro": "2:50 is the A-goal; your PRs predict ~3:06–3:27, and this build targets the gap with volume. "
                      "Don't lock race-day pace until the Wk-20 half.",
             "headers": ["Wk / date", "Test", "On-track for 2:50", "If short — likely target"], "rows": [
-                ["Wk 10 · Wed 23 Sep", "5K time trial (PR 19:40, 5 Mar)", "≤ 18:05", "18:05–18:45 → ~2:55-3:00 · >19:00 → 3:05+"],
+                ["Wk 11 · Fri 2 Oct", "5K time trial (PR 19:22)", "≤ 18:05", "18:05–18:45 → ~2:55-3:00 · >19:00 → 3:05+"],
                 ["Wk 13 · ~12 Oct", "10K time trial", "≤ 37:45", "37:45–39:00 → sub-3 · >40:00 → 3:05+"],
                 ["Wk 20 · Sun 6 Dec", "Half-marathon — Sevilla Half, signed up", "≤ 1:23:30", "1:23:30–1:26 → sub-3 · >1:27 → 3:05–3:10"],
                 ["Race · 7 Mar", "Marathon", "2:50 = 4:01/km", "Start at CONFIRMED pace. Even splits."]],
