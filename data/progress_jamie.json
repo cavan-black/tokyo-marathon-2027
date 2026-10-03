@@ -15458,7 +15458,22 @@
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": 20437207909,
+          "date": "2026-10-03",
+          "name": "Night Workout",
+          "activity_type": "Workout",
+          "distance_km": 0.0,
+          "moving_time_s": 1499,
+          "pace_min_km": null,
+          "avg_hr": 112.8,
+          "max_hr": 136.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-10-04": {
       "week": 11,
@@ -18006,7 +18021,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-03T17:04:29+00:00",
+  "last_sync": "2026-10-03T23:36:07+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
