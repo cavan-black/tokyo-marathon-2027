@@ -280,7 +280,7 @@ def content():
             ["Long-run easy", "4:55–5:30", "7:55–8:51", "Long-run base portions"],
             ["Marathon (MP)", "4:01", "6:29", "Race pace — MP blocks & long-run finishes"],
             ["Threshold (T)", "3:45–3:50", "6:02–6:10", "Tempo / cruise intervals (15K–HM effort)"],
-            ["10K pace", "3:36–3:40", "5:48–5:54", "Longer VO2 / race sharpeners"],
+            ["10K pace", "3:44–3:49", "6:01–6:09", "Wk-13 10K TT target & race sharpeners"],
             ["Interval (I, 5K)", "3:28–3:32", "5:35–5:41", "VO2 max reps"],
             ["Strides", "~3:10 feel", "relaxed-fast", "20s pickups, not a workout"]],
             "note": "T/10K/I paces come from the 19:22 5K PR, NOT from the 2:50 goal — training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. MP stays at goal pace. Recalibrate everything at the Wk-10 5K. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
