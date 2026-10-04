@@ -624,22 +624,22 @@
           "date": "2026-10-01",
           "dow": "Thu",
           "type": "recovery",
-          "session": "Recovery 6 km easy — feeling rough, so the 5K test moves to Friday  +S&C (easy-day session)",
+          "session": "Recovery 6 km easy — feeling rough, so the 5K test moves to the weekend  +S&C (easy-day session)",
           "target_km": 6
         },
         {
           "date": "2026-10-02",
           "dow": "Fri",
-          "type": "tt",
-          "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved from Thursday. Friday evening is also the better air: ~76% humidity against Thursday's 88%",
-          "target_km": 7
+          "type": "rest",
+          "session": "Rest — the 5K test moved on again, to Saturday morning",
+          "target_km": 0
         },
         {
           "date": "2026-10-03",
           "dow": "Sat",
-          "type": "easy",
-          "session": "Easy 7 km + strides",
-          "target_km": 7
+          "type": "tt",
+          "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved from Friday",
+          "target_km": 8
         },
         {
           "date": "2026-10-04",
@@ -1962,20 +1962,20 @@
         ],
         [
           "Threshold (T)",
-          "4:08–4:15",
-          "6:39–6:50",
+          "3:45–3:50",
+          "6:02–6:10",
           "Tempo / cruise intervals (15K–HM effort)"
         ],
         [
           "10K pace",
-          "4:04",
-          "6:33",
+          "3:36–3:40",
+          "5:48–5:54",
           "Longer VO2 / race sharpeners"
         ],
         [
           "Interval (I, 5K)",
-          "3:50–3:56",
-          "6:10–6:22",
+          "3:28–3:32",
+          "5:35–5:41",
           "VO2 max reps"
         ],
         [
@@ -1997,10 +1997,10 @@
       ],
       "rows": [
         [
-          "Wk 11 · Fri 2 Oct",
-          "5K time trial (PR 19:22)",
+          "Wk 11 · Sat 3 Oct",
+          "5K time trial — RAN 18:15 (PR, −67s)",
           "≤ 18:05",
-          "18:05–18:45 → ~2:55-3:00 · >19:00 → 3:05+"
+          "18:15 on 42 m of climb, solo → ~18:00–18:10 flat. VDOT ~55.5"
         ],
         [
           "Wk 13 · ~12 Oct",
