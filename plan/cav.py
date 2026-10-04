@@ -298,7 +298,7 @@ def content():
                     "Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard "
                     "long-run weekends always alternate with easy ones."},
         "checkpoints": {
-            "intro": "2:50 is the A-goal; your PRs predict ~3:06–3:27, and this build targets the gap with volume. "
+            "intro": "2:50 is the A-goal. The 3 Oct 5K — 18:15, VDOT ~55.5 — equates to about a 2:50:30 marathon on the Daniels tables, so the engine is no longer the gap: at the start of this build the 19:22 PR put the same tables nearer 3:00, and the race PRs predicted 3:06–3:27. What that equivalence assumes, and you do not yet have, is marathon-appropriate mileage — 11 weeks in, the average is 39 km/wk against a 116 km peak, and under-trained runners routinely finish well behind what a 5K says they are worth. The 5K measures the engine; Sevilla measures whether it converts. "
                      "Don't lock race-day pace until the Wk-20 half.",
             "headers": ["Wk / date", "Test", "On-track for 2:50", "If short — likely target"], "rows": [
                 ["Wk 11 · Sat 3 Oct", "5K time trial — RAN 18:15 (PR, −67s)", "≤ 18:05", "18:15 on 42 m of climb, solo → ~18:00–18:10 flat. VDOT ~55.5"],
