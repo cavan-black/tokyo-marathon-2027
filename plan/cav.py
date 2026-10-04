@@ -109,6 +109,9 @@ VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69}
 def lr_for(w):   return LR_OVERRIDE.get(w, LR[w-1])
 def vol_for(w):  return VOL_OVERRIDE.get(w, VOL[w-1]) + (lr_for(w) - LR[w-1])
 
+# First week whose quality paces come from the 3 Oct 5K rather than the 19:22 PR.
+RECALIBRATED_FROM = 12
+
 def phase(w):
     if w <= 4:  return "Re-entry / Rebuild"
     if w <= 13: return "Aerobic Base"
@@ -119,8 +122,16 @@ def phase(w):
 def tue(w):
     if w <= 4:   return "Easy 10 km + 6×20s strides", "easy"
     if w <= 13:
-        lib=["Threshold: 5×1 km @ 4:10/km (T), 90s jog","Tempo: 2×3 km @ 4:15/km, 3 min jog",
-             "Threshold: 6×1 km @ 4:08/km, 75s jog","Tempo: 6 km continuous @ 4:15/km"]
+        # Wk 5-13 quality was written off the 19:22 5K PR. The 3 Oct test replaced that PR
+        # with 18:15 (VDOT ~55.5), so the same session shapes run at the recalibrated band
+        # from Wk 12 on. Weeks 5-11 deliberately keep the old numbers: they are the record
+        # of what was actually prescribed at the time, and regenerating them at the new
+        # paces would make the training log claim sessions that were never set.
+        lib = (["Threshold: 5×1 km @ 3:47/km (T), 90s jog", "Tempo: 2×3 km @ 3:50/km, 3 min jog",
+                "Threshold: 6×1 km @ 3:46/km, 75s jog", "Tempo: 6 km continuous @ 3:50/km"]
+               if w >= RECALIBRATED_FROM else
+               ["Threshold: 5×1 km @ 4:10/km (T), 90s jog", "Tempo: 2×3 km @ 4:15/km, 3 min jog",
+                "Threshold: 6×1 km @ 4:08/km, 75s jog", "Tempo: 6 km continuous @ 4:15/km"])
         return lib[(w-5)%len(lib)], "quality"
     if w <= 23:
         lib=["VO2: 5×1000 m @ 3:28/km (I), 2:30 jog","Threshold: 4×2 km @ 3:50/km, 90s jog",
