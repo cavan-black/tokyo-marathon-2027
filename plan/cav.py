@@ -283,7 +283,7 @@ def content():
             ["10K pace", "3:44–3:49", "6:01–6:09", "Wk-13 10K TT target & race sharpeners"],
             ["Interval (I, 5K)", "3:28–3:32", "5:35–5:41", "VO2 max reps"],
             ["Strides", "~3:10 feel", "relaxed-fast", "20s pickups, not a workout"]],
-            "note": "T/10K/I paces come from the 19:22 5K PR, NOT from the 2:50 goal — training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. MP stays at goal pace. Recalibrate everything at the Wk-10 5K. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
+            "note": "T/10K/I paces come from the 18:15 5K of 3 Oct (VDOT ~55.5), NOT from the 2:50 goal — training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. This is the recalibration the old 19:22-anchored paces were written to wait for. MP stays at goal pace, and this result validates rather than moves it: marathon-equivalent pace across VDOT 55–56.5 is 3:59–4:03. Recalibrate again at Sevilla. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
                     "Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard "
                     "long-run weekends always alternate with easy ones."},
         "checkpoints": {
