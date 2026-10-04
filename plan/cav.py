@@ -57,10 +57,15 @@ DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri")), 11: (("T
 # trial costs more than it gives), the test day is just 1 km either side of the 5K, and the
 # Sunday travel day picks up an easy evening run instead of being written off.
 DAY_OVERRIDE = {11: {"Thu": ("Recovery 6 km easy — feeling rough, so the 5K test moves to "
-                             "Friday  +S&C (easy-day session)", "recovery", 6),
-                     "Fri": ("5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved "
-                             "from Thursday. Friday evening is also the better air: ~76% "
-                             "humidity against Thursday's 88%", "tt", 7)},
+                             "the weekend  +S&C (easy-day session)", "recovery", 6),
+                     "Fri": ("Rest — the 5K test moved on again, to Saturday morning", "rest", 0),
+                     # Run 3 Oct: 2.07 km w/u, 5.02 km in 18:22 (watch 5K split 18:15,
+                     # 3:39/km, 175.6 avg HR against a 183 max — the highest of the block,
+                     # so a genuine all-out effort), 0.69 km c/d. Recorded on its real day
+                     # so the checkpoint is credited rather than reading as a missed
+                     # Friday test next to an easy Saturday.
+                     "Sat": ("5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved "
+                             "from Friday", "tt", 8)},
                 9: {"Thu": ("Recovery 9 km easy (half of Saturday's run moved here)  "
                             "+S&C (easy-day session)", "recovery", 9),
                     "Fri": ("Hill strides: easy 13 km + 8×15s hill sprints "
@@ -274,9 +279,9 @@ def content():
             ["Easy / aerobic", "5:00–5:35", "8:03–8:59", "Bulk of weekly volume (incl. doubles)"],
             ["Long-run easy", "4:55–5:30", "7:55–8:51", "Long-run base portions"],
             ["Marathon (MP)", "4:01", "6:29", "Race pace — MP blocks & long-run finishes"],
-            ["Threshold (T)", "4:08–4:15", "6:39–6:50", "Tempo / cruise intervals (15K–HM effort)"],
-            ["10K pace", "4:04", "6:33", "Longer VO2 / race sharpeners"],
-            ["Interval (I, 5K)", "3:50–3:56", "6:10–6:22", "VO2 max reps"],
+            ["Threshold (T)", "3:45–3:50", "6:02–6:10", "Tempo / cruise intervals (15K–HM effort)"],
+            ["10K pace", "3:36–3:40", "5:48–5:54", "Longer VO2 / race sharpeners"],
+            ["Interval (I, 5K)", "3:28–3:32", "5:35–5:41", "VO2 max reps"],
             ["Strides", "~3:10 feel", "relaxed-fast", "20s pickups, not a workout"]],
             "note": "T/10K/I paces come from the 19:22 5K PR, NOT from the 2:50 goal — training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. MP stays at goal pace. Recalibrate everything at the Wk-10 5K. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
                     "Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard "
@@ -285,7 +290,7 @@ def content():
             "intro": "2:50 is the A-goal; your PRs predict ~3:06–3:27, and this build targets the gap with volume. "
                      "Don't lock race-day pace until the Wk-20 half.",
             "headers": ["Wk / date", "Test", "On-track for 2:50", "If short — likely target"], "rows": [
-                ["Wk 11 · Fri 2 Oct", "5K time trial (PR 19:22)", "≤ 18:05", "18:05–18:45 → ~2:55-3:00 · >19:00 → 3:05+"],
+                ["Wk 11 · Sat 3 Oct", "5K time trial — RAN 18:15 (PR, −67s)", "≤ 18:05", "18:15 on 42 m of climb, solo → ~18:00–18:10 flat. VDOT ~55.5"],
                 ["Wk 13 · ~12 Oct", "10K time trial", "≤ 37:45", "37:45–39:00 → sub-3 · >40:00 → 3:05+"],
                 ["Wk 20 · Sun 6 Dec", "Half-marathon — Sevilla Half, signed up", "≤ 1:23:30", "1:23:30–1:26 → sub-3 · >1:27 → 3:05–3:10"],
                 ["Race · 7 Mar", "Marathon", "2:50 = 4:01/km", "Start at CONFIRMED pace. Even splits."]],
