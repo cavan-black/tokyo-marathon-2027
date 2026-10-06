@@ -200,6 +200,8 @@ STYLE = """<style>
 .sv .tag.str{color:var(--pA);border-color:color-mix(in srgb,var(--pA) 45%,var(--line));}
 .sv .tag.mp{color:var(--pB);border-color:color-mix(in srgb,var(--pB) 45%,var(--line));}
 .sv .tag.act{color:var(--good);border-color:color-mix(in srgb,var(--good) 50%,var(--line));}
+.sv .tag.shoe{color:var(--mut);border-color:var(--line);opacity:.85;}
+.sv .tag.shoe.race{color:var(--accent-ink);border-color:var(--accent);opacity:1;font-weight:700;}
 .sv .tag.sub{color:var(--pA);border-color:color-mix(in srgb,var(--pA) 50%,var(--line));}
 .sv .tag.rep{color:var(--pD);border-color:color-mix(in srgb,var(--pD) 50%,var(--line));}
 .sv .tag.nosub{color:var(--muted);border-color:var(--line-strong);border-style:dashed;}
@@ -740,6 +742,10 @@ def day_html(d, pd_, today_iso):
         tags += '<span class="tag str">Str (easy day)</span>'
     if "@ MP" in sess and "no MP" not in sess:
         tags += '<span class="tag mp">MP</span>'
+    shoe = d.get("shoe")
+    if shoe:
+        cls = "shoe race" if shoe == "RACE SHOE" else "shoe"
+        tags += f'<span class="tag {cls}">👟 {esc(shoe)}</span>'
     actual, pace = pd_.get("actual_km", 0), pd_.get("pace_str")
     if status == "Substituted" and sub_by:
         emoji = CROSS_EMOJI.get(sub_by.get("activity_type"), "🔁")
@@ -877,6 +883,17 @@ def fuel_html(plan):
     for sec in fu.get("sections", []):
         body += (f'<div class="card" style="margin-bottom:14px"><h3>{esc(sec["title"])}</h3>'
                  f'{ref_table(sec["headers"], sec["rows"])}</div>')
+    return body
+
+
+def shoes_html(plan):
+    sh = plan.get("content", {}).get("shoes", {})
+    if not sh:
+        return ""
+    body = f'<p class="sub" style="margin-bottom:12px">{esc(sh.get("intro",""))}</p>'
+    body += f'<div class="card" style="margin-bottom:14px">{ref_table(sh["headers"], sh["rows"])}</div>'
+    if sh.get("note"):
+        body += f'<p class="sub">{esc(sh["note"])}</p>'
     return body
 
 
@@ -1453,7 +1470,8 @@ def render_runner(runner_id):
                                 warmup_html(plan)) + "</div>", unsafe_allow_html=True)
     with sub[next(i)]:
         st.markdown(STYLE + '<div class="sv">' +
-                    section("Fuel & life", "", fuel_html(plan)) + "</div>", unsafe_allow_html=True)
+                    section("Fuel & life", "", fuel_html(plan)) +
+                    section("Shoes", "", shoes_html(plan)) + "</div>", unsafe_allow_html=True)
     if has_diet:
         with sub[next(i)]:
             st.markdown(STYLE + '<div class="sv">' +

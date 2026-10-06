@@ -289,6 +289,29 @@ DOW=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 
 def content():
     return {
+        "shoes": {
+            "intro": "Five pairs to the start line, 1,910 km to cover. Rotating rather than "
+                     "wearing one pair out is the point — varying the loading pattern is "
+                     "associated with materially lower injury risk, and that matters more at "
+                     "90-116 km/wk than which model you pick. Every session on the plan is "
+                     "tagged with its shoe.",
+            "headers": ["Shoe", "Used for", "km from Wk 12", "Total at Tokyo", "When to buy"],
+            "rows": [
+                ["Daily trainer", "Easy + recovery", "472", "472", "Now — firmer, neutral (Ride / Pegasus / Kiprun KD500)"],
+                ["Max-cushion (long-run)", "Every long run", "449", "449", "Now — soft and high-stack (Nimbus / Skyflow / Kiprun KS900)"],
+                ["Daily trainer #2", "Easy + recovery from Wk 20", "374", "374", "Early Jan, as the first nears 500 km"],
+                ["Mach X3", "Most quality sessions", "296", "462", "Owned — 166 km"],
+                ["EVO SL", "Quality, every third week", "166", "545", "Owned — 379 km. Retire after Tokyo."],
+                ["RACE SHOE", "Sevilla, Tokyo + 3 MP sessions", "153", "153", "Early-mid Nov — Metaspeed Sky / Alphafly 3 / Adios Pro 5"],
+            ],
+            "note": "The racer holds its bounce for ~250-300 km, so it only appears five times: "
+                    "three MP long runs to bed it in (Wk 18, 19, 30), Sevilla on 6 Dec, and Tokyo. "
+                    "Don't train in it. Buy it in November rather than January so a bad fit turns up "
+                    "at the half and not three weeks out — super shoes change calf and Achilles "
+                    "loading noticeably and not everyone gets on with a given geometry. "
+                    "Log mileage per pair in Strava (assign gear to each activity); most "
+                    "worn-shoe injuries happen because nobody was counting.",
+        },
         "paces": {"headers": ["Zone", "per km", "per mile", "Use"], "rows": [
             ["Recovery", "5:35–6:05", "8:59–9:47", "Easy shakeouts, doubles, day-after"],
             ["Easy / aerobic", "5:00–5:35", "8:03–8:59", "Bulk of weekly volume (incl. doubles)"],
@@ -437,6 +460,47 @@ def content():
     }
 
 
+# ---------------------------------------------------------------- shoe rotation
+# Five pairs covering 1,910 km to the race. Rotating rather than wearing one pair
+# out is the point: varying the loading pattern is associated with materially lower
+# injury risk, which matters more at 90-116 km/wk than any individual model does.
+# Owned: Mach X3 (166 km at wk 12), Adizero EVO SL (379 km). Both firm and fast, so
+# the two new trainers are the soft end of the rotation.
+SHOES = {
+    "daily":  "Daily trainer",
+    "daily2": "Daily trainer #2",
+    "long":   "Max-cushion (long-run)",
+    "machx":  "Mach X3",
+    "evosl":  "EVO SL",
+    "race":   "RACE SHOE",
+}
+# The racer only comes out for the two races and the handful of MP sessions that
+# bed it in — it holds its bounce for ~250-300 km and must not be spent on training.
+RACE_SHOE_DAYS = {(18,"Sun"), (19,"Sun"), (20,"Sun"), (30,"Sun"), (33,"Sun")}
+# Second daily trainer arrives when the first is around 500 km.
+DAILY2_FROM = 20
+
+def shoe_for(w, dow, typ, sess):
+    if typ == "rest":
+        return None
+    if (w, dow) in RACE_SHOE_DAYS:
+        return SHOES["race"]
+    if typ in ("race",):
+        return SHOES["race"]
+    if typ in ("quality", "tt"):
+        # Weighted toward the Mach X3: it starts the block on 166 km against the
+        # EVO SL's 379, and the EVO SL is a racer-trainer that should be retired
+        # around 550 km rather than run into the ground through the peak weeks.
+        return SHOES["evosl"] if w % 3 == 0 else SHOES["machx"]
+    if typ == "long":
+        return SHOES["long"]
+    # easy + recovery share the two daily trainers; the second joins once the first
+    # is near 500 km, and from then on they alternate so neither is worn out at peak.
+    if w >= DAILY2_FROM and (w % 2 == 1 or typ == "recovery"):
+        return SHOES["daily2"]
+    return SHOES["daily"]
+
+
 def build():
     weeks=[]
     for w in range(1,34):
@@ -444,7 +508,8 @@ def build():
         for i,dow in enumerate(DOW):
             txt,typ,km=dm[dow]
             days.append({"date":(monday+timedelta(days=i)).isoformat(),"dow":dow,
-                         "type":typ,"session":txt,"target_km":km})
+                         "type":typ,"session":txt,"target_km":km,
+                         "shoe":shoe_for(w,dow,typ,txt)})
         weeks.append({"week":w,"start":monday.isoformat(),"phase":phase(w),
                       # a KEEP_ONLY week's volume is whatever survives, not the VOL array
                       "target_km":(round(sum(x["target_km"] for x in days),1) if w in KEEP_ONLY
