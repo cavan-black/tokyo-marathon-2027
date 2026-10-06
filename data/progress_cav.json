@@ -36013,7 +36013,7 @@
       "week": 11,
       "dow": "Sat",
       "type": "tt",
-      "session": "5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved from Friday",
+      "session": "5K TIME TRIAL — 18:22 for 5.02 km, but net -60 m point-to-point, so ~19:10-19:30 flat-equivalent. HR 176 avg / 183 max",
       "target_km": 8,
       "actual_km": 7.78,
       "status": "Done",
@@ -39221,7 +39221,7 @@
       "week": 12,
       "dow": "Tue",
       "type": "quality",
-      "session": "Tempo: 6 km continuous @ 3:50/km + w/u & c/d  +S&C (hard-day session)",
+      "session": "Tempo: 6 km continuous @ 4:08/km + w/u & c/d  +S&C (hard-day session)",
       "target_km": 13,
       "actual_km": 0,
       "status": "Missed",
@@ -39312,7 +39312,7 @@
       "week": 13,
       "dow": "Tue",
       "type": "quality",
-      "session": "Threshold: 5×1 km @ 3:47/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
+      "session": "Threshold: 5×1 km @ 4:05/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
       "target_km": 12,
       "actual_km": 0,
       "status": "Upcoming",
@@ -41737,7 +41737,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-06T01:41:51+00:00",
+  "last_sync": "2026-10-06T09:50:37+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-16",

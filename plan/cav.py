@@ -59,13 +59,16 @@ DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri")), 11: (("T
 DAY_OVERRIDE = {11: {"Thu": ("Recovery 6 km easy — feeling rough, so the 5K test moves to "
                              "the weekend  +S&C (easy-day session)", "recovery", 6),
                      "Fri": ("Rest — the 5K test moved on again, to Saturday morning", "rest", 0),
-                     # Run 3 Oct: 2.07 km w/u, 5.02 km in 18:22 (watch 5K split 18:15,
-                     # 3:39/km, 175.6 avg HR against a 183 max — the highest of the block,
-                     # so a genuine all-out effort), 0.69 km c/d. Recorded on its real day
-                     # so the checkpoint is credited rather than reading as a missed
-                     # Friday test next to an easy Saturday.
-                     "Sat": ("5K TIME TRIAL (fitness check) + 1 km w/u & 1 km c/d — moved "
-                             "from Friday", "tt", 8)},
+                     # Run 3 Oct: 2.07 km w/u, 5.02 km in 18:22 (watch 5K split 18:15), 0.69
+                     # km c/d. POINT-TO-POINT AND NET DOWNHILL: altitude stream starts 279.2 m
+                     # and ends 218.6 m, so -60.6 m net over 5.03 km = -1.21% average grade
+                     # (49.6 m cumulative ascent against 110.2 m of descent — Strava's
+                     # "total_elevation_gain 42.6" is ascent only and reads as if the course
+                     # climbed). Grade-adjusted that is ~19:10-19:30 flat, and the HR agrees:
+                     # 175.6 avg / 183 max is 85%/90% HRR where a maximal 5K sits nearer
+                     # 90%/95%, and his 5 Mar 5K hit 189. Treat as VDOT ~52, not 55.5.
+                     "Sat": ("5K TIME TRIAL — 18:22 for 5.02 km, but net -60 m point-to-point, "
+                             "so ~19:10-19:30 flat-equivalent. HR 176 avg / 183 max", "tt", 8)},
                 9: {"Thu": ("Recovery 9 km easy (half of Saturday's run moved here)  "
                             "+S&C (easy-day session)", "recovery", 9),
                     "Fri": ("Hill strides: easy 13 km + 8×15s hill sprints "
@@ -122,13 +125,14 @@ def phase(w):
 def tue(w):
     if w <= 4:   return "Easy 10 km + 6×20s strides", "easy"
     if w <= 13:
-        # Wk 5-13 quality was written off the 19:22 5K PR. The 3 Oct test replaced that PR
-        # with 18:15 (VDOT ~55.5), so the same session shapes run at the recalibrated band
-        # from Wk 12 on. Weeks 5-11 deliberately keep the old numbers: they are the record
-        # of what was actually prescribed at the time, and regenerating them at the new
-        # paces would make the training log claim sessions that were never set.
-        lib = (["Threshold: 5×1 km @ 3:47/km (T), 90s jog", "Tempo: 2×3 km @ 3:50/km, 3 min jog",
-                "Threshold: 6×1 km @ 3:46/km, 75s jog", "Tempo: 6 km continuous @ 3:50/km"]
+        # Wk 5-11 quality was written off the 19:22 PR. The 3 Oct test was net downhill
+        # (see DAY_OVERRIDE wk 11), so it confirms roughly PB-level fitness rather than a
+        # minute of improvement — VDOT ~52, not the 55.5 a flat 18:15 would imply. Paces
+        # move only as far as that supports. Weeks 5-11 keep the old numbers: they are the
+        # record of what was actually prescribed, and regenerating them would make the log
+        # claim sessions that were never set.
+        lib = (["Threshold: 5×1 km @ 4:05/km (T), 90s jog", "Tempo: 2×3 km @ 4:08/km, 3 min jog",
+                "Threshold: 6×1 km @ 4:04/km, 75s jog", "Tempo: 6 km continuous @ 4:08/km"]
                if w >= RECALIBRATED_FROM else
                ["Threshold: 5×1 km @ 4:10/km (T), 90s jog", "Tempo: 2×3 km @ 4:15/km, 3 min jog",
                 "Threshold: 6×1 km @ 4:08/km, 75s jog", "Tempo: 6 km continuous @ 4:15/km"])
@@ -290,19 +294,19 @@ def content():
             ["Easy / aerobic", "5:00–5:35", "8:03–8:59", "Bulk of weekly volume (incl. doubles)"],
             ["Long-run easy", "4:55–5:30", "7:55–8:51", "Long-run base portions"],
             ["Marathon (MP)", "4:01", "6:29", "Race pace — MP blocks & long-run finishes"],
-            ["Threshold (T)", "3:45–3:50", "6:02–6:10", "Tempo / cruise intervals (15K–HM effort)"],
-            ["10K pace", "3:44–3:49", "6:01–6:09", "Wk-13 10K TT target & race sharpeners"],
-            ["Interval (I, 5K)", "3:28–3:32", "5:35–5:41", "VO2 max reps"],
+            ["Threshold (T)", "4:04–4:10", "6:33–6:43", "Tempo / cruise intervals (15K–HM effort)"],
+            ["10K pace", "3:58", "6:23", "Longer VO2 / race sharpeners"],
+            ["Interval (I, 5K)", "3:46–3:52", "6:04–6:13", "VO2 max reps"],
             ["Strides", "~3:10 feel", "relaxed-fast", "20s pickups, not a workout"]],
-            "note": "T/10K/I paces come from the 18:15 5K of 3 Oct (VDOT ~55.5), NOT from the 2:50 goal — training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. This is the recalibration the old 19:22-anchored paces were written to wait for. MP stays at goal pace, and this result validates rather than moves it: marathon-equivalent pace across VDOT 55–56.5 is 3:59–4:03. Recalibrate again at Sevilla. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
+            "note": "T/10K/I paces come from the 3 Oct time trial (18:22 on a net -57 m course, ~19:10 flat-equivalent), NOT from the 2:50 goal — training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. MP stays at goal pace. Recalibrate again at the Wk-13 10K. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
                     "Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard "
                     "long-run weekends always alternate with easy ones."},
         "checkpoints": {
-            "intro": "2:50 is the A-goal. The 3 Oct 5K — 18:15, VDOT ~55.5 — equates to about a 2:50:30 marathon on the Daniels tables, so the engine is no longer the gap: at the start of this build the 19:22 PR put the same tables nearer 3:00, and the race PRs predicted 3:06–3:27. What that equivalence assumes, and you do not yet have, is marathon-appropriate mileage — 11 weeks in, the average is 39 km/wk against a 116 km peak, and under-trained runners routinely finish well behind what a 5K says they are worth. The 5K measures the engine; Sevilla measures whether it converts. "
+            "intro": "2:50 is the A-goal. The 3 Oct 5K read 18:22, but the course was point-to-point and net -60 m, so grade-adjusted it is ~19:10-19:30 — level with the 19:22 PR rather than a minute inside it, and the HR agrees (176 avg / 183 max, where a maximal 5K sits higher). Treat the engine as VDOT ~52, equating to roughly 3:00-3:05 on the Daniels tables. Two things have to move for 2:50: the engine, and the mileage behind it — 11 weeks in the average is 39 km/wk against a 116 km peak, and under-trained runners finish well behind what a 5K says they are worth. The next honest read is the Wk-13 10K, ON A FLAT COURSE. "
                      "Don't lock race-day pace until the Wk-20 half.",
             "headers": ["Wk / date", "Test", "On-track for 2:50", "If short — likely target"], "rows": [
-                ["Wk 11 · Sat 3 Oct", "5K time trial — RAN 18:15 (PR, −67s)", "≤ 18:05", "18:15 on 42 m of climb, solo → ~18:00–18:10 flat. VDOT ~55.5"],
-                ["Wk 13 · ~12 Oct", "10K time trial", "≤ 37:45", "37:45–39:00 → sub-3 · >40:00 → 3:05+"],
+                ["Wk 11 · Sat 3 Oct ✓", "5K TT — 18:22 actual, ~19:10 flat-adj (net -57 m)", "done", "VDOT ~52 · on track for 2:55–3:00"],
+                ["Wk 13 · Sat 17 Oct", "10K time trial — FLAT course this time", "≤ 37:45", "37:45–39:00 → sub-3 · >40:00 → 3:05+"],
                 ["Wk 20 · Sun 6 Dec", "Half-marathon — Sevilla Half, signed up", "≤ 1:23:30", "1:23:30–1:26 → sub-3 · >1:27 → 3:05–3:10"],
                 ["Race · 7 Mar", "Marathon", "2:50 = 4:01/km", "Start at CONFIRMED pace. Even splits."]],
             "notes": [
