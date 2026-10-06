@@ -638,7 +638,7 @@
           "date": "2026-10-03",
           "dow": "Sat",
           "type": "tt",
-          "session": "5K TIME TRIAL — 18:22 for 5.02 km, but net -60 m point-to-point, so ~19:10-19:30 flat-equivalent. HR 176 avg / 183 max",
+          "session": "5K TIME TRIAL — 18:22 for 5.02 km (GAP 3:41/km = 18:25 flat). A PR by ~57s. HR 176 avg / 183 max",
           "target_km": 8
         },
         {
@@ -668,7 +668,7 @@
           "date": "2026-10-06",
           "dow": "Tue",
           "type": "quality",
-          "session": "Tempo: 6 km continuous @ 4:08/km + w/u & c/d  +S&C (hard-day session)",
+          "session": "Tempo: 6 km continuous @ 3:58/km + w/u & c/d  +S&C (hard-day session)",
           "target_km": 13
         },
         {
@@ -726,7 +726,7 @@
           "date": "2026-10-13",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1 km @ 4:05/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 5×1 km @ 3:55/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 12
         },
         {
@@ -1962,20 +1962,20 @@
         ],
         [
           "Threshold (T)",
-          "4:04–4:10",
-          "6:33–6:43",
+          "3:55–4:00",
+          "6:18–6:26",
           "Tempo / cruise intervals (15K–HM effort)"
         ],
         [
           "10K pace",
-          "3:58",
-          "6:23",
+          "3:46",
+          "6:04",
           "Longer VO2 / race sharpeners"
         ],
         [
           "Interval (I, 5K)",
-          "3:46–3:52",
-          "6:04–6:13",
+          "3:35–3:40",
+          "5:46–5:54",
           "VO2 max reps"
         ],
         [
@@ -1985,10 +1985,10 @@
           "20s pickups, not a workout"
         ]
       ],
-      "note": "T/10K/I paces come from the 3 Oct time trial (18:22 on a net -57 m course, ~19:10 flat-equivalent), NOT from the 2:50 goal — training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. MP stays at goal pace. Recalibrate again at the Wk-13 10K. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard long-run weekends always alternate with easy ones."
+      "note": "T/10K/I paces come from the 3 Oct time trial — 18:22 actual, Strava GAP 3:41/km = 18:25 flat-equivalent, VDOT ~54.8 — NOT from the 2:50 goal. Training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. MP stays at goal pace, and this result validates rather than moves it. Recalibrate again at the Wk-13 10K, on a FLAT course. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard long-run weekends always alternate with easy ones."
     },
     "checkpoints": {
-      "intro": "2:50 is the A-goal. The 3 Oct 5K read 18:22, but the course was point-to-point and net -60 m, so grade-adjusted it is ~19:10-19:30 — level with the 19:22 PR rather than a minute inside it, and the HR agrees (176 avg / 183 max, where a maximal 5K sits higher). Treat the engine as VDOT ~52, equating to roughly 3:00-3:05 on the Daniels tables. Two things have to move for 2:50: the engine, and the mileage behind it — 11 weeks in the average is 39 km/wk against a 116 km peak, and under-trained runners finish well behind what a 5K says they are worth. The next honest read is the Wk-13 10K, ON A FLAT COURSE. Don't lock race-day pace until the Wk-20 half.",
+      "intro": "2:50 is the A-goal. The 3 Oct 5K read 18:22 on a net -60 m course; Strava GAP puts it at 3:41/km = 18:25 flat, so it is a genuine PR by ~57s and VDOT ~54.8 — a 2:50-equivalent engine on the Daniels tables. Two things have to move for 2:50: the engine, and the mileage behind it — 11 weeks in the average is 39 km/wk against a 116 km peak, and under-trained runners finish well behind what a 5K says they are worth. The next honest read is the Wk-13 10K, ON A FLAT COURSE. Don't lock race-day pace until the Wk-20 half.",
       "headers": [
         "Wk / date",
         "Test",
@@ -1998,9 +1998,9 @@
       "rows": [
         [
           "Wk 11 · Sat 3 Oct ✓",
-          "5K TT — 18:22 actual, ~19:10 flat-adj (net -57 m)",
+          "5K TT — 18:22 (GAP 18:25, PR by ~57s)",
           "done",
-          "VDOT ~52 · on track for 2:55–3:00"
+          "VDOT ~54.8 · 2:50 engine, mileage is now the gap"
         ],
         [
           "Wk 13 · Sat 17 Oct",
