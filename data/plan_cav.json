@@ -1243,7 +1243,7 @@
           "type": "long",
           "session": "30 km easy (recovery weekend — no MP)",
           "target_km": 30,
-          "shoe": "RACE SHOE"
+          "shoe": "Max-cushion (long-run)"
         }
       ]
     },
@@ -1893,7 +1893,7 @@
           "type": "long",
           "session": "35 km, last 12 km @ MP (dress rehearsal)",
           "target_km": 35,
-          "shoe": "Max-cushion (long-run)"
+          "shoe": "RACE SHOE"
         }
       ]
     },
@@ -1958,7 +1958,7 @@
           "type": "long",
           "session": "30 km easy — FINAL long run, keep it relaxed",
           "target_km": 30,
-          "shoe": "RACE SHOE"
+          "shoe": "Max-cushion (long-run)"
         }
       ]
     },
@@ -2206,13 +2206,13 @@
         ],
         [
           "RACE SHOE",
-          "Sevilla, Tokyo + 3 MP sessions",
-          "153",
-          "153",
+          "Sevilla, Tokyo + 2 bed-in runs",
+          "128",
+          "128",
           "Early-mid Nov — Metaspeed Sky / Alphafly 3 / Adios Pro 5"
         ]
       ],
-      "note": "The racer holds its bounce for ~250-300 km, so it only appears five times: three MP long runs to bed it in (Wk 18, 19, 30), Sevilla on 6 Dec, and Tokyo. Don't train in it. Buy it in November rather than January so a bad fit turns up at the half and not three weeks out — super shoes change calf and Achilles loading noticeably and not everyone gets on with a given geometry. Log mileage per pair in Strava (assign gear to each activity); most worn-shoe injuries happen because nobody was counting."
+      "note": "The racer holds its bounce for ~250-300 km, so it only appears four times: one MP long run to bed it in before each race (Wk 18, and the Wk 29 dress rehearsal), Sevilla on 6 Dec, and Tokyo. Don't train in it. Buy it in November rather than January so a bad fit turns up at the half and not three weeks out — super shoes change calf and Achilles loading noticeably and not everyone gets on with a given geometry. Log mileage per pair in Strava (assign gear to each activity); most worn-shoe injuries happen because nobody was counting."
     },
     "paces": {
       "headers": [

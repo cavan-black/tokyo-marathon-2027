@@ -302,10 +302,10 @@ def content():
                 ["Daily trainer #2", "Easy + recovery from Wk 20", "374", "374", "Early Jan, as the first nears 500 km"],
                 ["Mach X3", "Most quality sessions", "296", "462", "Owned — 166 km"],
                 ["EVO SL", "Quality, every third week", "166", "545", "Owned — 379 km. Retire after Tokyo."],
-                ["RACE SHOE", "Sevilla, Tokyo + 3 MP sessions", "153", "153", "Early-mid Nov — Metaspeed Sky / Alphafly 3 / Adios Pro 5"],
+                ["RACE SHOE", "Sevilla, Tokyo + 2 bed-in runs", "128", "128", "Early-mid Nov — Metaspeed Sky / Alphafly 3 / Adios Pro 5"],
             ],
-            "note": "The racer holds its bounce for ~250-300 km, so it only appears five times: "
-                    "three MP long runs to bed it in (Wk 18, 19, 30), Sevilla on 6 Dec, and Tokyo. "
+            "note": "The racer holds its bounce for ~250-300 km, so it only appears four times: "
+                    "one MP long run to bed it in before each race (Wk 18, and the Wk 29 dress rehearsal), Sevilla on 6 Dec, and Tokyo. "
                     "Don't train in it. Buy it in November rather than January so a bad fit turns up "
                     "at the half and not three weeks out — super shoes change calf and Achilles "
                     "loading noticeably and not everyone gets on with a given geometry. "
@@ -476,7 +476,11 @@ SHOES = {
 }
 # The racer only comes out for the two races and the handful of MP sessions that
 # bed it in — it holds its bounce for ~250-300 km and must not be spent on training.
-RACE_SHOE_DAYS = {(18,"Sun"), (19,"Sun"), (20,"Sun"), (30,"Sun"), (33,"Sun")}
+# One bed-in run before each race. Wk 18 rather than 19 so there is a week in hand
+# to react if the shoe does not suit. Wk 29 rather than 30 before Tokyo: 29 is the
+# dress rehearsal (35 km with 12 km @ MP) and 30 is an easy run, so 29 is the one
+# that actually rehearses race pace in race shoes.
+RACE_SHOE_DAYS = {(18,"Sun"), (20,"Sun"), (29,"Sun"), (33,"Sun")}
 # Second daily trainer arrives when the first is around 500 km.
 DAILY2_FROM = 20
 
