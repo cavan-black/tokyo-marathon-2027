@@ -39220,11 +39220,11 @@
     "2026-10-06": {
       "week": 12,
       "dow": "Tue",
-      "type": "quality",
-      "session": "Tempo: 6 km continuous @ 3:58/km + w/u & c/d  +S&C (hard-day session)",
-      "target_km": 13,
+      "type": "rest",
+      "session": "Rest — couldn't run today",
+      "target_km": 0,
       "actual_km": 0,
-      "status": "Missed",
+      "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -39234,8 +39234,8 @@
       "week": 12,
       "dow": "Wed",
       "type": "easy",
-      "session": "Easy 7 km + 6×20s strides",
-      "target_km": 7,
+      "session": "Easy 18 km — Tuesday's session shifted; keep it genuinely easy, HR under 153, so Thursday's tempo isn't compromised",
+      "target_km": 18,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -39246,9 +39246,9 @@
     "2026-10-08": {
       "week": 12,
       "dow": "Thu",
-      "type": "easy",
-      "session": "Medium easy 11 km + 6×20s strides",
-      "target_km": 11,
+      "type": "quality",
+      "session": "Tempo: 6 km continuous @ 3:58/km + w/u & c/d  +S&C (hard-day session)",
+      "target_km": 13,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -41392,11 +41392,11 @@
       "replaced_km": 0,
       "done": 0,
       "partial": 0,
-      "missed": 1,
+      "missed": 0,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
-      "quality_planned": 1,
+      "quality_planned": 0,
       "long_done": false,
       "flag": "✓ On track"
     },
@@ -41737,7 +41737,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-06T18:52:49+00:00",
+  "last_sync": "2026-10-06T18:53:34+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-16",

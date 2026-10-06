@@ -56,7 +56,12 @@ DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri")), 11: (("T
 # the bulk (furthest from it), Tuesday stays short (a quality session the day before a time
 # trial costs more than it gives), the test day is just 1 km either side of the 5K, and the
 # Sunday travel day picks up an easy evening run instead of being written off.
-DAY_OVERRIDE = {11: {"Thu": ("Recovery 6 km easy — feeling rough, so the 5K test moves to "
+DAY_OVERRIDE = {12: {"Tue": ("Rest — couldn't run today", "rest", 0),
+                     "Wed": ("Easy 18 km — Tuesday's session shifted; keep it genuinely easy, "
+                             "HR under 153, so Thursday's tempo isn't compromised", "easy", 18),
+                     "Thu": ("Tempo: 6 km continuous @ 3:58/km + w/u & c/d  "
+                             "+S&C (hard-day session)", "quality", 13)},
+                11: {"Thu": ("Recovery 6 km easy — feeling rough, so the 5K test moves to "
                              "the weekend  +S&C (easy-day session)", "recovery", 6),
                      "Fri": ("Rest — the 5K test moved on again, to Saturday morning", "rest", 0),
                      # Run 3 Oct: 2.07 km w/u, 5.02 km in 18:22 (watch 5K split 18:15), 0.69

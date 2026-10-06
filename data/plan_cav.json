@@ -745,26 +745,26 @@
         {
           "date": "2026-10-06",
           "dow": "Tue",
-          "type": "quality",
-          "session": "Tempo: 6 km continuous @ 3:58/km + w/u & c/d  +S&C (hard-day session)",
-          "target_km": 13,
-          "shoe": "EVO SL"
+          "type": "rest",
+          "session": "Rest — couldn't run today",
+          "target_km": 0,
+          "shoe": null
         },
         {
           "date": "2026-10-07",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 7 km + 6×20s strides",
-          "target_km": 7,
+          "session": "Easy 18 km — Tuesday's session shifted; keep it genuinely easy, HR under 153, so Thursday's tempo isn't compromised",
+          "target_km": 18,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-10-08",
           "dow": "Thu",
-          "type": "easy",
-          "session": "Medium easy 11 km + 6×20s strides",
-          "target_km": 11,
-          "shoe": "Daily trainer"
+          "type": "quality",
+          "session": "Tempo: 6 km continuous @ 3:58/km + w/u & c/d  +S&C (hard-day session)",
+          "target_km": 13,
+          "shoe": "EVO SL"
         },
         {
           "date": "2026-10-09",
