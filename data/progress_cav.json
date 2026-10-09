@@ -41416,12 +41416,55 @@
       "type": "recovery",
       "session": "Recovery 5 km easy  +S&C (easy-day session)",
       "target_km": 5,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
-      "cross_activities": []
+      "actual_km": 5.0,
+      "status": "Done",
+      "pace_min_km": 5.0,
+      "pace_str": "5:00",
+      "activities": [
+        {
+          "id": 20512878431,
+          "date": "2026-10-09",
+          "name": "Treadmill 5km",
+          "activity_type": "Run",
+          "distance_km": 5.0,
+          "moving_time_s": 1500,
+          "pace_min_km": 5.0,
+          "avg_hr": null,
+          "max_hr": null,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ],
+      "cross_activities": [
+        {
+          "id": 20512633990,
+          "date": "2026-10-09",
+          "name": "Morning Weight Training",
+          "activity_type": "WeightTraining",
+          "distance_km": 0.0,
+          "moving_time_s": 2297,
+          "pace_min_km": null,
+          "avg_hr": 86.3,
+          "max_hr": 116.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        },
+        {
+          "id": 20513854992,
+          "date": "2026-10-09",
+          "name": "Lunch Weight Training",
+          "activity_type": "WeightTraining",
+          "distance_km": 0.0,
+          "moving_time_s": 2517,
+          "pace_min_km": null,
+          "avg_hr": 100.8,
+          "max_hr": 146.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-10-10": {
       "week": 12,
@@ -43540,13 +43583,13 @@
     },
     "12": {
       "planned_km": 63,
-      "planned_km_due": 31,
-      "actual_km": 31.1,
+      "planned_km_due": 36,
+      "actual_km": 36.1,
       "substituted_km": 0,
       "replaced_km": 0,
-      "done": 2,
+      "done": 3,
       "partial": 0,
-      "missed": 1,
+      "missed": 0,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 1,
@@ -43891,7 +43934,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-09T01:03:19+00:00",
+  "last_sync": "2026-10-09T12:49:38+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-08",
