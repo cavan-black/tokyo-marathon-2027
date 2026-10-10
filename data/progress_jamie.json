@@ -15589,7 +15589,7 @@
       "session": "Easy 9 km + strides",
       "target_km": 9,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -17699,13 +17699,13 @@
     },
     "12": {
       "planned_km": 70,
-      "planned_km_due": 27,
+      "planned_km_due": 33,
       "actual_km": 8.0,
       "substituted_km": 0,
       "replaced_km": 0,
       "done": 1,
       "partial": 0,
-      "missed": 3,
+      "missed": 4,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -18050,7 +18050,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-09T18:42:01+00:00",
+  "last_sync": "2026-10-10T00:34:32+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
