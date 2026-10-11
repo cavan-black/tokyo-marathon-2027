@@ -122,10 +122,12 @@ FUEL_CARBS = [
 ]
 # Fluid and sodium are a separate problem from carbs and in heat they bite first.
 FUEL_FLUID = [
-    ["Measure yours — once", "Weigh yourself naked before and after a long run and note what you drank. Sweat loss (L) = kg lost + litres drunk. Do it on a hot run and a cool one; those two numbers beat any general guidance here."],
+    ["Cav's measured rate: 1.9 L/hr", "22 km on 11 Oct 2026 at ~25°C in sun: 71.1 kg -> 68.7 kg having drunk 1.0 L = 3.4 L sweat in 1.77 h. That is a HIGH rate. Plan every hot long run off it: 30 km ~4.8 L, 35 km ~5.8 L. Tokyo at 8-12°C will be roughly half."],
+    ["Re-measure when it's cool", "The 1.9 L/hr figure is a hot-weather number. Weigh in before and after an evening run under 18°C to get the other end of the range — sweat loss (L) = kg lost + litres drunk."],
+    ["Carry enough to matter", "At 1.9 L/hr a 500 ml handheld is 16 minutes of fluid. Past 90 min in heat you need a 1.5-2 L vest or a route that loops past a stash. Target 800-1000 ml/hr: you will not match the loss, but ~50% replacement keeps you inside the 2% line."],
     ["Cool, 15–18°C", "300–400 ml/hr."],
     ["Warm, 22–25°C", "500–700 ml/hr."],
-    ["Hot, ~30°C", "700–1,000 ml/hr — and accept you'll still finish down on the day."],
+    ["Hot, ~25-30°C", "800–1,000 ml/hr — and accept you'll still finish down. At a 1.9 L/hr sweat rate even this is only half-replacement."],
     ["The 2% rule", "Lose more than 2% of body weight in fluid and both performance and heat regulation fall away sharply."],
     ["Don't overdrink either", "Large volumes of plain water in heat dilute blood sodium. That is genuinely dangerous, not merely suboptimal."],
     ["Sodium 500–1,000 mg/hr", "In heat. White crust on your cap or sunglasses and stinging eyes mean you're a salty sweater — work at the top of that range."],
@@ -135,7 +137,7 @@ FUEL_FLUID = [
 # which is the ratio the expensive mixes are sold on.
 FUEL_CHEAP = [
     ["Table sugar is the answer", "Sucrose IS glucose + fructose, bonded 1:1 — essentially the ratio brands charge a premium for, and it performs the same in head-to-head studies."],
-    ["The recipe, per 750 ml", "45 g sugar (3 heaped tbsp) + ¼ tsp table salt (~590 mg sodium) + squash or lemon to make it drinkable. That's 45 g carb at ~6%."],
+    ["The recipe, per 500 ml", "1 tbsp sugar (~12 g) + ¼ tsp table salt (~590 mg sodium) + squash to make it drinkable. That is ~2.5%, deliberately weak. 2 tbsp plus a Powerade alongside caused nausea on 7 Oct 2026; halving it to one source at 2.5% was settled fine on 11 Oct. Build the concentration back up slowly from there, one change at a time."],
     ["Keep it at 6% or below", "Stronger than that in heat and it sits in your stomach instead of emptying into the gut."],
     ["What it costs", "About €0.03 per 25 g of carbohydrate, against €1.80–4.00 for a gel. A €1 bag of sugar covers most of a training block."],
     ["Cheap solid options", "Dates (~75 g carb/100 g — best value real food), jelly babies or Haribo, fig rolls, raisins, white bread and jam."],
