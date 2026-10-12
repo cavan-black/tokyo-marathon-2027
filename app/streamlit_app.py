@@ -275,6 +275,20 @@ STYLE = """<style>
   font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;}
 .sv .race-progress .rp-head b{color:var(--ink);font-family:var(--font-mono);font-size:12.5px;
   text-transform:none;letter-spacing:0;font-weight:700;}
+.sv .blocks{display:flex;flex-direction:column;gap:14px;}
+.sv .blk{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);}
+.sv .blk.now{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 18%,transparent);}
+.sv .blk.future{opacity:.5;}
+.sv .blk-top{display:flex;align-items:baseline;gap:9px;margin-bottom:8px;}
+.sv .blk-top b{font-size:.95rem;}
+.sv .blk-pct{margin-left:auto;font-weight:700;font-variant-numeric:tabular-nums;}
+.sv .blk-bar{height:8px;border-radius:999px;background:var(--line);overflow:hidden;}
+.sv .blk-bar i{display:block;height:100%;border-radius:999px;background:var(--glam-grad);
+  animation:ringFade .7s ease both;}
+.sv .blk.good .blk-pct{color:var(--good);} .sv .blk.good .blk-bar i{background:var(--good);}
+.sv .blk.ok   .blk-pct{color:var(--warn);} .sv .blk.ok   .blk-bar i{background:var(--warn);}
+.sv .blk.bad  .blk-pct{color:var(--bad);}  .sv .blk.bad  .blk-bar i{background:var(--bad);}
+.sv .blk-sub{font-size:.8rem;margin-top:7px;}
 .sv .race-track{position:relative;height:14px;border-radius:999px;background:var(--line);overflow:hidden;}
 .sv .race-fill{height:100%;border-radius:999px;background:var(--glam-grad);animation:ringFade .7s ease both;}
 @keyframes ringFade{from{opacity:0;transform:scale(.85);}to{opacity:1;transform:scale(1);}}
@@ -420,6 +434,87 @@ def ring_html(pct, big, title, caption, color="var(--accent)"):
             f'<div class="tier-badge">{esc(big)}</div></div></div>')
 
 
+def block_rows(plan, wk_rows):
+    """Consistency per training block, not pooled across the whole plan.
+
+    One lifetime percentage is the wrong denominator here: the early weeks were
+    missed because of travel and a holiday, and pooling means a perfect February
+    can never undo a sparse August. Per block, each phase is judged on its own
+    terms and the trend becomes visible.
+
+    Only weeks that have actually started are counted, so an untouched future
+    block reads as "not started" rather than 0%.
+    """
+    today = date.today()
+    blocks = []
+    for wk in plan["weeks"]:
+        start = datetime.fromisoformat(wk["start"]).date()
+        if not blocks or blocks[-1]["phase"] != wk["phase"]:
+            blocks.append({"phase": wk["phase"], "w0": wk["week"], "w1": wk["week"],
+                           "start": start, "done": 0, "partial": 0, "missed": 0,
+                           "planned_km": 0.0, "actual_km": 0.0, "weeks_started": 0,
+                           "quality_hit": 0, "quality_planned": 0})
+        b = blocks[-1]
+        b["w1"] = wk["week"]
+        if start > today:                     # week hasn't begun
+            continue
+        r = wk_rows.get(str(wk["week"]))
+        if not r:
+            continue
+        b["weeks_started"] += 1
+        for k in ("done", "partial", "missed", "quality_hit", "quality_planned"):
+            b[k] += r.get(k, 0) or 0
+        b["planned_km"] += r.get("planned_km_due", 0) or 0
+        b["actual_km"] += r.get("actual_km", 0) or 0
+    for b in blocks:
+        due = b["done"] + b["partial"] + b["missed"]
+        b["due"] = due
+        b["pct"] = (b["done"] / due * 100) if due else None
+        b["km_pct"] = (b["actual_km"] / b["planned_km"] * 100) if b["planned_km"] else None
+        b["current"] = b["start"] <= today and any(
+            datetime.fromisoformat(w["start"]).date() > today
+            for w in plan["weeks"] if b["w0"] <= w["week"] <= b["w1"]) or False
+    # mark the block containing today
+    cur = None
+    for b in blocks:
+        if b["weeks_started"]:
+            cur = b
+    for b in blocks:
+        b["current"] = (b is cur)
+    return blocks
+
+
+def blocks_html(plan, wk_rows):
+    rows = block_rows(plan, wk_rows)
+    out = '<div class="blocks">'
+    for b in rows:
+        span = f'Wk {b["w0"]}' + (f'–{b["w1"]}' if b["w1"] != b["w0"] else "")
+        if b["pct"] is None:
+            out += (f'<div class="blk future"><div class="blk-top">'
+                    f'<b>{esc(b["phase"])}</b><span class="mut">{esc(span)}</span></div>'
+                    f'<div class="blk-bar"><i style="width:0%"></i></div>'
+                    f'<div class="blk-sub mut">Not started</div></div>')
+            continue
+        pct = b["pct"]
+        tone = "good" if pct >= 90 else ("ok" if pct >= 70 else "bad")
+        bits = [f'<b>{b["done"]}</b> of {b["due"]} sessions']
+        if b["missed"]:
+            bits.append(f'{b["missed"]} missed')
+        if b["partial"]:
+            bits.append(f'{b["partial"]} partial')
+        if b["km_pct"] is not None:
+            bits.append(f'{b["actual_km"]:.0f} of {b["planned_km"]:.0f} km')
+        if b["quality_planned"]:
+            bits.append(f'{b["quality_hit"]}/{b["quality_planned"]} quality')
+        out += (f'<div class="blk {tone}{" now" if b["current"] else ""}">'
+                f'<div class="blk-top"><b>{esc(b["phase"])}</b>'
+                f'<span class="mut">{esc(span)}</span>'
+                f'<span class="blk-pct">{pct:.0f}%</span></div>'
+                f'<div class="blk-bar"><i style="width:{pct:.1f}%"></i></div>'
+                f'<div class="blk-sub mut">{esc(" · ".join(bits))}</div></div>')
+    return out + "</div>"
+
+
 def compute_streak(plan, wk_rows):
     """Consecutive on-track weeks ending at the most recent week that's actually started."""
     streak = 0
@@ -465,11 +560,16 @@ def glam_row_html(plan, progress, cur):
     week_ring = ring_html(week_pct, tier_for(week_pct), "This week",
                            f'{cur_w.get("actual_km",0):.0f} of {planned:.0f} km this week', "var(--good)")
 
-    done_total = sum(w["done"] for w in wk_rows.values())
-    due_total = sum(w["done"] + w["partial"] + w["missed"] for w in wk_rows.values())
-    consist_pct = (done_total / due_total * 100) if due_total > 0 else 0
-    consist_ring = ring_html(consist_pct, tier_for(consist_pct), "Consistency",
-                              f'{done_total} of {due_total} sessions done', "var(--accent)")
+    # Per block rather than pooled over the whole plan — a lifetime percentage can
+    # never recover from a sparse opening phase, so it stops being informative.
+    blks = [b for b in block_rows(plan, wk_rows) if b["pct"] is not None]
+    cur_b = next((b for b in blks if b["current"]), blks[-1] if blks else None)
+    if cur_b:
+        consist_pct, label = cur_b["pct"], cur_b["phase"]
+        cap = f'{cur_b["done"]} of {cur_b["due"]} sessions · wk {cur_b["w0"]}–{cur_b["w1"]}'
+    else:
+        consist_pct, label, cap = 0, "Consistency", "no sessions due yet"
+    consist_ring = ring_html(consist_pct, tier_for(consist_pct), label, cap, "var(--accent)")
 
     progress_bar = race_progress_html(plan)
     return f'<div class="glam-row">{week_ring}{consist_ring}{progress_bar}</div>'
@@ -1315,6 +1415,13 @@ def render_analytics(plan, progress):
                 section("Race-time prediction", "Riegel formula from your best logged checkpoint/race effort.",
                         predict_html(predict_race_time(progress), plan["meta"].get("goal_note", "")))
                 + "</div>", unsafe_allow_html=True)
+
+    st.markdown(STYLE + '<div class="sv">' +
+                section("Consistency by block",
+                        "Each phase judged on its own sessions — a pooled lifetime figure "
+                        "lets a sparse opening block bury everything that follows.",
+                        blocks_html(plan, progress.get("weeks", {}))) + "</div>",
+                unsafe_allow_html=True)
 
     st.markdown(STYLE + '<div class="sv">' +
                 section("Consistency heatmap", "Every day of the plan so far — darker = more distance.",
