@@ -44063,7 +44063,7 @@
       "week": 13,
       "dow": "Tue",
       "type": "quality",
-      "session": "Threshold: 5×1 km @ 3:55/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
+      "session": "Threshold: 5×1 km @ 3:50/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
       "target_km": 12,
       "actual_km": 0,
       "status": "Upcoming",
@@ -46488,7 +46488,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-12T00:18:07+00:00",
+  "last_sync": "2026-10-12T14:49:10+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-08",
