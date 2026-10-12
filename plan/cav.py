@@ -136,8 +136,17 @@ def tue(w):
         # move only as far as that supports. Weeks 5-11 keep the old numbers: they are the
         # record of what was actually prescribed, and regenerating them would make the log
         # claim sessions that were never set.
-        lib = (["Threshold: 5×1 km @ 3:55/km (T), 90s jog", "Tempo: 2×3 km @ 3:58/km, 3 min jog",
-                "Threshold: 6×1 km @ 3:55/km, 75s jog", "Tempo: 6 km continuous @ 3:58/km"]
+        # Threshold moved 3:55 -> 3:50 on 12 Oct 2026, against Daniels rather than with it.
+        # VDOT 54.8 puts T at 3:57/km, so 3:55 was already textbook. The HR says the book
+        # is wrong for him: the 8 Oct tempo held 3:59/km with HR plateauing 168-169, which
+        # is 81% HRR against a threshold HR of 172-176 — comfortably sub-threshold, and HR
+        # was flat not drifting. Interpolating his own two anchors (3:41/km -> HR 176 on
+        # the 3 Oct 5K; 3:59/km -> 168 on 8 Oct) gives ~2.2 s/km per bpm, so reaching 173
+        # means ~3:48. 3:50 for broken reps, 3:55 continuous. He has a marathon background
+        # and a high threshold fraction of VO2max, which is exactly the shape that makes
+        # VDOT-from-5K under-read T pace. The 17 Oct 10K TT settles it either way.
+        lib = (["Threshold: 5×1 km @ 3:50/km (T), 90s jog", "Tempo: 2×3 km @ 3:55/km, 3 min jog",
+                "Threshold: 6×1 km @ 3:50/km, 75s jog", "Tempo: 6 km continuous @ 3:55/km"]
                if w >= RECALIBRATED_FROM else
                ["Threshold: 5×1 km @ 4:10/km (T), 90s jog", "Tempo: 2×3 km @ 4:15/km, 3 min jog",
                 "Threshold: 6×1 km @ 4:08/km, 75s jog", "Tempo: 6 km continuous @ 4:15/km"])
@@ -322,7 +331,7 @@ def content():
             ["Easy / aerobic", "5:00–5:35", "8:03–8:59", "Bulk of weekly volume (incl. doubles)"],
             ["Long-run easy", "4:55–5:30", "7:55–8:51", "Long-run base portions"],
             ["Marathon (MP)", "4:01", "6:29", "Race pace — MP blocks & long-run finishes"],
-            ["Threshold (T)", "3:55–4:00", "6:18–6:26", "Tempo / cruise intervals (15K–HM effort)"],
+            ["Threshold (T)", "3:50–3:55", "6:10–6:18", "Tempo / cruise intervals — HR 172–176, not pace-led"],
             ["10K pace", "3:46", "6:04", "Longer VO2 / race sharpeners"],
             ["Interval (I, 5K)", "3:35–3:40", "5:46–5:54", "VO2 max reps"],
             ["Strides", "~3:10 feel", "relaxed-fast", "20s pickups, not a workout"]],

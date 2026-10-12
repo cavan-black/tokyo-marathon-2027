@@ -275,6 +275,21 @@ STYLE = """<style>
   font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700;}
 .sv .race-progress .rp-head b{color:var(--ink);font-family:var(--font-mono);font-size:12.5px;
   text-transform:none;letter-spacing:0;font-weight:700;}
+.sv .bstrip{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:10px;
+  margin:14px 0 4px;}
+.sv .bs{padding:9px 11px 10px;border:1px solid var(--line);border-radius:11px;background:var(--card);}
+.sv .bs.now{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 16%,transparent);}
+.sv .bs.future{opacity:.45;}
+.sv .bs-n{font-size:.72rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;
+  color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.sv .bs-p{font-size:1.32rem;font-weight:800;line-height:1.15;font-variant-numeric:tabular-nums;}
+.sv .bs-bar{height:5px;border-radius:999px;background:var(--line);overflow:hidden;margin:5px 0 5px;}
+.sv .bs-bar i{display:block;height:100%;border-radius:999px;background:var(--glam-grad);
+  animation:ringFade .7s ease both;}
+.sv .bs-s{font-size:.68rem;color:var(--muted);font-variant-numeric:tabular-nums;}
+.sv .bs.good .bs-p{color:var(--good);} .sv .bs.good .bs-bar i{background:var(--good);}
+.sv .bs.ok   .bs-p{color:var(--warn);} .sv .bs.ok   .bs-bar i{background:var(--warn);}
+.sv .bs.bad  .bs-p{color:var(--bad);}  .sv .bs.bad  .bs-bar i{background:var(--bad);}
 .sv .blocks{display:flex;flex-direction:column;gap:14px;}
 .sv .blk{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--card);}
 .sv .blk.now{border-color:var(--accent);box-shadow:0 0 0 2px color-mix(in srgb,var(--accent) 18%,transparent);}
@@ -482,6 +497,38 @@ def block_rows(plan, wk_rows):
     for b in blocks:
         b["current"] = (b is cur)
     return blocks
+
+
+SHORT_PHASE = {"Re-entry / Rebuild": "Rebuild", "Aerobic Base": "Base",
+               "Marathon-Specific I": "Specific I", "Specific II / Peak": "Peak",
+               "Taper & Race": "Taper"}
+
+
+def blocks_strip_html(plan, wk_rows):
+    """Every block's consistency at once, in the fixed hero above the subtabs.
+
+    The ring shows only the block in progress, and the detailed table is buried
+    in Analytics — neither answers "how am I trending across phases" at a glance,
+    which is the question that matters when the early blocks are the weak ones.
+    """
+    rows = block_rows(plan, wk_rows)
+    out = '<div class="bstrip">'
+    for b in rows:
+        name = SHORT_PHASE.get(b["phase"], b["phase"])
+        span = f'wk {b["w0"]}–{b["w1"]}'
+        if b["pct"] is None:
+            out += (f'<div class="bs future"><div class="bs-n">{esc(name)}</div>'
+                    f'<div class="bs-p">–</div><div class="bs-bar"><i style="width:0%"></i></div>'
+                    f'<div class="bs-s">{esc(span)}</div></div>')
+            continue
+        pct = b["pct"]
+        tone = "good" if pct >= 90 else ("ok" if pct >= 70 else "bad")
+        out += (f'<div class="bs {tone}{" now" if b["current"] else ""}">'
+                f'<div class="bs-n">{esc(name)}</div>'
+                f'<div class="bs-p">{pct:.0f}%</div>'
+                f'<div class="bs-bar"><i style="width:{pct:.1f}%"></i></div>'
+                f'<div class="bs-s">{b["done"]}/{b["due"]} · {esc(span)}</div></div>')
+    return out + "</div>"
 
 
 def blocks_html(plan, wk_rows):
@@ -1527,7 +1574,8 @@ def render_runner(runner_id):
     # ---- hero (facts strip + glam progress rings) stays fixed above the subtabs ----
     banner = f'<div class="banner">{esc(content["banner"])}</div>' if content.get("banner") else ""
     st.markdown(STYLE + '<div class="sv">' + celebration_html(plan, progress) + banner + facts_html(plan, wk_rows) +
-                glam_row_html(plan, progress, cur) + "</div>", unsafe_allow_html=True)
+                glam_row_html(plan, progress, cur) +
+                blocks_strip_html(plan, wk_rows) + "</div>", unsafe_allow_html=True)
 
     # ---- everything else lives in subtabs (Warm-up/Diet Plan/Layover only show up if a runner has one) ----
     has_diet = bool(content.get("diet"))

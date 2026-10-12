@@ -811,7 +811,7 @@
           "date": "2026-10-13",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1 km @ 3:55/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 5×1 km @ 3:50/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
           "target_km": 12,
           "shoe": "Mach X3"
         },
@@ -2248,9 +2248,9 @@
         ],
         [
           "Threshold (T)",
-          "3:55–4:00",
-          "6:18–6:26",
-          "Tempo / cruise intervals (15K–HM effort)"
+          "3:50–3:55",
+          "6:10–6:18",
+          "Tempo / cruise intervals — HR 172–176, not pace-led"
         ],
         [
           "10K pace",
