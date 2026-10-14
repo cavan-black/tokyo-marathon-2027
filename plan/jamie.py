@@ -17,23 +17,27 @@ RACE  = date(2027, 3, 7)
 # (11 Oct, 7:36/km @ 159 bpm — slower and +11 bpm against 21.1 km @ 6:24 @ 148 bpm on
 # 30 Aug, i.e. detrained, not just under-volumed). The original plan wanted 74 km and a
 # 30 km long run in week 13: 5.4x his recent weekly average and 1.9x his longest recent
-# run. The rebuild restarts from ~30 km/week with a 14 km long run and ramps 7–17% off
-# the last comparable week, cutting back every fourth. Peak is 80 km at wk 29 with a
-# 32 km long run (original: 82 / 34) — the 4:00 target is held and the peak was raised
-# back to 80 on request, so the ramp is 30 -> 80 km over 16 build weeks. That is 2.7x
-# in four months off six weeks averaging 13.7 km; it is the aggressive reading of this
-# data and it only works if the weeks actually get run. The extra volume over the 70 km
-# version went into midweek (Wed/Sat climb to 10-12 km), NOT into a longer long run —
-# more frequent running is the safer way to carry 80 km than a 34 km Sunday.
+# run. Week 13 was then re-based to 40 km on 14 Oct, at Jamie's own word that he could
+# do 40 this week (he had 9 km banked by the Tuesday). That starting point is the whole
+# reason this ramp works: 40 -> 80 km over 16 build weeks is 2x with a cut-back every
+# fourth, and no step bigger than 10%, where 30 -> 80 needed steps up to 16%.
+#
+# What the 40 does NOT change is the long run. His longest run in seven weeks is
+# 15.7 km, so Sunday goes to 16 km and the extra weekly volume lands midweek instead
+# (Wed/Sat reach 10-12 km at peak). Frequency is the safe way to carry 80 km; a Sunday
+# that outruns his proven distance is not. Peak 80 km / 32 km long run (original: 82 / 34).
+#
+# The standing risk is unchanged and is not about any single week: weeks 7-12 averaged
+# 13.7 km. A 40 km week 13 only matters if week 14 is also 44.
 VOL = [28,34,40,32,46,52,42,56,
        60,66,54,70,
-       30,34,38,36,44,48,40,44,
-       42,54,58,48,62,68,56,72,80,74,
+       40,44,48,42,52,56,46,50,
+       46,60,64,54,70,74,60,76,80,74,
        56,40,30]
 LR  = [12,14,16,13,18,20,16,22,
        24,26,20,28,
-       14,16,18,12,20,22,16,21.1,
-       16,24,26,20,28,30,21.1,30,32,32,
+       16,18,20,14,22,24,16,21.1,
+       16,26,28,20,30,30,21.1,30,32,32,
        24,16,42.195]
 
 # Hard (MP-work) long-run weekends — always followed by an easy long-run weekend.
@@ -43,8 +47,10 @@ HARD_LR = {23, 26, 30}
 # distance; build_week() has to know too, or the TT km get double-counted in the pool.
 # Wk 10's 5K was planned and missed; wk 16 is the replacement re-anchoring trial.
 TT_WEEKS = {10, 16}
-# Low-volume weeks that run 5 days with Saturday rest (same shape as weeks 1–8).
-REBUILD_WEEKS = {13, 14, 15}
+# Weeks that run 5 days with Saturday rest (same shape as weeks 1–8). Only wk 13, and
+# only because it was already half gone when the plan was rebuilt on the Wednesday —
+# its 40 km has to fit into Thu-Sun, so the week is compressed rather than spread.
+REBUILD_WEEKS = {13}
 # Weeks cut back to only the listed days, everything else turned into rest. Unlike
 # OFF_WEEKS this keeps the named sessions at full distance — it's for a week where the
 # midweek running has to go but the long run and one supporting run stay. The week's
@@ -70,10 +76,10 @@ def tue(w):
     # Rebuild: no threshold work until there's a base under it. Strides and hills keep
     # some speed in the legs without adding a second hard day to a 30-38 km week.
     if w<=16:
-        return {13:"Easy 6 km + 4×20s strides",
-                14:"Easy 6 km + 6×20s strides",
-                15:"Easy 6 km + 6×20s strides + 4×30s hills",
-                16:"Easy 6 km + 4×20s strides (5K trial Saturday — stay fresh)"}[w], "easy"
+        return {13:"Easy 8 km + 4×20s strides",
+                14:"Easy 8 km + 6×20s strides",
+                15:"Easy 8 km + 6×20s strides + 4×30s hills",
+                16:"Easy 8 km + 4×20s strides (5K trial Saturday — stay fresh)"}[w], "easy"
     if w<=20:
         lib=["Tempo: 2×10 min @ T, 2 min jog","Threshold: 4×5 min @ T, 90s jog",
              "Cruise: 5×3 min @ T, 75s jog","Tempo: 20 min continuous @ T"]
@@ -90,8 +96,8 @@ def tue(w):
 def thu(w):
     if w<=8:  return ("Easy 5–6 km" if w<=4 else "Easy 6 km + strides"), "easy"
     if w<=12: return ("Easy 8 km + strides" if w%2 else "Easy 8–9 km"), "easy"
-    if w<=16: return ("Easy 6 km + strides" if w%2 else "Easy 6 km"), "easy"
-    if w<=20: return ("Easy 7 km + strides" if w%2 else "Easy 7 km"), "easy"
+    if w<=16: return ("Easy 7 km + strides" if w%2 else "Easy 7 km"), "easy"
+    if w<=20: return ("Easy 8 km + strides" if w%2 else "Easy 8 km"), "easy"
     if w<=30:
         # MP tempo only on easy-long-run weeks (never race-adjacent) — max 2 hard efforts/week
         return (("MP tempo: 10 km w/ middle 6 km @ MP","quality") if w in (22,25,29)
@@ -101,14 +107,15 @@ def thu(w):
 
 def sun(w):
     d=LR[w-1]
-    txt={13:"14 km easy — RESET: this replaces the 30 km that was planned here. "
-            "Your longest run in seven weeks is 15.7 km; the build restarts from this.",
-        16:"12 km easy (cut-back — 5K trial yesterday, keep this one genuinely slow)",
+    txt={13:"16 km easy — RESET: this replaces the 30 km that was planned here. You said "
+            "40 km this week, so the volume is there — but your longest run in seven weeks is "
+            "15.7 km, so Sunday matches that and the extra km go midweek, not onto this run.",
+        16:"14 km easy (cut-back — 5K trial yesterday, keep this one genuinely slow)",
         19:"16 km easy — keep it genuinely easy (Sevilla Half next weekend)",
         20:"Sevilla Half Marathon — run it CONTROLLED, no faster than long-run pace. "
            "NOT a goal test: it lands 7 weeks into a rebuild and will read slow.",
         21:"16 km easy (post-race recovery — no MP)",
-        23:"26 km, last 6 km @ MP",
+        23:"28 km, last 6 km @ MP",
         24:"20 km easy (cut-back / festive week — no MP)",
         26:"30 km, last 8 km @ MP",
         27:"TUNE-UP: Half-marathon race (all-out — THIS sets your goal) + w/u & c/d",
@@ -131,8 +138,8 @@ def sat(w):
 def qkm(w, which):
     if w<=8:  return {"tue":6,"thu":5}[which]
     if w<=12: return {"tue":9,"thu":8}[which]
-    if w<=16: return {"tue":6,"thu":6}[which]
-    if w<=20: return {"tue":8,"thu":7}[which]
+    if w<=16: return {"tue":8,"thu":7}[which]
+    if w<=20: return {"tue":9,"thu":8}[which]
     if w<=30: return {"tue":10,"thu":10}[which]
     return {"tue":6,"thu":6}[which]
 
@@ -237,7 +244,7 @@ def content():
                 "on 30 Aug — slower and higher-HR over a shorter distance, which is detraining, not a bad day. "
                 "The original wk-13 ask (74 km, 30 km long run) was 5.4x the recent weekly average and 1.9x the "
                 "longest recent run. Weeks 1–12 are left untouched as the record; 13 onward is rebuilt.",
-                "The rebuild restarts at 30 km with a 14 km long run, ramps 7–17% off the last comparable week, "
+                "The rebuild restarts at 40 km — your own number — with a 16 km long run, ramps no more than 10% off the last comparable week, "
                 "and cuts back every fourth week. Peak 80 km at wk 29 / 32 km long run. Final long run is "
                 "Sun 14 Feb, three weeks out.",
                 "3:30 is kept in the table for reference only — it is not a live target after a 12-week start "
