@@ -1,22 +1,46 @@
-"""Jamie's plan (target 4:00, reaching 3:30) as structured data. build() -> plan dict."""
+"""Jamie's plan (target 4:00, floor 4:30) as structured data. build() -> plan dict.
+
+Weeks 13-33 rebuilt 14 Oct 2026 off actual training -- see the VOL/LR comment below.
+"""
 from datetime import date, timedelta
 import content as C
 
-ID, NAME, GOAL = "jamie", "Jamie", "4:00 (reach 3:30)"
+ID, NAME, GOAL = "jamie", "Jamie", "4:00 (floor 4:30)"
 START = date(2026, 7, 20)
 RACE  = date(2027, 3, 7)
 
+# Weeks 1–12 are the historical record and are left exactly as first planned, so the
+# dashboard keeps showing what was actually asked for against what was actually run.
+#
+# Weeks 13–33 were REBUILT on 14 Oct 2026 off Jamie's real training, not the original
+# ramp. Weeks 7–12 averaged 13.7 km/week and his longest run in seven weeks was 15.7 km
+# (11 Oct, 7:36/km @ 159 bpm — slower and +11 bpm against 21.1 km @ 6:24 @ 148 bpm on
+# 30 Aug, i.e. detrained, not just under-volumed). The original plan wanted 74 km and a
+# 30 km long run in week 13: 5.4x his recent weekly average and 1.9x his longest recent
+# run. The rebuild restarts from ~30 km/week with a 14 km long run and ramps 7–17% off
+# the last comparable week, cutting back every fourth. Peak is 70 km / 32 km long run
+# (was 82 / 34) — the 4:00 target is held, so the peak stays high and this plan now
+# depends on him not missing weeks the way weeks 7–12 were missed.
 VOL = [28,34,40,32,46,52,42,56,
-       60,66,54,70,74,62,72,76,64,72,
-       68,78,82,70,80,66,78,82,72,80,70,60,
-       52,40,30]
+       60,66,54,70,
+       30,34,38,36,42,46,38,42,
+       40,50,54,46,58,62,52,64,70,66,
+       52,38,30]
 LR  = [12,14,16,13,18,20,16,22,
-       24,26,20,28,30,24,30,32,26,32,
-       26,30,32,26,32,21,32,34,28,34,29,24,
-       20,16,42.195]
+       24,26,20,28,
+       14,16,18,12,20,22,16,21.1,
+       16,24,26,20,28,30,21.1,30,32,32,
+       24,16,42.195]
 
 # Hard (MP-work) long-run weekends — always followed by an easy long-run weekend.
-HARD_LR = {19, 21, 24, 26, 28, 30}
+# Documentation only; build_week() reads the session text from sun(), not this set.
+HARD_LR = {23, 26, 30}
+# Saturday time-trial / checkpoint weeks. sat() supplies the session and its fixed
+# distance; build_week() has to know too, or the TT km get double-counted in the pool.
+# Wk 10's 5K was planned and missed; wk 16 is the replacement re-anchoring trial.
+TT_WEEKS = {10, 16}
+# Low-volume weeks that run 5 days with Saturday rest (same shape as weeks 1–8).
+REBUILD_WEEKS = {13, 14, 15}
 # Weeks cut back to only the listed days, everything else turned into rest. Unlike
 # OFF_WEEKS this keeps the named sessions at full distance — it's for a week where the
 # midweek running has to go but the long run and one supporting run stay. The week's
@@ -25,8 +49,9 @@ HARD_LR = {19, 21, 24, 26, 28, 30}
 KEEP_ONLY = {8: ("Fri", "Sun")}
 
 def phase(w):
-    if w<=8:  return "Re-entry / Base"
-    if w<=18: return "Aerobic Base"
+    if w<=12: return "Base (interrupted)"
+    if w<=16: return "Rebuild / Re-entry"
+    if w<=20: return "Aerobic Base"
     if w<=30: return "Marathon-Specific"
     return "Taper & Race"
 
@@ -34,58 +59,81 @@ def tue(w):
     if w<=3:  return "Easy 5–6 km + 4×20s strides", "easy"
     if w<=6:  return "Easy 6–7 km + 6×20s strides", "easy"
     if w<=8:  return "Easy 7 km + 6×20s strides + 4×30s hills", "easy"
-    if w<=18:
+    if w<=12:
         lib=["Tempo: 2×10 min @ T, 2 min jog","Easy 8 km + 6×20s strides + 4×30s hills",
              "Threshold: 4×5 min @ T, 90s jog","Cruise: 5×3 min @ T, 75s jog","Tempo: 20 min continuous @ T"]
         s=lib[(w-9)%len(lib)]; return s, ("easy" if "Easy" in s else "quality")
+    # Rebuild: no threshold work until there's a base under it. Strides and hills keep
+    # some speed in the legs without adding a second hard day to a 30-38 km week.
+    if w<=16:
+        return {13:"Easy 6 km + 4×20s strides",
+                14:"Easy 6 km + 6×20s strides",
+                15:"Easy 6 km + 6×20s strides + 4×30s hills",
+                16:"Easy 6 km + 4×20s strides (5K trial Saturday — stay fresh)"}[w], "easy"
+    if w<=20:
+        lib=["Tempo: 2×10 min @ T, 2 min jog","Threshold: 4×5 min @ T, 90s jog",
+             "Cruise: 5×3 min @ T, 75s jog","Tempo: 20 min continuous @ T"]
+        return lib[(w-17)%len(lib)], "quality"
+    # Wk 21 Tuesday is two days after Sevilla — no quality, whatever the library says.
+    if w==21: return "Easy 10 km + strides (2 days after Sevilla — nothing hard this week)", "easy"
     if w<=30:
         lib=["Threshold: 4×6 min @ T, 90s jog","MP reps: 5×1.5 km @ MP, 90s jog",
              "Tempo: 2×15 min @ T, 3 min jog","5K reps: 5×1 km @ 5K pace, 90s jog","MP: 6×1 km @ MP, 60s jog"]
-        return lib[(w-19)%len(lib)], "quality"
+        return lib[(w-21)%len(lib)], "quality"
     return {31:"Threshold: 3×5 min @ T, 90s jog",32:"Easy 5 km + 4×20s strides",
             33:"Easy 5 km + 4×100 m strides"}[w], ("quality" if w==31 else "easy")
 
 def thu(w):
     if w<=8:  return ("Easy 5–6 km" if w<=4 else "Easy 6 km + strides"), "easy"
-    if w<=18: return ("Easy 8 km + strides" if w%2 else "Easy 8–9 km"), "easy"
+    if w<=12: return ("Easy 8 km + strides" if w%2 else "Easy 8–9 km"), "easy"
+    if w<=16: return ("Easy 6 km + strides" if w%2 else "Easy 6 km"), "easy"
+    if w<=20: return ("Easy 7 km + strides" if w%2 else "Easy 7 km"), "easy"
     if w<=30:
         # MP tempo only on easy-long-run weeks (never race-adjacent) — max 2 hard efforts/week
-        return (("MP tempo: 11 km w/ middle 6 km @ MP","quality") if w in (20,22,27,29)
+        return (("MP tempo: 11 km w/ middle 6 km @ MP","quality") if w in (22,25,29)
                 else ("Easy 9 km","easy"))
     return ({31:"MP: 2×3 km @ MP, 3 min jog",32:"Easy 6 km + strides",33:"Rest or easy 4 km"}[w],
             "quality" if w==31 else "easy")
 
 def sun(w):
     d=LR[w-1]
-    txt={19:"26 km, last 6 km @ MP",
-        20:"Sevilla Half Marathon — run it CONTROLLED at easy pace, not all-out (no MP)",
-        21:"32 km, last 8 km @ MP",
-        23:"32 km easy — keep it genuinely easy (half race next weekend)",
-        24:"TUNE-UP: Half-marathon race (all-out — this sets your goal) + w/u & c/d",
-        25:"32 km easy (post-race recovery — no MP)",
-        26:"34 km, last 10 km @ MP",
-        28:"34 km, last 12 km @ MP (final long — dress rehearsal)",
-        29:"29 km easy (recovery weekend — no MP)",
-        30:"24 km, last 6 km @ MP",
-        31:"20 km easy",32:"16 km easy w/ 4×1 km @ MP",
-        33:"RACE DAY — Tokyo Marathon · goal set by your build (4:00 · floor 4:30 · reach 3:30)"}
-    t = txt.get(w, f"{d:g} km easy" + (" + last 4 km @ MP" if w in (9,12,15) else ""))
-    return t, ("race" if w in (24,33) else "long")
+    txt={13:"14 km easy — RESET: this replaces the 30 km that was planned here. "
+            "Your longest run in seven weeks is 15.7 km; the build restarts from this.",
+        16:"12 km easy (cut-back — 5K trial yesterday, keep this one genuinely slow)",
+        19:"16 km easy — keep it genuinely easy (Sevilla Half next weekend)",
+        20:"Sevilla Half Marathon — run it CONTROLLED, no faster than long-run pace. "
+           "NOT a goal test: it lands 7 weeks into a rebuild and will read slow.",
+        21:"16 km easy (post-race recovery — no MP)",
+        23:"26 km, last 6 km @ MP",
+        24:"20 km easy (cut-back / festive week — no MP)",
+        26:"30 km, last 8 km @ MP",
+        27:"TUNE-UP: Half-marathon race (all-out — THIS sets your goal) + w/u & c/d",
+        28:"30 km easy (post-race recovery — no MP)",
+        29:"32 km easy — keep it genuinely easy (dress rehearsal next weekend)",
+        30:"32 km, last 10 km @ MP (final long — dress rehearsal)",
+        31:"24 km easy",32:"16 km easy w/ 4×1 km @ MP",
+        33:"RACE DAY — Tokyo Marathon · goal set by your build (target 4:00 · floor 4:30)"}
+    t = txt.get(w, f"{d:g} km easy" + (" + last 4 km @ MP" if w in (9,12,18) else ""))
+    return t, ("race" if w in (20,27,33) else "long")
 
 def sat(w):
     if w==10: return "parkrun 5K — TIME TRIAL (checkpoint) + w/u", "tt", 8
-    if w==18: return "10K TIME TRIAL or local race (checkpoint) + w/u", "tt", 12
+    # Re-anchoring trial: the wk-10 5K never happened, so every pace in this plan is
+    # currently an estimate. This one sets them.
+    if w==16: return "parkrun 5K — TIME TRIAL (re-anchors every pace below) + w/u", "tt", 8
     if w==33: return "Shakeout: easy 4 km + 4×100 m strides", "easy", 4
     return None, "easy", None
 
 def qkm(w, which):
     if w<=8:  return {"tue":6,"thu":5}[which]
-    if w<=18: return {"tue":9,"thu":8}[which]
-    if w<=30: return {"tue":10,"thu":10}[which]
+    if w<=12: return {"tue":9,"thu":8}[which]
+    if w<=16: return {"tue":6,"thu":6}[which]
+    if w<=20: return {"tue":8,"thu":7}[which]
+    if w<=30: return {"tue":10,"thu":9}[which]
     return {"tue":6,"thu":6}[which]
 
 def build_week(w):
-    v=VOL[w-1]; lr=LR[w-1]; early=w<=8
+    v=VOL[w-1]; lr=LR[w-1]; early=w<=8 or w in REBUILD_WEEKS
     tue_txt,tue_type=tue(w); thu_txt,thu_type=thu(w); sun_txt,sun_type=sun(w)
     tue_txt = C.note_wu(tue_txt, tue_type); thu_txt = C.note_wu(thu_txt, thu_type)
     sat_txt,sat_type,sat_fixed=sat(w)
@@ -93,15 +141,28 @@ def build_week(w):
     days["Mon"]=("Rest / mobility (see S&C)" if w!=33 else "Rest","rest",0)
     tue_km=qkm(w,"tue"); thu_km=qkm(w,"thu")
     if 5<=w<=30: tue_txt+="  +S&C (hard-day session)"
-    known=lr+tue_km+thu_km+((sat_fixed or 0) if w in (10,18) else 0)
+    known=lr+tue_km+thu_km+((sat_fixed or 0) if w in TT_WEEKS else 0)
     if w==33: known=0
     pool=max(v-known,0)
     if early:
         wed_km=round(pool*0.55); fri_km=max(pool-wed_km,0); sat_km=0
-        fri_txt,fri_type,fri_kmv=f"Easy {fri_km} km","easy",fri_km
+        # A rebuild week's pool is small enough that a 55/45 split produces two
+        # pointless 2 km runs. Under ~7 km of filler, give it all to Wednesday and
+        # rest Friday — one honest easy run beats two token ones.
+        if w in REBUILD_WEEKS and pool<7:
+            wed_km=pool; fri_km=0
+        fri_txt,fri_type,fri_kmv=(("Rest","rest",0) if (w in REBUILD_WEEKS and fri_km==0)
+                                  else (f"Easy {fri_km} km","easy",fri_km))
     else:
         fri_km=round(pool*0.22); wed_km=round(pool*0.42); sat_km=max(pool-fri_km-wed_km,0)
-        if w<=30:
+        # Day before a time trial is a rest day, not a 1 km shuffle — its km go to Wed.
+        # Only for the rebuilt checkpoints; wk 10 is history and stays as it was.
+        if w in TT_WEEKS and w>=13:
+            wed_km=pool; fri_km=0; sat_km=0
+        sat_km=round(sat_km,1)
+        if w in TT_WEEKS and w>=13:
+            fri_txt,fri_type,fri_kmv="Rest (day before the trial)","rest",0
+        elif w<=30:
             fri_txt=f"Recovery {fri_km} km easy  +S&C (easy-day session)"; fri_type="recovery"; fri_kmv=fri_km
         else:
             fri_txt="Rest" if w==33 else "Recovery 5 km easy"
@@ -110,7 +171,7 @@ def build_week(w):
     if early:
         sat_txt,sat_type,sat_kmv="Rest","rest",0
     elif sat_txt is None:
-        sat_txt=f"Easy {sat_km} km + strides"; sat_kmv=sat_km
+        sat_txt=f"Easy {sat_km:g} km + strides"; sat_kmv=sat_km
     else:
         sat_kmv=sat_fixed if sat_fixed else sat_km
     days["Tue"]=(tue_txt,tue_type,tue_km); days["Wed"]=(wed_txt,"easy",wed_km)
@@ -126,8 +187,10 @@ def build_week(w):
     return days
 
 def focus(w):
-    return {10:"5K checkpoint",18:"10K checkpoint",24:"Half tune-up (sets your goal)",
-            28:"Final long run",33:"RACE WEEK"}.get(w, "Cut-back / recovery week" if w in (4,11,14,17,22,27) else "")
+    return {10:"5K checkpoint (missed)",13:"RESET — rebuild starts here",
+            16:"5K checkpoint (re-anchors paces)",20:"Sevilla Half — controlled",
+            27:"Half tune-up (sets your goal)",30:"Final long run",
+            33:"RACE WEEK"}.get(w, "Cut-back / recovery week" if w in (4,11,19,21,24,31) else "")
 
 DOW=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 
@@ -145,34 +208,52 @@ def content():
             ["Threshold (T)", "5:15–5:25", "8:27–8:43", "Tempo / cruise (comfortably hard)"],
             ["5K pace", "4:55–5:05", "7:55–8:09", "Short faster reps"],
             ["Strides", "relaxed-fast", "—", "20s pickups, not a workout"]],
-            "note": "Sessions say '@ MP' and '@ T' on purpose — run them at your CURRENT goal pace. Start at 4:00 "
-                    "(5:41/km); as checkpoints come in faster, shift MP toward 3:30 (4:59/km) and pull threshold with it."},
+            "note": "Sessions say '@ MP' and '@ T' on purpose — run them at your goal pace: 4:00 = 5:41/km. "
+                    "Every pace in this table is currently an ESTIMATE — the wk-10 5K never happened, so nothing "
+                    "here is anchored to a real effort. The wk-16 parkrun (Sat 7 Nov) sets them properly; treat "
+                    "these as provisional until then."},
         "goals": {"headers": ["Goal", "Marathon pace /km", "/mile", "Half split"], "rows": [
             ["Floor — 4:30", "6:24", "10:18", "2:09:30"],
             ["Target — 4:00", "5:41", "9:09", "1:55:00"],
-            ["Reach — 3:30", "4:59", "8:01", "1:40:45"]]},
+            ["Stretch — 3:30", "4:59", "8:01", "1:40:45"]]},
         "checkpoints": {
-            "intro": "Run these honestly and set your race goal off the data. The Wk-24 half is the big one — "
-                     "3:30 needs your half near 1:41; 4:00 needs ~1:55.",
-            "headers": ["Wk / date", "Test", "Floor 4:30", "Target 4:00", "Reach 3:30"], "rows": [
-                ["Wk 10 · ~21 Sep", "5K time trial", "~28:00", "~25:00", "~21:55"],
-                ["Wk 18 · ~16 Nov", "10K time trial", "~58:30", "~52:10", "~45:40"],
-                ["Wk 24 · ~28 Dec", "Half-marathon", "~2:09:30", "~1:55:00", "~1:40:45"],
+            "intro": "Plan rebuilt 14 Oct (wk 13) off actual training, not the original ramp — weeks 7–12 "
+                     "averaged 13.7 km. The 4:00 target is HELD, which is the ambitious read of the data: it "
+                     "needs the 70 km peak, and that needs weeks like 7–12 to not happen again. Wk 16 re-anchors "
+                     "your paces; the Wk-27 half sets the final race goal (4:00 needs ~1:55).",
+            "headers": ["Wk / date", "Test", "Floor 4:30", "Target 4:00", "Stretch 3:30"], "rows": [
+                ["Wk 10 · 21 Sep", "5K time trial", "— missed —", "— missed —", "— missed —"],
+                ["Wk 16 · Sat 7 Nov", "5K time trial (re-anchor)", "~28:00", "~25:00", "~21:55"],
+                ["Wk 20 · Sun 6 Dec", "Sevilla Half — controlled, NOT a test", "—", "—", "—"],
+                ["Wk 27 · Sun 24 Jan", "Half-marathon (all-out)", "~2:09:30", "~1:55:00", "~1:40:45"],
                 ["Race · 7 Mar", "Marathon", "4:30 · 6:24/km", "4:00 · 5:41/km", "3:30 · 4:59/km"]],
             "notes": [
-                "This build pushes volume (peak ~82 km) so 3:30 stays achievable — volume is the biggest lever for marathon time.",
+                "WHY THIS CHANGED: weeks 7–12 averaged 13.7 km/week and the longest run in seven weeks was "
+                "15.7 km. Worse, that 11 Oct run was 7:36/km at 159 bpm against 21.1 km at 6:24/km and 148 bpm "
+                "on 30 Aug — slower and higher-HR over a shorter distance, which is detraining, not a bad day. "
+                "The original wk-13 ask (74 km, 30 km long run) was 5.4x the recent weekly average and 1.9x the "
+                "longest recent run. Weeks 1–12 are left untouched as the record; 13 onward is rebuilt.",
+                "The rebuild restarts at 30 km with a 14 km long run, ramps 7–17% off the last comparable week, "
+                "and cuts back every fourth week. Peak 70 km / 32 km long run (was 82 / 34). Final long run is "
+                "Sun 14 Feb, three weeks out.",
+                "3:30 is kept in the table for reference only — it is not a live target after a 12-week start "
+                "that produced ~165 km of running. Chasing it is how weeks 9–12 happened.",
                 "Football & other sport count as training load — see the banner above. Don't double up hard efforts or stack three hard days.",
                 "Max 2 hard run-efforts per week: Tue quality plus EITHER the Thu MP tempo OR a Sunday MP long run — never both. Hard long-run weekends always alternate with easy ones (and football still counts on top).",
-                "Rest days are Monday (always) and Saturday through week 8; race-week Friday rest is the one exception.",
-                "If 82 km proves too much with football, ~68 km still delivers a strong 4:00.",
-                "Sevilla Half (Sun 6 Dec, Wk 20) — signed up alongside Cav, but it lands on YOUR easy no-MP "
-                "week, not your real checkpoint. Run it controlled at easy/long-run pace, not all-out; the real "
-                "goal-setting test is still the Wk-24 half."]},
-        "strength": C.strength("1–18", "19–30", football=True),
-        "fuel": C.fuel(football=True, volume_note="it matters more with 80 km weeks + football"),
+                "Rest days are Monday (always), plus Saturday through week 8 and again in the wk 13–15 rebuild; race-week Friday rest is the one exception.",
+                "Holding 4:00 means the 70 km peak is load-bearing, not optional. If it proves too much with "
+                "football, cutting to ~58 km is the right call — but that is a 4:15–4:30 build, so make the "
+                "trade deliberately at the Wk-27 half rather than by quietly missing weeks.",
+                "Sevilla Half (Sun 6 Dec, Wk 20) — signed up alongside Cav. It arrives only 7 weeks into the "
+                "rebuild, so it is a controlled long run at long-run pace, NOT a goal test. Running it hard will "
+                "produce a number that scares you for no reason. The real test is the Wk-27 half on 24 Jan."]},
+        "strength": C.strength("1–20", "21–30", football=True),
+        "fuel": C.fuel(football=True, volume_note="it matters more as you climb back toward 70 km weeks + football"),
         "research": C.RESEARCH_NOTES,
         "tips": [
-            ["Volume is the big lever", "Weekly mileage moves your marathon time more than anything — that's why the peak is ~82 km. But it only counts if you stay healthy and consistent."],
+            ["Consistency beats any single week", "Weeks 7–12 averaged 13.7 km and cost you real fitness — the 11 Oct long run was slower at a higher heart rate than the one six weeks earlier. Four steady 40 km weeks are worth far more than one 70 km week followed by nothing."],
+            ["Volume is the big lever", "Weekly mileage moves your marathon time more than anything — that's why the rebuilt peak is still ~70 km. But it only counts if you stay healthy and consistent, and it has to be arrived at, not jumped to."],
+            ["Easy means easy", "Your recent short runs have crept to 5:17–5:54/km while the long runs got slower. That's backwards. The base portions are 6:15–7:00/km; run them there and the long runs come good."],
             ["Football is a hard session", "Treat every match as one of your two weekly hard efforts. No hard run the same day; keep the day after a match easy."],
             ["Shuffle, don't skip", "Match Tuesday? Move the quality run to Wednesday and slide the easy days along. Match Saturday? Keep Sunday's long run easy, or push it to Monday if legs are cooked. Protect the long run; don't stack three hard days."],
         ] + C.TIPS_COMMON,
@@ -195,6 +276,8 @@ def build():
     return {"meta":{"id":ID,"name":NAME,"goal":GOAL,"mp_per_km":"5:41","mp_per_mile":"9:09",
                     "start":START.isoformat(),"race":RACE.isoformat(),
                     "peak_km":max(VOL),"total_weeks":33,
-                    "goal_note":"MP = current goal pace: start 4:00 (5:41/km), shift toward 3:30 (4:59/km) "
-                                "as checkpoints allow. Football counts as a hard session — shuffle runs around matches."},
+                    "goal_note":"MP = goal pace 4:00 (5:41/km). Plan rebuilt at wk 13 (14 Oct) off actual "
+                                "training — weeks 1–12 are left as the record, 13–33 restart from a 30 km week. "
+                                "Paces are provisional until the wk-16 5K trial re-anchors them. Football counts "
+                                "as a hard session — shuffle runs around matches."},
             "weeks":weeks, "content":content()}
