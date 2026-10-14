@@ -16642,11 +16642,25 @@
       "type": "quality",
       "session": "Tempo: 20 min continuous @ T + w/u & c/d  +S&C (hard-day session)",
       "target_km": 9,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
+      "actual_km": 9.0,
+      "status": "Done",
+      "pace_min_km": 5.92,
+      "pace_str": "5:55",
+      "activities": [
+        {
+          "id": 20570150951,
+          "date": "2026-10-13",
+          "name": "Afternoon Run",
+          "activity_type": "Run",
+          "distance_km": 9.0,
+          "moving_time_s": 3197,
+          "pace_min_km": 5.92,
+          "avg_hr": 151.9,
+          "max_hr": 167.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ],
       "cross_activities": []
     },
     "2026-10-14": {
@@ -16656,7 +16670,7 @@
       "session": "Easy 11 km + strides",
       "target_km": 11,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -18730,16 +18744,16 @@
     },
     "13": {
       "planned_km": 74,
-      "planned_km_due": 0,
-      "actual_km": 0,
+      "planned_km_due": 9,
+      "actual_km": 9.0,
       "substituted_km": 0,
       "replaced_km": 0,
-      "done": 0,
+      "done": 1,
       "partial": 0,
       "missed": 1,
       "substituted": 0,
       "replaced": 0,
-      "quality_hit": 0,
+      "quality_hit": 1,
       "quality_planned": 1,
       "long_done": false,
       "flag": "✓ On track"
@@ -19065,12 +19079,12 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-13T13:49:32+00:00",
+  "last_sync": "2026-10-14T00:12:10+00:00",
   "tracker": {
     "threshold_latest": [
-      "2026-09-15",
-      "6:37",
-      6.616
+      "2026-10-13",
+      "5:55",
+      5.92
     ],
     "mp_latest": [
       "2026-10-11",
