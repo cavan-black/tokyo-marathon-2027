@@ -18,14 +18,18 @@ RACE  = date(2027, 3, 7)
 # 30 Aug, i.e. detrained, not just under-volumed). The original plan wanted 74 km and a
 # 30 km long run in week 13: 5.4x his recent weekly average and 1.9x his longest recent
 # run. The rebuild restarts from ~30 km/week with a 14 km long run and ramps 7–17% off
-# the last comparable week, cutting back every fourth. Peak is 70 km / 32 km long run
-# (was 82 / 34) — the 4:00 target is held, so the peak stays high and this plan now
-# depends on him not missing weeks the way weeks 7–12 were missed.
+# the last comparable week, cutting back every fourth. Peak is 80 km at wk 29 with a
+# 32 km long run (original: 82 / 34) — the 4:00 target is held and the peak was raised
+# back to 80 on request, so the ramp is 30 -> 80 km over 16 build weeks. That is 2.7x
+# in four months off six weeks averaging 13.7 km; it is the aggressive reading of this
+# data and it only works if the weeks actually get run. The extra volume over the 70 km
+# version went into midweek (Wed/Sat climb to 10-12 km), NOT into a longer long run —
+# more frequent running is the safer way to carry 80 km than a 34 km Sunday.
 VOL = [28,34,40,32,46,52,42,56,
        60,66,54,70,
-       30,34,38,36,42,46,38,42,
-       40,50,54,46,58,62,52,64,70,66,
-       52,38,30]
+       30,34,38,36,44,48,40,44,
+       42,54,58,48,62,68,56,72,80,74,
+       56,40,30]
 LR  = [12,14,16,13,18,20,16,22,
        24,26,20,28,
        14,16,18,12,20,22,16,21.1,
@@ -90,8 +94,8 @@ def thu(w):
     if w<=20: return ("Easy 7 km + strides" if w%2 else "Easy 7 km"), "easy"
     if w<=30:
         # MP tempo only on easy-long-run weeks (never race-adjacent) — max 2 hard efforts/week
-        return (("MP tempo: 11 km w/ middle 6 km @ MP","quality") if w in (22,25,29)
-                else ("Easy 9 km","easy"))
+        return (("MP tempo: 10 km w/ middle 6 km @ MP","quality") if w in (22,25,29)
+                else ("Easy 10 km","easy"))
     return ({31:"MP: 2×3 km @ MP, 3 min jog",32:"Easy 6 km + strides",33:"Rest or easy 4 km"}[w],
             "quality" if w==31 else "easy")
 
@@ -129,7 +133,7 @@ def qkm(w, which):
     if w<=12: return {"tue":9,"thu":8}[which]
     if w<=16: return {"tue":6,"thu":6}[which]
     if w<=20: return {"tue":8,"thu":7}[which]
-    if w<=30: return {"tue":10,"thu":9}[which]
+    if w<=30: return {"tue":10,"thu":10}[which]
     return {"tue":6,"thu":6}[which]
 
 def build_week(w):
@@ -219,7 +223,7 @@ def content():
         "checkpoints": {
             "intro": "Plan rebuilt 14 Oct (wk 13) off actual training, not the original ramp — weeks 7–12 "
                      "averaged 13.7 km. The 4:00 target is HELD, which is the ambitious read of the data: it "
-                     "needs the 70 km peak, and that needs weeks like 7–12 to not happen again. Wk 16 re-anchors "
+                     "needs the 80 km peak, and that needs weeks like 7–12 to not happen again. Wk 16 re-anchors "
                      "your paces; the Wk-27 half sets the final race goal (4:00 needs ~1:55).",
             "headers": ["Wk / date", "Test", "Floor 4:30", "Target 4:00", "Stretch 3:30"], "rows": [
                 ["Wk 10 · 21 Sep", "5K time trial", "— missed —", "— missed —", "— missed —"],
@@ -234,25 +238,28 @@ def content():
                 "The original wk-13 ask (74 km, 30 km long run) was 5.4x the recent weekly average and 1.9x the "
                 "longest recent run. Weeks 1–12 are left untouched as the record; 13 onward is rebuilt.",
                 "The rebuild restarts at 30 km with a 14 km long run, ramps 7–17% off the last comparable week, "
-                "and cuts back every fourth week. Peak 70 km / 32 km long run (was 82 / 34). Final long run is "
+                "and cuts back every fourth week. Peak 80 km at wk 29 / 32 km long run. Final long run is "
                 "Sun 14 Feb, three weeks out.",
                 "3:30 is kept in the table for reference only — it is not a live target after a 12-week start "
                 "that produced ~165 km of running. Chasing it is how weeks 9–12 happened.",
                 "Football & other sport count as training load — see the banner above. Don't double up hard efforts or stack three hard days.",
                 "Max 2 hard run-efforts per week: Tue quality plus EITHER the Thu MP tempo OR a Sunday MP long run — never both. Hard long-run weekends always alternate with easy ones (and football still counts on top).",
                 "Rest days are Monday (always), plus Saturday through week 8 and again in the wk 13–15 rebuild; race-week Friday rest is the one exception.",
-                "Holding 4:00 means the 70 km peak is load-bearing, not optional. If it proves too much with "
-                "football, cutting to ~58 km is the right call — but that is a 4:15–4:30 build, so make the "
-                "trade deliberately at the Wk-27 half rather than by quietly missing weeks.",
+                "The 80 km peak is load-bearing, not optional — but be clear what it is for. Sub-4 is 5:41/km "
+                "and is regularly run off 50–60 km weeks; it is a pace problem more than a volume problem. The "
+                "80 km is there to make 4:00 comfortable rather than possible. So if it starts costing you "
+                "weeks, drop to ~60 km and keep the consistency: 16 straight weeks at 60 beats 8 at 80 and 8 at "
+                "zero, and the second pattern is what weeks 7–12 already were. Make that call at the Wk-27 half, "
+                "deliberately, not by quietly missing Sundays.",
                 "Sevilla Half (Sun 6 Dec, Wk 20) — signed up alongside Cav. It arrives only 7 weeks into the "
                 "rebuild, so it is a controlled long run at long-run pace, NOT a goal test. Running it hard will "
                 "produce a number that scares you for no reason. The real test is the Wk-27 half on 24 Jan."]},
         "strength": C.strength("1–20", "21–30", football=True),
-        "fuel": C.fuel(football=True, volume_note="it matters more as you climb back toward 70 km weeks + football"),
+        "fuel": C.fuel(football=True, volume_note="it matters a great deal more on the climb to 80 km weeks + football"),
         "research": C.RESEARCH_NOTES,
         "tips": [
-            ["Consistency beats any single week", "Weeks 7–12 averaged 13.7 km and cost you real fitness — the 11 Oct long run was slower at a higher heart rate than the one six weeks earlier. Four steady 40 km weeks are worth far more than one 70 km week followed by nothing."],
-            ["Volume is the big lever", "Weekly mileage moves your marathon time more than anything — that's why the rebuilt peak is still ~70 km. But it only counts if you stay healthy and consistent, and it has to be arrived at, not jumped to."],
+            ["Consistency beats any single week", "Weeks 7–12 averaged 13.7 km and cost you real fitness — the 11 Oct long run was slower at a higher heart rate than the one six weeks earlier. Four steady 40 km weeks are worth far more than one 80 km week followed by nothing."],
+            ["Volume is the big lever", "Weekly mileage moves your marathon time more than anything — that's why the rebuilt peak is 80 km. But it only counts if you stay healthy and consistent, and it has to be arrived at, not jumped to — 30 km now, 80 km in sixteen weeks, with every fourth week cut back."],
             ["Easy means easy", "Your recent short runs have crept to 5:17–5:54/km while the long runs got slower. That's backwards. The base portions are 6:15–7:00/km; run them there and the long runs come good."],
             ["Football is a hard session", "Treat every match as one of your two weekly hard efforts. No hard run the same day; keep the day after a match easy."],
             ["Shuffle, don't skip", "Match Tuesday? Move the quality run to Wednesday and slide the easy days along. Match Saturday? Keep Sunday's long run easy, or push it to Monday if legs are cooked. Protect the long run; don't stack three hard days."],
