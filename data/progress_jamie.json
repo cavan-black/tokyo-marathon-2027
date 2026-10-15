@@ -17257,11 +17257,25 @@
       "type": "easy",
       "session": "Easy 7 km + strides",
       "target_km": 7,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
+      "actual_km": 7.0,
+      "status": "Done",
+      "pace_min_km": 6.371,
+      "pace_str": "6:22",
+      "activities": [
+        {
+          "id": 20597775208,
+          "date": "2026-10-15",
+          "name": "Afternoon Run",
+          "activity_type": "Run",
+          "distance_km": 7.0,
+          "moving_time_s": 2676,
+          "pace_min_km": 6.371,
+          "avg_hr": 148.7,
+          "max_hr": 168.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ],
       "cross_activities": []
     },
     "2026-10-16": {
@@ -19319,13 +19333,13 @@
     },
     "13": {
       "planned_km": 40,
-      "planned_km_due": 13,
-      "actual_km": 14.4,
+      "planned_km_due": 20,
+      "actual_km": 21.4,
       "substituted_km": 0,
       "replaced_km": 0,
-      "done": 2,
+      "done": 3,
       "partial": 0,
-      "missed": 1,
+      "missed": 0,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -19654,7 +19668,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-15T11:03:36+00:00",
+  "last_sync": "2026-10-15T17:40:28+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
