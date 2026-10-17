@@ -182,7 +182,12 @@ STYLE = """<style>
 .sv summary .vol .n{font-weight:700;font-size:15px;}
 .sv summary .vol .n b{color:var(--accent-ink);}
 .sv summary .vol small{display:block;font-size:10.5px;color:var(--faint);}
-@media (max-width:820px){.sv details.week>summary{grid-template-columns:38px 1fr auto;}.sv summary .dt{display:none;}}
+/* Keep the week's dates on mobile — they're how you find the week you're after. The
+   column is narrowed and the gap tightened rather than dropped, so "12 Oct / 18 Oct"
+   still stacks on two lines without squeezing the session text. */
+@media (max-width:820px){.sv details.week>summary{grid-template-columns:34px 54px 1fr auto;gap:9px;padding:12px 12px;}
+  .sv summary .dt{display:block;font-size:10.5px;line-height:1.3;}
+  .sv summary .wk{font-size:14px;}.sv summary .keys{font-size:12.5px;}}
 .sv .down-chip{color:var(--warn);border:1px solid var(--warn);border-radius:20px;font-size:10px;padding:0 7px;
   text-transform:uppercase;letter-spacing:.05em;}
 .sv .gate-chip{color:var(--accent-ink);border:1px solid var(--accent);border-radius:20px;font-size:10px;font-weight:700;padding:0 7px;}
@@ -681,7 +686,15 @@ def celebration_html(plan, progress):
     today_iso = date.today().isoformat()
     d = progress.get("days", {}).get(today_iso)
     if not d:
-        return ""
+        # No synced progress for this runner — either nobody has connected their Strava
+        # yet, or the sync hasn't run since the plan was regenerated. Fall back to the
+        # plan itself so every runner still gets told what today's session is; with no
+        # activity data to judge against, it can only ever be "still to do".
+        d = next((dd for wk in plan["weeks"] for dd in wk["days"]
+                  if dd["date"] == today_iso), None)
+        if not d:
+            return ""
+        d = {**d, "status": "Upcoming"}
     replaces = d.get("replaces")
     substitutes = d.get("substitutes")  # rest day whose cross-training covered another day
     if d.get("type") == "rest" and not (replaces and d.get("actual_km", 0) > 0.5) and not substitutes:
@@ -740,7 +753,11 @@ def celebration_html(plan, progress):
             emoji = CROSS_EMOJI.get(raw, "🔁")
             title, cls = f"Substituted with {what} — still counts! 🔁", "celebrate sub"
             sub = f'{sess} — substituted with {what}' + (f' ({dur})' if dur else '')
-    elif status == "Upcoming":
+    elif status in ("Upcoming", "Missed"):
+        # "Missed" on TODAY only means "not run yet". sync/match.py deliberately treats
+        # today as non-future so a run logged today can still claim an earlier missed
+        # session (see _reconcile_replacements) — which left this card blank for the whole
+        # of any day you opened the dashboard before heading out, exactly when it's wanted.
         title, emoji, cls = "Today's session", "🎯", "celebrate todo"
         sub = sess + (f' — {target:g} km planned' if target else '')
     else:
