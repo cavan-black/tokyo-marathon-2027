@@ -1,8 +1,8 @@
-"""Cav's sub-2:50 plan as structured data. build() -> plan dict."""
+"""Cav's sub-2:48 plan as structured data. build() -> plan dict."""
 from datetime import date, timedelta
 import content as C
 
-ID, NAME, GOAL = "cav", "Cav", "2:50:00"
+ID, NAME, GOAL = "cav", "Cav", "2:48:00"
 START = date(2026, 7, 20)
 RACE  = date(2027, 3, 7)
 
@@ -16,12 +16,12 @@ VOL = [42,50,56,48,
        62,0,45,54,60,50,66,72,64,
        76,84,90,76,92,96,80,88,98,76,
        88,102,94,110,116,110,94,
-       74,56,38]
+       69,56,70]
 LR  = [12,14,16,14,
        18,0,14,16,18,16,20,22,18,
        24,26,28,24,30,30,21,28,32,20,
        24,30,28,34,32,35,30,
-       26,18,42.195]
+       21,18,42.195]
 # Wk 23 (21-27 Dec, Christmas) and Wk 24 (28 Dec-3 Jan, New Year) are a deliberate
 # holiday dip after the Wk-20 half; Wk 25 (from Mon 4 Jan, the day after NYD+1)
 # resumes the ramp back to peak.
@@ -56,7 +56,10 @@ DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri")), 11: (("T
 # the bulk (furthest from it), Tuesday stays short (a quality session the day before a time
 # trial costs more than it gives), the test day is just 1 km either side of the 5K, and the
 # Sunday travel day picks up an easy evening run instead of being written off.
-DAY_OVERRIDE = {12: {"Tue": ("Rest — couldn't run today", "rest", 0),
+DAY_OVERRIDE = {33: {"Tue": ("Easy 10 km + 4×100 m strides", "easy", 10),
+                     "Wed": ("Easy 8 km — last real run, stay relaxed", "easy", 8),
+                     "Thu": ("Easy 6 km + 4×100 m strides", "easy", 6)},
+                12: {"Tue": ("Rest — couldn't run today", "rest", 0),
                      "Wed": ("Easy 18 km — Tuesday's session shifted; keep it genuinely easy, "
                              "HR under 153, so Thursday's tempo isn't compromised", "easy", 18),
                      "Thu": ("Tempo: 6 km continuous @ 3:58/km + w/u & c/d  "
@@ -173,11 +176,11 @@ def thu(w):
         return (f"Hill strides: easy {k} km + 8×15s hill sprints" if w % 2
                 else f"Medium easy {k} km + 6×20s strides"), "easy"
     if w <= 23:
-        lib=["MP tempo: 2×5 km @ 4:01/km (MP), 3 min float","Medium-long 16 km w/ middle 8 km @ MP",
+        lib=["MP tempo: 2×5 km @ 3:59/km (MP), 3 min float","Medium-long 16 km w/ middle 8 km @ MP",
              "MP tempo: 3×4 km @ MP, 2 min float","Medium-long 16 km easy + 8×15s hill sprints"]
         return lib[(w-14)%len(lib)], "quality"
     if w <= 30:
-        lib=["MP: 3×6 km @ 4:01/km, 3 min jog","Medium-long 18 km w/ 10 km @ MP",
+        lib=["MP: 3×6 km @ 3:59/km, 3 min jog","Medium-long 18 km w/ 10 km @ MP",
              "MP: 2×8 km @ MP, 3 min float","Medium-long 17 km easy"]
         return lib[(w-24)%len(lib)], "quality"
     return {31:"Easy 8 km + 4×20s strides",32:"Easy 8 km + 6×20s strides",33:"Rest or easy 5 km"}[w], "easy"
@@ -198,15 +201,15 @@ def sun(w):
         28:"32 km easy (recovery weekend — no MP)",
         29:"35 km, last 12 km @ MP (dress rehearsal)",
         30:"30 km easy — FINAL long run, keep it relaxed",
-        31:"26 km, last 8 km @ MP",32:"18 km easy w/ 4×1 km @ MP",
-        33:"RACE DAY — Tokyo Marathon · 2:50 target · 4:01/km · 6:29/mi"}
+        31:"21 km, last 8 km @ MP",32:"18 km easy w/ 4×1 km @ MP",
+        33:"RACE DAY — Tokyo Marathon · 2:48 target · 3:59/km · 6:24/mi · halfway 1:24:00"}
     t = txt.get(w, f"{d:g} km easy" + (" + last 4 km relaxed @ MP" if w == 12 else ""))
     return t, ("race" if w in (20,33) else "long")
 
 def sat(w):
     if w == 10: return "parkrun 5K — TIME TRIAL (fitness check) + w/u & c/d", "tt", 9
     if w == 13: return "10K TIME TRIAL or local race (fitness check) + w/u", "tt", 13
-    if w == 26: return "10K / 16 km sharpener race (optional) + w/u", "tt", 14
+    if w == 26: return "10K TIME TRIAL or 16 km race — fitness checkpoint, do this + w/u", "tt", 14
     if w == 33: return "Shakeout: easy 4 km + 4×100 m strides", "easy", 4
     return None, "easy", None
 
@@ -330,23 +333,25 @@ def content():
             ["Recovery", "5:35–6:05", "8:59–9:47", "Easy shakeouts, doubles, day-after"],
             ["Easy / aerobic", "5:00–5:35", "8:03–8:59", "Bulk of weekly volume (incl. doubles)"],
             ["Long-run easy", "4:55–5:30", "7:55–8:51", "Long-run base portions"],
-            ["Marathon (MP)", "4:01", "6:29", "Race pace — MP blocks & long-run finishes"],
+            ["Marathon (MP)", "3:59", "6:24", "Race pace — MP blocks & long-run finishes"],
             ["Threshold (T)", "3:50–3:55", "6:10–6:18", "Tempo / cruise intervals — HR 172–176, not pace-led"],
             ["10K pace", "3:46", "6:04", "Longer VO2 / race sharpeners"],
             ["Interval (I, 5K)", "3:35–3:40", "5:46–5:54", "VO2 max reps"],
             ["Strides", "~3:10 feel", "relaxed-fast", "20s pickups, not a workout"]],
-            "note": "T/10K/I paces come from the 3 Oct time trial — 18:22 actual, Strava GAP 3:41/km = 18:25 flat-equivalent, VDOT ~54.8 — NOT from the 2:50 goal. Training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. MP stays at goal pace, and this result validates rather than moves it. Recalibrate again at the Wk-13 10K, on a FLAT course. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
+            "note": "T/10K/I paces come from the 3 Oct time trial — 18:22 actual, Strava GAP 3:41/km = 18:25 flat-equivalent, VDOT ~54.8 — NOT from the 2:48 goal. Training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. Moving the goal 2:50 → 2:48 therefore moved ONE row: MP, 4:01 → 3:59. Threshold, 10K and interval paces are unchanged, because your physiology did not change when the target did. HR TARGETS BELOW ARE PROVISIONAL — every HR figure anchoring them came from a wrist optical sensor, which under-reads and cadence-locks on exactly the hard efforts that matter. Re-establish them with the chest strap before trusting any bpm number. Recalibrate pace at the Wk-20 half. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: "
                     "Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard "
                     "long-run weekends always alternate with easy ones."},
         "checkpoints": {
-            "intro": "2:50 is the A-goal. The 3 Oct 5K read 18:22 on a net -60 m course; Strava GAP puts it at 3:41/km = 18:25 flat, so it is a genuine PR by ~57s and VDOT ~54.8 — a 2:50-equivalent engine on the Daniels tables. Two things have to move for 2:50: the engine, and the mileage behind it — 11 weeks in the average is 39 km/wk against a 116 km peak, and under-trained runners finish well behind what a 5K says they are worth. The next honest read is the Wk-13 10K, ON A FLAT COURSE. "
+            "intro": "2:48 is the A-goal, and it is a number with a reason: Boston's 18-34 standard is 2:55, but the 2027 cut-off came in 5:17 UNDER that, so 2:49:43 was the real entry time. 2:48 buys ~2 min of margin against a cut-off that moves every year (6:51 in 2025, 5:29 in 2024). 2:50 would have missed by 17 seconds. The 3 Oct 5K read 18:22 on a net -60 m course; Strava GAP puts it at 3:41/km = 18:25 flat, so a genuine PR by ~57s and VDOT ~54.8 — which is a ~2:56 engine on the Daniels tables, not yet a 2:48 one. Two things have to move: the engine, and the mileage behind it — 13 weeks in, the average is ~43 km/wk against a 116 km peak, and under-trained runners finish well behind what a 5K says they are worth. The mileage IS the plan; the engine follows it. "
                      "Don't lock race-day pace until the Wk-20 half.",
-            "headers": ["Wk / date", "Test", "On-track for 2:50", "If short — likely target"], "rows": [
-                ["Wk 11 · Sat 3 Oct ✓", "5K TT — 18:22 (GAP 18:25, PR by ~57s)", "done", "VDOT ~54.8 · 2:50 engine, mileage is now the gap"],
-                ["Wk 13 · Sat 17 Oct", "10K time trial — FLAT course this time", "≤ 37:45", "37:45–39:00 → sub-3 · >40:00 → 3:05+"],
-                ["Wk 20 · Sun 6 Dec", "Half-marathon — Sevilla Half, signed up", "≤ 1:23:30", "1:23:30–1:26 → sub-3 · >1:27 → 3:05–3:10"],
-                ["Race · 7 Mar", "Marathon", "2:50 = 4:01/km", "Start at CONFIRMED pace. Even splits."]],
+            "headers": ["Wk / date", "Test", "On-track for 2:48", "If short — likely target"], "rows": [
+                ["Wk 11 · Sat 3 Oct ✓", "5K TT — 18:22 (GAP 18:25, PR by ~57s)", "done", "VDOT ~54.8 · ~2:56 engine — mileage is the gap to 2:48"],
+                ["Wk 13 · Sat 17 Oct — VOID", "10K TT — 39:22, but discard it (see notes)", "≤ 37:20", "Not a fitness read. Next honest test is Sevilla."],
+                ["Wk 20 · Sun 6 Dec", "Half-marathon — Sevilla Half, signed up", "≤ 1:22:30", "1:22:30–1:25 → 2:49–2:53 (Boston via random draw) · >1:26 → 2:55+"],
+                ["Race · 7 Mar", "Marathon", "2:48 = 3:59/km · halfway 1:24:00", "Start at CONFIRMED pace. Even splits."]],
             "notes": [
+                "WK-13 10K IS VOID (17 Oct, 39:22). Three confounders, all disclosed: ~7 pints the night before, diarrhoea during the warm-up, and 23-24°C. Heat alone at that temperature costs 3-4% over 10K — 70-95s — which more than covers the ~60s gap to what the 5K predicted (Riegel 38:24, Daniels 38:06). It is not evidence of a shortfall and it is not evidence of form; it is simply not a measurement. The HR on it (164 avg) was wrist-only and should be ignored outright. Do NOT re-run it — Sevilla on 6 Dec is the next honest test.",
+                "BOSTON: hitting the standard does not get you in. The 2027 cut-off was 5:17 under, so 18-34 men needed 2:49:43 against a 2:55 standard, and ~8,000 qualifiers who beat the standard were still rejected. That is why the target is 2:48 and not 2:50. Two things soften it: the BAA now draws ~1,000 places at random from qualifiers who missed the cut-off, and your age group is set by your age on BOSTON race day (Apr 2028), not on race day in Tokyo — so turning 35 before then would drop the standard to 3:00 and change this whole target.",
                 "Peak ~116 km — weekly volume is the biggest lever for marathon time, and the extra should be EASY km (your endurance lags your speed).",
                 "Rest days are Monday (always) and Saturday in the re-entry weeks; race-week Friday rest is the one exception.",
                 "Hard long runs alternate with easy ones — never two hard long-run weekends in a row, and the weekends before/after the Wk-20 half are easy.",
@@ -532,8 +537,8 @@ def build():
                       # a KEEP_ONLY week's volume is whatever survives, not the VOL array
                       "target_km":(round(sum(x["target_km"] for x in days),1) if w in KEEP_ONLY
                                    else vol_for(w)),"focus":focus(w),"days":days})
-    return {"meta":{"id":ID,"name":NAME,"goal":GOAL,"mp_per_km":"4:01","mp_per_mile":"6:29",
+    return {"meta":{"id":ID,"name":NAME,"goal":GOAL,"mp_per_km":"3:59","mp_per_mile":"6:24",
                     "start":START.isoformat(),"race":RACE.isoformat(),
                     "peak_km":max(VOL),"total_weeks":33,
-                    "goal_note":"Anchored on 2:50 (4:01/km). Calibrate at the Wk-20 half."},
+                    "goal_note":"Anchored on 2:48 (3:59/km) — the Boston 18-34 cut-off, not a round number. Calibrate at the Wk-20 half."},
             "weeks":weeks, "content":content()}
