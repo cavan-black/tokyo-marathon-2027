@@ -19348,7 +19348,7 @@
     },
     "13": {
       "planned_km": 40,
-      "planned_km_due": 20,
+      "planned_km_due": 24,
       "actual_km": 21.4,
       "substituted_km": 0,
       "replaced_km": 0,
@@ -19683,7 +19683,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-16T23:19:24+00:00",
+  "last_sync": "2026-10-17T10:21:02+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
