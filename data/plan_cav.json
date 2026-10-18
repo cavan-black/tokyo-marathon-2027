@@ -2290,9 +2290,9 @@
         ],
         [
           "Wk 13 · Sat 17 Oct — VOID",
-          "10K TT — 39:22, but discard it (see notes)",
+          "10K TT — 39:22 raw · ~37:36-38:11 corrected",
           "≤ 37:20",
-          "Not a fitness read. Next honest test is Sevilla."
+          "Not a measurement, but corrected it corroborates the 5K. Next honest test is Sevilla."
         ],
         [
           "Wk 20 · Sun 6 Dec",
@@ -2308,7 +2308,7 @@
         ]
       ],
       "notes": [
-        "WK-13 10K IS VOID (17 Oct, 39:22). Three confounders, all disclosed: ~7 pints the night before, diarrhoea during the warm-up, and 23-24°C. Heat alone at that temperature costs 3-4% over 10K — 70-95s — which more than covers the ~60s gap to what the 5K predicted (Riegel 38:24, Daniels 38:06). It is not evidence of a shortfall and it is not evidence of form; it is simply not a measurement. The HR on it (164 avg) was wrist-only and should be ignored outright. Do NOT re-run it — Sevilla on 6 Dec is the next honest test.",
+        "WK-13 10K IS VOID AS A TEST, BUT IT IS NOT A BAD SIGN (17 Oct, 39:22). Four confounders, all disclosed: ~7 pints the night before, diarrhoea during the warm-up, 23-24°C AND 80-90% humidity. The humidity is the one that matters most and was learned last: at 23.5°C/85% the dew point is 20.8°C and the wet bulb 21.6°C, so temp+dewpoint = 144°F, which sits in the 3.0-4.5% band. That is 71-106s over 10K, giving a corrected 37:36-38:11 against a 5K-predicted 38:18 (Riegel 1.06) — i.e. the corrected time MATCHES OR BEATS the prediction across the whole band, with the alcohol and GI handicaps still unaccounted for on top. So: too many uncontrolled variables to read a number off it, but it corroborates VDOT 54.8 rather than undercutting it. The HR (164 avg) was wrist-only and should be ignored outright. Do NOT re-run it — Sevilla on 6 Dec is the next honest test, and it will also be the first hard effort of the block run in cool conditions.",
         "BOSTON: hitting the standard does not get you in. The 2027 cut-off was 5:17 under, so 18-34 men needed 2:49:43 against a 2:55 standard, and ~8,000 qualifiers who beat the standard were still rejected. That is why the target is 2:48 and not 2:50. Two things soften it: the BAA now draws ~1,000 places at random from qualifiers who missed the cut-off, and your age group is set by your age on BOSTON race day (Apr 2028), not on race day in Tokyo — so turning 35 before then would drop the standard to 3:00 and change this whole target.",
         "Peak ~116 km — weekly volume is the biggest lever for marathon time, and the extra should be EASY km (your endurance lags your speed).",
         "Rest days are Monday (always) and Saturday in the re-entry weeks; race-week Friday rest is the one exception.",
