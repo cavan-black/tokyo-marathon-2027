@@ -17326,7 +17326,7 @@
       "session": "16 km easy — RESET: this replaces the 30 km that was planned here. You said 40 km this week, so the volume is there — but your longest run in seven weeks is 15.7 km, so Sunday matches that and the extra km go midweek, not onto this run.",
       "target_km": 16,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -19354,7 +19354,7 @@
       "replaced_km": 0,
       "done": 3,
       "partial": 0,
-      "missed": 1,
+      "missed": 2,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -19683,7 +19683,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-17T22:56:44+00:00",
+  "last_sync": "2026-10-18T10:37:01+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
