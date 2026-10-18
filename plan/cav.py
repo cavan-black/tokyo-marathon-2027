@@ -183,6 +183,14 @@ def thu(w):
         lib=["MP tempo: 2×5 km @ 3:59/km (MP), 3 min float","Medium-long 16 km w/ middle 8 km @ MP",
              "MP tempo: 3×4 km @ MP, 2 min float","Medium-long 16 km easy + 8×15s hill sprints"]
         return lib[(w-14)%len(lib)], "quality"
+    if w == 30:
+        # Readiness test, 4 weeks out. Replaces the rotation's 2×8 km @ MP in the same
+        # MP slot and on the same 22 km day, so nothing is reshuffled and it adds no
+        # third hard day. Run 4 s/km under goal MP: a test at exactly MP can only tell
+        # you what you already believe. The big MP volume is not lost — wk 28 still
+        # carries 3×6 km, and wk 29's dress rehearsal is 12 km of MP inside 35.
+        return ("READINESS TEST: 4×3 km @ 3:55/km (4 s/km under MP), 90s jog — "
+                "PASS = rep 4 is the fastest, HR drift under 5 bpm, could have run a 5th"), "quality"
     if w <= 30:
         lib=["MP: 3×6 km @ 3:59/km, 3 min jog","Medium-long 18 km w/ 10 km @ MP",
              "MP: 2×8 km @ MP, 3 min float","Medium-long 17 km easy"]
@@ -305,6 +313,7 @@ def focus(w):
             21:"Half tune-up (calibrate goal)",23:"🎄 Christmas week — deliberate holiday dip",
             24:"🎆 New Year week — easing back in",25:"Ramp resumes (from the day after NYD)",
             28:"Peak volume week",
+            30:"✅ 4×3 km readiness test — last call to confirm or move the goal",
             29:"Peak long run",33:"RACE WEEK"}.get(w, "Cut-back / recovery week" if w in (4,17) else "")
 
 DOW=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
@@ -353,6 +362,9 @@ def content():
                 ["Wk 11 · Sat 3 Oct ✓", "5K TT — 18:22 (GAP 18:25, PR by ~57s)", "done", "VDOT ~54.8 · ~2:56 engine — mileage is the gap to 2:48"],
                 ["Wk 13 · Sat 17 Oct — VOID", "10K TT — 39:22 raw · ~37:36-38:11 corrected", "≤ 37:20", "Not a measurement, but corrected it corroborates the 5K. Next honest test is Sevilla."],
                 ["Wk 21 · Sun 13 Dec", "Half-marathon — Sevilla Half, signed up", "≤ 1:22:30", "1:22:30–1:25 → 2:49–2:53 (Boston via random draw) · >1:26 → 2:55+"],
+                ["Wk 30 · Thu 11 Feb", "4×3 km @ 3:55/km, 90s jog — marathon-readiness test",
+                 "4 reps on pace, rep 4 fastest, HR drift <5 bpm",
+                 "Fade or HR climbing >8 bpm → run Tokyo at 2:52–2:55 pace, not 2:48"],
                 ["Race · 7 Mar", "Marathon", "2:48 = 3:59/km · halfway 1:24:00", "Start at CONFIRMED pace. Even splits."]],
             "notes": [
                 "WK-13 10K IS VOID AS A TEST, BUT IT IS NOT A BAD SIGN (17 Oct, 39:22). Four confounders, all disclosed: ~7 pints the night before, diarrhoea during the warm-up, 23-24°C AND 80-90% humidity. The humidity is the one that matters most and was learned last: at 23.5°C/85% the dew point is 20.8°C and the wet bulb 21.6°C, so temp+dewpoint = 144°F, which sits in the 3.0-4.5% band. That is 71-106s over 10K, giving a corrected 37:36-38:11 against a 5K-predicted 38:18 (Riegel 1.06) — i.e. the corrected time MATCHES OR BEATS the prediction across the whole band, with the alcohol and GI handicaps still unaccounted for on top. So: too many uncontrolled variables to read a number off it, but it corroborates VDOT 54.8 rather than undercutting it. The HR (164 avg) was wrist-only and should be ignored outright. Do NOT re-run it — Sevilla on 13 Dec is the next honest test, and it will also be the first hard effort of the block run in cool conditions.",
