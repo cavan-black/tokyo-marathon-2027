@@ -57,7 +57,7 @@ WARMUP_HEADERS = ["Exercise", "Duration / Reps", "Why"]
 
 
 _REP_KM = re.compile(r"(\d+)×([\d.]+)\s*km")
-_REP_M  = re.compile(r"(\d+)×(\d+)\s*m")
+_REP_M  = re.compile(r"(\d+)×(\d+)\s*m\b")
 _CONT   = re.compile(r"([\d.]+)\s*km continuous")
 _REC    = re.compile(r"(?:(\d+):(\d+)|(\d+)\s*min|(\d+)\s*s)\s*(?:jog|float)")
 

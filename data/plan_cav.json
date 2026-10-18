@@ -876,7 +876,7 @@
           "date": "2026-10-20",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog · w/u 4.5 km · c/d 2.8 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1006,7 +1006,7 @@
           "date": "2026-11-03",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 6×1000 m @ 3:26/km, 2:30 jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "VO2: 6×1000 m @ 3:26/km, 2:30 jog · w/u 3.5 km · c/d 2.4 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1136,7 +1136,7 @@
           "date": "2026-11-17",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog · w/u 4.5 km · c/d 2.8 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "EVO SL"
         },
@@ -1266,7 +1266,7 @@
           "date": "2026-12-01",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 6×1000 m @ 3:26/km, 2:30 jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "VO2: 6×1000 m @ 3:26/km, 2:30 jog · w/u 3.5 km · c/d 2.4 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1396,7 +1396,7 @@
           "date": "2026-12-15",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog · w/u 4.5 km · c/d 2.8 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1721,7 +1721,7 @@
           "date": "2027-01-19",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog · w/u 5 km · c/d 3.5 km  +S&C (hard-day session)",
           "target_km": 15,
           "shoe": "EVO SL"
         },
