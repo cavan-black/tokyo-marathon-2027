@@ -43,7 +43,9 @@ EASY_RETURN_WEEKS = {7}
 # would eat it whole and leave the easy days rounding to two or three km each.
 QKM_OVERRIDE = {7: {"tue": 9, "thu": 9}, 8: {"tue": 10, "thu": 10},
                 9: {"tue": 9, "thu": 10}, 10: {"tue": 11, "thu": 10},
-                11: {"tue": 7, "thu": 9}, 13: {"tue": 12, "thu": 11}}
+                11: {"tue": 7, "thu": 9}, 13: {"tue": 12, "thu": 11},
+                # Alternating K's is 12 km of continuous work; 15 km leaves no warm-up.
+                25: {"tue": 18, "thu": 17}, 29: {"tue": 18, "thu": 17}}
 # Days whose sessions trade places in a given week, applied after the week is built so the
 # sizing logic above still sees its normal Tue/Thu quality slots. Wk 8: Sunday's long run
 # was run on Monday, so Tuesday's tempo would have landed on tired legs — the session moves
@@ -56,7 +58,10 @@ DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri")), 11: (("T
 # the bulk (furthest from it), Tuesday stays short (a quality session the day before a time
 # trial costs more than it gives), the test day is just 1 km either side of the 5K, and the
 # Sunday travel day picks up an easy evening run instead of being written off.
-DAY_OVERRIDE = {33: {"Tue": ("Easy 10 km + 4×100 m strides", "easy", 10),
+DAY_OVERRIDE = {30: {"Tue": ("Easy 15 km + 6×20s strides — Thursday's test is the week's "
+                            "priority; arriving at it with 9 km of threshold in the legs "
+                            "would measure your Tuesday, not your fitness", "easy", 15)},
+                33: {"Tue": ("Easy 10 km + 4×100 m strides", "easy", 10),
                      "Wed": ("Easy 8 km — last real run, stay relaxed", "easy", 8),
                      "Thu": ("Easy 6 km + 4×100 m strides", "easy", 6)},
                 12: {"Tue": ("Rest — couldn't run today", "rest", 0),
@@ -158,6 +163,14 @@ def tue(w):
         lib=["VO2: 5×1000 m @ 3:28/km (I), 2:30 jog","Threshold: 4×2 km @ 3:50/km, 90s jog",
              "VO2: 6×1000 m @ 3:26/km, 2:30 jog","Threshold: 5×1.5 km @ 3:48/km, 75s jog"]
         return lib[(w-14)%len(lib)], "quality"
+    if w in (25, 29):
+        # Alternating K's (the Italian "alternazioni"). The float is the recovery, so all
+        # 12 km are run: 3:50 is LT2, 4:15 is LT1, and the whole thing averages ~4:03 —
+        # essentially MP. That is the mechanism: it loads both ends of the aerobic range
+        # in one continuous effort, which is what narrows the LT1–LT2 gap. Replaces the
+        # rotation's 5×1.6 km in both weeks so the two are directly comparable.
+        return ("Alternating K's: 6×(1 km @ 3:50/km / 1 km float @ 4:15/km) — 12 km "
+                "continuous, no standing rest, averages ~4:03/km · w/u 3.5 km · c/d 2.5 km"), "quality"
     if w <= 30:
         lib=["Threshold: 6×1.5 km @ 3:48/km, 60s jog","Race reps: 5×1.6 km @ 3:52/km, 90s jog",
              "Threshold: 3×3 km @ 3:50/km, 2 min jog","VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog"]
@@ -186,11 +199,14 @@ def thu(w):
     if w == 30:
         # Readiness test, 4 weeks out. Replaces the rotation's 2×8 km @ MP in the same
         # MP slot and on the same 22 km day, so nothing is reshuffled and it adds no
-        # third hard day. Run 4 s/km under goal MP: a test at exactly MP can only tell
-        # you what you already believe. The big MP volume is not lost — wk 28 still
-        # carries 3×6 km, and wk 29's dress rehearsal is 12 km of MP inside 35.
-        return ("READINESS TEST: 4×3 km @ 3:55/km (4 s/km under MP), 90s jog — "
-                "PASS = rep 4 is the fastest, HR drift under 5 bpm, could have run a 5th"), "quality"
+        # third hard day. At 3:50 this is no longer an MP rehearsal — it is an LT2
+        # test, 12 km at threshold off 90s jog. That is the right question anyway: a
+        # 2:48 needs MP to sit only ~9 s/km off threshold, which is an elite-durability
+        # gap, and the gap is exactly his weak point. It is also the first validation of
+        # the 3:50 T pace itself, which was set from wrist-HR reasoning in Oct 2026.
+        return ("READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog — "
+                "PASS = all four on pace, rep 4 no slower than rep 1, HR flat at 172–176 "
+                "across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic"), "quality"
     if w <= 30:
         lib=["MP: 3×6 km @ 3:59/km, 3 min jog","Medium-long 18 km w/ 10 km @ MP",
              "MP: 2×8 km @ MP, 3 min float","Medium-long 17 km easy"]
@@ -362,9 +378,9 @@ def content():
                 ["Wk 11 · Sat 3 Oct ✓", "5K TT — 18:22 (GAP 18:25, PR by ~57s)", "done", "VDOT ~54.8 · ~2:56 engine — mileage is the gap to 2:48"],
                 ["Wk 13 · Sat 17 Oct — VOID", "10K TT — 39:22 raw · ~37:36-38:11 corrected", "≤ 37:20", "Not a measurement, but corrected it corroborates the 5K. Next honest test is Sevilla."],
                 ["Wk 21 · Sun 13 Dec", "Half-marathon — Sevilla Half, signed up", "≤ 1:22:30", "1:22:30–1:25 → 2:49–2:53 (Boston via random draw) · >1:26 → 2:55+"],
-                ["Wk 30 · Thu 11 Feb", "4×3 km @ 3:55/km, 90s jog — marathon-readiness test",
-                 "4 reps on pace, rep 4 fastest, HR drift <5 bpm",
-                 "Fade or HR climbing >8 bpm → run Tokyo at 2:52–2:55 pace, not 2:48"],
+                ["Wk 30 · Thu 11 Feb", "4×3 km @ 3:50/km (LT2), 90s jog — readiness test",
+                 "All four on pace, rep 4 ≥ rep 1, HR flat 172–176",
+                 "Fading to 3:55+ by rep 3 → LT2 isn't at 3:50, so run Tokyo at 2:52–2:55"],
                 ["Race · 7 Mar", "Marathon", "2:48 = 3:59/km · halfway 1:24:00", "Start at CONFIRMED pace. Even splits."]],
             "notes": [
                 "WK-13 10K IS VOID AS A TEST, BUT IT IS NOT A BAD SIGN (17 Oct, 39:22). Four confounders, all disclosed: ~7 pints the night before, diarrhoea during the warm-up, 23-24°C AND 80-90% humidity. The humidity is the one that matters most and was learned last: at 23.5°C/85% the dew point is 20.8°C and the wet bulb 21.6°C, so temp+dewpoint = 144°F, which sits in the 3.0-4.5% band. That is 71-106s over 10K, giving a corrected 37:36-38:11 against a 5K-predicted 38:18 (Riegel 1.06) — i.e. the corrected time MATCHES OR BEATS the prediction across the whole band, with the alcohol and GI handicaps still unaccounted for on top. So: too many uncontrolled variables to read a number off it, but it corroborates VDOT 54.8 rather than undercutting it. The HR (164 avg) was wrist-only and should be ignored outright. Do NOT re-run it — Sevilla on 13 Dec is the next honest test, and it will also be the first hard effort of the block run in cool conditions.",

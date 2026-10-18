@@ -1591,16 +1591,16 @@
           "date": "2027-01-05",
           "dow": "Tue",
           "type": "quality",
-          "session": "Race reps: 5×1.6 km @ 3:52/km, 90s jog · w/u 3.5 km · c/d 2.5 km  +S&C (hard-day session)",
-          "target_km": 15,
+          "session": "Alternating K's: 6×(1 km @ 3:50/km / 1 km float @ 4:15/km) — 12 km continuous, no standing rest, averages ~4:03/km · w/u 3.5 km · c/d 2.5 km  +S&C (hard-day session)",
+          "target_km": 18,
           "shoe": "Mach X3"
         },
         {
           "date": "2027-01-06",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 17 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 17,
+          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 16,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1615,16 +1615,16 @@
           "date": "2027-01-08",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 12 km easy  +S&C (easy-day session)",
-          "target_km": 12,
+          "session": "Recovery 11 km easy  +S&C (easy-day session)",
+          "target_km": 11,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2027-01-09",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 14 km + strides",
-          "target_km": 14,
+          "session": "Easy 13 km + strides",
+          "target_km": 13,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1851,16 +1851,16 @@
           "date": "2027-02-02",
           "dow": "Tue",
           "type": "quality",
-          "session": "Race reps: 5×1.6 km @ 3:52/km, 90s jog · w/u 3.5 km · c/d 2.5 km  +S&C (hard-day session)",
-          "target_km": 15,
+          "session": "Alternating K's: 6×(1 km @ 3:50/km / 1 km float @ 4:15/km) — 12 km continuous, no standing rest, averages ~4:03/km · w/u 3.5 km · c/d 2.5 km  +S&C (hard-day session)",
+          "target_km": 18,
           "shoe": "Mach X3"
         },
         {
           "date": "2027-02-03",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 17 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 17,
+          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 16,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1875,16 +1875,16 @@
           "date": "2027-02-05",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 12 km easy  +S&C (easy-day session)",
-          "target_km": 12,
+          "session": "Recovery 11 km easy  +S&C (easy-day session)",
+          "target_km": 11,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2027-02-06",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 14 km + strides  (double)",
-          "target_km": 14,
+          "session": "Easy 13 km + strides  (double)",
+          "target_km": 13,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1915,10 +1915,10 @@
         {
           "date": "2027-02-09",
           "dow": "Tue",
-          "type": "quality",
-          "session": "Threshold: 3×3 km @ 3:50/km, 2 min jog · w/u 3 km · c/d 2.3 km  +S&C (hard-day session)",
+          "type": "easy",
+          "session": "Easy 15 km + 6×20s strides — Thursday's test is the week's priority; arriving at it with 9 km of threshold in the legs would measure your Tuesday, not your fitness",
           "target_km": 15,
-          "shoe": "EVO SL"
+          "shoe": "Daily trainer"
         },
         {
           "date": "2027-02-10",
@@ -1932,7 +1932,7 @@
           "date": "2027-02-11",
           "dow": "Thu",
           "type": "quality",
-          "session": "READINESS TEST: 4×3 km @ 3:55/km (4 s/km under MP), 90s jog — PASS = rep 4 is the fastest, HR drift under 5 bpm, could have run a 5th · w/u 5.5 km · c/d 3.8 km",
+          "session": "READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog — PASS = all four on pace, rep 4 no slower than rep 1, HR flat at 172–176 across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic · w/u 5.5 km · c/d 3.8 km",
           "target_km": 22,
           "shoe": "EVO SL"
         },
@@ -2302,9 +2302,9 @@
         ],
         [
           "Wk 30 · Thu 11 Feb",
-          "4×3 km @ 3:55/km, 90s jog — marathon-readiness test",
-          "4 reps on pace, rep 4 fastest, HR drift <5 bpm",
-          "Fade or HR climbing >8 bpm → run Tokyo at 2:52–2:55 pace, not 2:48"
+          "4×3 km @ 3:50/km (LT2), 90s jog — readiness test",
+          "All four on pace, rep 4 ≥ rep 1, HR flat 172–176",
+          "Fading to 3:55+ by rep 3 → LT2 isn't at 3:50, so run Tokyo at 2:52–2:55"
         ],
         [
           "Race · 7 Mar",
