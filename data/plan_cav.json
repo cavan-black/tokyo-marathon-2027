@@ -1000,7 +1000,11 @@
           "type": "rest",
           "session": "Rest / mobility (full rest day)",
           "target_km": 0,
-          "shoe": null
+          "shoe": null,
+          "reminders": [
+            "✈️ Book Tokyo flights — 27 Feb out, 29 Mar back. Four months out is about the floor for long-haul pricing.",
+            "🏨 Book Tokyo race-weekend accommodation. Marathon weekend hotels near the start (Shinjuku) and finish (Tokyo Station) go early and the price only moves one way."
+          ]
         },
         {
           "date": "2026-11-03",
@@ -1585,7 +1589,13 @@
           "type": "rest",
           "session": "Rest / mobility (full rest day)",
           "target_km": 0,
-          "shoe": null
+          "shoe": null,
+          "reminders": [
+            "🎫 teamLab tickets (Borderless, Azabudai Hills) for Mon 1 Mar — timed entry, weekends sell out. Book now that you are inside the release window.",
+            "🚆 Sagano Romantic Train (11 Mar) — reserved seats, sells out in sakura season.",
+            "🥃 Yamazaki Distillery tour (13 Mar) — lottery/release opens months ahead.",
+            "🪪 Apply for the International Driving Permit — required for the Mario Kart go-karting on 1 Mar, and it is posted to you, so it is not a last-week job."
+          ]
         },
         {
           "date": "2027-01-05",
@@ -1641,7 +1651,7 @@
       "week": 26,
       "start": "2027-01-11",
       "phase": "Specific II / Peak",
-      "target_km": 99,
+      "target_km": 95,
       "focus": "",
       "days": [
         {
@@ -1664,41 +1674,41 @@
           "date": "2027-01-13",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 15 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 15,
+          "session": "Easy 20 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 20,
           "shoe": "Daily trainer"
         },
         {
           "date": "2027-01-14",
           "dow": "Thu",
-          "type": "easy",
-          "session": "Medium-long 17 km easy",
-          "target_km": 17,
-          "shoe": "Daily trainer"
+          "type": "long",
+          "session": "Medium-long 26 km easy — the week's long run, moved off the weekend so Sunday's race is run on fresh legs",
+          "target_km": 26,
+          "shoe": "Max-cushion (long-run)"
         },
         {
           "date": "2027-01-15",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 10 km easy  +S&C (easy-day session)",
-          "target_km": 10,
+          "session": "Recovery 12 km easy  +S&C (easy-day session)",
+          "target_km": 12,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2027-01-16",
           "dow": "Sat",
-          "type": "tt",
-          "session": "10K TIME TRIAL or 16 km race — fitness checkpoint, do this + w/u",
-          "target_km": 14,
-          "shoe": "Mach X3"
+          "type": "easy",
+          "session": "Easy 8 km + 4×100 m strides — race primer, nothing more",
+          "target_km": 8,
+          "shoe": "Daily trainer"
         },
         {
           "date": "2027-01-17",
           "dow": "Sun",
-          "type": "long",
-          "session": "28 km easy (recovery weekend — no MP)",
-          "target_km": 28,
-          "shoe": "Max-cushion (long-run)"
+          "type": "race",
+          "session": "10K RACE — Salida del Sol, Málaga (flat seafront, ~8,000 runners, ~45 min away) · w/u 2 km · c/d 2 km. A real field is worth 20–40s over a solo TT, which is why this replaces the time trial. DATE UNCONFIRMED — the 2026 edition ran Sun 18 Jan; check the organiser in November and tell me if it lands elsewhere",
+          "target_km": 14,
+          "shoe": "RACE SHOE"
         }
       ]
     },
@@ -1910,7 +1920,10 @@
           "type": "rest",
           "session": "Rest / mobility (full rest day)",
           "target_km": 0,
-          "shoe": null
+          "shoe": null,
+          "reminders": [
+            "⏰ GHIBLI IN 48 HOURS. Set a real alarm for 01:55 Wednesday morning and make sure your Lawson Ticket account already exists and is logged in — registering on the day is how people miss it."
+          ]
         },
         {
           "date": "2027-02-09",
@@ -1926,13 +1939,16 @@
           "type": "easy",
           "session": "Easy 10 km + 6×20s strides",
           "target_km": 10,
-          "shoe": "Daily trainer"
+          "shoe": "Daily trainer",
+          "reminders": [
+            "🎫‼️ GHIBLI MUSEUM TICKETS ON SALE — 02:00 CET TONIGHT (10:00 JST). March entry is released today and the popular slots go in minutes. You want Fri 5 Mar. Note this is the night before your 4×3 km readiness test — buy the tickets, then go straight back to bed; you have all of Wednesday to recover."
+          ]
         },
         {
           "date": "2027-02-11",
           "dow": "Thu",
           "type": "quality",
-          "session": "READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog — PASS = all four on pace, rep 4 no slower than rep 1, HR flat at 172–176 across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic · w/u 5.5 km · c/d 3.8 km",
+          "session": "READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog — PASS = all four on pace, rep 4 no slower than rep 1, HR flat at 172–176 across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic. ↑ IF THE BLOCK HAS GONE WELL: 3:45/km is the stretch version — but that is ~10K race pace, so 12 km of it asks for 45 min at a pace you can only hold for 37:40. Only take it if the wk-25 and wk-29 alternating K's both felt controlled AND Sevilla came in under 1:22:30. Decide at the warm-up, not in advance, and bail to 3:50 after rep 1 if it is not there — a failed test tells you nothing · w/u 5.5 km · c/d 3.8 km",
           "target_km": 22,
           "shoe": "EVO SL"
         },
@@ -1950,7 +1966,10 @@
           "type": "easy",
           "session": "Easy 8 km + strides",
           "target_km": 8,
-          "shoe": "Daily trainer"
+          "shoe": "Daily trainer",
+          "reminders": [
+            "🥋 Haru Basho (Osaka) tickets — sumo goes on sale roughly a month out. Check the Sumo Association site for the on-sale date and buy the morning it opens."
+          ]
         },
         {
           "date": "2027-02-14",
@@ -2040,7 +2059,10 @@
           "type": "rest",
           "session": "Rest / mobility (full rest day)",
           "target_km": 0,
-          "shoe": null
+          "shoe": null,
+          "reminders": [
+            "📱 Visit Japan Web — register immigration + customs now and save the QR codes offline. Check in for the flight, and put every booking confirmation in one folder."
+          ]
         },
         {
           "date": "2027-02-23",
@@ -2129,7 +2151,10 @@
           "type": "easy",
           "session": "Easy 6 km + 4×100 m strides",
           "target_km": 6,
-          "shoe": "Daily trainer #2"
+          "shoe": "Daily trainer #2",
+          "reminders": [
+            "🎽️ EXPO — collect your race bib. Attendance is mandatory, there is no race-day collection, and the expo closes before Saturday evening. Do it today, not Saturday: standing in a queue for three hours two days out is a cost you do not need."
+          ]
         },
         {
           "date": "2027-03-05",

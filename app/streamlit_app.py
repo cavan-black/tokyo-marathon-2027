@@ -199,6 +199,12 @@ STYLE = """<style>
 .sv .day .dist{font-family:var(--font-mono);font-weight:700;font-size:13.5px;text-align:right;}
 .sv .day .dist.rest{color:var(--faint);font-weight:500;}
 .sv .day .desc{font-size:13.5px;}
+/* Trip-booking reminders. Deliberately below the session text and visually quieter than
+   it: these are errands with deadlines, not training, and the run stays the headline. */
+.rem-wrap{margin-top:6px;display:flex;flex-direction:column;gap:4px;}
+.rem{font-size:12.5px;line-height:1.45;padding:6px 9px;border-radius:6px;
+     background:rgba(234,179,8,.10);border-left:3px solid #eab308;color:inherit;opacity:.92;}
+.ce-sub + .rem-wrap{margin-top:9px;}
 .sv .day .tags{display:flex;gap:6px;justify-content:flex-end;flex-wrap:wrap;align-items:center;}
 .sv .tag{font-size:10.5px;font-weight:600;padding:1px 6px;border-radius:5px;white-space:nowrap;
   border:1px solid var(--line-strong);color:var(--muted);}
@@ -762,8 +768,12 @@ def celebration_html(plan, progress):
         sub = sess + (f' — {target:g} km planned' if target else '')
     else:
         return ""
+    rem = "".join(f'<div class="rem">{esc(r)}</div>' for r in (d or {}).get("reminders", []))
+    if rem:
+        rem = f'<div class="rem-wrap">{rem}</div>'
     return (f'<div class="{cls}"><span class="ce-emoji">{emoji}</span>'
-            f'<div><div class="ce-title">{esc(title)}</div><div class="ce-sub">{esc(sub)}</div></div></div>')
+            f'<div><div class="ce-title">{esc(title)}</div>'
+            f'<div class="ce-sub">{esc(sub)}</div>{rem}</div></div>')
 
 
 def facts_html(plan, wk_rows):
@@ -934,10 +944,13 @@ def day_html(d, pd_, today_iso):
         nraw = non_sub[0].get("activity_type", "cross-training")
         tags += (f'<span class="tag nosub">{CROSS_EMOJI.get(nraw, "🏋️")} '
                  f'{esc(CROSS_LABEL.get(nraw, nraw))} — not cardio, doesn\'t cover the run</span>')
+    rem = "".join(f'<div class="rem">{esc(r)}</div>' for r in d.get("reminders", []))
+    if rem:
+        rem = f'<div class="rem-wrap">{rem}</div>'
     return (f'<div class="day"><span class="dow">{esc(d["dow"])}</span>'
             f'<span class="chip type-chip {cls}">{esc(label)}</span>'
             f'<span class="{distcls}">{dist}</span>'
-            f'<span class="desc">{esc(sess)}</span>'
+            f'<span class="desc">{esc(sess)}{rem}</span>'
             f'<span class="tags">{dot}{tags}</span></div>')
 
 

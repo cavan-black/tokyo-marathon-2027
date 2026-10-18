@@ -28,7 +28,8 @@ LR  = [12,14,16,14,
 
 # Hard long-run weekends (MP work, or wk 27's 38 km) — always followed by an easy one.
 HARD_LR = {16, 18, 25, 27, 29, 31}
-TT_WEEKS = {10, 13, 26}
+# Wk 26 was a TT week; it is now a real race on the Sunday (see DAY_OVERRIDE).
+TT_WEEKS = {10, 13}
 
 # Weeks written off in advance — travel, festivals, anything where training genuinely isn't
 # happening. Planned downtime beats a week of sessions marked missed: the ramp steps down
@@ -58,7 +59,17 @@ DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri")), 11: (("T
 # the bulk (furthest from it), Tuesday stays short (a quality session the day before a time
 # trial costs more than it gives), the test day is just 1 km either side of the 5K, and the
 # Sunday travel day picks up an easy evening run instead of being written off.
-DAY_OVERRIDE = {30: {"Tue": ("Easy 15 km + 6×20s strides — Thursday's test is the week's "
+DAY_OVERRIDE = {26: {"Wed": ("Easy 20 km + 6×20s strides  (double: split AM/PM)", "easy", 20),
+                     "Thu": ("Medium-long 26 km easy — the week's long run, moved off the "
+                             "weekend so Sunday's race is run on fresh legs", "long", 26),
+                     "Fri": ("Recovery 12 km easy  +S&C (easy-day session)", "recovery", 12),
+                     "Sat": ("Easy 8 km + 4×100 m strides — race primer, nothing more", "easy", 8),
+                     "Sun": ("10K RACE — Salida del Sol, Málaga (flat seafront, ~8,000 runners, "
+                             "~45 min away) · w/u 2 km · c/d 2 km. A real field is worth 20–40s "
+                             "over a solo TT, which is why this replaces the time trial. "
+                             "DATE UNCONFIRMED — the 2026 edition ran Sun 18 Jan; check the "
+                             "organiser in November and tell me if it lands elsewhere", "race", 14)},
+                30: {"Tue": ("Easy 15 km + 6×20s strides — Thursday's test is the week's "
                             "priority; arriving at it with 9 km of threshold in the legs "
                             "would measure your Tuesday, not your fitness", "easy", 15)},
                 33: {"Tue": ("Easy 10 km + 4×100 m strides", "easy", 10),
@@ -120,7 +131,38 @@ LR_OVERRIDE = {8: 21.1}
 # actually being run through late Aug/early Sep. Trimmed to 52 with the 20 km long run
 # kept intact — the long run is the part worth protecting, so the midweek days absorb
 # the cut.
-VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69}
+VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69, 26: 95}
+
+# Trip bookings that have a real deadline, pinned to the day you have to act. The
+# itinerary itself lives in plan/trip.py; these are only the things that are gone if you
+# miss the date. Rendered under the day's session, never above it — the run is still the
+# point of the page.
+REMINDERS = {
+    "2026-11-02": ["✈️ Book Tokyo flights — 27 Feb out, 29 Mar back. Four months out is "
+                   "about the floor for long-haul pricing.",
+                   "🏨 Book Tokyo race-weekend accommodation. Marathon weekend hotels near the "
+                   "start (Shinjuku) and finish (Tokyo Station) go early and the price only moves one way."],
+    "2027-01-04": ["🎫 teamLab tickets (Borderless, Azabudai Hills) for Mon 1 Mar — timed entry, "
+                   "weekends sell out. Book now that you are inside the release window.",
+                   "🚆 Sagano Romantic Train (11 Mar) — reserved seats, sells out in sakura season.",
+                   "🥃 Yamazaki Distillery tour (13 Mar) — lottery/release opens months ahead.",
+                   "🪪 Apply for the International Driving Permit — required for the Mario Kart "
+                   "go-karting on 1 Mar, and it is posted to you, so it is not a last-week job."],
+    "2027-02-08": ["⏰ GHIBLI IN 48 HOURS. Set a real alarm for 01:55 Wednesday morning and make sure "
+                   "your Lawson Ticket account already exists and is logged in — registering on the "
+                   "day is how people miss it."],
+    "2027-02-10": ["🎫‼️ GHIBLI MUSEUM TICKETS ON SALE — 02:00 CET TONIGHT (10:00 JST). "
+                   "March entry is released today and the popular slots go in minutes. You want Fri 5 Mar. "
+                   "Note this is the night before your 4×3 km readiness test — buy the tickets, then "
+                   "go straight back to bed; you have all of Wednesday to recover."],
+    "2027-02-13": ["🥋 Haru Basho (Osaka) tickets — sumo goes on sale roughly a month out. Check "
+                   "the Sumo Association site for the on-sale date and buy the morning it opens."],
+    "2027-02-22": ["📱 Visit Japan Web — register immigration + customs now and save the QR codes "
+                   "offline. Check in for the flight, and put every booking confirmation in one folder."],
+    "2027-03-04": ["🎽️ EXPO — collect your race bib. Attendance is mandatory, there is no "
+                   "race-day collection, and the expo closes before Saturday evening. Do it today, not "
+                   "Saturday: standing in a queue for three hours two days out is a cost you do not need."],
+}
 
 def lr_for(w):   return LR_OVERRIDE.get(w, LR[w-1])
 def vol_for(w):  return VOL_OVERRIDE.get(w, VOL[w-1]) + (lr_for(w) - LR[w-1])
@@ -206,7 +248,12 @@ def thu(w):
         # the 3:50 T pace itself, which was set from wrist-HR reasoning in Oct 2026.
         return ("READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog — "
                 "PASS = all four on pace, rep 4 no slower than rep 1, HR flat at 172–176 "
-                "across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic"), "quality"
+                "across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic. "
+                "↑ IF THE BLOCK HAS GONE WELL: 3:45/km is the stretch version — but that is "
+                "~10K race pace, so 12 km of it asks for 45 min at a pace you can only hold for "
+                "37:40. Only take it if the wk-25 and wk-29 alternating K's both felt controlled "
+                "AND Sevilla came in under 1:22:30. Decide at the warm-up, not in advance, and "
+                "bail to 3:50 after rep 1 if it is not there — a failed test tells you nothing"), "quality"
     if w <= 30:
         lib=["MP: 3×6 km @ 3:59/km, 3 min jog","Medium-long 18 km w/ 10 km @ MP",
              "MP: 2×8 km @ MP, 3 min float","Medium-long 17 km easy"]
@@ -237,7 +284,6 @@ def sun(w):
 def sat(w):
     if w == 10: return "parkrun 5K — TIME TRIAL (fitness check) + w/u & c/d", "tt", 9
     if w == 13: return "10K TIME TRIAL or local race (fitness check) + w/u", "tt", 13
-    if w == 26: return "10K TIME TRIAL or 16 km race — fitness checkpoint, do this + w/u", "tt", 14
     if w == 33: return "Shakeout: easy 4 km + 4×100 m strides", "easy", 4
     return None, "easy", None
 
@@ -563,9 +609,11 @@ def build():
         monday=START+timedelta(days=(w-1)*7); dm=build_week(w); days=[]
         for i,dow in enumerate(DOW):
             txt,typ,km=dm[dow]
-            days.append({"date":(monday+timedelta(days=i)).isoformat(),"dow":dow,
-                         "type":typ,"session":txt,"target_km":km,
-                         "shoe":shoe_for(w,dow,typ,txt)})
+            iso=(monday+timedelta(days=i)).isoformat()
+            day={"date":iso,"dow":dow,"type":typ,"session":txt,"target_km":km,
+                 "shoe":shoe_for(w,dow,typ,txt)}
+            if iso in REMINDERS: day["reminders"]=REMINDERS[iso]
+            days.append(day)
         weeks.append({"week":w,"start":monday.isoformat(),"phase":phase(w),
                       # a KEEP_ONLY week's volume is whatever survives, not the VOL array
                       "target_km":(round(sum(x["target_km"] for x in days),1) if w in KEEP_ONLY
