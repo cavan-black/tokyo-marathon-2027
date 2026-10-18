@@ -1121,7 +1121,7 @@
       "week": 18,
       "start": "2026-11-16",
       "phase": "Marathon-Specific I",
-      "target_km": 92,
+      "target_km": 97,
       "focus": "",
       "days": [
         {
@@ -1144,8 +1144,8 @@
           "date": "2026-11-18",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 13 km + 6×20s strides",
-          "target_km": 13,
+          "session": "Easy 14 km + 6×20s strides",
+          "target_km": 14,
           "shoe": "Daily trainer"
         },
         {
@@ -1160,24 +1160,24 @@
           "date": "2026-11-20",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 9 km easy  +S&C (easy-day session)",
-          "target_km": 9,
+          "session": "Recovery 10 km easy  +S&C (easy-day session)",
+          "target_km": 10,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-21",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 10 km + strides",
-          "target_km": 10,
+          "session": "Easy 11 km + strides",
+          "target_km": 11,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-22",
           "dow": "Sun",
           "type": "long",
-          "session": "30 km, last 10 km @ MP",
-          "target_km": 30,
+          "session": "32 km, last 10 km @ MP",
+          "target_km": 32,
           "shoe": "RACE SHOE"
         }
       ]
@@ -1186,7 +1186,7 @@
       "week": 19,
       "start": "2026-11-23",
       "phase": "Marathon-Specific I",
-      "target_km": 96,
+      "target_km": 101,
       "focus": "",
       "days": [
         {
@@ -1209,8 +1209,8 @@
           "date": "2026-11-25",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 14 km + 6×20s strides",
-          "target_km": 14,
+          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 16,
           "shoe": "Daily trainer"
         },
         {
@@ -1225,16 +1225,16 @@
           "date": "2026-11-27",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 10 km easy  +S&C (easy-day session)",
-          "target_km": 10,
+          "session": "Recovery 11 km easy  +S&C (easy-day session)",
+          "target_km": 11,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-28",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 12 km + strides",
-          "target_km": 12,
+          "session": "Easy 14 km + strides",
+          "target_km": 14,
           "shoe": "Daily trainer"
         },
         {
@@ -1316,7 +1316,7 @@
       "week": 21,
       "start": "2026-12-07",
       "phase": "Marathon-Specific I",
-      "target_km": 88,
+      "target_km": 92,
       "focus": "",
       "days": [
         {
@@ -1339,8 +1339,8 @@
           "date": "2026-12-09",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 12 km + 6×20s strides",
-          "target_km": 12,
+          "session": "Easy 14 km + 6×20s strides",
+          "target_km": 14,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1355,8 +1355,8 @@
           "date": "2026-12-11",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 8 km easy  +S&C (easy-day session)",
-          "target_km": 8,
+          "session": "Recovery 10 km easy  +S&C (easy-day session)",
+          "target_km": 10,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1381,7 +1381,7 @@
       "week": 22,
       "start": "2026-12-14",
       "phase": "Marathon-Specific I",
-      "target_km": 98,
+      "target_km": 103,
       "focus": "",
       "days": [
         {
@@ -1404,8 +1404,8 @@
           "date": "2026-12-16",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 14 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 14,
+          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 16,
           "shoe": "Daily trainer"
         },
         {
@@ -1420,16 +1420,16 @@
           "date": "2026-12-18",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 10 km easy  +S&C (easy-day session)",
-          "target_km": 10,
+          "session": "Recovery 11 km easy  +S&C (easy-day session)",
+          "target_km": 11,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2026-12-19",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 12 km + strides",
-          "target_km": 12,
+          "session": "Easy 14 km + strides",
+          "target_km": 14,
           "shoe": "Daily trainer"
         },
         {
@@ -1576,7 +1576,7 @@
       "week": 25,
       "start": "2027-01-04",
       "phase": "Specific II / Peak",
-      "target_km": 102,
+      "target_km": 107,
       "focus": "Ramp resumes (from the day after NYD)",
       "days": [
         {
@@ -1599,8 +1599,8 @@
           "date": "2027-01-06",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 16,
+          "session": "Easy 17 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 17,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1615,24 +1615,24 @@
           "date": "2027-01-08",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 11 km easy  +S&C (easy-day session)",
-          "target_km": 11,
+          "session": "Recovery 12 km easy  +S&C (easy-day session)",
+          "target_km": 12,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2027-01-09",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 13 km + strides",
-          "target_km": 13,
+          "session": "Easy 14 km + strides",
+          "target_km": 14,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2027-01-10",
           "dow": "Sun",
           "type": "long",
-          "session": "30 km, last 10 km @ MP — ramp resumes",
-          "target_km": 30,
+          "session": "32 km, last 10 km @ MP — ramp resumes",
+          "target_km": 32,
           "shoe": "Max-cushion (long-run)"
         }
       ]
@@ -1641,7 +1641,7 @@
       "week": 26,
       "start": "2027-01-11",
       "phase": "Specific II / Peak",
-      "target_km": 94,
+      "target_km": 99,
       "focus": "",
       "days": [
         {
@@ -1664,8 +1664,8 @@
           "date": "2027-01-13",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 12 km + 6×20s strides",
-          "target_km": 12,
+          "session": "Easy 15 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 15,
           "shoe": "Daily trainer"
         },
         {
@@ -1680,8 +1680,8 @@
           "date": "2027-01-15",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 8 km easy  +S&C (easy-day session)",
-          "target_km": 8,
+          "session": "Recovery 10 km easy  +S&C (easy-day session)",
+          "target_km": 10,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1729,8 +1729,8 @@
           "date": "2027-01-20",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 18 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 18,
+          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 16,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1745,24 +1745,24 @@
           "date": "2027-01-22",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 12 km easy  +S&C (easy-day session)",
-          "target_km": 12,
+          "session": "Recovery 11 km easy  +S&C (easy-day session)",
+          "target_km": 11,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2027-01-23",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 14 km + strides  (double)",
-          "target_km": 14,
+          "session": "Easy 13 km + strides  (double)",
+          "target_km": 13,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2027-01-24",
           "dow": "Sun",
           "type": "long",
-          "session": "34 km w/ 3×6 km @ MP",
-          "target_km": 34,
+          "session": "38 km easy — longest run of the block, pure time on feet, no MP",
+          "target_km": 38,
           "shoe": "Max-cushion (long-run)"
         }
       ]
@@ -1924,8 +1924,8 @@
           "date": "2027-02-10",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 13 km + 6×20s strides",
-          "target_km": 13,
+          "session": "Easy 12 km + 6×20s strides",
+          "target_km": 12,
           "shoe": "Daily trainer"
         },
         {
@@ -1940,8 +1940,8 @@
           "date": "2027-02-12",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 9 km easy  +S&C (easy-day session)",
-          "target_km": 9,
+          "session": "Recovery 8 km easy  +S&C (easy-day session)",
+          "target_km": 8,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1956,8 +1956,8 @@
           "date": "2027-02-14",
           "dow": "Sun",
           "type": "long",
-          "session": "30 km easy — FINAL long run, keep it relaxed",
-          "target_km": 30,
+          "session": "32 km easy — FINAL long run, keep it relaxed",
+          "target_km": 32,
           "shoe": "Max-cushion (long-run)"
         }
       ]

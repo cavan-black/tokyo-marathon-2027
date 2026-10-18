@@ -14,19 +14,19 @@ RACE  = date(2027, 3, 7)
 # later (Wk 28 rather than 27), which is still 5 weeks out from the race.
 VOL = [42,50,56,48,
        62,0,45,54,60,50,66,72,64,
-       76,84,90,76,92,96,80,88,98,76,
-       88,102,94,110,116,110,94,
+       76,84,90,76,97,101,80,92,103,76,
+       88,107,99,110,116,110,94,
        69,56,70]
 LR  = [12,14,16,14,
        18,0,14,16,18,16,20,22,18,
-       24,26,28,24,30,30,21,28,32,20,
-       24,30,28,34,32,35,30,
+       24,26,28,24,32,30,21,28,32,20,
+       24,32,28,38,32,35,32,
        21,18,42.195]
 # Wk 23 (21-27 Dec, Christmas) and Wk 24 (28 Dec-3 Jan, New Year) are a deliberate
 # holiday dip after the Wk-20 half; Wk 25 (from Mon 4 Jan, the day after NYD+1)
 # resumes the ramp back to peak.
 
-# Hard (MP-work) long-run weekends — always followed by an easy long-run weekend.
+# Hard long-run weekends (MP work, or wk 27's 38 km) — always followed by an easy one.
 HARD_LR = {16, 18, 20, 22, 25, 27, 29, 31}
 TT_WEEKS = {10, 13, 26}
 
@@ -188,19 +188,19 @@ def thu(w):
 def sun(w):
     # via lr_for so the text can't drift from target_km when a week overrides its long run
     d=lr_for(w)
-    txt={16:"28 km, last 8 km @ MP",18:"30 km, last 10 km @ MP",
+    txt={16:"28 km, last 8 km @ MP",18:"32 km, last 10 km @ MP",
         19:"30 km easy (recovery weekend — no MP)",
         20:"TUNE-UP: Sevilla Half Marathon (all-out) + w/u & c/d",
         21:"28 km easy (post-race — keep it genuinely easy)",
         22:"32 km, last 10 km @ MP",
         23:"20 km easy — Christmas week, keep it light",
         24:"24 km easy — New Year week, ease back in",
-        25:"30 km, last 10 km @ MP — ramp resumes",
+        25:"32 km, last 10 km @ MP — ramp resumes",
         26:"28 km easy (recovery weekend — no MP)",
-        27:"34 km w/ 3×6 km @ MP",
+        27:"38 km easy — longest run of the block, pure time on feet, no MP",
         28:"32 km easy (recovery weekend — no MP)",
         29:"35 km, last 12 km @ MP (dress rehearsal)",
-        30:"30 km easy — FINAL long run, keep it relaxed",
+        30:"32 km easy — FINAL long run, keep it relaxed",
         31:"21 km, last 8 km @ MP",32:"18 km easy w/ 4×1 km @ MP",
         33:"RACE DAY — Tokyo Marathon · 2:48 target · 3:59/km · 6:24/mi · halfway 1:24:00"}
     t = txt.get(w, f"{d:g} km easy" + (" + last 4 km relaxed @ MP" if w == 12 else ""))
