@@ -14,12 +14,12 @@ RACE  = date(2027, 3, 7)
 # later (Wk 28 rather than 27), which is still 5 weeks out from the race.
 VOL = [42,50,56,48,
        62,0,45,54,60,50,66,72,64,
-       76,84,90,76,97,101,80,92,103,76,
+       76,84,90,76,97,101,92,80,96,76,
        88,107,99,110,116,110,94,
        69,56,70]
 LR  = [12,14,16,14,
        18,0,14,16,18,16,20,22,18,
-       24,26,28,24,32,30,24,28,32,20,
+       24,26,28,24,32,30,28,24,30,20,
        24,32,28,38,32,35,32,
        21,18,42.195]
 # Wk 23 (21-27 Dec, Christmas) and Wk 24 (28 Dec-3 Jan, New Year) are a deliberate
@@ -27,7 +27,7 @@ LR  = [12,14,16,14,
 # resumes the ramp back to peak.
 
 # Hard long-run weekends (MP work, or wk 27's 38 km) — always followed by an easy one.
-HARD_LR = {16, 18, 20, 22, 25, 27, 29, 31}
+HARD_LR = {16, 18, 25, 27, 29, 31}
 TT_WEEKS = {10, 13, 26}
 
 # Weeks written off in advance — travel, festivals, anything where training genuinely isn't
@@ -175,6 +175,10 @@ def thu(w):
             return f"Easy {k} km + 6×20s strides", "easy"
         return (f"Hill strides: easy {k} km + 8×15s hill sprints" if w % 2
                 else f"Medium easy {k} km + 6×20s strides"), "easy"
+    if w == 22:
+        # Four days after an all-out half — the rotation would otherwise land 10 km of
+        # MP here. Sunday is already easy for the same reason.
+        return f"Medium-long {qkm(w,'thu')} km easy — 4 days post-Sevilla", "easy"
     if w <= 23:
         lib=["MP tempo: 2×5 km @ 3:59/km (MP), 3 min float","Medium-long 16 km w/ middle 8 km @ MP",
              "MP tempo: 3×4 km @ MP, 2 min float","Medium-long 16 km easy + 8×15s hill sprints"]
@@ -190,9 +194,9 @@ def sun(w):
     d=lr_for(w)
     txt={16:"28 km, last 8 km @ MP",18:"32 km, last 10 km @ MP",
         19:"30 km easy (recovery weekend — no MP)",
-        20:"TUNE-UP: Sevilla Half Marathon (all-out) · w/u 2 km · c/d 1 km",
-        21:"28 km easy (post-race — keep it genuinely easy)",
-        22:"32 km, last 10 km @ MP",
+        20:"28 km easy — steady week, race is next Sunday",
+        21:"TUNE-UP: Sevilla Half Marathon (all-out) · w/u 2 km · c/d 1 km",
+        22:"30 km easy (post-race — keep it genuinely easy)",
         23:"20 km easy — Christmas week, keep it light",
         24:"24 km easy — New Year week, ease back in",
         25:"32 km, last 10 km @ MP — ramp resumes",
@@ -204,7 +208,7 @@ def sun(w):
         31:"21 km, last 8 km @ MP",32:"18 km easy w/ 4×1 km @ MP",
         33:"RACE DAY — Tokyo Marathon · 2:48 target · 3:59/km · 6:24/mi · halfway 1:24:00"}
     t = txt.get(w, f"{d:g} km easy" + (" + last 4 km relaxed @ MP" if w == 12 else ""))
-    return t, ("race" if w in (20,33) else "long")
+    return t, ("race" if w in (21,33) else "long")
 
 def sat(w):
     if w == 10: return "parkrun 5K — TIME TRIAL (fitness check) + w/u & c/d", "tt", 9
@@ -298,7 +302,7 @@ def build_week(w):
 def focus(w):
     return {6:"🎪 Lost Village — planned week off",7:"Back from the break — rebuild, no quality",
             10:"5K time trial Wed, then Ibiza 24-26 Sep",13:"10K time-trial checkpoint",
-            20:"Half tune-up (calibrate goal)",23:"🎄 Christmas week — deliberate holiday dip",
+            21:"Half tune-up (calibrate goal)",23:"🎄 Christmas week — deliberate holiday dip",
             24:"🎆 New Year week — easing back in",25:"Ramp resumes (from the day after NYD)",
             28:"Peak volume week",
             29:"Peak long run",33:"RACE WEEK"}.get(w, "Cut-back / recovery week" if w in (4,17) else "")
@@ -323,7 +327,7 @@ def content():
                 ["RACE SHOE", "Sevilla, Tokyo + 2 bed-in runs", "128", "128", "Early-mid Nov — Metaspeed Sky / Alphafly 3 / Adios Pro 5"],
             ],
             "note": "The racer holds its bounce for ~250-300 km, so it only appears four times: "
-                    "one MP long run to bed it in before each race (Wk 18, and the Wk 29 dress rehearsal), Sevilla on 6 Dec, and Tokyo. "
+                    "one MP long run to bed it in before each race (Wk 18, and the Wk 29 dress rehearsal), Sevilla on 13 Dec, and Tokyo. "
                     "Don't train in it. Buy it in November rather than January so a bad fit turns up "
                     "at the half and not three weeks out — super shoes change calf and Achilles "
                     "loading noticeably and not everyone gets on with a given geometry. "
@@ -348,10 +352,10 @@ def content():
             "headers": ["Wk / date", "Test", "On-track for 2:48", "If short — likely target"], "rows": [
                 ["Wk 11 · Sat 3 Oct ✓", "5K TT — 18:22 (GAP 18:25, PR by ~57s)", "done", "VDOT ~54.8 · ~2:56 engine — mileage is the gap to 2:48"],
                 ["Wk 13 · Sat 17 Oct — VOID", "10K TT — 39:22 raw · ~37:36-38:11 corrected", "≤ 37:20", "Not a measurement, but corrected it corroborates the 5K. Next honest test is Sevilla."],
-                ["Wk 20 · Sun 6 Dec", "Half-marathon — Sevilla Half, signed up", "≤ 1:22:30", "1:22:30–1:25 → 2:49–2:53 (Boston via random draw) · >1:26 → 2:55+"],
+                ["Wk 21 · Sun 13 Dec", "Half-marathon — Sevilla Half, signed up", "≤ 1:22:30", "1:22:30–1:25 → 2:49–2:53 (Boston via random draw) · >1:26 → 2:55+"],
                 ["Race · 7 Mar", "Marathon", "2:48 = 3:59/km · halfway 1:24:00", "Start at CONFIRMED pace. Even splits."]],
             "notes": [
-                "WK-13 10K IS VOID AS A TEST, BUT IT IS NOT A BAD SIGN (17 Oct, 39:22). Four confounders, all disclosed: ~7 pints the night before, diarrhoea during the warm-up, 23-24°C AND 80-90% humidity. The humidity is the one that matters most and was learned last: at 23.5°C/85% the dew point is 20.8°C and the wet bulb 21.6°C, so temp+dewpoint = 144°F, which sits in the 3.0-4.5% band. That is 71-106s over 10K, giving a corrected 37:36-38:11 against a 5K-predicted 38:18 (Riegel 1.06) — i.e. the corrected time MATCHES OR BEATS the prediction across the whole band, with the alcohol and GI handicaps still unaccounted for on top. So: too many uncontrolled variables to read a number off it, but it corroborates VDOT 54.8 rather than undercutting it. The HR (164 avg) was wrist-only and should be ignored outright. Do NOT re-run it — Sevilla on 6 Dec is the next honest test, and it will also be the first hard effort of the block run in cool conditions.",
+                "WK-13 10K IS VOID AS A TEST, BUT IT IS NOT A BAD SIGN (17 Oct, 39:22). Four confounders, all disclosed: ~7 pints the night before, diarrhoea during the warm-up, 23-24°C AND 80-90% humidity. The humidity is the one that matters most and was learned last: at 23.5°C/85% the dew point is 20.8°C and the wet bulb 21.6°C, so temp+dewpoint = 144°F, which sits in the 3.0-4.5% band. That is 71-106s over 10K, giving a corrected 37:36-38:11 against a 5K-predicted 38:18 (Riegel 1.06) — i.e. the corrected time MATCHES OR BEATS the prediction across the whole band, with the alcohol and GI handicaps still unaccounted for on top. So: too many uncontrolled variables to read a number off it, but it corroborates VDOT 54.8 rather than undercutting it. The HR (164 avg) was wrist-only and should be ignored outright. Do NOT re-run it — Sevilla on 13 Dec is the next honest test, and it will also be the first hard effort of the block run in cool conditions.",
                 "BOSTON: hitting the standard does not get you in. The 2027 cut-off was 5:17 under, so 18-34 men needed 2:49:43 against a 2:55 standard, and ~8,000 qualifiers who beat the standard were still rejected. That is why the target is 2:48 and not 2:50. Two things soften it: the BAA now draws ~1,000 places at random from qualifiers who missed the cut-off, and your age group is set by your age on BOSTON race day (Apr 2028), not on race day in Tokyo — so turning 35 before then would drop the standard to 3:00 and change this whole target.",
                 "Peak ~116 km — weekly volume is the biggest lever for marathon time, and the extra should be EASY km (your endurance lags your speed).",
                 "Rest days are Monday (always) and Saturday in the re-entry weeks; race-week Friday rest is the one exception.",
@@ -500,7 +504,7 @@ SHOES = {
 # to react if the shoe does not suit. Wk 29 rather than 30 before Tokyo: 29 is the
 # dress rehearsal (35 km with 12 km @ MP) and 30 is an easy run, so 29 is the one
 # that actually rehearses race pace in race shoes.
-RACE_SHOE_DAYS = {(18,"Sun"), (20,"Sun"), (29,"Sun"), (33,"Sun")}
+RACE_SHOE_DAYS = {(18,"Sun"), (21,"Sun"), (29,"Sun"), (33,"Sun")}
 # Second daily trainer arrives when the first is around 500 km.
 DAILY2_FROM = 20
 

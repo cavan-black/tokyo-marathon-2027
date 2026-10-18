@@ -1251,8 +1251,8 @@
       "week": 20,
       "start": "2026-11-30",
       "phase": "Marathon-Specific I",
-      "target_km": 80,
-      "focus": "Half tune-up (calibrate goal)",
+      "target_km": 92,
+      "focus": "",
       "days": [
         {
           "date": "2026-11-30",
@@ -1274,41 +1274,41 @@
           "date": "2026-12-02",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10 km + 6×20s strides",
-          "target_km": 10,
+          "session": "Easy 14 km + 6×20s strides",
+          "target_km": 14,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-12-03",
           "dow": "Thu",
-          "type": "easy",
-          "session": "Medium-long 16 km easy",
+          "type": "quality",
+          "session": "MP tempo: 3×4 km @ MP, 2 min float · w/u 2 km · c/d 1.3 km",
           "target_km": 16,
-          "shoe": "Daily trainer"
+          "shoe": "Mach X3"
         },
         {
           "date": "2026-12-04",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 7 km easy  +S&C (easy-day session)",
-          "target_km": 7,
+          "session": "Recovery 10 km easy  +S&C (easy-day session)",
+          "target_km": 10,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2026-12-05",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 9 km + strides",
-          "target_km": 9,
+          "session": "Easy 10 km + strides",
+          "target_km": 10,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-12-06",
           "dow": "Sun",
-          "type": "race",
-          "session": "TUNE-UP: Sevilla Half Marathon (all-out) · w/u 2 km · c/d 1 km",
-          "target_km": 24,
-          "shoe": "RACE SHOE"
+          "type": "long",
+          "session": "28 km easy — steady week, race is next Sunday",
+          "target_km": 28,
+          "shoe": "Max-cushion (long-run)"
         }
       ]
     },
@@ -1316,8 +1316,8 @@
       "week": 21,
       "start": "2026-12-07",
       "phase": "Marathon-Specific I",
-      "target_km": 92,
-      "focus": "",
+      "target_km": 80,
+      "focus": "Half tune-up (calibrate goal)",
       "days": [
         {
           "date": "2026-12-07",
@@ -1339,41 +1339,41 @@
           "date": "2026-12-09",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 14 km + 6×20s strides",
-          "target_km": 14,
+          "session": "Easy 10 km + 6×20s strides",
+          "target_km": 10,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2026-12-10",
           "dow": "Thu",
-          "type": "quality",
-          "session": "Medium-long 16 km easy + 8×15s hill sprints",
+          "type": "easy",
+          "session": "Medium-long 16 km easy",
           "target_km": 16,
-          "shoe": "EVO SL"
+          "shoe": "Daily trainer #2"
         },
         {
           "date": "2026-12-11",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 10 km easy  +S&C (easy-day session)",
-          "target_km": 10,
+          "session": "Recovery 7 km easy  +S&C (easy-day session)",
+          "target_km": 7,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2026-12-12",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 10 km + strides",
-          "target_km": 10,
+          "session": "Easy 9 km + strides",
+          "target_km": 9,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2026-12-13",
           "dow": "Sun",
-          "type": "long",
-          "session": "28 km easy (post-race — keep it genuinely easy)",
-          "target_km": 28,
-          "shoe": "Max-cushion (long-run)"
+          "type": "race",
+          "session": "TUNE-UP: Sevilla Half Marathon (all-out) · w/u 2 km · c/d 1 km",
+          "target_km": 24,
+          "shoe": "RACE SHOE"
         }
       ]
     },
@@ -1381,7 +1381,7 @@
       "week": 22,
       "start": "2026-12-14",
       "phase": "Marathon-Specific I",
-      "target_km": 103,
+      "target_km": 96,
       "focus": "",
       "days": [
         {
@@ -1404,15 +1404,15 @@
           "date": "2026-12-16",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 16,
+          "session": "Easy 14 km + 6×20s strides",
+          "target_km": 14,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-12-17",
           "dow": "Thu",
           "type": "easy",
-          "session": "Medium-long 16 km easy",
+          "session": "Medium-long 16 km easy — 4 days post-Sevilla",
           "target_km": 16,
           "shoe": "Daily trainer"
         },
@@ -1420,24 +1420,24 @@
           "date": "2026-12-18",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 11 km easy  +S&C (easy-day session)",
-          "target_km": 11,
+          "session": "Recovery 10 km easy  +S&C (easy-day session)",
+          "target_km": 10,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2026-12-19",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 14 km + strides",
-          "target_km": 14,
+          "session": "Easy 12 km + strides",
+          "target_km": 12,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-12-20",
           "dow": "Sun",
           "type": "long",
-          "session": "32 km, last 10 km @ MP",
-          "target_km": 32,
+          "session": "30 km easy (post-race — keep it genuinely easy)",
+          "target_km": 30,
           "shoe": "Max-cushion (long-run)"
         }
       ]
@@ -2212,7 +2212,7 @@
           "Early-mid Nov — Metaspeed Sky / Alphafly 3 / Adios Pro 5"
         ]
       ],
-      "note": "The racer holds its bounce for ~250-300 km, so it only appears four times: one MP long run to bed it in before each race (Wk 18, and the Wk 29 dress rehearsal), Sevilla on 6 Dec, and Tokyo. Don't train in it. Buy it in November rather than January so a bad fit turns up at the half and not three weeks out — super shoes change calf and Achilles loading noticeably and not everyone gets on with a given geometry. Log mileage per pair in Strava (assign gear to each activity); most worn-shoe injuries happen because nobody was counting."
+      "note": "The racer holds its bounce for ~250-300 km, so it only appears four times: one MP long run to bed it in before each race (Wk 18, and the Wk 29 dress rehearsal), Sevilla on 13 Dec, and Tokyo. Don't train in it. Buy it in November rather than January so a bad fit turns up at the half and not three weeks out — super shoes change calf and Achilles loading noticeably and not everyone gets on with a given geometry. Log mileage per pair in Strava (assign gear to each activity); most worn-shoe injuries happen because nobody was counting."
     },
     "paces": {
       "headers": [
@@ -2295,7 +2295,7 @@
           "Not a measurement, but corrected it corroborates the 5K. Next honest test is Sevilla."
         ],
         [
-          "Wk 20 · Sun 6 Dec",
+          "Wk 21 · Sun 13 Dec",
           "Half-marathon — Sevilla Half, signed up",
           "≤ 1:22:30",
           "1:22:30–1:25 → 2:49–2:53 (Boston via random draw) · >1:26 → 2:55+"
@@ -2308,7 +2308,7 @@
         ]
       ],
       "notes": [
-        "WK-13 10K IS VOID AS A TEST, BUT IT IS NOT A BAD SIGN (17 Oct, 39:22). Four confounders, all disclosed: ~7 pints the night before, diarrhoea during the warm-up, 23-24°C AND 80-90% humidity. The humidity is the one that matters most and was learned last: at 23.5°C/85% the dew point is 20.8°C and the wet bulb 21.6°C, so temp+dewpoint = 144°F, which sits in the 3.0-4.5% band. That is 71-106s over 10K, giving a corrected 37:36-38:11 against a 5K-predicted 38:18 (Riegel 1.06) — i.e. the corrected time MATCHES OR BEATS the prediction across the whole band, with the alcohol and GI handicaps still unaccounted for on top. So: too many uncontrolled variables to read a number off it, but it corroborates VDOT 54.8 rather than undercutting it. The HR (164 avg) was wrist-only and should be ignored outright. Do NOT re-run it — Sevilla on 6 Dec is the next honest test, and it will also be the first hard effort of the block run in cool conditions.",
+        "WK-13 10K IS VOID AS A TEST, BUT IT IS NOT A BAD SIGN (17 Oct, 39:22). Four confounders, all disclosed: ~7 pints the night before, diarrhoea during the warm-up, 23-24°C AND 80-90% humidity. The humidity is the one that matters most and was learned last: at 23.5°C/85% the dew point is 20.8°C and the wet bulb 21.6°C, so temp+dewpoint = 144°F, which sits in the 3.0-4.5% band. That is 71-106s over 10K, giving a corrected 37:36-38:11 against a 5K-predicted 38:18 (Riegel 1.06) — i.e. the corrected time MATCHES OR BEATS the prediction across the whole band, with the alcohol and GI handicaps still unaccounted for on top. So: too many uncontrolled variables to read a number off it, but it corroborates VDOT 54.8 rather than undercutting it. The HR (164 avg) was wrist-only and should be ignored outright. Do NOT re-run it — Sevilla on 13 Dec is the next honest test, and it will also be the first hard effort of the block run in cool conditions.",
         "BOSTON: hitting the standard does not get you in. The 2027 cut-off was 5:17 under, so 18-34 men needed 2:49:43 against a 2:55 standard, and ~8,000 qualifiers who beat the standard were still rejected. That is why the target is 2:48 and not 2:50. Two things soften it: the BAA now draws ~1,000 places at random from qualifiers who missed the cut-off, and your age group is set by your age on BOSTON race day (Apr 2028), not on race day in Tokyo — so turning 35 before then would drop the standard to 3:00 and change this whole target.",
         "Peak ~116 km — weekly volume is the biggest lever for marathon time, and the extra should be EASY km (your endurance lags your speed).",
         "Rest days are Monday (always) and Saturday in the re-entry weeks; race-week Friday rest is the one exception.",
