@@ -1,6 +1,8 @@
 """Shared reference content (Strength, Fuel & Life, common Tips) for the dashboards.
 Runner-specific Paces/Checkpoints/Goals live in each runner module."""
 
+import re
+
 SC_FOUNDATION = [
     ["Goblet squat", "3 × 10", "Full depth, controlled — base leg strength"],
     ["Rear-foot-elevated split squat", "3 × 8 / leg", "Unilateral — knee tracks over toe"],
@@ -54,19 +56,62 @@ WARMUP_ROUTINE = [
 WARMUP_HEADERS = ["Exercise", "Duration / Reps", "Why"]
 
 
-def note_wu(txt, typ):
+_REP_KM = re.compile(r"(\d+)×([\d.]+)\s*km")
+_REP_M  = re.compile(r"(\d+)×(\d+)\s*m")
+_CONT   = re.compile(r"([\d.]+)\s*km continuous")
+_REC    = re.compile(r"(?:(\d+):(\d+)|(\d+)\s*min|(\d+)\s*s)\s*(?:jog|float)")
+
+
+def _work_and_recovery(txt, jog_s):
+    """(work_km, recovery_km) for a structured rep/tempo session, else None.
+
+    Recovery jogs are real distance — 5x1 km off 2:30 jogs is ~1.7 km of running
+    between the reps — so they come out of the warm-up/cooldown budget rather than
+    being ignored."""
+    reps = rep_km = None
+    m = _REP_KM.search(txt)
+    if m:
+        reps, rep_km = int(m.group(1)), float(m.group(2))
+    else:
+        m = _REP_M.search(txt)
+        if m:
+            reps, rep_km = int(m.group(1)), int(m.group(2)) / 1000.0
+    if reps:
+        rec = 0.0
+        r = _REC.search(txt)
+        if r and reps > 1:
+            if r.group(1):   secs = int(r.group(1)) * 60 + int(r.group(2))
+            elif r.group(3): secs = int(r.group(3)) * 60
+            else:            secs = int(r.group(4))
+            rec = (reps - 1) * secs / jog_s
+        return reps * rep_km, rec
+    m = _CONT.search(txt)
+    if m:
+        return float(m.group(1)), 0.0
+    return None
+
+
+def note_wu(txt, typ, km=None, jog_s=360):
     """A quality session's km target is the WHOLE session (warm-up + reps/tempo + jog
-    recoveries + cooldown), not just the structured work described in the text — e.g. a
-    13 km session built around 5x1km reps has ~7 km of warm-up/cooldown/jog around that
-    5 km of hard running. Flag it in the text so the number doesn't read as a mismatch.
+    recoveries + cooldown), not just the structured work described in the text. Given
+    the day's target, spell the warm-up and cooldown out so the parts visibly add up to
+    the number on the left; without one, fall back to just flagging that they exist.
     Skip sessions that already state their own total ("Medium-long 16 km w/ middle 8 km
     @ MP") — adding the note there would double up rather than clarify."""
     if typ != "quality" or "w/u" in txt:
         return txt
     if txt.startswith("Medium-long") or " km w/" in txt:
         return txt
-    return txt + " + w/u & c/d"
-
+    parsed = _work_and_recovery(txt, jog_s) if km else None
+    if not parsed:
+        return txt + " + w/u & c/d"
+    work, rec = parsed
+    rest = km - work - rec
+    if rest < 2.5:                      # nothing sensible left to split
+        return txt + " + w/u & c/d"
+    wu = max(2.0, min(round(rest * 0.6 * 2) / 2, rest - 1.0))
+    cd = round(rest - wu, 1)
+    return f"{txt} · w/u {wu:g} km · c/d {cd:g} km"
 
 def strength(found_weeks, power_weeks, football=False, a_day="Tue", b_day="Fri"):
     extra = " or a match" if football else ""

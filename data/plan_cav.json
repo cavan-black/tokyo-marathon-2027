@@ -291,7 +291,7 @@
           "date": "2026-08-18",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog · w/u 4 km · c/d 3 km  +S&C (hard-day session)",
           "target_km": 13,
           "shoe": "Mach X3"
         },
@@ -494,7 +494,7 @@
           "date": "2026-09-09",
           "dow": "Wed",
           "type": "quality",
-          "session": "Tempo: 6 km continuous @ 4:15/km + w/u & c/d  +S&C (hard-day session)",
+          "session": "Tempo: 6 km continuous @ 4:15/km · w/u 2.5 km · c/d 1.5 km  +S&C (hard-day session)",
           "target_km": 10,
           "shoe": "Mach X3"
         },
@@ -559,7 +559,7 @@
           "date": "2026-09-16",
           "dow": "Wed",
           "type": "quality",
-          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog · w/u 2 km · c/d 1 km  +S&C (hard-day session)",
           "target_km": 9,
           "shoe": "EVO SL"
         },
@@ -811,7 +811,7 @@
           "date": "2026-10-13",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1 km @ 3:50/km (T), 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 5×1 km @ 3:50/km (T), 90s jog · w/u 3.5 km · c/d 2.5 km  +S&C (hard-day session)",
           "target_km": 12,
           "shoe": "Mach X3"
         },
@@ -892,7 +892,7 @@
           "date": "2026-10-22",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP tempo: 2×5 km @ 3:59/km (MP), 3 min float + w/u & c/d",
+          "session": "MP tempo: 2×5 km @ 3:59/km (MP), 3 min float · w/u 3.5 km · c/d 2 km",
           "target_km": 16,
           "shoe": "Mach X3"
         },
@@ -941,7 +941,7 @@
           "date": "2026-10-27",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "EVO SL"
         },
@@ -1071,7 +1071,7 @@
           "date": "2026-11-10",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1.5 km @ 3:48/km, 75s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 5×1.5 km @ 3:48/km, 75s jog · w/u 3.5 km · c/d 2.2 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1201,7 +1201,7 @@
           "date": "2026-11-24",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1274,8 +1274,8 @@
           "date": "2026-12-02",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 12 km + 6×20s strides",
-          "target_km": 12,
+          "session": "Easy 10 km + 6×20s strides",
+          "target_km": 10,
           "shoe": "Daily trainer"
         },
         {
@@ -1290,8 +1290,8 @@
           "date": "2026-12-04",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 8 km easy  +S&C (easy-day session)",
-          "target_km": 8,
+          "session": "Recovery 7 km easy  +S&C (easy-day session)",
+          "target_km": 7,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1306,8 +1306,8 @@
           "date": "2026-12-06",
           "dow": "Sun",
           "type": "race",
-          "session": "TUNE-UP: Sevilla Half Marathon (all-out) + w/u & c/d",
-          "target_km": 21,
+          "session": "TUNE-UP: Sevilla Half Marathon (all-out) · w/u 2 km · c/d 1 km",
+          "target_km": 24,
           "shoe": "RACE SHOE"
         }
       ]
@@ -1331,7 +1331,7 @@
           "date": "2026-12-08",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1.5 km @ 3:48/km, 75s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 5×1.5 km @ 3:48/km, 75s jog · w/u 3.5 km · c/d 2.2 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "EVO SL"
         },
@@ -1461,7 +1461,7 @@
           "date": "2026-12-22",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1526,7 +1526,7 @@
           "date": "2026-12-29",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
           "target_km": 15,
           "shoe": "EVO SL"
         },
@@ -1534,32 +1534,32 @@
           "date": "2026-12-30",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 13 km + 6×20s strides",
-          "target_km": 13,
+          "session": "Easy 10 km + 6×20s strides",
+          "target_km": 10,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-12-31",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP: 3×6 km @ 3:59/km, 3 min jog + w/u & c/d",
-          "target_km": 17,
+          "session": "MP: 3×6 km @ 3:59/km, 3 min jog · w/u 3 km · c/d 2 km",
+          "target_km": 24,
           "shoe": "EVO SL"
         },
         {
           "date": "2027-01-01",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 9 km easy  +S&C (easy-day session)",
-          "target_km": 9,
+          "session": "Recovery 7 km easy  +S&C (easy-day session)",
+          "target_km": 7,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2027-01-02",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 10 km + strides",
-          "target_km": 10,
+          "session": "Easy 8 km + strides",
+          "target_km": 8,
           "shoe": "Daily trainer"
         },
         {
@@ -1591,7 +1591,7 @@
           "date": "2027-01-05",
           "dow": "Tue",
           "type": "quality",
-          "session": "Race reps: 5×1.6 km @ 3:52/km, 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Race reps: 5×1.6 km @ 3:52/km, 90s jog · w/u 3.5 km · c/d 2.5 km  +S&C (hard-day session)",
           "target_km": 15,
           "shoe": "Mach X3"
         },
@@ -1656,7 +1656,7 @@
           "date": "2027-01-12",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 3×3 km @ 3:50/km, 2 min jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 3×3 km @ 3:50/km, 2 min jog · w/u 3 km · c/d 2.3 km  +S&C (hard-day session)",
           "target_km": 15,
           "shoe": "Mach X3"
         },
@@ -1786,7 +1786,7 @@
           "date": "2027-01-26",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog + w/u & c/d  +S&C (hard-day session)  (PM easy double)",
+          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)  (PM easy double)",
           "target_km": 15,
           "shoe": "Mach X3"
         },
@@ -1794,32 +1794,32 @@
           "date": "2027-01-27",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 21 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 21,
+          "session": "Easy 18 km + 6×20s strides  (double: split AM/PM)",
+          "target_km": 18,
           "shoe": "Daily trainer"
         },
         {
           "date": "2027-01-28",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP: 3×6 km @ 3:59/km, 3 min jog + w/u & c/d",
-          "target_km": 17,
+          "session": "MP: 3×6 km @ 3:59/km, 3 min jog · w/u 3 km · c/d 2 km",
+          "target_km": 24,
           "shoe": "Mach X3"
         },
         {
           "date": "2027-01-29",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 15 km easy  +S&C (easy-day session)",
-          "target_km": 15,
+          "session": "Recovery 13 km easy  +S&C (easy-day session)",
+          "target_km": 13,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2027-01-30",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 16 km + strides  (double)",
-          "target_km": 16,
+          "session": "Easy 14 km + strides  (double)",
+          "target_km": 14,
           "shoe": "Daily trainer"
         },
         {
@@ -1851,7 +1851,7 @@
           "date": "2027-02-02",
           "dow": "Tue",
           "type": "quality",
-          "session": "Race reps: 5×1.6 km @ 3:52/km, 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Race reps: 5×1.6 km @ 3:52/km, 90s jog · w/u 3.5 km · c/d 2.5 km  +S&C (hard-day session)",
           "target_km": 15,
           "shoe": "Mach X3"
         },
@@ -1916,7 +1916,7 @@
           "date": "2027-02-09",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 3×3 km @ 3:50/km, 2 min jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "Threshold: 3×3 km @ 3:50/km, 2 min jog · w/u 3 km · c/d 2.3 km  +S&C (hard-day session)",
           "target_km": 15,
           "shoe": "EVO SL"
         },
@@ -1924,32 +1924,32 @@
           "date": "2027-02-10",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 12 km + 6×20s strides",
-          "target_km": 12,
+          "session": "Easy 10 km + 6×20s strides",
+          "target_km": 10,
           "shoe": "Daily trainer"
         },
         {
           "date": "2027-02-11",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP: 2×8 km @ MP, 3 min float + w/u & c/d",
-          "target_km": 17,
+          "session": "MP: 2×8 km @ MP, 3 min float · w/u 3.5 km · c/d 2 km",
+          "target_km": 22,
           "shoe": "EVO SL"
         },
         {
           "date": "2027-02-12",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 8 km easy  +S&C (easy-day session)",
-          "target_km": 8,
+          "session": "Recovery 7 km easy  +S&C (easy-day session)",
+          "target_km": 7,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2027-02-13",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 10 km + strides",
-          "target_km": 10,
+          "session": "Easy 8 km + strides",
+          "target_km": 8,
           "shoe": "Daily trainer"
         },
         {
@@ -1981,7 +1981,7 @@
           "date": "2027-02-16",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog + w/u & c/d",
+          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog · w/u 2.5 km · c/d 1.8 km",
           "target_km": 9,
           "shoe": "Mach X3"
         },
@@ -2046,7 +2046,7 @@
           "date": "2027-02-23",
           "dow": "Tue",
           "type": "quality",
-          "session": "Sharpen: 3×1 km @ 3:48/km, 2 min jog + w/u & c/d",
+          "session": "Sharpen: 3×1 km @ 3:48/km, 2 min jog · w/u 3 km · c/d 2.3 km",
           "target_km": 9,
           "shoe": "Mach X3"
         },

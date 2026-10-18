@@ -1364,7 +1364,7 @@
           "date": "2026-12-29",
           "dow": "Tue",
           "type": "quality",
-          "session": "5K reps: 5×1 km @ 5K pace, 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "5K reps: 5×1 km @ 5K pace, 90s jog · w/u 2.5 km · c/d 1.6 km  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1422,7 +1422,7 @@
           "date": "2027-01-05",
           "dow": "Tue",
           "type": "quality",
-          "session": "MP: 6×1 km @ MP, 60s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "MP: 6×1 km @ MP, 60s jog · w/u 2 km · c/d 1.3 km  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1654,7 +1654,7 @@
           "date": "2027-02-02",
           "dow": "Tue",
           "type": "quality",
-          "session": "5K reps: 5×1 km @ 5K pace, 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "5K reps: 5×1 km @ 5K pace, 90s jog · w/u 2.5 km · c/d 1.6 km  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1712,7 +1712,7 @@
           "date": "2027-02-09",
           "dow": "Tue",
           "type": "quality",
-          "session": "MP: 6×1 km @ MP, 60s jog + w/u & c/d  +S&C (hard-day session)",
+          "session": "MP: 6×1 km @ MP, 60s jog · w/u 2 km · c/d 1.3 km  +S&C (hard-day session)",
           "target_km": 10
         },
         {

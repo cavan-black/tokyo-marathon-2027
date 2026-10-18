@@ -146,11 +146,12 @@ def qkm(w, which):
 def build_week(w):
     v=VOL[w-1]; lr=LR[w-1]; early=w<=8 or w in REBUILD_WEEKS
     tue_txt,tue_type=tue(w); thu_txt,thu_type=thu(w); sun_txt,sun_type=sun(w)
-    tue_txt = C.note_wu(tue_txt, tue_type); thu_txt = C.note_wu(thu_txt, thu_type)
     sat_txt,sat_type,sat_fixed=sat(w)
     days={}
     days["Mon"]=("Rest / mobility (see S&C)" if w!=33 else "Rest","rest",0)
     tue_km=qkm(w,"tue"); thu_km=qkm(w,"thu")
+    tue_txt = C.note_wu(tue_txt, tue_type, tue_km, jog_s=420)
+    thu_txt = C.note_wu(thu_txt, thu_type, thu_km, jog_s=420)
     if 5<=w<=30: tue_txt+="  +S&C (hard-day session)"
     known=lr+tue_km+thu_km+((sat_fixed or 0) if w in TT_WEEKS else 0)
     if w==33: known=0

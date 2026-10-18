@@ -19,7 +19,7 @@ VOL = [42,50,56,48,
        69,56,70]
 LR  = [12,14,16,14,
        18,0,14,16,18,16,20,22,18,
-       24,26,28,24,32,30,21,28,32,20,
+       24,26,28,24,32,30,24,28,32,20,
        24,32,28,38,32,35,32,
        21,18,42.195]
 # Wk 23 (21-27 Dec, Christmas) and Wk 24 (28 Dec-3 Jan, New Year) are a deliberate
@@ -190,7 +190,7 @@ def sun(w):
     d=lr_for(w)
     txt={16:"28 km, last 8 km @ MP",18:"32 km, last 10 km @ MP",
         19:"30 km easy (recovery weekend — no MP)",
-        20:"TUNE-UP: Sevilla Half Marathon (all-out) + w/u & c/d",
+        20:"TUNE-UP: Sevilla Half Marathon (all-out) · w/u 2 km · c/d 1 km",
         21:"28 km easy (post-race — keep it genuinely easy)",
         22:"32 km, last 10 km @ MP",
         23:"20 km easy — Christmas week, keep it light",
@@ -218,7 +218,7 @@ def qkm(w, which):
     if w <= 4:  return {"tue":10,"thu":8}[which]
     if w <= 13: return {"tue":13,"thu":11}[which]
     if w <= 23: return {"tue":14,"thu":16}[which]
-    if w <= 30: return {"tue":15,"thu":17}[which]
+    if w <= 30: return {"tue":15,"thu":{24:24,28:24,30:22}.get(w,17)}[which]
     return {"tue":9,"thu":8}[which]
 
 def build_week(w):
@@ -238,7 +238,8 @@ def build_week(w):
     easy_return = w in EASY_RETURN_WEEKS and tue_type == "quality"
     if easy_return:
         tue_txt, tue_type = f"Easy {tue_km} km + 6×20s strides (first week back — no quality yet)", "easy"
-    tue_txt = C.note_wu(tue_txt, tue_type); thu_txt = C.note_wu(thu_txt, thu_type)
+    tue_txt = C.note_wu(tue_txt, tue_type, tue_km)
+    thu_txt = C.note_wu(thu_txt, thu_type, thu_km)
     sat_txt,sat_type,sat_fixed = sat(w)
     days={}
     days["Mon"]=("Rest" if (reentry or w==33) else "Rest / mobility (full rest day)","rest",0)
