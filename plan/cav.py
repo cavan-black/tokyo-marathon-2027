@@ -168,8 +168,10 @@ REMINDERS = {
                    "March entry is released today and the popular slots go in minutes. You want Fri 5 Mar. "
                    "Note this is the night before your 4×3 km readiness test — buy the tickets, then "
                    "go straight back to bed; you have all of Wednesday to recover."],
-    "2027-02-13": ["🥋 Haru Basho (Osaka) tickets — sumo goes on sale roughly a month out. Check "
-                   "the Sumo Association site for the on-sale date and buy the morning it opens."],
+    "2027-02-06": ["🥋 Haru Basho (Osaka) tickets — advance sales open TODAY, 6 Feb. The 2027 "
+                   "basho runs 14–28 Mar at EDION Arena Osaka, so your Osaka leg has to sit on or "
+                   "after 14 Mar for this to exist at all. Verify on sumo.or.jp, then buy the "
+                   "morning it opens; Haru Basho sells out."],
     "2027-02-22": ["📱 Visit Japan Web — register immigration + customs now and save the QR codes "
                    "offline. Check in for the flight, and put every booking confirmation in one folder."],
     "2027-03-04": ["🎽️ EXPO — collect your race bib. Attendance is mandatory, there is no "

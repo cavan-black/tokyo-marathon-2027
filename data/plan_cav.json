@@ -1898,7 +1898,10 @@
           "type": "easy",
           "session": "Easy 13 km + strides  (double)",
           "target_km": 13,
-          "shoe": "Daily trainer #2"
+          "shoe": "Daily trainer #2",
+          "reminders": [
+            "🥋 Haru Basho (Osaka) tickets — advance sales open TODAY, 6 Feb. The 2027 basho runs 14–28 Mar at EDION Arena Osaka, so your Osaka leg has to sit on or after 14 Mar for this to exist at all. Verify on sumo.or.jp, then buy the morning it opens; Haru Basho sells out."
+          ]
         },
         {
           "date": "2027-02-07",
@@ -1969,10 +1972,7 @@
           "type": "easy",
           "session": "Easy 8 km + strides",
           "target_km": 8,
-          "shoe": "Daily trainer",
-          "reminders": [
-            "🥋 Haru Basho (Osaka) tickets — sumo goes on sale roughly a month out. Check the Sumo Association site for the on-sale date and buy the morning it opens."
-          ]
+          "shoe": "Daily trainer"
         },
         {
           "date": "2027-02-14",
