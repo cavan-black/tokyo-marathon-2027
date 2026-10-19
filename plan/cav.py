@@ -159,6 +159,10 @@ REMINDERS = {
                    "weekends sell out. Book now that you are inside the release window.",
                    "🚆 Sagano Romantic Train (11 Mar) — reserved seats, sells out in sakura season.",
                    "🥃 Yamazaki Distillery tour (13 Mar) — lottery/release opens months ahead.",
+                   "🥋 Check the sumo on-sale dates while you are at it — masu boxes "
+                   "sometimes open on an earlier date than chair seats, and one source has general "
+                   "sales starting ~2 months out, i.e. mid-January. If the dates have moved, tell me "
+                   "and I will shift the 6 Feb reminder.",
                    "🪪 Apply for the International Driving Permit — required for the Mario Kart "
                    "go-karting on 1 Mar, and it is posted to you, so it is not a last-week job."],
     "2027-02-08": ["⏰ GHIBLI IN 48 HOURS. Set a real alarm for 01:55 Wednesday morning and make sure "
@@ -169,9 +173,19 @@ REMINDERS = {
                    "Note this is the night before your 4×3 km readiness test — buy the tickets, then "
                    "go straight back to bed; you have all of Wednesday to recover."],
     "2027-02-06": ["🥋 Haru Basho (Osaka) tickets — advance sales open TODAY, 6 Feb. The 2027 "
-                   "basho runs 14–28 Mar at EDION Arena Osaka, so your Osaka leg has to sit on or "
-                   "after 14 Mar for this to exist at all. Verify on sumo.or.jp, then buy the "
-                   "morning it opens; Haru Basho sells out."],
+                   "basho runs 14–28 Mar at EDION Arena Osaka, so the Osaka leg has to sit on or "
+                   "after 14 Mar for this to exist at all. Buy the morning it opens — Haru Basho "
+                   "sells out.",
+                   "🎫 BUY: chair seats (isu-seki), 2×, via sumo.pia.jp/en — the English "
+                   "route. They sell individually, have backrests and a raised view. Do NOT book "
+                   "masu-seki: those tatami boxes sell as a whole box of four, so two of you pay "
+                   "for four, and you sit on cushions with no back for five hours. Osaka 2026 "
+                   "reference prices were ~¥3,500–11,000 per chair seat and ~¥34,000–60,000 per "
+                   "4-person box — guides disagree, so treat these as a ballpark and read the "
+                   "actual 2027 listing. Your day is a WEEKDAY, which is the cheap easy end; "
+                   "weekends and the closing days go first.",
+                   "⏰ Top-division (makuuchi) bouts run roughly 15:45–18:00 and the build-up is "
+                   "slow, so arriving ~15:00 is plenty — no need to burn the whole day on it."],
     "2027-02-22": ["📱 Visit Japan Web — register immigration + customs now and save the QR codes "
                    "offline. Check in for the flight, and put every booking confirmation in one folder."],
     "2027-03-04": ["🎽️ EXPO — collect your race bib. Attendance is mandatory, there is no "
