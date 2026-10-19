@@ -32,12 +32,12 @@ RACE  = date(2027, 3, 7)
 VOL = [28,34,40,32,46,52,42,56,
        60,66,54,70,
        40,44,48,42,52,56,46,50,
-       46,60,64,54,70,74,60,76,80,74,
-       56,40,30]
+       50,60,64,54,70,74,60,76,80,74,
+       56,40,65]
 LR  = [12,14,16,13,18,20,16,22,
        24,26,20,28,
-       16,18,20,14,22,24,16,21.1,
-       16,26,28,20,30,30,21.1,30,32,32,
+       16,18,20,14,22,24,16,16,
+       21.1,26,28,20,30,30,24,30,32,32,
        24,16,42.195]
 
 # Hard (MP-work) long-run weekends — always followed by an easy long-run weekend.
@@ -57,6 +57,14 @@ REBUILD_WEEKS = {13}
 # target_km follows the days that survive rather than the VOL array, or the dashboard
 # would show the week under-target against volume that was deliberately removed.
 KEEP_ONLY = {8: ("Fri", "Sun")}
+# Individual days rewritten wholesale, applied after the week is otherwise built. Race
+# week is the only user: the generator's pool logic cannot know that the 6 days before a
+# marathon are not a place to put 13 km on the Wednesday and 10 km on the Saturday.
+DAY_OVERRIDE = {33: {"Tue": ("Easy 8 km + 4×100 m strides", "easy", 8),
+                     "Wed": ("Easy 6 km — last real run, stay relaxed", "easy", 6),
+                     "Thu": ("Easy 5 km + 4×100 m strides", "easy", 5),
+                     "Fri": ("Rest", "rest", 0),
+                     "Sat": ("Shakeout: easy 4 km + 4×100 m strides", "easy", 4)}}
 
 def phase(w):
     if w<=12: return "Base (interrupted)"
@@ -84,13 +92,13 @@ def tue(w):
         lib=["Tempo: 2×10 min @ T, 2 min jog","Threshold: 4×5 min @ T, 90s jog",
              "Cruise: 5×3 min @ T, 75s jog","Tempo: 20 min continuous @ T"]
         return lib[(w-17)%len(lib)], "quality"
-    # Wk 21 Tuesday is two days after Sevilla — no quality, whatever the library says.
-    if w==21: return "Easy 10 km + strides (2 days after Sevilla — nothing hard this week)", "easy"
+    # Wk 22 Tuesday is two days after Sevilla — no quality, whatever the library says.
+    if w==22: return "Easy 10 km + strides (2 days after Sevilla — nothing hard this week)", "easy"
     if w<=30:
         lib=["Threshold: 4×6 min @ T, 90s jog","MP reps: 5×1.5 km @ MP, 90s jog",
              "Tempo: 2×15 min @ T, 3 min jog","5K reps: 5×1 km @ 5K pace, 90s jog","MP: 6×1 km @ MP, 60s jog"]
         return lib[(w-21)%len(lib)], "quality"
-    return {31:"Threshold: 3×5 min @ T, 90s jog",32:"Easy 5 km + 4×20s strides",
+    return {31:"Threshold: 3×5 min @ T, 90s jog",32:"Easy 6 km + 4×20s strides",
             33:"Easy 5 km + 4×100 m strides"}[w], ("quality" if w==31 else "easy")
 
 def thu(w):
@@ -100,8 +108,10 @@ def thu(w):
     if w<=20: return ("Easy 8 km + strides" if w%2 else "Easy 8 km"), "easy"
     if w<=30:
         # MP tempo only on easy-long-run weeks (never race-adjacent) — max 2 hard efforts/week
-        return (("MP tempo: 10 km w/ middle 6 km @ MP","quality") if w in (22,25,29)
-                else ("Easy 10 km","easy"))
+        if w==22: return "Easy 10 km — 4 days post-Sevilla", "easy"
+        # distance via qkm so the text can't drift from target_km when a week overrides it
+        return (("MP tempo: 10 km w/ middle 6 km @ MP","quality") if w in (23,25,29)
+                else (f"Easy {qkm(w,'thu')} km","easy"))
     return ({31:"MP: 2×3 km @ MP, 3 min jog",32:"Easy 6 km + strides",33:"Rest or easy 4 km"}[w],
             "quality" if w==31 else "easy")
 
@@ -111,10 +121,10 @@ def sun(w):
             "40 km this week, so the volume is there — but your longest run in seven weeks is "
             "15.7 km, so Sunday matches that and the extra km go midweek, not onto this run.",
         16:"14 km easy (cut-back — 5K trial yesterday, keep this one genuinely slow)",
-        19:"16 km easy — keep it genuinely easy (Sevilla Half next weekend)",
-        20:"Sevilla Half Marathon — run it CONTROLLED, no faster than long-run pace. "
-           "NOT a goal test: it lands 7 weeks into a rebuild and will read slow.",
-        21:"16 km easy (post-race recovery — no MP)",
+        20:"16 km easy — keep it genuinely easy (Sevilla Half next Sunday)",
+        21:"Sevilla Half Marathon — run it CONTROLLED, no faster than long-run pace. "
+           "NOT a goal test: it lands 8 weeks into a rebuild and will read slow.",
+        22:"26 km easy (post-race — keep it genuinely easy, no MP)",
         23:"28 km, last 6 km @ MP",
         24:"20 km easy (cut-back / festive week — no MP)",
         26:"30 km, last 8 km @ MP",
@@ -125,7 +135,7 @@ def sun(w):
         31:"24 km easy",32:"16 km easy w/ 4×1 km @ MP",
         33:"RACE DAY — Tokyo Marathon · goal set by your build (target 4:00 · floor 4:30)"}
     t = txt.get(w, f"{d:g} km easy" + (" + last 4 km @ MP" if w in (9,12,18) else ""))
-    return t, ("race" if w in (20,27,33) else "long")
+    return t, ("race" if w in (21,27,33) else "long")
 
 def sat(w):
     if w==10: return "parkrun 5K — TIME TRIAL (checkpoint) + w/u", "tt", 8
@@ -140,7 +150,11 @@ def qkm(w, which):
     if w<=12: return {"tue":9,"thu":8}[which]
     if w<=16: return {"tue":8,"thu":7}[which]
     if w<=20: return {"tue":9,"thu":8}[which]
+    if w==21: return {"tue":9,"thu":7}[which]
     if w<=30: return {"tue":10,"thu":10}[which]
+    # Wk 31 still carries real work — 3x5 min @ T and 2x3 km @ MP — and 6 km days left
+    # no room for it, never mind a warm-up. Taper cuts volume, not the session.
+    if w==31: return {"tue":8,"thu":10}[which]
     return {"tue":6,"thu":6}[which]
 
 def build_week(w):
@@ -177,8 +191,10 @@ def build_week(w):
         elif w<=30:
             fri_txt=f"Recovery {fri_km} km easy  +S&C (easy-day session)"; fri_type="recovery"; fri_kmv=fri_km
         else:
-            fri_txt="Rest" if w==33 else "Recovery 5 km easy"
-            fri_type="rest" if w==33 else "recovery"; fri_kmv=0 if w==33 else 5
+            # fri_km, not a hardcoded 5: the pool above was already split using fri_km,
+            # so a literal here silently pushed the taper weeks over their own target.
+            fri_txt="Rest" if w==33 else f"Recovery {fri_km} km easy"
+            fri_type="rest" if w==33 else "recovery"; fri_kmv=0 if w==33 else fri_km
     wed_txt=f"Easy {wed_km} km"+("" if early else " + strides")
     if early:
         sat_txt,sat_type,sat_kmv="Rest","rest",0
@@ -189,6 +205,8 @@ def build_week(w):
     days["Tue"]=(tue_txt,tue_type,tue_km); days["Wed"]=(wed_txt,"easy",wed_km)
     days["Thu"]=(thu_txt,thu_type,thu_km); days["Fri"]=(fri_txt,fri_type,fri_kmv)
     days["Sat"]=(sat_txt,sat_type,sat_kmv); days["Sun"]=(sun_txt,sun_type,round(lr,1))
+    for dow,spec in DAY_OVERRIDE.get(w,{}).items():
+        days[dow]=spec
     keep=KEEP_ONLY.get(w)
     if keep:
         # Days that were already rest keep their own wording (Monday's mobility note);
@@ -200,9 +218,9 @@ def build_week(w):
 
 def focus(w):
     return {10:"5K checkpoint (missed)",13:"RESET — rebuild starts here",
-            16:"5K checkpoint (re-anchors paces)",20:"Sevilla Half — controlled",
+            16:"5K checkpoint (re-anchors paces)",20:"Sevilla is next Sunday",21:"Sevilla Half — controlled",
             27:"Half tune-up (sets your goal)",30:"Final long run",
-            33:"RACE WEEK"}.get(w, "Cut-back / recovery week" if w in (4,11,19,21,24,31) else "")
+            33:"RACE WEEK"}.get(w, "Cut-back / recovery week" if w in (4,11,19,24,31) else "")
 
 DOW=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 
@@ -236,7 +254,7 @@ def content():
             "headers": ["Wk / date", "Test", "Floor 4:30", "Target 4:00", "Stretch 3:30"], "rows": [
                 ["Wk 10 · 21 Sep", "5K time trial", "— missed —", "— missed —", "— missed —"],
                 ["Wk 16 · Sat 7 Nov", "5K time trial (re-anchor)", "~28:00", "~25:00", "~21:55"],
-                ["Wk 20 · Sun 6 Dec", "Sevilla Half — controlled, NOT a test", "—", "—", "—"],
+                ["Wk 21 · Sun 13 Dec", "Sevilla Half — controlled, NOT a test", "—", "—", "—"],
                 ["Wk 27 · Sun 24 Jan", "Half-marathon (all-out)", "~2:09:30", "~1:55:00", "~1:40:45"],
                 ["Race · 7 Mar", "Marathon", "4:30 · 6:24/km", "4:00 · 5:41/km", "3:30 · 4:59/km"]],
             "notes": [
@@ -259,7 +277,7 @@ def content():
                 "weeks, drop to ~60 km and keep the consistency: 16 straight weeks at 60 beats 8 at 80 and 8 at "
                 "zero, and the second pattern is what weeks 7–12 already were. Make that call at the Wk-27 half, "
                 "deliberately, not by quietly missing Sundays.",
-                "Sevilla Half (Sun 6 Dec, Wk 20) — signed up alongside Cav. It arrives only 7 weeks into the "
+                "Sevilla Half (Sun 13 Dec, Wk 21) — signed up alongside Cav. It arrives only 7 weeks into the "
                 "rebuild, so it is a controlled long run at long-run pace, NOT a goal test. Running it hard will "
                 "produce a number that scares you for no reason. The real test is the Wk-27 half on 24 Jan."]},
         "strength": C.strength("1–20", "21–30", football=True),

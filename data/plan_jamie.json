@@ -1109,7 +1109,7 @@
           "date": "2026-11-29",
           "dow": "Sun",
           "type": "long",
-          "session": "16 km easy — keep it genuinely easy (Sevilla Half next weekend)",
+          "session": "16 km easy",
           "target_km": 16
         }
       ]
@@ -1119,7 +1119,7 @@
       "start": "2026-11-30",
       "phase": "Aerobic Base",
       "target_km": 50,
-      "focus": "Sevilla Half — controlled",
+      "focus": "Sevilla is next Sunday",
       "days": [
         {
           "date": "2026-11-30",
@@ -1139,8 +1139,8 @@
           "date": "2026-12-02",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 5 km + strides",
-          "target_km": 5
+          "session": "Easy 7 km + strides",
+          "target_km": 7
         },
         {
           "date": "2026-12-03",
@@ -1153,22 +1153,22 @@
           "date": "2026-12-04",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 3 km easy  +S&C (easy-day session)",
-          "target_km": 3
+          "session": "Recovery 4 km easy  +S&C (easy-day session)",
+          "target_km": 4
         },
         {
           "date": "2026-12-05",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 3.9 km + strides",
-          "target_km": 3.9
+          "session": "Easy 6 km + strides",
+          "target_km": 6
         },
         {
           "date": "2026-12-06",
           "dow": "Sun",
-          "type": "race",
-          "session": "Sevilla Half Marathon — run it CONTROLLED, no faster than long-run pace. NOT a goal test: it lands 7 weeks into a rebuild and will read slow.",
-          "target_km": 21.1
+          "type": "long",
+          "session": "16 km easy — keep it genuinely easy (Sevilla Half next Sunday)",
+          "target_km": 16
         }
       ]
     },
@@ -1176,8 +1176,8 @@
       "week": 21,
       "start": "2026-12-07",
       "phase": "Marathon-Specific",
-      "target_km": 46,
-      "focus": "Cut-back / recovery week",
+      "target_km": 50,
+      "focus": "Sevilla Half — controlled",
       "days": [
         {
           "date": "2026-12-07",
@@ -1189,44 +1189,44 @@
         {
           "date": "2026-12-08",
           "dow": "Tue",
-          "type": "easy",
-          "session": "Easy 10 km + strides (2 days after Sevilla — nothing hard this week)  +S&C (hard-day session)",
-          "target_km": 10
+          "type": "quality",
+          "session": "Threshold: 4×6 min @ T, 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "target_km": 9
         },
         {
           "date": "2026-12-09",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 4 km + strides",
-          "target_km": 4
+          "session": "Easy 5 km + strides",
+          "target_km": 5
         },
         {
           "date": "2026-12-10",
           "dow": "Thu",
           "type": "easy",
-          "session": "Easy 10 km",
-          "target_km": 10
+          "session": "Easy 7 km",
+          "target_km": 7
         },
         {
           "date": "2026-12-11",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 2 km easy  +S&C (easy-day session)",
-          "target_km": 2
+          "session": "Recovery 3 km easy  +S&C (easy-day session)",
+          "target_km": 3
         },
         {
           "date": "2026-12-12",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 4 km + strides",
-          "target_km": 4
+          "session": "Easy 4.9 km + strides",
+          "target_km": 4.9
         },
         {
           "date": "2026-12-13",
           "dow": "Sun",
-          "type": "long",
-          "session": "16 km easy (post-race recovery — no MP)",
-          "target_km": 16
+          "type": "race",
+          "session": "Sevilla Half Marathon — run it CONTROLLED, no faster than long-run pace. NOT a goal test: it lands 8 weeks into a rebuild and will read slow.",
+          "target_km": 21.1
         }
       ]
     },
@@ -1247,8 +1247,8 @@
         {
           "date": "2026-12-15",
           "dow": "Tue",
-          "type": "quality",
-          "session": "MP reps: 5×1.5 km @ MP, 90s jog + w/u & c/d  +S&C (hard-day session)",
+          "type": "easy",
+          "session": "Easy 10 km + strides (2 days after Sevilla — nothing hard this week)  +S&C (hard-day session)",
           "target_km": 10
         },
         {
@@ -1261,8 +1261,8 @@
         {
           "date": "2026-12-17",
           "dow": "Thu",
-          "type": "quality",
-          "session": "MP tempo: 10 km w/ middle 6 km @ MP",
+          "type": "easy",
+          "session": "Easy 10 km — 4 days post-Sevilla",
           "target_km": 10
         },
         {
@@ -1283,7 +1283,7 @@
           "date": "2026-12-20",
           "dow": "Sun",
           "type": "long",
-          "session": "26 km easy",
+          "session": "26 km easy (post-race — keep it genuinely easy, no MP)",
           "target_km": 26
         }
       ]
@@ -1319,8 +1319,8 @@
         {
           "date": "2026-12-24",
           "dow": "Thu",
-          "type": "easy",
-          "session": "Easy 10 km",
+          "type": "quality",
+          "session": "MP tempo: 10 km w/ middle 6 km @ MP",
           "target_km": 10
         },
         {
@@ -1545,8 +1545,8 @@
           "date": "2027-01-20",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 8 km + strides",
-          "target_km": 8
+          "session": "Easy 7 km + strides",
+          "target_km": 7
         },
         {
           "date": "2027-01-21",
@@ -1566,15 +1566,15 @@
           "date": "2027-01-23",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 6.9 km + strides",
-          "target_km": 6.9
+          "session": "Easy 5 km + strides",
+          "target_km": 5
         },
         {
           "date": "2027-01-24",
           "dow": "Sun",
           "type": "race",
           "session": "TUNE-UP: Half-marathon race (all-out — THIS sets your goal) + w/u & c/d",
-          "target_km": 21.1
+          "target_km": 24
         }
       ]
     },
@@ -1771,35 +1771,35 @@
           "dow": "Tue",
           "type": "quality",
           "session": "Threshold: 3×5 min @ T, 90s jog + w/u & c/d",
-          "target_km": 6
+          "target_km": 8
         },
         {
           "date": "2027-02-17",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 8 km + strides",
-          "target_km": 8
+          "session": "Easy 6 km + strides",
+          "target_km": 6
         },
         {
           "date": "2027-02-18",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP: 2×3 km @ MP, 3 min jog + w/u & c/d",
-          "target_km": 6
+          "session": "MP: 2×3 km @ MP, 3 min jog · w/u 2 km · c/d 1.6 km",
+          "target_km": 10
         },
         {
           "date": "2027-02-19",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 5 km easy",
-          "target_km": 5
+          "session": "Recovery 3 km easy",
+          "target_km": 3
         },
         {
           "date": "2027-02-20",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 8 km + strides",
-          "target_km": 8
+          "session": "Easy 5 km + strides",
+          "target_km": 5
         },
         {
           "date": "2027-02-21",
@@ -1828,7 +1828,7 @@
           "date": "2027-02-23",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 5 km + 4×20s strides",
+          "session": "Easy 6 km + 4×20s strides",
           "target_km": 6
         },
         {
@@ -1849,8 +1849,8 @@
           "date": "2027-02-26",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 5 km easy",
-          "target_km": 5
+          "session": "Recovery 3 km easy",
+          "target_km": 3
         },
         {
           "date": "2027-02-27",
@@ -1872,7 +1872,7 @@
       "week": 33,
       "start": "2027-03-01",
       "phase": "Taper & Race",
-      "target_km": 30,
+      "target_km": 65,
       "focus": "RACE WEEK",
       "days": [
         {
@@ -1886,22 +1886,22 @@
           "date": "2027-03-02",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 5 km + 4×100 m strides",
-          "target_km": 6
+          "session": "Easy 8 km + 4×100 m strides",
+          "target_km": 8
         },
         {
           "date": "2027-03-03",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 13 km + strides",
-          "target_km": 13
+          "session": "Easy 6 km — last real run, stay relaxed",
+          "target_km": 6
         },
         {
           "date": "2027-03-04",
           "dow": "Thu",
           "type": "easy",
-          "session": "Rest or easy 4 km",
-          "target_km": 6
+          "session": "Easy 5 km + 4×100 m strides",
+          "target_km": 5
         },
         {
           "date": "2027-03-05",
@@ -2035,7 +2035,7 @@
           "~21:55"
         ],
         [
-          "Wk 20 · Sun 6 Dec",
+          "Wk 21 · Sun 13 Dec",
           "Sevilla Half — controlled, NOT a test",
           "—",
           "—",
@@ -2064,7 +2064,7 @@
         "Max 2 hard run-efforts per week: Tue quality plus EITHER the Thu MP tempo OR a Sunday MP long run — never both. Hard long-run weekends always alternate with easy ones (and football still counts on top).",
         "Rest days are Monday (always), plus Saturday through week 8 and again in the wk 13–15 rebuild; race-week Friday rest is the one exception.",
         "The 80 km peak is load-bearing, not optional — but be clear what it is for. Sub-4 is 5:41/km and is regularly run off 50–60 km weeks; it is a pace problem more than a volume problem. The 80 km is there to make 4:00 comfortable rather than possible. So if it starts costing you weeks, drop to ~60 km and keep the consistency: 16 straight weeks at 60 beats 8 at 80 and 8 at zero, and the second pattern is what weeks 7–12 already were. Make that call at the Wk-27 half, deliberately, not by quietly missing Sundays.",
-        "Sevilla Half (Sun 6 Dec, Wk 20) — signed up alongside Cav. It arrives only 7 weeks into the rebuild, so it is a controlled long run at long-run pace, NOT a goal test. Running it hard will produce a number that scares you for no reason. The real test is the Wk-27 half on 24 Jan."
+        "Sevilla Half (Sun 13 Dec, Wk 21) — signed up alongside Cav. It arrives only 7 weeks into the rebuild, so it is a controlled long run at long-run pace, NOT a goal test. Running it hard will produce a number that scares you for no reason. The real test is the Wk-27 half on 24 Jan."
       ]
     },
     "strength": {
