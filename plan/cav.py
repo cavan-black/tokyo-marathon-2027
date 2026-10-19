@@ -138,10 +138,23 @@ VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69, 26: 95}
 # miss the date. Rendered under the day's session, never above it — the run is still the
 # point of the page.
 REMINDERS = {
-    "2026-11-02": ["✈️ Book Tokyo flights — 27 Feb out, 29 Mar back. Four months out is "
-                   "about the floor for long-haul pricing.",
-                   "🏨 Book Tokyo race-weekend accommodation. Marathon weekend hotels near the "
-                   "start (Shinjuku) and finish (Tokyo Station) go early and the price only moves one way."],
+    # Flights are a price-watch, not a calendar date. The published windows for Asia
+    # long-haul are 3-5 months (Points Guy / Travel Market News, both off Google Flights
+    # data) and 60-180 days (Going), and Google's own route analysis found US-Europe fares
+    # bottoming near 129 days out. Departure is 27 Feb 2027, so the window is open NOW and
+    # closing, not opening in November. Track, then book on a dip, with a hard backstop.
+    "2026-10-19": ["✈️ Set Google Flights price alerts TODAY — this is an open-jaw: "
+                   "Málaga → Tokyo (27 Feb) and Naha → Málaga (29 Mar), booked as one "
+                   "multi-city ticket, not two returns. Price the alliance routings (one-world via "
+                   "LHR/HEL, SkyTeam via AMS/CDG) separately — on an open-jaw, which fare buckets "
+                   "are open matters more than the day you buy.",
+                   "🏨 Book the Tokyo race-weekend hotel today too. Free-cancellation rates "
+                   "mean there is no downside to booking early, and marathon-weekend rooms near the "
+                   "start (Shinjuku) and finish (Tokyo Station) only move one way."],
+    "2026-12-28": ["✈️ FLIGHT BACKSTOP — 60 days out. If the alert has not given you a dip "
+                   "worth waiting for, book today anyway. Past this point fares climb, and Tokyo "
+                   "Marathon weekend plus the start of sakura season on the return leg is the worst "
+                   "possible pair of dates to be holding out on."],
     "2027-01-04": ["🎫 teamLab tickets (Borderless, Azabudai Hills) for Mon 1 Mar — timed entry, "
                    "weekends sell out. Book now that you are inside the release window.",
                    "🚆 Sagano Romantic Train (11 Mar) — reserved seats, sells out in sakura season.",

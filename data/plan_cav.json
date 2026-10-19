@@ -870,7 +870,11 @@
           "type": "rest",
           "session": "Rest / mobility (full rest day)",
           "target_km": 0,
-          "shoe": null
+          "shoe": null,
+          "reminders": [
+            "✈️ Set Google Flights price alerts TODAY — this is an open-jaw: Málaga → Tokyo (27 Feb) and Naha → Málaga (29 Mar), booked as one multi-city ticket, not two returns. Price the alliance routings (one-world via LHR/HEL, SkyTeam via AMS/CDG) separately — on an open-jaw, which fare buckets are open matters more than the day you buy.",
+            "🏨 Book the Tokyo race-weekend hotel today too. Free-cancellation rates mean there is no downside to booking early, and marathon-weekend rooms near the start (Shinjuku) and finish (Tokyo Station) only move one way."
+          ]
         },
         {
           "date": "2026-10-20",
@@ -1000,11 +1004,7 @@
           "type": "rest",
           "session": "Rest / mobility (full rest day)",
           "target_km": 0,
-          "shoe": null,
-          "reminders": [
-            "✈️ Book Tokyo flights — 27 Feb out, 29 Mar back. Four months out is about the floor for long-haul pricing.",
-            "🏨 Book Tokyo race-weekend accommodation. Marathon weekend hotels near the start (Shinjuku) and finish (Tokyo Station) go early and the price only moves one way."
-          ]
+          "shoe": null
         },
         {
           "date": "2026-11-03",
@@ -1524,7 +1524,10 @@
           "type": "rest",
           "session": "Rest / mobility (full rest day)",
           "target_km": 0,
-          "shoe": null
+          "shoe": null,
+          "reminders": [
+            "✈️ FLIGHT BACKSTOP — 60 days out. If the alert has not given you a dip worth waiting for, book today anyway. Past this point fares climb, and Tokyo Marathon weekend plus the start of sakura season on the return leg is the worst possible pair of dates to be holding out on."
+          ]
         },
         {
           "date": "2026-12-29",
