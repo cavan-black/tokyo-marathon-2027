@@ -9,7 +9,7 @@
     "race": "2027-03-07",
     "peak_km": 116,
     "total_weeks": 33,
-    "goal_note": "Anchored on 2:48 (3:59/km) — the Boston 18-34 cut-off, not a round number. Calibrate at the Wk-20 half."
+    "goal_note": "Anchored on 2:48 (3:59/km) — the Boston 18-34 cut-off, not a round number. Calibrate at the Wk-21 half."
   },
   "weeks": [
     {
@@ -1320,7 +1320,7 @@
       "week": 21,
       "start": "2026-12-07",
       "phase": "Marathon-Specific I",
-      "target_km": 80,
+      "target_km": 68,
       "focus": "Half tune-up (calibrate goal)",
       "days": [
         {
@@ -1335,8 +1335,8 @@
           "date": "2026-12-08",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1.5 km @ 3:48/km, 75s jog · w/u 3.5 km · c/d 2.2 km  +S&C (hard-day session)",
-          "target_km": 14,
+          "session": "Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog · w/u 3.5 km · c/d 2.5 km  +light S&C — half the usual threshold volume, five days out",
+          "target_km": 11,
           "shoe": "EVO SL"
         },
         {
@@ -1351,24 +1351,24 @@
           "date": "2026-12-10",
           "dow": "Thu",
           "type": "easy",
-          "session": "Medium-long 16 km easy",
-          "target_km": 16,
+          "session": "Easy 11 km — no medium-long this week, Sunday is the session",
+          "target_km": 11,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2026-12-11",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 7 km easy  +S&C (easy-day session)",
-          "target_km": 7,
+          "session": "Recovery 6 km easy  +light S&C (race week)",
+          "target_km": 6,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2026-12-12",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 9 km + strides",
-          "target_km": 9,
+          "session": "Shakeout: easy 6 km + 4×100 m strides at race pace",
+          "target_km": 6,
           "shoe": "Daily trainer #2"
         },
         {
@@ -2302,10 +2302,10 @@
           "20s pickups, not a workout"
         ]
       ],
-      "note": "T/10K/I paces come from the 3 Oct time trial — 18:22 actual, Strava GAP 3:41/km = 18:25 flat-equivalent, VDOT ~54.8 — NOT from the 2:48 goal. Training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. Moving the goal 2:50 → 2:48 therefore moved ONE row: MP, 4:01 → 3:59. Threshold, 10K and interval paces are unchanged, because your physiology did not change when the target did. HR TARGETS BELOW ARE PROVISIONAL — every HR figure anchoring them came from a wrist optical sensor, which under-reads and cadence-locks on exactly the hard efforts that matter. Re-establish them with the chest strap before trusting any bpm number. Recalibrate pace at the Wk-20 half. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard long-run weekends always alternate with easy ones."
+      "note": "T/10K/I paces come from the 3 Oct time trial — 18:22 actual, Strava GAP 3:41/km = 18:25 flat-equivalent, VDOT ~54.8 — NOT from the 2:48 goal. Training paces have to match the engine you have, and goal-anchored threshold work is just racing in disguise. Moving the goal 2:50 → 2:48 therefore moved ONE row: MP, 4:01 → 3:59. Threshold, 10K and interval paces are unchanged, because your physiology did not change when the target did. HR TARGETS BELOW ARE PROVISIONAL — every HR figure anchoring them came from a wrist optical sensor, which under-reads and cadence-locks on exactly the hard efforts that matter. Re-establish them with the chest strap before trusting any bpm number. Recalibrate pace at the Wk-21 half. Run easy days and ALL doubles genuinely easy — conversational. Max 2 hard days per week: Tue quality plus EITHER the Thu session OR a Sunday MP long run — never both. Hard long-run weekends always alternate with easy ones."
     },
     "checkpoints": {
-      "intro": "2:48 is the A-goal, and it is a number with a reason: Boston's 18-34 standard is 2:55, but the 2027 cut-off came in 5:17 UNDER that, so 2:49:43 was the real entry time. 2:48 buys ~2 min of margin against a cut-off that moves every year (6:51 in 2025, 5:29 in 2024). 2:50 would have missed by 17 seconds. The 3 Oct 5K read 18:22 on a net -60 m course; Strava GAP puts it at 3:41/km = 18:25 flat, so a genuine PR by ~57s and VDOT ~54.8 — which is a ~2:56 engine on the Daniels tables, not yet a 2:48 one. Two things have to move: the engine, and the mileage behind it — 13 weeks in, the average is ~43 km/wk against a 116 km peak, and under-trained runners finish well behind what a 5K says they are worth. The mileage IS the plan; the engine follows it. Don't lock race-day pace until the Wk-20 half.",
+      "intro": "2:48 is the A-goal, and it is a number with a reason: Boston's 18-34 standard is 2:55, but the 2027 cut-off came in 5:17 UNDER that, so 2:49:43 was the real entry time. 2:48 buys ~2 min of margin against a cut-off that moves every year (6:51 in 2025, 5:29 in 2024). 2:50 would have missed by 17 seconds. The 3 Oct 5K read 18:22 on a net -60 m course; Strava GAP puts it at 3:41/km = 18:25 flat, so a genuine PR by ~57s and VDOT ~54.8 — which is a ~2:56 engine on the Daniels tables, not yet a 2:48 one. Two things have to move: the engine, and the mileage behind it — 13 weeks in, the average is ~43 km/wk against a 116 km peak, and under-trained runners finish well behind what a 5K says they are worth. The mileage IS the plan; the engine follows it. Don't lock race-day pace until the Wk-21 half.",
       "headers": [
         "Wk / date",
         "Test",
@@ -2328,8 +2328,8 @@
         [
           "Wk 21 · Sun 13 Dec",
           "Half-marathon — Sevilla Half, signed up",
-          "≤ 1:22:30",
-          "1:22:30–1:25 → 2:49–2:53 (Boston via random draw) · >1:26 → 2:55+"
+          "≤ 1:22:00 · 3:53/km · 6:15/mi",
+          "1:22:00–1:22:30 live but tight · 1:22:30–1:23:30 needs everything to go right, decide at Wk 30 · >1:23:30 → re-target 2:52–2:55"
         ],
         [
           "Wk 30 · Thu 11 Feb",
@@ -2346,10 +2346,11 @@
       ],
       "notes": [
         "WK-13 10K IS VOID AS A TEST, BUT IT IS NOT A BAD SIGN (17 Oct, 39:22). Four confounders, all disclosed: ~7 pints the night before, diarrhoea during the warm-up, 23-24°C AND 80-90% humidity. The humidity is the one that matters most and was learned last: at 23.5°C/85% the dew point is 20.8°C and the wet bulb 21.6°C, so temp+dewpoint = 144°F, which sits in the 3.0-4.5% band. That is 71-106s over 10K, giving a corrected 37:36-38:11 against a 5K-predicted 38:18 (Riegel 1.06) — i.e. the corrected time MATCHES OR BEATS the prediction across the whole band, with the alcohol and GI handicaps still unaccounted for on top. So: too many uncontrolled variables to read a number off it, but it corroborates VDOT 54.8 rather than undercutting it. The HR (164 avg) was wrist-only and should be ignored outright. Do NOT re-run it — Sevilla on 13 Dec is the next honest test, and it will also be the first hard effort of the block run in cool conditions.",
+        "SEVILLA PACING — the number is 1:22:00, and it is not just read off a Riegel table. 2:48 off an ORDINARY conversion needs about 1:20:45 of half fitness tapered and at peak; Sevilla is neither. Two things offset: wks 22-33 are the marathon-specific ones and a well-run twelve weeks there is worth ~1.5%, while racing untapered off a 68 km week costs ~1%. Net: 1:22:00 in December plus an ordinary twelve weeks arrives at 2:48 needing nothing exotic in March. Even-split pacing, per km / per mile / 5K / 10K / 15K / 20K: 1:21:30 = 3:52 / 6:13 / 19:19 / 38:38 / 57:57 / 1:17:16 · 1:22:00 = 3:53 / 6:15 / 19:26 / 38:52 / 58:18 / 1:17:44 · 1:22:30 = 3:55 / 6:18 / 19:33 / 39:06 / 58:39 / 1:18:12 · 1:23:30 = 3:57 / 6:22 / 19:47 / 39:35 / 59:22 / 1:19:09. DO NOT TRY TO PACE THE BANDS — 1:21:30 and 1:22:30 are 3 s/km apart, which is finer than anyone paces or than the chip timing resolves. Run 3:53 and let the clock sort it out. The one hard rule: do not go out at 3:50 and fade. A faded half is a contaminated data point — you will not know afterwards whether you were 1:22:30 fit or 1:21:00 fit and blew up, and the whole value of this race is that it is the first clean read of the block. Run 3:53 to 15 km, then spend whatever is left: Zaragoza was a negative split, so he can do this, and 1:21:30 off a strong last 6 km is worth more than 1:21:30 off a fade.",
         "BOSTON: hitting the standard does not get you in. The 2027 cut-off was 5:17 under, so 18-34 men needed 2:49:43 against a 2:55 standard, and ~8,000 qualifiers who beat the standard were still rejected. That is why the target is 2:48 and not 2:50. Two things soften it: the BAA now draws ~1,000 places at random from qualifiers who missed the cut-off, and your age group is set by your age on BOSTON race day (Apr 2028), not on race day in Tokyo — so turning 35 before then would drop the standard to 3:00 and change this whole target.",
         "Peak ~116 km — weekly volume is the biggest lever for marathon time, and the extra should be EASY km (your endurance lags your speed).",
         "Rest days are Monday (always) and Saturday in the re-entry weeks; race-week Friday rest is the one exception.",
-        "Hard long runs alternate with easy ones — never two hard long-run weekends in a row, and the weekends before/after the Wk-20 half are easy.",
+        "Hard long runs alternate with easy ones — never two hard long-run weekends in a row, and the weekends before/after the Wk-21 half are easy.",
         "Wk 23 (Christmas) and Wk 24 (New Year) are a deliberate holiday dip — volume drops to ~76-88 km so the block doesn't fight the festive season. The ramp resumes from Wk 25, the week starting the day after New Year's Day.",
         "Injury risk is about ramp rate, not the ceiling — ~7–10% weekly steps; respect cut-back weeks (4,10,17) and the holiday dip (23,24).",
         "Wk 6 is Lost Village — a planned week off, not a missed week. Wk 7 comes back at 45 km with no quality session; volume returns before intensity does. Do NOT try to make up Wk 5 or Wk 6 — the rebuild already accounts for both.",
