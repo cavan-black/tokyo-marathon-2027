@@ -51681,8 +51681,8 @@
       "week": 21,
       "dow": "Tue",
       "type": "quality",
-      "session": "Threshold: 5×1.5 km @ 3:48/km, 75s jog · w/u 3.5 km · c/d 2.2 km  +S&C (hard-day session)",
-      "target_km": 14,
+      "session": "Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog · w/u 3.5 km · c/d 2.5 km  +light S&C — half the usual threshold volume, five days out",
+      "target_km": 11,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -51707,8 +51707,8 @@
       "week": 21,
       "dow": "Thu",
       "type": "easy",
-      "session": "Medium-long 16 km easy",
-      "target_km": 16,
+      "session": "Easy 11 km — no medium-long this week, Sunday is the session",
+      "target_km": 11,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -51720,8 +51720,8 @@
       "week": 21,
       "dow": "Fri",
       "type": "recovery",
-      "session": "Recovery 7 km easy  +S&C (easy-day session)",
-      "target_km": 7,
+      "session": "Recovery 6 km easy  +light S&C (race week)",
+      "target_km": 6,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -51733,8 +51733,8 @@
       "week": 21,
       "dow": "Sat",
       "type": "easy",
-      "session": "Easy 9 km + strides",
-      "target_km": 9,
+      "session": "Shakeout: easy 6 km + 4×100 m strides at race pace",
+      "target_km": 6,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -53170,7 +53170,7 @@
       "flag": "✓ On track"
     },
     "21": {
-      "planned_km": 80,
+      "planned_km": 68,
       "planned_km_due": 0,
       "actual_km": 0,
       "substituted_km": 0,
@@ -53378,7 +53378,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-20T11:08:33+00:00",
+  "last_sync": "2026-10-20T17:49:53+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",
