@@ -277,8 +277,17 @@ def thu(w):
         # MP here. Sunday is already easy for the same reason.
         return f"Medium-long {qkm(w,'thu')} km easy — 4 days post-Sevilla", "easy"
     if w <= 23:
-        lib=["MP tempo: 2×5 km @ 3:59/km (MP), 3 min float","Medium-long 16 km w/ middle 8 km @ MP",
-             "MP tempo: 3×4 km @ MP, 2 min float","Medium-long 16 km easy + 8×15s hill sprints"]
+        # FLOAT PACE 4:28/km on the MP tempos. The float is recovery that never stops
+        # working: the point of these sessions is one continuous aerobic stimulus, so the
+        # float has to be slow enough to shed a few beats and fast enough that the legs
+        # never unload. 4:28 is ~30 s/km off MP (3:59) and sits between MP and easy
+        # (4:50-5:05); a 6:00 jog would dump 20+ beats and split the session into two
+        # separate tempos. At 4:28 the whole continuous block averages ~4:01/km, i.e. MP
+        # start to finish. Do NOT reuse the alternating-K's 4:15 here - that float is
+        # relief from THRESHOLD (3:50), so it is scaled to a faster work pace.
+        # Session check: if HR falls more than ~8 beats across the float, it was too slow.
+        lib=["MP tempo: 2×5 km @ 3:59/km (MP), 3 min float @ 4:28/km","Medium-long 16 km w/ middle 8 km @ MP",
+             "MP tempo: 3×4 km @ MP, 2 min float @ 4:28/km","Medium-long 16 km easy + 8×15s hill sprints"]
         return lib[(w-14)%len(lib)], "quality"
     if w == 30:
         # Readiness test, 4 weeks out. Replaces the rotation's 2×8 km @ MP in the same
@@ -298,7 +307,7 @@ def thu(w):
                 "bail to 3:50 after rep 1 if it is not there — a failed test tells you nothing"), "quality"
     if w <= 30:
         lib=["MP: 3×6 km @ 3:59/km, 3 min jog","Medium-long 18 km w/ 10 km @ MP",
-             "MP: 2×8 km @ MP, 3 min float","Medium-long 17 km easy"]
+             "MP: 2×8 km @ MP, 3 min float @ 4:28/km","Medium-long 17 km easy"]
         return lib[(w-24)%len(lib)], "quality"
     return {31:"Easy 8 km + 4×20s strides",32:"Easy 8 km + 6×20s strides",33:"Rest or easy 5 km"}[w], "easy"
 

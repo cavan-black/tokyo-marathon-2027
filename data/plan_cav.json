@@ -896,7 +896,7 @@
           "date": "2026-10-22",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP tempo: 2×5 km @ 3:59/km (MP), 3 min float · w/u 3.5 km · c/d 2 km",
+          "session": "MP tempo: 2×5 km @ 3:59/km (MP), 3 min float @ 4:28/km · w/u 3.5 km · c/d 2 km",
           "target_km": 16,
           "shoe": "Mach X3"
         },
@@ -1286,7 +1286,7 @@
           "date": "2026-12-03",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP tempo: 3×4 km @ MP, 2 min float · w/u 2 km · c/d 1.3 km",
+          "session": "MP tempo: 3×4 km @ MP, 2 min float @ 4:28/km · w/u 2 km · c/d 1.3 km",
           "target_km": 16,
           "shoe": "Mach X3"
         },
