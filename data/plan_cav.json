@@ -291,7 +291,7 @@
           "date": "2026-08-18",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog · w/u 4 km · c/d 3 km  +S&C (hard-day session)",
+          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog @ 6:00/km · w/u 4 km · c/d 3 km  +S&C (hard-day session)",
           "target_km": 13,
           "shoe": "Mach X3"
         },
@@ -559,7 +559,7 @@
           "date": "2026-09-16",
           "dow": "Wed",
           "type": "quality",
-          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog · w/u 2 km · c/d 1 km  +S&C (hard-day session)",
+          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog @ 6:00/km · w/u 2 km · c/d 1 km  +S&C (hard-day session)",
           "target_km": 9,
           "shoe": "EVO SL"
         },
@@ -811,7 +811,7 @@
           "date": "2026-10-13",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1 km @ 3:50/km (T), 90s jog · w/u 3.5 km · c/d 2.5 km  +S&C (hard-day session)",
+          "session": "Threshold: 5×1 km @ 3:50/km (T), 90s jog @ 6:00/km · w/u 3.5 km · c/d 2.5 km  +S&C (hard-day session)",
           "target_km": 12,
           "shoe": "Mach X3"
         },
@@ -880,7 +880,7 @@
           "date": "2026-10-20",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog · w/u 4.5 km · c/d 2.8 km  +S&C (hard-day session)",
+          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog @ 6:00/km · w/u 4.5 km · c/d 2.8 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -945,7 +945,7 @@
           "date": "2026-10-27",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
+          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "EVO SL"
         },
@@ -1010,7 +1010,7 @@
           "date": "2026-11-03",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 6×1000 m @ 3:26/km, 2:30 jog · w/u 3.5 km · c/d 2.4 km  +S&C (hard-day session)",
+          "session": "VO2: 6×1000 m @ 3:26/km, 2:30 jog @ 6:00/km · w/u 3.5 km · c/d 2.4 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1075,7 +1075,7 @@
           "date": "2026-11-10",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1.5 km @ 3:48/km, 75s jog · w/u 3.5 km · c/d 2.2 km  +S&C (hard-day session)",
+          "session": "Threshold: 5×1.5 km @ 3:48/km, 75s jog @ 6:00/km · w/u 3.5 km · c/d 2.2 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1140,7 +1140,7 @@
           "date": "2026-11-17",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog · w/u 4.5 km · c/d 2.8 km  +S&C (hard-day session)",
+          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog @ 6:00/km · w/u 4.5 km · c/d 2.8 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "EVO SL"
         },
@@ -1205,7 +1205,7 @@
           "date": "2026-11-24",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
+          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1270,7 +1270,7 @@
           "date": "2026-12-01",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 6×1000 m @ 3:26/km, 2:30 jog · w/u 3.5 km · c/d 2.4 km  +S&C (hard-day session)",
+          "session": "VO2: 6×1000 m @ 3:26/km, 2:30 jog @ 6:00/km · w/u 3.5 km · c/d 2.4 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1335,7 +1335,7 @@
           "date": "2026-12-08",
           "dow": "Tue",
           "type": "quality",
-          "session": "Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog · w/u 3.5 km · c/d 2.5 km  +light S&C — half the usual threshold volume, five days out",
+          "session": "Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3.5 km · c/d 2.5 km  +light S&C — half the usual threshold volume, five days out",
           "target_km": 11,
           "shoe": "EVO SL"
         },
@@ -1400,7 +1400,7 @@
           "date": "2026-12-15",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog · w/u 4.5 km · c/d 2.8 km  +S&C (hard-day session)",
+          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog @ 6:00/km · w/u 4.5 km · c/d 2.8 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1465,7 +1465,7 @@
           "date": "2026-12-22",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
+          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1533,7 +1533,7 @@
           "date": "2026-12-29",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
+          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
           "target_km": 15,
           "shoe": "EVO SL"
         },
@@ -1549,7 +1549,7 @@
           "date": "2026-12-31",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP: 3×6 km @ 3:59/km, 3 min jog · w/u 3 km · c/d 2 km",
+          "session": "MP: 3×6 km @ 3:59/km, 3 min jog @ 6:00/km · w/u 3 km · c/d 2 km",
           "target_km": 24,
           "shoe": "EVO SL"
         },
@@ -1670,7 +1670,7 @@
           "date": "2027-01-12",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 3×3 km @ 3:50/km, 2 min jog · w/u 3 km · c/d 2.3 km  +S&C (hard-day session)",
+          "session": "Threshold: 3×3 km @ 3:50/km, 2 min jog @ 6:00/km · w/u 3 km · c/d 2.3 km  +S&C (hard-day session)",
           "target_km": 15,
           "shoe": "Mach X3"
         },
@@ -1735,7 +1735,7 @@
           "date": "2027-01-19",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog · w/u 5 km · c/d 3.5 km  +S&C (hard-day session)",
+          "session": "VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog @ 6:00/km · w/u 5 km · c/d 3.5 km  +S&C (hard-day session)",
           "target_km": 15,
           "shoe": "EVO SL"
         },
@@ -1800,7 +1800,7 @@
           "date": "2027-01-26",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)  (PM easy double)",
+          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)  (PM easy double)",
           "target_km": 15,
           "shoe": "Mach X3"
         },
@@ -1816,7 +1816,7 @@
           "date": "2027-01-28",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP: 3×6 km @ 3:59/km, 3 min jog · w/u 3 km · c/d 2 km",
+          "session": "MP: 3×6 km @ 3:59/km, 3 min jog @ 6:00/km · w/u 3 km · c/d 2 km",
           "target_km": 24,
           "shoe": "Mach X3"
         },
@@ -1957,7 +1957,7 @@
           "date": "2027-02-11",
           "dow": "Thu",
           "type": "quality",
-          "session": "READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog — PASS = all four on pace, rep 4 no slower than rep 1, HR flat at 172–176 across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic. ↑ IF THE BLOCK HAS GONE WELL: 3:45/km is the stretch version — but that is ~10K race pace, so 12 km of it asks for 45 min at a pace you can only hold for 37:40. Only take it if the wk-25 and wk-29 alternating K's both felt controlled AND Sevilla came in under 1:22:30. Decide at the warm-up, not in advance, and bail to 3:50 after rep 1 if it is not there — a failed test tells you nothing · w/u 5.5 km · c/d 3.8 km",
+          "session": "READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog @ 6:00/km — PASS = all four on pace, rep 4 no slower than rep 1, HR flat at 172–176 across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic. ↑ IF THE BLOCK HAS GONE WELL: 3:45/km is the stretch version — but that is ~10K race pace, so 12 km of it asks for 45 min at a pace you can only hold for 37:40. Only take it if the wk-25 and wk-29 alternating K's both felt controlled AND Sevilla came in under 1:22:30. Decide at the warm-up, not in advance, and bail to 3:50 after rep 1 if it is not there — a failed test tells you nothing · w/u 5.5 km · c/d 3.8 km",
           "target_km": 22,
           "shoe": "EVO SL"
         },
@@ -2006,7 +2006,7 @@
           "date": "2027-02-16",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog · w/u 2.5 km · c/d 1.8 km",
+          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 2.5 km · c/d 1.8 km",
           "target_km": 9,
           "shoe": "Mach X3"
         },
@@ -2074,7 +2074,7 @@
           "date": "2027-02-23",
           "dow": "Tue",
           "type": "quality",
-          "session": "Sharpen: 3×1 km @ 3:48/km, 2 min jog · w/u 3 km · c/d 2.3 km",
+          "session": "Sharpen: 3×1 km @ 3:48/km, 2 min jog @ 6:00/km · w/u 3 km · c/d 2.3 km",
           "target_km": 9,
           "shoe": "Mach X3"
         },
@@ -2333,7 +2333,7 @@
         ],
         [
           "Wk 30 · Thu 11 Feb",
-          "4×3 km @ 3:50/km (LT2), 90s jog — readiness test",
+          "4×3 km @ 3:50/km (LT2), 90s jog @ 6:00/km — readiness test",
           "All four on pace, rep 4 ≥ rep 1, HR flat 172–176",
           "Fading to 3:55+ by rep 3 → LT2 isn't at 3:50, so run Tokyo at 2:52–2:55"
         ],

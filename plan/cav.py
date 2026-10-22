@@ -69,7 +69,7 @@ DAY_OVERRIDE = {26: {"Wed": ("Easy 20 km + 6×20s strides  (double: split AM/PM)
                              "over a solo TT, which is why this replaces the time trial. "
                              "DATE UNCONFIRMED — the 2026 edition ran Sun 18 Jan; check the "
                              "organiser in November and tell me if it lands elsewhere", "race", 14)},
-                21: {"Tue": ("Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog · w/u 3.5 km "
+                21: {"Tue": ("Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3.5 km "
                             "· c/d 2.5 km  +light S&C — half the usual threshold volume, "
                             "five days out", "quality", 11),
                      "Wed": ("Easy 10 km + 6×20s strides", "easy", 10),
@@ -237,15 +237,24 @@ def tue(w):
         # means ~3:48. 3:50 for broken reps, 3:55 continuous. He has a marathon background
         # and a high threshold fraction of VO2max, which is exactly the shape that makes
         # VDOT-from-5K under-read T pace. The 17 Oct 10K TT settles it either way.
-        lib = (["Threshold: 5×1 km @ 3:50/km (T), 90s jog", "Tempo: 2×3 km @ 3:55/km, 3 min jog",
-                "Threshold: 6×1 km @ 3:50/km, 75s jog", "Tempo: 6 km continuous @ 3:55/km"]
+        # JOG RECOVERY 6:00/km everywhere. Two reasons it is written on every session
+        # rather than left to feel. (1) It is exactly what the volume model assumes
+        # (content.py note_wu jog_s=360), so the stated recovery and the w/u + c/d
+        # distances can never disagree. (2) On 20 Oct 2026 his 2:30 recovery jogs
+        # actually ran 6:30 / 7:07 / 8:35 / 13:11 - the last one is standing around.
+        # A decaying recovery is both a fatigue signal worth seeing and a change to
+        # the session itself: it is part of why that VO2 set under-stimulated VO2max.
+        # Distinct from the FLOAT paces (4:15 alternating K's, 4:28 MP tempos), which
+        # are not recoveries - see the comment in thu().
+        lib = (["Threshold: 5×1 km @ 3:50/km (T), 90s jog @ 6:00/km", "Tempo: 2×3 km @ 3:55/km, 3 min jog @ 6:00/km",
+                "Threshold: 6×1 km @ 3:50/km, 75s jog @ 6:00/km", "Tempo: 6 km continuous @ 3:55/km"]
                if w >= RECALIBRATED_FROM else
-               ["Threshold: 5×1 km @ 4:10/km (T), 90s jog", "Tempo: 2×3 km @ 4:15/km, 3 min jog",
-                "Threshold: 6×1 km @ 4:08/km, 75s jog", "Tempo: 6 km continuous @ 4:15/km"])
+               ["Threshold: 5×1 km @ 4:10/km (T), 90s jog @ 6:00/km", "Tempo: 2×3 km @ 4:15/km, 3 min jog @ 6:00/km",
+                "Threshold: 6×1 km @ 4:08/km, 75s jog @ 6:00/km", "Tempo: 6 km continuous @ 4:15/km"])
         return lib[(w-5)%len(lib)], "quality"
     if w <= 23:
-        lib=["VO2: 5×1000 m @ 3:28/km (I), 2:30 jog","Threshold: 4×2 km @ 3:50/km, 90s jog",
-             "VO2: 6×1000 m @ 3:26/km, 2:30 jog","Threshold: 5×1.5 km @ 3:48/km, 75s jog"]
+        lib=["VO2: 5×1000 m @ 3:28/km (I), 2:30 jog @ 6:00/km","Threshold: 4×2 km @ 3:50/km, 90s jog @ 6:00/km",
+             "VO2: 6×1000 m @ 3:26/km, 2:30 jog @ 6:00/km","Threshold: 5×1.5 km @ 3:48/km, 75s jog @ 6:00/km"]
         return lib[(w-14)%len(lib)], "quality"
     if w in (25, 29):
         # Alternating K's (the Italian "alternazioni"). The float is the recovery, so all
@@ -256,10 +265,10 @@ def tue(w):
         return ("Alternating K's: 6×(1 km @ 3:50/km / 1 km float @ 4:15/km) — 12 km "
                 "continuous, no standing rest, averages ~4:03/km · w/u 3.5 km · c/d 2.5 km"), "quality"
     if w <= 30:
-        lib=["Threshold: 6×1.5 km @ 3:48/km, 60s jog","Race reps: 5×1.6 km @ 3:52/km, 90s jog",
-             "Threshold: 3×3 km @ 3:50/km, 2 min jog","VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog"]
+        lib=["Threshold: 6×1.5 km @ 3:48/km, 60s jog @ 6:00/km","Race reps: 5×1.6 km @ 3:52/km, 90s jog @ 6:00/km",
+             "Threshold: 3×3 km @ 3:50/km, 2 min jog @ 6:00/km","VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog @ 6:00/km"]
         return lib[(w-24)%len(lib)], "quality"
-    return {31:"Threshold: 4×1 km @ 3:50/km, 90s jog",32:"Sharpen: 3×1 km @ 3:48/km, 2 min jog",
+    return {31:"Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km",32:"Sharpen: 3×1 km @ 3:48/km, 2 min jog @ 6:00/km",
             33:"Easy 8 km + 4×100 m strides"}[w], ("quality" if w<33 else "easy")
 
 def thu(w):
@@ -297,7 +306,7 @@ def thu(w):
         # 2:48 needs MP to sit only ~9 s/km off threshold, which is an elite-durability
         # gap, and the gap is exactly his weak point. It is also the first validation of
         # the 3:50 T pace itself, which was set from wrist-HR reasoning in Oct 2026.
-        return ("READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog — "
+        return ("READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog @ 6:00/km — "
                 "PASS = all four on pace, rep 4 no slower than rep 1, HR flat at 172–176 "
                 "across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic. "
                 "↑ IF THE BLOCK HAS GONE WELL: 3:45/km is the stretch version — but that is "
@@ -306,7 +315,7 @@ def thu(w):
                 "AND Sevilla came in under 1:22:30. Decide at the warm-up, not in advance, and "
                 "bail to 3:50 after rep 1 if it is not there — a failed test tells you nothing"), "quality"
     if w <= 30:
-        lib=["MP: 3×6 km @ 3:59/km, 3 min jog","Medium-long 18 km w/ 10 km @ MP",
+        lib=["MP: 3×6 km @ 3:59/km, 3 min jog @ 6:00/km","Medium-long 18 km w/ 10 km @ MP",
              "MP: 2×8 km @ MP, 3 min float @ 4:28/km","Medium-long 17 km easy"]
         return lib[(w-24)%len(lib)], "quality"
     return {31:"Easy 8 km + 4×20s strides",32:"Easy 8 km + 6×20s strides",33:"Rest or easy 5 km"}[w], "easy"
@@ -477,7 +486,7 @@ def content():
                 ["Wk 21 · Sun 13 Dec", "Half-marathon — Sevilla Half, signed up",
                  "≤ 1:22:00 · 3:53/km · 6:15/mi",
                  "1:22:00–1:22:30 live but tight · 1:22:30–1:23:30 needs everything to go right, decide at Wk 30 · >1:23:30 → re-target 2:52–2:55"],
-                ["Wk 30 · Thu 11 Feb", "4×3 km @ 3:50/km (LT2), 90s jog — readiness test",
+                ["Wk 30 · Thu 11 Feb", "4×3 km @ 3:50/km (LT2), 90s jog @ 6:00/km — readiness test",
                  "All four on pace, rep 4 ≥ rep 1, HR flat 172–176",
                  "Fading to 3:55+ by rep 3 → LT2 isn't at 3:50, so run Tokyo at 2:52–2:55"],
                 ["Race · 7 Mar", "Marathon", "2:48 = 3:59/km · halfway 1:24:00", "Start at CONFIRMED pace. Even splits."]],
