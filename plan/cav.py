@@ -376,7 +376,25 @@ def build_week(w):
     thu_txt = C.note_wu(thu_txt, thu_type, thu_km)
     sat_txt,sat_type,sat_fixed = sat(w)
     days={}
-    days["Mon"]=("Rest" if (reentry or w==33) else "Rest / mobility (full rest day)","rest",0)
+    # BJJ — SCHEDULED, NOT SQUEEZED INTO THE GAPS (added 22 Oct 2026, his decision).
+    # Friday is the only day of the week with nothing hard behind it: Mon sits in front
+    # of Tue quality, Wed in front of Thu quality, Sat in front of the long run. In wk 14
+    # the two sessions landed on Mon and Wed — the two worst squares — and both quality
+    # days showed it (Tue capped at 176 with maximal RPE at 85% HRR; Thu drifted +7 bpm
+    # between reps at an identical 3:59/km). So: Fri is the main session, Mon is drills.
+    # NO LIVE SPARRING FROM WK 15, his own rule — he stops once the weeks reach 80-90 km,
+    # and wk 15 is the first at 84. It is ONE-WAY: wks 17/21/23 dip back to 76/68/76 but
+    # sparring does not resume, because coming back to live rounds deconditioned, against
+    # partners who never stopped, is when people get hurt — and wk 21 is Sevilla week.
+    # Drilling is roughly a third of the systemic cost of sparring, not zero, so it still
+    # gets a slot and still never precedes a quality day. The Friday S&C moves to Monday
+    # to pair with it: both low-intensity, and Fri was otherwise carrying a run, S&C and
+    # two hours of mat time. Expect this to fall back to Friday-only in the peak block —
+    # at 107-116 km with 32-38 km Sundays the week runs out of days.
+    mon_txt = "Rest" if (reentry or w==33) else "Rest / mobility (full rest day)"
+    if 15<=w<=30 and not reentry:
+        mon_txt = "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)"
+    days["Mon"]=(mon_txt,"rest",0)
     if 4<=w<=30:
         tue_txt += "  +S&C (easy-day session)" if easy_return else "  +S&C (hard-day session)"
     # Max 2 hard days/week: Thu is quality only when Sunday's long run is easy and there's no Sat TT
@@ -401,7 +419,11 @@ def build_week(w):
     elif w==33:
         fri_txt,fri_type,fri_kmv="Rest","rest",0
     else:
-        fri_txt=f"Recovery {fri_km} km easy"+("  +light S&C (taper)" if 31<=w<=32 else "  +S&C (easy-day session)")
+        if 15<=w<=30:
+            # S&C moved to Mon; this is the week's main mat session, drills only
+            fri_txt=f"Recovery {fri_km} km easy  +BJJ (drills only — no live rounds)"
+        else:
+            fri_txt=f"Recovery {fri_km} km easy"+("  +light S&C (taper)" if 31<=w<=32 else "  +S&C (easy-day session)")
         fri_type,fri_kmv="recovery",fri_km
     if reentry:
         sat_txt,sat_type,sat_kmv="Rest","rest",0
