@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-10-20",
+    "pre_kg": 70.6,
+    "post_kg": 68.75,
+    "activity_id": 20657399438,
+    "run_min": 66,
+    "fluid_ml": null,
+    "note": "VO2 5x1km. Loss 1.85 kg = 2.6% of body mass. Conditions index 121 F.",
+    "loss_kg": 1.85,
+    "loss_pct": 2.62,
+    "sweat_rate_lph": 1.68,
+    "weigh_method": "nude both ends",
+    "clothing": "unrecorded",
+    "air": "index 121 F"
+  },
+  {
+    "date": "2026-10-21",
+    "pre_kg": 70.1,
+    "post_kg": null,
+    "activity_id": 20679217504,
+    "run_min": 44,
+    "fluid_ml": null,
+    "note": "Pre-run only. +1.35 kg on the previous post = 73% of the deficit replaced, still 0.5 kg down. 2 h BJJ that morning, unmeasured sweat loss.",
+    "weigh_method": "nude",
+    "clothing": "unrecorded",
+    "air": "evening"
+  },
+  {
+    "date": "2026-10-22",
+    "pre_kg": 70.1,
+    "post_kg": 68.3,
+    "activity_id": 20684437969,
+    "run_min": 65,
+    "fluid_ml": null,
+    "note": "MP tempo. Loss 1.80 kg = 2.57% of body mass = 1.66 L/h over 64:38. MEASUREMENT IS SOUND - nude at both ends, so no garment water in the figure. GENERALISABILITY IS NOT: run in a warm long-sleeve, which blocks evaporative cooling and raises sweat production, so 1.66 L/h is an UPPER BOUND for 16 C, not his clean cool-weather baseline (expect ~1.2-1.4 in a singlet). The agreement with 20 Oct (1.68) is two differently-confounded sessions landing on the same number - warmer air then, heat-trapping shirt now - NOT a reproducibility result. Clean baseline still to be measured: wk 18 repeat, Thu 19 Nov 2026.",
+    "loss_kg": 1.8,
+    "loss_pct": 2.57,
+    "sweat_rate_lph": 1.66,
+    "weigh_method": "nude both ends",
+    "clothing": "warm long-sleeved Uniqlo tee - heat-trapping, wrong garment for MP effort",
+    "air": "16 C / 69% RH, dew point 10.3 C, index 111 F"
+  }
+]

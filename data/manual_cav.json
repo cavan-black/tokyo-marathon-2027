@@ -12,5 +12,19 @@
     "name": "BJJ — hard double session",
     "moving_time_s": 10800,
     "note": "two sessions, ~3 h mat time total, no device to record it"
+  },
+  {
+    "date": "2026-10-19",
+    "activity_type": "MartialArts",
+    "name": "BJJ - hard sparring",
+    "moving_time_s": 3600,
+    "note": "strong sparring hour, evening; ~12 h before the wk-14 VO2 session"
+  },
+  {
+    "date": "2026-10-21",
+    "activity_type": "MartialArts",
+    "name": "BJJ - 2 h session",
+    "moving_time_s": 7200,
+    "note": "morning mat time; same day as the easy 9 km, ~22 h before the wk-14 MP tempo"
   }
 ]
