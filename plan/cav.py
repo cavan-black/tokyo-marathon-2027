@@ -52,7 +52,10 @@ QKM_OVERRIDE = {7: {"tue": 9, "thu": 9}, 8: {"tue": 10, "thu": 10},
 # was run on Monday, so Tuesday's tempo would have landed on tired legs — the session moves
 # to Wednesday and Wednesday's easy run comes forward. The S&C tag travels with the session
 # it's attached to, which is correct: the hard-day block belongs with the quality run.
-DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri")), 11: (("Tue", "Thu"),)}
+DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri")), 11: (("Tue", "Thu"),),
+             # Wk 15 asked for on Mon 26 Oct: Tue/Wed swapped for Cav and Jamie both,
+             # so they run the quality session together on the Wednesday.
+             15: (("Tue", "Wed"),)}
 # Individual days rewritten wholesale, applied after the week is otherwise built. Wk 10:
 # Ibiza 24-26 Sep, so the 5K test moves to Wednesday the 23rd — the last clear day. The
 # days that remain carry as much volume as they can without wrecking the test: Monday takes

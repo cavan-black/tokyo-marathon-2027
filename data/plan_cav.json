@@ -944,18 +944,18 @@
         {
           "date": "2026-10-27",
           "dow": "Tue",
-          "type": "quality",
-          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
-          "target_km": 14,
-          "shoe": "EVO SL"
-        },
-        {
-          "date": "2026-10-28",
-          "dow": "Wed",
           "type": "easy",
           "session": "Easy 11 km + 6×20s strides",
           "target_km": 11,
           "shoe": "Daily trainer"
+        },
+        {
+          "date": "2026-10-28",
+          "dow": "Wed",
+          "type": "quality",
+          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
+          "target_km": 14,
+          "shoe": "EVO SL"
         },
         {
           "date": "2026-10-29",

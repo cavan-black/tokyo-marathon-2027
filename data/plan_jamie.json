@@ -842,15 +842,15 @@
           "date": "2026-10-27",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 8 km + 6×20s strides + 4×30s hills  +S&C (hard-day session)",
-          "target_km": 8
+          "session": "Easy 5 km + strides",
+          "target_km": 5
         },
         {
           "date": "2026-10-28",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 5 km + strides",
-          "target_km": 5
+          "session": "Easy 8 km + 6×20s strides + 4×30s hills  +S&C (hard-day session)",
+          "target_km": 8
         },
         {
           "date": "2026-10-29",

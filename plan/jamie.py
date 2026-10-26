@@ -60,6 +60,11 @@ KEEP_ONLY = {8: ("Fri", "Sun")}
 # Individual days rewritten wholesale, applied after the week is otherwise built. Race
 # week is the only user: the generator's pool logic cannot know that the 6 days before a
 # marathon are not a place to put 13 km on the Wednesday and 10 km on the Saturday.
+# Same mechanism as cav.py: swap two days of a week after it is built, so the session
+# text and its km travel together and the week still sums to its own target_km.
+# Wk 15 asked for on Mon 26 Oct, matching Cav's swap so they train together.
+DAY_SWAPS = {15: (("Tue", "Wed"),)}
+
 DAY_OVERRIDE = {33: {"Tue": ("Easy 8 km + 4×100 m strides", "easy", 8),
                      "Wed": ("Easy 6 km — last real run, stay relaxed", "easy", 6),
                      "Thu": ("Easy 5 km + 4×100 m strides", "easy", 5),
@@ -205,6 +210,8 @@ def build_week(w):
     days["Tue"]=(tue_txt,tue_type,tue_km); days["Wed"]=(wed_txt,"easy",wed_km)
     days["Thu"]=(thu_txt,thu_type,thu_km); days["Fri"]=(fri_txt,fri_type,fri_kmv)
     days["Sat"]=(sat_txt,sat_type,sat_kmv); days["Sun"]=(sun_txt,sun_type,round(lr,1))
+    for a,b in DAY_SWAPS.get(w,()):
+        days[a],days[b]=days[b],days[a]
     for dow,spec in DAY_OVERRIDE.get(w,{}).items():
         days[dow]=spec
     keep=KEEP_ONLY.get(w)
