@@ -54,8 +54,13 @@ QKM_OVERRIDE = {7: {"tue": 9, "thu": 9}, 8: {"tue": 10, "thu": 10},
 # it's attached to, which is correct: the hard-day block belongs with the quality run.
 DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri")), 11: (("Tue", "Thu"),),
              # Wk 15 asked for on Mon 26 Oct: Tue/Wed swapped for Cav and Jamie both,
-             # so they run the quality session together on the Wednesday.
-             15: (("Tue", "Wed"),)}
+             # so they run the quality session together on the Wednesday. That left the
+             # Wednesday threshold directly in front of the Thursday MP tempo, so Thu/Fri
+             # swap too — threshold Wed, recovery Thu, MP Fri. Same weekly total, same two
+             # quality sessions, but a day of easy running between them. Matters more than
+             # usual this week: the missed wk 14 long run was run on Mon 26, so wk 15 lands
+             # near 108 km on a four-week average of 64.
+             15: (("Tue", "Wed"), ("Thu", "Fri"))}
 # Individual days rewritten wholesale, applied after the week is otherwise built. Wk 10:
 # Ibiza 24-26 Sep, so the 5K test moves to Wednesday the 23rd — the last clear day. The
 # days that remain carry as much volume as they can without wrecking the test: Monday takes

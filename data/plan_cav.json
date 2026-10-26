@@ -960,18 +960,18 @@
         {
           "date": "2026-10-29",
           "dow": "Thu",
-          "type": "quality",
-          "session": "Medium-long 16 km w/ middle 8 km @ MP",
-          "target_km": 16,
-          "shoe": "EVO SL"
-        },
-        {
-          "date": "2026-10-30",
-          "dow": "Fri",
           "type": "recovery",
           "session": "Recovery 8 km easy  +BJJ (drills only — no live rounds)",
           "target_km": 8,
           "shoe": "Daily trainer"
+        },
+        {
+          "date": "2026-10-30",
+          "dow": "Fri",
+          "type": "quality",
+          "session": "Medium-long 16 km w/ middle 8 km @ MP",
+          "target_km": 16,
+          "shoe": "EVO SL"
         },
         {
           "date": "2026-10-31",
