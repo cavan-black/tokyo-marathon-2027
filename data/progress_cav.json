@@ -55358,11 +55358,25 @@
       "type": "easy",
       "session": "Easy 11 km + 6×20s strides",
       "target_km": 11,
-      "actual_km": 0,
+      "actual_km": 1.61,
       "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
+      "pace_min_km": 5.549,
+      "pace_str": "5:33",
+      "activities": [
+        {
+          "id": 20754796579,
+          "date": "2026-10-27",
+          "name": "Evening Run",
+          "activity_type": "Run",
+          "distance_km": 1.61,
+          "moving_time_s": 535,
+          "pace_min_km": 5.549,
+          "avg_hr": 120.7,
+          "max_hr": 133.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ],
       "cross_activities": []
     },
     "2026-10-28": {
@@ -57296,8 +57310,8 @@
     },
     "15": {
       "planned_km": 84,
-      "planned_km_due": 0,
-      "actual_km": 0.0,
+      "planned_km_due": 11,
+      "actual_km": 1.6,
       "substituted_km": 0,
       "replaced_km": -24.0,
       "done": 0,
@@ -57308,7 +57322,7 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "✓ On track"
+      "flag": "⚠ Under-target — consider holding volume / repeating the week"
     },
     "16": {
       "planned_km": 90,
@@ -57599,7 +57613,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-27T11:48:35+00:00",
+  "last_sync": "2026-10-27T18:35:58+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",
