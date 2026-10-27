@@ -81,6 +81,15 @@ DAY_OVERRIDE = {
                 # volume drops to the 52 km that were actually due in it.
                 14: {"Sun": ("Long run deferred — run on Mon 26 Oct instead, logged in wk 15",
                              "rest", 0)},
+                # Cross-training key (HR from Karvonen 197/52, HRR 145, offset for mode —
+                # bike runs ~5-10 bpm under running, deep water ~10-15 under):
+                #   CT1 easy spin 45-60 min @ 133-148, cadence 90-95
+                #   CT2 aqua jog 40-50 min easy @ 129-143, cadence 70-85
+                #   CT3 bike threshold 4x6 min @ 163-172, 3 min easy between
+                #   CT4 aqua jog 8x2 min hard / 1 min easy
+                #   CT5 long bike 75-90 min @ 139-153
+                # Two hard sessions a week is what holds VO2max; everything else genuinely
+                # easy. No rowing or stair climber — both drive force through the footplate.
                 # ---- INJURY: left subtalar / medial ankle, onset 22 Oct 2026 ----
                 # Felt on 22, 23, 24 and 26 Oct, then forced a 1.6 km abort on 27 Oct at
                 # 5:33/km on the flat. Pain present from the first km of easy running is the
@@ -100,27 +109,30 @@ DAY_OVERRIDE = {
                      "Tue": ("Pulled up at 1.6 km — ankle sore from the first kilometre, "
                              "so he stopped. Right call: this is where the layoff starts",
                              "rest", 0),
-                     "Wed": ("NO RUNNING — left ankle. Cross-train 45 min: stationary bike "
-                             "(low resistance, seat high) or aqua jog  +S&C upper body/core only",
-                             "rest", 0),
-                     "Thu": ("NO RUNNING. Cross-train 45-60 min bike or aqua jog. Book a "
-                             "physio — this is day 7 and it is getting worse, not better",
-                             "rest", 0),
-                     "Fri": ("NO RUNNING. Cross-train 45 min  +S&C upper body/core", "rest", 0),
-                     "Sat": ("NO RUNNING. Cross-train 45 min easy", "rest", 0),
-                     "Sun": ("NO RUNNING. Cross-train 60-75 min steady bike — this replaces "
-                             "the 26 km long run and costs almost nothing aerobically",
-                             "rest", 0)},
+                     "Wed": ("NO RUNNING — left ankle. CT1 easy spin 45 min @ 133-148 bpm, "
+                             "cadence 90-95, seat high, pedal through the midfoot  "
+                             "+S&C upper body/core only", "rest", 0),
+                     "Thu": ("NO RUNNING. CT2 aqua jog 40 min easy @ 129-143 bpm — belt, "
+                             "upright, cadence 70-85, run don't bicycle. PHYSIO: book it, "
+                             "this is day 7 and it is getting worse, not better", "rest", 0),
+                     "Fri": ("NO RUNNING. CT3 bike threshold 60 min: 4x6 min @ 163-172 bpm, "
+                             "3 min easy between · w/u 15 min · c/d 10 min  "
+                             "+S&C upper body/core", "rest", 0),
+                     "Sat": ("NO RUNNING. CT1 easy spin 45 min @ 133-148 bpm", "rest", 0),
+                     "Sun": ("NO RUNNING. CT5 long bike 75-90 min @ 139-153 bpm — replaces "
+                             "the 26 km long run. Take 40-60 g carb/h on it: free gut "
+                             "training for the wk 27 long run", "rest", 0)},
                 # Graded return, every step conditional. If a gate fails, repeat the previous
                 # step rather than skipping forward. No hills, no corners, no MP work.
-                16: {"Mon": ("NO RUNNING. Cross-train 45 min  +S&C", "rest", 0),
+                16: {"Mon": ("NO RUNNING. CT1 easy spin 45 min  +S&C upper body/core", "rest", 0),
                      "Tue": ("GATE — only if walking is pain-free AND 10 single-leg heel raises "
                              "are pain-free. Return-to-run: 20 min as 4 min jog / 1 min walk, "
                              "flat, in the GT-2000. Stop at ANY ankle pain", "recovery", 4),
-                     "Wed": ("NO RUNNING. Cross-train 45 min", "rest", 0),
+                     "Wed": ("NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, or CT4 "
+                             "aqua jog 8x2 min hard / 1 min easy", "rest", 0),
                      "Thu": ("Easy 6 km flat — only if Tuesday was pain-free and the next "
                              "morning was clean too", "easy", 6),
-                     "Fri": ("NO RUNNING. Cross-train  +S&C", "rest", 0),
+                     "Fri": ("NO RUNNING. CT1 easy spin 45 min  +S&C upper body/core", "rest", 0),
                      "Sat": ("Easy 8 km flat", "easy", 8),
                      "Sun": ("Easy 12 km flat — no MP work, no hills, no corners", "long", 12)},
                 # Rebuild after the layoff. Quality comes back one session at a time:
