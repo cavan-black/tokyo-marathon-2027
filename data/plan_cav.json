@@ -919,10 +919,10 @@
         {
           "date": "2026-10-25",
           "dow": "Sun",
-          "type": "long",
-          "session": "24 km easy",
-          "target_km": 24,
-          "shoe": "Max-cushion (long-run)"
+          "type": "rest",
+          "session": "Long run deferred — run on Mon 26 Oct instead, logged in wk 15",
+          "target_km": 0,
+          "shoe": null
         }
       ]
     },
@@ -937,7 +937,7 @@
           "date": "2026-10-26",
           "dow": "Mon",
           "type": "long",
-          "session": "Long run 24 km easy — the wk 14 long run, run a week late",
+          "session": "Long run 24 km easy — wk 14's Sunday long run, run a day late",
           "target_km": 24,
           "shoe": "Max-cushion (long-run)"
         },

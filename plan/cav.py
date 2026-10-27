@@ -74,6 +74,13 @@ DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri")), 11: (("T
 # trial costs more than it gives), the test day is just 1 km either side of the 5K, and the
 # Sunday travel day picks up an easy evening run instead of being written off.
 DAY_OVERRIDE = {
+                # Wk 14's Sunday long run was not skipped — it was run the next morning,
+                # Mon 26 Oct, and is logged there in wk 15. Leaving it as a due session here
+                # counted one 24 km run as a miss in wk 14 and a tick in wk 15 at the same
+                # time. It is a deferral, so the Sunday carries no target and the week's
+                # volume drops to the 52 km that were actually due in it.
+                14: {"Sun": ("Long run deferred — run on Mon 26 Oct instead, logged in wk 15",
+                             "rest", 0)},
                 # ---- INJURY: left subtalar / medial ankle, onset 22 Oct 2026 ----
                 # Felt on 22, 23, 24 and 26 Oct, then forced a 1.6 km abort on 27 Oct at
                 # 5:33/km on the flat. Pain present from the first km of easy running is the
@@ -83,7 +90,7 @@ DAY_OVERRIDE = {
                 # another shoe. Cross-training keeps the aerobic base; nothing weight-bearing
                 # through a cornering or push-off load. No BJJ at all: mat work torques this
                 # joint directly.
-                15: {"Mon": ("Long run 24 km easy — the wk 14 long run, run a week late",
+                15: {"Mon": ("Long run 24 km easy — wk 14's Sunday long run, run a day late",
                              "long", 24),
                      # Planned 11 km. He started, the ankle hurt from the first kilometre,
                      # and he stopped at 1.6 km. Knowing what we know now, the correct
