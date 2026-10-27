@@ -930,64 +930,64 @@
       "week": 15,
       "start": "2026-10-26",
       "phase": "Marathon-Specific I",
-      "target_km": 84,
+      "target_km": 26,
       "focus": "",
       "days": [
         {
           "date": "2026-10-26",
           "dow": "Mon",
-          "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
-          "target_km": 0,
-          "shoe": null
+          "type": "long",
+          "session": "Long run 24 km easy — the wk 14 long run, run a week late",
+          "target_km": 24,
+          "shoe": "Max-cushion (long-run)"
         },
         {
           "date": "2026-10-27",
           "dow": "Tue",
-          "type": "easy",
-          "session": "Easy 11 km + 6×20s strides",
-          "target_km": 11,
+          "type": "recovery",
+          "session": "ABANDONED at 1.6 km — left ankle sore from the first kilometre. Injury layoff starts here",
+          "target_km": 2,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-10-28",
           "dow": "Wed",
-          "type": "quality",
-          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
-          "target_km": 14,
-          "shoe": "EVO SL"
+          "type": "rest",
+          "session": "NO RUNNING — left ankle. Cross-train 45 min: stationary bike (low resistance, seat high) or aqua jog  +S&C upper body/core only",
+          "target_km": 0,
+          "shoe": null
         },
         {
           "date": "2026-10-29",
           "dow": "Thu",
-          "type": "recovery",
-          "session": "Recovery 8 km easy  +BJJ (drills only — no live rounds)",
-          "target_km": 8,
-          "shoe": "Daily trainer"
+          "type": "rest",
+          "session": "NO RUNNING. Cross-train 45-60 min bike or aqua jog. Book a physio — this is day 7 and it is getting worse, not better",
+          "target_km": 0,
+          "shoe": null
         },
         {
           "date": "2026-10-30",
           "dow": "Fri",
-          "type": "quality",
-          "session": "Medium-long 16 km w/ middle 8 km @ MP",
-          "target_km": 16,
-          "shoe": "EVO SL"
+          "type": "rest",
+          "session": "NO RUNNING. Cross-train 45 min  +S&C upper body/core",
+          "target_km": 0,
+          "shoe": null
         },
         {
           "date": "2026-10-31",
           "dow": "Sat",
-          "type": "easy",
-          "session": "Easy 9 km + strides",
-          "target_km": 9,
-          "shoe": "Daily trainer"
+          "type": "rest",
+          "session": "NO RUNNING. Cross-train 45 min easy",
+          "target_km": 0,
+          "shoe": null
         },
         {
           "date": "2026-11-01",
           "dow": "Sun",
-          "type": "long",
-          "session": "26 km easy",
-          "target_km": 26,
-          "shoe": "Max-cushion (long-run)"
+          "type": "rest",
+          "session": "NO RUNNING. Cross-train 60-75 min steady bike — this replaces the 26 km long run and costs almost nothing aerobically",
+          "target_km": 0,
+          "shoe": null
         }
       ]
     },
@@ -995,63 +995,63 @@
       "week": 16,
       "start": "2026-11-02",
       "phase": "Marathon-Specific I",
-      "target_km": 90,
+      "target_km": 30,
       "focus": "",
       "days": [
         {
           "date": "2026-11-02",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "NO RUNNING. Cross-train 45 min  +S&C",
           "target_km": 0,
           "shoe": null
         },
         {
           "date": "2026-11-03",
           "dow": "Tue",
-          "type": "quality",
-          "session": "VO2: 6×1000 m @ 3:26/km, 2:30 jog @ 6:00/km · w/u 3.5 km · c/d 2.4 km  +S&C (hard-day session)",
-          "target_km": 14,
-          "shoe": "Mach X3"
+          "type": "recovery",
+          "session": "GATE — only if walking is pain-free AND 10 single-leg heel raises are pain-free. Return-to-run: 20 min as 4 min jog / 1 min walk, flat, in the GT-2000. Stop at ANY ankle pain",
+          "target_km": 4,
+          "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-04",
           "dow": "Wed",
-          "type": "easy",
-          "session": "Easy 13 km + 6×20s strides",
-          "target_km": 13,
-          "shoe": "Daily trainer"
+          "type": "rest",
+          "session": "NO RUNNING. Cross-train 45 min",
+          "target_km": 0,
+          "shoe": null
         },
         {
           "date": "2026-11-05",
           "dow": "Thu",
           "type": "easy",
-          "session": "Medium-long 16 km easy",
-          "target_km": 16,
+          "session": "Easy 6 km flat — only if Tuesday was pain-free and the next morning was clean too",
+          "target_km": 6,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-06",
           "dow": "Fri",
-          "type": "recovery",
-          "session": "Recovery 9 km easy  +BJJ (drills only — no live rounds)",
-          "target_km": 9,
-          "shoe": "Daily trainer"
+          "type": "rest",
+          "session": "NO RUNNING. Cross-train  +S&C",
+          "target_km": 0,
+          "shoe": null
         },
         {
           "date": "2026-11-07",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 10 km + strides",
-          "target_km": 10,
+          "session": "Easy 8 km flat",
+          "target_km": 8,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-08",
           "dow": "Sun",
           "type": "long",
-          "session": "28 km, last 8 km @ MP",
-          "target_km": 28,
+          "session": "Easy 12 km flat — no MP work, no hills, no corners",
+          "target_km": 12,
           "shoe": "Max-cushion (long-run)"
         }
       ]

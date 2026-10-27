@@ -14,7 +14,9 @@ RACE  = date(2027, 3, 7)
 # later (Wk 28 rather than 27), which is still 5 weeks out from the race.
 VOL = [42,50,56,48,
        62,0,45,54,60,50,66,72,64,
-       76,84,90,76,97,101,92,80,96,76,
+       # Wks 15-16 cut for the left subtalar/medial-ankle injury (onset 22 Oct,
+       # forced a 1.6 km abort on 27 Oct). Was 84 and 90.
+       76,26,30,76,97,101,92,80,96,76,
        88,107,99,110,116,110,94,
        69,56,70]
 LR  = [12,14,16,14,
@@ -67,7 +69,44 @@ DAY_SWAPS = {8: (("Tue", "Wed"),), 9: (("Tue", "Wed"), ("Thu", "Fri")), 11: (("T
 # the bulk (furthest from it), Tuesday stays short (a quality session the day before a time
 # trial costs more than it gives), the test day is just 1 km either side of the 5K, and the
 # Sunday travel day picks up an easy evening run instead of being written off.
-DAY_OVERRIDE = {26: {"Wed": ("Easy 20 km + 6×20s strides  (double: split AM/PM)", "easy", 20),
+DAY_OVERRIDE = {
+                # ---- INJURY: left subtalar / medial ankle, onset 22 Oct 2026 ----
+                # Felt on 22, 23, 24 and 26 Oct, then forced a 1.6 km abort on 27 Oct at
+                # 5:33/km on the flat. Pain present from the first km of easy running is the
+                # line where running stops being a judgement call. No bone tenderness and
+                # strength tests were clean on 26 Oct, so this is soft tissue — but it has
+                # worsened across five consecutive runs, so the fix is load removal, not
+                # another shoe. Cross-training keeps the aerobic base; nothing weight-bearing
+                # through a cornering or push-off load. No BJJ at all: mat work torques this
+                # joint directly.
+                15: {"Mon": ("Long run 24 km easy — the wk 14 long run, run a week late",
+                             "long", 24),
+                     "Tue": ("ABANDONED at 1.6 km — left ankle sore from the first kilometre. "
+                             "Injury layoff starts here", "recovery", 2),
+                     "Wed": ("NO RUNNING — left ankle. Cross-train 45 min: stationary bike "
+                             "(low resistance, seat high) or aqua jog  +S&C upper body/core only",
+                             "rest", 0),
+                     "Thu": ("NO RUNNING. Cross-train 45-60 min bike or aqua jog. Book a "
+                             "physio — this is day 7 and it is getting worse, not better",
+                             "rest", 0),
+                     "Fri": ("NO RUNNING. Cross-train 45 min  +S&C upper body/core", "rest", 0),
+                     "Sat": ("NO RUNNING. Cross-train 45 min easy", "rest", 0),
+                     "Sun": ("NO RUNNING. Cross-train 60-75 min steady bike — this replaces "
+                             "the 26 km long run and costs almost nothing aerobically",
+                             "rest", 0)},
+                # Graded return, every step conditional. If a gate fails, repeat the previous
+                # step rather than skipping forward. No hills, no corners, no MP work.
+                16: {"Mon": ("NO RUNNING. Cross-train 45 min  +S&C", "rest", 0),
+                     "Tue": ("GATE — only if walking is pain-free AND 10 single-leg heel raises "
+                             "are pain-free. Return-to-run: 20 min as 4 min jog / 1 min walk, "
+                             "flat, in the GT-2000. Stop at ANY ankle pain", "recovery", 4),
+                     "Wed": ("NO RUNNING. Cross-train 45 min", "rest", 0),
+                     "Thu": ("Easy 6 km flat — only if Tuesday was pain-free and the next "
+                             "morning was clean too", "easy", 6),
+                     "Fri": ("NO RUNNING. Cross-train  +S&C", "rest", 0),
+                     "Sat": ("Easy 8 km flat", "easy", 8),
+                     "Sun": ("Easy 12 km flat — no MP work, no hills, no corners", "long", 12)},
+                26: {"Wed": ("Easy 20 km + 6×20s strides  (double: split AM/PM)", "easy", 20),
                      "Thu": ("Medium-long 26 km easy — the week's long run, moved off the "
                              "weekend so Sunday's race is run on fresh legs", "long", 26),
                      "Fri": ("Recovery 12 km easy  +S&C (easy-day session)", "recovery", 12),
