@@ -15,8 +15,12 @@ RACE  = date(2027, 3, 7)
 VOL = [42,50,56,48,
        62,0,45,54,60,50,66,72,64,
        # Wks 15-16 cut for the left subtalar/medial-ankle injury (onset 22 Oct,
-       # forced a 1.6 km abort on 27 Oct). Was 84 and 90.
-       76,26,30,76,97,101,92,80,96,76,
+       # forced a 1.6 km abort on 27 Oct). Was 84 and 90. Wks 17-20 are the
+       # rebuild ramp back to it: 46/60/74/85, was 76/97/101/92. Each step is
+       # 15-30% up, which is steep for new volume but reasonable for RE-attaining
+       # volume he was already running in October. Wk 21 (Sevilla) and everything
+       # from wk 22 are untouched, so the marathon-specific block is intact.
+       76,24,30,46,60,74,85,80,96,76,
        88,107,99,110,116,110,94,
        69,56,70]
 LR  = [12,14,16,14,
@@ -81,8 +85,14 @@ DAY_OVERRIDE = {
                 # joint directly.
                 15: {"Mon": ("Long run 24 km easy — the wk 14 long run, run a week late",
                              "long", 24),
-                     "Tue": ("ABANDONED at 1.6 km — left ankle sore from the first kilometre. "
-                             "Injury layoff starts here", "recovery", 2),
+                     # Planned 11 km. He started, the ankle hurt from the first kilometre,
+                     # and he stopped at 1.6 km. Knowing what we know now, the correct
+                     # assignment for this day was zero running — so this is logged as a
+                     # rest day honoured, not an 11 km session failed. The 1.6 km stays in
+                     # Strava; it just is not a shortfall against anything.
+                     "Tue": ("Pulled up at 1.6 km — ankle sore from the first kilometre, "
+                             "so he stopped. Right call: this is where the layoff starts",
+                             "rest", 0),
                      "Wed": ("NO RUNNING — left ankle. Cross-train 45 min: stationary bike "
                              "(low resistance, seat high) or aqua jog  +S&C upper body/core only",
                              "rest", 0),
@@ -106,6 +116,40 @@ DAY_OVERRIDE = {
                      "Fri": ("NO RUNNING. Cross-train  +S&C", "rest", 0),
                      "Sat": ("Easy 8 km flat", "easy", 8),
                      "Sun": ("Easy 12 km flat — no MP work, no hills, no corners", "long", 12)},
+                # Rebuild after the layoff. Quality comes back one session at a time:
+                # wk 17 none, wk 18 one threshold, wk 19 threshold + a short MP block, wk 20
+                # back to normal. Nothing with hills or sharp cornering until wk 19 — those
+                # load the subtalar joint hardest. BJJ drills stay out until wk 19.
+                17: {"Mon": ("Rest from running  +S&C (easy-day session)", "rest", 0),
+                     "Tue": ("Easy 8 km flat — first full week back, no quality at all",
+                             "easy", 8),
+                     "Wed": ("Easy 7 km flat", "easy", 7),
+                     "Thu": ("Easy 9 km flat — no hill sprints this block", "easy", 9),
+                     "Fri": ("Recovery 5 km easy  +S&C (easy-day session)", "recovery", 5),
+                     "Sat": ("Easy 7 km + 4×20s strides — first strides back, on the flat",
+                             "easy", 7),
+                     "Sun": ("Easy 10 km — rebuilding the long run from a low base", "long", 10)},
+                18: {"Mon": ("Rest from running  +S&C (easy-day session)", "rest", 0),
+                     "Tue": ("Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · "
+                             "c/d 2 km — first quality since the injury, half the usual volume, "
+                             "flat loop only", "quality", 12),
+                     "Wed": ("Easy 9 km", "easy", 9),
+                     "Thu": ("Easy 10 km", "easy", 10),
+                     "Fri": ("Recovery 6 km easy  +S&C (easy-day session)", "recovery", 6),
+                     "Sat": ("Easy 8 km + 6×20s strides", "easy", 8),
+                     "Sun": ("Long 15 km easy", "long", 15)},
+                19: {"Mon": ("Rest from running · BJJ drills/technical, no live rounds  "
+                             "+S&C (easy-day session) — BJJ returns here if the ankle has been "
+                             "clean for three weeks", "rest", 0),
+                     "Tue": ("Threshold: 5×1.5 km @ 3:48/km, 75s jog @ 6:00/km · w/u 3 km · "
+                             "c/d 2.5 km", "quality", 13),
+                     "Wed": ("Easy 11 km + 6×20s strides", "easy", 11),
+                     "Thu": ("Medium-long 14 km w/ middle 5 km @ MP — first marathon-pace work "
+                             "back, deliberately short", "quality", 14),
+                     "Fri": ("Recovery 7 km easy  +BJJ (drills only — no live rounds)",
+                             "recovery", 7),
+                     "Sat": ("Easy 9 km + strides", "easy", 9),
+                     "Sun": ("Long 20 km easy", "long", 20)},
                 26: {"Wed": ("Easy 20 km + 6×20s strides  (double: split AM/PM)", "easy", 20),
                      "Thu": ("Medium-long 26 km easy — the week's long run, moved off the "
                              "weekend so Sunday's race is run on fresh legs", "long", 26),

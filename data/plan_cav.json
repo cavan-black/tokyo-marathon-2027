@@ -930,7 +930,7 @@
       "week": 15,
       "start": "2026-10-26",
       "phase": "Marathon-Specific I",
-      "target_km": 26,
+      "target_km": 24,
       "focus": "",
       "days": [
         {
@@ -944,10 +944,10 @@
         {
           "date": "2026-10-27",
           "dow": "Tue",
-          "type": "recovery",
-          "session": "ABANDONED at 1.6 km — left ankle sore from the first kilometre. Injury layoff starts here",
-          "target_km": 2,
-          "shoe": "Daily trainer"
+          "type": "rest",
+          "session": "Pulled up at 1.6 km — ankle sore from the first kilometre, so he stopped. Right call: this is where the layoff starts",
+          "target_km": 0,
+          "shoe": null
         },
         {
           "date": "2026-10-28",
@@ -1060,54 +1060,54 @@
       "week": 17,
       "start": "2026-11-09",
       "phase": "Marathon-Specific I",
-      "target_km": 76,
+      "target_km": 46,
       "focus": "Cut-back / recovery week",
       "days": [
         {
           "date": "2026-11-09",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running  +S&C (easy-day session)",
           "target_km": 0,
           "shoe": null
         },
         {
           "date": "2026-11-10",
           "dow": "Tue",
-          "type": "quality",
-          "session": "Threshold: 5×1.5 km @ 3:48/km, 75s jog @ 6:00/km · w/u 3.5 km · c/d 2.2 km  +S&C (hard-day session)",
-          "target_km": 14,
-          "shoe": "Mach X3"
+          "type": "easy",
+          "session": "Easy 8 km flat — first full week back, no quality at all",
+          "target_km": 8,
+          "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-11",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 9 km + 6×20s strides",
-          "target_km": 9,
+          "session": "Easy 7 km flat",
+          "target_km": 7,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-12",
           "dow": "Thu",
-          "type": "quality",
-          "session": "Medium-long 16 km easy + 8×15s hill sprints",
-          "target_km": 16,
-          "shoe": "Mach X3"
+          "type": "easy",
+          "session": "Easy 9 km flat — no hill sprints this block",
+          "target_km": 9,
+          "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-13",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +BJJ (drills only — no live rounds)",
-          "target_km": 6,
+          "session": "Recovery 5 km easy  +S&C (easy-day session)",
+          "target_km": 5,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-14",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 7 km + strides",
+          "session": "Easy 7 km + 4×20s strides — first strides back, on the flat",
           "target_km": 7,
           "shoe": "Daily trainer"
         },
@@ -1115,8 +1115,8 @@
           "date": "2026-11-15",
           "dow": "Sun",
           "type": "long",
-          "session": "24 km easy",
-          "target_km": 24,
+          "session": "Easy 10 km — rebuilding the long run from a low base",
+          "target_km": 10,
           "shoe": "Max-cushion (long-run)"
         }
       ]
@@ -1125,14 +1125,14 @@
       "week": 18,
       "start": "2026-11-16",
       "phase": "Marathon-Specific I",
-      "target_km": 97,
+      "target_km": 60,
       "focus": "",
       "days": [
         {
           "date": "2026-11-16",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running  +S&C (easy-day session)",
           "target_km": 0,
           "shoe": null
         },
@@ -1140,48 +1140,48 @@
           "date": "2026-11-17",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog @ 6:00/km · w/u 4.5 km · c/d 2.8 km  +S&C (hard-day session)",
-          "target_km": 14,
+          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2 km — first quality since the injury, half the usual volume, flat loop only",
+          "target_km": 12,
           "shoe": "EVO SL"
         },
         {
           "date": "2026-11-18",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 14 km + 6×20s strides",
-          "target_km": 14,
+          "session": "Easy 9 km",
+          "target_km": 9,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-19",
           "dow": "Thu",
           "type": "easy",
-          "session": "Medium-long 16 km easy",
-          "target_km": 16,
+          "session": "Easy 10 km",
+          "target_km": 10,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-20",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 10 km easy  +BJJ (drills only — no live rounds)",
-          "target_km": 10,
+          "session": "Recovery 6 km easy  +S&C (easy-day session)",
+          "target_km": 6,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-21",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 11 km + strides",
-          "target_km": 11,
+          "session": "Easy 8 km + 6×20s strides",
+          "target_km": 8,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-22",
           "dow": "Sun",
           "type": "long",
-          "session": "32 km, last 10 km @ MP",
-          "target_km": 32,
+          "session": "Long 15 km easy",
+          "target_km": 15,
           "shoe": "RACE SHOE"
         }
       ]
@@ -1190,14 +1190,14 @@
       "week": 19,
       "start": "2026-11-23",
       "phase": "Marathon-Specific I",
-      "target_km": 101,
+      "target_km": 74,
       "focus": "",
       "days": [
         {
           "date": "2026-11-23",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session) — BJJ returns here if the ankle has been clean for three weeks",
           "target_km": 0,
           "shoe": null
         },
@@ -1205,48 +1205,48 @@
           "date": "2026-11-24",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
-          "target_km": 14,
+          "session": "Threshold: 5×1.5 km @ 3:48/km, 75s jog @ 6:00/km · w/u 3 km · c/d 2.5 km",
+          "target_km": 13,
           "shoe": "Mach X3"
         },
         {
           "date": "2026-11-25",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
-          "target_km": 16,
+          "session": "Easy 11 km + 6×20s strides",
+          "target_km": 11,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-26",
           "dow": "Thu",
           "type": "quality",
-          "session": "Medium-long 16 km w/ middle 8 km @ MP",
-          "target_km": 16,
+          "session": "Medium-long 14 km w/ middle 5 km @ MP — first marathon-pace work back, deliberately short",
+          "target_km": 14,
           "shoe": "Mach X3"
         },
         {
           "date": "2026-11-27",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 11 km easy  +BJJ (drills only — no live rounds)",
-          "target_km": 11,
+          "session": "Recovery 7 km easy  +BJJ (drills only — no live rounds)",
+          "target_km": 7,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-28",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 14 km + strides",
-          "target_km": 14,
+          "session": "Easy 9 km + strides",
+          "target_km": 9,
           "shoe": "Daily trainer"
         },
         {
           "date": "2026-11-29",
           "dow": "Sun",
           "type": "long",
-          "session": "30 km easy (recovery weekend — no MP)",
-          "target_km": 30,
+          "session": "Long 20 km easy",
+          "target_km": 20,
           "shoe": "Max-cushion (long-run)"
         }
       ]
@@ -1255,7 +1255,7 @@
       "week": 20,
       "start": "2026-11-30",
       "phase": "Marathon-Specific I",
-      "target_km": 92,
+      "target_km": 85,
       "focus": "",
       "days": [
         {
@@ -1278,8 +1278,8 @@
           "date": "2026-12-02",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 14 km + 6×20s strides",
-          "target_km": 14,
+          "session": "Easy 11 km + 6×20s strides",
+          "target_km": 11,
           "shoe": "Daily trainer"
         },
         {
@@ -1294,16 +1294,16 @@
           "date": "2026-12-04",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 10 km easy  +BJJ (drills only — no live rounds)",
-          "target_km": 10,
+          "session": "Recovery 8 km easy  +BJJ (drills only — no live rounds)",
+          "target_km": 8,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2026-12-05",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 10 km + strides",
-          "target_km": 10,
+          "session": "Easy 8 km + strides",
+          "target_km": 8,
           "shoe": "Daily trainer"
         },
         {
