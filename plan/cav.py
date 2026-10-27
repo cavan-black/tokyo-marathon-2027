@@ -84,12 +84,13 @@ DAY_OVERRIDE = {
                 # Cross-training key (HR from Karvonen 197/52, HRR 145, offset for mode —
                 # bike runs ~5-10 bpm under running, deep water ~10-15 under):
                 #   CT1 easy spin 45-60 min @ 133-148, cadence 90-95
-                #   CT2 aqua jog 40-50 min easy @ 129-143, cadence 70-85
+                #   CT2 easy spin 45 min + 6x1 min high-cadence spin-ups @ 100-110 rpm
                 #   CT3 bike threshold 4x6 min @ 163-172, 3 min easy between
-                #   CT4 aqua jog 8x2 min hard / 1 min easy
                 #   CT5 long bike 75-90 min @ 139-153
                 # Two hard sessions a week is what holds VO2max; everything else genuinely
                 # easy. No rowing or stair climber — both drive force through the footplate.
+                # He opted out of aqua jogging (27 Oct), so this is bike-only. That costs a
+                # little running-specific patterning, which the single-leg S&C work offsets.
                 # ---- INJURY: left subtalar / medial ankle, onset 22 Oct 2026 ----
                 # Felt on 22, 23, 24 and 26 Oct, then forced a 1.6 km abort on 27 Oct at
                 # 5:33/km on the flat. Pain present from the first km of easy running is the
@@ -112,9 +113,9 @@ DAY_OVERRIDE = {
                      "Wed": ("NO RUNNING — left ankle. CT1 easy spin 45 min @ 133-148 bpm, "
                              "cadence 90-95, seat high, pedal through the midfoot  "
                              "+S&C upper body/core only", "rest", 0),
-                     "Thu": ("NO RUNNING. CT2 aqua jog 40 min easy @ 129-143 bpm — belt, "
-                             "upright, cadence 70-85, run don't bicycle. PHYSIO: book it, "
-                             "this is day 7 and it is getting worse, not better", "rest", 0),
+                     "Thu": ("NO RUNNING. CT2 easy spin 45 min @ 133-148 bpm + 6x1 min "
+                             "high-cadence spin-ups @ 100-110 rpm, low resistance. PHYSIO: "
+                             "book it, this is day 7 and getting worse, not better", "rest", 0),
                      "Fri": ("NO RUNNING. CT3 bike threshold 60 min: 4x6 min @ 163-172 bpm, "
                              "3 min easy between · w/u 15 min · c/d 10 min  "
                              "+S&C upper body/core", "rest", 0),
@@ -128,8 +129,8 @@ DAY_OVERRIDE = {
                      "Tue": ("GATE — only if walking is pain-free AND 10 single-leg heel raises "
                              "are pain-free. Return-to-run: 20 min as 4 min jog / 1 min walk, "
                              "flat, in the GT-2000. Stop at ANY ankle pain", "recovery", 4),
-                     "Wed": ("NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, or CT4 "
-                             "aqua jog 8x2 min hard / 1 min easy", "rest", 0),
+                     "Wed": ("NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, "
+                             "3 min easy between · w/u 15 min · c/d 10 min", "rest", 0),
                      "Thu": ("Easy 6 km flat — only if Tuesday was pain-free and the next "
                              "morning was clean too", "easy", 6),
                      "Fri": ("NO RUNNING. CT1 easy spin 45 min  +S&C upper body/core", "rest", 0),
