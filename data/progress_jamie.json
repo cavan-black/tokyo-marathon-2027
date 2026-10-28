@@ -20710,11 +20710,25 @@
       "type": "easy",
       "session": "Easy 8 km + 6×20s strides + 4×30s hills  +S&C (hard-day session)",
       "target_km": 8,
-      "actual_km": 0,
+      "actual_km": 2.5,
       "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
+      "pace_min_km": 6.367,
+      "pace_str": "6:22",
+      "activities": [
+        {
+          "id": 20767487634,
+          "date": "2026-10-28",
+          "name": "Afternoon Run",
+          "activity_type": "Run",
+          "distance_km": 2.5,
+          "moving_time_s": 955,
+          "pace_min_km": 6.367,
+          "avg_hr": 131.2,
+          "max_hr": 152.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ],
       "cross_activities": []
     },
     "2026-10-29": {
@@ -22635,8 +22649,8 @@
     },
     "15": {
       "planned_km": 48,
-      "planned_km_due": 5,
-      "actual_km": 5.0,
+      "planned_km_due": 13,
+      "actual_km": 7.5,
       "substituted_km": 0,
       "replaced_km": -18.0,
       "done": 1,
@@ -22647,7 +22661,7 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "✓ On track"
+      "flag": "⚠ Under-target — consider holding volume / repeating the week"
     },
     "16": {
       "planned_km": 42,
@@ -22938,7 +22952,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-28T12:22:47+00:00",
+  "last_sync": "2026-10-28T18:42:07+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
