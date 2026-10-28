@@ -20711,7 +20711,7 @@
       "session": "Easy 8 km + 6×20s strides + 4×30s hills  +S&C (hard-day session)",
       "target_km": 8,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -22641,7 +22641,7 @@
       "replaced_km": -18.0,
       "done": 1,
       "partial": 0,
-      "missed": 0,
+      "missed": 1,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -22938,7 +22938,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-27T19:57:31+00:00",
+  "last_sync": "2026-10-28T00:18:48+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
