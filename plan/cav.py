@@ -110,9 +110,10 @@ DAY_OVERRIDE = {
                      "Tue": ("Pulled up at 1.6 km — ankle sore from the first kilometre, "
                              "so he stopped. Right call: this is where the layoff starts",
                              "rest", 0),
-                     "Wed": ("NO RUNNING — left ankle. CT1 easy spin 45 min @ 133-148 bpm, "
-                             "cadence 90-95, seat high, pedal through the midfoot  "
-                             "+S&C upper body/core only", "rest", 0),
+                                          # Bruising appeared below the medial malleolus on the 29th, so the
+                     # 28th became a complete day off — no running and no cross-training.
+                     "Wed": ("FULL REST — no running, no cross-training. Ankle off "
+                             "entirely", "rest", 0),
                      "Thu": ("NO RUNNING. CT2 easy spin 45 min @ 133-148 bpm + 6x1 min "
                              "high-cadence spin-ups @ 100-110 rpm, low resistance. PHYSIO: "
                              "book it, this is day 7 and getting worse, not better", "rest", 0),

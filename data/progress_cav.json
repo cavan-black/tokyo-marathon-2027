@@ -55369,7 +55369,7 @@
       "week": 15,
       "dow": "Wed",
       "type": "rest",
-      "session": "NO RUNNING — left ankle. CT1 easy spin 45 min @ 133-148 bpm, cadence 90-95, seat high, pedal through the midfoot  +S&C upper body/core only",
+      "session": "FULL REST — no running, no cross-training. Ankle off entirely",
       "target_km": 0,
       "actual_km": 0,
       "status": "Rest",
@@ -57599,7 +57599,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-29T00:40:16+00:00",
+  "last_sync": "2026-10-29T06:54:46+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",
