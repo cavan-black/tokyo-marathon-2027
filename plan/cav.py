@@ -110,8 +110,9 @@ DAY_OVERRIDE = {
                      "Tue": ("Pulled up at 1.6 km — ankle sore from the first kilometre, "
                              "so he stopped. Right call: this is where the layoff starts",
                              "rest", 0),
-                                          # Bruising appeared below the medial malleolus on the 29th, so the
-                     # 28th became a complete day off — no running and no cross-training.
+                                          # Taken completely off — no running and no cross-training — while
+                     # the ankle was still being worked out. By the 29th it was pain-free
+                     # walking with stiffness only, so the rest did its job.
                      "Wed": ("FULL REST — no running, no cross-training. Ankle off "
                              "entirely", "rest", 0),
                      "Thu": ("NO RUNNING. CT2 easy spin 45 min @ 133-148 bpm + 6x1 min "
