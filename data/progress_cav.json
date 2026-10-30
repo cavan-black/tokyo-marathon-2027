@@ -55402,7 +55402,36 @@
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": 20788494438,
+          "date": "2026-10-30",
+          "name": "Morning Ride",
+          "activity_type": "Ride",
+          "distance_km": 0.0,
+          "moving_time_s": 1094,
+          "pace_min_km": null,
+          "avg_hr": 96.6,
+          "max_hr": 116.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": true
+        },
+        {
+          "id": 20788494437,
+          "date": "2026-10-30",
+          "name": "Morning Weight Training",
+          "activity_type": "WeightTraining",
+          "distance_km": 0.0,
+          "moving_time_s": 1867,
+          "pace_min_km": null,
+          "avg_hr": 76.8,
+          "max_hr": 112.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-10-31": {
       "week": 15,
@@ -57599,7 +57628,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-30T00:40:59+00:00",
+  "last_sync": "2026-10-30T12:23:29+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",
