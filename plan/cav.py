@@ -110,14 +110,14 @@ DAY_OVERRIDE = {
                      "Tue": ("Pulled up at 1.6 km — ankle sore from the first kilometre, "
                              "so he stopped. Right call: this is where the layoff starts",
                              "rest", 0),
-                                          # Taken completely off — no running and no cross-training — while
+                     # Taken completely off — no running and no cross-training — while
                      # the ankle was still being worked out. By the 29th it was pain-free
                      # walking with stiffness only, so the rest did its job.
                      "Wed": ("FULL REST — no running, no cross-training. Ankle off "
                              "entirely", "rest", 0),
                      "Thu": ("NO RUNNING. CT2 easy spin 45 min @ 133-148 bpm + 6x1 min "
-                             "high-cadence spin-ups @ 100-110 rpm, low resistance. PHYSIO: "
-                             "book it, this is day 7 and getting worse, not better", "rest", 0),
+                             "high-cadence spin-ups @ 100-110 rpm, low resistance. Spin was "
+                             "pain-free. PHYSIO: worth booking, no longer urgent", "rest", 0),
                      "Fri": ("NO RUNNING. CT3 bike threshold 60 min: 4x6 min @ 163-172 bpm, "
                              "3 min easy between · w/u 15 min · c/d 10 min  "
                              "+S&C upper body/core", "rest", 0),
