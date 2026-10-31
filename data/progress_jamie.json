@@ -21348,11 +21348,26 @@
       "session": "Easy 5 km + strides",
       "target_km": 5,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": 20797265535,
+          "date": "2026-10-31",
+          "name": "Morning Workout",
+          "activity_type": "Workout",
+          "distance_km": 0.0,
+          "moving_time_s": 3599,
+          "pace_min_km": null,
+          "avg_hr": 129.0,
+          "max_hr": 148.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-11-01": {
       "week": 15,
@@ -23239,7 +23254,7 @@
       "replaced_km": -18.0,
       "done": 3,
       "partial": 0,
-      "missed": 1,
+      "missed": 2,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -23536,7 +23551,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-30T18:28:31+00:00",
+  "last_sync": "2026-10-31T00:32:38+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
