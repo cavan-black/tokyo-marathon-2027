@@ -21348,7 +21348,7 @@
       "session": "Easy 5 km + strides",
       "target_km": 5,
       "actual_km": 0,
-      "status": "Missed",
+      "status": "Substituted",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -21366,6 +21366,20 @@
           "elev_gain_m": 0,
           "route": [],
           "counts_as_substitute": false
+        },
+        {
+          "id": 20797584026,
+          "date": "2026-10-31",
+          "name": "Morning Ride",
+          "activity_type": "Ride",
+          "distance_km": 0.0,
+          "moving_time_s": 1439,
+          "pace_min_km": null,
+          "avg_hr": 112.9,
+          "max_hr": 124.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": true
         }
       ]
     },
@@ -23248,14 +23262,14 @@
     },
     "15": {
       "planned_km": 48,
-      "planned_km_due": 23,
+      "planned_km_due": 28,
       "actual_km": 18.5,
-      "substituted_km": 0,
+      "substituted_km": 5,
       "replaced_km": -18.0,
-      "done": 3,
+      "done": 4,
       "partial": 0,
-      "missed": 2,
-      "substituted": 0,
+      "missed": 1,
+      "substituted": 1,
       "replaced": 0,
       "quality_hit": 0,
       "quality_planned": 0,
@@ -23551,7 +23565,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-10-31T00:32:38+00:00",
+  "last_sync": "2026-10-31T11:53:38+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
