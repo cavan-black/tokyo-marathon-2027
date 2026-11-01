@@ -109,15 +109,39 @@ DAY_OVERRIDE = {
                 # settles tendon symptoms while lowering tendon capacity, which is exactly
                 # the March -> October loop. From here the ankle gets LOADED, daily, and
                 # running returns early and small rather than late and big.
-                # Rehab key (daily, ~12 min, both legs, run days included):
-                #   R1 isometric calf hold 5x45 s single-leg at mid-range  (weeks 15-16)
-                #   R2 heavy slow calf raise 4x8, 3 s up / 3 s down, straight and bent knee,
-                #      loaded with a pack once bodyweight is easy        (from week 17)
+                # ---- REHAB, split by load. The split matters: tendon collagen synthesis
+                # runs net-NEGATIVE for ~24-36 h after a heavy load and only turns positive
+                # again around 48-72 h. Heavy work every day parks him in the catabolic half
+                # of that cycle forever, which is the opposite of the goal. So:
+                # DAILY (low load, ~8 min, both legs, run days included):
+                #   R1 isometric calf hold 5x45 s single-leg mid-range, ~70% effort. Early
+                #      analgesia and load tolerance without the recovery cost.
                 #   R3 banded resisted inversion 3x15 slow — tib post direct
                 #   R4 single-leg balance 3x30 s eyes closed — the 2018 sprain's legacy
                 #   R5 short-foot / toe yoga 3x10 — intrinsics
+                # GYM, 2x/week wks 16-17 (Mon + Fri), 3x from wk 18 (Mon/Wed/Fri). Never on
+                # consecutive days. Heavy slow resistance: 3 s up, 3 s down, last rep hard.
+                # Progress by LOAD, never by reps: 15RM in wk 16 down to 6RM by wk 20.
+                #   G1 seated calf raise, bent knee — SOLEUS. The priority: running puts
+                #      6-8x bodyweight through it, far more than gastroc. 4x8.
+                #      Target by wk 20: 8 reps at 1.5x bodyweight (~105 kg).
+                #   G2 standing calf raise, straight knee — gastroc. 4x8, single-leg when
+                #      bodyweight gets easy, then weighted.
+                #   G3 heel raise with the band pulling into eversion — tib post under real
+                #      load, which R3 cannot reach. 3x10 slow.
+                #   G4 rear-foot-elevated split squat 3x6-8 — single-leg strength and the
+                #      hip control the sprain never got back.
+                #   G5 Romanian deadlift 3x6 heavy — posterior chain.
+                #   G6 Copenhagen plank 3x20 s/side + banded hip abduction 3x15 — glute med.
+                # From wk 20, once G1-G2 are pain-free at load, add ELASTIC work: pogo hops
+                # 3x20, then skipping, then low bounding. Tendon stiffness is what returns
+                # energy at 3:59/km, and heavy slow work alone does not build it.
+                # Secondary benefit worth more than the 215 lost km: heavy lifting above
+                # ~80% 1RM improves running economy 2-8% in trained distance runners. This
+                # layoff is the window to finally do it.
                 # Test battery, both sides, numbers written down, repeated every Sunday:
-                #   T1 single-leg heel raises to failure (height must hold) — L vs R
+                #   T1 single-leg heel raises to failure (height must hold) — L vs R.
+                #      Benchmark is 25+; a distance runner should beat that comfortably.
                 #   T2 knee-to-wall dorsiflexion in cm — L vs R
                 #   T3 10 single-leg hops — pain yes/no
                 # Left within 10% of right on T1 and T2 is the gate for quality work
@@ -160,15 +184,13 @@ DAY_OVERRIDE = {
                      # acceptable and expected; stiffness that lasts the morning, or any
                      # pain worse than yesterday, means repeat the previous step.
                      "Mon": ("NO RUNNING. 24 H CHECK — stiffness should clear in <10 min. "
-                             "CT1 easy spin 45 min @ 133-148 bpm  +R1 +S&C upper body/core",
-                             "rest", 0),
+                             "CT1 easy spin 45 min @ 133-148 bpm  +R1 +GYM G1-G6", "rest", 0),
                      "Tue": ("Easy 5 km flat, GT-2000 — only if Monday's check was clean. "
                              "+R1", "recovery", 5),
                      "Wed": ("NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, "
                              "3 min easy between · w/u 15 min · c/d 10 min  +R1", "rest", 0),
                      "Thu": ("Easy 7 km flat  +R1", "easy", 7),
-                     "Fri": ("NO RUNNING. CT1 easy spin 45 min  +R1 +S&C upper body/core",
-                             "rest", 0),
+                     "Fri": ("NO RUNNING. CT1 easy spin 45 min  +R1 +GYM G1-G6", "rest", 0),
                      "Sat": ("Easy 8 km flat  +R1", "easy", 8),
                      "Sun": ("Easy 12 km flat — no MP work, no hills, no corners. Then "
                              "REPEAT THE TEST BATTERY and compare to 1 Nov  +R1",
