@@ -470,6 +470,19 @@ REHAB_LOADS = [
     ["Wk 19", "4 × 8", "125%", "2 × 26 kg", "73 kg"],
     ["Wk 20", "4 × 6", "135%", "2 × 30 kg", "80 kg"],
 ]
+REHAB_SCHEDULE = [
+    ["Wks 16-17", "Mon + Fri", "Rebuild. Calibrate, then climb the ladder"],
+    ["Wks 18-20", "Mon + Wed + Fri", "The window with room for three — volume is still moderate"],
+    ["Wk 21", "Mon only", "Sevilla on the Sunday. Nothing heavy after Monday"],
+    ["Wks 22-23", "Mon + Wed + Fri", "Back to three"],
+    ["Wks 24-30", "Mon + Fri", "Peak block, 95-116 km/wk. Drop to 3×5 heavy and low volume: "
+     "the job here is holding the strength you built, not adding to it. Three heavy "
+     "sessions on top of peak mileage is how strength work starts causing injuries "
+     "instead of preventing them"],
+    ["Wk 26", "Mon only", "Race on the Sunday"],
+    ["Wks 31-32", "Mon only", "Taper. Maintenance, no plyometrics"],
+    ["Wk 33", "None", "Race week. Nothing heavy inside 5-7 days of Tokyo"],
+]
 REHAB_BLOCKS = [
     {"title": "Ankle mobility — the priority after the 1 Nov battery",
      "headers": ["Drill", "Dose", "Why"],
@@ -483,7 +496,7 @@ REHAB_BLOCKS = [
      "note": "Every day including run days. Low load by design: this is what keeps the tendon "
              "working between the heavy sessions, and none of it costs recovery.",
      "rows": REHAB_DAILY},
-    {"title": "Gym — heavy slow resistance · Mon + Fri (Mon/Wed/Fri from wk 18)",
+    {"title": "Gym — heavy slow resistance · runs to Tokyo",
      "headers": ["Exercise", "Sets × Reps", "Load and why"],
      "note": "DEMOTED by the 1 Nov battery — 30/30 heel raises means this is no longer the fix, "
              "it is supporting work, and mobility comes first. Still worth doing properly: the "
@@ -493,6 +506,13 @@ REHAB_BLOCKS = [
              "side benefit is worth more than the 215 km this injury cost: heavy lifting above "
              "~80% 1RM improves running economy 2-8% in trained distance runners.",
      "rows": REHAB_GYM},
+    {"title": "Gym through to Tokyo — how the dose changes",
+     "headers": ["Weeks", "Sessions", "Why"],
+     "note": "The ankle work does not stop when the injury settles — that is exactly the "
+             "mistake that turned March into October. What changes is the dose, not whether "
+             "it happens. The hips and posterior chain (G4-G6) run the whole way on the same "
+             "schedule; they are what keeps the ankle from having to cover for anything else.",
+     "rows": REHAB_SCHEDULE},
     {"title": "The load ladder, week by week",
      "headers": ["Week", "Reps (calves)", "Calf load", "G4 split squat", "G5 RDL"],
      "note": "Session one is a calibration, not a workout: find the load you can just manage for "
@@ -650,6 +670,48 @@ def qkm(w, which):
     if w <= 30: return {"tue":15,"thu":{24:24,28:24,30:22}.get(w,17)}[which]
     return {"tue":9,"thu":8}[which]
 
+# The ankle work runs to Tokyo, not just through the comeback. The DOSE changes though:
+# three heavy sessions a week is right while volume is moderate and wrong at 110-116 km,
+# and nothing heavy goes near a race week. Stamped onto the days rather than hand-written
+# into each note, because "every week" only survives if nothing has to be remembered.
+#   wks 16-17  Mon + Fri          rebuilding, 2x
+#   wks 18-20  Mon + Wed + Fri    the window with room for 3x
+#   wk  21     Mon only           Sevilla on the Sunday
+#   wks 22-23  Mon + Wed + Fri    back to 3x
+#   wks 24-30  Mon + Fri          peak block: maintain strength, add no fatigue (3x5 heavy)
+#   wks 31-32  Mon only           taper, maintenance, no plyometrics
+#   wk  33     none               race week
+RACE_WEEKS = (21, 26, 33)
+
+def gym_for(w):
+    if w == 33:         return (), ""
+    if 31 <= w <= 32:   return ("Mon",), "GYM maintenance only — 3x5, no plyometrics"
+    if w in RACE_WEEKS: return ("Mon",), "GYM G1-G6 light — race on Sunday"
+    if 24 <= w <= 30:   return ("Mon","Fri"), "GYM G1-G6 maintenance — 3x5 heavy, low volume"
+    if 18 <= w <= 23:   return ("Mon","Wed","Fri"), "GYM G1-G6"
+    return ("Mon","Fri"), "GYM G1-G6"
+
+def _stamp_rehab(w, days):
+    gym_days, gym_txt = gym_for(w)
+    # Mobility stays twice daily while the dorsiflexion deficit is being closed, then
+    # drops to once a day as maintenance. The isometrics fold into the gym work once the
+    # heavy calf loading is established.
+    tail = ("  +M1/M2 mobility (2x daily) +R1 isometrics" if w <= 20
+            else "  +M1/M2 ankle mobility (daily)")
+    for dow in DOW:
+        txt, typ, km = days[dow]
+        if "+M1" in txt or "+M1/M2" in txt:
+            continue
+        for junk in ("  +S&C (easy-day session)", "  +S&C (hard-day session)",
+                     "  +light S&C (taper)", "  +R1", " +R1"):
+            txt = txt.replace(junk, "")
+        txt = txt.rstrip()
+        if dow in gym_days and "+GYM" not in txt:
+            txt += "  +" + gym_txt
+        days[dow] = (txt + tail, typ, km)
+    return days
+
+
 def build_week(w):
     v=vol_for(w); lr=lr_for(w); reentry = w<=4
     if w in OFF_WEEKS:
@@ -740,18 +802,8 @@ def build_week(w):
     # Wks 16-20 carry the ankle rehab every single day, run days included. Stamping it
     # here rather than writing it into each note is the only way it does not get dropped
     # from half of them: "daily" has to mean daily or the mobility work does nothing.
-    if 16 <= w <= 20:
-        # Gym twice a week to start, three times from wk 18 once the ankle has proved it
-        # tolerates the load. Stamped rather than hand-written for the same reason.
-        gym_days = ("Mon","Fri") if w <= 17 else ("Mon","Wed","Fri")
-        for dow in DOW:
-            txt,typ,km = days[dow]
-            if "+M1" in txt:
-                continue
-            txt = txt.replace("  +S&C (easy-day session)","").replace("  +R1","").replace(" +R1","").rstrip()
-            if dow in gym_days and "+GYM" not in txt:
-                txt += "  +GYM G1-G6"
-            days[dow] = (txt + "  +M1/M2 mobility (2× daily) +R1 isometrics", typ, km)
+    if w >= 16:
+        days = _stamp_rehab(w, days)
     keep=KEEP_ONLY.get(w)
     if keep:
         why=KEEP_ONLY_WHY.get(w)

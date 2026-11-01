@@ -1002,7 +1002,7 @@
           "date": "2026-11-02",
           "dow": "Mon",
           "type": "rest",
-          "session": "NO RUNNING — 24 H CHECK, stiffness should clear in <10 min. GYM G1 + G2 CALIBRATION: find the load you can just manage for 15 reps at 3 s up / 3 s down, EACH LEG. That number sets the whole ladder. Plus G3. (G4-G6 were done Sun 1 Nov)  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "NO RUNNING — 24 H CHECK, stiffness should clear in <10 min. GYM G1 + G2 CALIBRATION: find the load you can just manage for 15 reps at 3 s up / 3 s down, EACH LEG. That number sets the whole ladder. Plus G3. (G4-G6 were done Sun 1 Nov)  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 0,
           "shoe": null
         },
@@ -1010,7 +1010,7 @@
           "date": "2026-11-03",
           "dow": "Tue",
           "type": "recovery",
-          "session": "Easy 5 km flat, GT-2000 — only if Monday's check was clean.  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 5 km flat, GT-2000 — only if Monday's check was clean.  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 5,
           "shoe": "GT-2000 15"
         },
@@ -1018,7 +1018,7 @@
           "date": "2026-11-04",
           "dow": "Wed",
           "type": "rest",
-          "session": "NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, 3 min easy between · w/u 15 min · c/d 10 min — the last bike session  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, 3 min easy between · w/u 15 min · c/d 10 min — the last bike session  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 0,
           "shoe": null
         },
@@ -1026,7 +1026,7 @@
           "date": "2026-11-05",
           "dow": "Thu",
           "type": "easy",
-          "session": "Easy 7 km flat  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 7 km flat  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 7,
           "shoe": "GT-2000 15"
         },
@@ -1034,7 +1034,7 @@
           "date": "2026-11-06",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Easy 4 km very slow, 6:00/km, flat  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 4 km very slow, 6:00/km, flat  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 4,
           "shoe": "GT-2000 15"
         },
@@ -1042,7 +1042,7 @@
           "date": "2026-11-07",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 8 km flat  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 8 km flat  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 8,
           "shoe": "GT-2000 15"
         },
@@ -1050,7 +1050,7 @@
           "date": "2026-11-08",
           "dow": "Sun",
           "type": "long",
-          "session": "Easy 12 km flat — no MP work, no hills, no corners. Then REPEAT THE TEST BATTERY and compare to 1 Nov  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 12 km flat — no MP work, no hills, no corners. Then REPEAT THE TEST BATTERY and compare to 1 Nov  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 12,
           "shoe": "GT-2000 15"
         }
@@ -1067,7 +1067,7 @@
           "date": "2026-11-09",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Rest from running  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 0,
           "shoe": null
         },
@@ -1075,7 +1075,7 @@
           "date": "2026-11-10",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 8 km flat — first full week back, no quality at all  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 8 km flat — first full week back, no quality at all  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 8,
           "shoe": "GT-2000 15"
         },
@@ -1083,7 +1083,7 @@
           "date": "2026-11-11",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 7 km flat  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 7 km flat  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 7,
           "shoe": "GT-2000 15"
         },
@@ -1091,7 +1091,7 @@
           "date": "2026-11-12",
           "dow": "Thu",
           "type": "easy",
-          "session": "Easy 9 km flat — no hill sprints this block  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 9 km flat — no hill sprints this block  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 9,
           "shoe": "GT-2000 15"
         },
@@ -1099,7 +1099,7 @@
           "date": "2026-11-13",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 5 km easy  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Recovery 5 km easy  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 5,
           "shoe": "GT-2000 15"
         },
@@ -1107,7 +1107,7 @@
           "date": "2026-11-14",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 7 km + 4×20s strides — first strides back, on the flat  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 7 km + 4×20s strides — first strides back, on the flat  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 7,
           "shoe": "GT-2000 15"
         },
@@ -1115,7 +1115,7 @@
           "date": "2026-11-15",
           "dow": "Sun",
           "type": "long",
-          "session": "Easy 10 km — rebuilding the long run from a low base  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 10 km — rebuilding the long run from a low base  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 10,
           "shoe": "GT-2000 15"
         }
@@ -1132,7 +1132,7 @@
           "date": "2026-11-16",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Rest from running  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 0,
           "shoe": null
         },
@@ -1140,7 +1140,7 @@
           "date": "2026-11-17",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2 km — first quality since the injury, half the usual volume, flat loop only  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2 km — first quality since the injury, half the usual volume, flat loop only  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 12,
           "shoe": "EVO SL"
         },
@@ -1148,7 +1148,7 @@
           "date": "2026-11-18",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 9 km  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 9 km  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 9,
           "shoe": "GT-2000 15"
         },
@@ -1156,7 +1156,7 @@
           "date": "2026-11-19",
           "dow": "Thu",
           "type": "easy",
-          "session": "Easy 10 km  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 10 km  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 10,
           "shoe": "GT-2000 15"
         },
@@ -1164,7 +1164,7 @@
           "date": "2026-11-20",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Recovery 6 km easy  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 6,
           "shoe": "Clifton 9"
         },
@@ -1172,7 +1172,7 @@
           "date": "2026-11-21",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 8 km + 6×20s strides  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 8 km + 6×20s strides  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 8,
           "shoe": "GT-2000 15"
         },
@@ -1180,7 +1180,7 @@
           "date": "2026-11-22",
           "dow": "Sun",
           "type": "long",
-          "session": "Long 15 km easy  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Long 15 km easy  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 15,
           "shoe": "RACE SHOE"
         }
@@ -1197,7 +1197,7 @@
           "date": "2026-11-23",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds — BJJ returns here if the ankle has been clean for three weeks  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Rest from running · BJJ drills/technical, no live rounds — BJJ returns here if the ankle has been clean for three weeks  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 0,
           "shoe": null
         },
@@ -1205,7 +1205,7 @@
           "date": "2026-11-24",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1.5 km @ 3:48/km, 75s jog @ 6:00/km · w/u 3 km · c/d 2.5 km  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Threshold: 5×1.5 km @ 3:48/km, 75s jog @ 6:00/km · w/u 3 km · c/d 2.5 km  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 13,
           "shoe": "Mach X3"
         },
@@ -1213,7 +1213,7 @@
           "date": "2026-11-25",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 11 km + 6×20s strides  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 11 km + 6×20s strides  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 11,
           "shoe": "Clifton 9"
         },
@@ -1221,7 +1221,7 @@
           "date": "2026-11-26",
           "dow": "Thu",
           "type": "quality",
-          "session": "Medium-long 14 km w/ middle 5 km @ MP — first marathon-pace work back, deliberately short  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Medium-long 14 km w/ middle 5 km @ MP — first marathon-pace work back, deliberately short  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1229,7 +1229,7 @@
           "date": "2026-11-27",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 7 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Recovery 7 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 7,
           "shoe": "Clifton 9"
         },
@@ -1237,7 +1237,7 @@
           "date": "2026-11-28",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 9 km + strides  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 9 km + strides  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 9,
           "shoe": "Clifton 9"
         },
@@ -1245,7 +1245,7 @@
           "date": "2026-11-29",
           "dow": "Sun",
           "type": "long",
-          "session": "Long 20 km easy  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Long 20 km easy  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 20,
           "shoe": "Clifton 9"
         }
@@ -1262,7 +1262,7 @@
           "date": "2026-11-30",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Rest from running · BJJ drills/technical, no live rounds  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 0,
           "shoe": null
         },
@@ -1270,7 +1270,7 @@
           "date": "2026-12-01",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 6×1000 m @ 3:26/km, 2:30 jog @ 6:00/km · w/u 3.5 km · c/d 2.4 km  +S&C (hard-day session)  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "VO2: 6×1000 m @ 3:26/km, 2:30 jog @ 6:00/km · w/u 3.5 km · c/d 2.4 km  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1278,7 +1278,7 @@
           "date": "2026-12-02",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 11 km + 6×20s strides  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 11 km + 6×20s strides  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 11,
           "shoe": "GT-2000 15"
         },
@@ -1286,7 +1286,7 @@
           "date": "2026-12-03",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP tempo: 3×4 km @ MP, 2 min float @ 4:28/km · w/u 2 km · c/d 1.3 km  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "MP tempo: 3×4 km @ MP, 2 min float @ 4:28/km · w/u 2 km · c/d 1.3 km  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 16,
           "shoe": "Mach X3"
         },
@@ -1294,7 +1294,7 @@
           "date": "2026-12-04",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 8 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Recovery 8 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 8,
           "shoe": "Daily trainer #2"
         },
@@ -1302,7 +1302,7 @@
           "date": "2026-12-05",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 8 km + strides  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "Easy 8 km + strides  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 8,
           "shoe": "GT-2000 15"
         },
@@ -1310,7 +1310,7 @@
           "date": "2026-12-06",
           "dow": "Sun",
           "type": "long",
-          "session": "28 km easy — steady week, race is next Sunday  +M1/M2 mobility (2× daily) +R1 isometrics",
+          "session": "28 km easy — steady week, race is next Sunday  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 28,
           "shoe": "Max-cushion (long-run)"
         }
@@ -1327,7 +1327,7 @@
           "date": "2026-12-07",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running · BJJ drills/technical, no live rounds  +GYM G1-G6 light — race on Sunday  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null
         },
@@ -1335,7 +1335,7 @@
           "date": "2026-12-08",
           "dow": "Tue",
           "type": "quality",
-          "session": "Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3.5 km · c/d 2.5 km  +light S&C — half the usual threshold volume, five days out",
+          "session": "Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3.5 km · c/d 2.5 km  +light S&C — half the usual threshold volume, five days out  +M1/M2 ankle mobility (daily)",
           "target_km": 11,
           "shoe": "EVO SL"
         },
@@ -1343,7 +1343,7 @@
           "date": "2026-12-09",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10 km + 6×20s strides",
+          "session": "Easy 10 km + 6×20s strides  +M1/M2 ankle mobility (daily)",
           "target_km": 10,
           "shoe": "Daily trainer #2"
         },
@@ -1351,7 +1351,7 @@
           "date": "2026-12-10",
           "dow": "Thu",
           "type": "easy",
-          "session": "Easy 11 km — no medium-long this week, Sunday is the session",
+          "session": "Easy 11 km — no medium-long this week, Sunday is the session  +M1/M2 ankle mobility (daily)",
           "target_km": 11,
           "shoe": "Daily trainer #2"
         },
@@ -1359,7 +1359,7 @@
           "date": "2026-12-11",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +light S&C (race week)",
+          "session": "Recovery 6 km easy  +light S&C (race week)  +M1/M2 ankle mobility (daily)",
           "target_km": 6,
           "shoe": "Daily trainer #2"
         },
@@ -1367,7 +1367,7 @@
           "date": "2026-12-12",
           "dow": "Sat",
           "type": "easy",
-          "session": "Shakeout: easy 6 km + 4×100 m strides at race pace",
+          "session": "Shakeout: easy 6 km + 4×100 m strides at race pace  +M1/M2 ankle mobility (daily)",
           "target_km": 6,
           "shoe": "Daily trainer #2"
         },
@@ -1375,7 +1375,7 @@
           "date": "2026-12-13",
           "dow": "Sun",
           "type": "race",
-          "session": "TUNE-UP: Sevilla Half Marathon (all-out) · w/u 2 km · c/d 1 km",
+          "session": "TUNE-UP: Sevilla Half Marathon (all-out) · w/u 2 km · c/d 1 km  +M1/M2 ankle mobility (daily)",
           "target_km": 24,
           "shoe": "RACE SHOE"
         }
@@ -1392,7 +1392,7 @@
           "date": "2026-12-14",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running · BJJ drills/technical, no live rounds  +GYM G1-G6  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null
         },
@@ -1400,7 +1400,7 @@
           "date": "2026-12-15",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog @ 6:00/km · w/u 4.5 km · c/d 2.8 km  +S&C (hard-day session)",
+          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog @ 6:00/km · w/u 4.5 km · c/d 2.8 km  +M1/M2 ankle mobility (daily)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1408,7 +1408,7 @@
           "date": "2026-12-16",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 14 km + 6×20s strides",
+          "session": "Easy 14 km + 6×20s strides  +GYM G1-G6  +M1/M2 ankle mobility (daily)",
           "target_km": 14,
           "shoe": "GT-2000 15"
         },
@@ -1416,7 +1416,7 @@
           "date": "2026-12-17",
           "dow": "Thu",
           "type": "easy",
-          "session": "Medium-long 16 km easy — 4 days post-Sevilla",
+          "session": "Medium-long 16 km easy — 4 days post-Sevilla  +M1/M2 ankle mobility (daily)",
           "target_km": 16,
           "shoe": "GT-2000 15"
         },
@@ -1424,7 +1424,7 @@
           "date": "2026-12-18",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 10 km easy  +BJJ (drills only — no live rounds)",
+          "session": "Recovery 10 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6  +M1/M2 ankle mobility (daily)",
           "target_km": 10,
           "shoe": "Daily trainer #2"
         },
@@ -1432,7 +1432,7 @@
           "date": "2026-12-19",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 12 km + strides",
+          "session": "Easy 12 km + strides  +M1/M2 ankle mobility (daily)",
           "target_km": 12,
           "shoe": "GT-2000 15"
         },
@@ -1440,7 +1440,7 @@
           "date": "2026-12-20",
           "dow": "Sun",
           "type": "long",
-          "session": "30 km easy (post-race — keep it genuinely easy)",
+          "session": "30 km easy (post-race — keep it genuinely easy)  +M1/M2 ankle mobility (daily)",
           "target_km": 30,
           "shoe": "Max-cushion (long-run)"
         }
@@ -1457,7 +1457,7 @@
           "date": "2026-12-21",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running · BJJ drills/technical, no live rounds  +GYM G1-G6  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null
         },
@@ -1465,7 +1465,7 @@
           "date": "2026-12-22",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
+          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +M1/M2 ankle mobility (daily)",
           "target_km": 14,
           "shoe": "Quality trainer #2"
         },
@@ -1473,7 +1473,7 @@
           "date": "2026-12-23",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10 km + 6×20s strides",
+          "session": "Easy 10 km + 6×20s strides  +GYM G1-G6  +M1/M2 ankle mobility (daily)",
           "target_km": 10,
           "shoe": "Daily trainer #2"
         },
@@ -1481,7 +1481,7 @@
           "date": "2026-12-24",
           "dow": "Thu",
           "type": "quality",
-          "session": "Medium-long 16 km w/ middle 8 km @ MP",
+          "session": "Medium-long 16 km w/ middle 8 km @ MP  +M1/M2 ankle mobility (daily)",
           "target_km": 16,
           "shoe": "Quality trainer #2"
         },
@@ -1489,7 +1489,7 @@
           "date": "2026-12-25",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 7 km easy  +BJJ (drills only — no live rounds)",
+          "session": "Recovery 7 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6  +M1/M2 ankle mobility (daily)",
           "target_km": 7,
           "shoe": "Daily trainer #2"
         },
@@ -1497,7 +1497,7 @@
           "date": "2026-12-26",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 9 km + strides",
+          "session": "Easy 9 km + strides  +M1/M2 ankle mobility (daily)",
           "target_km": 9,
           "shoe": "Daily trainer #2"
         },
@@ -1505,7 +1505,7 @@
           "date": "2026-12-27",
           "dow": "Sun",
           "type": "long",
-          "session": "20 km easy — Christmas week, keep it light",
+          "session": "20 km easy — Christmas week, keep it light  +M1/M2 ankle mobility (daily)",
           "target_km": 20,
           "shoe": "Max-cushion (long-run)"
         }
@@ -1522,7 +1522,7 @@
           "date": "2026-12-28",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running · BJJ drills/technical, no live rounds  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null,
           "reminders": [
@@ -1533,7 +1533,7 @@
           "date": "2026-12-29",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)",
+          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +M1/M2 ankle mobility (daily)",
           "target_km": 15,
           "shoe": "Mach X3"
         },
@@ -1541,7 +1541,7 @@
           "date": "2026-12-30",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10 km + 6×20s strides",
+          "session": "Easy 10 km + 6×20s strides  +M1/M2 ankle mobility (daily)",
           "target_km": 10,
           "shoe": "GT-2000 15"
         },
@@ -1549,7 +1549,7 @@
           "date": "2026-12-31",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP: 3×6 km @ 3:59/km, 3 min jog @ 6:00/km · w/u 3 km · c/d 2 km",
+          "session": "MP: 3×6 km @ 3:59/km, 3 min jog @ 6:00/km · w/u 3 km · c/d 2 km  +M1/M2 ankle mobility (daily)",
           "target_km": 24,
           "shoe": "Mach X3"
         },
@@ -1557,7 +1557,7 @@
           "date": "2027-01-01",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 7 km easy  +BJJ (drills only — no live rounds)",
+          "session": "Recovery 7 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +M1/M2 ankle mobility (daily)",
           "target_km": 7,
           "shoe": "Daily trainer #2"
         },
@@ -1565,7 +1565,7 @@
           "date": "2027-01-02",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 8 km + strides",
+          "session": "Easy 8 km + strides  +M1/M2 ankle mobility (daily)",
           "target_km": 8,
           "shoe": "GT-2000 15"
         },
@@ -1573,7 +1573,7 @@
           "date": "2027-01-03",
           "dow": "Sun",
           "type": "long",
-          "session": "24 km easy — New Year week, ease back in",
+          "session": "24 km easy — New Year week, ease back in  +M1/M2 ankle mobility (daily)",
           "target_km": 24,
           "shoe": "Max-cushion (long-run)"
         }
@@ -1590,7 +1590,7 @@
           "date": "2027-01-04",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running · BJJ drills/technical, no live rounds  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null,
           "reminders": [
@@ -1605,7 +1605,7 @@
           "date": "2027-01-05",
           "dow": "Tue",
           "type": "quality",
-          "session": "Alternating K's: 6×(1 km @ 3:50/km / 1 km float @ 4:15/km) — 12 km continuous, no standing rest, averages ~4:03/km · w/u 3.5 km · c/d 2.5 km  +S&C (hard-day session)",
+          "session": "Alternating K's: 6×(1 km @ 3:50/km / 1 km float @ 4:15/km) — 12 km continuous, no standing rest, averages ~4:03/km · w/u 3.5 km · c/d 2.5 km  +M1/M2 ankle mobility (daily)",
           "target_km": 18,
           "shoe": "Quality trainer #2"
         },
@@ -1613,7 +1613,7 @@
           "date": "2027-01-06",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
+          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)  +M1/M2 ankle mobility (daily)",
           "target_km": 16,
           "shoe": "Daily trainer #2"
         },
@@ -1621,7 +1621,7 @@
           "date": "2027-01-07",
           "dow": "Thu",
           "type": "easy",
-          "session": "Medium-long 17 km easy",
+          "session": "Medium-long 17 km easy  +M1/M2 ankle mobility (daily)",
           "target_km": 17,
           "shoe": "Daily trainer #2"
         },
@@ -1629,7 +1629,7 @@
           "date": "2027-01-08",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 11 km easy  +BJJ (drills only — no live rounds)",
+          "session": "Recovery 11 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +M1/M2 ankle mobility (daily)",
           "target_km": 11,
           "shoe": "Daily trainer #2"
         },
@@ -1637,7 +1637,7 @@
           "date": "2027-01-09",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 13 km + strides",
+          "session": "Easy 13 km + strides  +M1/M2 ankle mobility (daily)",
           "target_km": 13,
           "shoe": "Daily trainer #2"
         },
@@ -1645,7 +1645,7 @@
           "date": "2027-01-10",
           "dow": "Sun",
           "type": "long",
-          "session": "32 km, last 10 km @ MP — ramp resumes",
+          "session": "32 km, last 10 km @ MP — ramp resumes  +M1/M2 ankle mobility (daily)",
           "target_km": 32,
           "shoe": "Max-cushion (long-run)"
         }
@@ -1662,7 +1662,7 @@
           "date": "2027-01-11",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running · BJJ drills/technical, no live rounds  +GYM G1-G6 light — race on Sunday  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null
         },
@@ -1670,7 +1670,7 @@
           "date": "2027-01-12",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 3×3 km @ 3:50/km, 2 min jog @ 6:00/km · w/u 3 km · c/d 2.3 km  +S&C (hard-day session)",
+          "session": "Threshold: 3×3 km @ 3:50/km, 2 min jog @ 6:00/km · w/u 3 km · c/d 2.3 km  +M1/M2 ankle mobility (daily)",
           "target_km": 15,
           "shoe": "Mach X3"
         },
@@ -1678,7 +1678,7 @@
           "date": "2027-01-13",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 20 km + 6×20s strides  (double: split AM/PM)",
+          "session": "Easy 20 km + 6×20s strides  (double: split AM/PM)  +M1/M2 ankle mobility (daily)",
           "target_km": 20,
           "shoe": "GT-2000 15"
         },
@@ -1686,7 +1686,7 @@
           "date": "2027-01-14",
           "dow": "Thu",
           "type": "long",
-          "session": "Medium-long 26 km easy — the week's long run, moved off the weekend so Sunday's race is run on fresh legs",
+          "session": "Medium-long 26 km easy — the week's long run, moved off the weekend so Sunday's race is run on fresh legs  +M1/M2 ankle mobility (daily)",
           "target_km": 26,
           "shoe": "Max-cushion (long-run)"
         },
@@ -1694,7 +1694,7 @@
           "date": "2027-01-15",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 12 km easy  +S&C (easy-day session)",
+          "session": "Recovery 12 km easy  +M1/M2 ankle mobility (daily)",
           "target_km": 12,
           "shoe": "Daily trainer #2"
         },
@@ -1702,7 +1702,7 @@
           "date": "2027-01-16",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 8 km + 4×100 m strides — race primer, nothing more",
+          "session": "Easy 8 km + 4×100 m strides — race primer, nothing more  +M1/M2 ankle mobility (daily)",
           "target_km": 8,
           "shoe": "GT-2000 15"
         },
@@ -1710,7 +1710,7 @@
           "date": "2027-01-17",
           "dow": "Sun",
           "type": "race",
-          "session": "10K RACE — Salida del Sol, Málaga (flat seafront, ~8,000 runners, ~45 min away) · w/u 2 km · c/d 2 km. A real field is worth 20–40s over a solo TT, which is why this replaces the time trial. DATE UNCONFIRMED — the 2026 edition ran Sun 18 Jan; check the organiser in November and tell me if it lands elsewhere",
+          "session": "10K RACE — Salida del Sol, Málaga (flat seafront, ~8,000 runners, ~45 min away) · w/u 2 km · c/d 2 km. A real field is worth 20–40s over a solo TT, which is why this replaces the time trial. DATE UNCONFIRMED — the 2026 edition ran Sun 18 Jan; check the organiser in November and tell me if it lands elsewhere  +M1/M2 ankle mobility (daily)",
           "target_km": 14,
           "shoe": "RACE SHOE"
         }
@@ -1727,7 +1727,7 @@
           "date": "2027-01-18",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running · BJJ drills/technical, no live rounds  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null
         },
@@ -1735,7 +1735,7 @@
           "date": "2027-01-19",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog @ 6:00/km · w/u 5 km · c/d 3.5 km  +S&C (hard-day session)",
+          "session": "VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog @ 6:00/km · w/u 5 km · c/d 3.5 km  +M1/M2 ankle mobility (daily)",
           "target_km": 15,
           "shoe": "Quality trainer #2"
         },
@@ -1743,7 +1743,7 @@
           "date": "2027-01-20",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
+          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)  +M1/M2 ankle mobility (daily)",
           "target_km": 16,
           "shoe": "Daily trainer #2"
         },
@@ -1751,7 +1751,7 @@
           "date": "2027-01-21",
           "dow": "Thu",
           "type": "easy",
-          "session": "Medium-long 17 km easy",
+          "session": "Medium-long 17 km easy  +M1/M2 ankle mobility (daily)",
           "target_km": 17,
           "shoe": "Daily trainer #2"
         },
@@ -1759,7 +1759,7 @@
           "date": "2027-01-22",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 11 km easy  +BJJ (drills only — no live rounds)",
+          "session": "Recovery 11 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +M1/M2 ankle mobility (daily)",
           "target_km": 11,
           "shoe": "Daily trainer #2"
         },
@@ -1767,7 +1767,7 @@
           "date": "2027-01-23",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 13 km + strides  (double)",
+          "session": "Easy 13 km + strides  (double)  +M1/M2 ankle mobility (daily)",
           "target_km": 13,
           "shoe": "Daily trainer #2"
         },
@@ -1775,7 +1775,7 @@
           "date": "2027-01-24",
           "dow": "Sun",
           "type": "long",
-          "session": "38 km easy — longest run of the block, pure time on feet, no MP",
+          "session": "38 km easy — longest run of the block, pure time on feet, no MP  +M1/M2 ankle mobility (daily)",
           "target_km": 38,
           "shoe": "Max-cushion (long-run)"
         }
@@ -1792,7 +1792,7 @@
           "date": "2027-01-25",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running · BJJ drills/technical, no live rounds  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null
         },
@@ -1800,7 +1800,7 @@
           "date": "2027-01-26",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  +S&C (hard-day session)  (PM easy double)",
+          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog @ 6:00/km · w/u 3 km · c/d 2.2 km  (PM easy double)  +M1/M2 ankle mobility (daily)",
           "target_km": 15,
           "shoe": "Mach X3"
         },
@@ -1808,7 +1808,7 @@
           "date": "2027-01-27",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 18 km + 6×20s strides  (double: split AM/PM)",
+          "session": "Easy 18 km + 6×20s strides  (double: split AM/PM)  +M1/M2 ankle mobility (daily)",
           "target_km": 18,
           "shoe": "GT-2000 15"
         },
@@ -1816,7 +1816,7 @@
           "date": "2027-01-28",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP: 3×6 km @ 3:59/km, 3 min jog @ 6:00/km · w/u 3 km · c/d 2 km",
+          "session": "MP: 3×6 km @ 3:59/km, 3 min jog @ 6:00/km · w/u 3 km · c/d 2 km  +M1/M2 ankle mobility (daily)",
           "target_km": 24,
           "shoe": "Mach X3"
         },
@@ -1824,7 +1824,7 @@
           "date": "2027-01-29",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 13 km easy  +BJJ (drills only — no live rounds)",
+          "session": "Recovery 13 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +M1/M2 ankle mobility (daily)",
           "target_km": 13,
           "shoe": "Daily trainer #2"
         },
@@ -1832,7 +1832,7 @@
           "date": "2027-01-30",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 14 km + strides  (double)",
+          "session": "Easy 14 km + strides  (double)  +M1/M2 ankle mobility (daily)",
           "target_km": 14,
           "shoe": "GT-2000 15"
         },
@@ -1840,7 +1840,7 @@
           "date": "2027-01-31",
           "dow": "Sun",
           "type": "long",
-          "session": "32 km easy (recovery weekend — no MP)",
+          "session": "32 km easy (recovery weekend — no MP)  +M1/M2 ankle mobility (daily)",
           "target_km": 32,
           "shoe": "Max-cushion (long-run)"
         }
@@ -1857,7 +1857,7 @@
           "date": "2027-02-01",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running · BJJ drills/technical, no live rounds  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null
         },
@@ -1865,7 +1865,7 @@
           "date": "2027-02-02",
           "dow": "Tue",
           "type": "quality",
-          "session": "Alternating K's: 6×(1 km @ 3:50/km / 1 km float @ 4:15/km) — 12 km continuous, no standing rest, averages ~4:03/km · w/u 3.5 km · c/d 2.5 km  +S&C (hard-day session)",
+          "session": "Alternating K's: 6×(1 km @ 3:50/km / 1 km float @ 4:15/km) — 12 km continuous, no standing rest, averages ~4:03/km · w/u 3.5 km · c/d 2.5 km  +M1/M2 ankle mobility (daily)",
           "target_km": 18,
           "shoe": "Quality trainer #2"
         },
@@ -1873,7 +1873,7 @@
           "date": "2027-02-03",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)",
+          "session": "Easy 16 km + 6×20s strides  (double: split AM/PM)  +M1/M2 ankle mobility (daily)",
           "target_km": 16,
           "shoe": "Daily trainer #2"
         },
@@ -1881,7 +1881,7 @@
           "date": "2027-02-04",
           "dow": "Thu",
           "type": "easy",
-          "session": "Medium-long 17 km easy",
+          "session": "Medium-long 17 km easy  +M1/M2 ankle mobility (daily)",
           "target_km": 17,
           "shoe": "Daily trainer #2"
         },
@@ -1889,7 +1889,7 @@
           "date": "2027-02-05",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 11 km easy  +BJJ (drills only — no live rounds)",
+          "session": "Recovery 11 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +M1/M2 ankle mobility (daily)",
           "target_km": 11,
           "shoe": "Daily trainer #2"
         },
@@ -1897,7 +1897,7 @@
           "date": "2027-02-06",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 13 km + strides  (double)",
+          "session": "Easy 13 km + strides  (double)  +M1/M2 ankle mobility (daily)",
           "target_km": 13,
           "shoe": "Daily trainer #2",
           "reminders": [
@@ -1910,7 +1910,7 @@
           "date": "2027-02-07",
           "dow": "Sun",
           "type": "long",
-          "session": "35 km, last 12 km @ MP (dress rehearsal)",
+          "session": "35 km, last 12 km @ MP (dress rehearsal)  +M1/M2 ankle mobility (daily)",
           "target_km": 35,
           "shoe": "RACE SHOE"
         }
@@ -1927,7 +1927,7 @@
           "date": "2027-02-08",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest from running · BJJ drills/technical, no live rounds  +S&C (easy-day session)",
+          "session": "Rest from running · BJJ drills/technical, no live rounds  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null,
           "reminders": [
@@ -1938,7 +1938,7 @@
           "date": "2027-02-09",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 15 km + 6×20s strides — Thursday's test is the week's priority; arriving at it with 9 km of threshold in the legs would measure your Tuesday, not your fitness",
+          "session": "Easy 15 km + 6×20s strides — Thursday's test is the week's priority; arriving at it with 9 km of threshold in the legs would measure your Tuesday, not your fitness  +M1/M2 ankle mobility (daily)",
           "target_km": 15,
           "shoe": "GT-2000 15"
         },
@@ -1946,7 +1946,7 @@
           "date": "2027-02-10",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10 km + 6×20s strides",
+          "session": "Easy 10 km + 6×20s strides  +M1/M2 ankle mobility (daily)",
           "target_km": 10,
           "shoe": "GT-2000 15",
           "reminders": [
@@ -1957,7 +1957,7 @@
           "date": "2027-02-11",
           "dow": "Thu",
           "type": "quality",
-          "session": "READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog @ 6:00/km — PASS = all four on pace, rep 4 no slower than rep 1, HR flat at 172–176 across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic. ↑ IF THE BLOCK HAS GONE WELL: 3:45/km is the stretch version — but that is ~10K race pace, so 12 km of it asks for 45 min at a pace you can only hold for 37:40. Only take it if the wk-25 and wk-29 alternating K's both felt controlled AND Sevilla came in under 1:22:30. Decide at the warm-up, not in advance, and bail to 3:50 after rep 1 if it is not there — a failed test tells you nothing · w/u 5.5 km · c/d 3.8 km",
+          "session": "READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog @ 6:00/km — PASS = all four on pace, rep 4 no slower than rep 1, HR flat at 172–176 across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic. ↑ IF THE BLOCK HAS GONE WELL: 3:45/km is the stretch version — but that is ~10K race pace, so 12 km of it asks for 45 min at a pace you can only hold for 37:40. Only take it if the wk-25 and wk-29 alternating K's both felt controlled AND Sevilla came in under 1:22:30. Decide at the warm-up, not in advance, and bail to 3:50 after rep 1 if it is not there — a failed test tells you nothing · w/u 5.5 km · c/d 3.8 km  +M1/M2 ankle mobility (daily)",
           "target_km": 22,
           "shoe": "Mach X3"
         },
@@ -1965,7 +1965,7 @@
           "date": "2027-02-12",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 7 km easy  +BJJ (drills only — no live rounds)",
+          "session": "Recovery 7 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +M1/M2 ankle mobility (daily)",
           "target_km": 7,
           "shoe": "Daily trainer #2"
         },
@@ -1973,7 +1973,7 @@
           "date": "2027-02-13",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 8 km + strides",
+          "session": "Easy 8 km + strides  +M1/M2 ankle mobility (daily)",
           "target_km": 8,
           "shoe": "GT-2000 15"
         },
@@ -1981,7 +1981,7 @@
           "date": "2027-02-14",
           "dow": "Sun",
           "type": "long",
-          "session": "32 km easy — FINAL long run, keep it relaxed",
+          "session": "32 km easy — FINAL long run, keep it relaxed  +M1/M2 ankle mobility (daily)",
           "target_km": 32,
           "shoe": "Max-cushion (long-run)"
         }
@@ -1998,7 +1998,7 @@
           "date": "2027-02-15",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest / mobility (full rest day)",
+          "session": "Rest / mobility (full rest day)  +GYM maintenance only — 3x5, no plyometrics  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null
         },
@@ -2006,7 +2006,7 @@
           "date": "2027-02-16",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 2.5 km · c/d 1.8 km",
+          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 2.5 km · c/d 1.8 km  +M1/M2 ankle mobility (daily)",
           "target_km": 9,
           "shoe": "Quality trainer #2"
         },
@@ -2014,7 +2014,7 @@
           "date": "2027-02-17",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 12 km + 6×20s strides",
+          "session": "Easy 12 km + 6×20s strides  +M1/M2 ankle mobility (daily)",
           "target_km": 12,
           "shoe": "Daily trainer #2"
         },
@@ -2022,7 +2022,7 @@
           "date": "2027-02-18",
           "dow": "Thu",
           "type": "easy",
-          "session": "Easy 8 km + 4×20s strides",
+          "session": "Easy 8 km + 4×20s strides  +M1/M2 ankle mobility (daily)",
           "target_km": 8,
           "shoe": "Daily trainer #2"
         },
@@ -2030,7 +2030,7 @@
           "date": "2027-02-19",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 9 km easy  +light S&C (taper)",
+          "session": "Recovery 9 km easy  +M1/M2 ankle mobility (daily)",
           "target_km": 9,
           "shoe": "Daily trainer #2"
         },
@@ -2038,7 +2038,7 @@
           "date": "2027-02-20",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 10 km + strides",
+          "session": "Easy 10 km + strides  +M1/M2 ankle mobility (daily)",
           "target_km": 10,
           "shoe": "Daily trainer #2"
         },
@@ -2046,7 +2046,7 @@
           "date": "2027-02-21",
           "dow": "Sun",
           "type": "long",
-          "session": "21 km, last 8 km @ MP",
+          "session": "21 km, last 8 km @ MP  +M1/M2 ankle mobility (daily)",
           "target_km": 21,
           "shoe": "Max-cushion (long-run)"
         }
@@ -2063,7 +2063,7 @@
           "date": "2027-02-22",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest / mobility (full rest day)",
+          "session": "Rest / mobility (full rest day)  +GYM maintenance only — 3x5, no plyometrics  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null,
           "reminders": [
@@ -2074,7 +2074,7 @@
           "date": "2027-02-23",
           "dow": "Tue",
           "type": "quality",
-          "session": "Sharpen: 3×1 km @ 3:48/km, 2 min jog @ 6:00/km · w/u 3 km · c/d 2.3 km",
+          "session": "Sharpen: 3×1 km @ 3:48/km, 2 min jog @ 6:00/km · w/u 3 km · c/d 2.3 km  +M1/M2 ankle mobility (daily)",
           "target_km": 9,
           "shoe": "Mach X3"
         },
@@ -2082,7 +2082,7 @@
           "date": "2027-02-24",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 8 km + 6×20s strides",
+          "session": "Easy 8 km + 6×20s strides  +M1/M2 ankle mobility (daily)",
           "target_km": 8,
           "shoe": "GT-2000 15"
         },
@@ -2090,7 +2090,7 @@
           "date": "2027-02-25",
           "dow": "Thu",
           "type": "easy",
-          "session": "Easy 8 km + 6×20s strides",
+          "session": "Easy 8 km + 6×20s strides  +M1/M2 ankle mobility (daily)",
           "target_km": 8,
           "shoe": "GT-2000 15"
         },
@@ -2098,7 +2098,7 @@
           "date": "2027-02-26",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy  +light S&C (taper)",
+          "session": "Recovery 6 km easy  +M1/M2 ankle mobility (daily)",
           "target_km": 6,
           "shoe": "Daily trainer #2"
         },
@@ -2106,7 +2106,7 @@
           "date": "2027-02-27",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 7 km + strides",
+          "session": "Easy 7 km + strides  +M1/M2 ankle mobility (daily)",
           "target_km": 7,
           "shoe": "GT-2000 15"
         },
@@ -2114,7 +2114,7 @@
           "date": "2027-02-28",
           "dow": "Sun",
           "type": "long",
-          "session": "18 km easy w/ 4×1 km @ MP",
+          "session": "18 km easy w/ 4×1 km @ MP  +M1/M2 ankle mobility (daily)",
           "target_km": 18,
           "shoe": "Max-cushion (long-run)"
         }
@@ -2131,7 +2131,7 @@
           "date": "2027-03-01",
           "dow": "Mon",
           "type": "rest",
-          "session": "Rest",
+          "session": "Rest  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null
         },
@@ -2139,7 +2139,7 @@
           "date": "2027-03-02",
           "dow": "Tue",
           "type": "easy",
-          "session": "Easy 10 km + 4×100 m strides",
+          "session": "Easy 10 km + 4×100 m strides  +M1/M2 ankle mobility (daily)",
           "target_km": 10,
           "shoe": "Daily trainer #2"
         },
@@ -2147,7 +2147,7 @@
           "date": "2027-03-03",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 8 km — last real run, stay relaxed",
+          "session": "Easy 8 km — last real run, stay relaxed  +M1/M2 ankle mobility (daily)",
           "target_km": 8,
           "shoe": "Daily trainer #2"
         },
@@ -2155,7 +2155,7 @@
           "date": "2027-03-04",
           "dow": "Thu",
           "type": "easy",
-          "session": "Easy 6 km + 4×100 m strides",
+          "session": "Easy 6 km + 4×100 m strides  +M1/M2 ankle mobility (daily)",
           "target_km": 6,
           "shoe": "Daily trainer #2",
           "reminders": [
@@ -2166,7 +2166,7 @@
           "date": "2027-03-05",
           "dow": "Fri",
           "type": "rest",
-          "session": "Rest",
+          "session": "Rest  +M1/M2 ankle mobility (daily)",
           "target_km": 0,
           "shoe": null
         },
@@ -2174,7 +2174,7 @@
           "date": "2027-03-06",
           "dow": "Sat",
           "type": "easy",
-          "session": "Shakeout: easy 4 km + 4×100 m strides",
+          "session": "Shakeout: easy 4 km + 4×100 m strides  +M1/M2 ankle mobility (daily)",
           "target_km": 4,
           "shoe": "Daily trainer #2"
         },
@@ -2182,7 +2182,7 @@
           "date": "2027-03-07",
           "dow": "Sun",
           "type": "race",
-          "session": "RACE DAY — Tokyo Marathon · 2:48 target · 3:59/km · 6:24/mi · halfway 1:24:00",
+          "session": "RACE DAY — Tokyo Marathon · 2:48 target · 3:59/km · 6:24/mi · halfway 1:24:00  +M1/M2 ankle mobility (daily)",
           "target_km": 42.2,
           "shoe": "RACE SHOE"
         }
@@ -2462,7 +2462,7 @@
           ]
         },
         {
-          "title": "Gym — heavy slow resistance · Mon + Fri (Mon/Wed/Fri from wk 18)",
+          "title": "Gym — heavy slow resistance · runs to Tokyo",
           "headers": [
             "Exercise",
             "Sets × Reps",
@@ -2504,6 +2504,57 @@
               "Pogo hops, then skipping, then low bounding",
               "3 × 20 — from wk 20 only",
               "Heavy slow work builds a strong tendon, not a stiff one, and stiffness is what returns energy at 3:59/km"
+            ]
+          ]
+        },
+        {
+          "title": "Gym through to Tokyo — how the dose changes",
+          "headers": [
+            "Weeks",
+            "Sessions",
+            "Why"
+          ],
+          "note": "The ankle work does not stop when the injury settles — that is exactly the mistake that turned March into October. What changes is the dose, not whether it happens. The hips and posterior chain (G4-G6) run the whole way on the same schedule; they are what keeps the ankle from having to cover for anything else.",
+          "rows": [
+            [
+              "Wks 16-17",
+              "Mon + Fri",
+              "Rebuild. Calibrate, then climb the ladder"
+            ],
+            [
+              "Wks 18-20",
+              "Mon + Wed + Fri",
+              "The window with room for three — volume is still moderate"
+            ],
+            [
+              "Wk 21",
+              "Mon only",
+              "Sevilla on the Sunday. Nothing heavy after Monday"
+            ],
+            [
+              "Wks 22-23",
+              "Mon + Wed + Fri",
+              "Back to three"
+            ],
+            [
+              "Wks 24-30",
+              "Mon + Fri",
+              "Peak block, 95-116 km/wk. Drop to 3×5 heavy and low volume: the job here is holding the strength you built, not adding to it. Three heavy sessions on top of peak mileage is how strength work starts causing injuries instead of preventing them"
+            ],
+            [
+              "Wk 26",
+              "Mon only",
+              "Race on the Sunday"
+            ],
+            [
+              "Wks 31-32",
+              "Mon only",
+              "Taper. Maintenance, no plyometrics"
+            ],
+            [
+              "Wk 33",
+              "None",
+              "Race week. Nothing heavy inside 5-7 days of Tokyo"
             ]
           ]
         },
