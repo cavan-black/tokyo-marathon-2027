@@ -775,20 +775,18 @@ DOW=["Mon","Tue","Wed","Thu","Fri","Sat","Sun"]
 def content():
     return {
         "shoes": {
-            "intro": "Five pairs to the start line, 1,910 km to cover. Rotating rather than "
+            "intro": "Rotating rather than wearing one pair out is the point — varying the "
+                     "loading pattern is associated with materially lower injury risk, and that "
+                     "matters more at 90-116 km/wk than which model you pick. The GT-2000 15 "
+                     "(new, 30 Oct) and the Clifton 9 (447 km) carry the comeback between them. "
+                     "Mileage below is counted off the plan, not typed in. Five pairs to the "
+                     "start line. Rotating rather than "
                      "wearing one pair out is the point — varying the loading pattern is "
                      "associated with materially lower injury risk, and that matters more at "
                      "90-116 km/wk than which model you pick. Every session on the plan is "
                      "tagged with its shoe.",
-            "headers": ["Shoe", "Used for", "km from Wk 12", "Total at Tokyo", "When to buy"],
-            "rows": [
-                ["Daily trainer", "Easy + recovery", "472", "472", "Now — firmer, neutral (Ride / Pegasus / Kiprun KD500)"],
-                ["Max-cushion (long-run)", "Every long run", "449", "449", "Now — soft and high-stack (Nimbus / Skyflow / Kiprun KS900)"],
-                ["Daily trainer #2", "Easy + recovery from Wk 20", "374", "374", "Early Jan, as the first nears 500 km"],
-                ["Mach X3", "Most quality sessions", "296", "462", "Owned — 166 km"],
-                ["EVO SL", "Quality, every third week", "166", "545", "Owned — 379 km. Retire after Tokyo."],
-                ["RACE SHOE", "Sevilla, Tokyo + 2 bed-in runs", "128", "128", "Early-mid Nov — Metaspeed Sky / Alphafly 3 / Adios Pro 5"],
-            ],
+            "headers": ["Shoe", "Used for", "km from here", "Total at Tokyo", "Status"],
+            "rows": shoe_rows(),
             "note": "The racer holds its bounce for ~250-300 km, so it only appears four times: "
                     "one MP long run to bed it in before each race (Wk 18, and the Wk 29 dress rehearsal), Sevilla on 13 Dec, and Tokyo. "
                     "Don't train in it. Buy it in November rather than January so a bad fit turns up "
@@ -960,13 +958,29 @@ def content():
 # Owned: Mach X3 (166 km at wk 12), Adizero EVO SL (379 km). Both firm and fast, so
 # the two new trainers are the soft end of the rotation.
 SHOES = {
-    "daily":  "Daily trainer",
-    "daily2": "Daily trainer #2",
-    "long":   "Max-cushion (long-run)",
-    "machx":  "Mach X3",
-    "evosl":  "EVO SL",
-    "race":   "RACE SHOE",
+    "gt2000":  "GT-2000 15",
+    "clifton": "Clifton 9",
+    "daily2":  "Daily trainer #2",
+    "long":    "Max-cushion (long-run)",
+    "machx":   "Mach X3",
+    "evosl":   "EVO SL",
+    "quality2": "Quality trainer #2",
+    "race":    "RACE SHOE",
 }
+# Odometer at 1 Nov 2026, from Strava gear. The GT-2000 arrived on 30 Oct for the
+# return from the ankle injury and is the only pair with life in it.
+SHOE_KM_NOW = {"gt2000": 0, "clifton": 447, "machx": 245, "evosl": 511, "daily2": 0,
+               "long": 0, "race": 0, "quality2": 0}
+# A trainer is done around 600-800 km depending on the foam; the EVO SL's unplated
+# Lightstrike Pro packs out early, which is why it retires first and why it stopped
+# being an easy-run shoe on 26 Oct.
+SHOE_RETIRE = {"gt2000": 700, "clifton": 600, "machx": 550, "evosl": 550,
+               "daily2": 700, "long": 700, "quality2": 550}
+# The EVO SL stops at Sevilla, not Tokyo. Counting the plan rather than guessing put it
+# at 610 km by March, 60 past the point its unplated Lightstrike Pro is worth running on
+# — and it is already the pair implicated in carrying the October ankle injury. A second
+# quality pair takes its slot from wk 22 so the Mach X also stays inside its own limit.
+EVOSL_LAST_WEEK = 21
 # The racer only comes out for the two races and the handful of MP sessions that
 # bed it in — it holds its bounce for ~250-300 km and must not be spent on training.
 # One bed-in run before each race. Wk 18 rather than 19 so there is a week in hand
@@ -974,8 +988,13 @@ SHOES = {
 # dress rehearsal (35 km with 12 km @ MP) and 30 is an easy run, so 29 is the one
 # that actually rehearses race pace in race shoes.
 RACE_SHOE_DAYS = {(18,"Sun"), (21,"Sun"), (29,"Sun"), (33,"Sun")}
-# Second daily trainer arrives when the first is around 500 km.
+# The Clifton is already on 447 km, so it is the pair that runs out first: it takes
+# half the easy running through the rebuild and hands over to the second new trainer
+# at wk 20, by which point it is near 600 km and done.
 DAILY2_FROM = 20
+# Long runs stay in the daily trainers while they are short. The max-cushion pair is
+# only worth buying once the long run is actually long, which is wk 20 onward.
+LONG_SHOE_FROM = 20
 
 def shoe_for(w, dow, typ, sess):
     if typ == "rest":
@@ -985,17 +1004,61 @@ def shoe_for(w, dow, typ, sess):
     if typ in ("race",):
         return SHOES["race"]
     if typ in ("quality", "tt"):
-        # Weighted toward the Mach X3: it starts the block on 166 km against the
-        # EVO SL's 379, and the EVO SL is a racer-trainer that should be retired
+        # Weighted toward the Mach X3: it starts the block on 245 km against the
+        # EVO SL's 511, and the EVO SL is a racer-trainer that should be retired
         # around 550 km rather than run into the ground through the peak weeks.
-        return SHOES["evosl"] if w % 3 == 0 else SHOES["machx"]
-    if typ == "long":
+        if w <= EVOSL_LAST_WEEK:
+            return SHOES["evosl"] if w % 3 == 0 else SHOES["machx"]
+        return SHOES["quality2"] if w % 2 == 1 else SHOES["machx"]
+    if typ == "long" and w >= LONG_SHOE_FROM:
         return SHOES["long"]
-    # easy + recovery share the two daily trainers; the second joins once the first
-    # is near 500 km, and from then on they alternate so neither is worn out at peak.
-    if w >= DAILY2_FROM and (w % 2 == 1 or typ == "recovery"):
-        return SHOES["daily2"]
-    return SHOES["daily"]
+    # Easy, recovery and the short rebuild long runs share two daily trainers. Through
+    # the comeback that is the new GT-2000 and the Clifton; the Clifton hits ~600 km
+    # around wk 20 and the second new trainer takes its slot from there.
+    second = SHOES["daily2"] if w >= DAILY2_FROM else SHOES["clifton"]
+    return second if (w % 2 == 1 or typ == "recovery") else SHOES["gt2000"]
+
+
+def shoe_rows(from_week=16):
+    """Rows for the Shoes table, counted off the plan rather than typed by hand.
+    Hand-typed mileage is how a rotation quietly drifts out of date — and most
+    worn-shoe injuries happen because nobody was counting."""
+    km = {k: 0.0 for k in SHOES}
+    name_to_key = {v: k for k, v in SHOES.items()}
+    for w in range(from_week, 34):
+        for dow, (txt, typ, d) in build_week(w).items():
+            sh = shoe_for(w, dow, typ, txt)
+            if sh:
+                km[name_to_key[sh]] += d
+    use = {
+        "gt2000":  "Easy + recovery, and the comeback runs",
+        "clifton": "Easy + recovery until it runs out",
+        "daily2":  "Easy + recovery from Wk 20",
+        "long":    "Every long run from Wk 20",
+        "machx":   "Most quality sessions",
+        "evosl":   "Quality every third week, until Sevilla",
+        "quality2": "Quality, alternating, from Wk 22",
+        "race":    "Sevilla, Tokyo + 2 bed-in runs",
+    }
+    buy = {
+        "gt2000":  "Owned — new on 30 Oct, 0 km",
+        "clifton": "Owned — 447 km. Retire around 600.",
+        "daily2":  "Early Jan, as the Clifton runs out",
+        "long":    "Before Wk 20 — soft and high-stack (Nimbus / Skyflow / Kiprun KS900)",
+        "machx":   "Owned — 245 km",
+        "evosl":   "Owned — 511 km. RETIRE AFTER SEVILLA, not Tokyo.",
+        "quality2": "Early Dec — replaces the EVO SL (Mach X 3 again, or similar)",
+        "race":    "Early-mid Nov — Metaspeed Sky / Alphafly 3 / Adios Pro 5",
+    }
+    rows = []
+    for k in ("gt2000", "clifton", "daily2", "long", "machx", "evosl", "quality2", "race"):
+        total = SHOE_KM_NOW.get(k, 0) + km[k]
+        flag = ""
+        lim = SHOE_RETIRE.get(k)
+        if lim and total > lim:
+            flag = f" ⚠ {int(total - lim)} km past its limit"
+        rows.append([SHOES[k], use[k], str(int(round(km[k]))), f"{int(round(total))}{flag}", buy[k]])
+    return rows
 
 
 def build():
