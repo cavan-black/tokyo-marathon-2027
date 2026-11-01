@@ -175,9 +175,10 @@ DAY_OVERRIDE = {
                      # it is worthless once the legs are tired.
                      "Sun": ("BATTERY DONE: heel raises 30 L / 30 R, knee-to-wall 6.5 cm L / "
                              "8.0 cm R, hops pain-free both, left wobblier. RETURN TO RUN: "
-                             "5 km treadmill @ 6:00/km, 0-1%. Then G4/G5/G6 only — the calf "
-                             "calibration waits for Monday so the 24 h reaction stays "
-                             "readable  +M1 +R1", "recovery", 5)},
+                             "5 km treadmill @ 6:00/km, 0-1%. Then G4/G5/G6 — calf "
+                             "calibration held back to Monday so the 24 h reaction stays "
+                             "readable. DONE, ZERO PAIN: split squat 2 × 14 kg, RDL 50 kg "
+                             "× 12  +M1 +R1", "recovery", 5)},
                 # Graded return, every step conditional. If a gate fails, repeat the previous
                 # step rather than skipping forward. No hills, no corners, no MP work.
                 16: {# He says he is terrible at cycling and would rather run slowly, and a
@@ -463,11 +464,11 @@ REHAB_GYM = [
 # at 3 s up / 3 s down, and every later week is a percentage of that. Percentages travel;
 # guessed kilos do not.
 REHAB_LOADS = [
-    ["Wk 16", "3 × 15", "100% — this IS the calibration", "~40 kg", "SL + ~10 kg"],
-    ["Wk 17", "4 × 12", "110%", "~45 kg", "SL + ~15 kg"],
-    ["Wk 18", "4 × 10", "117%", "~47 kg", "SL + ~20 kg"],
-    ["Wk 19", "4 × 8", "125%", "~50 kg", "SL + ~27 kg"],
-    ["Wk 20", "4 × 6", "135%", "~54 kg", "SL + ~35 kg"],
+    ["Wk 16", "3 × 15", "100% — this IS the calibration", "2 × 14 kg (done 1 Nov)", "~55 kg"],
+    ["Wk 17", "4 × 12", "110%", "2 × 18 kg", "60 kg"],
+    ["Wk 18", "4 × 10", "117%", "2 × 22 kg", "67 kg"],
+    ["Wk 19", "4 × 8", "125%", "2 × 26 kg", "73 kg"],
+    ["Wk 20", "4 × 6", "135%", "2 × 30 kg", "80 kg"],
 ]
 REHAB_BLOCKS = [
     {"title": "Ankle mobility — the priority after the 1 Nov battery",
@@ -493,11 +494,13 @@ REHAB_BLOCKS = [
              "~80% 1RM improves running economy 2-8% in trained distance runners.",
      "rows": REHAB_GYM},
     {"title": "The load ladder, week by week",
-     "headers": ["Week", "Reps", "Load", "G1 seated, PER LEG", "G2 standing, PER LEG"],
+     "headers": ["Week", "Reps (calves)", "Calf load", "G4 split squat", "G5 RDL"],
      "note": "Session one is a calibration, not a workout: find the load you can just manage for "
              "15 reps at 3 s up / 3 s down, on each leg separately. That is 100%, and every later "
              "week is a percentage of it. The kg columns are only there to tell you whether your "
-             "calibration landed somewhere sane. EVERY load here is ONE LEG AT A TIME — two-leg "
+             "calibration landed somewhere sane. 1 Nov actuals: split squat 2 × 14 kg and RDL 50 kg "
+             "for 12 clean reps, both of which beat the estimate — the RDL ladder is now built "
+             "off an implied 6RM near 60 kg rather than a guess. The CALF loads are ONE LEG AT A TIME — two-leg "
              "lets the strong side quietly carry the weak one, which is how he got here. The "
              "wk 20 target of ~54 kg per leg is the 1.5× bodyweight benchmark, since both legs "
              "together would be ~105 kg.",
