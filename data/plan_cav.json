@@ -33,7 +33,7 @@
           "type": "easy",
           "session": "Easy 10 km + 6×20s strides",
           "target_km": 10,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-07-22",
@@ -41,7 +41,7 @@
           "type": "easy",
           "session": "Easy 7 km",
           "target_km": 7,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-07-23",
@@ -49,7 +49,7 @@
           "type": "easy",
           "session": "Easy 8 km",
           "target_km": 8,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-07-24",
@@ -57,7 +57,7 @@
           "type": "easy",
           "session": "Easy 5 km",
           "target_km": 5,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-07-25",
@@ -73,7 +73,7 @@
           "type": "long",
           "session": "12 km easy",
           "target_km": 12,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         }
       ]
     },
@@ -163,7 +163,7 @@
           "type": "easy",
           "session": "Easy 10 km + 6×20s strides",
           "target_km": 10,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-08-05",
@@ -171,7 +171,7 @@
           "type": "easy",
           "session": "Easy 12 km",
           "target_km": 12,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-08-06",
@@ -179,7 +179,7 @@
           "type": "easy",
           "session": "Easy 8 km",
           "target_km": 8,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-08-07",
@@ -187,7 +187,7 @@
           "type": "easy",
           "session": "Easy 10 km",
           "target_km": 10,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-08-08",
@@ -203,7 +203,7 @@
           "type": "long",
           "session": "16 km easy",
           "target_km": 16,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         }
       ]
     },
@@ -301,7 +301,7 @@
           "type": "easy",
           "session": "Easy 8 km + 6×20s strides",
           "target_km": 8,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-08-20",
@@ -309,7 +309,7 @@
           "type": "easy",
           "session": "Hill strides: easy 11 km + 8×15s hill sprints",
           "target_km": 11,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-08-21",
@@ -317,7 +317,7 @@
           "type": "recovery",
           "session": "Recovery 6 km easy  +S&C (easy-day session)",
           "target_km": 6,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-08-22",
@@ -325,7 +325,7 @@
           "type": "easy",
           "session": "Easy 6 km + strides",
           "target_km": 6,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-08-23",
@@ -333,7 +333,7 @@
           "type": "long",
           "session": "18 km easy",
           "target_km": 18,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         }
       ]
     },
@@ -423,7 +423,7 @@
           "type": "easy",
           "session": "Easy 9 km + 6×20s strides (first week back — no quality yet)  +S&C (easy-day session)",
           "target_km": 9,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-09-02",
@@ -431,7 +431,7 @@
           "type": "easy",
           "session": "Easy 5 km + 6×20s strides",
           "target_km": 5,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-09-03",
@@ -439,7 +439,7 @@
           "type": "easy",
           "session": "Easy 9 km + 6×20s strides",
           "target_km": 9,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-09-04",
@@ -447,7 +447,7 @@
           "type": "recovery",
           "session": "Recovery 4 km easy  +S&C (easy-day session)",
           "target_km": 4,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-09-05",
@@ -455,7 +455,7 @@
           "type": "easy",
           "session": "Easy 4 km + strides",
           "target_km": 4,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-09-06",
@@ -463,7 +463,7 @@
           "type": "long",
           "session": "14 km easy",
           "target_km": 14,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         }
       ]
     },
@@ -553,7 +553,7 @@
           "type": "easy",
           "session": "Easy 8 km + 6×20s strides",
           "target_km": 8,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-09-16",
@@ -569,7 +569,7 @@
           "type": "recovery",
           "session": "Recovery 9 km easy (half of Saturday's run moved here)  +S&C (easy-day session)",
           "target_km": 9,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-09-18",
@@ -577,7 +577,7 @@
           "type": "easy",
           "session": "Hill strides: easy 13 km + 8×15s hill sprints (half of Saturday's run moved here)",
           "target_km": 13,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-09-19",
@@ -593,7 +593,7 @@
           "type": "long",
           "session": "18 km easy",
           "target_km": 18,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         }
       ]
     },
@@ -683,7 +683,7 @@
           "type": "easy",
           "session": "Hill strides: easy 9 km + 8×15s hill sprints",
           "target_km": 9,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-09-30",
@@ -691,7 +691,7 @@
           "type": "easy",
           "session": "Easy 8 km + 6×20s strides",
           "target_km": 8,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-10-01",
@@ -699,7 +699,7 @@
           "type": "recovery",
           "session": "Recovery 6 km easy — feeling rough, so the 5K test moves to the weekend  +S&C (easy-day session)",
           "target_km": 6,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-10-02",
@@ -723,7 +723,7 @@
           "type": "long",
           "session": "20 km easy",
           "target_km": 20,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         }
       ]
     },
@@ -772,7 +772,7 @@
           "type": "recovery",
           "session": "Recovery 5 km easy  +S&C (easy-day session)",
           "target_km": 5,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-10-10",
@@ -821,7 +821,7 @@
           "type": "easy",
           "session": "Easy 9 km + 6×20s strides",
           "target_km": 9,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-10-15",
@@ -829,7 +829,7 @@
           "type": "easy",
           "session": "Hill strides: easy 11 km + 8×15s hill sprints",
           "target_km": 11,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-10-16",
@@ -837,7 +837,7 @@
           "type": "recovery",
           "session": "Recovery 6 km easy  +S&C (easy-day session)",
           "target_km": 6,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-10-17",
@@ -853,7 +853,7 @@
           "type": "long",
           "session": "18 km easy",
           "target_km": 18,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         }
       ]
     },
@@ -906,7 +906,7 @@
           "type": "recovery",
           "session": "Recovery 6 km easy  +S&C (easy-day session)",
           "target_km": 6,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-10-24",
@@ -939,7 +939,7 @@
           "type": "long",
           "session": "Long run 24 km easy — wk 14's Sunday long run, run a day late",
           "target_km": 24,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-10-27",
@@ -987,7 +987,7 @@
           "type": "recovery",
           "session": "BATTERY DONE: heel raises 30 L / 30 R, knee-to-wall 6.5 cm L / 8.0 cm R, hops pain-free both, left wobblier. RETURN TO RUN: 5 km treadmill @ 6:00/km, 0-1%. Then G4/G5/G6 — calf calibration held back to Monday so the 24 h reaction stays readable. DONE, ZERO PAIN: split squat 2 × 14 kg, RDL 50 kg × 12  +M1 +R1",
           "target_km": 5,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         }
       ]
     },
@@ -1012,7 +1012,7 @@
           "type": "recovery",
           "session": "Easy 5 km flat, GT-2000 — only if Monday's check was clean.  +M1/M2 mobility (2× daily) +R1 isometrics",
           "target_km": 5,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-04",
@@ -1036,7 +1036,7 @@
           "type": "recovery",
           "session": "Easy 4 km very slow, 6:00/km, flat  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
           "target_km": 4,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-07",
@@ -1077,7 +1077,7 @@
           "type": "easy",
           "session": "Easy 8 km flat — first full week back, no quality at all  +M1/M2 mobility (2× daily) +R1 isometrics",
           "target_km": 8,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-11",
@@ -1085,7 +1085,7 @@
           "type": "easy",
           "session": "Easy 7 km flat  +M1/M2 mobility (2× daily) +R1 isometrics",
           "target_km": 7,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-12",
@@ -1093,7 +1093,7 @@
           "type": "easy",
           "session": "Easy 9 km flat — no hill sprints this block  +M1/M2 mobility (2× daily) +R1 isometrics",
           "target_km": 9,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-13",
@@ -1101,7 +1101,7 @@
           "type": "recovery",
           "session": "Recovery 5 km easy  +GYM G1-G6  +M1/M2 mobility (2× daily) +R1 isometrics",
           "target_km": 5,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-14",
@@ -1109,7 +1109,7 @@
           "type": "easy",
           "session": "Easy 7 km + 4×20s strides — first strides back, on the flat  +M1/M2 mobility (2× daily) +R1 isometrics",
           "target_km": 7,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-15",
@@ -1117,7 +1117,7 @@
           "type": "long",
           "session": "Easy 10 km — rebuilding the long run from a low base  +M1/M2 mobility (2× daily) +R1 isometrics",
           "target_km": 10,
-          "shoe": "Clifton 9"
+          "shoe": "GT-2000 15"
         }
       ]
     },
@@ -2203,15 +2203,15 @@
         [
           "GT-2000 15",
           "Easy + recovery, and the comeback runs",
-          "249",
-          "249",
+          "304",
+          "304",
           "Owned — new on 30 Oct, 0 km"
         ],
         [
           "Clifton 9",
           "Easy + recovery until it runs out",
-          "108",
-          "555",
+          "53",
+          "500",
           "Owned — 447 km. Retire around 600."
         ],
         [

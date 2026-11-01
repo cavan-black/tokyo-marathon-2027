@@ -1015,6 +1015,11 @@ def shoe_for(w, dow, typ, sess):
     # Easy, recovery and the short rebuild long runs share two daily trainers. Through
     # the comeback that is the new GT-2000 and the Clifton; the Clifton hits ~600 km
     # around wk 20 and the second new trainer takes its slot from there.
+    # Wks 16-17 are the comeback and they all go in the GT-2000: it is new, it is the
+    # stability pair bought for this ankle, and rotating a 447 km Clifton back in during
+    # a return from injury is the wrong way round. The Clifton rejoins at wk 18.
+    if w <= 17:
+        return SHOES["gt2000"]
     second = SHOES["daily2"] if w >= DAILY2_FROM else SHOES["clifton"]
     return second if (w % 2 == 1 or typ == "recovery") else SHOES["gt2000"]
 
