@@ -410,10 +410,12 @@ REHAB_DAILY = [
 # session one against the rep target: the last rep must be hard and the tempo must hold.
 # If the bar moves faster than 3 s up / 3 s down it is too light, whatever the number says.
 REHAB_GYM = [
-    ["Seated calf raise — SOLEUS (G1)", "3×15 → 4×6", "40 → 100 kg. THE priority: running "
-     "drives 6-8× bodyweight through soleus and only a bent knee loads it. 3 s up, 3 s down"],
-    ["Standing calf raise — gastroc (G2)", "3×15 → 4×6", "Bodyweight 2-leg → 1-leg → +22 kg. "
-     "Same tempo"],
+    ["Seated calf raise — SOLEUS (G1)", "3×15 → 4×6 / LEG", "One leg at a time. THE priority: running drives 6-8× "
+     "bodyweight through soleus and only a bent knee loads it. Calibrate, then follow the "
+     "ladder. 3 s up, 3 s down"],
+    ["Standing calf raise — gastroc (G2)", "3×15 → 4×6", "SINGLE LEG AND LOADED from day one. "
+     "Bodyweight is ~1× at the ankle against 6-8× in running, so it is a warm-up, not a "
+     "stimulus. Same tempo"],
     ["Heel raise vs band into eversion (G3)", "3 × 10 slow", "Light → heavy band. Tib post under "
      "real load, which the daily band work cannot reach"],
     ["Rear-foot-elevated split squat (G4)", "3 × 8 → 3 × 6 / leg", "Bodyweight → 2 × 20 kg DBs. "
@@ -423,12 +425,18 @@ REHAB_GYM = [
     ["Pogo hops, then skipping, then low bounding", "3 × 20 — from wk 20 only", "Heavy slow work "
      "builds a strong tendon, not a stiff one, and stiffness is what returns energy at 3:59/km"],
 ]
+# Single-leg bodyweight raises are easy for him (1 Nov), which was predictable and makes
+# the first two rungs of the old ladder worthless: bodyweight loads the achilles at ~1x
+# bodyweight and running drives 6-8x. So the ladder no longer starts from a number guessed
+# off his bodyweight. Session one is a CALIBRATION: find the load he can just manage for 15
+# at 3 s up / 3 s down, and every later week is a percentage of that. Percentages travel;
+# guessed kilos do not.
 REHAB_LOADS = [
-    ["Wk 16", "3 × 15", "40 kg", "Bodyweight, 2 legs", "Bodyweight", "40 kg"],
-    ["Wk 17", "4 × 12", "55 kg", "Bodyweight, 1 leg", "2 × 8 kg", "50 kg"],
-    ["Wk 18", "4 × 10", "70 kg", "+10 kg", "2 × 12 kg", "60 kg"],
-    ["Wk 19", "4 × 8", "85 kg", "+15 kg", "2 × 16 kg", "70 kg"],
-    ["Wk 20", "4 × 6", "100 kg", "+22 kg", "2 × 20 kg", "80 kg"],
+    ["Wk 16", "3 × 15", "100% — this IS the calibration", "~40 kg", "SL + ~10 kg"],
+    ["Wk 17", "4 × 12", "110%", "~45 kg", "SL + ~15 kg"],
+    ["Wk 18", "4 × 10", "117%", "~47 kg", "SL + ~20 kg"],
+    ["Wk 19", "4 × 8", "125%", "~50 kg", "SL + ~27 kg"],
+    ["Wk 20", "4 × 6", "135%", "~54 kg", "SL + ~35 kg"],
 ]
 REHAB_BLOCKS = [
     {"title": "Left ankle — daily, 8 min", "headers": ["Exercise", "Sets × Reps", "Cue / why"],
@@ -443,10 +451,14 @@ REHAB_BLOCKS = [
              "~80% 1RM improves running economy 2-8% in trained distance runners.",
      "rows": REHAB_GYM},
     {"title": "The load ladder, week by week",
-     "headers": ["Week", "Reps", "G1 seated calf", "G2 standing calf", "G4 split squat", "G5 RDL"],
-     "note": "Starting estimates for ~70 kg. Calibrate on session one: the last rep hard, the "
-             "tempo intact. Target at wk 20 is 8 reps at 1.5× bodyweight on the seated calf "
-             "raise — most endurance runners cannot do half of it.",
+     "headers": ["Week", "Reps", "Load", "G1 seated, PER LEG", "G2 standing, PER LEG"],
+     "note": "Session one is a calibration, not a workout: find the load you can just manage for "
+             "15 reps at 3 s up / 3 s down, on each leg separately. That is 100%, and every later "
+             "week is a percentage of it. The kg columns are only there to tell you whether your "
+             "calibration landed somewhere sane. EVERY load here is ONE LEG AT A TIME — two-leg "
+             "lets the strong side quietly carry the weak one, which is how he got here. The "
+             "wk 20 target of ~54 kg per leg is the 1.5× bodyweight benchmark, since both legs "
+             "together would be ~105 kg.",
      "rows": REHAB_LOADS},
 ]
 
