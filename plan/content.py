@@ -113,7 +113,7 @@ def note_wu(txt, typ, km=None, jog_s=360):
     cd = round(rest - wu, 1)
     return f"{txt} · w/u {wu:g} km · c/d {cd:g} km"
 
-def strength(found_weeks, power_weeks, football=False, a_day="Tue", b_day="Fri"):
+def strength(found_weeks, power_weeks, football=False, a_day="Tue", b_day="Fri", rehab=None):
     extra = " or a match" if football else ""
     return {
         "intro": ("2×/week, 20–35 min. Injury-proof tendons/hips + improve running economy. "
@@ -123,7 +123,10 @@ def strength(found_weeks, power_weeks, football=False, a_day="Tue", b_day="Fri")
             ["Easy-day session", b_day, f"After your {b_day} recovery run — same exercises as the "
                                          "hard-day session, whichever phase block below you're currently in"],
         ]},
-        "blocks": [
+        # A runner carrying an injury gets their rehab FIRST on the page. The generic
+        # foundation block below is what to do when healthy, and reading it first is how
+        # someone ends up doing the wrong one.
+        "blocks": (rehab or []) + [
             {"title": f"Foundation · Weeks {found_weeks}", "headers": SC_HEADERS,
              "note": "Build tissue tolerance, bodyweight → light load. 2×/week.", "rows": SC_FOUNDATION},
             {"title": f"Strength & Power · Weeks {power_weeks}", "headers": SC_HEADERS,

@@ -20,7 +20,7 @@ VOL = [42,50,56,48,
        # 15-30% up, which is steep for new volume but reasonable for RE-attaining
        # volume he was already running in October. Wk 21 (Sevilla) and everything
        # from wk 22 are untouched, so the marathon-specific block is intact.
-       76,28,32,46,60,74,85,80,96,76,
+       76,28,36,46,60,74,85,80,96,76,
        88,107,99,110,116,110,94,
        69,56,70]
 LR  = [12,14,16,14,
@@ -179,18 +179,27 @@ DAY_OVERRIDE = {
                              "walk, flat, GT-2000, ~6:00/km. Stop at ANY ankle pain. +R1", "recovery", 4)},
                 # Graded return, every step conditional. If a gate fails, repeat the previous
                 # step rather than skipping forward. No hills, no corners, no MP work.
-                16: {# The 24 h reaction is the real test, not the run itself: tendon pain
+                16: {# He says he is terrible at cycling and would rather run slowly, and a
+                     # session he resents is a session that does not happen. So the two easy
+                     # spins go: Monday becomes gym-only and Friday becomes a short slow run.
+                     # Wednesday's bike threshold stays, and it is the LAST bike session —
+                     # it is the only hard aerobic work available until running intensity
+                     # returns in wk 18, and dropping it would make four straight weeks with
+                     # none. Week goes 32 -> 36 km, which is the whole cost of the swap.
+                     # The 24 h reaction is the real test, not the run itself: tendon pain
                      # reports late. Morning stiffness that clears in under 10 min is
                      # acceptable and expected; stiffness that lasts the morning, or any
                      # pain worse than yesterday, means repeat the previous step.
-                     "Mon": ("NO RUNNING. 24 H CHECK — stiffness should clear in <10 min. "
-                             "CT1 easy spin 45 min @ 133-148 bpm  +R1 +GYM G1-G6", "rest", 0),
+                     "Mon": ("NO RUNNING — 24 H CHECK, stiffness should clear in <10 min. "
+                             "GYM G1-G6, first heavy session  +R1", "rest", 0),
                      "Tue": ("Easy 5 km flat, GT-2000 — only if Monday's check was clean. "
                              "+R1", "recovery", 5),
-                     "Wed": ("NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, "
-                             "3 min easy between · w/u 15 min · c/d 10 min  +R1", "rest", 0),
+                     "Wed": ("NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, 3 min "
+                             "easy between · w/u 15 min · c/d 10 min — the last bike "
+                             "session  +R1", "rest", 0),
                      "Thu": ("Easy 7 km flat  +R1", "easy", 7),
-                     "Fri": ("NO RUNNING. CT1 easy spin 45 min  +R1 +GYM G1-G6", "rest", 0),
+                     "Fri": ("Easy 4 km very slow, 6:00/km, flat  +GYM G1-G6 +R1",
+                             "recovery", 4),
                      "Sat": ("Easy 8 km flat  +R1", "easy", 8),
                      "Sun": ("Easy 12 km flat — no MP work, no hills, no corners. Then "
                              "REPEAT THE TEST BATTERY and compare to 1 Nov  +R1",
@@ -199,22 +208,22 @@ DAY_OVERRIDE = {
                 # wk 17 none, wk 18 one threshold, wk 19 threshold + a short MP block, wk 20
                 # back to normal. Nothing with hills or sharp cornering until wk 19 — those
                 # load the subtalar joint hardest. BJJ drills stay out until wk 19.
-                17: {"Mon": ("Rest from running  +S&C (easy-day session)", "rest", 0),
+                17: {"Mon": ("Rest from running  +GYM G1-G6  +R1", "rest", 0),
                      "Tue": ("Easy 8 km flat — first full week back, no quality at all",
                              "easy", 8),
                      "Wed": ("Easy 7 km flat", "easy", 7),
                      "Thu": ("Easy 9 km flat — no hill sprints this block", "easy", 9),
-                     "Fri": ("Recovery 5 km easy  +S&C (easy-day session)", "recovery", 5),
+                     "Fri": ("Recovery 5 km easy  +GYM G1-G6  +R1", "recovery", 5),
                      "Sat": ("Easy 7 km + 4×20s strides — first strides back, on the flat",
                              "easy", 7),
                      "Sun": ("Easy 10 km — rebuilding the long run from a low base", "long", 10)},
-                18: {"Mon": ("Rest from running  +S&C (easy-day session)", "rest", 0),
+                18: {"Mon": ("Rest from running  +GYM G1-G6  +R1", "rest", 0),
                      "Tue": ("Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · "
                              "c/d 2 km — first quality since the injury, half the usual volume, "
                              "flat loop only", "quality", 12),
                      "Wed": ("Easy 9 km", "easy", 9),
                      "Thu": ("Easy 10 km", "easy", 10),
-                     "Fri": ("Recovery 6 km easy  +S&C (easy-day session)", "recovery", 6),
+                     "Fri": ("Recovery 6 km easy  +GYM G1-G6  +R1", "recovery", 6),
                      "Sat": ("Easy 8 km + 6×20s strides", "easy", 8),
                      "Sun": ("Long 15 km easy", "long", 15)},
                 19: {"Mon": ("Rest from running · BJJ drills/technical, no live rounds  "
@@ -381,6 +390,65 @@ def vol_for(w):  return VOL_OVERRIDE.get(w, VOL[w-1]) + (lr_for(w) - LR[w-1])
 
 # First week whose quality paces come from the 3 Oct 5K rather than the 19:22 PR.
 RECALIBRATED_FROM = 12
+
+# ---- Left ankle rehab, Nov 2026. Two tendon episodes in this leg in eight months
+# (achilles musculotendinous junction in March, medial ankle in October) on top of a
+# 2018 football sprain. That is a capacity deficit, so the ankle gets loaded rather
+# than rested. Split by load, because tendon collagen synthesis runs net-negative for
+# 24-36 h after a heavy session and only turns positive again around 48-72 h: the low
+# load work is daily, the heavy work is twice a week and never on back-to-back days.
+REHAB_DAILY = [
+    ["Isometric calf hold (R1)", "5 × 45s / leg", "Mid-range, ~70% effort. Daily, run days "
+     "included — loads the tendon with almost no recovery cost"],
+    ["Banded resisted inversion (R3)", "3 × 15 slow", "Tib posterior, light load"],
+    ["Single-leg balance, eyes closed (R4)", "3 × 30s", "Aimed at the 2018 sprain, not the tendon"],
+    ["Short foot / toe yoga (R5)", "3 × 10", "Intrinsics — the foot's own suspension"],
+    ["Test battery", "Every Sunday", "Heel raises to failure, knee-to-wall in cm, 10 single-leg "
+     "hops — left vs right, written down. Left within 10% of right is the gate for quality work"],
+]
+# Loads are starting estimates for ~70 kg bodyweight, not prescriptions. Calibrate on
+# session one against the rep target: the last rep must be hard and the tempo must hold.
+# If the bar moves faster than 3 s up / 3 s down it is too light, whatever the number says.
+REHAB_GYM = [
+    ["Seated calf raise — SOLEUS (G1)", "3×15 → 4×6", "40 → 100 kg. THE priority: running "
+     "drives 6-8× bodyweight through soleus and only a bent knee loads it. 3 s up, 3 s down"],
+    ["Standing calf raise — gastroc (G2)", "3×15 → 4×6", "Bodyweight 2-leg → 1-leg → +22 kg. "
+     "Same tempo"],
+    ["Heel raise vs band into eversion (G3)", "3 × 10 slow", "Light → heavy band. Tib post under "
+     "real load, which the daily band work cannot reach"],
+    ["Rear-foot-elevated split squat (G4)", "3 × 8 → 3 × 6 / leg", "Bodyweight → 2 × 20 kg DBs. "
+     "Single-leg strength and the hip control the sprain took away"],
+    ["Romanian deadlift (G5)", "3 × 6", "40 → 80 kg. Posterior chain. 3 s lower"],
+    ["Copenhagen plank + banded hip abduction (G6)", "3 × 20s/side + 3 × 15", "20s → 40s. Glute med"],
+    ["Pogo hops, then skipping, then low bounding", "3 × 20 — from wk 20 only", "Heavy slow work "
+     "builds a strong tendon, not a stiff one, and stiffness is what returns energy at 3:59/km"],
+]
+REHAB_LOADS = [
+    ["Wk 16", "3 × 15", "40 kg", "Bodyweight, 2 legs", "Bodyweight", "40 kg"],
+    ["Wk 17", "4 × 12", "55 kg", "Bodyweight, 1 leg", "2 × 8 kg", "50 kg"],
+    ["Wk 18", "4 × 10", "70 kg", "+10 kg", "2 × 12 kg", "60 kg"],
+    ["Wk 19", "4 × 8", "85 kg", "+15 kg", "2 × 16 kg", "70 kg"],
+    ["Wk 20", "4 × 6", "100 kg", "+22 kg", "2 × 20 kg", "80 kg"],
+]
+REHAB_BLOCKS = [
+    {"title": "Left ankle — daily, 8 min", "headers": ["Exercise", "Sets × Reps", "Cue / why"],
+     "note": "Every day including run days. Low load by design: this is what keeps the tendon "
+             "working between the heavy sessions, and none of it costs recovery.",
+     "rows": REHAB_DAILY},
+    {"title": "Gym — heavy slow resistance · Mon + Fri (Mon/Wed/Fri from wk 18)",
+     "headers": ["Exercise", "Sets × Reps", "Load and why"],
+     "note": "Never on consecutive days. Progress by LOAD, never by reps — 15RM in wk 16 down to "
+             "6RM by wk 20. Adding reps instead of plates turns tendon rehab into cardio. The "
+             "side benefit is worth more than the 215 km this injury cost: heavy lifting above "
+             "~80% 1RM improves running economy 2-8% in trained distance runners.",
+     "rows": REHAB_GYM},
+    {"title": "The load ladder, week by week",
+     "headers": ["Week", "Reps", "G1 seated calf", "G2 standing calf", "G4 split squat", "G5 RDL"],
+     "note": "Starting estimates for ~70 kg. Calibrate on session one: the last rep hard, the "
+             "tempo intact. Target at wk 20 is 8 reps at 1.5× bodyweight on the seated calf "
+             "raise — most endurance runners cannot do half of it.",
+     "rows": REHAB_LOADS},
+]
 
 def phase(w):
     if w <= 4:  return "Re-entry / Rebuild"
@@ -694,7 +762,7 @@ def content():
                 "Wk 6 is Lost Village — a planned week off, not a missed week. Wk 7 comes back at 45 km with no quality session; volume returns before intensity does. Do NOT try to make up Wk 5 or Wk 6 — the rebuild already accounts for both.",
                 "Re-planned Wk 20 Aug: the original ramp assumed ~56 km/wk by Wk 5, but weeks 1-5 actually averaged ~40. The new curve rebuilds from that, reaching the same 116 km peak at Wk 28 instead of Wk 27 — still 5 weeks out from the race.",
                 "If 116 km proves unrealistic, the ~105 km version is still solidly sub-3."]},
-        "strength": C.strength("1–13", "14–30", football=False),
+        "strength": C.strength("1–13", "14–30", football=False, rehab=REHAB_BLOCKS),
         "warmup": C.warmup(niggle_note="Given the outside-left-ankle/Achilles soreness flagged in week 1, "
                                         "the banded eversion work and single-leg balance in this routine "
                                         "aren't optional extras for you right now — do them every session "
