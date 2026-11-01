@@ -20,7 +20,7 @@ VOL = [42,50,56,48,
        # 15-30% up, which is steep for new volume but reasonable for RE-attaining
        # volume he was already running in October. Wk 21 (Sevilla) and everything
        # from wk 22 are untouched, so the marathon-specific block is intact.
-       76,28,36,46,60,74,85,80,96,76,
+       76,29,36,46,60,74,85,80,96,76,
        88,107,99,110,116,110,94,
        69,56,70]
 LR  = [12,14,16,14,
@@ -173,10 +173,11 @@ DAY_OVERRIDE = {
                      # cost of two more rest days is higher than the risk of a 4 km jog/walk.
                      # The battery comes FIRST — it is the only objective read we have, and
                      # it is worthless once the legs are tired.
-                     "Sun": ("TEST BATTERY first (T1 heel raises to failure L vs R, T2 "
-                             "knee-to-wall cm L vs R, T3 10 single-leg hops) — write the "
-                             "numbers down. Then RETURN TO RUN: 20 min as 4 min jog / 1 min "
-                             "walk, flat, GT-2000, ~6:00/km. Stop at ANY ankle pain. +R1", "recovery", 4)},
+                     "Sun": ("BATTERY DONE: heel raises 30 L / 30 R, knee-to-wall 6.5 cm L / "
+                             "8.0 cm R, hops pain-free both, left wobblier. RETURN TO RUN: "
+                             "5 km treadmill @ 6:00/km, 0-1%. Then G4/G5/G6 only — the calf "
+                             "calibration waits for Monday so the 24 h reaction stays "
+                             "readable  +M1 +R1", "recovery", 5)},
                 # Graded return, every step conditional. If a gate fails, repeat the previous
                 # step rather than skipping forward. No hills, no corners, no MP work.
                 16: {# He says he is terrible at cycling and would rather run slowly, and a
@@ -397,6 +398,33 @@ RECALIBRATED_FROM = 12
 # than rested. Split by load, because tendon collagen synthesis runs net-negative for
 # 24-36 h after a heavy session and only turns positive again around 48-72 h: the low
 # load work is daily, the heavy work is twice a week and never on back-to-back days.
+# ---- BATTERY, 1 Nov 2026 (baseline). T1 heel raises to failure 30 L / 30 R. T2
+# knee-to-wall 6.5 cm L / 8.0 cm R. T3 ten hops, no pain either side, left wobblier.
+# That rewrites the diagnosis. 30/30 is symmetrical and above the 25-rep benchmark, so
+# the capacity-deficit reading was wrong: calf ENDURANCE is not the problem. The problem
+# is dorsiflexion. Normal is 9-12 cm; both his ankles are restricted and the left is 19%
+# worse. A tibia that cannot travel forward over the foot has to find the range somewhere,
+# and where it finds it is pronation through the subtalar joint — precisely where the pain
+# is. It also explains the 24 Oct outlier: 118 m of climb over 7 km is the highest
+# dorsiflexion demand in running, asked of a 6.5 cm ankle for an hour.
+# So mobility leads the rehab now and the calf ladder is demoted from the treatment to
+# useful supporting work. One caveat kept in view: 30 reps is an ENDURANCE test, not a
+# strength test, so the seated-calf 15RM is still worth knowing before fully letting go
+# of the strength story.
+REHAB_MOBILITY = [
+    ["Banded talar glide (M1)", "3 × 10 / side, 2× daily", "THE priority. Heavy band round the "
+     "ankle just below the bony bumps, anchored in front, pulling the ankle bone backwards "
+     "while you drive the knee over the toes. Heel stays down. Targets the joint restriction "
+     "the 2018 sprain left — stretching does not reach it"],
+    ["Knee-to-wall rocks (M2)", "3 × 10 / side, 2× daily", "Same position as the test, rocking "
+     "into the end range. Cheap, do it anywhere, do it often"],
+    ["Soleus stretch, knee bent (M3)", "3 × 45s / side", "Bent knee or it becomes a gastroc "
+     "stretch. Secondary to M1 — if the block is in the joint, stretching the muscle is "
+     "treating the wrong tissue"],
+    ["Re-test knee-to-wall", "Weekly, Sunday", "The target is left matching right AND both "
+     "past 9 cm. This number, not how the ankle feels, is the gate for hills returning"],
+]
+
 REHAB_DAILY = [
     ["Isometric calf hold (R1)", "5 × 45s / leg", "Mid-range, ~70% effort. Daily, run days "
      "included — loads the tendon with almost no recovery cost"],
@@ -439,13 +467,24 @@ REHAB_LOADS = [
     ["Wk 20", "4 × 6", "135%", "~54 kg", "SL + ~35 kg"],
 ]
 REHAB_BLOCKS = [
+    {"title": "Ankle mobility — the priority after the 1 Nov battery",
+     "headers": ["Drill", "Dose", "Why"],
+     "note": "Battery 1 Nov: heel raises 30 left / 30 right — symmetrical and strong, which "
+             "rules the strength story out. Knee-to-wall 6.5 cm left / 8.0 cm right against a "
+             "9-12 cm norm — restricted both sides, 19% worse on the left. Range the ankle "
+             "cannot produce gets borrowed from the subtalar joint, which is where the pain is. "
+             "This block is now the actual treatment.",
+     "rows": REHAB_MOBILITY},
     {"title": "Left ankle — daily, 8 min", "headers": ["Exercise", "Sets × Reps", "Cue / why"],
      "note": "Every day including run days. Low load by design: this is what keeps the tendon "
              "working between the heavy sessions, and none of it costs recovery.",
      "rows": REHAB_DAILY},
     {"title": "Gym — heavy slow resistance · Mon + Fri (Mon/Wed/Fri from wk 18)",
      "headers": ["Exercise", "Sets × Reps", "Load and why"],
-     "note": "Never on consecutive days. Progress by LOAD, never by reps — 15RM in wk 16 down to "
+     "note": "DEMOTED by the 1 Nov battery — 30/30 heel raises means this is no longer the fix, "
+             "it is supporting work, and mobility comes first. Still worth doing properly: the "
+             "economy gain is real and 30 reps proves endurance, not strength. Never on "
+             "consecutive days. Progress by LOAD, never by reps — 15RM in wk 16 down to "
              "6RM by wk 20. Adding reps instead of plates turns tendon rehab into cardio. The "
              "side benefit is worth more than the 215 km this injury cost: heavy lifting above "
              "~80% 1RM improves running economy 2-8% in trained distance runners.",
