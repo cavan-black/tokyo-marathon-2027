@@ -20,7 +20,7 @@ VOL = [42,50,56,48,
        # 15-30% up, which is steep for new volume but reasonable for RE-attaining
        # volume he was already running in October. Wk 21 (Sevilla) and everything
        # from wk 22 are untouched, so the marathon-specific block is intact.
-       76,24,30,46,60,74,85,80,96,76,
+       76,28,32,46,60,74,85,80,96,76,
        88,107,99,110,116,110,94,
        69,56,70]
 LR  = [12,14,16,14,
@@ -100,6 +100,28 @@ DAY_OVERRIDE = {
                 # another shoe. Cross-training keeps the aerobic base; nothing weight-bearing
                 # through a cornering or push-off load. No BJJ at all: mat work torques this
                 # joint directly.
+                # ---- REVISED 1 Nov: this is the THIRD event in the same left posterior
+                # chain. March 2026 was left achilles pain at the musculotendinous junction,
+                # bad enough to stop running. Around 2018 a football ankle/achilles sprain,
+                # same side, on video. Two tendon episodes in one leg in eight months is a
+                # capacity problem, not bad luck, and the likely root is deficits left over
+                # from the sprain that were never rehabbed. That changes the treatment: rest
+                # settles tendon symptoms while lowering tendon capacity, which is exactly
+                # the March -> October loop. From here the ankle gets LOADED, daily, and
+                # running returns early and small rather than late and big.
+                # Rehab key (daily, ~12 min, both legs, run days included):
+                #   R1 isometric calf hold 5x45 s single-leg at mid-range  (weeks 15-16)
+                #   R2 heavy slow calf raise 4x8, 3 s up / 3 s down, straight and bent knee,
+                #      loaded with a pack once bodyweight is easy        (from week 17)
+                #   R3 banded resisted inversion 3x15 slow — tib post direct
+                #   R4 single-leg balance 3x30 s eyes closed — the 2018 sprain's legacy
+                #   R5 short-foot / toe yoga 3x10 — intrinsics
+                # Test battery, both sides, numbers written down, repeated every Sunday:
+                #   T1 single-leg heel raises to failure (height must hold) — L vs R
+                #   T2 knee-to-wall dorsiflexion in cm — L vs R
+                #   T3 10 single-leg hops — pain yes/no
+                # Left within 10% of right on T1 and T2 is the gate for quality work
+                # returning. Until then the asymmetry IS the injury.
                 15: {"Mon": ("Long run 24 km easy — wk 14's Sunday long run, run a day late",
                              "long", 24),
                      # Planned 11 km. He started, the ankle hurt from the first kilometre,
@@ -122,22 +144,35 @@ DAY_OVERRIDE = {
                              "3 min easy between · w/u 15 min · c/d 10 min  "
                              "+S&C upper body/core", "rest", 0),
                      "Sat": ("NO RUNNING. CT1 easy spin 45 min @ 133-148 bpm", "rest", 0),
-                     "Sun": ("NO RUNNING. CT5 long bike 75-90 min @ 139-153 bpm — replaces "
-                             "the 26 km long run. Take 40-60 g carb/h on it: free gut "
-                             "training for the wk 27 long run", "rest", 0)},
+                     # Pulled the return-to-run forward from Tue 3 Nov. Day 11, pain-free
+                     # walking and a pain-free threshold bike, and with a tendon history the
+                     # cost of two more rest days is higher than the risk of a 4 km jog/walk.
+                     # The battery comes FIRST — it is the only objective read we have, and
+                     # it is worthless once the legs are tired.
+                     "Sun": ("TEST BATTERY first (T1 heel raises to failure L vs R, T2 "
+                             "knee-to-wall cm L vs R, T3 10 single-leg hops) — write the "
+                             "numbers down. Then RETURN TO RUN: 20 min as 4 min jog / 1 min "
+                             "walk, flat, GT-2000, ~6:00/km. Stop at ANY ankle pain. +R1", "recovery", 4)},
                 # Graded return, every step conditional. If a gate fails, repeat the previous
                 # step rather than skipping forward. No hills, no corners, no MP work.
-                16: {"Mon": ("NO RUNNING. CT1 easy spin 45 min  +S&C upper body/core", "rest", 0),
-                     "Tue": ("GATE — only if walking is pain-free AND 10 single-leg heel raises "
-                             "are pain-free. Return-to-run: 20 min as 4 min jog / 1 min walk, "
-                             "flat, in the GT-2000. Stop at ANY ankle pain", "recovery", 4),
+                16: {# The 24 h reaction is the real test, not the run itself: tendon pain
+                     # reports late. Morning stiffness that clears in under 10 min is
+                     # acceptable and expected; stiffness that lasts the morning, or any
+                     # pain worse than yesterday, means repeat the previous step.
+                     "Mon": ("NO RUNNING. 24 H CHECK — stiffness should clear in <10 min. "
+                             "CT1 easy spin 45 min @ 133-148 bpm  +R1 +S&C upper body/core",
+                             "rest", 0),
+                     "Tue": ("Easy 5 km flat, GT-2000 — only if Monday's check was clean. "
+                             "+R1", "recovery", 5),
                      "Wed": ("NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, "
-                             "3 min easy between · w/u 15 min · c/d 10 min", "rest", 0),
-                     "Thu": ("Easy 6 km flat — only if Tuesday was pain-free and the next "
-                             "morning was clean too", "easy", 6),
-                     "Fri": ("NO RUNNING. CT1 easy spin 45 min  +S&C upper body/core", "rest", 0),
-                     "Sat": ("Easy 8 km flat", "easy", 8),
-                     "Sun": ("Easy 12 km flat — no MP work, no hills, no corners", "long", 12)},
+                             "3 min easy between · w/u 15 min · c/d 10 min  +R1", "rest", 0),
+                     "Thu": ("Easy 7 km flat  +R1", "easy", 7),
+                     "Fri": ("NO RUNNING. CT1 easy spin 45 min  +R1 +S&C upper body/core",
+                             "rest", 0),
+                     "Sat": ("Easy 8 km flat  +R1", "easy", 8),
+                     "Sun": ("Easy 12 km flat — no MP work, no hills, no corners. Then "
+                             "REPEAT THE TEST BATTERY and compare to 1 Nov  +R1",
+                             "long", 12)},
                 # Rebuild after the layoff. Quality comes back one session at a time:
                 # wk 17 none, wk 18 one threshold, wk 19 threshold + a short MP block, wk 20
                 # back to normal. Nothing with hills or sharp cornering until wk 19 — those
