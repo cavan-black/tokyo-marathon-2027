@@ -192,7 +192,10 @@ DAY_OVERRIDE = {
                      # acceptable and expected; stiffness that lasts the morning, or any
                      # pain worse than yesterday, means repeat the previous step.
                      "Mon": ("NO RUNNING — 24 H CHECK, stiffness should clear in <10 min. "
-                             "GYM G1-G6, first heavy session  +R1", "rest", 0),
+                             "GYM G1 + G2 CALIBRATION: find the load you can just manage "
+                             "for 15 reps at 3 s up / 3 s down, EACH LEG. That number sets "
+                             "the whole ladder. Plus G3. (G4-G6 were done Sun 1 Nov)",
+                             "rest", 0),
                      "Tue": ("Easy 5 km flat, GT-2000 — only if Monday's check was clean. "
                              "+R1", "recovery", 5),
                      "Wed": ("NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, 3 min "
@@ -222,7 +225,7 @@ DAY_OVERRIDE = {
                      "Tue": ("Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · "
                              "c/d 2 km — first quality since the injury, half the usual volume, "
                              "flat loop only", "quality", 12),
-                     "Wed": ("Easy 9 km", "easy", 9),
+                     "Wed": ("Easy 9 km  +GYM G1-G6", "easy", 9),
                      "Thu": ("Easy 10 km", "easy", 10),
                      "Fri": ("Recovery 6 km easy  +GYM G1-G6  +R1", "recovery", 6),
                      "Sat": ("Easy 8 km + 6×20s strides", "easy", 8),
@@ -232,7 +235,7 @@ DAY_OVERRIDE = {
                              "clean for three weeks", "rest", 0),
                      "Tue": ("Threshold: 5×1.5 km @ 3:48/km, 75s jog @ 6:00/km · w/u 3 km · "
                              "c/d 2.5 km", "quality", 13),
-                     "Wed": ("Easy 11 km + 6×20s strides", "easy", 11),
+                     "Wed": ("Easy 11 km + 6×20s strides  +GYM G1-G6", "easy", 11),
                      "Thu": ("Medium-long 14 km w/ middle 5 km @ MP — first marathon-pace work "
                              "back, deliberately short", "quality", 14),
                      "Fri": ("Recovery 7 km easy  +BJJ (drills only — no live rounds)",
@@ -731,6 +734,21 @@ def build_week(w):
         days[a],days[b]=days[b],days[a]
     for dow,spec in DAY_OVERRIDE.get(w,{}).items():
         days[dow]=spec
+    # Wks 16-20 carry the ankle rehab every single day, run days included. Stamping it
+    # here rather than writing it into each note is the only way it does not get dropped
+    # from half of them: "daily" has to mean daily or the mobility work does nothing.
+    if 16 <= w <= 20:
+        # Gym twice a week to start, three times from wk 18 once the ankle has proved it
+        # tolerates the load. Stamped rather than hand-written for the same reason.
+        gym_days = ("Mon","Fri") if w <= 17 else ("Mon","Wed","Fri")
+        for dow in DOW:
+            txt,typ,km = days[dow]
+            if "+M1" in txt:
+                continue
+            txt = txt.replace("  +S&C (easy-day session)","").replace("  +R1","").replace(" +R1","").rstrip()
+            if dow in gym_days and "+GYM" not in txt:
+                txt += "  +GYM G1-G6"
+            days[dow] = (txt + "  +M1/M2 mobility (2× daily) +R1 isometrics", typ, km)
     keep=KEEP_ONLY.get(w)
     if keep:
         why=KEEP_ONLY_WHY.get(w)
