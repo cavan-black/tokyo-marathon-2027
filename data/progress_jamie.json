@@ -23262,7 +23262,7 @@
     },
     "15": {
       "planned_km": 48,
-      "planned_km_due": 28,
+      "planned_km_due": 48,
       "actual_km": 18.5,
       "substituted_km": 5,
       "replaced_km": -18.0,
@@ -23274,7 +23274,7 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "✓ On track"
+      "flag": "⚠ Under-target — consider holding volume / repeating the week"
     },
     "16": {
       "planned_km": 42,
@@ -23565,7 +23565,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-01T18:18:14+00:00",
+  "last_sync": "2026-11-02T00:24:47+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
