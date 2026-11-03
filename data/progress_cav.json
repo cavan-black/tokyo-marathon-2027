@@ -55508,7 +55508,7 @@
       "session": "Easy 5 km flat, GT-2000 — only if Monday's check was clean.  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 5,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -57376,7 +57376,7 @@
       "replaced_km": 0,
       "done": 0,
       "partial": 0,
-      "missed": 0,
+      "missed": 1,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -57657,7 +57657,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-02T15:06:14+00:00",
+  "last_sync": "2026-11-03T02:48:07+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",
