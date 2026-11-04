@@ -22545,7 +22545,22 @@
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": 20846196419,
+          "date": "2026-11-03",
+          "name": "Night Weight Training",
+          "activity_type": "WeightTraining",
+          "distance_km": 0.0,
+          "moving_time_s": 3600,
+          "pace_min_km": null,
+          "avg_hr": 72.1,
+          "max_hr": 119.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-11-04": {
       "week": 16,
@@ -22554,7 +22569,7 @@
       "session": "Easy 5 km + strides",
       "target_km": 5,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -24403,19 +24418,19 @@
     },
     "16": {
       "planned_km": 42,
-      "planned_km_due": 0,
+      "planned_km_due": 8,
       "actual_km": 0.0,
       "substituted_km": 0,
       "replaced_km": -20.0,
       "done": 0,
       "partial": 0,
-      "missed": 1,
+      "missed": 2,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "✓ On track"
+      "flag": "⚠ Under-target — consider holding volume / repeating the week"
     },
     "17": {
       "planned_km": 52,
@@ -24690,7 +24705,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-03T13:51:17+00:00",
+  "last_sync": "2026-11-04T01:06:35+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
