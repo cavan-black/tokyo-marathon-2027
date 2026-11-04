@@ -55505,23 +55505,37 @@
       "week": 16,
       "dow": "Tue",
       "type": "recovery",
-      "session": "Easy 5 km flat, GT-2000 — only if Monday's check was clean.  +M1/M2 mobility (2x daily) +R1 isometrics",
+      "session": "DONE, ZERO PAIN: easy 5 km flat, GT-2000. Second pain-free run running, first on the road.  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 5,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
+      "actual_km": 5.0,
+      "status": "Done",
+      "pace_min_km": 5.175,
+      "pace_str": "5:10",
+      "activities": [
+        {
+          "id": 20851892564,
+          "date": "2026-11-03",
+          "name": "Evening Run",
+          "activity_type": "Run",
+          "distance_km": 5.0,
+          "moving_time_s": 1554,
+          "pace_min_km": 5.175,
+          "avg_hr": 136.4,
+          "max_hr": 153.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ],
       "cross_activities": []
     },
     "2026-11-04": {
       "week": 16,
       "dow": "Wed",
-      "type": "rest",
-      "session": "NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, 3 min easy between · w/u 15 min · c/d 10 min — the last bike session  +M1/M2 mobility (2x daily) +R1 isometrics",
-      "target_km": 0,
+      "type": "recovery",
+      "session": "Easy 5 km flat, GT-2000 — SWAPPED IN for the CT3 bike threshold. No bike. Week goes 36 -> 41 km.  +M1/M2 mobility (2x daily) +R1 isometrics",
+      "target_km": 5,
       "actual_km": 0,
-      "status": "Rest",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -57369,12 +57383,12 @@
       "flag": "✓ On track"
     },
     "16": {
-      "planned_km": 36,
+      "planned_km": 41,
       "planned_km_due": 5,
-      "actual_km": 0,
+      "actual_km": 5.0,
       "substituted_km": 0,
       "replaced_km": 0,
-      "done": 0,
+      "done": 1,
       "partial": 0,
       "missed": 1,
       "substituted": 0,
@@ -57382,7 +57396,7 @@
       "quality_hit": 0,
       "quality_planned": 0,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "17": {
       "planned_km": 46,
@@ -57657,7 +57671,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-04T01:06:34+00:00",
+  "last_sync": "2026-11-04T13:58:14+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",
