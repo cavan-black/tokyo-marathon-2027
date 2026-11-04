@@ -202,9 +202,15 @@ DAY_OVERRIDE = {
                      # cleared gate, not a repeat.
                      "Tue": ("DONE, ZERO PAIN: easy 5 km flat, GT-2000. Second pain-free "
                              "run running, first on the road.  +R1", "recovery", 5),
-                     "Wed": ("NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, 3 min "
-                             "easy between · w/u 15 min · c/d 10 min — the last bike "
-                             "session  +R1", "rest", 0),
+                     # Bike dropped at his request on the day — he would rather run slowly
+                     # than cycle, and a session he resents is a session that does not
+                     # happen. Swapped, NOT stacked: one stressor on the day, and less
+                     # systemic load than bike + run would have been. The cost is real
+                     # though: nothing above easy now until quality returns in wk 18, so
+                     # roughly four weeks with no threshold work at all.
+                     "Wed": ("Easy 5 km flat, GT-2000 — SWAPPED IN for the CT3 bike "
+                             "threshold. No bike. Week goes 36 -> 41 km.  +R1",
+                             "recovery", 5),
                      "Thu": ("Easy 7 km flat  +R1", "easy", 7),
                      "Fri": ("Easy 4 km very slow, 6:00/km, flat  +GYM G1-G6 +R1",
                              "recovery", 4),
@@ -331,7 +337,7 @@ LR_OVERRIDE = {8: 21.1}
 # informative day in the plan — worth more than the session it costs to protect it.
 # Cut to 68, all of it from the five days before the race; the race itself and the
 # Sunday distance are untouched. See DAY_OVERRIDE[21].
-VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69, 21: 68, 26: 95}
+VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69, 16: 41, 21: 68, 26: 95}
 
 # Trip bookings that have a real deadline, pinned to the day you have to act. The
 # itinerary itself lives in plan/trip.py; these are only the things that are gone if you
