@@ -995,7 +995,7 @@
       "week": 16,
       "start": "2026-11-02",
       "phase": "Marathon-Specific I",
-      "target_km": 41,
+      "target_km": 36,
       "focus": "",
       "days": [
         {
@@ -1017,10 +1017,10 @@
         {
           "date": "2026-11-04",
           "dow": "Wed",
-          "type": "recovery",
-          "session": "Easy 5 km flat, GT-2000 — SWAPPED IN for the CT3 bike threshold. No bike. Week goes 36 -> 41 km.  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 5,
-          "shoe": "GT-2000 15"
+          "type": "rest",
+          "session": "NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, 3 min easy between · w/u 15 min · c/d 10 min — the last bike session  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 0,
+          "shoe": null
         },
         {
           "date": "2026-11-05",
@@ -2203,8 +2203,8 @@
         [
           "GT-2000 15",
           "Easy + recovery, and the comeback runs",
-          "309",
-          "309",
+          "304",
+          "304",
           "Owned — new on 30 Oct, 0 km"
         ],
         [
