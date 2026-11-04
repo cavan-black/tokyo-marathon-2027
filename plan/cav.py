@@ -197,8 +197,11 @@ DAY_OVERRIDE = {
                              "for 15 reps at 3 s up / 3 s down, EACH LEG. That number sets "
                              "the whole ladder. Plus G3. (G4-G6 were done Sun 1 Nov)",
                              "rest", 0),
-                     "Tue": ("Easy 5 km flat, GT-2000 — only if Monday's check was clean. "
-                             "+R1", "recovery", 5),
+                     # Second pain-free run in a row: treadmill 1 Nov, road 3 Nov. Road is
+                     # a step up on surface variability from the treadmill, so this is a
+                     # cleared gate, not a repeat.
+                     "Tue": ("DONE, ZERO PAIN: easy 5 km flat, GT-2000. Second pain-free "
+                             "run running, first on the road.  +R1", "recovery", 5),
                      "Wed": ("NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, 3 min "
                              "easy between · w/u 15 min · c/d 10 min — the last bike "
                              "session  +R1", "rest", 0),
