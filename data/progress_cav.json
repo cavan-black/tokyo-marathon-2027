@@ -55531,11 +55531,11 @@
     "2026-11-04": {
       "week": 16,
       "dow": "Wed",
-      "type": "recovery",
-      "session": "Easy 5 km flat, GT-2000 — SWAPPED IN for the CT3 bike threshold. No bike. Week goes 36 -> 41 km.  +M1/M2 mobility (2x daily) +R1 isometrics",
-      "target_km": 5,
+      "type": "rest",
+      "session": "NO RUNNING. CT3 bike threshold 4x6 min @ 163-172 bpm, 3 min easy between · w/u 15 min · c/d 10 min — the last bike session  +M1/M2 mobility (2x daily) +R1 isometrics",
+      "target_km": 0,
       "actual_km": 0,
-      "status": "Missed",
+      "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -55548,7 +55548,7 @@
       "session": "Easy 7 km flat  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 7,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -57383,7 +57383,7 @@
       "flag": "✓ On track"
     },
     "16": {
-      "planned_km": 41,
+      "planned_km": 36,
       "planned_km_due": 5,
       "actual_km": 5.0,
       "substituted_km": 0,
@@ -57671,7 +57671,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-04T13:58:14+00:00",
+  "last_sync": "2026-11-05T01:21:43+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",
