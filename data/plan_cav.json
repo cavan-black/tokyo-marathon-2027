@@ -1002,7 +1002,7 @@
           "date": "2026-11-02",
           "dow": "Mon",
           "type": "rest",
-          "session": "NO RUNNING — 24 H CHECK, stiffness should clear in <10 min. GYM G1 + G2 CALIBRATION: find the load you can just manage for 15 reps at 3 s up / 3 s down, EACH LEG. That number sets the whole ladder. Plus G3. (G4-G6 were done Sun 1 Nov)  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "session": "NO RUNNING — 24 h check was clean. GYM DID NOT HAPPEN; calibration moved to Fri 6 Nov  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 0,
           "shoe": null
         },
@@ -1034,7 +1034,7 @@
           "date": "2026-11-06",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Easy 4 km very slow, 6:00/km, flat  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "session": "Easy 4 km very slow, 6:00/km, flat. Then GYM: G1 + G2 CALIBRATION — find the load you can just manage for 15 reps at 3 s up / 3 s down, EACH LEG, LEFT FIRST. That number sets the whole ladder. Plus G3, and G5 RDL 3x6 @ 60 kg, 3 s lowering. G4/G6 skipped (done Sun 1 Nov)  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 4,
           "shoe": "GT-2000 15"
         },

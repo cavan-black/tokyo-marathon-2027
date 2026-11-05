@@ -192,11 +192,10 @@ DAY_OVERRIDE = {
                      # reports late. Morning stiffness that clears in under 10 min is
                      # acceptable and expected; stiffness that lasts the morning, or any
                      # pain worse than yesterday, means repeat the previous step.
-                     "Mon": ("NO RUNNING — 24 H CHECK, stiffness should clear in <10 min. "
-                             "GYM G1 + G2 CALIBRATION: find the load you can just manage "
-                             "for 15 reps at 3 s up / 3 s down, EACH LEG. That number sets "
-                             "the whole ladder. Plus G3. (G4-G6 were done Sun 1 Nov)",
-                             "rest", 0),
+                     # NOT DONE. The calibration moves to Friday, which is now the only
+                     # gym day this week.
+                     "Mon": ("NO RUNNING — 24 h check was clean. GYM DID NOT HAPPEN; "
+                             "calibration moved to Fri 6 Nov", "rest", 0),
                      # Second pain-free run in a row: treadmill 1 Nov, road 3 Nov. Road is
                      # a step up on surface variability from the treadmill, so this is a
                      # cleared gate, not a repeat.
@@ -206,7 +205,17 @@ DAY_OVERRIDE = {
                              "easy between · w/u 15 min · c/d 10 min — the last bike "
                              "session  +R1", "rest", 0),
                      "Thu": ("Easy 7 km flat  +R1", "easy", 7),
-                     "Fri": ("Easy 4 km very slow, 6:00/km, flat  +GYM G1-G6 +R1",
+                     # Monday's gym did not happen, so this is the only gym of the week and
+                     # the calibration has to land here. G1 is the priority — the seated
+                     # soleus number is what the wks 17-20 ladder is a percentage of. LEFT
+                     # LEG FIRST, while fresh, or the injured side's number comes back
+                     # corrupted by fatigue. G4/G6 drop this week: they were done Sun 1 Nov
+                     # and finding the calf number matters more than a second exposure.
+                     "Fri": ("Easy 4 km very slow, 6:00/km, flat. Then GYM: G1 + G2 "
+                             "CALIBRATION — find the load you can just manage for 15 reps "
+                             "at 3 s up / 3 s down, EACH LEG, LEFT FIRST. That number sets "
+                             "the whole ladder. Plus G3, and G5 RDL 3x6 @ 60 kg, 3 s "
+                             "lowering. G4/G6 skipped (done Sun 1 Nov)  +R1",
                              "recovery", 4),
                      "Sat": ("Easy 8 km flat  +R1", "easy", 8),
                      "Sun": ("Easy 12 km flat — no MP work, no hills, no corners. Then "
