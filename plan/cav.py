@@ -211,11 +211,17 @@ DAY_OVERRIDE = {
                      # LEG FIRST, while fresh, or the injured side's number comes back
                      # corrupted by fatigue. G4/G6 drop this week: they were done Sun 1 Nov
                      # and finding the calf number matters more than a second exposure.
-                     "Fri": ("Easy 4 km very slow, 6:00/km, flat. Then GYM: G1 + G2 "
-                             "CALIBRATION — find the load you can just manage for 15 reps "
-                             "at 3 s up / 3 s down, EACH LEG, LEFT FIRST. That number sets "
-                             "the whole ladder. Plus G3, and G5 RDL 3x6 @ 60 kg, 3 s "
-                             "lowering. G4/G6 skipped (done Sun 1 Nov)  +R1",
+                     # DONE. Calibration attempted and NOT usable: standing single-leg
+                     # bent-knee raise gave 10 L then 15 L on a second attempt, 15 R. A
+                     # fatigued leg does not gain 50%, so the first was a cold unfamiliar
+                     # movement. Video confirmed technique is sound — wall for balance, free
+                     # foot in the air, knee bend held. But he cannot drop the heel below
+                     # the step: the knee-over-toes position spends his dorsiflexion before
+                     # the heel descends, so the test measured ankle range, not soleus.
+                     # Recalibrate SEATED on Mon 9 Nov. No capacity deficit found.
+                     "Fri": ("DONE: easy 4 km, then gym — calf work, G2, G3, G5 RDL, G4/G6. "
+                             "Calibration not usable (bottomed out on dorsiflexion, not "
+                             "strength); moved to Mon 9 Nov, seated  +R1",
                              "recovery", 4),
                      "Sat": ("Easy 8 km flat  +R1", "easy", 8),
                      "Sun": ("Easy 12 km flat — no MP work, no hills, no corners. Then "
