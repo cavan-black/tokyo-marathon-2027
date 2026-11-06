@@ -225,7 +225,16 @@ DAY_OVERRIDE = {
                 # wk 17 none, wk 18 one threshold, wk 19 threshold + a short MP block, wk 20
                 # back to normal. Nothing with hills or sharp cornering until wk 19 — those
                 # load the subtalar joint hardest. BJJ drills stay out until wk 19.
-                17: {"Mon": ("Rest from running  +GYM G1-G6  +R1", "rest", 0),
+                17: {# CALIBRATION, moved here from wk 16 and redesigned. The standing
+                     # knee-over-toes version bottoms out on his dorsiflexion, not his
+                     # soleus — he physically cannot drop the heel below the step (6 Nov
+                     # video). Seated removes the confound: knee flexed to 90 deg with the
+                     # shin VERTICAL biases soleus without spending any ankle range.
+                     "Mon": ("Rest from running. GYM: G1 SEATED CALF CALIBRATION — bench, "
+                             "forefoot on a block, shin vertical, KB on the distal thigh. "
+                             "Find the 15RM at 3 s up / 3 s down, EACH LEG, LEFT FIRST. "
+                             "Fresh legs, no failure sets first. Then G2-G6  +R1",
+                             "rest", 0),
                      "Tue": ("Easy 8 km flat — first full week back, no quality at all",
                              "easy", 8),
                      "Wed": ("Easy 7 km flat", "easy", 7),
