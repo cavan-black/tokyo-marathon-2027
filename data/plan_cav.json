@@ -995,7 +995,7 @@
       "week": 16,
       "start": "2026-11-02",
       "phase": "Marathon-Specific I",
-      "target_km": 36,
+      "target_km": 33,
       "focus": "",
       "days": [
         {
@@ -1042,8 +1042,8 @@
           "date": "2026-11-07",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 8 km flat  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 8,
+          "session": "Easy 5 km flat — CUT FROM 8. Left ankle joint stiffness this morning. No standing knee-over-toes calf raises until it settles. Mobility gentler, not harder  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 5,
           "shoe": "GT-2000 15"
         },
         {
@@ -2203,8 +2203,8 @@
         [
           "GT-2000 15",
           "Easy + recovery, and the comeback runs",
-          "304",
-          "304",
+          "301",
+          "301",
           "Owned — new on 30 Oct, 0 km"
         ],
         [

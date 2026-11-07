@@ -223,7 +223,16 @@ DAY_OVERRIDE = {
                              "Calibration not usable (bottomed out on dorsiflexion, not "
                              "strength); moved to Mon 9 Nov, seated  +R1",
                              "recovery", 4),
-                     "Sat": ("Easy 8 km flat  +R1", "easy", 8),
+                     # Left ANKLE JOINT stiffness on Sat morning — not calf DOMS, not
+                     # pain. First reaction since the return, and it follows Friday's gym.
+                     # Prime suspect is the standing knee-over-toes raise: repeated
+                     # end-range joint loading, to failure, on a joint that is already
+                     # restricted. That movement is OUT until this settles; Monday's seated
+                     # calibration does not load the joint at end range, so it stands.
+                     # Per the gate, repeat a cleared step rather than progress: 8 -> 5.
+                     "Sat": ("Easy 5 km flat — CUT FROM 8. Left ankle joint stiffness this "
+                             "morning. No standing knee-over-toes calf raises until it "
+                             "settles. Mobility gentler, not harder  +R1", "easy", 5),
                      "Sun": ("Easy 12 km flat — no MP work, no hills, no corners. Then "
                              "REPEAT THE TEST BATTERY and compare to 1 Nov  +R1",
                              "long", 12)},
@@ -355,7 +364,7 @@ LR_OVERRIDE = {8: 21.1}
 # informative day in the plan — worth more than the session it costs to protect it.
 # Cut to 68, all of it from the five days before the race; the race itself and the
 # Sunday distance are untouched. See DAY_OVERRIDE[21].
-VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69, 21: 68, 26: 95}
+VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69, 16: 33, 21: 68, 26: 95}
 
 # Trip bookings that have a real deadline, pinned to the day you have to act. The
 # itinerary itself lives in plan/trip.py; these are only the things that are gone if you
