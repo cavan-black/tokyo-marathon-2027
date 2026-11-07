@@ -56137,14 +56137,159 @@
       "week": 16,
       "dow": "Fri",
       "type": "recovery",
-      "session": "Easy 4 km very slow, 6:00/km, flat. Then GYM: G1 + G2 CALIBRATION — find the load you can just manage for 15 reps at 3 s up / 3 s down, EACH LEG, LEFT FIRST. That number sets the whole ladder. Plus G3, and G5 RDL 3x6 @ 60 kg, 3 s lowering. G4/G6 skipped (done Sun 1 Nov)  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
+      "session": "DONE: easy 4 km, then gym — calf work, G2, G3, G5 RDL, G4/G6. Calibration not usable (bottomed out on dorsiflexion, not strength); moved to Mon 9 Nov, seated  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 4,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
-      "cross_activities": []
+      "actual_km": 6.02,
+      "status": "Done",
+      "pace_min_km": 4.562,
+      "pace_str": "4:34",
+      "activities": [
+        {
+          "id": 20886128437,
+          "date": "2026-11-06",
+          "name": "Evening Run",
+          "activity_type": "Run",
+          "distance_km": 1.01,
+          "moving_time_s": 329,
+          "pace_min_km": 5.405,
+          "avg_hr": 146.0,
+          "max_hr": 152.0,
+          "elev_gain_m": 22.2,
+          "route": [
+            [
+              36.5242,
+              -5.0467
+            ],
+            [
+              36.52416,
+              -5.04668
+            ],
+            [
+              36.52405,
+              -5.04657
+            ],
+            [
+              36.52383,
+              -5.04631
+            ],
+            [
+              36.5236,
+              -5.04609
+            ],
+            [
+              36.52334,
+              -5.04587
+            ],
+            [
+              36.5232,
+              -5.04578
+            ],
+            [
+              36.52306,
+              -5.04572
+            ],
+            [
+              36.52257,
+              -5.04564
+            ],
+            [
+              36.52189,
+              -5.04549
+            ],
+            [
+              36.52179,
+              -5.04543
+            ],
+            [
+              36.52135,
+              -5.04514
+            ]
+          ]
+        },
+        {
+          "id": 20886128430,
+          "date": "2026-11-06",
+          "name": "Evening Run",
+          "activity_type": "Run",
+          "distance_km": 4.01,
+          "moving_time_s": 1098,
+          "pace_min_km": 4.562,
+          "avg_hr": 156.3,
+          "max_hr": 170.0,
+          "elev_gain_m": 0,
+          "route": []
+        },
+        {
+          "id": 20886496866,
+          "date": "2026-11-06",
+          "name": "Evening Run",
+          "activity_type": "Run",
+          "distance_km": 1.0,
+          "moving_time_s": 342,
+          "pace_min_km": 5.695,
+          "avg_hr": 148.2,
+          "max_hr": 169.0,
+          "elev_gain_m": 44.8,
+          "route": [
+            [
+              36.52137,
+              -5.04521
+            ],
+            [
+              36.52161,
+              -5.04536
+            ],
+            [
+              36.52181,
+              -5.04546
+            ],
+            [
+              36.52224,
+              -5.04558
+            ],
+            [
+              36.52271,
+              -5.04575
+            ],
+            [
+              36.52315,
+              -5.04586
+            ],
+            [
+              36.52324,
+              -5.04591
+            ],
+            [
+              36.52342,
+              -5.04604
+            ],
+            [
+              36.5239,
+              -5.04649
+            ],
+            [
+              36.52397,
+              -5.04649
+            ]
+          ]
+        }
+      ],
+      "cross_activities": [
+        {
+          "id": 20886414831,
+          "date": "2026-11-06",
+          "name": "Evening Weight Training",
+          "activity_type": "WeightTraining",
+          "distance_km": 0.0,
+          "moving_time_s": 1904,
+          "pace_min_km": null,
+          "avg_hr": 104.8,
+          "max_hr": 139.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-11-07": {
       "week": 16,
@@ -56153,7 +56298,7 @@
       "session": "Easy 8 km flat  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 8,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -56176,7 +56321,7 @@
       "week": 17,
       "dow": "Mon",
       "type": "rest",
-      "session": "Rest from running  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
+      "session": "Rest from running. GYM: G1 SEATED CALF CALIBRATION — bench, forefoot on a block, shin vertical, KB on the distal thigh. Find the 15RM at 3 s up / 3 s down, EACH LEG, LEFT FIRST. Fresh legs, no failure sets first. Then G2-G6  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 0,
       "actual_km": 0,
       "status": "Rest",
@@ -57963,11 +58108,11 @@
     },
     "16": {
       "planned_km": 36,
-      "planned_km_due": 12,
-      "actual_km": 12.0,
+      "planned_km_due": 16,
+      "actual_km": 18.0,
       "substituted_km": 0,
       "replaced_km": 0,
-      "done": 2,
+      "done": 3,
       "partial": 0,
       "missed": 1,
       "substituted": 0,
@@ -58250,7 +58395,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-06T13:56:18+00:00",
+  "last_sync": "2026-11-07T00:42:14+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",
