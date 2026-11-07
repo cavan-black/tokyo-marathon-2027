@@ -56295,8 +56295,8 @@
       "week": 16,
       "dow": "Sat",
       "type": "easy",
-      "session": "Easy 8 km flat  +M1/M2 mobility (2x daily) +R1 isometrics",
-      "target_km": 8,
+      "session": "Easy 5 km flat — CUT FROM 8. Left ankle joint stiffness this morning. No standing knee-over-toes calf raises until it settles. Mobility gentler, not harder  +M1/M2 mobility (2x daily) +R1 isometrics",
+      "target_km": 5,
       "actual_km": 0,
       "status": "Missed",
       "pace_min_km": null,
@@ -58107,7 +58107,7 @@
       "flag": "✓ On track"
     },
     "16": {
-      "planned_km": 36,
+      "planned_km": 33,
       "planned_km_due": 16,
       "actual_km": 18.0,
       "substituted_km": 0,
@@ -58395,7 +58395,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-07T12:40:32+00:00",
+  "last_sync": "2026-11-07T17:57:56+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",
