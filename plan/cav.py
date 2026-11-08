@@ -230,11 +230,23 @@ DAY_OVERRIDE = {
                      # restricted. That movement is OUT until this settles; Monday's seated
                      # calibration does not load the joint at end range, so it stands.
                      # Per the gate, repeat a cleared step rather than progress: 8 -> 5.
-                     "Sat": ("Easy 5 km flat — CUT FROM 8. Left ankle joint stiffness this "
-                             "morning. No standing knee-over-toes calf raises until it "
-                             "settles. Mobility gentler, not harder  +R1", "easy", 5),
-                     "Sun": ("Easy 12 km flat — no MP work, no hills, no corners. Then "
-                             "REPEAT THE TEST BATTERY and compare to 1 Nov  +R1",
+                     # DONE. Treadmill at the gym plus the cut-down non-calf gym session
+                     # (G3, G5, G6, core, R1 isometrics). No calf raises, no G4.
+                     "Sat": ("DONE: easy 5 km flat — CUT FROM 8 after left ankle joint "
+                             "stiffness. Non-calf gym only: G3, G5, G6, R1. No standing "
+                             "knee-over-toes raises  +R1", "easy", 5),
+                     # DONE, ZERO PAIN, and at the FULL 12 — I argued for 9 on the grounds
+                     # that 5 -> 12 the day after a joint reaction was too big a step. He
+                     # took the 12 and it was clean. Longest run since the 27 Oct abort
+                     # (1.61 km) and the sixth consecutive pain-free run. That dates
+                     # Saturday's stiffness to Friday's gym work, not to the tendon
+                     # progressing — the standing knee-over-toes raise is the culprit and
+                     # stays out. Return-to-run ladder is complete: wk 17 runs as written.
+                     # Test battery NOT recorded — knee-to-wall still outstanding, and it
+                     # is the number the wks 18-20 ramp decision needs.
+                     "Sun": ("DONE, ZERO PAIN: easy 12 km flat at the full planned "
+                             "distance. Longest since the abort. Test battery not "
+                             "recorded — knee-to-wall still owed  +R1",
                              "long", 12)},
                 # Rebuild after the layoff. Quality comes back one session at a time:
                 # wk 17 none, wk 18 one threshold, wk 19 threshold + a short MP block, wk 20
