@@ -56297,11 +56297,25 @@
       "type": "easy",
       "session": "Easy 5 km flat — CUT FROM 8. Left ankle joint stiffness this morning. No standing knee-over-toes calf raises until it settles. Mobility gentler, not harder  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 5,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
+      "actual_km": 5.01,
+      "status": "Done",
+      "pace_min_km": 5.267,
+      "pace_str": "5:16",
+      "activities": [
+        {
+          "id": 20899306759,
+          "date": "2026-11-07",
+          "name": "Evening Run",
+          "activity_type": "Run",
+          "distance_km": 5.01,
+          "moving_time_s": 1584,
+          "pace_min_km": 5.267,
+          "avg_hr": 129.0,
+          "max_hr": 139.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ],
       "cross_activities": []
     },
     "2026-11-08": {
@@ -56311,7 +56325,7 @@
       "session": "Easy 12 km flat — no MP work, no hills, no corners. Then REPEAT THE TEST BATTERY and compare to 1 Nov  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 12,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -58108,11 +58122,11 @@
     },
     "16": {
       "planned_km": 33,
-      "planned_km_due": 16,
-      "actual_km": 18.0,
+      "planned_km_due": 21,
+      "actual_km": 23.0,
       "substituted_km": 0,
       "replaced_km": 0,
-      "done": 3,
+      "done": 4,
       "partial": 0,
       "missed": 1,
       "substituted": 0,
@@ -58395,7 +58409,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-07T17:57:56+00:00",
+  "last_sync": "2026-11-08T00:17:01+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",

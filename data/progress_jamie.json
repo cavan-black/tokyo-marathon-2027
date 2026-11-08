@@ -24523,7 +24523,7 @@
       "session": "14 km easy (cut-back — 5K trial yesterday, keep this one genuinely slow)",
       "target_km": 14,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -26326,7 +26326,7 @@
       "replaced_km": -20.0,
       "done": 2,
       "partial": 1,
-      "missed": 1,
+      "missed": 2,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
@@ -26607,7 +26607,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-07T17:57:57+00:00",
+  "last_sync": "2026-11-08T00:17:03+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
