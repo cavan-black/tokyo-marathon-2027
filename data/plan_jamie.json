@@ -1939,20 +1939,20 @@
       "rows": [
         [
           "Recovery",
-          "6:45–7:20",
-          "10:52–11:48",
+          "6:30–6:55",
+          "10:28–11:08",
           "Easy/short & day-after runs"
         ],
         [
           "Easy / aerobic",
-          "6:15–7:00",
-          "10:03–11:16",
+          "6:00–6:40",
+          "9:39–10:44",
           "Bulk of running — keep it TRULY easy"
         ],
         [
           "Long-run easy",
-          "6:20–7:00",
-          "10:11–11:16",
+          "6:05–6:45",
+          "9:47–10:52",
           "Long-run base portions"
         ],
         [
@@ -1963,14 +1963,14 @@
         ],
         [
           "Threshold (T)",
-          "5:15–5:25",
-          "8:27–8:43",
+          "4:55–5:05",
+          "7:55–8:11",
           "Tempo / cruise (comfortably hard)"
         ],
         [
           "5K pace",
-          "4:55–5:05",
-          "7:55–8:09",
+          "4:35–4:45",
+          "7:23–7:39",
           "Short faster reps"
         ],
         [
@@ -1980,7 +1980,7 @@
           "20s pickups, not a workout"
         ]
       ],
-      "note": "Sessions say '@ MP' and '@ T' on purpose — run them at your goal pace: 4:00 = 5:41/km. Every pace in this table is currently an ESTIMATE — the wk-10 5K never happened, so nothing here is anchored to a real effort. The wk-16 parkrun (Sat 7 Nov) sets them properly; treat these as provisional until then."
+      "note": "ANCHORED 7 Nov 2026: parkrun 5K in 23:44 for 5.01 km (23:41 for 5.00 km, 4:44/km, 169 bpm avg / 182 max) — VDOT 40.8. Every pace above now comes from that run instead of from a guess. Two moved a long way: THRESHOLD is 20 s/km faster than the estimate (5:15–5:25 → 4:55–5:05), so Tue tempo and cruise work gets genuinely harder; and the 5K-rep pace was set SLOWER than the pace you actually raced 5K at, which made those reps pointless — now 4:35–4:45. MP is the one row that does NOT come off the trial: it stays 5:41/km because it is the 4:00 goal pace and race pace has to be rehearsed at race pace. Your engine's own MP is about 5:12, so 5:41 should now feel genuinely comfortable — that is the correct feeling 17 weeks out, not a reason to run MP blocks faster."
     },
     "goals": {
       "headers": [
@@ -2003,21 +2003,21 @@
           "1:55:00"
         ],
         [
-          "Stretch — 3:30",
-          "4:59",
-          "8:01",
-          "1:40:45"
+          "Stretch — 3:45",
+          "5:20",
+          "8:35",
+          "1:47:30"
         ]
       ]
     },
     "checkpoints": {
-      "intro": "Plan rebuilt 14 Oct (wk 13) off actual training, not the original ramp — weeks 7–12 averaged 13.7 km. The 4:00 target is HELD, which is the ambitious read of the data: it needs the 80 km peak, and that needs weeks like 7–12 to not happen again. Wk 16 re-anchors your paces; the Wk-27 half sets the final race goal (4:00 needs ~1:55).",
+      "intro": "Plan rebuilt 14 Oct (wk 13) off actual training, not the original ramp — weeks 7–12 averaged 13.7 km. The wk-16 trial has now been run and it changes the reading: 23:41 for 5 km beats the 4:00 benchmark by 1:19, so 4:00 is no longer the ambitious read of the data — it is the realistic one, and the stretch moves from 3:30 to 3:45. The engine is not the limiter any more; endurance is. That is what the 80 km peak is for, and it still needs weeks like 7–12 to not happen again. The Wk-27 half sets the final race goal.",
       "headers": [
         "Wk / date",
         "Test",
         "Floor 4:30",
         "Target 4:00",
-        "Stretch 3:30"
+        "Stretch 3:45"
       ],
       "rows": [
         [
@@ -2029,10 +2029,10 @@
         ],
         [
           "Wk 16 · Sat 7 Nov",
-          "5K time trial (re-anchor)",
+          "5K trial — RAN 23:41 ✓ (VDOT 40.8)",
           "~28:00",
           "~25:00",
-          "~21:55"
+          "~23:05"
         ],
         [
           "Wk 21 · Sun 13 Dec",
@@ -2059,7 +2059,7 @@
       "notes": [
         "WHY THIS CHANGED: weeks 7–12 averaged 13.7 km/week and the longest run in seven weeks was 15.7 km. Worse, that 11 Oct run was 7:36/km at 159 bpm against 21.1 km at 6:24/km and 148 bpm on 30 Aug — slower and higher-HR over a shorter distance, which is detraining, not a bad day. The original wk-13 ask (74 km, 30 km long run) was 5.4x the recent weekly average and 1.9x the longest recent run. Weeks 1–12 are left untouched as the record; 13 onward is rebuilt.",
         "The rebuild restarts at 40 km — your own number — with a 16 km long run, ramps no more than 10% off the last comparable week, and cuts back every fourth week. Peak 80 km at wk 29 / 32 km long run. Final long run is Sun 14 Feb, three weeks out.",
-        "3:30 is kept in the table for reference only — it is not a live target after a 12-week start that produced ~165 km of running. Chasing it is how weeks 9–12 happened.",
+        "WHAT THE 7 NOV TRIAL SETTLED: 23:41 for 5 km is VDOT 40.8, whose equivalents are 49:08 for 10K, 1:48:57 for a half and 3:45:44 for a marathon. Do NOT read 3:45 off that table as a target. VDOT marathon equivalents assume the mileage to hold the pace for 42 km, and weeks 7–12 averaged 13.7 km — a runner on that history typically finishes 10–20 min outside the equivalent. So 4:00 stays the live target and 3:45 is the stretch it could become IF the volume build actually happens. The Wk-27 half on 24 Jan decides, not this 5K.",
         "Football & other sport count as training load — see the banner above. Don't double up hard efforts or stack three hard days.",
         "Max 2 hard run-efforts per week: Tue quality plus EITHER the Thu MP tempo OR a Sunday MP long run — never both. Hard long-run weekends always alternate with easy ones (and football still counts on top).",
         "Rest days are Monday (always), plus Saturday through week 8 and again in the wk 13–15 rebuild; race-week Friday rest is the one exception.",
@@ -2568,7 +2568,7 @@
       ],
       [
         "Easy means easy",
-        "Your recent short runs have crept to 5:17–5:54/km while the long runs got slower. That's backwards. The base portions are 6:15–7:00/km; run them there and the long runs come good."
+        "Your recent short runs have crept to 5:17–5:54/km while the long runs got slower. That's backwards. The base portions are now 6:00–6:40/km off the 7 Nov trial; run them there and the long runs come good."
       ],
       [
         "Football is a hard session",
