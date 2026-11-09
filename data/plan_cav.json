@@ -1125,7 +1125,7 @@
       "week": 18,
       "start": "2026-11-16",
       "phase": "Marathon-Specific I",
-      "target_km": 55,
+      "target_km": 60,
       "focus": "",
       "days": [
         {
@@ -1148,40 +1148,40 @@
           "date": "2026-11-18",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 8 km  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 8,
+          "session": "Easy 9 km  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 9,
           "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-19",
           "dow": "Thu",
           "type": "easy",
-          "session": "Easy 9 km  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 9,
+          "session": "Easy 10 km  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 10,
           "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-20",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 5 km easy — 5:35-6:05/km, HR under 140, slower than you think  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 5,
+          "session": "Recovery 6 km easy — 5:35-6:05/km, HR under 140, slower than you think  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 6,
           "shoe": "Clifton 9"
         },
         {
           "date": "2026-11-21",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 7 km + 6×20s strides  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 7,
+          "session": "Easy 8 km + 6×20s strides  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 8,
           "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-22",
           "dow": "Sun",
           "type": "long",
-          "session": "Long 14 km easy  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 14,
+          "session": "Long 15 km easy  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 15,
           "shoe": "RACE SHOE"
         }
       ]
@@ -1190,7 +1190,7 @@
       "week": 19,
       "start": "2026-11-23",
       "phase": "Marathon-Specific I",
-      "target_km": 68,
+      "target_km": 74,
       "focus": "",
       "days": [
         {
@@ -1213,8 +1213,8 @@
           "date": "2026-11-25",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10 km + 6×20s strides  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 10,
+          "session": "Easy 12 km + 6×20s strides  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 12,
           "shoe": "Clifton 9"
         },
         {
@@ -1229,16 +1229,16 @@
           "date": "2026-11-27",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 6 km easy — 5:35-6:05/km  +BJJ (drills only — no live rounds)  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 6,
+          "session": "Recovery 8 km easy — 5:35-6:05/km  +BJJ (drills only — no live rounds)  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 8,
           "shoe": "Clifton 9"
         },
         {
           "date": "2026-11-28",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 8 km + strides  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 8,
+          "session": "Easy 10 km + strides  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 10,
           "shoe": "Clifton 9"
         },
         {
@@ -1255,7 +1255,7 @@
       "week": 20,
       "start": "2026-11-30",
       "phase": "Marathon-Specific I",
-      "target_km": 76,
+      "target_km": 80,
       "focus": "",
       "days": [
         {
@@ -1278,8 +1278,8 @@
           "date": "2026-12-02",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10 km + 6×20s strides  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 10,
+          "session": "Easy 11 km + 6×20s strides  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 11,
           "shoe": "GT-2000 15"
         },
         {
@@ -1294,8 +1294,8 @@
           "date": "2026-12-04",
           "dow": "Fri",
           "type": "recovery",
-          "session": "Recovery 7 km easy — 5:35-6:05/km  +BJJ (drills only — no live rounds)  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 7,
+          "session": "Recovery 8 km easy — 5:35-6:05/km  +BJJ (drills only — no live rounds)  +GYM G1-G6  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 8,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1310,8 +1310,8 @@
           "date": "2026-12-06",
           "dow": "Sun",
           "type": "long",
-          "session": "26 km easy — steady week, race is next Sunday  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 26,
+          "session": "28 km easy — steady week, race is next Sunday  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 28,
           "shoe": "Max-cushion (long-run)"
         }
       ]
@@ -2203,29 +2203,29 @@
         [
           "GT-2000 15",
           "Easy + recovery, and the comeback runs",
-          "296",
-          "296",
+          "300",
+          "300",
           "Owned — new on 30 Oct, 0 km"
         ],
         [
           "Clifton 9",
           "Easy + recovery until it runs out",
-          "49",
-          "496",
+          "56",
+          "503",
           "Owned — 447 km. Retire around 600."
         ],
         [
           "Daily trainer #2",
           "Easy + recovery from Wk 20",
-          "359",
-          "359",
+          "360",
+          "360",
           "Early Jan, as the Clifton runs out"
         ],
         [
           "Max-cushion (long-run)",
           "Every long run from Wk 20",
-          "299",
-          "299",
+          "301",
+          "301",
           "Before Wk 20 — soft and high-stack (Nimbus / Skyflow / Kiprun KS900)"
         ],
         [
@@ -2252,8 +2252,8 @@
         [
           "RACE SHOE",
           "Sevilla, Tokyo + 2 bed-in runs",
-          "129",
-          "129",
+          "130",
+          "130",
           "Early-mid Nov — Metaspeed Sky / Alphafly 3 / Adios Pro 5"
         ]
       ],

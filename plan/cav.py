@@ -280,20 +280,26 @@ DAY_OVERRIDE = {
                 # climbing. So SPEED EXPOSURE is the thing to stage carefully, and easy
                 # volume is the cheap part: the 24 km on 26 Oct and the 19 km on 18 Oct both
                 # ran at 212-224 ms stance, i.e. low loading rate, and were tolerated.
-                # Week 18 therefore keeps its quality session in full and pays the 5 km out
-                # of easy running: 60 -> 55. Short reps with full recoveries are the
-                # lowest-exposure way back into speed - 4 km of fast running in 1 km
-                # chunks, against the 10 km continuous block that caused this.
+                # Week 18 therefore keeps its quality session in full. Short reps with
+                # full recoveries are the lowest-exposure way back into speed - 4 km of
+                # fast running in 1 km chunks, against the 10 km continuous block that
+                # caused this.
+                # EASY VOLUME RESTORED 9 Nov. It was briefly cut to 55, which was paying
+                # twice for one risk: if easy running at 212-224 ms stance is what he
+                # tolerated through 19 km and 24 km, then cutting it buys little and costs
+                # the aerobic rebuild. 60 and 74 are both at or below his best week on
+                # record (76.1, wk 9), so wks 18-19 reclaim ground rather than set records.
+                # The speed cuts stand - that is where the risk actually lives.
                 18: {"Mon": ("Rest from running  +GYM G1-G6  +R1", "rest", 0),
                      "Tue": ("Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · "
                              "c/d 2 km — first quality since the injury, half the usual volume, "
                              "flat loop only. SHORT reps on purpose: 1 km chunks, not blocks", "quality", 12),
-                     "Wed": ("Easy 8 km  +GYM G1-G6", "easy", 8),
-                     "Thu": ("Easy 9 km", "easy", 9),
-                     "Fri": ("Recovery 5 km easy — 5:35-6:05/km, HR under 140, slower than "
-                             "you think  +GYM G1-G6  +R1", "recovery", 5),
-                     "Sat": ("Easy 7 km + 6×20s strides", "easy", 7),
-                     "Sun": ("Long 14 km easy", "long", 14)},
+                     "Wed": ("Easy 9 km  +GYM G1-G6", "easy", 9),
+                     "Thu": ("Easy 10 km", "easy", 10),
+                     "Fri": ("Recovery 6 km easy — 5:35-6:05/km, HR under 140, slower than "
+                             "you think  +GYM G1-G6  +R1", "recovery", 6),
+                     "Sat": ("Easy 8 km + 6×20s strides", "easy", 8),
+                     "Sun": ("Long 15 km easy", "long", 15)},
                 19: {"Mon": ("Rest from running · BJJ drills/technical, no live rounds  "
                              "+S&C (easy-day session) — BJJ returns here if the ankle has been "
                              "clean for three weeks", "rest", 0),
@@ -302,35 +308,40 @@ DAY_OVERRIDE = {
                      # out for three. Cut to 9 km of fast work: 4x1.5 km instead of 5, and
                      # the first MP block is 3 km, not 5. The 20 km Sunday is UNTOUCHED -
                      # slow long runs are not what hurt him and the aerobic rebuild needs
-                     # it. 74 -> 68, with the 6 km taken out of easy days.
+                     # it. Week total HELD at 74: the 3 km taken off the quality days
+                     # goes back onto the easy days rather than out of the week.
                      "Tue": ("Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km · w/u 3 km · "
                              "c/d 2 km — CUT FROM 5×1.5 and 3:48", "quality", 11),
-                     "Wed": ("Easy 10 km + 6×20s strides  +GYM G1-G6", "easy", 10),
+                     "Wed": ("Easy 12 km + 6×20s strides  +GYM G1-G6", "easy", 12),
                      "Thu": ("Medium-long 13 km w/ middle 3 km @ MP — first marathon-pace work "
                              "back, CUT FROM 5 km. Continuous fast blocks are the shape that "
                              "injured him, so this one stays tiny", "quality", 13),
-                     "Fri": ("Recovery 6 km easy — 5:35-6:05/km  +BJJ (drills only — no live "
-                             "rounds)", "recovery", 6),
-                     "Sat": ("Easy 8 km + strides", "easy", 8),
+                     "Fri": ("Recovery 8 km easy — 5:35-6:05/km  +BJJ (drills only — no live "
+                             "rounds)", "recovery", 8),
+                     "Sat": ("Easy 10 km + strides", "easy", 10),
                      "Sun": ("Long 20 km easy", "long", 20)},
                 # Week 20 was the single riskiest week in the plan: Thursday asked for
                 # 3x4 km @ MP, i.e. 12 km of marathon-pace running, MORE than the 10 km
                 # that injured him, in the same week as a 6x1000 VO2 session. Now 9 km of
-                # MP in 3 km blocks and 5x1000. 85 -> 76, which matches his best week on
-                # record (76.1 in wk 9) instead of setting a lifetime high six weeks out
-                # of a tendon layoff.
+                # MP in 3 km blocks and 5x1000.
+                # Volume lands at 80 - not the original 85, and not the 76 it was briefly
+                # cut to. 85 would be a 12% lifetime high the week before the Sevilla
+                # Half, five weeks out of a layoff, with the left ankle still 2.5 cm down
+                # on the right: too many ands at once. 80 is a +4 km high over wk 9's
+                # 76.1, which is an ordinary progression, and it keeps the robustness
+                # argument intact.
                 20: {"Mon": ("Rest from running · BJJ drills/technical, no live rounds  "
                              "+GYM G1-G6  +R1", "rest", 0),
                      "Tue": ("VO2: 5×1000 m @ 3:26/km, 2:30 jog @ 6:00/km · w/u 3.5 km · "
                              "c/d 2 km — CUT FROM 6 reps", "quality", 13),
-                     "Wed": ("Easy 10 km + 6×20s strides  +GYM G1-G6", "easy", 10),
+                     "Wed": ("Easy 11 km + 6×20s strides  +GYM G1-G6", "easy", 11),
                      "Thu": ("MP tempo: 3×3 km @ MP, 2 min float @ 4:28/km · w/u 2 km · "
                              "c/d 1 km — CUT FROM 3×4 km. 9 km of MP, still under the 10 km "
                              "block that caused the injury", "quality", 13),
-                     "Fri": ("Recovery 7 km easy — 5:35-6:05/km  +BJJ (drills only — no live "
-                             "rounds)  +GYM G1-G6  +R1", "recovery", 7),
+                     "Fri": ("Recovery 8 km easy — 5:35-6:05/km  +BJJ (drills only — no live "
+                             "rounds)  +GYM G1-G6  +R1", "recovery", 8),
                      "Sat": ("Easy 7 km + strides", "easy", 7),
-                     "Sun": ("26 km easy — steady week, race is next Sunday", "long", 26)},
+                     "Sun": ("28 km easy — steady week, race is next Sunday", "long", 28)},
                 26: {"Wed": ("Easy 20 km + 6×20s strides  (double: split AM/PM)", "easy", 20),
                      "Thu": ("Medium-long 26 km easy — the week's long run, moved off the "
                              "weekend so Sunday's race is run on fresh legs", "long", 26),
@@ -416,10 +427,10 @@ LR_OVERRIDE = {8: 21.1}
 # informative day in the plan — worth more than the session it costs to protect it.
 # Cut to 68, all of it from the five days before the race; the race itself and the
 # Sunday distance are untouched. See DAY_OVERRIDE[21].
-# Wks 18-20 flattened 9 Nov: see the DAY_OVERRIDE comments. The ramp now runs
-# 35 -> 46 -> 55 -> 68 -> 76 instead of 35 -> 46 -> 60 -> 74 -> 85.
-VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69, 16: 33, 18: 55, 19: 68, 20: 76,
-                21: 68, 26: 95}
+# Wks 18-20 restaged 9 Nov: the SPEED is cut, the mileage is not. The ramp runs
+# 35 -> 46 -> 60 -> 74 -> 80, against 35 -> 46 -> 60 -> 74 -> 85 originally. Only
+# wk 20 moves on volume, and only because 85 would be a 12% lifetime high.
+VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69, 16: 33, 20: 80, 21: 68, 26: 95}
 
 # Trip bookings that have a real deadline, pinned to the day you have to act. The
 # itinerary itself lives in plan/trip.py; these are only the things that are gone if you
