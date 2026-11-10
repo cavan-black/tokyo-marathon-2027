@@ -257,10 +257,15 @@ DAY_OVERRIDE = {
                      # soleus — he physically cannot drop the heel below the step (6 Nov
                      # video). Seated removes the confound: knee flexed to 90 deg with the
                      # shin VERTICAL biases soleus without spending any ankle range.
-                     "Mon": ("Rest from running. GYM: G1 SEATED CALF CALIBRATION — bench, "
-                             "forefoot on a block, shin vertical, KB on the distal thigh. "
-                             "Find the 15RM at 3 s up / 3 s down, EACH LEG, LEFT FIRST. "
-                             "Fresh legs, no failure sets first. Then G2-G6  +R1",
+                     # DONE 9 Nov and it worked, third time: 35 kg dumbbell on the thigh,
+                     # 15 reps EACH leg at tempo, 2-3 in reserve on both. The number is a
+                     # floor, not a 15RM - the setup caps out near 40 kg, so the true max
+                     # was never reached and the percentage ladder is retired in favour of
+                     # real kilos on a double progression. Equipment is now the limiter:
+                     # wk 19 onward needs a barbell across the thighs or a leg press.
+                     "Mon": ("DONE: rest from running. GYM — G1 SEATED CALF CALIBRATION "
+                             "landed: 35 kg × 15 EACH LEG at 3 s up / 3 s down, 2-3 reps in "
+                             "reserve. No side-to-side difference. Then G2-G6  +R1",
                              "rest", 0),
                      "Tue": ("Easy 8 km flat — first full week back, no quality at all",
                              "easy", 8),
@@ -566,11 +571,13 @@ REHAB_GYM = [
 # at 3 s up / 3 s down, and every later week is a percentage of that. Percentages travel;
 # guessed kilos do not.
 REHAB_LOADS = [
-    ["Wk 16", "3 × 15", "100% — this IS the calibration", "2 × 14 kg (done 1 Nov)", "~55 kg"],
-    ["Wk 17", "4 × 12", "110%", "2 × 18 kg", "60 kg"],
-    ["Wk 18", "4 × 10", "117%", "2 × 22 kg", "67 kg"],
-    ["Wk 19", "4 × 8", "125%", "2 × 26 kg", "73 kg"],
-    ["Wk 20", "4 × 6", "135%", "2 × 30 kg", "80 kg"],
+    ["Wk 16", "3 × 15", "— standing calibration failed twice", "2 × 14 kg (done 1 Nov)",
+     "50 kg (done 1 Nov)"],
+    ["Wk 17", "4 × 12", "35 kg — DONE 9 Nov, 15/leg with 2-3 in reserve",
+     "2 × 18 kg", "60 kg"],
+    ["Wk 18", "4 × 10", "40 kg — the dumbbell-on-thigh ceiling", "2 × 22 kg", "67 kg"],
+    ["Wk 19", "4 × 8", "47 kg — NEEDS a barbell or leg press", "2 × 26 kg", "73 kg"],
+    ["Wk 20", "4 × 6", "54 kg = 1.5× bodyweight benchmark", "2 × 30 kg", "80 kg"],
 ]
 REHAB_SCHEDULE = [
     ["Wks 16-17", "Mon + Fri", "Rebuild. Calibrate, then climb the ladder"],
@@ -617,15 +624,27 @@ REHAB_BLOCKS = [
      "rows": REHAB_SCHEDULE},
     {"title": "The load ladder, week by week",
      "headers": ["Week", "Reps (calves)", "Calf load", "G4 split squat", "G5 RDL"],
-     "note": "Session one is a calibration, not a workout: find the load you can just manage for "
-             "15 reps at 3 s up / 3 s down, on each leg separately. That is 100%, and every later "
-             "week is a percentage of it. The kg columns are only there to tell you whether your "
-             "calibration landed somewhere sane. 1 Nov actuals: split squat 2 × 14 kg and RDL 50 kg "
-             "for 12 clean reps, both of which beat the estimate — the RDL ladder is now built "
-             "off an implied 6RM near 60 kg rather than a guess. The CALF loads are ONE LEG AT A TIME — two-leg "
-             "lets the strong side quietly carry the weak one, which is how he got here. The "
-             "wk 20 target of ~54 kg per leg is the 1.5× bodyweight benchmark, since both legs "
-             "together would be ~105 kg.",
+     "note": "CALIBRATED 9 Nov, and the percentage ladder is retired. Seated, shin vertical, "
+             "35 kg dumbbell on the thigh: 15 reps on EACH leg at 3 s up / 3 s down, with 2-3 "
+             "reps still in reserve on both. So the true 15RM is above 35 kg and was never "
+             "found — the dumbbell-on-thigh setup runs out of road around 40 kg, which is the "
+             "ceiling flagged before the session. Percentages of an unfound maximum are "
+             "useless, so the Calf load column is now real kilos on a double progression: hold "
+             "the rep target, and add load as soon as you clear it on BOTH legs with the tempo "
+             "intact. THE EQUIPMENT IS NOW THE BINDING CONSTRAINT. His gym has no seated calf "
+             "machine, and from wk 19 the prescription exceeds what balances on a thigh — it "
+             "needs a barbell across the thighs on a pad, or a single-leg calf press on a leg "
+             "press. Find one before wk 19 or the ladder stalls at 40 kg. "
+             "THIRD CONFIRMATION OF NO CAPACITY DEFICIT: 30/30 straight-knee raises (1 Nov), "
+             "15/15 bent-knee bodyweight (6 Nov), 15/15 at 35 kg seated (9 Nov). He reports the "
+             "right FEELING stronger, but nothing measurable separates them across three tests. "
+             "This is not a strength problem and never was — it is a joint range problem "
+             "(7.5 cm left vs 10.0 right, 8 Nov), which is what the imaging is for. "
+             "1 Nov actuals: split squat 2 × 14 kg and RDL 50 kg for 12 clean reps, both beating "
+             "the estimate, so the RDL ladder is built off an implied 6RM near 60 kg. The CALF "
+             "loads are ONE LEG AT A TIME — two-leg lets the strong side quietly carry the weak "
+             "one, which is how he got here. The wk 20 target of ~54 kg per leg is the 1.5× "
+             "bodyweight benchmark, since both legs together would be ~105 kg.",
      "rows": REHAB_LOADS},
 ]
 
