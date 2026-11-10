@@ -263,12 +263,19 @@ DAY_OVERRIDE = {
                      # was never reached and the percentage ladder is retired in favour of
                      # real kilos on a double progression. Equipment is now the limiter:
                      # wk 19 onward needs a barbell across the thighs or a leg press.
+                     # LEFT ANKLE STIFF AFTERWARDS - second reaction in four days, both
+                     # after loaded calf raises. See the load-ladder note: the common
+                     # factor is the heel dropping below the forefoot, i.e. loaded
+                     # end-range dorsiflexion, not the knee angle. Left side is now TOP
+                     # HALF ONLY on G1 and G2.
                      "Mon": ("DONE: rest from running. GYM — G1 SEATED CALF CALIBRATION "
                              "landed: 35 kg × 15 EACH LEG at 3 s up / 3 s down, 2-3 reps in "
-                             "reserve. No side-to-side difference. Then G2-G6  +R1",
+                             "reserve. No side-to-side difference. LEFT ANKLE STIFF AFTER — "
+                             "left leg goes TOP-HALF-ONLY from here. Then G2-G6  +R1",
                              "rest", 0),
-                     "Tue": ("Easy 8 km flat — first full week back, no quality at all",
-                             "easy", 8),
+                     "Tue": ("Easy 8 km flat — first full week back, no quality at all. "
+                             "Running has been clean for 6 runs; the reactions are coming "
+                             "from the GYM, not the runs, so this stands", "easy", 8),
                      "Wed": ("Easy 7 km flat", "easy", 7),
                      "Thu": ("Easy 9 km flat — no hill sprints this block", "easy", 9),
                      "Fri": ("Recovery 5 km easy  +GYM G1-G6  +R1", "recovery", 5),
@@ -550,11 +557,13 @@ REHAB_DAILY = [
 # If the bar moves faster than 3 s up / 3 s down it is too light, whatever the number says.
 REHAB_GYM = [
     ["Seated calf raise — SOLEUS (G1)", "3×15 → 4×6 / LEG", "One leg at a time. THE priority: running drives 6-8× "
-     "bodyweight through soleus and only a bent knee loads it. Calibrate, then follow the "
-     "ladder. 3 s up, 3 s down"],
+     "bodyweight through soleus and only a bent knee loads it. 3 s up, 3 s down. "
+     "LEFT LEG: TOP HALF ONLY — heel stops level with the forefoot, never below it. "
+     "Right leg full range"],
     ["Standing calf raise — gastroc (G2)", "3×15 → 4×6", "SINGLE LEG AND LOADED from day one. "
      "Bodyweight is ~1× at the ankle against 6-8× in running, so it is a warm-up, not a "
-     "stimulus. Same tempo"],
+     "stimulus. Same tempo. LEFT LEG: TOP HALF ONLY, same rule as G1. "
+     "No bent-knee, knee-over-toes version on either side"],
     ["Heel raise vs band into eversion (G3)", "3 × 10 slow", "Light → heavy band. Tib post under "
      "real load, which the daily band work cannot reach"],
     ["Rear-foot-elevated split squat (G4)", "3 × 8 → 3 × 6 / leg", "Bodyweight → 2 × 20 kg DBs. "
@@ -635,6 +644,24 @@ REHAB_BLOCKS = [
              "machine, and from wk 19 the prescription exceeds what balances on a thigh — it "
              "needs a barbell across the thighs on a pad, or a single-leg calf press on a leg "
              "press. Find one before wk 19 or the ladder stalls at 40 kg. "
+             "RANGE RESTRICTED ON THE LEFT, 10 Nov, after a SECOND joint reaction. The left "
+             "ankle went stiff after the 6 Nov standing calf raises and again after the 9 Nov "
+             "seated ones. On 7 Nov that was blamed on the knee-over-toes position spending "
+             "his dorsiflexion, and the seated version was designed to avoid it — but the "
+             "seated version provoked it too, so that reasoning was wrong. What both setups "
+             "share is the BOTTOM of the rep: the heel drops below the forefoot, which is "
+             "loaded end-range dorsiflexion whatever the knee is doing. With 7.5 cm of range "
+             "on that side, every rep bottoms out at his limit, 15 times, under 35 kg. "
+             "So the fix is to cut the RANGE, not the load: left leg stops at neutral, heel "
+             "level with the forefoot, top half of the movement only. Right leg has 10 cm and "
+             "keeps full range. Reduced-range loading is a recognised way to keep a tendon "
+             "stimulus while avoiding a provocative position, and it costs almost nothing here "
+             "because there is no capacity deficit to chase. "
+             "This reaction pattern is itself diagnostic: pain and stiffness provoked by "
+             "loaded end-range dorsiflexion, on the restricted side only, is the textbook "
+             "presentation of anterior ankle impingement. It is what the lateral X-ray view "
+             "would show, and it is now shaping his training week by week, which makes the "
+             "1 Dec appointment too late to be useful. "
              "THIRD CONFIRMATION OF NO CAPACITY DEFICIT: 30/30 straight-knee raises (1 Nov), "
              "15/15 bent-knee bodyweight (6 Nov), 15/15 at 35 kg seated (9 Nov). He reports the "
              "right FEELING stronger, but nothing measurable separates them across three tests. "
