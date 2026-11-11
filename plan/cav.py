@@ -675,6 +675,75 @@ REHAB_BLOCKS = [
      "rows": REHAB_LOADS},
 ]
 
+# ---- Upper body, from wk 18. Asked for on 11 Nov 2026: a pull-up bar, a dip bar and the
+# floor, downstairs, five mornings a week before the run. Nothing in REHAB_GYM touches the
+# upper body at all, so this is a real gap rather than a nice-to-have, and BJJ wants the
+# pulling anyway.
+# The one design decision that matters is that NOTHING here goes to failure. Pull-ups and
+# dips taken near failure five mornings a week is the standard route to elbow
+# tendinopathy, and one tendon problem in this build is enough. Every set stops with 2-3
+# reps in reserve, which is the same rule the calf ladder already runs on. That is what
+# makes a daily frequency safe, and it is why two days carry the stimulus and three are
+# deliberately easy.
+# Placement follows the running week, not the other way round: the primary push day is
+# Monday because it is the only day with no run attached, the primary pull day is
+# Wednesday because the run is easy, and Tuesday is cut to five minutes because the
+# threshold session is the point of that day.
+# Loads come off the 11 Nov calibration: 10 pull-ups, 20 dips, 30 push-ups. Working sets
+# are half of each, except feet-elevated push-ups, which are harder than flat and so come
+# off ~40%.
+UPPER_BODY = [
+    ["Every day", "Warm-up · 3 min", "Shoulder circles 10 each way · band pull-aparts 15 · "
+     "band external rotation 12 / side · scapular pull-ups 10 · dead hang 30 s"],
+    ["Mon", "PRIMARY push", "Dips 4 × 10 at 3 s down / 1 s up · feet-elevated push-ups 3 × 12 · "
+     "hollow hold 3 × 25 s · side plank 2 × 30 s / side. The hardest upper-body day of the "
+     "five, because it is the only one with no run attached"],
+    ["Tue", "Light · 5 min", "Scapular pull-ups 2 × 10 · push-ups 2 × 8 · dead hang 2 × 30 s. "
+     "No core work and nothing near failure — the threshold session is the point of this day"],
+    ["Wed", "PRIMARY pull", "Pull-ups 4 × 5, full hang at the bottom · chin-ups 2 × 4 · inverted "
+     "rows under the dip bar 3 × 12 · hanging knee raises 3 × 12, controlled, no swing"],
+    ["Thu", "Maintenance · 8 min", "Push-ups 3 × 15 flat · pull-ups 2 × 4 · hanging knee raises "
+     "2 × 10 · dead hang 45 s"],
+    ["Fri", "Posture · 8 min", "Scapular pull-ups 2 × 10 · band pull-aparts 2 × 15 · dips 2 × 5 · "
+     "hollow hold 2 × 20 s · side plank 2 × 30 s / side · dead hang 60 s. Lightest of the five — "
+     "Friday already carries the gym session and a run"],
+]
+UPPER_BLOCKS = [
+    {"title": "Upper body — five mornings, before the run",
+     "headers": ["Day", "Role", "Work"],
+     "note": "CALIBRATED 11 Nov 2026: 10 pull-ups, 20 dips, 30 push-ups. Working sets are half "
+             "of each — pull-up 5, dip 10, push-up 15 — because five mornings a week only works "
+             "submaximally. Every set stops with 2-3 reps in reserve, the same rule as the calf "
+             "ladder. Feet-elevated push-ups are the one exception at ~40% of the flat max (12), "
+             "since elevated is harder than flat and half the flat number would be too many. "
+             "PROGRESSION is double progression, again as per the calf ladder: hold the rep "
+             "target, and add one rep when you clear every set of a primary day with 2-3 in "
+             "reserve and the tempo intact. At eight working reps stop adding reps and make the "
+             "movement harder instead — feet higher, slower eccentric, a pause at the top, "
+             "eventually load. Re-test the three maxes every four weeks. "
+             "THE ANKLE RULE: step up to the bar and step down off it, every time. Never jump up "
+             "and never drop off. A drop landing drives impact through a left ankle with 7.5 cm "
+             "of dorsiflexion that has already reacted twice to loaded end range, which is the "
+             "same reason there are no burpees and no plyo push-ups here. "
+             "THE ELBOW RULE: if the inner elbow or the front of the shoulder starts talking, "
+             "cut to one primary day. The reps-in-reserve rule is the entire safeguard against "
+             "turning this into a second tendon problem. "
+             "WHAT IT IS FOR: at 2:48 pace added upper-body mass is dead weight, so none of this "
+             "chases size — the goal is strength per kilo. The part that transfers to the "
+             "marathon is the anti-extension and anti-rotation work (hollow hold, side plank, "
+             "strict hanging knee raises), which keeps the pelvis level and the trunk "
+             "transferring force through the last 10 km, where hip drop costs far more time than "
+             "tired arms ever will. The pull-ups and dips are for BJJ and for durability. "
+             "FUELLING is the real cost: five extra sessions is genuine energy demand on someone "
+             "whose limiter is already eating enough, which is why these are 12-15 minutes and "
+             "not 40. If appetite or weight starts drifting, this gets cut before any running "
+             "does. "
+             "DOSE THROUGH TO TOKYO: five days wks 18-30, dropping to Mon + Thu posture work "
+             "only in the race weeks (21, 26) and the taper (31-32), and nothing at all in "
+             "race week.",
+     "rows": UPPER_BODY},
+]
+
 def phase(w):
     if w <= 4:  return "Re-entry / Rebuild"
     if w <= 13: return "Aerobic Base"
@@ -839,6 +908,19 @@ def gym_for(w):
     if 18 <= w <= 23:   return ("Mon","Wed","Fri"), "GYM G1-G6"
     return ("Mon","Fri"), "GYM G1-G6"
 
+# Named per day so the stamp on each session says which of the five it is; the detail
+# lives in UPPER_BODY rather than being repeated into every day's note.
+UPPER_DAYS = {"Mon": "BAR push", "Tue": "BAR light", "Wed": "BAR pull",
+              "Thu": "BAR maintenance", "Fri": "BAR posture"}
+
+def upper_for(w):
+    """Which days carry the downstairs bar work. Starts at wk 18: wk 17 is half logged
+    already and stamping a new prescription onto days he has finished would make the log
+    claim sessions that were never set. He has the page for the rest of wk 17."""
+    if w < 18 or w == 33:               return {}
+    if w in (31, 32) or w in RACE_WEEKS: return {"Mon": "BAR posture", "Thu": "BAR posture"}
+    return dict(UPPER_DAYS)
+
 def _stamp_rehab(w, days):
     gym_days, gym_txt = gym_for(w)
     # Mobility stays twice daily while the dorsiflexion deficit is being closed, then
@@ -846,9 +928,15 @@ def _stamp_rehab(w, days):
     # heavy calf loading is established.
     tail = ("  +M1/M2 mobility (2x daily) +R1 isometrics" if w <= 20
             else "  +M1/M2 ankle mobility (daily)")
+    upper = upper_for(w)
     for dow in DOW:
         txt, typ, km = days[dow]
+        bar = upper.get(dow)
         if "+M1" in txt or "+M1/M2" in txt:
+            # A hand-written day that already carries the mobility tail. It still needs
+            # the bar stamp, which was added to the plan later than those notes were.
+            if bar and "+BAR" not in txt:
+                days[dow] = (txt + "  +" + bar, typ, km)
             continue
         for junk in ("  +S&C (easy-day session)", "  +S&C (hard-day session)",
                      "  +light S&C (taper)", "  +R1", " +R1"):
@@ -856,6 +944,8 @@ def _stamp_rehab(w, days):
         txt = txt.rstrip()
         if dow in gym_days and "+GYM" not in txt:
             txt += "  +" + gym_txt
+        if bar and "+BAR" not in txt:
+            txt += "  +" + bar
         days[dow] = (txt + tail, typ, km)
     return days
 
@@ -1032,7 +1122,8 @@ def content():
                 "Wk 6 is Lost Village — a planned week off, not a missed week. Wk 7 comes back at 45 km with no quality session; volume returns before intensity does. Do NOT try to make up Wk 5 or Wk 6 — the rebuild already accounts for both.",
                 "Re-planned Wk 20 Aug: the original ramp assumed ~56 km/wk by Wk 5, but weeks 1-5 actually averaged ~40. The new curve rebuilds from that, reaching the same 116 km peak at Wk 28 instead of Wk 27 — still 5 weeks out from the race.",
                 "If 116 km proves unrealistic, the ~105 km version is still solidly sub-3."]},
-        "strength": C.strength("1–13", "14–30", football=False, rehab=REHAB_BLOCKS),
+        "strength": C.strength("1–13", "14–30", football=False,
+                               rehab=REHAB_BLOCKS + UPPER_BLOCKS),
         "warmup": C.warmup(niggle_note="Given the outside-left-ankle/Achilles soreness flagged in week 1, "
                                         "the banded eversion work and single-leg balance in this routine "
                                         "aren't optional extras for you right now — do them every session "
