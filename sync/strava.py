@@ -1,7 +1,7 @@
 """Minimal Strava API client — personal single-user use.
 Needs a Strava API app (client id/secret) and a one-time refresh token (see get_token.py)."""
 import time
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 import requests
 
 TOKEN_URL = "https://www.strava.com/oauth/token"
@@ -101,14 +101,77 @@ CROSS_TYPES = CARDIO_CROSS_TYPES + NON_CARDIO_CROSS_TYPES
 
 
 EARLY_HOUR_CUTOFF = 4  # activities starting before this hour count as the night before
+OFFSET_WINDOW_DAYS = 30  # how far to look for a GPS activity to borrow a timezone from
 
 
-def _training_date(start_date_local):
+def _offset_index(activities):
+    """Map UTC date -> utc_offset, built ONLY from activities that carry GPS.
+
+    Strava reports a timezone per activity, taken from the recording device. When the
+    activity has GPS, Strava derives it from the location and it is trustworthy — Cav's
+    August runs really were in Beijing, Seoul and Tokyo and are correctly stamped
+    Asia/*. When the activity has NO GPS there is no location to derive it from, so
+    Strava keeps whatever the device claims, and a device with a mis-set timezone is
+    then wrong every single time. Jamie's gym, football, golf and padel sessions are
+    all stamped Asia/Tokyo, 8 hours out, while every GPS-bearing run of his on the very
+    same days sits on Madrid time — you cannot be in two timezones at once.
+
+    So the athlete's real offset is read off their GPS activities, and a GPS-less
+    activity borrows the offset of the nearest one rather than believing its device."""
+    idx = {}
+    for a in activities:
+        if not a.get("start_latlng"):
+            continue
+        off, raw = a.get("utc_offset"), a.get("start_date") or ""
+        if off is not None and raw:
+            idx[raw[:10]] = off
+    return idx
+
+
+def _nearest_offset(idx, day_iso, fallback):
+    """The offset from the closest GPS activity within OFFSET_WINDOW_DAYS, else fallback."""
+    if not idx:
+        return fallback
+    try:
+        d = date.fromisoformat(day_iso)
+    except ValueError:
+        return fallback
+    best, best_gap = fallback, None
+    for k, off in idx.items():
+        try:
+            gap = abs((date.fromisoformat(k) - d).days)
+        except ValueError:
+            continue
+        if gap <= OFFSET_WINDOW_DAYS and (best_gap is None or gap < best_gap):
+            best, best_gap = off, gap
+    return best
+
+
+def _training_date(a, offsets=None):
     """Which day an activity 'counts' as. A session logged starting in the small hours
     (e.g. 03:00) is almost always a night-before session that crossed midnight — either
     it genuinely ran late, or Strava/the watch uploaded it with a shifted timestamp —
-    rather than someone training before 4am. Bucket those onto the previous calendar day."""
-    raw = start_date_local or ""
+    rather than someone training before 4am. Bucket those onto the previous calendar day.
+
+    For a GPS-less activity the device's claimed timezone is not trusted; the local
+    time is recomputed from the UTC start plus the offset of the nearest GPS activity.
+    See _offset_index. Without that correction an 20:00 kickoff in Spain recorded on a
+    Tokyo-set phone reads as 04:00 the next morning, clears the cutoff above by five
+    seconds, and lands the match on the wrong day."""
+    offsets = offsets or {}
+    utc_raw = a.get("start_date") or ""
+    if not a.get("start_latlng") and offsets and utc_raw:
+        try:
+            dt = datetime.fromisoformat(utc_raw.replace("Z", "+00:00"))
+        except ValueError:
+            dt = None
+        if dt is not None:
+            off = _nearest_offset(offsets, utc_raw[:10], a.get("utc_offset") or 0)
+            dt += timedelta(seconds=off)
+            if dt.hour < EARLY_HOUR_CUTOFF:
+                dt -= timedelta(days=1)
+            return dt.date().isoformat()
+    raw = a.get("start_date_local") or ""
     if not raw:
         return ""
     try:
@@ -120,13 +183,13 @@ def _training_date(start_date_local):
     return dt.date().isoformat()
 
 
-def _simplify_one(a):
+def _simplify_one(a, offsets=None):
     dist_km = (a.get("distance") or 0) / 1000.0
     moving = a.get("moving_time") or 0
     pace = (moving / 60.0) / dist_km if dist_km > 0.3 else None  # min/km
     return {
         "id": a.get("id"),
-        "date": _training_date(a.get("start_date_local")),
+        "date": _training_date(a, offsets),
         "name": a.get("name"),
         "activity_type": a.get("type"),
         "distance_km": round(dist_km, 2),
@@ -143,19 +206,21 @@ def _simplify_one(a):
 
 def simplify(activities):
     """Keep only running activities and the fields we need for matching."""
-    return [_simplify_one(a) for a in activities if a.get("type") in RUN_TYPES]
+    offsets = _offset_index(activities)
+    return [_simplify_one(a, offsets) for a in activities if a.get("type") in RUN_TYPES]
 
 
 def simplify_cross(activities):
     """Non-running activities (football, gym, etc.) — tracked separately so they never
     inflate running km/ACWR. Each carries counts_as_substitute so sync/match.py can tell
     a cardio session that genuinely covers a missed run from a gym session that doesn't."""
+    offsets = _offset_index(activities)
     out = []
     for a in activities:
         typ = a.get("type")
         if typ not in CROSS_TYPES:
             continue
-        s = _simplify_one(a)
+        s = _simplify_one(a, offsets)
         s["counts_as_substitute"] = typ in CARDIO_CROSS_TYPES
         out.append(s)
     return out

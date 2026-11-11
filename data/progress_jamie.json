@@ -325,23 +325,10 @@
           "route": []
         }
       ],
-      "cross_activities": []
-    },
-    "2026-08-01": {
-      "week": 2,
-      "dow": "Sat",
-      "type": "rest",
-      "session": "Rest",
-      "target_km": 0,
-      "actual_km": 0,
-      "status": "Rest",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
       "cross_activities": [
         {
           "id": 19549224769,
-          "date": "2026-08-01",
+          "date": "2026-07-31",
           "name": "Morning Workout",
           "activity_type": "Workout",
           "distance_km": 0.0,
@@ -354,6 +341,19 @@
           "counts_as_substitute": false
         }
       ]
+    },
+    "2026-08-01": {
+      "week": 2,
+      "dow": "Sat",
+      "type": "rest",
+      "session": "Rest",
+      "target_km": 0,
+      "actual_km": 0,
+      "status": "Rest",
+      "pace_min_km": null,
+      "pace_str": null,
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-02": {
       "week": 2,
@@ -4405,27 +4405,14 @@
       "session": "Easy 4 km",
       "target_km": 4,
       "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
-      "cross_activities": []
-    },
-    "2026-08-15": {
-      "week": 4,
-      "dow": "Sat",
-      "type": "rest",
-      "session": "Rest",
-      "target_km": 0,
-      "actual_km": 0,
-      "status": "Rest",
+      "status": "Substituted",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
       "cross_activities": [
         {
           "id": 19743349266,
-          "date": "2026-08-15",
+          "date": "2026-08-14",
           "name": "Morning Ride",
           "activity_type": "Ride",
           "distance_km": 0.0,
@@ -4439,7 +4426,7 @@
         },
         {
           "id": 19745783015,
-          "date": "2026-08-15",
+          "date": "2026-08-14",
           "name": "Morning Workout",
           "activity_type": "Workout",
           "distance_km": 0.0,
@@ -4452,6 +4439,19 @@
           "counts_as_substitute": false
         }
       ]
+    },
+    "2026-08-15": {
+      "week": 4,
+      "dow": "Sat",
+      "type": "rest",
+      "session": "Rest",
+      "target_km": 0,
+      "actual_km": 0,
+      "status": "Rest",
+      "pace_min_km": null,
+      "pace_str": null,
+      "activities": [],
+      "cross_activities": []
     },
     "2026-08-16": {
       "week": 4,
@@ -14995,23 +14995,10 @@
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
-    },
-    "2026-09-13": {
-      "week": 8,
-      "dow": "Sun",
-      "type": "long",
-      "session": "22 km easy",
-      "target_km": 22,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
       "cross_activities": [
         {
           "id": 20149898871,
-          "date": "2026-09-13",
+          "date": "2026-09-12",
           "name": "Morning Workout",
           "activity_type": "Workout",
           "distance_km": 0.0,
@@ -15024,6 +15011,19 @@
           "counts_as_substitute": false
         }
       ]
+    },
+    "2026-09-13": {
+      "week": 8,
+      "dow": "Sun",
+      "type": "long",
+      "session": "22 km easy",
+      "target_km": 22,
+      "actual_km": 0,
+      "status": "Missed",
+      "pace_min_km": null,
+      "pace_str": null,
+      "activities": [],
+      "cross_activities": []
     },
     "2026-09-14": {
       "week": 9,
@@ -15297,7 +15297,22 @@
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": 20317902293,
+          "date": "2026-09-24",
+          "name": "Morning Workout",
+          "activity_type": "Workout",
+          "distance_km": 0.0,
+          "moving_time_s": 5039,
+          "pace_min_km": null,
+          "avg_hr": 117.5,
+          "max_hr": 140.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-09-25": {
       "week": 10,
@@ -15312,15 +15327,15 @@
       "activities": [],
       "cross_activities": [
         {
-          "id": 20317902293,
+          "id": 20330776870,
           "date": "2026-09-25",
           "name": "Morning Workout",
           "activity_type": "Workout",
           "distance_km": 0.0,
-          "moving_time_s": 5039,
+          "moving_time_s": 6179,
           "pace_min_km": null,
-          "avg_hr": 117.5,
-          "max_hr": 140.0,
+          "avg_hr": 115.2,
+          "max_hr": 139.0,
           "elev_gain_m": 0,
           "route": [],
           "counts_as_substitute": false
@@ -15338,22 +15353,7 @@
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": [
-        {
-          "id": 20330776870,
-          "date": "2026-09-26",
-          "name": "Morning Workout",
-          "activity_type": "Workout",
-          "distance_km": 0.0,
-          "moving_time_s": 6179,
-          "pace_min_km": null,
-          "avg_hr": 115.2,
-          "max_hr": 139.0,
-          "elev_gain_m": 0,
-          "route": [],
-          "counts_as_substitute": false
-        }
-      ]
+      "cross_activities": []
     },
     "2026-09-27": {
       "week": 10,
@@ -21338,24 +21338,10 @@
           "elev_gain_m": 0,
           "route": [],
           "counts_as_substitute": false
-        }
-      ]
-    },
-    "2026-10-31": {
-      "week": 15,
-      "dow": "Sat",
-      "type": "easy",
-      "session": "Easy 5 km + strides",
-      "target_km": 5,
-      "actual_km": 0,
-      "status": "Substituted",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
-      "cross_activities": [
+        },
         {
           "id": 20797265535,
-          "date": "2026-10-31",
+          "date": "2026-10-30",
           "name": "Morning Workout",
           "activity_type": "Workout",
           "distance_km": 0.0,
@@ -21369,7 +21355,7 @@
         },
         {
           "id": 20797584026,
-          "date": "2026-10-31",
+          "date": "2026-10-30",
           "name": "Morning Ride",
           "activity_type": "Ride",
           "distance_km": 0.0,
@@ -21382,6 +21368,19 @@
           "counts_as_substitute": true
         }
       ]
+    },
+    "2026-10-31": {
+      "week": 15,
+      "dow": "Sat",
+      "type": "easy",
+      "session": "Easy 5 km + strides",
+      "target_km": 5,
+      "actual_km": 0,
+      "status": "Missed",
+      "pace_min_km": null,
+      "pace_str": null,
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-01": {
       "week": 15,
@@ -25720,19 +25719,6 @@
       "session": "Tempo: 2×10 min @ T, 2 min jog + w/u & c/d  +S&C (hard-day session)",
       "target_km": 9,
       "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
-      "cross_activities": []
-    },
-    "2026-11-11": {
-      "week": 17,
-      "dow": "Wed",
-      "type": "easy",
-      "session": "Easy 5 km + strides",
-      "target_km": 5,
-      "actual_km": 0,
       "status": "Substituted",
       "pace_min_km": null,
       "pace_str": null,
@@ -25740,7 +25726,7 @@
       "cross_activities": [
         {
           "id": 20938014125,
-          "date": "2026-11-11",
+          "date": "2026-11-10",
           "name": "Morning Football (Soccer)",
           "activity_type": "Soccer",
           "distance_km": 0.0,
@@ -25753,6 +25739,19 @@
           "counts_as_substitute": true
         }
       ]
+    },
+    "2026-11-11": {
+      "week": 17,
+      "dow": "Wed",
+      "type": "easy",
+      "session": "Easy 5 km + strides",
+      "target_km": 5,
+      "actual_km": 0,
+      "status": "Missed",
+      "pace_min_km": null,
+      "pace_str": null,
+      "activities": [],
+      "cross_activities": []
     },
     "2026-11-12": {
       "week": 17,
@@ -27316,12 +27315,12 @@
       "planned_km": 32,
       "planned_km_due": 32,
       "actual_km": 9.0,
-      "substituted_km": 6,
+      "substituted_km": 10,
       "replaced_km": 0,
-      "done": 3,
+      "done": 4,
       "partial": 0,
-      "missed": 2,
-      "substituted": 1,
+      "missed": 1,
+      "substituted": 2,
       "replaced": 0,
       "quality_hit": 0,
       "quality_planned": 0,
@@ -27492,12 +27491,12 @@
       "planned_km": 48,
       "planned_km_due": 48,
       "actual_km": 38.5,
-      "substituted_km": 5,
+      "substituted_km": 0,
       "replaced_km": 2.0,
-      "done": 5,
+      "done": 4,
       "partial": 0,
-      "missed": 1,
-      "substituted": 1,
+      "missed": 2,
+      "substituted": 0,
       "replaced": 1,
       "quality_hit": 0,
       "quality_planned": 0,
@@ -27522,19 +27521,19 @@
     },
     "17": {
       "planned_km": 52,
-      "planned_km_due": 14,
+      "planned_km_due": 9,
       "actual_km": 0,
-      "substituted_km": 5,
+      "substituted_km": 9,
       "replaced_km": 0,
       "done": 1,
       "partial": 0,
       "missed": 1,
       "substituted": 1,
       "replaced": 0,
-      "quality_hit": 0,
+      "quality_hit": 1,
       "quality_planned": 1,
       "long_done": false,
-      "flag": "⚠ Under-target — consider holding volume / repeating the week"
+      "flag": "✓ On track"
     },
     "18": {
       "planned_km": 56,
@@ -27793,7 +27792,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-11T01:06:17+00:00",
+  "last_sync": "2026-11-11T09:03:20+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
