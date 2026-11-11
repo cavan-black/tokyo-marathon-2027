@@ -25733,11 +25733,26 @@
       "session": "Easy 5 km + strides",
       "target_km": 5,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Substituted",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": 20938014125,
+          "date": "2026-11-11",
+          "name": "Morning Football (Soccer)",
+          "activity_type": "Soccer",
+          "distance_km": 0.0,
+          "moving_time_s": 4364,
+          "pace_min_km": null,
+          "avg_hr": 143.7,
+          "max_hr": 179.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": true
+        }
+      ]
     },
     "2026-11-12": {
       "week": 17,
@@ -27507,19 +27522,19 @@
     },
     "17": {
       "planned_km": 52,
-      "planned_km_due": 0,
+      "planned_km_due": 14,
       "actual_km": 0,
-      "substituted_km": 0,
+      "substituted_km": 5,
       "replaced_km": 0,
-      "done": 0,
+      "done": 1,
       "partial": 0,
       "missed": 1,
-      "substituted": 0,
+      "substituted": 1,
       "replaced": 0,
       "quality_hit": 0,
       "quality_planned": 1,
       "long_done": false,
-      "flag": "✓ On track"
+      "flag": "⚠ Under-target — consider holding volume / repeating the week"
     },
     "18": {
       "planned_km": 56,
@@ -27778,7 +27793,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-10T14:32:57+00:00",
+  "last_sync": "2026-11-11T01:06:17+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
