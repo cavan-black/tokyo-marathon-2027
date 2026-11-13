@@ -26364,7 +26364,7 @@
       "session": "Recovery 3 km easy  +S&C (easy-day session)",
       "target_km": 3,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -28112,19 +28112,19 @@
     },
     "17": {
       "planned_km": 52,
-      "planned_km_due": 14,
+      "planned_km_due": 22,
       "actual_km": 5.0,
       "substituted_km": 9,
       "replaced_km": 0,
       "done": 2,
       "partial": 0,
-      "missed": 1,
+      "missed": 2,
       "substituted": 1,
       "replaced": 0,
       "quality_hit": 1,
       "quality_planned": 1,
       "long_done": false,
-      "flag": "✓ On track"
+      "flag": "⚠ Under-target — consider holding volume / repeating the week"
     },
     "18": {
       "planned_km": 56,
@@ -28383,7 +28383,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-12T14:50:54+00:00",
+  "last_sync": "2026-11-13T01:43:14+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
