@@ -917,6 +917,11 @@ def upper_for(w):
     """Which days carry the downstairs bar work. Starts at wk 18: wk 17 is half logged
     already and stamping a new prescription onto days he has finished would make the log
     claim sessions that were never set. He has the page for the rest of wk 17."""
+    if w == 17:
+        # Added mid-week on 13 Nov 2026, when he asked for the basement work to be in the
+        # plan rather than only on the page. Mon-Thu of this week are already logged, so
+        # they stay as they were; Friday is still ahead of him and gets the real thing.
+        return {"Fri": "BAR posture"}
     if w < 18 or w == 33:               return {}
     if w in (31, 32) or w in RACE_WEEKS: return {"Mon": "BAR posture", "Thu": "BAR posture"}
     return dict(UPPER_DAYS)
