@@ -59635,11 +59635,27 @@
       "session": "Easy 7 km + 4×20s strides — first strides back, on the flat  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 7,
       "actual_km": 0,
-      "status": "Missed",
+      "status": "Substituted",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": "manual-cav-2026-11-14-4",
+          "date": "2026-11-14",
+          "name": "Football match",
+          "activity_type": "Soccer",
+          "distance_km": 0.0,
+          "moving_time_s": 5400,
+          "pace_min_km": null,
+          "avg_hr": null,
+          "max_hr": null,
+          "elev_gain_m": null,
+          "route": [],
+          "counts_as_substitute": true,
+          "manual": true
+        }
+      ]
     },
     "2026-11-15": {
       "week": 17,
@@ -61370,14 +61386,14 @@
     },
     "17": {
       "planned_km": 46,
-      "planned_km_due": 29,
+      "planned_km_due": 36,
       "actual_km": 29.1,
-      "substituted_km": 0,
+      "substituted_km": 7,
       "replaced_km": 0,
-      "done": 4,
+      "done": 5,
       "partial": 0,
-      "missed": 1,
-      "substituted": 0,
+      "missed": 0,
+      "substituted": 1,
       "replaced": 0,
       "quality_hit": 0,
       "quality_planned": 0,
@@ -61641,7 +61657,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-14T13:11:36+00:00",
+  "last_sync": "2026-11-14T19:05:00+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",

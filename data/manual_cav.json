@@ -26,5 +26,12 @@
     "name": "BJJ - 2 h session",
     "moving_time_s": 7200,
     "note": "morning mat time; same day as the easy 9 km, ~22 h before the wk-14 MP tempo"
+  },
+  {
+    "date": "2026-11-14",
+    "activity_type": "Soccer",
+    "name": "Football match",
+    "moving_time_s": 5400,
+    "note": "pickup match, no device; covered ~6 km by his own estimate. Stands in for the easy 7 km + strides. Left ankle symptom-free during and after."
   }
 ]
