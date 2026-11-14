@@ -59592,12 +59592,41 @@
       "type": "recovery",
       "session": "Recovery 5 km easy  +GYM G1-G6  +BAR posture  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 5,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
-      "cross_activities": []
+      "actual_km": 5.0,
+      "status": "Done",
+      "pace_min_km": 5.647,
+      "pace_str": "5:39",
+      "activities": [
+        {
+          "id": 20974918150,
+          "date": "2026-11-13",
+          "name": "Evening Run",
+          "activity_type": "Run",
+          "distance_km": 5.0,
+          "moving_time_s": 1695,
+          "pace_min_km": 5.647,
+          "avg_hr": 135.8,
+          "max_hr": 147.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ],
+      "cross_activities": [
+        {
+          "id": 20977338360,
+          "date": "2026-11-13",
+          "name": "Evening Weight Training",
+          "activity_type": "WeightTraining",
+          "distance_km": 0.0,
+          "moving_time_s": 1934,
+          "pace_min_km": null,
+          "avg_hr": 111.1,
+          "max_hr": 167.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": false
+        }
+      ]
     },
     "2026-11-14": {
       "week": 17,
@@ -59606,7 +59635,7 @@
       "session": "Easy 7 km + 4×20s strides — first strides back, on the flat  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 7,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -61341,11 +61370,11 @@
     },
     "17": {
       "planned_km": 46,
-      "planned_km_due": 24,
-      "actual_km": 24.1,
+      "planned_km_due": 29,
+      "actual_km": 29.1,
       "substituted_km": 0,
       "replaced_km": 0,
-      "done": 3,
+      "done": 4,
       "partial": 0,
       "missed": 1,
       "substituted": 0,
@@ -61612,7 +61641,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-13T14:12:30+00:00",
+  "last_sync": "2026-11-14T01:20:23+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",
