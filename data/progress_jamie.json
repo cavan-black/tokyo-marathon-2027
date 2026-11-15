@@ -26377,11 +26377,26 @@
       "session": "Easy 5 km + strides",
       "target_km": 5,
       "actual_km": 0,
-      "status": "Missed",
+      "status": "Substituted",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": 20988165500,
+          "date": "2026-11-14",
+          "name": "Night Football (Soccer)",
+          "activity_type": "Soccer",
+          "distance_km": 0.0,
+          "moving_time_s": 9861,
+          "pace_min_km": null,
+          "avg_hr": 125.2,
+          "max_hr": 183.0,
+          "elev_gain_m": 0,
+          "route": [],
+          "counts_as_substitute": true
+        }
+      ]
     },
     "2026-11-15": {
       "week": 17,
@@ -26390,7 +26405,7 @@
       "session": "22 km easy",
       "target_km": 22,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -28112,14 +28127,14 @@
     },
     "17": {
       "planned_km": 52,
-      "planned_km_due": 25,
+      "planned_km_due": 30,
       "actual_km": 5.0,
-      "substituted_km": 9,
+      "substituted_km": 14,
       "replaced_km": 0,
-      "done": 2,
+      "done": 3,
       "partial": 0,
       "missed": 3,
-      "substituted": 1,
+      "substituted": 2,
       "replaced": 0,
       "quality_hit": 1,
       "quality_planned": 1,
@@ -28383,7 +28398,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-14T13:11:38+00:00",
+  "last_sync": "2026-11-15T00:52:34+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-09-15",
