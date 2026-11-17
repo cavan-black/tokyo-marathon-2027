@@ -103,7 +103,30 @@ def _work_and_recovery(txt, jog_s):
     return None
 
 
-def note_wu(txt, typ, km=None, jog_s=360, cd_cap=None):
+def split_for(txt, jog_s=360, cd=1.2):
+    """(work, jogs, w/u, c/d) for a structured session, else None.
+
+    The w/u and c/d are CHOSEN here rather than back-computed from a target, which is the
+    whole point: a quality day should cost what its parts cost, and the easy volume that
+    used to pad it belongs in a standalone easy run. 3.5 km of warm-up (4.5 before VO2 or
+    a sharpener, where the first rep is near 5K effort and needs the extra), 1.2 km to
+    decompress, and nothing else. build_week derives the day's target_km from this sum and
+    the week's pool absorbs the difference, so weekly volume never moves."""
+    p = _work_and_recovery(txt, jog_s)
+    if not p:
+        return None
+    work, rec = p
+    fast = "VO2" in txt or "sharpen" in txt.lower() or "800 m" in txt
+    return work, rec, (4.5 if fast else 3.5), cd
+
+
+def session_km(txt, jog_s=360):
+    """What a structured session actually adds up to, or None if it can't be parsed."""
+    s = split_for(txt, jog_s)
+    return None if s is None else round(sum(s), 1)
+
+
+def note_wu(txt, typ, km=None, jog_s=360, cd_cap=None, parts=None):
     """A quality session's km target is the WHOLE session (warm-up + reps/tempo + jog
     recoveries + cooldown), not just the structured work described in the text. Given
     the day's target, spell the warm-up and cooldown out so the parts visibly add up to
@@ -125,6 +148,12 @@ def note_wu(txt, typ, km=None, jog_s=360, cd_cap=None):
         return txt
     if txt.startswith("Medium-long") or " km w/" in txt:
         return txt
+    if parts:
+        # Derived day: the numbers that SET target_km, printed verbatim rather than
+        # re-derived from it, so the two can never disagree.
+        work, rec, wu, cd = parts
+        jogs = f" · jogs {rec:.1f} km" if rec >= 0.1 else ""
+        return f"{txt} · w/u {wu:g} km{jogs} · c/d {cd:g} km"
     parsed = _work_and_recovery(txt, jog_s) if km else None
     if not parsed:
         return txt + " + w/u & c/d"

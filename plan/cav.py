@@ -307,10 +307,10 @@ DAY_OVERRIDE = {
                              "c/d 2 km — first quality since the injury, half the usual volume, "
                              "flat loop only. SHORT reps on purpose: 1 km chunks, not blocks "
                              "(reps 4.0 + jogs 1.0 + w/u 3.0 + c/d 2.0 = 10.0)", "quality", 10),
-                     "Wed": ("Easy 10 km  +GYM G1-G6", "easy", 10),
+                     "Wed": ("Recovery 6 km easy — 5:35-6:05/km, HR under 140, slower than you "
+                             "think. 24 h after quality  +GYM G1-G6", "recovery", 6),
                      "Thu": ("Easy 11 km", "easy", 11),
-                     "Fri": ("Recovery 6 km easy — 5:35-6:05/km, HR under 140, slower than "
-                             "you think  +GYM G1-G6  +R1", "recovery", 6),
+                     "Fri": ("Easy 10 km  +GYM G1-G6  +R1", "easy", 10),
                      "Sat": ("Easy 8 km + 6×20s strides — RACE SHOE DEBUT: run the 8 km in "
                              "the GT-2000, change into the Metaspeeds for the 6 strides only, "
                              "walk home in them. ~1 km in the racer: enough to find hotspots and "
@@ -332,12 +332,11 @@ DAY_OVERRIDE = {
                      "Tue": ("Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km — CUT FROM 5×1.5 and 3:48. RACE SHOE: the 6 km of reps "
                              "only, warm-up and cool-down in trainers. First real test of the Metaspeeds "
                              "at speed — only if Saturday's strides were clean", "quality", 11),
-                     "Wed": ("Easy 12 km — no strides, 24 h after quality  +GYM G1-G6", "easy", 12),
+                     "Wed": ("Recovery 8 km easy — 5:35-6:05/km, 24 h after quality  +GYM G1-G6", "recovery", 8),
                      "Thu": ("Medium-long 13 km w/ middle 3 km @ MP — first marathon-pace work "
                              "back, CUT FROM 5 km. Continuous fast blocks are the shape that "
                              "injured him, so this one stays tiny", "quality", 13),
-                     "Fri": ("Recovery 8 km easy — 5:35-6:05/km  +BJJ (drills only — no live "
-                             "rounds)", "recovery", 8),
+                     "Fri": ("Easy 12 km  +BJJ (drills only — no live rounds)", "easy", 12),
                      "Sat": ("Easy 10 km + strides", "easy", 10),
                      "Sun": ("Long 20 km easy", "long", 20)},
                 # Week 20 was the single riskiest week in the plan: Thursday asked for
@@ -353,14 +352,13 @@ DAY_OVERRIDE = {
                 20: {"Mon": ("Rest from running · BJJ drills/technical, no live rounds  "
                              "+GYM G1-G6  +R1", "rest", 0),
                      "Tue": ("VO2: 5×1000 m @ 3:26/km, 2:30 jog @ 6:00/km — CUT FROM 6 reps", "quality", 13),
-                     "Wed": ("Easy 9.7 km — no strides, 24 h after quality  +GYM G1-G6", "easy", 9.7),
+                     "Wed": ("Recovery 8 km easy — 5:35-6:05/km, 24 h after quality  +GYM G1-G6", "recovery", 8),
                      "Thu": ("MP tempo: 3×3 km @ MP, 2 min float @ 4:28/km — CUT FROM 3×4 km. 9 km of MP, still under the 10 km "
                              "block that caused the injury", "quality", 14.3),
-                     "Fri": ("Recovery 8 km easy — 5:35-6:05/km  +BJJ (drills only — no live "
-                             "rounds)  +GYM G1-G6  +R1", "recovery", 8),
+                     "Fri": ("Easy 9.7 km  +BJJ (drills only — no live rounds)  +GYM G1-G6  +R1", "easy", 9.7),
                      "Sat": ("Easy 7 km + strides", "easy", 7),
                      "Sun": ("28 km easy — steady week, race is next Sunday", "long", 28)},
-                26: {"Wed": ("Easy 21 km — no strides, 24 h after quality  (double: split AM/PM)", "easy", 21),
+                26: {"Wed": ("Easy 20.3 km — no strides, 24 h after quality  (double: split AM/PM). The one week Wednesday is NOT the recovery day: Thursday carries the long run so Sunday's race is run fresh, which leaves nowhere else for this volume", "easy", 20.3),
                      "Thu": ("Medium-long 26 km easy — the week's long run, moved off the "
                              "weekend so Sunday's race is run on fresh legs", "long", 26),
                      "Fri": ("Recovery 12 km easy  +S&C (easy-day session)", "recovery", 12),
@@ -372,7 +370,9 @@ DAY_OVERRIDE = {
                              "organiser in November and tell me if it lands elsewhere", "race", 14)},
                 21: {"Tue": ("Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km  +light S&C — "
                             "half the usual threshold volume, five days out", "quality", 11),
-                     "Wed": ("Easy 10 km — no strides, 24 h after quality", "easy", 10),
+                     "Wed": ("Easy 10 km — no strides, 24 h after quality. RACE WEEK is the one "
+                             "place Wednesday is not the recovery day: Friday stays short in "
+                             "front of Sunday", "easy", 10),
                      "Thu": ("Easy 11 km — no medium-long this week, Sunday is the session", "easy", 11),
                      "Fri": ("Recovery 6 km easy  +light S&C (race week)", "recovery", 6),
                      "Sat": ("Shakeout: easy 6 km + 4×100 m strides at race pace", "easy", 6)},
@@ -989,8 +989,23 @@ def build_week(w):
     # Cooldowns capped from wk 19 on, residual to the warm-up — see note_wu's docstring.
     # Weeks already run pass None so regeneration can't rewrite the prescribed text.
     cdc = 1.5 if w >= 19 else None
-    tue_txt = C.note_wu(tue_txt, tue_type, tue_km, cd_cap=cdc)
-    thu_txt = C.note_wu(thu_txt, thu_type, thu_km, cd_cap=cdc)
+    # A QUALITY DAY COSTS WHAT ITS PARTS COST, from wk 22. qkm's number was a target the
+    # warm-up and cooldown were then stretched to fill, which is how wk 27 Tue ended up
+    # with a 3 km cooldown and wk 30 Thu with 4.8 km — 4.8 km of shuffling after a 12 km
+    # threshold test. Now the parts are chosen (3.5 km w/u, 4.5 before VO2, 1.2 km c/d)
+    # and the day's target is their sum; qkm becomes the pool's input only. Nothing leaves
+    # the week — the surplus lands on Wed/Fri/Sat, which is where Cav wanted it.
+    # Wks 18-21 are excluded: they are hand-built day by day and already sum exactly.
+    tue_parts = thu_parts = None
+    if w >= 22:
+        if tue_type == "quality":
+            tue_parts = C.split_for(tue_txt)
+            if tue_parts: tue_km = round(sum(tue_parts), 1)
+        if thu_type == "quality":
+            thu_parts = C.split_for(thu_txt)
+            if thu_parts: thu_km = round(sum(thu_parts), 1)
+    tue_txt = C.note_wu(tue_txt, tue_type, tue_km, cd_cap=cdc, parts=tue_parts)
+    thu_txt = C.note_wu(thu_txt, thu_type, thu_km, cd_cap=cdc, parts=thu_parts)
     sat_txt,sat_type,sat_fixed = sat(w)
     days={}
     # BJJ — SCHEDULED, NOT SQUEEZED INTO THE GAPS (added 22 Oct 2026, his decision).
@@ -1041,24 +1056,43 @@ def build_week(w):
         # summing to its own target_km. Split the pool between Wed and Fri instead.
         fri_km=round(pool*0.40); wed_km=max(pool-fri_km,0); sat_km=0
     else:
-        fri_km=round(pool*0.28); wed_km=round(pool*0.40); sat_km=max(pool-fri_km-wed_km,0)
+        # RECOVERY DAY IS WEDNESDAY from wk 19 (Cav's call, 17 Nov 2026). Wednesday sits
+        # 24 h after Tuesday's quality, so it gets the week's shortest run; Friday takes
+        # the volume Wednesday used to carry. The cost is real and worth stating: Friday
+        # was the protected short day in front of Sunday's long run, and it no longer is.
+        # Saturday stays the buffer, which is why the long run is still not run off the
+        # back of the week's biggest easy day.
+        if w >= 19:
+            wed_km=round(pool*0.28); fri_km=round(pool*0.40)
+        else:
+            fri_km=round(pool*0.28); wed_km=round(pool*0.40)
+        sat_km=max(round(pool-fri_km-wed_km,1),0)
     # NO STRIDES ON WEDNESDAY from wk 19. Wednesday sits 24 h after Tuesday's quality and
     # already carries the gym block; 6x20s of near-sprinting is a second dose of fast
     # running on the one day of the week that should be purely aerobic. Strides stay on
     # Saturday, where they do their real job — priming the legs before the long run.
     wed_strides = "" if (reentry or w >= 19) else " + 6×20s strides"
-    wed_txt=f"Easy {wed_km} km"+wed_strides
+    wed_recovery = (not reentry) and w >= 19 and w != 33
+    if wed_recovery:
+        wed_txt=f"Recovery {wed_km} km easy — 5:35-6:05/km, 24 h after quality"
+        wed_type="recovery"
+    else:
+        wed_txt=f"Easy {wed_km} km"+wed_strides
+        wed_type="easy"
     if reentry:
         fri_txt,fri_type,fri_kmv=f"Easy {fri_km} km","easy",fri_km
     elif w==33:
         fri_txt,fri_type,fri_kmv="Rest","rest",0
     else:
+        # Friday carries the volume now that Wednesday is the recovery day; it keeps the
+        # BJJ, which still has no quality day behind it.
+        _fri = f"Easy {fri_km} km" if wed_recovery else f"Recovery {fri_km} km easy"
         if 15<=w<=30:
             # S&C moved to Mon; this is the week's main mat session, drills only
-            fri_txt=f"Recovery {fri_km} km easy  +BJJ (drills only — no live rounds)"
+            fri_txt=f"{_fri}  +BJJ (drills only — no live rounds)"
         else:
-            fri_txt=f"Recovery {fri_km} km easy"+("  +light S&C (taper)" if 31<=w<=32 else "  +S&C (easy-day session)")
-        fri_type,fri_kmv="recovery",fri_km
+            fri_txt=_fri+("  +light S&C (taper)" if 31<=w<=32 else "  +S&C (easy-day session)")
+        fri_type,fri_kmv=("easy" if wed_recovery else "recovery"),fri_km
     if reentry:
         sat_txt,sat_type,sat_kmv="Rest","rest",0
     elif sat_txt is None:
@@ -1066,10 +1100,13 @@ def build_week(w):
     else:
         sat_kmv=sat_fixed if sat_fixed else sat_km
     if 5<=w<=30:
-        if v>=98:  wed_txt+="  (double: split AM/PM)"
+        # The split-run tag follows the volume: Friday once Wednesday is the recovery day.
+        if v>=98:
+            if wed_recovery: fri_txt+="  (double: split AM/PM)"
+            else:            wed_txt+="  (double: split AM/PM)"
         if v>=108: sat_txt+="  (double)"
         if v>=114: tue_txt+="  (PM easy double)"
-    days["Tue"]=(tue_txt,tue_type,tue_km); days["Wed"]=(wed_txt,"easy",wed_km)
+    days["Tue"]=(tue_txt,tue_type,tue_km); days["Wed"]=(wed_txt,wed_type,wed_km)
     days["Thu"]=(thu_txt,thu_type,thu_km); days["Fri"]=(fri_txt,fri_type,fri_kmv)
     days["Sat"]=(sat_txt,sat_type,sat_kmv); days["Sun"]=(sun_txt,sun_type,round(lr,1))
     for a,b in DAY_SWAPS.get(w,()):
