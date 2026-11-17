@@ -370,11 +370,10 @@ DAY_OVERRIDE = {
                              "organiser in November and tell me if it lands elsewhere", "race", 14)},
                 21: {"Tue": ("Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km  +light S&C — "
                             "half the usual threshold volume, five days out", "quality", 11),
-                     "Wed": ("Easy 10 km — no strides, 24 h after quality. RACE WEEK is the one "
-                             "place Wednesday is not the recovery day: Friday stays short in "
-                             "front of Sunday", "easy", 10),
-                     "Thu": ("Easy 11 km — no medium-long this week, Sunday is the session", "easy", 11),
-                     "Fri": ("Recovery 6 km easy  +light S&C (race week)", "recovery", 6),
+                     "Wed": ("Recovery 6 km easy — 5:35-6:05/km, 24 h after the sharpener", "recovery", 6),
+                     "Thu": ("Easy 13 km — no medium-long this week, Sunday is the session", "easy", 13),
+                     "Fri": ("Easy 8 km — two days out, descending into the race  "
+                             "+light S&C (race week)", "easy", 8),
                      "Sat": ("Shakeout: easy 6 km + 4×100 m strides at race pace", "easy", 6)},
                 30: {"Tue": ("Easy 15 km + 6×20s strides — Thursday's test is the week's "
                             "priority; arriving at it with 9 km of threshold in the legs "
@@ -1049,6 +1048,7 @@ def build_week(w):
     _ov = DAY_OVERRIDE.get(w, {}) if w >= 18 else {}
     tue_cost = _ov["Tue"][2] if "Tue" in _ov else tue_km
     thu_cost = _ov["Thu"][2] if "Thu" in _ov else thu_km
+    tue_is_quality = (_ov["Tue"][1] if "Tue" in _ov else tue_type) == "quality"
     known=lr+tue_cost+thu_cost+((sat_fixed or 0) if w in TT_WEEKS else 0)
     if w==33: known=0
     pool=max(v-known,0)
@@ -1066,7 +1066,7 @@ def build_week(w):
         # was the protected short day in front of Sunday's long run, and it no longer is.
         # Saturday stays the buffer, which is why the long run is still not run off the
         # back of the week's biggest easy day.
-        if w >= 19:
+        if w >= 19 and tue_is_quality:
             wed_km=round(pool*0.28); fri_km=round(pool*0.40)
         else:
             fri_km=round(pool*0.28); wed_km=round(pool*0.40)
@@ -1076,7 +1076,12 @@ def build_week(w):
     # running on the one day of the week that should be purely aerobic. Strides stay on
     # Saturday, where they do their real job — priming the legs before the long run.
     wed_strides = "" if (reentry or w >= 19) else " + 6×20s strides"
-    wed_recovery = (not reentry) and w >= 19 and w != 33
+    # THE RECOVERY RUN FOLLOWS THE HARD DAY, not the calendar. Normally that is
+    # Wednesday, after Tuesday's quality. But wk 30 hand-sets Tuesday to an easy 15 km so
+    # that Thursday's readiness test is the week's priority — there the hard day is
+    # Thursday and the recovery belongs on Friday, exactly as it did before. Checking
+    # tue_type alone would get that wrong, because the override has not been applied yet.
+    wed_recovery = (not reentry) and w >= 19 and w != 33 and tue_is_quality
     if wed_recovery:
         wed_txt=f"Recovery {wed_km} km easy — 5:35-6:05/km, 24 h after quality"
         wed_type="recovery"

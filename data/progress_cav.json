@@ -61966,9 +61966,9 @@
     "2026-12-09": {
       "week": 21,
       "dow": "Wed",
-      "type": "easy",
-      "session": "Easy 10 km — no strides, 24 h after quality. RACE WEEK is the one place Wednesday is not the recovery day: Friday stays short in front of Sunday  +M1/M2 ankle mobility (daily)",
-      "target_km": 10,
+      "type": "recovery",
+      "session": "Recovery 6 km easy — 5:35-6:05/km, 24 h after the sharpener  +M1/M2 ankle mobility (daily)",
+      "target_km": 6,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -61980,8 +61980,8 @@
       "week": 21,
       "dow": "Thu",
       "type": "easy",
-      "session": "Easy 11 km — no medium-long this week, Sunday is the session  +BAR posture  +M1/M2 ankle mobility (daily)",
-      "target_km": 11,
+      "session": "Easy 13 km — no medium-long this week, Sunday is the session  +BAR posture  +M1/M2 ankle mobility (daily)",
+      "target_km": 13,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -61992,9 +61992,9 @@
     "2026-12-11": {
       "week": 21,
       "dow": "Fri",
-      "type": "recovery",
-      "session": "Recovery 6 km easy  +light S&C (race week)  +M1/M2 ankle mobility (daily)",
-      "target_km": 6,
+      "type": "easy",
+      "session": "Easy 8 km — two days out, descending into the race  +light S&C (race week)  +M1/M2 ankle mobility (daily)",
+      "target_km": 8,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -62785,9 +62785,9 @@
     "2027-02-10": {
       "week": 30,
       "dow": "Wed",
-      "type": "recovery",
-      "session": "Recovery 8 km easy — 5:35-6:05/km, 24 h after quality  +BAR pull  +M1/M2 ankle mobility (daily)",
-      "target_km": 8,
+      "type": "easy",
+      "session": "Easy 12 km  +BAR pull  +M1/M2 ankle mobility (daily)",
+      "target_km": 12,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -62811,9 +62811,9 @@
     "2027-02-12": {
       "week": 30,
       "dow": "Fri",
-      "type": "easy",
-      "session": "Easy 12 km  +BJJ (drills only — no live rounds)  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +BAR posture  +M1/M2 ankle mobility (daily)",
-      "target_km": 12,
+      "type": "recovery",
+      "session": "Recovery 8 km easy  +BJJ (drills only — no live rounds)  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +BAR posture  +M1/M2 ankle mobility (daily)",
+      "target_km": 8,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -63651,7 +63651,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-17T16:58:21+00:00",
+  "last_sync": "2026-11-17T17:05:16+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-17",
