@@ -78,13 +78,21 @@ def phase(w):
     if w<=30: return "Marathon-Specific"
     return "Taper & Race"
 
+# Every quality session carries a DISTANCE and an explicit pace in s/km, not "5 min @ T".
+# Two reasons. Time-based reps drift: without a split at a known marker there is no
+# feedback inside the rep, and "comfortably hard" for 5 minutes reliably becomes 15-20
+# s/km slow by the third one. And a pace written as "@ T" asks him to remember a table
+# mid-session, so he runs it by feel and feel is what the 7 Nov parkrun just proved wrong
+# — his real threshold was 20 s/km faster than the estimate he had been training at.
+# Conversions are at 5:00/km, the middle of the 4:55-5:05 threshold band, so 5 min -> 1 km,
+# 3 min -> 600 m, 10 min -> 2 km, 15 min -> 3 km, 20 min -> 4 km. Same session, measurable.
 def tue(w):
     if w<=3:  return "Easy 5–6 km + 4×20s strides", "easy"
     if w<=6:  return "Easy 6–7 km + 6×20s strides", "easy"
     if w<=8:  return "Easy 7 km + 6×20s strides + 4×30s hills", "easy"
     if w<=12:
-        lib=["Tempo: 2×10 min @ T, 2 min jog","Easy 8 km + 6×20s strides + 4×30s hills",
-             "Threshold: 4×5 min @ T, 90s jog","Cruise: 5×3 min @ T, 75s jog","Tempo: 20 min continuous @ T"]
+        lib=["Tempo: 2×2 km @ 5:00/km, 2 min jog","Easy 8 km + 6×20s strides + 4×30s hills",
+             "Threshold: 4×1 km @ 5:00/km, 90s jog","Cruise: 5×600 m @ 5:00/km, 75s jog","Tempo: 4 km continuous @ 5:00/km"]
         s=lib[(w-9)%len(lib)]; return s, ("easy" if "Easy" in s else "quality")
     # Rebuild: no threshold work until there's a base under it. Strides and hills keep
     # some speed in the legs without adding a second hard day to a 30-38 km week.
@@ -94,16 +102,16 @@ def tue(w):
                 15:"Easy 8 km + 6×20s strides + 4×30s hills",
                 16:"Easy 8 km + 4×20s strides (5K trial Saturday — stay fresh)"}[w], "easy"
     if w<=20:
-        lib=["Tempo: 2×10 min @ T, 2 min jog","Threshold: 4×5 min @ T, 90s jog",
-             "Cruise: 5×3 min @ T, 75s jog","Tempo: 20 min continuous @ T"]
+        lib=["Tempo: 2×2 km @ 5:00/km, 2 min jog","Threshold: 4×1 km @ 5:00/km, 90s jog",
+             "Cruise: 5×600 m @ 5:00/km, 75s jog","Tempo: 4 km continuous @ 5:00/km"]
         return lib[(w-17)%len(lib)], "quality"
     # Wk 22 Tuesday is two days after Sevilla — no quality, whatever the library says.
     if w==22: return "Easy 10 km + strides (2 days after Sevilla — nothing hard this week)", "easy"
     if w<=30:
-        lib=["Threshold: 4×6 min @ T, 90s jog","MP reps: 5×1.5 km @ MP, 90s jog",
-             "Tempo: 2×15 min @ T, 3 min jog","5K reps: 5×1 km @ 5K pace, 90s jog","MP: 6×1 km @ MP, 60s jog"]
+        lib=["Threshold: 4×1.2 km @ 5:00/km, 90s jog","MP reps: 5×1.5 km @ 5:41/km, 90s jog",
+             "Tempo: 2×3 km @ 5:00/km, 3 min jog","5K reps: 5×1 km @ 4:40/km, 90s jog","MP: 6×1 km @ 5:41/km, 60s jog"]
         return lib[(w-21)%len(lib)], "quality"
-    return {31:"Threshold: 3×5 min @ T, 90s jog",32:"Easy 6 km + 4×20s strides",
+    return {31:"Threshold: 3×1 km @ 5:00/km, 90s jog",32:"Easy 6 km + 4×20s strides",
             33:"Easy 5 km + 4×100 m strides"}[w], ("quality" if w==31 else "easy")
 
 def thu(w):
@@ -115,9 +123,9 @@ def thu(w):
         # MP tempo only on easy-long-run weeks (never race-adjacent) — max 2 hard efforts/week
         if w==22: return "Easy 10 km — 4 days post-Sevilla", "easy"
         # distance via qkm so the text can't drift from target_km when a week overrides it
-        return (("MP tempo: 10 km w/ middle 6 km @ MP","quality") if w in (23,25,29)
+        return (("MP tempo: 10 km w/ middle 6 km @ 5:41/km","quality") if w in (23,25,29)
                 else (f"Easy {qkm(w,'thu')} km","easy"))
-    return ({31:"MP: 2×3 km @ MP, 3 min jog",32:"Easy 6 km + strides",33:"Rest or easy 4 km"}[w],
+    return ({31:"MP: 2×3 km @ 5:41/km, 3 min jog",32:"Easy 6 km + strides",33:"Rest or easy 4 km"}[w],
             "quality" if w==31 else "easy")
 
 def sun(w):
@@ -130,16 +138,16 @@ def sun(w):
         21:"Sevilla Half Marathon — run it CONTROLLED, no faster than long-run pace. "
            "NOT a goal test: it lands 8 weeks into a rebuild and will read slow.",
         22:"26 km easy (post-race — keep it genuinely easy, no MP)",
-        23:"28 km, last 6 km @ MP",
+        23:"28 km, last 6 km @ 5:41/km",
         24:"20 km easy (cut-back / festive week — no MP)",
-        26:"30 km, last 8 km @ MP",
+        26:"30 km, last 8 km @ 5:41/km",
         27:"TUNE-UP: Half-marathon race (all-out — THIS sets your goal) + w/u & c/d",
         28:"30 km easy (post-race recovery — no MP)",
         29:"32 km easy — keep it genuinely easy (dress rehearsal next weekend)",
-        30:"32 km, last 10 km @ MP (final long — dress rehearsal)",
-        31:"24 km easy",32:"16 km easy w/ 4×1 km @ MP",
+        30:"32 km, last 10 km @ 5:41/km (final long — dress rehearsal)",
+        31:"24 km easy",32:"16 km easy w/ 4×1 km @ 5:41/km",
         33:"RACE DAY — Tokyo Marathon · goal set by your build (target 4:00 · floor 4:30)"}
-    t = txt.get(w, f"{d:g} km easy" + (" + last 4 km @ MP" if w in (9,12,18) else ""))
+    t = txt.get(w, f"{d:g} km easy" + (" + last 4 km @ 5:41/km" if w in (9,12,18) else ""))
     return t, ("race" if w in (21,27,33) else "long")
 
 def sat(w):
@@ -157,7 +165,7 @@ def qkm(w, which):
     if w<=20: return {"tue":9,"thu":8}[which]
     if w==21: return {"tue":9,"thu":7}[which]
     if w<=30: return {"tue":10,"thu":10}[which]
-    # Wk 31 still carries real work — 3x5 min @ T and 2x3 km @ MP — and 6 km days left
+    # Wk 31 still carries real work — 3x1 km @ T and 2x3 km @ MP — and 6 km days left
     # no room for it, never mind a warm-up. Taper cuts volume, not the session.
     if w==31: return {"tue":8,"thu":10}[which]
     return {"tue":6,"thu":6}[which]

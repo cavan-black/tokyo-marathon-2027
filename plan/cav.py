@@ -310,8 +310,14 @@ DAY_OVERRIDE = {
                      "Thu": ("Easy 10 km", "easy", 10),
                      "Fri": ("Recovery 6 km easy — 5:35-6:05/km, HR under 140, slower than "
                              "you think  +GYM G1-G6  +R1", "recovery", 6),
-                     "Sat": ("Easy 8 km + 6×20s strides", "easy", 8),
-                     "Sun": ("Long 15 km easy", "long", 15)},
+                     "Sat": ("Easy 8 km + 6×20s strides — RACE SHOE DEBUT: run the 8 km in "
+                             "the GT-2000, change into the Metaspeeds for the 6 strides only, "
+                             "walk home in them. ~1 km in the racer: enough to find hotspots and "
+                             "check the heel collar against the achilles, at a pace where a "
+                             "plated shoe actually works. If they have not arrived, do the "
+                             "strides in trainers and slide this to wk 19 Sat", "easy", 8),
+                     "Sun": ("Long 15 km easy — GT-2000, NOT the racer. Longest run since the "
+                             "injury; one new variable at a time", "long", 15)},
                 19: {"Mon": ("Rest from running · BJJ drills/technical, no live rounds  "
                              "+S&C (easy-day session) — BJJ returns here if the ankle has been "
                              "clean for three weeks", "rest", 0),
@@ -323,7 +329,9 @@ DAY_OVERRIDE = {
                      # it. Week total HELD at 74: the 3 km taken off the quality days
                      # goes back onto the easy days rather than out of the week.
                      "Tue": ("Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km · w/u 3 km · "
-                             "c/d 2 km — CUT FROM 5×1.5 and 3:48", "quality", 11),
+                             "c/d 2 km — CUT FROM 5×1.5 and 3:48. RACE SHOE: the 6 km of reps "
+                             "only, w/u and c/d in trainers. First real test of the Metaspeeds "
+                             "at speed — only if Saturday's strides were clean", "quality", 11),
                      "Wed": ("Easy 12 km + 6×20s strides  +GYM G1-G6", "easy", 12),
                      "Thu": ("Medium-long 13 km w/ middle 3 km @ MP — first marathon-pace work "
                              "back, CUT FROM 5 km. Continuous fast blocks are the shape that "
@@ -1082,10 +1090,16 @@ def content():
                      "tagged with its shoe.",
             "headers": ["Shoe", "Used for", "km from here", "Total at Tokyo", "Status"],
             "rows": shoe_rows(),
-            "note": "The racer holds its bounce for ~250-300 km, so it only appears four times: "
-                    "one MP long run to bed it in before each race (Wk 18, and the Wk 29 dress rehearsal), Sevilla on 13 Dec, and Tokyo. "
-                    "Don't train in it. Buy it in November rather than January so a bad fit turns up "
-                    "at the half and not three weeks out — super shoes change calf and Achilles "
+            "note": "The racer is the Metaspeed Sky Tokyo (red/black/white, 42), arriving 20-21 Nov. "
+                    "It holds its bounce for ~250-300 km and the model is discontinued, so there is no "
+                    "cheap second pair: it appears five times and never on an easy run. It beds in "
+                    "backwards — strides only on Wk 18 Sat (~1 km), the threshold reps only on Wk 19 "
+                    "Tue (6 km), then Sevilla on 13 Dec, the Wk 29 dress rehearsal, and Tokyo. "
+                    "Warm-ups and cool-downs stay in trainers. NOT the Wk 18 long run: a 38.7 mm "
+                    "plated stack at easy pace, on the longest run since the injury, is two new "
+                    "variables at once on an ankle still 1 cm down on dorsiflexion. "
+                    "Owning it from November rather than January is deliberate — a bad fit turns up "
+                    "at the half and not three weeks out, since super shoes change calf and Achilles "
                     "loading noticeably and not everyone gets on with a given geometry. "
                     "Log mileage per pair in Strava (assign gear to each activity); most "
                     "worn-shoe injuries happen because nobody was counting.",
@@ -1261,7 +1275,7 @@ SHOES = {
     "machx":   "Mach X3",
     "evosl":   "EVO SL",
     "quality2": "Quality trainer #2",
-    "race":    "RACE SHOE",
+    "race":    "Metaspeed Sky Tokyo",
 }
 # Odometer at 1 Nov 2026, from Strava gear. The GT-2000 arrived on 30 Oct for the
 # return from the ankle injury and is the only pair with life in it.
@@ -1271,19 +1285,36 @@ SHOE_KM_NOW = {"gt2000": 0, "clifton": 447, "machx": 245, "evosl": 511, "daily2"
 # Lightstrike Pro packs out early, which is why it retires first and why it stopped
 # being an easy-run shoe on 26 Oct.
 SHOE_RETIRE = {"gt2000": 700, "clifton": 600, "machx": 550, "evosl": 550,
-               "daily2": 700, "long": 700, "quality2": 550}
+               "daily2": 700, "long": 700, "quality2": 550, "race": 300}
 # The EVO SL stops at Sevilla, not Tokyo. Counting the plan rather than guessing put it
 # at 610 km by March, 60 past the point its unplated Lightstrike Pro is worth running on
 # — and it is already the pair implicated in carrying the October ankle injury. A second
 # quality pair takes its slot from wk 22 so the Mach X also stays inside its own limit.
 EVOSL_LAST_WEEK = 21
-# The racer only comes out for the two races and the handful of MP sessions that
-# bed it in — it holds its bounce for ~250-300 km and must not be spent on training.
-# One bed-in run before each race. Wk 18 rather than 19 so there is a week in hand
-# to react if the shoe does not suit. Wk 29 rather than 30 before Tokyo: 29 is the
-# dress rehearsal (35 km with 12 km @ MP) and 30 is an easy run, so 29 is the one
-# that actually rehearses race pace in race shoes.
-RACE_SHOE_DAYS = {(18,"Sun"), (21,"Sun"), (29,"Sun"), (33,"Sun")}
+# The racer only comes out for the two races and the handful of sessions that bed it
+# in — it holds its bounce for ~250-300 km and must not be spent on training.
+#
+# The Metaspeed Sky Tokyo (red/black/white, arriving 20-21 Nov) breaks in BACKWARDS
+# from what this used to say. It had the wk 18 Sunday long run as the first outing;
+# that was wrong on four counts. A 15 km long run would have been the longest run
+# since the injury AND the shoe's debut on the same day, so a flare could not have
+# been attributed to either. Easy pace is the worst case for a plated racer — the
+# rocker needs speed to work and is tippier without it, under an ankle that is still
+# 1 cm down on dorsiflexion. A 38.7 mm stack is a long lever at the ankle, and the
+# symptomatic tissue is the plantar-fascia/Achilles complex at the heel. And a 1.4 mm
+# outsole with ~250-300 km in it is too scarce to spend on easy miles — the model is
+# discontinued, so there is no cheap second pair.
+#
+# So: strides first (wk 18 Sat, ~1 km of actual running in them, enough to find
+# hotspots and check the heel collar against the tendon at a pace where the shoe
+# works), then the threshold reps only (wk 19 Tue, 6 km), then Sevilla, the dress
+# rehearsal and Tokyo. Warm-ups and cool-downs stay in trainers throughout.
+# Wk 29 rather than 30 before Tokyo: 29 is the dress rehearsal (35 km with 12 km @ MP)
+# and 30 is an easy run, so 29 is the one that actually rehearses race pace.
+RACE_SHOE_DAYS = {(18,"Sat"), (19,"Tue"), (21,"Sun"), (29,"Sun"), (33,"Sun")}
+# Days where only PART of the session is run in the racer. Counting the whole day
+# against a 250-300 km shoe would overstate its wear by ~16 km across the two.
+RACE_SHOE_PARTIAL = {(18,"Sat"): 1, (19,"Tue"): 6}
 # The Clifton is already on 447 km, so it is the pair that runs out first: it takes
 # half the easy running through the rebuild and hands over to the second new trainer
 # at wk 20, by which point it is near 600 km and done.
@@ -1330,7 +1361,7 @@ def shoe_rows(from_week=16):
         for dow, (txt, typ, d) in build_week(w).items():
             sh = shoe_for(w, dow, typ, txt)
             if sh:
-                km[name_to_key[sh]] += d
+                km[name_to_key[sh]] += RACE_SHOE_PARTIAL.get((w, dow), d)
     use = {
         "gt2000":  "Easy + recovery, and the comeback runs",
         "clifton": "Easy + recovery until it runs out",
@@ -1339,7 +1370,7 @@ def shoe_rows(from_week=16):
         "machx":   "Most quality sessions",
         "evosl":   "Quality every third week, until Sevilla",
         "quality2": "Quality, alternating, from Wk 22",
-        "race":    "Sevilla, Tokyo + 2 bed-in runs",
+        "race":    "Sevilla, Tokyo + 3 bed-in sessions",
     }
     buy = {
         "gt2000":  "Owned — new on 30 Oct, 0 km",
@@ -1349,7 +1380,7 @@ def shoe_rows(from_week=16):
         "machx":   "Owned — 245 km",
         "evosl":   "Owned — 511 km. RETIRE AFTER SEVILLA, not Tokyo.",
         "quality2": "Early Dec — replaces the EVO SL (Mach X 3 again, or similar)",
-        "race":    "Early-mid Nov — Metaspeed Sky / Alphafly 3 / Adios Pro 5",
+        "race":    "OWNED — arriving 20-21 Nov. Red/black/white, 42, EUR 191.99.",
     }
     rows = []
     for k in ("gt2000", "clifton", "daily2", "long", "machx", "evosl", "quality2", "race"):

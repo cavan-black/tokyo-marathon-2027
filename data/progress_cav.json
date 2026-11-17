@@ -60802,7 +60802,7 @@
       "week": 18,
       "dow": "Sat",
       "type": "easy",
-      "session": "Easy 8 km + 6×20s strides  +M1/M2 mobility (2x daily) +R1 isometrics",
+      "session": "Easy 8 km + 6×20s strides — RACE SHOE DEBUT: run the 8 km in the GT-2000, change into the Metaspeeds for the 6 strides only, walk home in them. ~1 km in the racer: enough to find hotspots and check the heel collar against the achilles, at a pace where a plated shoe actually works. If they have not arrived, do the strides in trainers and slide this to wk 19 Sat  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 8,
       "actual_km": 0,
       "status": "Upcoming",
@@ -60815,7 +60815,7 @@
       "week": 18,
       "dow": "Sun",
       "type": "long",
-      "session": "Long 15 km easy  +M1/M2 mobility (2x daily) +R1 isometrics",
+      "session": "Long 15 km easy — GT-2000, NOT the racer. Longest run since the injury; one new variable at a time  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 15,
       "actual_km": 0,
       "status": "Upcoming",
@@ -60841,7 +60841,7 @@
       "week": 19,
       "dow": "Tue",
       "type": "quality",
-      "session": "Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km · w/u 3 km · c/d 2 km — CUT FROM 5×1.5 and 3:48  +BAR light  +M1/M2 mobility (2x daily) +R1 isometrics",
+      "session": "Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km · w/u 3 km · c/d 2 km — CUT FROM 5×1.5 and 3:48. RACE SHOE: the 6 km of reps only, w/u and c/d in trainers. First real test of the Metaspeeds at speed — only if Saturday's strides were clean  +BAR light  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 11,
       "actual_km": 0,
       "status": "Upcoming",
@@ -62720,7 +62720,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-17T03:30:07+00:00",
+  "last_sync": "2026-11-17T10:49:45+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-10-13",
