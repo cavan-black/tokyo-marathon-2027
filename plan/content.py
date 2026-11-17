@@ -91,13 +91,24 @@ def _work_and_recovery(txt, jog_s):
     return None
 
 
-def note_wu(txt, typ, km=None, jog_s=360):
+def note_wu(txt, typ, km=None, jog_s=360, cd_cap=None):
     """A quality session's km target is the WHOLE session (warm-up + reps/tempo + jog
     recoveries + cooldown), not just the structured work described in the text. Given
     the day's target, spell the warm-up and cooldown out so the parts visibly add up to
     the number on the left; without one, fall back to just flagging that they exist.
     Skip sessions that already state their own total ("Medium-long 16 km w/ middle 8 km
-    @ MP") — adding the note there would double up rather than clarify."""
+    @ MP") — adding the note there would double up rather than clarify.
+
+    cd_cap caps the cooldown and sends the remainder forward into the warm-up, with a
+    3 km floor on the warm-up itself. Asked for by Cav on 17 Nov 2026, and he is right:
+    the residual was being split 60/40 front/back, which made the cooldown the second-
+    longest easy block of the quality day. It is also the worst-quality running in the
+    week - run on fatigued tissue, with degraded mechanics, immediately after the hardest
+    effort - and the evidence that a cooldown does anything for next-day recovery or
+    soreness is thin. The warm-up is the opposite: it is what makes rep 1 safe, and on an
+    achilles mid-rehab it is not optional. So the residual goes to the FRONT.
+    Left as None for weeks already run, so regenerating cannot rewrite what was
+    prescribed at the time - see the wks 5-13 comment in cav.tue()."""
     if typ != "quality" or "w/u" in txt:
         return txt
     if txt.startswith("Medium-long") or " km w/" in txt:
@@ -109,8 +120,19 @@ def note_wu(txt, typ, km=None, jog_s=360):
     rest = km - work - rec
     if rest < 2.5:                      # nothing sensible left to split
         return txt + " + w/u & c/d"
-    wu = max(2.0, min(round(rest * 0.6 * 2) / 2, rest - 1.0))
-    cd = round(rest - wu, 1)
+    if cd_cap is None:
+        wu = max(2.0, min(round(rest * 0.6 * 2) / 2, rest - 1.0))
+        cd = round(rest - wu, 1)
+    else:
+        # Warm-up floor 3 km (threshold off less is how rep 1 goes wrong), ceiling 4.5 km
+        # (past that it is just easy running, and it stops being a warm-up). Rounded to
+        # the half km so the sheet reads like a prescription, not a spreadsheet. Where the
+        # residual exceeds 6 km both caps bind and the surplus has to land in the cooldown
+        # — that is not a split problem, it is a target_km that is too big for the work in
+        # the session, and the two that do it (wk 27 Tue, wk 30 Thu) are flagged rather
+        # than silently fudged.
+        wu = round(min(4.5, max(3.0, rest - cd_cap)) * 2) / 2
+        cd = round(rest - wu, 1)
     return f"{txt} · w/u {wu:g} km · c/d {cd:g} km"
 
 def strength(found_weeks, power_weeks, football=False, a_day="Tue", b_day="Fri", rehab=None):
