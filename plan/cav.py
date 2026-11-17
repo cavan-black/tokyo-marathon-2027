@@ -305,9 +305,10 @@ DAY_OVERRIDE = {
                 18: {"Mon": ("Rest from running  +GYM G1-G6  +R1", "rest", 0),
                      "Tue": ("Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · "
                              "c/d 2 km — first quality since the injury, half the usual volume, "
-                             "flat loop only. SHORT reps on purpose: 1 km chunks, not blocks", "quality", 12),
-                     "Wed": ("Easy 9 km  +GYM G1-G6", "easy", 9),
-                     "Thu": ("Easy 10 km", "easy", 10),
+                             "flat loop only. SHORT reps on purpose: 1 km chunks, not blocks "
+                             "(reps 4.0 + jogs 0.75 + w/u 3.0 + c/d 2.0 = 9.8)", "quality", 9.8),
+                     "Wed": ("Easy 10.1 km  +GYM G1-G6", "easy", 10.1),
+                     "Thu": ("Easy 11.1 km", "easy", 11.1),
                      "Fri": ("Recovery 6 km easy — 5:35-6:05/km, HR under 140, slower than "
                              "you think  +GYM G1-G6  +R1", "recovery", 6),
                      "Sat": ("Easy 8 km + 6×20s strides — RACE SHOE DEBUT: run the 8 km in "
@@ -328,9 +329,8 @@ DAY_OVERRIDE = {
                      # slow long runs are not what hurt him and the aerobic rebuild needs
                      # it. Week total HELD at 74: the 3 km taken off the quality days
                      # goes back onto the easy days rather than out of the week.
-                     "Tue": ("Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km · w/u 4 km · "
-                             "c/d 1 km — CUT FROM 5×1.5 and 3:48. RACE SHOE: the 6 km of reps "
-                             "only, w/u and c/d in trainers. First real test of the Metaspeeds "
+                     "Tue": ("Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km — CUT FROM 5×1.5 and 3:48. RACE SHOE: the 6 km of reps "
+                             "only, warm-up and cool-down in trainers. First real test of the Metaspeeds "
                              "at speed — only if Saturday's strides were clean", "quality", 11),
                      "Wed": ("Easy 12 km — no strides, 24 h after quality  +GYM G1-G6", "easy", 12),
                      "Thu": ("Medium-long 13 km w/ middle 3 km @ MP — first marathon-pace work "
@@ -352,17 +352,15 @@ DAY_OVERRIDE = {
                 # argument intact.
                 20: {"Mon": ("Rest from running · BJJ drills/technical, no live rounds  "
                              "+GYM G1-G6  +R1", "rest", 0),
-                     "Tue": ("VO2: 5×1000 m @ 3:26/km, 2:30 jog @ 6:00/km · w/u 4.5 km · "
-                             "c/d 1 km — CUT FROM 6 reps", "quality", 13),
-                     "Wed": ("Easy 11 km — no strides, 24 h after quality  +GYM G1-G6", "easy", 11),
-                     "Thu": ("MP tempo: 3×3 km @ MP, 2 min float @ 4:28/km · w/u 2 km · "
-                             "c/d 1 km — CUT FROM 3×4 km. 9 km of MP, still under the 10 km "
-                             "block that caused the injury", "quality", 13),
+                     "Tue": ("VO2: 5×1000 m @ 3:26/km, 2:30 jog @ 6:00/km — CUT FROM 6 reps", "quality", 12.2),
+                     "Wed": ("Easy 10.9 km — no strides, 24 h after quality  +GYM G1-G6", "easy", 10.9),
+                     "Thu": ("MP tempo: 3×3 km @ MP, 2 min float @ 4:28/km — CUT FROM 3×4 km. 9 km of MP, still under the 10 km "
+                             "block that caused the injury", "quality", 13.9),
                      "Fri": ("Recovery 8 km easy — 5:35-6:05/km  +BJJ (drills only — no live "
                              "rounds)  +GYM G1-G6  +R1", "recovery", 8),
                      "Sat": ("Easy 7 km + strides", "easy", 7),
                      "Sun": ("28 km easy — steady week, race is next Sunday", "long", 28)},
-                26: {"Wed": ("Easy 20 km — no strides, 24 h after quality  (double: split AM/PM)", "easy", 20),
+                26: {"Wed": ("Easy 21 km — no strides, 24 h after quality  (double: split AM/PM)", "easy", 21),
                      "Thu": ("Medium-long 26 km easy — the week's long run, moved off the "
                              "weekend so Sunday's race is run on fresh legs", "long", 26),
                      "Fri": ("Recovery 12 km easy  +S&C (easy-day session)", "recovery", 12),
@@ -372,10 +370,9 @@ DAY_OVERRIDE = {
                              "over a solo TT, which is why this replaces the time trial. "
                              "DATE UNCONFIRMED — the 2026 edition ran Sun 18 Jan; check the "
                              "organiser in November and tell me if it lands elsewhere", "race", 14)},
-                21: {"Tue": ("Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 4.5 km "
-                            "· c/d 1.5 km  +light S&C — half the usual threshold volume, "
-                            "five days out", "quality", 11),
-                     "Wed": ("Easy 10 km — no strides, 24 h after quality", "easy", 10),
+                21: {"Tue": ("Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km  +light S&C — "
+                            "half the usual threshold volume, five days out", "quality", 10.2),
+                     "Wed": ("Easy 10.8 km — no strides, 24 h after quality", "easy", 10.8),
                      "Thu": ("Easy 11 km — no medium-long this week, Sunday is the session", "easy", 11),
                      "Fri": ("Recovery 6 km easy  +light S&C (race week)", "recovery", 6),
                      "Sat": ("Shakeout: easy 6 km + 4×100 m strides at race pace", "easy", 6)},
@@ -803,7 +800,8 @@ def tue(w):
         # in one continuous effort, which is what narrows the LT1–LT2 gap. Replaces the
         # rotation's 5×1.6 km in both weeks so the two are directly comparable.
         return ("Alternating K's: 6×(1 km @ 3:50/km / 1 km float @ 4:15/km) — 12 km "
-                "continuous, no standing rest, averages ~4:03/km · w/u 4.5 km · c/d 1.5 km"), "quality"
+                "continuous, no standing rest, averages ~4:03/km · w/u 4.5 km · no jogs — the "
+                "float IS the recovery and all 12 km are run · c/d 1.5 km"), "quality"
     if w <= 30:
         lib=["Threshold: 6×1.5 km @ 3:48/km, 60s jog @ 6:00/km","Race reps: 5×1.6 km @ 3:52/km, 90s jog @ 6:00/km",
              "Threshold: 3×3 km @ 3:50/km, 2 min jog @ 6:00/km","VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog @ 6:00/km"]
@@ -1020,7 +1018,19 @@ def build_week(w):
     hard_sun = sun_type == "race" or w in HARD_LR
     if thu_type == "quality" and (hard_sun or w in TT_WEEKS):
         thu_txt, thu_type = f"Medium-long {thu_km} km easy", "easy"
-    known=lr+tue_km+thu_km+((sat_fixed or 0) if w in TT_WEEKS else 0)
+    # Size the pool off what the quality days actually COST, which is the override's km
+    # wherever a week hand-sets one — not qkm's. They diverged the moment Tuesday's target
+    # dropped by 1 km (wk 30 hand-sets Tue at 15, so the week gained a km that nothing had
+    # taken off; wk 26 lost one the same way), and the weeks silently stopped summing to
+    # their own volume target.
+    # From wk 18 only. Earlier weeks are the record of what was actually prescribed, and
+    # several of them swap days (DAY_SWAPS), which means DAY_OVERRIDE["Tue"] is not
+    # necessarily the week's Tuesday quality session — reading its km as the quality cost
+    # moved three past weeks' totals when this was applied to them.
+    _ov = DAY_OVERRIDE.get(w, {}) if w >= 18 else {}
+    tue_cost = _ov["Tue"][2] if "Tue" in _ov else tue_km
+    thu_cost = _ov["Thu"][2] if "Thu" in _ov else thu_km
+    known=lr+tue_cost+thu_cost+((sat_fixed or 0) if w in TT_WEEKS else 0)
     if w==33: known=0
     pool=max(v-known,0)
     if reentry:
@@ -1065,7 +1075,16 @@ def build_week(w):
     for a,b in DAY_SWAPS.get(w,()):
         days[a],days[b]=days[b],days[a]
     for dow,spec in DAY_OVERRIDE.get(w,{}).items():
-        days[dow]=spec
+        # Hand-written weeks go through the same arithmetic as generated ones. They did
+        # not before, and all five sessions whose parts failed to sum to their own
+        # target_km were in here — wk 18 Tue was out by 2.25 km (12 on the sheet against
+        # 4.0 reps + 0.75 jogs + 3.0 w/u + 2.0 c/d = 9.75). A spec that spells w/u out
+        # itself is left alone, which is how a day already run keeps the text it was
+        # prescribed with.
+        t, ty, k = spec
+        if ty == "quality" and "w/u" not in t:
+            t = C.note_wu(t, ty, k, cd_cap=cdc)
+        days[dow]=(t, ty, k)
     # Wks 16-20 carry the ankle rehab every single day, run days included. Stamping it
     # here rather than writing it into each note is the only way it does not get dropped
     # from half of them: "daily" has to mean daily or the mobility work does nothing.

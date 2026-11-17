@@ -59,7 +59,12 @@ WARMUP_HEADERS = ["Exercise", "Duration / Reps", "Why"]
 _REP_KM = re.compile(r"(\d+)×([\d.]+)\s*km")
 _REP_M  = re.compile(r"(\d+)×(\d+)\s*m\b")
 _CONT   = re.compile(r"([\d.]+)\s*km continuous")
-_REC    = re.compile(r"(?:(\d+):(\d+)|(\d+)\s*min|(\d+)\s*s)\s*(?:jog|float)")
+# The recovery's OWN pace, when the text states one. This matters: a "3 min float @
+# 4:28/km" covers 0.67 km, not the 0.50 km a 6:00/km jog would — and the MP tempos are
+# all floats. Assuming 6:00 for every recovery understated the MP sessions by ~0.2-0.4 km
+# each. Group 5/6 are the stated pace; absent, the caller's jog_s stands.
+_REC    = re.compile(r"(?:(\d+):(\d+)|(\d+)\s*min|(\d+)\s*s)\s*(?:jog|float)"
+                     r"(?:\s*@\s*(\d+):(\d+)/km)?")
 
 
 def _work_and_recovery(txt, jog_s):
@@ -83,7 +88,10 @@ def _work_and_recovery(txt, jog_s):
             if r.group(1):   secs = int(r.group(1)) * 60 + int(r.group(2))
             elif r.group(3): secs = int(r.group(3)) * 60
             else:            secs = int(r.group(4))
-            rec = (reps - 1) * secs / jog_s
+            per_km = int(r.group(5)) * 60 + int(r.group(6)) if r.group(5) else jog_s
+            # reps-1 recoveries: the jog goes BETWEEN reps, and the one after the last
+            # rep is the cooldown, which is counted separately.
+            rec = (reps - 1) * secs / per_km
         return reps * rep_km, rec
     m = _CONT.search(txt)
     if m:
@@ -133,7 +141,11 @@ def note_wu(txt, typ, km=None, jog_s=360, cd_cap=None):
         # than silently fudged.
         wu = round(min(4.5, max(3.0, rest - cd_cap)) * 2) / 2
         cd = round(rest - wu, 1)
-    return f"{txt} · w/u {wu:g} km · c/d {cd:g} km"
+    # The recovery jogs are stated as distance too. They are real running — 5x1 km off
+    # 2:30 jogs is 1.7 km between the reps — and leaving them implicit is what let the
+    # hand-written comeback weeks drift 2 km out from their own target_km.
+    jogs = f" · jogs {rec:.1f} km" if cd_cap is not None and rec >= 0.1 else ""
+    return f"{txt} · w/u {wu:g} km{jogs} · c/d {cd:g} km"
 
 def strength(found_weeks, power_weeks, football=False, a_day="Tue", b_day="Fri", rehab=None):
     extra = " or a match" if football else ""
