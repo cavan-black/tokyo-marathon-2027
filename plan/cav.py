@@ -306,9 +306,9 @@ DAY_OVERRIDE = {
                      "Tue": ("Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · "
                              "c/d 2 km — first quality since the injury, half the usual volume, "
                              "flat loop only. SHORT reps on purpose: 1 km chunks, not blocks "
-                             "(reps 4.0 + jogs 0.75 + w/u 3.0 + c/d 2.0 = 9.8)", "quality", 9.8),
-                     "Wed": ("Easy 10.1 km  +GYM G1-G6", "easy", 10.1),
-                     "Thu": ("Easy 11.1 km", "easy", 11.1),
+                             "(reps 4.0 + jogs 1.0 + w/u 3.0 + c/d 2.0 = 10.0)", "quality", 10),
+                     "Wed": ("Easy 10 km  +GYM G1-G6", "easy", 10),
+                     "Thu": ("Easy 11 km", "easy", 11),
                      "Fri": ("Recovery 6 km easy — 5:35-6:05/km, HR under 140, slower than "
                              "you think  +GYM G1-G6  +R1", "recovery", 6),
                      "Sat": ("Easy 8 km + 6×20s strides — RACE SHOE DEBUT: run the 8 km in "
@@ -352,10 +352,10 @@ DAY_OVERRIDE = {
                 # argument intact.
                 20: {"Mon": ("Rest from running · BJJ drills/technical, no live rounds  "
                              "+GYM G1-G6  +R1", "rest", 0),
-                     "Tue": ("VO2: 5×1000 m @ 3:26/km, 2:30 jog @ 6:00/km — CUT FROM 6 reps", "quality", 12.2),
-                     "Wed": ("Easy 10.9 km — no strides, 24 h after quality  +GYM G1-G6", "easy", 10.9),
+                     "Tue": ("VO2: 5×1000 m @ 3:26/km, 2:30 jog @ 6:00/km — CUT FROM 6 reps", "quality", 13),
+                     "Wed": ("Easy 9.7 km — no strides, 24 h after quality  +GYM G1-G6", "easy", 9.7),
                      "Thu": ("MP tempo: 3×3 km @ MP, 2 min float @ 4:28/km — CUT FROM 3×4 km. 9 km of MP, still under the 10 km "
-                             "block that caused the injury", "quality", 13.9),
+                             "block that caused the injury", "quality", 14.3),
                      "Fri": ("Recovery 8 km easy — 5:35-6:05/km  +BJJ (drills only — no live "
                              "rounds)  +GYM G1-G6  +R1", "recovery", 8),
                      "Sat": ("Easy 7 km + strides", "easy", 7),
@@ -371,8 +371,8 @@ DAY_OVERRIDE = {
                              "DATE UNCONFIRMED — the 2026 edition ran Sun 18 Jan; check the "
                              "organiser in November and tell me if it lands elsewhere", "race", 14)},
                 21: {"Tue": ("Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km  +light S&C — "
-                            "half the usual threshold volume, five days out", "quality", 10.2),
-                     "Wed": ("Easy 10.8 km — no strides, 24 h after quality", "easy", 10.8),
+                            "half the usual threshold volume, five days out", "quality", 11),
+                     "Wed": ("Easy 10 km — no strides, 24 h after quality", "easy", 10),
                      "Thu": ("Easy 11 km — no medium-long this week, Sunday is the session", "easy", 11),
                      "Fri": ("Recovery 6 km easy  +light S&C (race week)", "recovery", 6),
                      "Sat": ("Shakeout: easy 6 km + 4×100 m strides at race pace", "easy", 6)},

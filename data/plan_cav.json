@@ -291,7 +291,7 @@
           "date": "2026-08-18",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog @ 6:00/km · w/u 4 km · c/d 3 km  +S&C (hard-day session)",
+          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog @ 6:00/km · w/u 4 km · c/d 2.8 km  +S&C (hard-day session)",
           "target_km": 13,
           "shoe": "Mach X3"
         },
@@ -559,7 +559,7 @@
           "date": "2026-09-16",
           "dow": "Wed",
           "type": "quality",
-          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog @ 6:00/km · w/u 2 km · c/d 1 km  +S&C (hard-day session)",
+          "session": "Threshold: 5×1 km @ 4:10/km (T), 90s jog @ 6:00/km · w/u 2 km · c/d 0.8 km  +S&C (hard-day session)",
           "target_km": 9,
           "shoe": "EVO SL"
         },
@@ -811,7 +811,7 @@
           "date": "2026-10-13",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 5×1 km @ 3:50/km (T), 90s jog @ 6:00/km · w/u 3.5 km · c/d 2.5 km  +S&C (hard-day session)",
+          "session": "Threshold: 5×1 km @ 3:50/km (T), 90s jog @ 6:00/km · w/u 3.5 km · c/d 2.2 km  +S&C (hard-day session)",
           "target_km": 12,
           "shoe": "Mach X3"
         },
@@ -880,7 +880,7 @@
           "date": "2026-10-20",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog @ 6:00/km · w/u 4.5 km · c/d 2.8 km  +S&C (hard-day session)",
+          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog @ 6:00/km · w/u 4 km · c/d 2.9 km  +S&C (hard-day session)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -896,7 +896,7 @@
           "date": "2026-10-22",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP tempo: 2×5 km @ 3:59/km (MP), 3 min float @ 4:28/km · w/u 3 km · c/d 2.3 km",
+          "session": "MP tempo: 2×5 km @ 3:59/km (MP), 3 min float @ 4:28/km · w/u 3 km · c/d 1.7 km",
           "target_km": 16,
           "shoe": "Mach X3"
         },
@@ -1140,24 +1140,24 @@
           "date": "2026-11-17",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2 km — first quality since the injury, half the usual volume, flat loop only. SHORT reps on purpose: 1 km chunks, not blocks (reps 4.0 + jogs 0.75 + w/u 3.0 + c/d 2.0 = 9.8)  +BAR light  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 9.8,
+          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · c/d 2 km — first quality since the injury, half the usual volume, flat loop only. SHORT reps on purpose: 1 km chunks, not blocks (reps 4.0 + jogs 1.0 + w/u 3.0 + c/d 2.0 = 10.0)  +BAR light  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 10,
           "shoe": "EVO SL"
         },
         {
           "date": "2026-11-18",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10.1 km  +GYM G1-G6  +BAR pull  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 10.1,
+          "session": "Easy 10 km  +GYM G1-G6  +BAR pull  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 10,
           "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-19",
           "dow": "Thu",
           "type": "easy",
-          "session": "Easy 11.1 km  +BAR maintenance  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 11.1,
+          "session": "Easy 11 km  +BAR maintenance  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 11,
           "shoe": "GT-2000 15"
         },
         {
@@ -1205,7 +1205,7 @@
           "date": "2026-11-24",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km — CUT FROM 5×1.5 and 3:48. RACE SHOE: the 6 km of reps only, warm-up and cool-down in trainers. First real test of the Metaspeeds at speed — only if Saturday's strides were clean · w/u 3 km · jogs 0.6 km · c/d 1.4 km  +BAR light  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "session": "Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km — CUT FROM 5×1.5 and 3:48. RACE SHOE: the 6 km of reps only, warm-up and cool-down in trainers. First real test of the Metaspeeds at speed — only if Saturday's strides were clean · w/u 3 km · jogs 0.8 km · c/d 1.2 km  +BAR light  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 11,
           "shoe": "Metaspeed Sky Tokyo"
         },
@@ -1270,24 +1270,24 @@
           "date": "2026-12-01",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 5×1000 m @ 3:26/km, 2:30 jog @ 6:00/km — CUT FROM 6 reps · w/u 4 km · jogs 1.7 km · c/d 1.5 km  +BAR light  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 12.2,
+          "session": "VO2: 5×1000 m @ 3:26/km, 2:30 jog @ 6:00/km — CUT FROM 6 reps · w/u 4.5 km · jogs 2.1 km · c/d 1.4 km  +BAR light  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 13,
           "shoe": "Mach X3"
         },
         {
           "date": "2026-12-02",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10.9 km — no strides, 24 h after quality  +GYM G1-G6  +BAR pull  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 10.9,
+          "session": "Easy 9.7 km — no strides, 24 h after quality  +GYM G1-G6  +BAR pull  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 9.7,
           "shoe": "GT-2000 15"
         },
         {
           "date": "2026-12-03",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP tempo: 3×3 km @ MP, 2 min float @ 4:28/km — CUT FROM 3×4 km. 9 km of MP, still under the 10 km block that caused the injury · w/u 3 km · jogs 0.9 km · c/d 1 km  +BAR maintenance  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 13.9,
+          "session": "MP tempo: 3×3 km @ MP, 2 min float @ 4:28/km — CUT FROM 3×4 km. 9 km of MP, still under the 10 km block that caused the injury · w/u 3 km · jogs 1.3 km · c/d 1 km  +BAR maintenance  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 14.3,
           "shoe": "Mach X3"
         },
         {
@@ -1335,16 +1335,16 @@
           "date": "2026-12-08",
           "dow": "Tue",
           "type": "quality",
-          "session": "Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km  +light S&C — half the usual threshold volume, five days out · w/u 4 km · jogs 0.8 km · c/d 1.4 km  +M1/M2 ankle mobility (daily)",
-          "target_km": 10.2,
+          "session": "Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km  +light S&C — half the usual threshold volume, five days out · w/u 4.5 km · jogs 1.0 km · c/d 1.5 km  +M1/M2 ankle mobility (daily)",
+          "target_km": 11,
           "shoe": "EVO SL"
         },
         {
           "date": "2026-12-09",
           "dow": "Wed",
           "type": "easy",
-          "session": "Easy 10.8 km — no strides, 24 h after quality  +M1/M2 ankle mobility (daily)",
-          "target_km": 10.8,
+          "session": "Easy 10 km — no strides, 24 h after quality  +M1/M2 ankle mobility (daily)",
+          "target_km": 10,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1400,7 +1400,7 @@
           "date": "2026-12-15",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog @ 6:00/km · w/u 4.5 km · jogs 1.7 km · c/d 1.8 km  +BAR light  +M1/M2 ankle mobility (daily)",
+          "session": "VO2: 5×1000 m @ 3:28/km (I), 2:30 jog @ 6:00/km · w/u 4.5 km · jogs 2.1 km · c/d 1.4 km  +BAR light  +M1/M2 ankle mobility (daily)",
           "target_km": 13,
           "shoe": "Mach X3"
         },
@@ -1465,7 +1465,7 @@
           "date": "2026-12-22",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · jogs 0.8 km · c/d 1.2 km  +BAR light  +M1/M2 ankle mobility (daily)",
+          "session": "Threshold: 4×2 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · jogs 1.0 km · c/d 1 km  +BAR light  +M1/M2 ankle mobility (daily)",
           "target_km": 13,
           "shoe": "Quality trainer #2"
         },
@@ -1533,7 +1533,7 @@
           "date": "2026-12-29",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog @ 6:00/km · w/u 3 km · jogs 0.8 km · c/d 1.2 km  +BAR light  +M1/M2 ankle mobility (daily)",
+          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog @ 6:00/km · w/u 3 km · jogs 1.0 km · c/d 1 km  +BAR light  +M1/M2 ankle mobility (daily)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1549,7 +1549,7 @@
           "date": "2026-12-31",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP: 3×6 km @ 3:59/km, 3 min jog @ 6:00/km · w/u 3.5 km · jogs 1.0 km · c/d 1.5 km  +BAR maintenance  +M1/M2 ankle mobility (daily)",
+          "session": "MP: 3×6 km @ 3:59/km, 3 min jog @ 6:00/km · w/u 3 km · jogs 1.5 km · c/d 1.5 km  +BAR maintenance  +M1/M2 ankle mobility (daily)",
           "target_km": 24,
           "shoe": "Mach X3"
         },
@@ -1670,7 +1670,7 @@
           "date": "2027-01-12",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 3×3 km @ 3:50/km, 2 min jog @ 6:00/km · w/u 3 km · jogs 0.7 km · c/d 1.3 km  +M1/M2 ankle mobility (daily)",
+          "session": "Threshold: 3×3 km @ 3:50/km, 2 min jog @ 6:00/km · w/u 3 km · jogs 1.0 km · c/d 1 km  +M1/M2 ankle mobility (daily)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1735,7 +1735,7 @@
           "date": "2027-01-19",
           "dow": "Tue",
           "type": "quality",
-          "session": "VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog @ 6:00/km · w/u 4.5 km · jogs 1.7 km · c/d 3 km  +BAR light  +M1/M2 ankle mobility (daily)",
+          "session": "VO2/sharpen: 6×800 m @ 3:24/km, 2 min jog @ 6:00/km · w/u 4.5 km · jogs 2.0 km · c/d 2.7 km  +BAR light  +M1/M2 ankle mobility (daily)",
           "target_km": 14,
           "shoe": "Quality trainer #2"
         },
@@ -1800,7 +1800,7 @@
           "date": "2027-01-26",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog @ 6:00/km · w/u 3 km · jogs 0.8 km · c/d 1.2 km  (PM easy double)  +BAR light  +M1/M2 ankle mobility (daily)",
+          "session": "Threshold: 6×1.5 km @ 3:48/km, 60s jog @ 6:00/km · w/u 3 km · jogs 1.0 km · c/d 1 km  (PM easy double)  +BAR light  +M1/M2 ankle mobility (daily)",
           "target_km": 14,
           "shoe": "Mach X3"
         },
@@ -1816,7 +1816,7 @@
           "date": "2027-01-28",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP: 3×6 km @ 3:59/km, 3 min jog @ 6:00/km · w/u 3.5 km · jogs 1.0 km · c/d 1.5 km  +BAR maintenance  +M1/M2 ankle mobility (daily)",
+          "session": "MP: 3×6 km @ 3:59/km, 3 min jog @ 6:00/km · w/u 3 km · jogs 1.5 km · c/d 1.5 km  +BAR maintenance  +M1/M2 ankle mobility (daily)",
           "target_km": 24,
           "shoe": "Mach X3"
         },
@@ -1957,7 +1957,7 @@
           "date": "2027-02-11",
           "dow": "Thu",
           "type": "quality",
-          "session": "READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog @ 6:00/km — PASS = all four on pace, rep 4 no slower than rep 1, HR flat at 172–176 across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic. ↑ IF THE BLOCK HAS GONE WELL: 3:45/km is the stretch version — but that is ~10K race pace, so 12 km of it asks for 45 min at a pace you can only hold for 37:40. Only take it if the wk-25 and wk-29 alternating K's both felt controlled AND Sevilla came in under 1:22:30. Decide at the warm-up, not in advance, and bail to 3:50 after rep 1 if it is not there — a failed test tells you nothing · w/u 4.5 km · jogs 0.8 km · c/d 4.8 km  +BAR maintenance  +M1/M2 ankle mobility (daily)",
+          "session": "READINESS TEST: 4×3 km @ 3:50/km (LT2), 90s jog @ 6:00/km — PASS = all four on pace, rep 4 no slower than rep 1, HR flat at 172–176 across reps 2–4. Fading to 3:55+ by rep 3 means 3:59 MP is optimistic. ↑ IF THE BLOCK HAS GONE WELL: 3:45/km is the stretch version — but that is ~10K race pace, so 12 km of it asks for 45 min at a pace you can only hold for 37:40. Only take it if the wk-25 and wk-29 alternating K's both felt controlled AND Sevilla came in under 1:22:30. Decide at the warm-up, not in advance, and bail to 3:50 after rep 1 if it is not there — a failed test tells you nothing · w/u 4.5 km · jogs 1.0 km · c/d 4.5 km  +BAR maintenance  +M1/M2 ankle mobility (daily)",
           "target_km": 22,
           "shoe": "Mach X3"
         },
@@ -2006,7 +2006,7 @@
           "date": "2027-02-16",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · jogs 0.8 km · c/d 1.2 km  +M1/M2 ankle mobility (daily)",
+          "session": "Threshold: 4×1 km @ 3:50/km, 90s jog @ 6:00/km · w/u 3 km · jogs 1.0 km · c/d 1 km  +M1/M2 ankle mobility (daily)",
           "target_km": 9,
           "shoe": "Quality trainer #2"
         },
@@ -2074,7 +2074,7 @@
           "date": "2027-02-23",
           "dow": "Tue",
           "type": "quality",
-          "session": "Sharpen: 3×1 km @ 3:48/km, 2 min jog @ 6:00/km · w/u 4 km · jogs 0.7 km · c/d 1.3 km  +M1/M2 ankle mobility (daily)",
+          "session": "Sharpen: 3×1 km @ 3:48/km, 2 min jog @ 6:00/km · w/u 3.5 km · jogs 1.0 km · c/d 1.5 km  +M1/M2 ankle mobility (daily)",
           "target_km": 9,
           "shoe": "Mach X3"
         },
@@ -2203,8 +2203,8 @@
         [
           "GT-2000 15",
           "Easy + recovery, and the comeback runs",
-          "313",
-          "313",
+          "312",
+          "312",
           "Owned — new on 30 Oct, 0 km"
         ],
         [
@@ -2217,8 +2217,8 @@
         [
           "Daily trainer #2",
           "Easy + recovery from Wk 20",
-          "363",
-          "363",
+          "362",
+          "362",
           "Early Jan, as the Clifton runs out"
         ],
         [
@@ -2231,15 +2231,15 @@
         [
           "Mach X3",
           "Most quality sessions",
-          "173",
-          "418",
+          "174",
+          "419",
           "Owned — 245 km"
         ],
         [
           "EVO SL",
           "Quality every third week, until Sevilla",
-          "20",
-          "531",
+          "21",
+          "532",
           "Owned — 511 km. RETIRE AFTER SEVILLA, not Tokyo."
         ],
         [

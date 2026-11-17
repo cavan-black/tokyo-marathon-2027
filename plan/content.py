@@ -89,9 +89,13 @@ def _work_and_recovery(txt, jog_s):
             elif r.group(3): secs = int(r.group(3)) * 60
             else:            secs = int(r.group(4))
             per_km = int(r.group(5)) * 60 + int(r.group(6)) if r.group(5) else jog_s
-            # reps-1 recoveries: the jog goes BETWEEN reps, and the one after the last
-            # rep is the cooldown, which is counted separately.
-            rec = (reps - 1) * secs / per_km
+            # ONE JOG PER REP, including after the last one. It was reps-1 on the theory
+            # that the final jog is just the start of the cooldown. Cav's 17 Nov laps
+            # settle it: 4x1 km produced FOUR 250 m jogs (0.25/0.25/0.26/0.25) and then a
+            # separate 3 km cooldown. Nobody stops dead at the end of the last rep. It is
+            # also what makes the session land on a round number - 4.0 reps + 1.0 jogs +
+            # 3.0 w/u + 2.0 c/d = 10.0 km, which is how he spotted it.
+            rec = reps * secs / per_km
         return reps * rep_km, rec
     m = _CONT.search(txt)
     if m:
