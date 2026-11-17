@@ -996,12 +996,16 @@ def build_week(w):
     # and the day's target is their sum; qkm becomes the pool's input only. Nothing leaves
     # the week — the surplus lands on Wed/Fri/Sat, which is where Cav wanted it.
     # Wks 18-21 are excluded: they are hand-built day by day and already sum exactly.
+    # Only where the session does NOT already spell its own w/u out. The alternating K's
+    # (wks 25/29) do, and deriving their km anyway set the target to 16.7 against a text
+    # still reading 4.5 + 12 + 1.5 = 18. Those two also dodged the sum audit, because the
+    # "no jogs" clause sits between the w/u and c/d where the check expected a jog figure.
     tue_parts = thu_parts = None
     if w >= 22:
-        if tue_type == "quality":
+        if tue_type == "quality" and "w/u" not in tue_txt:
             tue_parts = C.split_for(tue_txt)
             if tue_parts: tue_km = round(sum(tue_parts), 1)
-        if thu_type == "quality":
+        if thu_type == "quality" and "w/u" not in thu_txt:
             thu_parts = C.split_for(thu_txt)
             if thu_parts: thu_km = round(sum(thu_parts), 1)
     tue_txt = C.note_wu(tue_txt, tue_type, tue_km, cd_cap=cdc, parts=tue_parts)

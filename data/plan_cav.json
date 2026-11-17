@@ -1606,15 +1606,15 @@
           "dow": "Tue",
           "type": "quality",
           "session": "Alternating K's: 6×(1 km @ 3:50/km / 1 km float @ 4:15/km) — 12 km continuous, no standing rest, averages ~4:03/km · w/u 4.5 km · no jogs — the float IS the recovery and all 12 km are run · c/d 1.5 km  +BAR light  +M1/M2 ankle mobility (daily)",
-          "target_km": 16.7,
+          "target_km": 18,
           "shoe": "Quality trainer #2"
         },
         {
           "date": "2027-01-06",
           "dow": "Wed",
           "type": "recovery",
-          "session": "Recovery 12 km easy — 5:35-6:05/km, 24 h after quality  +BAR pull  +M1/M2 ankle mobility (daily)",
-          "target_km": 12,
+          "session": "Recovery 11 km easy — 5:35-6:05/km, 24 h after quality  +BAR pull  +M1/M2 ankle mobility (daily)",
+          "target_km": 11,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1629,16 +1629,16 @@
           "date": "2027-01-08",
           "dow": "Fri",
           "type": "easy",
-          "session": "Easy 17 km  +BJJ (drills only — no live rounds)  (double: split AM/PM)  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +BAR posture  +M1/M2 ankle mobility (daily)",
-          "target_km": 17,
+          "session": "Easy 16 km  +BJJ (drills only — no live rounds)  (double: split AM/PM)  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +BAR posture  +M1/M2 ankle mobility (daily)",
+          "target_km": 16,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2027-01-09",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 12.3 km + strides  +M1/M2 ankle mobility (daily)",
-          "target_km": 12.3,
+          "session": "Easy 13 km + strides  +M1/M2 ankle mobility (daily)",
+          "target_km": 13,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1866,15 +1866,15 @@
           "dow": "Tue",
           "type": "quality",
           "session": "Alternating K's: 6×(1 km @ 3:50/km / 1 km float @ 4:15/km) — 12 km continuous, no standing rest, averages ~4:03/km · w/u 4.5 km · no jogs — the float IS the recovery and all 12 km are run · c/d 1.5 km  +BAR light  +M1/M2 ankle mobility (daily)",
-          "target_km": 16.7,
+          "target_km": 18,
           "shoe": "Quality trainer #2"
         },
         {
           "date": "2027-02-03",
           "dow": "Wed",
           "type": "recovery",
-          "session": "Recovery 12 km easy — 5:35-6:05/km, 24 h after quality  +BAR pull  +M1/M2 ankle mobility (daily)",
-          "target_km": 12,
+          "session": "Recovery 11 km easy — 5:35-6:05/km, 24 h after quality  +BAR pull  +M1/M2 ankle mobility (daily)",
+          "target_km": 11,
           "shoe": "Daily trainer #2"
         },
         {
@@ -1889,16 +1889,16 @@
           "date": "2027-02-05",
           "dow": "Fri",
           "type": "easy",
-          "session": "Easy 17 km  +BJJ (drills only — no live rounds)  (double: split AM/PM)  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +BAR posture  +M1/M2 ankle mobility (daily)",
-          "target_km": 17,
+          "session": "Easy 16 km  +BJJ (drills only — no live rounds)  (double: split AM/PM)  +GYM G1-G6 maintenance — 3x5 heavy, low volume  +BAR posture  +M1/M2 ankle mobility (daily)",
+          "target_km": 16,
           "shoe": "Daily trainer #2"
         },
         {
           "date": "2027-02-06",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 12.3 km + strides  (double)  +M1/M2 ankle mobility (daily)",
-          "target_km": 12.3,
+          "session": "Easy 13 km + strides  (double)  +M1/M2 ankle mobility (daily)",
+          "target_km": 13,
           "shoe": "Daily trainer #2",
           "reminders": [
             "🥋 Haru Basho (Osaka) tickets — advance sales open TODAY, 6 Feb. The 2027 basho runs 14–28 Mar at EDION Arena Osaka, so the Osaka leg has to sit on or after 14 Mar for this to exist at all. Buy the morning it opens — Haru Basho sells out.",
@@ -2217,8 +2217,8 @@
         [
           "Daily trainer #2",
           "Easy + recovery from Wk 20",
-          "366",
-          "366",
+          "363",
+          "363",
           "Early Jan, as the Clifton runs out"
         ],
         [
@@ -2245,8 +2245,8 @@
         [
           "Quality trainer #2",
           "Quality, alternating, from Wk 22",
-          "85",
-          "85",
+          "88",
+          "88",
           "Early Dec — replaces the EVO SL (Mach X 3 again, or similar)"
         ],
         [
