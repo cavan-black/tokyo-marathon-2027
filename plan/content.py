@@ -262,6 +262,26 @@ FUEL_CHEAP = [
     ["Still buy one or two gels", "Try them once, so you know whether you can stomach what's on the course table when that's all there is."],
     ["Carrying it for nothing", "Loop the route past home or the car and stash a bottle — a 7 km loop run three times needs no kit at all. A 500 ml soft flask (~€10) is the only thing worth buying before you're running 30 km in heat."],
 ]
+# BODY COMPOSITION, added 18 Nov 2026 — he asked how to get visible abs by Tokyo.
+# The honest answer is that the plan already produces the deficit and the only real risk
+# is overshooting it, so this block exists mainly to stop a cut happening in the peak
+# block. Deliberately phrased as guard-rails rather than a diet: at 70.6 kg and ~11-12%
+# the whole job is about 2 kg of fat, which is a ~175 kcal/day gap, while wks 24-30 add
+# ~240 kcal/day of burn on their own.
+FUEL_BODYCOMP = [
+    ["The number you're chasing is small", "70.6 kg at ~11.5% is ~8.1 kg of fat. Visible abs is 9-10%, so it's ~2 kg — a ~175 kcal/day gap over 15 weeks. One beer."],
+    ["The plan already contains it", "Wks 24-30 average 103 km/wk against ~79 now: +24 km/wk is ~240 kcal/day of extra burn. With your appetite, intake will not fully rise to meet it. Overshooting is the risk, not missing."],
+    ["So do NOT add a deficit", "Early satiety + nausea + fat intolerance, vitamin D 31.7 in October (your annual PEAK), and an unresolved achilles. Under-fuelling 100 km/wk weeks is the likeliest way Tokyo ends outright — bone stress injury."],
+    ["Alcohol is the only lever", "The one place with calories you won't miss. Also deep sleep, where tendon remodelling happens — worth it for the achilles alone, independently of body fat."],
+    ["Protein up, calories flat", "1.8-2.2 g/kg = 130-155 g/day. This is what protects lean mass if the volume does create a deficit, and it changes how you look at a given weight. Milk and whey are assets here — liquid protein dodges the satiety problem."],
+    ["Carbs stay exactly where they are", "Non-negotiable around Tue/Thu quality and the Sunday long run. If you want leaner easy days, do it by composition (less fat, which you tolerate badly anyway), never by cutting fuel from the hard ones."],
+    ["Train the abs, not the fat", "At 11% it's mostly about the muscle being there. G7-G10 in the gym block: dead bug, Pallof press, hollow hold, side plank. Anti-extension beats crunches — the job is holding the pelvis still at 3:59/km."],
+    ["Timing — now to wk 23 only", "The only safe window for an intentional nudge. Cap 0.25 kg/wk, never in the 3 days before quality."],
+    ["Timing — wks 24-30: none", "Eat to the volume. Expect to lose weight anyway; if you don't, fine."],
+    ["Timing — taper: absolutely not", "The taper loads 1-1.5 kg of glycogen and water and that is a performance ASSET. You will weigh more on race morning than in February and run faster. Don't fight it."],
+    ["Weigh 3 mornings a week", "First thing, track the 7-day average not the daily number. Losing faster than 0.3 kg/wk in wks 24-30 means you're under-fuelling — eat more immediately. Past 68 kg before the taper, stop and say so."],
+    ["Caveat", "Self-estimated body fat by eye runs 2-3 points optimistic. Nothing above changes; the abs just arrive in February rather than January."],
+]
 FUEL_ALC = [
     ["What it costs you", "Wrecks deep sleep, dehydrates, blunts recovery, raises next-day injury risk."],
     ["Timing rule", "If you drink, do it after a hard session / before a rest day — never before a long run, quality day or race."],
@@ -289,7 +309,7 @@ def warmup(niggle_note=None):
     return {"intro": intro, "headers": WARMUP_HEADERS, "rows": WARMUP_ROUTINE}
 
 
-def fuel(football=False, volume_note=""):
+def fuel(football=False, volume_note="", bodycomp=False):
     decide = list(FUEL_DECIDE)
     if football:
         decide.append(["Big football week", "If a match or tournament ate your legs, downgrade the next run to easy/recovery and protect the long run. Two hard efforts a week total — matches included."])
@@ -307,6 +327,11 @@ def fuel(football=False, volume_note=""):
             {"title": "Doing it cheaply · sugar beats gels", "headers": ["Topic", "Detail"], "rows": FUEL_CHEAP},
             {"title": "After · recover & rehydrate", "headers": ["Topic", "Detail"], "rows": FUEL_POST},
             {"title": "Alcohol · the honest version", "headers": ["Topic", "Detail"], "rows": FUEL_ALC},
+            # Cav only: every row is keyed to his weight, his bloods and his peak block.
+            # Nobody else in the dashboard asked, and the guard-rails would read as a
+            # licence to diet if they turned up on a 44 km/wk plan.
+            *([{"title": "Body composition · abs without a diet",
+                "headers": ["Rule", "Detail"], "rows": FUEL_BODYCOMP}] if bodycomp else []),
             {"title": "Should I run today? · quick guide", "headers": ["Situation", "What to do"], "rows": decide},
         ],
     }

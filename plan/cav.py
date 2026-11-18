@@ -626,7 +626,9 @@ REHAB_BLOCKS = [
              "consecutive days. Progress by LOAD, never by reps — 15RM in wk 16 down to "
              "6RM by wk 20. Adding reps instead of plates turns tendon rehab into cardio. The "
              "side benefit is worth more than the 215 km this injury cost: heavy lifting above "
-             "~80% 1RM improves running economy 2-8% in trained distance runners.",
+             "~80% 1RM improves running economy 2-8% in trained distance runners. The core work "
+             "lives in the upper-body block, not here — it is floor work, it costs no "
+             "recovery, and it belongs with the bar session downstairs.",
      "rows": REHAB_GYM},
     {"title": "Gym through to Tokyo — how the dose changes",
      "headers": ["Weeks", "Sessions", "Why"],
@@ -699,17 +701,26 @@ REHAB_BLOCKS = [
 UPPER_BODY = [
     ["Every day", "Warm-up · 3 min", "Shoulder circles 10 each way · band pull-aparts 15 · "
      "band external rotation 12 / side · scapular pull-ups 10 · dead hang 30 s"],
-    ["Mon", "PRIMARY push", "Dips 4 × 10 at 3 s down / 1 s up · feet-elevated push-ups 3 × 12 · "
-     "hollow hold 3 × 25 s · side plank 2 × 30 s / side. The hardest upper-body day of the "
+    ["Mon · Wed · Fri", "CORE · 8 min", "Dead bug 3 × 8 / side, 3 s out and 3 s back — ribs DOWN, "
+     "low back FLAT on the floor; the moment it arches the set is over however many reps are "
+     "left · Pallof press 3 × 10 / side with a band, resist the twist rather than create one · "
+     "hollow hold 3 × 20 s building to 3 × 40 s, knees bent until 40 s holds with the back "
+     "still flat · side plank 3 × 30 s / side. Added 18 Nov 2026 and it goes with the bar "
+     "session downstairs: anti-extension and anti-rotation, never crunches. Two jobs at once — "
+     "holding the pelvis still at 3:59/km through the last 10 km, and the visible-abs ask, "
+     "which at ~11% is answered by the muscle being there rather than by eating less"],
+    ["Mon", "PRIMARY push", "Dips 4 × 10 at 3 s down / 1 s up · feet-elevated push-ups 3 × 12, "
+     "then the core block. The hardest upper-body day of the "
      "five, because it is the only one with no run attached"],
     ["Tue", "Light · 5 min", "Scapular pull-ups 2 × 10 · push-ups 2 × 8 · dead hang 2 × 30 s. "
      "No core work and nothing near failure — the threshold session is the point of this day"],
     ["Wed", "PRIMARY pull", "Pull-ups 4 × 5, full hang at the bottom · chin-ups 2 × 4 · inverted "
-     "rows under the dip bar 3 × 12 · hanging knee raises 3 × 12, controlled, no swing"],
+     "rows under the dip bar 3 × 12 · hanging knee raises 3 × 12, controlled, no swing, then the "
+     "core block"],
     ["Thu", "Maintenance · 8 min", "Push-ups 3 × 15 flat · pull-ups 2 × 4 · hanging knee raises "
      "2 × 10 · dead hang 45 s"],
     ["Fri", "Posture · 8 min", "Scapular pull-ups 2 × 10 · band pull-aparts 2 × 15 · dips 2 × 5 · "
-     "hollow hold 2 × 20 s · side plank 2 × 30 s / side · dead hang 60 s. Lightest of the five — "
+     "dead hang 60 s, then the core block. Lightest of the five on the bar — "
      "Friday already carries the gym session and a run"],
 ]
 UPPER_BLOCKS = [
@@ -1228,7 +1239,7 @@ def content():
                                         "the banded eversion work and single-leg balance in this routine "
                                         "aren't optional extras for you right now — do them every session "
                                         "regardless of whether it's currently bothering you."),
-        "fuel": C.fuel(football=False, volume_note="it matters more with 100+ km weeks"),
+        "fuel": C.fuel(football=False, volume_note="it matters more with 100+ km weeks", bodycomp=True),
         "research": C.RESEARCH_NOTES,
         "diet": {
             "intro": "Starting at 71 kg, aiming to bank a few kg of surplus before volume climbs into the "

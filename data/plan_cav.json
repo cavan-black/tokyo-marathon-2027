@@ -2468,7 +2468,7 @@
             "Sets × Reps",
             "Load and why"
           ],
-          "note": "DEMOTED by the 1 Nov battery — 30/30 heel raises means this is no longer the fix, it is supporting work, and mobility comes first. Still worth doing properly: the economy gain is real and 30 reps proves endurance, not strength. Never on consecutive days. Progress by LOAD, never by reps — 15RM in wk 16 down to 6RM by wk 20. Adding reps instead of plates turns tendon rehab into cardio. The side benefit is worth more than the 215 km this injury cost: heavy lifting above ~80% 1RM improves running economy 2-8% in trained distance runners.",
+          "note": "DEMOTED by the 1 Nov battery — 30/30 heel raises means this is no longer the fix, it is supporting work, and mobility comes first. Still worth doing properly: the economy gain is real and 30 reps proves endurance, not strength. Never on consecutive days. Progress by LOAD, never by reps — 15RM in wk 16 down to 6RM by wk 20. Adding reps instead of plates turns tendon rehab into cardio. The side benefit is worth more than the 215 km this injury cost: heavy lifting above ~80% 1RM improves running economy 2-8% in trained distance runners. The core work lives in the upper-body block, not here — it is floor work, it costs no recovery, and it belongs with the bar session downstairs.",
           "rows": [
             [
               "Seated calf raise — SOLEUS (G1)",
@@ -2621,9 +2621,14 @@
               "Shoulder circles 10 each way · band pull-aparts 15 · band external rotation 12 / side · scapular pull-ups 10 · dead hang 30 s"
             ],
             [
+              "Mon · Wed · Fri",
+              "CORE · 8 min",
+              "Dead bug 3 × 8 / side, 3 s out and 3 s back — ribs DOWN, low back FLAT on the floor; the moment it arches the set is over however many reps are left · Pallof press 3 × 10 / side with a band, resist the twist rather than create one · hollow hold 3 × 20 s building to 3 × 40 s, knees bent until 40 s holds with the back still flat · side plank 3 × 30 s / side. Added 18 Nov 2026 and it goes with the bar session downstairs: anti-extension and anti-rotation, never crunches. Two jobs at once — holding the pelvis still at 3:59/km through the last 10 km, and the visible-abs ask, which at ~11% is answered by the muscle being there rather than by eating less"
+            ],
+            [
               "Mon",
               "PRIMARY push",
-              "Dips 4 × 10 at 3 s down / 1 s up · feet-elevated push-ups 3 × 12 · hollow hold 3 × 25 s · side plank 2 × 30 s / side. The hardest upper-body day of the five, because it is the only one with no run attached"
+              "Dips 4 × 10 at 3 s down / 1 s up · feet-elevated push-ups 3 × 12, then the core block. The hardest upper-body day of the five, because it is the only one with no run attached"
             ],
             [
               "Tue",
@@ -2633,7 +2638,7 @@
             [
               "Wed",
               "PRIMARY pull",
-              "Pull-ups 4 × 5, full hang at the bottom · chin-ups 2 × 4 · inverted rows under the dip bar 3 × 12 · hanging knee raises 3 × 12, controlled, no swing"
+              "Pull-ups 4 × 5, full hang at the bottom · chin-ups 2 × 4 · inverted rows under the dip bar 3 × 12 · hanging knee raises 3 × 12, controlled, no swing, then the core block"
             ],
             [
               "Thu",
@@ -2643,7 +2648,7 @@
             [
               "Fri",
               "Posture · 8 min",
-              "Scapular pull-ups 2 × 10 · band pull-aparts 2 × 15 · dips 2 × 5 · hollow hold 2 × 20 s · side plank 2 × 30 s / side · dead hang 60 s. Lightest of the five — Friday already carries the gym session and a run"
+              "Scapular pull-ups 2 × 10 · band pull-aparts 2 × 15 · dips 2 × 5 · dead hang 60 s, then the core block. Lightest of the five on the bar — Friday already carries the gym session and a run"
             ]
           ]
         },
@@ -3095,6 +3100,63 @@
             [
               "Race week",
               "Minimise in the last 2 weeks; zero in race week."
+            ]
+          ]
+        },
+        {
+          "title": "Body composition · abs without a diet",
+          "headers": [
+            "Rule",
+            "Detail"
+          ],
+          "rows": [
+            [
+              "The number you're chasing is small",
+              "70.6 kg at ~11.5% is ~8.1 kg of fat. Visible abs is 9-10%, so it's ~2 kg — a ~175 kcal/day gap over 15 weeks. One beer."
+            ],
+            [
+              "The plan already contains it",
+              "Wks 24-30 average 103 km/wk against ~79 now: +24 km/wk is ~240 kcal/day of extra burn. With your appetite, intake will not fully rise to meet it. Overshooting is the risk, not missing."
+            ],
+            [
+              "So do NOT add a deficit",
+              "Early satiety + nausea + fat intolerance, vitamin D 31.7 in October (your annual PEAK), and an unresolved achilles. Under-fuelling 100 km/wk weeks is the likeliest way Tokyo ends outright — bone stress injury."
+            ],
+            [
+              "Alcohol is the only lever",
+              "The one place with calories you won't miss. Also deep sleep, where tendon remodelling happens — worth it for the achilles alone, independently of body fat."
+            ],
+            [
+              "Protein up, calories flat",
+              "1.8-2.2 g/kg = 130-155 g/day. This is what protects lean mass if the volume does create a deficit, and it changes how you look at a given weight. Milk and whey are assets here — liquid protein dodges the satiety problem."
+            ],
+            [
+              "Carbs stay exactly where they are",
+              "Non-negotiable around Tue/Thu quality and the Sunday long run. If you want leaner easy days, do it by composition (less fat, which you tolerate badly anyway), never by cutting fuel from the hard ones."
+            ],
+            [
+              "Train the abs, not the fat",
+              "At 11% it's mostly about the muscle being there. G7-G10 in the gym block: dead bug, Pallof press, hollow hold, side plank. Anti-extension beats crunches — the job is holding the pelvis still at 3:59/km."
+            ],
+            [
+              "Timing — now to wk 23 only",
+              "The only safe window for an intentional nudge. Cap 0.25 kg/wk, never in the 3 days before quality."
+            ],
+            [
+              "Timing — wks 24-30: none",
+              "Eat to the volume. Expect to lose weight anyway; if you don't, fine."
+            ],
+            [
+              "Timing — taper: absolutely not",
+              "The taper loads 1-1.5 kg of glycogen and water and that is a performance ASSET. You will weigh more on race morning than in February and run faster. Don't fight it."
+            ],
+            [
+              "Weigh 3 mornings a week",
+              "First thing, track the 7-day average not the daily number. Losing faster than 0.3 kg/wk in wks 24-30 means you're under-fuelling — eat more immediately. Past 68 kg before the taper, stop and say so."
+            ],
+            [
+              "Caveat",
+              "Self-estimated body fat by eye runs 2-3 points optimistic. Nothing above changes; the abs just arrive in February rather than January."
             ]
           ]
         },
