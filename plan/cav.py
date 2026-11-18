@@ -582,9 +582,13 @@ MAJORS_BACKUP = [
     ["Copenhagen", "GONE — ballot closed", "—", "Was the pick, and is no longer available: "
      "2027 entries went to a lottery that ran ~May-June 2026, and the previous year's "
      "general entry sold out in 23 hours. Noted so it is not suggested again."],
-    ["Prague", "2 May 2027", "~8 weeks", "One of Europe's fastest courses, but eight weeks "
-     "post-marathon leaves ~4 weeks of actual work after recovery. Only if Tokyo was "
-     "aborted early rather than raced hard."],
+    ["Prague", "2 May 2027 — or 18 Apr, sources disagree", "~8 weeks, maybe 6",
+     "Flat and fast, ~90 m of climb, but the date is unconfirmed and the earlier one would "
+     "make it SIX weeks. Eight weeks post-marathon leaves ~4 weeks of real work after "
+     "recovery; six leaves two. The better course does not come close to covering a "
+     "four-week training deficit — Edinburgh wins on readiness, not on terrain. Prague "
+     "only makes sense if Tokyo was ABORTED rather than raced, because then there is no "
+     "damage to recover from and the fitness is still sitting there."],
     ["Only run it if…", "the reason was fixable", "—", "Weather, pacing, a bad day, a "
      "stomach: run the backup. If Tokyo went wrong because of the achilles, the answer is "
      "not another marathon in ten weeks. That is how October 2026 repeats itself."],
