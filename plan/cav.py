@@ -462,8 +462,15 @@ VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69, 16: 33, 20: 80, 21: 68, 26: 95}
 # stars two and three. The ballots only matter for Berlin and London.
 #
 # Two cautions that are easy to get wrong and expensive to discover late:
-#   - LONDON'S Good For Age is UK-RESIDENTS-ONLY and he lives in Spain. That closes the
-#     obvious route and leaves the ballot or a Championship entry. It is the hard one.
+#   - LONDON, updated 18 Nov 2026: he says he CAN claim UK Good For Age, so the residency
+#     block I flagged does not apply and GFA is open to him at sub-2:52 (M18-39). That
+#     turns London from the race deciding whether this finishes in 2029 or 2031 into an
+#     ordinary time qualifier, and leaves BERLIN as the only genuine lottery in the six.
+#     The cost is a deadline: London's entries, ballot and GFA alike, open in the week of
+#     the CURRENT year's race, so the 2028 window opens ~late Apr 2027 - about seven weeks
+#     after Tokyo, open for about a week. Miss it and London slips a year. It is also the
+#     one qualification a May/June backup marathon CANNOT rescue, because the application
+#     closes before such a race would be run. See MAJORS_BACKUP.
 #   - QUALIFYING WINDOWS ARE DATED, and they close roughly a year before the race. A time
 #     run at Tokyo in March 2027 lands inside Chicago's window (Jan 2026-Sep 2027) but
 #     MISSES New York's 2027 window, which was calendar 2026. Same time, different race,
@@ -476,12 +483,14 @@ MAJORS_INTRO = (
     "Sydney joined the Majors in 2025 and Cape Town joins in 2027, but Abbott have "
     "confirmed the Six Star medal still covers only the original six; the new ones count "
     "towards a future Nine Star. So the target does not move. "
-    "Tokyo on 7 Mar 2027 is star one, and if it goes to plan it is also the entry ticket "
-    "to stars two and three, because a 2:48 clears the time standard at Chicago, New York "
-    "and Boston outright. Treat the ballots as the fallback, not the plan.")
+    "Tokyo on 7 Mar 2027 is star one, and if it goes to plan it is the qualifying run for "
+    "three more, because a 2:48 clears Chicago, Boston and London Good For Age outright. "
+    "With UK residency for GFA, BERLIN IS THE ONLY RACE OF THE SIX THAT STILL COMES DOWN "
+    "TO A LOTTERY. Everything else is a time you are already training for, plus the "
+    "discipline to enter inside the window.")
 MAJORS_RACES = [
     ["Tokyo", "7 Mar 2027", "BALLOT — already in", "Ballot ran 14-28 Aug 2026",
-     "✓ Star 1. Entered."],
+     "✓ Star 1. Entered. Also the qualifying run for Chicago, Boston and London."],
     ["Chicago", "10 Oct 2027", "TIME: sub-2:50 (M16-34), guaranteed",
      "Window Jan 2026 - 30 Sep 2027", "THE BIG ONE. A 2:48 at Tokyo lands inside this "
      "window with six months to spare. Enter the week you get home."],
@@ -493,25 +502,63 @@ MAJORS_RACES = [
      "and sits inside the 2028 one. Not guaranteed: they fill fastest-first, so the margin "
      "matters."],
     ["Berlin", "Sep 2028", "BALLOT, or sub-2:45 fast-runner entry",
-     "Ballot ~1 Oct - mid Nov, a year ahead", "The 2027 ballot closed 12 Nov 2026, six days "
-     "before you asked. Next window opens ~Oct 2027 — it is in the reminders now."],
-    ["London", "Apr 2029+", "BALLOT — Good For Age is UK-residents-only",
-     "Ballot opens race week, late Apr", "THE HARD ONE. Living in Spain closes the GFA "
-     "route. Ballot every single year from now, and look at Championship entry if you ever "
-     "go under 2:45."],
+     "Ballot ~1 Oct – mid Nov, a year ahead", "NOW THE ONLY REAL LOTTERY IN THE SIX. The "
+     "2027 ballot closed 12 Nov 2026, six days before you asked. Next window ~Oct 2027. "
+     "Enter every year regardless, and note sub-2:45 would buy it outright."],
+    ["London", "Apr 2028", "GOOD FOR AGE: sub-2:52 (M18-39) — needs UK residency, which you have",
+     "Qualify Oct 2026 – Sep 2027 · APPLY ~LATE APR 2027",
+     "⚠ THE TIGHT ONE. Tokyo qualifies you, but entries open in the week of the 2027 race, "
+     "roughly seven weeks later, and stay open about a week. A May/June backup marathon "
+     "comes too late for this one. GFA is capped at 6,000 split evenly by gender, so it is "
+     "allocated rather than guaranteed — margin helps."],
 ]
 MAJORS_PLAN = [
-    ["2027", "Tokyo (7 Mar) + Chicago (10 Oct)", "Two in year one, and the only pairing "
-     "that needs nothing but the time you are already chasing. Seven months apart, which "
-     "is a full rebuild between them rather than a scramble."],
-    ["2028", "Boston (Apr) + Berlin (Sep)", "Both bought in advance: Boston off Tokyo's "
-     "time, registering Sep 2027; Berlin off the ballot you enter Oct 2027. Five months "
-     "apart. If the Berlin ballot misses, swap in New York (Nov) off Chicago's time."],
-    ["2029", "London (Apr) + New York (Nov)", "Whatever is left. London is ballot-only for "
-     "you, so it is the one that decides whether this finishes in 2029 or runs on."],
-    ["Six Star", "2029 if London lands first time", "2030-31 is the honest expectation. "
-     "London ballot odds are long and GFA is closed to you — that single race is the "
-     "schedule risk, not the running."],
+    ["2027", "Tokyo (7 Mar) ✓ + Chicago (10 Oct)", "Stars 1 and 2, seven months apart. "
+     "Chicago needs nothing but the sub-2:50 you are already chasing."],
+    ["2027 · late Apr", "⚠ LONDON GFA APPLICATION — a deadline, not a race",
+     "Seven weeks after Tokyo, entries for London 2028 open for roughly a week, and your "
+     "Tokyo time is the qualifier. The single most missable date in the whole project."],
+    ["2028", "London (Apr, GFA) + Berlin (Sep, ballot)", "Stars 3 and 4, five months "
+     "apart. Berlin is the only one here you cannot buy with a time, so enter its ballot "
+     "in Oct 2027. If it misses, slide Berlin to 2029 and bring New York forward."],
+    ["2029", "Boston (Apr) + New York (Nov)", "Stars 5 and 6, seven months apart, both on "
+     "standards you will hold by then. Boston and London are both April, which is exactly "
+     "why they sit in different years."],
+    ["Six Star", "2029 — and that is a real date now", "Every race but Berlin is a time "
+     "qualifier for you. One lottery, three years, and the rest is turning up fit."],
+]
+# ---- The insurance policy, asked for on 18 Nov 2026: a second marathon in May/June 2027
+# in case Tokyo does not produce the time.
+#
+# What it covers and what it does not is the whole point, and it is not intuitive:
+#   COVERS  Chicago 2027 (window closes 30 Sep 2027), Boston 2028 (registration Sep 2027),
+#           New York 2028 (window is calendar 2027).
+#   MISSES  London 2028 GFA, because the application closes ~late Apr 2027 - BEFORE any of
+#           these races is run. London rides on Tokyo alone.
+# So the backup buys three of the five remaining stars and cannot buy the fourth. Worth
+# knowing before he banks on it.
+#
+# Timing off Tokyo on 7 Mar: 2-3 weeks genuinely easy, then 6-8 weeks of work, then a
+# 10-day taper. That is a sharpening block, not a second build, which is the right shape -
+# the fitness will already be there and the job is to re-run the race, not rebuild for it.
+# Prague at 8 weeks is too soon for that to fit. Dates are from aggregators and need
+# confirming on the organisers' own sites before anything is booked.
+MAJORS_BACKUP = [
+    ["Copenhagen", "~mid May 2027 (confirm)", "~10 weeks", "Flat, fast, well organised, "
+     "two hours from Málaga. The pick if the date holds — enough gap to train, not so much "
+     "that Tokyo's fitness has gone."],
+    ["Edinburgh", "30 May 2027", "~12 weeks", "Net downhill and quick on paper, but "
+     "exposed coastal out-and-back and it can be brutally windy. The most training time of "
+     "the three. A real option, with a weather risk you cannot plan around."],
+    ["Prague", "2 May 2027", "~8 weeks", "One of Europe's fastest courses, but eight weeks "
+     "post-marathon leaves ~4 weeks of actual work after recovery. Only if Tokyo was "
+     "aborted early rather than raced hard."],
+    ["Only run it if…", "the reason was fixable", "—", "Weather, pacing, a bad day, a "
+     "stomach: run the backup. If Tokyo went wrong because of the achilles, the answer is "
+     "not another marathon in ten weeks. That is how October 2026 repeats itself."],
+    ["Enter late, not early", "decide in the week after Tokyo", "—", "Most of these take "
+     "entries until a few weeks out. Do not book it in advance as a hedge — having it in "
+     "the diary changes how you race Tokyo, and Tokyo is the one that matters."],
 ]
 MAJORS_RULES = [
     ["Two a year is the ceiling", "Not a target. Two marathons a year with a real build "
@@ -524,7 +571,12 @@ MAJORS_RULES = [
      "London + Chicago (6 months). Spring race, autumn race, nothing in between."],
     ["Enter everything, always", "Ballot entries are free or near-free and you can decline "
      "a place. Standing rule: enter every ballot every year until the star is on the "
-     "medal, even in a year you do not intend to race it."],
+     "medal, even in a year you do not intend to race it. In practice that now means "
+     "Berlin, every October, until it lands."],
+    ["Diarise the London week", "London is the only one whose entry window is a single "
+     "week pinned to another race's date, and it falls while you are still basking in "
+     "Tokyo. Put late April 2027 in the calendar the day you get home — and note that a "
+     "May/June backup marathon arrives too late to rescue it."],
     ["Re-check every standard yearly", "Boston's cut-off moves, Chicago and New York "
      "re-publish their tables, London's GFA times changed recently. Nothing in this table "
      "is safe to trust three years out."],
@@ -546,9 +598,13 @@ REMINDERS = {
                    "weeks IS the qualifier. Entry opens in the autumn. This is the single "
                    "cheapest star you will ever collect; do not let it pass."],
     "2027-03-02": ["\U0001f3c5 Five days out, and worth knowing what you are running for "
-                   "beyond the time: a sub-2:50 here is a guaranteed Chicago entry (star 2) "
-                   "and a Boston qualifier for April 2028 (star 3). Two of the six, bought "
-                   "with one race. No action today \u2014 just run it."],
+                   "beyond the time: a sub-2:50 here is a guaranteed Chicago entry, a Boston "
+                   "qualifier AND a London Good For Age qualifier. Three of the six stars, "
+                   "bought with one race. No action today \u2014 just run it.",
+                   "\U0001f5d3\ufe0f One thing for the calendar afterwards: London 2028 entries "
+                   "open in the week of the 2027 race, ~late April, and Good For Age closes with "
+                   "them. Seven weeks from now, open about a week. A May/June backup marathon is "
+                   "too late to rescue London \u2014 this qualification rides on today alone."],
     # Flights are a price-watch, not a calendar date. The published windows for Asia
     # long-haul are 3-5 months (Points Guy / Travel Market News, both off Google Flights
     # data) and 60-180 days (Going), and Google's own route analysis found US-Europe fares
@@ -1345,6 +1401,8 @@ def content():
                              "rows": MAJORS_RACES},
                    "plan": {"headers": ["Year", "Races", "Why this pairing"],
                             "rows": MAJORS_PLAN},
+                   "backup": {"headers": ["Option", "Date", "Gap after Tokyo", "The read"],
+                              "rows": MAJORS_BACKUP},
                    "rules": {"headers": ["Rule", "Detail"], "rows": MAJORS_RULES}},
         "diet": {
             "intro": "Starting at 71 kg, aiming to bank a few kg of surplus before volume climbs into the "
