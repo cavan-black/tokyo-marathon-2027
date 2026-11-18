@@ -2629,37 +2629,37 @@
             [
               "Every day",
               "Warm-up · 3 min",
-              "Shoulder circles 10 each way · band pull-aparts 15 · band external rotation 12 / side · scapular pull-ups 10 · dead hang 30 s"
+              "Shoulder circles 10 each way · Band pull-aparts 15 · Band external rotation 12 / side · Scapular pull-ups 10 · Dead hang 30 s"
             ],
             [
               "Mon · Wed · Fri",
               "CORE · 8 min",
-              "Dead bug 3 × 8 / side, 3 s out and 3 s back — ribs DOWN, low back FLAT on the floor; the moment it arches the set is over however many reps are left · Pallof press 3 × 10 / side with a band, resist the twist rather than create one · hollow hold 3 × 20 s building to 3 × 40 s, knees bent until 40 s holds with the back still flat · side plank 3 × 30 s / side. Added 18 Nov 2026 and it goes with the bar session downstairs: anti-extension and anti-rotation, never crunches. Two jobs at once — holding the pelvis still at 3:59/km through the last 10 km, and the visible-abs ask, which at ~11% is answered by the muscle being there rather than by eating less"
+              "Dead bug 3 × 8 / side · Pallof press 3 × 10 / side · Hollow hold 3 × 20 s → 3 × 40 s · Side plank 3 × 30 s / side"
             ],
             [
               "Mon",
               "PRIMARY push",
-              "Dips 4 × 10 at 3 s down / 1 s up · feet-elevated push-ups 3 × 12, then the core block. The hardest upper-body day of the five, because it is the only one with no run attached"
+              "Dips 4 × 10 · Feet-elevated push-ups 3 × 12, then the core block. The hardest upper-body day of the five, because it is the only one with no run attached"
             ],
             [
               "Tue",
               "Light · 5 min",
-              "Scapular pull-ups 2 × 10 · push-ups 2 × 8 · dead hang 2 × 30 s. No core work and nothing near failure — the threshold session is the point of this day"
+              "Scapular pull-ups 2 × 10 · Push-ups 2 × 8 · Dead hang 2 × 30 s. No core work and nothing near failure — the threshold session is the point of this day"
             ],
             [
               "Wed",
               "PRIMARY pull",
-              "Pull-ups 4 × 5, full hang at the bottom · chin-ups 2 × 4 · inverted rows under the dip bar 3 × 12 · hanging knee raises 3 × 12, controlled, no swing, then the core block"
+              "Pull-ups 4 × 5 · Chin-ups 2 × 4 · Inverted rows 3 × 12 · Hanging knee raises 3 × 12, then the core block"
             ],
             [
               "Thu",
               "Maintenance · 8 min",
-              "Push-ups 3 × 15 flat · pull-ups 2 × 4 · hanging knee raises 2 × 10 · dead hang 45 s"
+              "Push-ups 3 × 15 · Pull-ups 2 × 4 · Hanging knee raises 2 × 10 · Dead hang 45 s"
             ],
             [
               "Fri",
               "Posture · 8 min",
-              "Scapular pull-ups 2 × 10 · band pull-aparts 2 × 15 · dips 2 × 5 · dead hang 60 s, then the core block. Lightest of the five on the bar — Friday already carries the gym session and a run"
+              "Scapular pull-ups 2 × 10 · Band pull-aparts 2 × 15 · Dips 2 × 5 · Dead hang 60 s, then the core block. Lightest of the five on the bar — Friday already carries the gym session and a run"
             ]
           ]
         },
@@ -3254,6 +3254,179 @@
           "detail": "Discussed 2026-07-16: a single week at altitude gives none of the hematological benefit (EPO/red-cell-mass adaptations need a minimum ~3–4 weeks per Levine & Stray-Gundersen's \"live high, train low\" research) and mostly adds hypoxic stress, poor sleep and slower paces at the wrong moment. Verdict: skip a 1-week trip; a proper 3+ week camp placed in the aerobic-base phase would be worth a separate conversation if it becomes an option."
         }
       ]
+    },
+    "bar": {
+      "warmup": [
+        [
+          "Shoulder circles",
+          "10 each way",
+          "Both directions, slow"
+        ],
+        [
+          "Band pull-aparts",
+          "15",
+          "Arms straight, squeeze the shoulder blades"
+        ],
+        [
+          "Band external rotation",
+          "12 / side",
+          "Elbow pinned to the ribs"
+        ],
+        [
+          "Scapular pull-ups",
+          "10",
+          "Hang, then shrug DOWN without bending the arms"
+        ],
+        [
+          "Dead hang",
+          "30 s",
+          "Step up to the bar and step down off it — never jump or drop"
+        ]
+      ],
+      "core": [
+        [
+          "Dead bug",
+          "3 × 8 / side",
+          "3 s out, 3 s back. Ribs DOWN and low back FLAT on the floor — the moment it arches the set is over, however many reps are left"
+        ],
+        [
+          "Pallof press",
+          "3 × 10 / side",
+          "Band. Resist the twist, do not create one. Light enough that nothing shifts at the hips"
+        ],
+        [
+          "Hollow hold",
+          "3 × 20 s → 3 × 40 s",
+          "Knees bent to start; straighten the legs only once 40 s holds with the low back still flat"
+        ],
+        [
+          "Side plank",
+          "3 × 30 s / side",
+          "Lateral chain, and it pairs with G6 — same glute med that keeps the ankle from covering for the hip"
+        ]
+      ],
+      "days": {
+        "Mon": {
+          "role": "PRIMARY push",
+          "note": "The hardest upper-body day of the five, because it is the only one with no run attached",
+          "rows": [
+            [
+              "Dips",
+              "4 × 10",
+              "3 s down, 1 s up. Stop with 2-3 reps in reserve"
+            ],
+            [
+              "Feet-elevated push-ups",
+              "3 × 12",
+              "~40% of your flat max, because elevated is harder than flat"
+            ]
+          ],
+          "core": true
+        },
+        "Tue": {
+          "role": "Light · 5 min",
+          "note": "No core work and nothing near failure — the threshold session is the point of this day",
+          "rows": [
+            [
+              "Scapular pull-ups",
+              "2 × 10",
+              "Shrug down, arms straight"
+            ],
+            [
+              "Push-ups",
+              "2 × 8",
+              "Flat, easy, nowhere near failure"
+            ],
+            [
+              "Dead hang",
+              "2 × 30 s",
+              "Step up, step down"
+            ]
+          ],
+          "core": false
+        },
+        "Wed": {
+          "role": "PRIMARY pull",
+          "note": "",
+          "rows": [
+            [
+              "Pull-ups",
+              "4 × 5",
+              "Full hang at the bottom of every rep"
+            ],
+            [
+              "Chin-ups",
+              "2 × 4",
+              "Supinated grip — more biceps, and it is the BJJ one"
+            ],
+            [
+              "Inverted rows",
+              "3 × 12",
+              "Under the dip bar, body straight"
+            ],
+            [
+              "Hanging knee raises",
+              "3 × 12",
+              "Controlled, no swing"
+            ]
+          ],
+          "core": true
+        },
+        "Thu": {
+          "role": "Maintenance · 8 min",
+          "note": "",
+          "rows": [
+            [
+              "Push-ups",
+              "3 × 15",
+              "Flat"
+            ],
+            [
+              "Pull-ups",
+              "2 × 4",
+              "Well short of failure"
+            ],
+            [
+              "Hanging knee raises",
+              "2 × 10",
+              "Controlled, no swing"
+            ],
+            [
+              "Dead hang",
+              "45 s",
+              "Step up, step down"
+            ]
+          ],
+          "core": false
+        },
+        "Fri": {
+          "role": "Posture · 8 min",
+          "note": "Lightest of the five on the bar — Friday already carries the gym session and a run",
+          "rows": [
+            [
+              "Scapular pull-ups",
+              "2 × 10",
+              "Shrug down, arms straight"
+            ],
+            [
+              "Band pull-aparts",
+              "2 × 15",
+              "Squeeze the shoulder blades"
+            ],
+            [
+              "Dips",
+              "2 × 5",
+              "Easy. Nothing near failure"
+            ],
+            [
+              "Dead hang",
+              "60 s",
+              "Step up, step down"
+            ]
+          ],
+          "core": true
+        }
+      }
     },
     "majors": {
       "intro": "Six Star is six specific races - Tokyo, Boston, London, Berlin, Chicago, New York. Sydney joined the Majors in 2025 and Cape Town joins in 2027, but Abbott have confirmed the Six Star medal still covers only the original six; the new ones count towards a future Nine Star. So the target does not move. Tokyo on 7 Mar 2027 is star one, and if it goes to plan it is the qualifying run for three more, because a 2:48 clears Chicago, Boston and London Good For Age outright. With UK residency for GFA, and with Berlin qualifiable at sub-2:45 on a time run within the previous two years, THERE IS NO RACE OF THE SIX YOU CANNOT BUY WITH A TIME. Not one of them has to be left to a lottery. What stands between you and the medal is 2:45 somewhere in the next two years, and the discipline to apply inside each window — which is the part that has already cost you Chicago 2027.",

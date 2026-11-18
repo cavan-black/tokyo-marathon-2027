@@ -1778,14 +1778,31 @@ def _rows_with_codes(plan, codes, block_hint):
     return out
 
 
-def _upper_rows_for(plan, dow):
-    """The upper-body block's row for a given day, plus the rows that run every day."""
-    for blk in plan.get("content", {}).get("strength", {}).get("blocks", []):
-        if "upper body" in blk["title"].lower():
-            rows = [r for r in blk["rows"]
-                    if r[0] == "Every day" or r[0] == dow or (dow in r[0] and "\u00b7" in r[0])]
-            return blk["headers"], rows
-    return None, []
+def _bar_items(plan, dow):
+    """Every bar exercise for this day, one per item, warm-up and core included.
+
+    Reads content["bar"], which is per-exercise, rather than the prose the reference table
+    shows. "Pull-ups 4x5, full hang - chin-ups 2x4 - inverted rows 3x12" is four exercises
+    hiding inside one sentence; at 6 a.m. you want four lines."""
+    bar = plan.get("content", {}).get("bar")
+    if not bar:
+        return []
+    day = (bar.get("days") or {}).get(dow)
+    if not day:
+        return []
+    # Flattening the prose exposed a duplication that was invisible before: Friday's
+    # "posture" session is largely the warm-up again, so the list read scapular pull-ups
+    # 10, then scapular pull-ups 2 x 10, four lines later. Where the day's own session
+    # repeats a warm-up movement, the session's version wins and the warm-up line goes -
+    # it is the heavier dose and it is the one that counts.
+    own = {e.lower() for e, _d, _c in day.get("rows", [])}
+    out = [("Bar \u00b7 warm-up", e, d, c) for e, d, c in bar.get("warmup", [])
+           if e.lower() not in own]
+    label = "Bar \u00b7 %s" % day.get("role", dow)
+    out += [(label, e, d, c) for e, d, c in day.get("rows", [])]
+    if day.get("core"):
+        out += [("Core \u00b7 8 min", e, d, c) for e, d, c in bar.get("core", [])]
+    return out
 
 
 def today_hero_html(plan, day, wk, pd_):
@@ -1955,9 +1972,7 @@ def gym_checklist(plan, day, wk):
                 seen.add(r[0])
                 out.append((label, r[0], r[1], r[2] if len(r) > 2 else ""))
     if "BAR" in tokens:
-        _hdrs, rows = _upper_rows_for(plan, day["dow"])
-        for r in rows:
-            out.append(("Bar \u00b7 %s" % r[0], r[1], "", r[2] if len(r) > 2 else ""))
+        out += _bar_items(plan, day["dow"])
     if not out:
         sc = plan.get("content", {}).get("strength", {})
         for blk in sc.get("blocks", []):

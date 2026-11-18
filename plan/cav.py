@@ -927,31 +927,97 @@ REHAB_BLOCKS = [
 # Loads come off the 11 Nov calibration: 10 pull-ups, 20 dips, 30 push-ups. Working sets
 # are half of each, except feet-elevated push-ups, which are harder than flat and so come
 # off ~40%.
-UPPER_BODY = [
-    ["Every day", "Warm-up · 3 min", "Shoulder circles 10 each way · band pull-aparts 15 · "
-     "band external rotation 12 / side · scapular pull-ups 10 · dead hang 30 s"],
-    ["Mon · Wed · Fri", "CORE · 8 min", "Dead bug 3 × 8 / side, 3 s out and 3 s back — ribs DOWN, "
-     "low back FLAT on the floor; the moment it arches the set is over however many reps are "
-     "left · Pallof press 3 × 10 / side with a band, resist the twist rather than create one · "
-     "hollow hold 3 × 20 s building to 3 × 40 s, knees bent until 40 s holds with the back "
-     "still flat · side plank 3 × 30 s / side. Added 18 Nov 2026 and it goes with the bar "
-     "session downstairs: anti-extension and anti-rotation, never crunches. Two jobs at once — "
-     "holding the pelvis still at 3:59/km through the last 10 km, and the visible-abs ask, "
-     "which at ~11% is answered by the muscle being there rather than by eating less"],
-    ["Mon", "PRIMARY push", "Dips 4 × 10 at 3 s down / 1 s up · feet-elevated push-ups 3 × 12, "
-     "then the core block. The hardest upper-body day of the "
-     "five, because it is the only one with no run attached"],
-    ["Tue", "Light · 5 min", "Scapular pull-ups 2 × 10 · push-ups 2 × 8 · dead hang 2 × 30 s. "
-     "No core work and nothing near failure — the threshold session is the point of this day"],
-    ["Wed", "PRIMARY pull", "Pull-ups 4 × 5, full hang at the bottom · chin-ups 2 × 4 · inverted "
-     "rows under the dip bar 3 × 12 · hanging knee raises 3 × 12, controlled, no swing, then the "
-     "core block"],
-    ["Thu", "Maintenance · 8 min", "Push-ups 3 × 15 flat · pull-ups 2 × 4 · hanging knee raises "
-     "2 × 10 · dead hang 45 s"],
-    ["Fri", "Posture · 8 min", "Scapular pull-ups 2 × 10 · band pull-aparts 2 × 15 · dips 2 × 5 · "
-     "dead hang 60 s, then the core block. Lightest of the five on the bar — "
-     "Friday already carries the gym session and a run"],
+# ONE ROW PER EXERCISE, restructured 18 Nov 2026. These were three prose blobs - a
+# warm-up line, a core line and a per-day line - which read fine as reference and were
+# useless as instructions: "Pull-ups 4 x 5, full hang at the bottom - chin-ups 2 x 4 -
+# inverted rows under the dip bar 3 x 12" is four exercises hiding in one sentence. The
+# day view now gets them as separate items with their own doses, and the reference table
+# is generated back out of the same data so the two can never disagree.
+BAR_WARMUP = [
+    ("Shoulder circles", "10 each way", "Both directions, slow"),
+    ("Band pull-aparts", "15", "Arms straight, squeeze the shoulder blades"),
+    ("Band external rotation", "12 / side", "Elbow pinned to the ribs"),
+    ("Scapular pull-ups", "10", "Hang, then shrug DOWN without bending the arms"),
+    ("Dead hang", "30 s", "Step up to the bar and step down off it — never jump or drop"),
 ]
+# The core block. Anti-extension and anti-rotation, never crunches: the job is holding the
+# pelvis still at 3:59/km through the last 10 km, and the visible-abs ask, which at ~11%
+# is answered by the muscle being there rather than by eating less.
+BAR_CORE = [
+    ("Dead bug", "3 × 8 / side", "3 s out, 3 s back. Ribs DOWN and low back FLAT on the "
+     "floor — the moment it arches the set is over, however many reps are left"),
+    ("Pallof press", "3 × 10 / side", "Band. Resist the twist, do not create one. Light "
+     "enough that nothing shifts at the hips"),
+    ("Hollow hold", "3 × 20 s → 3 × 40 s", "Knees bent to start; straighten the legs only "
+     "once 40 s holds with the low back still flat"),
+    ("Side plank", "3 × 30 s / side", "Lateral chain, and it pairs with G6 — same glute "
+     "med that keeps the ankle from covering for the hip"),
+]
+# Per day: (role, note, [(exercise, dose, cue)...], core?)
+BAR_DAYS = {
+    "Mon": ("PRIMARY push", "The hardest upper-body day of the five, because it is the only "
+            "one with no run attached", [
+        ("Dips", "4 × 10", "3 s down, 1 s up. Stop with 2-3 reps in reserve"),
+        ("Feet-elevated push-ups", "3 × 12", "~40% of your flat max, because elevated is "
+         "harder than flat"),
+    ], True),
+    "Tue": ("Light · 5 min", "No core work and nothing near failure — the threshold "
+            "session is the point of this day", [
+        ("Scapular pull-ups", "2 × 10", "Shrug down, arms straight"),
+        ("Push-ups", "2 × 8", "Flat, easy, nowhere near failure"),
+        ("Dead hang", "2 × 30 s", "Step up, step down"),
+    ], False),
+    "Wed": ("PRIMARY pull", "", [
+        ("Pull-ups", "4 × 5", "Full hang at the bottom of every rep"),
+        ("Chin-ups", "2 × 4", "Supinated grip — more biceps, and it is the BJJ one"),
+        ("Inverted rows", "3 × 12", "Under the dip bar, body straight"),
+        ("Hanging knee raises", "3 × 12", "Controlled, no swing"),
+    ], True),
+    "Thu": ("Maintenance · 8 min", "", [
+        ("Push-ups", "3 × 15", "Flat"),
+        ("Pull-ups", "2 × 4", "Well short of failure"),
+        ("Hanging knee raises", "2 × 10", "Controlled, no swing"),
+        ("Dead hang", "45 s", "Step up, step down"),
+    ], False),
+    "Fri": ("Posture · 8 min", "Lightest of the five on the bar — Friday already carries "
+            "the gym session and a run", [
+        ("Scapular pull-ups", "2 × 10", "Shrug down, arms straight"),
+        ("Band pull-aparts", "2 × 15", "Squeeze the shoulder blades"),
+        ("Dips", "2 × 5", "Easy. Nothing near failure"),
+        ("Dead hang", "60 s", "Step up, step down"),
+    ], True),
+}
+_BAR_ORDER = ["Mon", "Tue", "Wed", "Thu", "Fri"]
+
+
+def bar_content():
+    """The structured bar routine the day view reads."""
+    return {
+        "warmup": [list(r) for r in BAR_WARMUP],
+        "core": [list(r) for r in BAR_CORE],
+        "days": {d: {"role": BAR_DAYS[d][0], "note": BAR_DAYS[d][1],
+                     "rows": [list(r) for r in BAR_DAYS[d][2]],
+                     "core": BAR_DAYS[d][3]}
+                 for d in _BAR_ORDER},
+    }
+
+
+def _bar_table():
+    """The reference table, generated from the same rows so the two cannot drift."""
+    def join(rows):
+        return " · ".join("%s %s" % (e, dose) for e, dose, _ in rows)
+    out = [["Every day", "Warm-up · 3 min", join(BAR_WARMUP)],
+           ["Mon · Wed · Fri", "CORE · 8 min", join(BAR_CORE)]]
+    for d in _BAR_ORDER:
+        role, note, rows, core = BAR_DAYS[d]
+        txt = join(rows) + (", then the core block" if core else "")
+        if note:
+            txt += ". " + note
+        out.append([d, role, txt])
+    return out
+
+
+UPPER_BODY = _bar_table()
 UPPER_BLOCKS = [
     {"title": "Upper body — five mornings, before the run",
      "headers": ["Day", "Role", "Work"],
@@ -1470,6 +1536,9 @@ def content():
                                         "regardless of whether it's currently bothering you."),
         "fuel": C.fuel(football=False, volume_note="it matters more with 100+ km weeks", bodycomp=True, sweat=C.FUEL_FLUID_CAV),
         "research": C.RESEARCH_NOTES,
+        # The bar routine as structured rows, for the day view. The reference table in
+        # "strength" is generated from the same data, so they cannot disagree.
+        "bar": bar_content(),
         # Cav only. Nobody else in the dashboard is chasing the six star medal, and the
         # entry routes below are keyed to HIS time, HIS age band and HIS residency.
         "majors": {"intro": MAJORS_INTRO,
