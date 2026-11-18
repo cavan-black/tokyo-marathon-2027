@@ -593,7 +593,8 @@ MAJORS_RULES = [
      "(Apr 2028), race Chicago (Oct 2028), then run New York four weeks later as a parade "
      "— stars 2, 3 and 4 in one year. 2029 is Boston in April and Berlin in September "
      "if its ballot has landed. Entries, not legs, are what decides whether this works."],
-    ["Keep one fast race alive", "A qualifying time ages out in roughly 12-24 months "
+    ["Keep one fast race alive", "Cheaper than winning a lottery. A qualifying time ages "
+     "out in roughly 12-24 months "
      "depending on the race. One genuinely raced marathon every 12-18 months keeps every "
      "door open; the rest can be run for the medal."],
     ["Never pair Chicago and New York", "Four weeks apart. You can run both in a year only "
@@ -616,9 +617,6 @@ MAJORS_RULES = [
     ["Re-check every standard yearly", "Boston's cut-off moves, Chicago and New York "
      "re-publish their tables, London's GFA times changed recently. Nothing in this table "
      "is safe to trust three years out."],
-    ["Keep a qualifying time alive", "A time ages out after roughly a year. Running one "
-     "fast marathon every 12-18 months keeps you permanently qualified for Chicago, "
-     "Boston and New York, which is cheaper than winning a lottery."],
 ]
 
 REMINDERS = {
