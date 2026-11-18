@@ -571,17 +571,28 @@ MAJORS_PLAN = [
 # Prague at 8 weeks is too soon for that to fit. Dates are from aggregators and need
 # confirming on the organisers' own sites before anything is booked.
 MAJORS_BACKUP = [
-    ["Edinburgh", "30 May 2027 · OPEN, first-come", "~12 weeks", "THE ONE YOU CAN ACTUALLY "
-     "ENTER. 10,000 field, first-come rather than a ballot, so it is available now and "
-     "likely to stay available. Net downhill and quick on paper; the catch is an exposed "
-     "coastal out-and-back that can be brutally windy. Twelve weeks is also the most "
-     "training time of any option — a genuine second build, not a scramble."],
-    ["Stockholm", "29 May 2027", "~12 weeks", "Same gap, flatter and more sheltered than "
-     "Edinburgh, but a slower course and 2027 entry details were not published as of "
-     "18 Nov 2026. Worth a look when they are."],
-    ["Copenhagen", "GONE — ballot closed", "—", "Was the pick, and is no longer available: "
-     "2027 entries went to a lottery that ran ~May-June 2026, and the previous year's "
-     "general entry sold out in 23 hours. Noted so it is not suggested again."],
+    ["★ Valencia", "~5 Dec 2027 (unconfirmed) · BALLOT ~DEC 2026", "~38 weeks",
+     "THE REAL ANSWER, and not a backup at all. Flattest and fastest big-city marathon in "
+     "Europe, World Athletics Platinum, ~12°C, two hours up the coast. A full clean block "
+     "through the autumn instead of a scramble through a Marbella summer. It misses the "
+     "Chicago 2028 application (Oct 2027) but qualifies you for everything applied for in "
+     "2028, and it is the realistic place to go after 2:45 and settle Berlin. The 2026 "
+     "ballot opened mid-December the year before, so WATCH FOR THE 2027 BALLOT IN THE "
+     "NEXT FEW WEEKS."],
+    ["Tromsø Midnight Sun", "Sat 19 Jun 2027", "~15 weeks", "Best of the June options. "
+     "Arctic, so ~8-12°C at a late-evening start when Marbella is unusable — and the "
+     "temperature is worth more than the terrain. Small field, entry opens early and stays "
+     "open, ~1,050-1,400 NOK. Not flat: the Tromsø bridge is climbed twice."],
+    ["Cork City", "Sun 6 Jun 2027", "~13 weeks", "Small Irish field that does not sell out, "
+     "flat-ish, cool enough. Unglamorous and entirely serviceable. Entry details were not "
+     "published as of 18 Nov 2026."],
+    ["Stockholm", "29 May 2027", "~12 weeks", "Sources disagree on whether it is sold out "
+     "— one says registration reopened Aug 2026, another says gone. Two laps, some "
+     "cobbles, can be warm. Check it, but do not pin hopes on it."],
+    ["Edinburgh, Copenhagen", "GONE", "—", "Copenhagen's 2027 ballot ran ~May-June 2026; "
+     "Edinburgh has since closed too. Both were recommended here and both are unavailable, "
+     "which is the lesson: for a spring race, entries go roughly a year ahead, same as the "
+     "Majors. Noted so neither gets suggested again."],
     ["Prague", "2 May 2027 — or 18 Apr, sources disagree", "~8 weeks, maybe 6",
      "Flat and fast, ~90 m of climb, but the date is unconfirmed and the earlier one would "
      "make it SIX weeks. Eight weeks post-marathon leaves ~4 weeks of real work after "
@@ -592,10 +603,16 @@ MAJORS_BACKUP = [
     ["Only run it if…", "the reason was fixable", "—", "Weather, pacing, a bad day, a "
      "stomach: run the backup. If Tokyo went wrong because of the achilles, the answer is "
      "not another marathon in ten weeks. That is how October 2026 repeats itself."],
-    ["Enter late, not early", "decide in the week after Tokyo", "—", "Edinburgh is "
-     "first-come with a big field, so there is no rush premium. Do not book it in advance "
-     "as a hedge — having a second attempt in the diary changes how you race Tokyo, and "
-     "Tokyo is the one that matters. It is also the only race that can buy London."],
+    ["The summer problem", "May-June builds happen in Marbella", "—", "A June race means "
+     "the whole build runs through a Marbella May and June. At 1.48 L/hr and 25°C+, every "
+     "quality session is degraded and every long run becomes a survival exercise — you "
+     "would be training worse to race sooner. This is the strongest argument for Valencia "
+     "over any June option."],
+    ["Enter late, not early", "decide in the week after Tokyo", "—", "Tokyo is itself the "
+     "Chicago and Boston and London qualifier, so none of this is needed unless Tokyo "
+     "fails. A second attempt sitting in the diary changes how you race the first one. The "
+     "exception is Valencia's ballot, which is free, closes long before March, and is "
+     "worth entering blind."],
 ]
 MAJORS_RULES = [
     ["Two RACED a year is the ceiling", "Two marathons a year run at goal pace, with a "
@@ -641,6 +658,12 @@ REMINDERS = {
     # Six Star admin. Only two of the ballot windows fall inside this plan; the rest of
     # the calendar lives in the Majors section, because the plan stops on race day and
     # the real work of collecting these starts the week after it.
+    "2026-12-07": ["🏅 VALENCIA BALLOT — watch for it opening this month. The "
+                   "2026 edition opened its loyalty window on 11 Dec and balloted straight "
+                   "after, so the 2027 race (~5 Dec 2027) should open around now. Flattest and "
+                   "fastest big-city marathon in Europe, ~12°C, two hours up the coast, and "
+                   "the realistic place to go hunting 2:45 and settle Berlin. Free to enter and "
+                   "it closes long before Tokyo, so enter blind — you can always decline."],
     "2027-02-01": ["\U0001f3c5 NEW YORK 2027 ballot opens around now \u2014 enter it. Your "
                    "time qualifier (sub-2:53) needs a marathon run inside calendar 2026, which "
                    "you do not have, so for 2027 the ballot is the only door. Free to enter, "
