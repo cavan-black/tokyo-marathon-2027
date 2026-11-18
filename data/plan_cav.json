@@ -1862,7 +1862,7 @@
           "shoe": null,
           "reminders": [
             "🏅 NEW YORK 2027 ballot opens around now — enter it. Your time qualifier (sub-2:53) needs a marathon run inside calendar 2026, which you do not have, so for 2027 the ballot is the only door. Free to enter, and you can decline the place.",
-            "🏅 While you are there: Chicago on 10 Oct 2027 takes sub-2:50 for guaranteed entry and its window runs to 30 Sep 2027 — so Tokyo in five weeks IS the qualifier. Entry opens in the autumn. This is the single cheapest star you will ever collect; do not let it pass."
+            "🏅 Chicago 2027 is NOT available — its applications closed at 2 p.m. on 29 Oct 2026, and the qualifying time has to be in hand when you apply, so a race you run in March cannot buy it. Tokyo buys CHICAGO 2028 instead: applications open ~Oct 2027 and sub-2:50 is guaranteed entry. Put a reminder in for September 2027 now, while you are thinking about it."
           ]
         },
         {
@@ -2147,7 +2147,7 @@
           "target_km": 10,
           "shoe": "Daily trainer #2",
           "reminders": [
-            "🏅 Five days out, and worth knowing what you are running for beyond the time: a sub-2:50 here is a guaranteed Chicago entry, a Boston qualifier AND a London Good For Age qualifier. Three of the six stars, bought with one race. No action today — just run it.",
+            "🏅 Five days out, and worth knowing what you are running for beyond the time: a sub-2:50 here qualifies you for Chicago 2028, Boston, and London Good For Age. Three of the six stars, bought with one race — though each still has to be APPLIED for, months apart and on its own deadline. No action today, just run it.",
             "🗓️ One thing for the calendar afterwards: London 2028 entries open in the week of the 2027 race, ~late April, and Good For Age closes with them. Seven weeks from now, open about a week. A May/June backup marathon is too late to rescue London — this qualification rides on today alone."
           ]
         },
@@ -3272,10 +3272,10 @@
           ],
           [
             "Chicago",
-            "10 Oct 2027",
-            "TIME: sub-2:50 (M16-34), guaranteed",
-            "Window Jan 2026 - 30 Sep 2027",
-            "THE BIG ONE. A 2:48 at Tokyo lands inside this window with six months to spare. Enter the week you get home."
+            "Oct 2028",
+            "TIME: sub-2:50 (M16-34), guaranteed — or the drawing",
+            "APPLY ~OCT 2027 · time must be in hand when you apply",
+            "2027 IS GONE — applications closed 2 p.m. on 29 Oct 2026. You cannot apply against a race you have not run, so Tokyo buys Chicago 2028, not 2027. Set a reminder for Sep 2027 and apply the week it opens."
           ],
           [
             "Boston",
@@ -3316,8 +3316,8 @@
         "rows": [
           [
             "2027",
-            "Tokyo (7 Mar) ✓ + Chicago (10 Oct)",
-            "Stars 1 and 2, seven months apart. Chicago needs nothing but the sub-2:50 you are already chasing."
+            "Tokyo (7 Mar) — and that is the year",
+            "Star 1. Every other Major's 2027 entry window has already closed: Chicago on 29 Oct 2026, Berlin on 12 Nov 2026, London and Boston earlier still. Nothing to chase, so use the year to build a time."
           ],
           [
             "2027 · late Apr",
@@ -3326,18 +3326,23 @@
           ],
           [
             "2028",
-            "London (Apr, GFA) + Berlin (Sep, ballot)",
-            "Stars 3 and 4, five months apart. Berlin is the only one here you cannot buy with a time, so enter its ballot in Oct 2027. If it misses, slide Berlin to 2029 and bring New York forward."
+            "London (Apr, GFA) + Chicago (Oct)",
+            "Stars 2 and 3, six months apart. BOTH are applied for off the Tokyo time, in Apr 2027 and Oct 2027 respectively — two deadlines in the year you are not racing a Major."
           ],
           [
             "2029",
             "Boston (Apr) + New York (Nov)",
-            "Stars 5 and 6, seven months apart, both on standards you will hold by then. Boston and London are both April, which is exactly why they sit in different years."
+            "Stars 4 and 5, seven months apart, both on standards you will hold by then. Boston and London are both April, which is exactly why they sit in different years."
+          ],
+          [
+            "2030",
+            "Berlin (Sep)",
+            "Star 6, whenever its ballot finally lands. Enter every October from 2027 — if it comes up early, it slots into 2028 or 2029 and the whole thing finishes a year sooner."
           ],
           [
             "Six Star",
-            "2029 — and that is a real date now",
-            "Every race but Berlin is a time qualifier for you. One lottery, three years, and the rest is turning up fit."
+            "2030, or 2029 if Berlin comes up early",
+            "Every race but Berlin is a time qualifier for you. One lottery, and the rest is turning up fit and applying inside the window."
           ]
         ]
       },
@@ -3401,7 +3406,11 @@
           ],
           [
             "The good pairs",
-            "Tokyo + Chicago (7 months), Boston + Berlin (5 months), London + Chicago (6 months). Spring race, autumn race, nothing in between."
+            "London + Chicago (6 months), Boston + New York (7 months), Boston + Berlin (5 months). Spring race, autumn race, nothing in between."
+          ],
+          [
+            "Apply a year ahead, always",
+            "Every Major takes entries roughly twelve months out, and three of the six want the qualifying time IN HAND at that moment, not by race day. That is how Chicago 2027 got away: applications closed 29 Oct 2026, five months before the race that would have qualified you."
           ],
           [
             "Enter everything, always",
