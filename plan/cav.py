@@ -456,6 +456,10 @@ VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69, 16: 33, 20: 80, 21: 68, 26: 95}
 # medal, with reminders for each ballot and a plan to run two a year.
 #
 # The finding that reshapes the whole thing: AT 2:48 HE BARELY NEEDS THE LOTTERIES.
+# BERLIN TOO, confirmed 18 Nov 2026: sub-2:45 for men to 44, on a time run within the
+# previous two years with proof at registration. So there is no lottery anywhere in the
+# six. 2:45 is three minutes past the Tokyo goal, which makes it a 2028 project rather
+# than a March one - but it is a target, not a coin toss, and that is the difference.
 # Chicago guarantees entry at 2:50 for men 16-34, New York takes 2:53 fastest-first, and
 # Boston is qualifier-only anyway. Three of the six are bought with a time he is already
 # training for, which makes Tokyo on 7 Mar 2027 not just star one but the entry ticket to
@@ -495,9 +499,11 @@ MAJORS_INTRO = (
     "towards a future Nine Star. So the target does not move. "
     "Tokyo on 7 Mar 2027 is star one, and if it goes to plan it is the qualifying run for "
     "three more, because a 2:48 clears Chicago, Boston and London Good For Age outright. "
-    "With UK residency for GFA, BERLIN IS THE ONLY RACE OF THE SIX THAT STILL COMES DOWN "
-    "TO A LOTTERY. Everything else is a time you are already training for, plus the "
-    "discipline to enter inside the window.")
+    "With UK residency for GFA, and with Berlin qualifiable at sub-2:45 on a time run "
+    "within the previous two years, THERE IS NO RACE OF THE SIX YOU CANNOT BUY WITH A "
+    "TIME. Not one of them has to be left to a lottery. What stands between you and the "
+    "medal is 2:45 somewhere in the next two years, and the discipline to apply inside "
+    "each window — which is the part that has already cost you Chicago 2027.")
 MAJORS_RACES = [
     ["Tokyo", "7 Mar 2027", "BALLOT — already in", "Ballot ran 14-28 Aug 2026",
      "✓ Star 1. Entered. Also the qualifying run for Chicago, Boston and London."],
@@ -513,10 +519,12 @@ MAJORS_RACES = [
      "Window is the FULL CALENDAR YEAR BEFORE", "Tokyo (Mar 2027) misses the 2027 window "
      "and sits inside the 2028 one. Not guaranteed: they fill fastest-first, so the margin "
      "matters."],
-    ["Berlin", "Sep 2028", "BALLOT, or sub-2:45 fast-runner entry",
-     "Ballot ~1 Oct – mid Nov, a year ahead", "NOW THE ONLY REAL LOTTERY IN THE SIX. The "
-     "2027 ballot closed 12 Nov 2026, six days before you asked. Next window ~Oct 2027. "
-     "Enter every year regardless, and note sub-2:45 would buy it outright."],
+    ["Berlin", "Sep 2028", "QUALIFY: sub-2:45 (men to 44) — or the ballot as fallback",
+     "Ballot ~1 Oct – mid Nov · OR qualify: time run within the PREVIOUS 2 YEARS",
+     "QUALIFIABLE AFTER ALL — sub-2:45 (men to 44) is guaranteed entry on proof uploaded "
+     "at registration, so Berlin need not be a lottery at all. 2:45 is three minutes "
+     "beyond the Tokyo goal, so do not chase it in March; chase it in 2028 once the "
+     "2:4x is established. Enter the ballot every October anyway, as the free fallback."],
     ["London", "Apr 2028", "GOOD FOR AGE: sub-2:52 (M18-39) — needs UK residency, which you have",
      "Qualify Oct 2026 – Sep 2027 · APPLY ~LATE APR 2027",
      "⚠ THE TIGHT ONE. Tokyo qualifies you, but entries open in the week of the 2027 race, "
@@ -537,12 +545,12 @@ MAJORS_PLAN = [
     ["2029", "Boston (Apr) + New York (Nov)", "Stars 4 and 5, seven months apart, both on "
      "standards you will hold by then. Boston and London are both April, which is exactly "
      "why they sit in different years."],
-    ["2030", "Berlin (Sep)", "Star 6, whenever its ballot finally lands. Enter every "
-     "October from 2027 — if it comes up early, it slots into 2028 or 2029 and the "
-     "whole thing finishes a year sooner."],
-    ["Six Star", "2030, or 2029 if Berlin comes up early", "Every race but Berlin is a "
-     "time qualifier for you. One lottery, and the rest is turning up fit and applying "
-     "inside the window."],
+    ["2030", "Berlin (Sep)", "Star 6. No longer hostage to a ballot: sub-2:45 on any "
+     "marathon in the previous two years is guaranteed entry, so a fast 2028 or 2029 race "
+     "books it. Enter the October ballot each year anyway, free, in case it lands sooner."],
+    ["Six Star", "2029-30, and none of it on luck", "Every one of the six is now a time "
+     "qualifier for you. The whole project reduces to two things: run 2:45 once in the "
+     "next couple of years, and apply inside each window."],
 ]
 # ---- The insurance policy, asked for on 18 Nov 2026: a second marathon in May/June 2027
 # in case Tokyo does not produce the time.
@@ -563,21 +571,27 @@ MAJORS_PLAN = [
 # Prague at 8 weeks is too soon for that to fit. Dates are from aggregators and need
 # confirming on the organisers' own sites before anything is booked.
 MAJORS_BACKUP = [
-    ["Copenhagen", "~mid May 2027 (confirm)", "~10 weeks", "Flat, fast, well organised, "
-     "two hours from Málaga. The pick if the date holds — enough gap to train, not so much "
-     "that Tokyo's fitness has gone."],
-    ["Edinburgh", "30 May 2027", "~12 weeks", "Net downhill and quick on paper, but "
-     "exposed coastal out-and-back and it can be brutally windy. The most training time of "
-     "the three. A real option, with a weather risk you cannot plan around."],
+    ["Edinburgh", "30 May 2027 · OPEN, first-come", "~12 weeks", "THE ONE YOU CAN ACTUALLY "
+     "ENTER. 10,000 field, first-come rather than a ballot, so it is available now and "
+     "likely to stay available. Net downhill and quick on paper; the catch is an exposed "
+     "coastal out-and-back that can be brutally windy. Twelve weeks is also the most "
+     "training time of any option — a genuine second build, not a scramble."],
+    ["Stockholm", "29 May 2027", "~12 weeks", "Same gap, flatter and more sheltered than "
+     "Edinburgh, but a slower course and 2027 entry details were not published as of "
+     "18 Nov 2026. Worth a look when they are."],
+    ["Copenhagen", "GONE — ballot closed", "—", "Was the pick, and is no longer available: "
+     "2027 entries went to a lottery that ran ~May-June 2026, and the previous year's "
+     "general entry sold out in 23 hours. Noted so it is not suggested again."],
     ["Prague", "2 May 2027", "~8 weeks", "One of Europe's fastest courses, but eight weeks "
      "post-marathon leaves ~4 weeks of actual work after recovery. Only if Tokyo was "
      "aborted early rather than raced hard."],
     ["Only run it if…", "the reason was fixable", "—", "Weather, pacing, a bad day, a "
      "stomach: run the backup. If Tokyo went wrong because of the achilles, the answer is "
      "not another marathon in ten weeks. That is how October 2026 repeats itself."],
-    ["Enter late, not early", "decide in the week after Tokyo", "—", "Most of these take "
-     "entries until a few weeks out. Do not book it in advance as a hedge — having it in "
-     "the diary changes how you race Tokyo, and Tokyo is the one that matters."],
+    ["Enter late, not early", "decide in the week after Tokyo", "—", "Edinburgh is "
+     "first-come with a big field, so there is no rush premium. Do not book it in advance "
+     "as a hedge — having a second attempt in the diary changes how you race Tokyo, and "
+     "Tokyo is the one that matters. It is also the only race that can buy London."],
 ]
 MAJORS_RULES = [
     ["Two RACED a year is the ceiling", "Two marathons a year run at goal pace, with a "

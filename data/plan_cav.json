@@ -3253,7 +3253,7 @@
       ]
     },
     "majors": {
-      "intro": "Six Star is six specific races - Tokyo, Boston, London, Berlin, Chicago, New York. Sydney joined the Majors in 2025 and Cape Town joins in 2027, but Abbott have confirmed the Six Star medal still covers only the original six; the new ones count towards a future Nine Star. So the target does not move. Tokyo on 7 Mar 2027 is star one, and if it goes to plan it is the qualifying run for three more, because a 2:48 clears Chicago, Boston and London Good For Age outright. With UK residency for GFA, BERLIN IS THE ONLY RACE OF THE SIX THAT STILL COMES DOWN TO A LOTTERY. Everything else is a time you are already training for, plus the discipline to enter inside the window.",
+      "intro": "Six Star is six specific races - Tokyo, Boston, London, Berlin, Chicago, New York. Sydney joined the Majors in 2025 and Cape Town joins in 2027, but Abbott have confirmed the Six Star medal still covers only the original six; the new ones count towards a future Nine Star. So the target does not move. Tokyo on 7 Mar 2027 is star one, and if it goes to plan it is the qualifying run for three more, because a 2:48 clears Chicago, Boston and London Good For Age outright. With UK residency for GFA, and with Berlin qualifiable at sub-2:45 on a time run within the previous two years, THERE IS NO RACE OF THE SIX YOU CANNOT BUY WITH A TIME. Not one of them has to be left to a lottery. What stands between you and the medal is 2:45 somewhere in the next two years, and the discipline to apply inside each window — which is the part that has already cost you Chicago 2027.",
       "races": {
         "headers": [
           "Race",
@@ -3294,9 +3294,9 @@
           [
             "Berlin",
             "Sep 2028",
-            "BALLOT, or sub-2:45 fast-runner entry",
-            "Ballot ~1 Oct – mid Nov, a year ahead",
-            "NOW THE ONLY REAL LOTTERY IN THE SIX. The 2027 ballot closed 12 Nov 2026, six days before you asked. Next window ~Oct 2027. Enter every year regardless, and note sub-2:45 would buy it outright."
+            "QUALIFY: sub-2:45 (men to 44) — or the ballot as fallback",
+            "Ballot ~1 Oct – mid Nov · OR qualify: time run within the PREVIOUS 2 YEARS",
+            "QUALIFIABLE AFTER ALL — sub-2:45 (men to 44) is guaranteed entry on proof uploaded at registration, so Berlin need not be a lottery at all. 2:45 is three minutes beyond the Tokyo goal, so do not chase it in March; chase it in 2028 once the 2:4x is established. Enter the ballot every October anyway, as the free fallback."
           ],
           [
             "London",
@@ -3337,12 +3337,12 @@
           [
             "2030",
             "Berlin (Sep)",
-            "Star 6, whenever its ballot finally lands. Enter every October from 2027 — if it comes up early, it slots into 2028 or 2029 and the whole thing finishes a year sooner."
+            "Star 6. No longer hostage to a ballot: sub-2:45 on any marathon in the previous two years is guaranteed entry, so a fast 2028 or 2029 race books it. Enter the October ballot each year anyway, free, in case it lands sooner."
           ],
           [
             "Six Star",
-            "2030, or 2029 if Berlin comes up early",
-            "Every race but Berlin is a time qualifier for you. One lottery, and the rest is turning up fit and applying inside the window."
+            "2029-30, and none of it on luck",
+            "Every one of the six is now a time qualifier for you. The whole project reduces to two things: run 2:45 once in the next couple of years, and apply inside each window."
           ]
         ]
       },
@@ -3355,16 +3355,22 @@
         ],
         "rows": [
           [
-            "Copenhagen",
-            "~mid May 2027 (confirm)",
-            "~10 weeks",
-            "Flat, fast, well organised, two hours from Málaga. The pick if the date holds — enough gap to train, not so much that Tokyo's fitness has gone."
+            "Edinburgh",
+            "30 May 2027 · OPEN, first-come",
+            "~12 weeks",
+            "THE ONE YOU CAN ACTUALLY ENTER. 10,000 field, first-come rather than a ballot, so it is available now and likely to stay available. Net downhill and quick on paper; the catch is an exposed coastal out-and-back that can be brutally windy. Twelve weeks is also the most training time of any option — a genuine second build, not a scramble."
           ],
           [
-            "Edinburgh",
-            "30 May 2027",
+            "Stockholm",
+            "29 May 2027",
             "~12 weeks",
-            "Net downhill and quick on paper, but exposed coastal out-and-back and it can be brutally windy. The most training time of the three. A real option, with a weather risk you cannot plan around."
+            "Same gap, flatter and more sheltered than Edinburgh, but a slower course and 2027 entry details were not published as of 18 Nov 2026. Worth a look when they are."
+          ],
+          [
+            "Copenhagen",
+            "GONE — ballot closed",
+            "—",
+            "Was the pick, and is no longer available: 2027 entries went to a lottery that ran ~May-June 2026, and the previous year's general entry sold out in 23 hours. Noted so it is not suggested again."
           ],
           [
             "Prague",
@@ -3382,7 +3388,7 @@
             "Enter late, not early",
             "decide in the week after Tokyo",
             "—",
-            "Most of these take entries until a few weeks out. Do not book it in advance as a hedge — having it in the diary changes how you race Tokyo, and Tokyo is the one that matters."
+            "Edinburgh is first-come with a big field, so there is no rush premium. Do not book it in advance as a hedge — having a second attempt in the diary changes how you race Tokyo, and Tokyo is the one that matters. It is also the only race that can buy London."
           ]
         ]
       },
