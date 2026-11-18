@@ -1197,7 +1197,7 @@ def majors_html(plan):
     body = '<p class="sub" style="margin-bottom:14px">%s</p>' % esc(m.get("intro", ""))
     for key, title in (("races", "The six, and how you get into each"),
                        ("plan", "Two a year — the running order"),
-                       ("backup", "If Tokyo doesn’t produce the time — a May/June rerun"),
+                       ("backup", "After Tokyo — banking the block, and the 2:45 attempt"),
                        ("rules", "The rules that keep it from costing you a season")):
         sec = m.get(key)
         if sec:
