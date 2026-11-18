@@ -1189,6 +1189,22 @@ def shoes_html(plan):
     return body
 
 
+def majors_html(plan):
+    """The six star plan: how each race is entered, and in what order."""
+    m = plan.get("content", {}).get("majors", {})
+    if not m:
+        return ""
+    body = '<p class="sub" style="margin-bottom:14px">%s</p>' % esc(m.get("intro", ""))
+    for key, title in (("races", "The six, and how you get into each"),
+                       ("plan", "Two a year — the running order"),
+                       ("rules", "The rules that keep it from costing you a season")):
+        sec = m.get(key)
+        if sec:
+            body += ('<div class="card" style="margin-bottom:14px"><h3>%s</h3>%s</div>'
+                     % (esc(title), ref_table(sec["headers"], sec["rows"])))
+    return body
+
+
 def research_html(plan):
     rs = plan.get("content", {}).get("research", {})
     if not rs:
@@ -2119,7 +2135,9 @@ def render_runner(runner_id):
         labels = (["📋 Plan", "🧭 Approach", "🎯 Paces", "🚦 Gates", "📈 Volume", "📊 Analytics", "💪 Strength"]
                   + (["🔥 Warm-up"] if has_warmup else [])
                   + ["🥗 Fuel & life"] + (["🍽️ Diet Plan"] if has_diet else [])
-                  + (["✈️ Beijing layover"] if has_layover else []) + ["💡 Tips", "🔬 Research"])
+                  + (["✈️ Beijing layover"] if has_layover else [])
+              + (["🏅 Six Star"] if content.get("majors") else [])
+              + ["💡 Tips", "🔬 Research"])
         sub = st.tabs(labels)
         i = iter(range(len(labels)))
 
@@ -2172,6 +2190,13 @@ def render_runner(runner_id):
                 st.markdown(STYLE + '<div class="sv">' +
                             section("Beijing layover — long run + city", "17 Aug, 04:00-18:50 connecting through Beijing (PEK) to Seoul.",
                                     layover_html(plan)) + "</div>", unsafe_allow_html=True)
+        if content.get("majors"):
+            with sub[next(i)]:
+                st.markdown(STYLE + '<div class="sv">' +
+                            section("Six Star Majors",
+                                    "The long game — and most of it is bought with a time, "
+                                    "not won in a lottery.",
+                                    majors_html(plan)) + "</div>", unsafe_allow_html=True)
         with sub[next(i)]:
             st.markdown(STYLE + '<div class="sv">' +
                         section("Tips", "", tips_html(plan)) + "</div>", unsafe_allow_html=True)

@@ -452,7 +452,103 @@ VOL_OVERRIDE = {9: 57, 11: 57, 12: 63, 13: 69, 16: 33, 20: 80, 21: 68, 26: 95}
 # itinerary itself lives in plan/trip.py; these are only the things that are gone if you
 # miss the date. Rendered under the day's session, never above it — the run is still the
 # point of the page.
+# ---- SIX STAR MAJORS. Asked for on 18 Nov 2026: the ultimate goal is the six star
+# medal, with reminders for each ballot and a plan to run two a year.
+#
+# The finding that reshapes the whole thing: AT 2:48 HE BARELY NEEDS THE LOTTERIES.
+# Chicago guarantees entry at 2:50 for men 16-34, New York takes 2:53 fastest-first, and
+# Boston is qualifier-only anyway. Three of the six are bought with a time he is already
+# training for, which makes Tokyo on 7 Mar 2027 not just star one but the entry ticket to
+# stars two and three. The ballots only matter for Berlin and London.
+#
+# Two cautions that are easy to get wrong and expensive to discover late:
+#   - LONDON'S Good For Age is UK-RESIDENTS-ONLY and he lives in Spain. That closes the
+#     obvious route and leaves the ballot or a Championship entry. It is the hard one.
+#   - QUALIFYING WINDOWS ARE DATED, and they close roughly a year before the race. A time
+#     run at Tokyo in March 2027 lands inside Chicago's window (Jan 2026-Sep 2027) but
+#     MISSES New York's 2027 window, which was calendar 2026. Same time, different race,
+#     different answer — which is why the window column below exists at all.
+#
+# Figures checked 18 Nov 2026 against the race organisers' published standards. They move
+# every year; re-check before acting rather than trusting this table in 2029.
+MAJORS_INTRO = (
+    "Six Star is six specific races - Tokyo, Boston, London, Berlin, Chicago, New York. "
+    "Sydney joined the Majors in 2025 and Cape Town joins in 2027, but Abbott have "
+    "confirmed the Six Star medal still covers only the original six; the new ones count "
+    "towards a future Nine Star. So the target does not move. "
+    "Tokyo on 7 Mar 2027 is star one, and if it goes to plan it is also the entry ticket "
+    "to stars two and three, because a 2:48 clears the time standard at Chicago, New York "
+    "and Boston outright. Treat the ballots as the fallback, not the plan.")
+MAJORS_RACES = [
+    ["Tokyo", "7 Mar 2027", "BALLOT — already in", "Ballot ran 14-28 Aug 2026",
+     "✓ Star 1. Entered."],
+    ["Chicago", "10 Oct 2027", "TIME: sub-2:50 (M16-34), guaranteed",
+     "Window Jan 2026 - 30 Sep 2027", "THE BIG ONE. A 2:48 at Tokyo lands inside this "
+     "window with six months to spare. Enter the week you get home."],
+    ["Boston", "Apr 2028", "QUALIFIER ONLY — no ballot, sub-3:00 (M18-34) then a cut-off",
+     "Registration ~2nd week of Sep 2027", "Tokyo qualifies you. The published standard is "
+     "3:00 but the real bar is the cut-off, usually 5+ min under — 2:48 is comfortable."],
+    ["New York", "Nov 2028", "TIME: sub-2:53 (M18-34), fastest-first — or the ballot",
+     "Window is the FULL CALENDAR YEAR BEFORE", "Tokyo (Mar 2027) misses the 2027 window "
+     "and sits inside the 2028 one. Not guaranteed: they fill fastest-first, so the margin "
+     "matters."],
+    ["Berlin", "Sep 2028", "BALLOT, or sub-2:45 fast-runner entry",
+     "Ballot ~1 Oct - mid Nov, a year ahead", "The 2027 ballot closed 12 Nov 2026, six days "
+     "before you asked. Next window opens ~Oct 2027 — it is in the reminders now."],
+    ["London", "Apr 2029+", "BALLOT — Good For Age is UK-residents-only",
+     "Ballot opens race week, late Apr", "THE HARD ONE. Living in Spain closes the GFA "
+     "route. Ballot every single year from now, and look at Championship entry if you ever "
+     "go under 2:45."],
+]
+MAJORS_PLAN = [
+    ["2027", "Tokyo (7 Mar) + Chicago (10 Oct)", "Two in year one, and the only pairing "
+     "that needs nothing but the time you are already chasing. Seven months apart, which "
+     "is a full rebuild between them rather than a scramble."],
+    ["2028", "Boston (Apr) + Berlin (Sep)", "Both bought in advance: Boston off Tokyo's "
+     "time, registering Sep 2027; Berlin off the ballot you enter Oct 2027. Five months "
+     "apart. If the Berlin ballot misses, swap in New York (Nov) off Chicago's time."],
+    ["2029", "London (Apr) + New York (Nov)", "Whatever is left. London is ballot-only for "
+     "you, so it is the one that decides whether this finishes in 2029 or runs on."],
+    ["Six Star", "2029 if London lands first time", "2030-31 is the honest expectation. "
+     "London ballot odds are long and GFA is closed to you — that single race is the "
+     "schedule risk, not the running."],
+]
+MAJORS_RULES = [
+    ["Two a year is the ceiling", "Not a target. Two marathons a year with a real build "
+     "and a real recovery either side is sustainable; three is how the October 2026 "
+     "injury happens again."],
+    ["Never pair Chicago and New York", "Four weeks apart. You can run both in a year only "
+     "by treating the second as a parade, which wastes a Major you waited years to enter."],
+    ["Never pair Tokyo and Boston", "Five weeks apart, March and April. Same problem."],
+    ["The good pairs", "Tokyo + Chicago (7 months), Boston + Berlin (5 months), "
+     "London + Chicago (6 months). Spring race, autumn race, nothing in between."],
+    ["Enter everything, always", "Ballot entries are free or near-free and you can decline "
+     "a place. Standing rule: enter every ballot every year until the star is on the "
+     "medal, even in a year you do not intend to race it."],
+    ["Re-check every standard yearly", "Boston's cut-off moves, Chicago and New York "
+     "re-publish their tables, London's GFA times changed recently. Nothing in this table "
+     "is safe to trust three years out."],
+    ["Keep a qualifying time alive", "A time ages out after roughly a year. Running one "
+     "fast marathon every 12-18 months keeps you permanently qualified for Chicago, "
+     "Boston and New York, which is cheaper than winning a lottery."],
+]
+
 REMINDERS = {
+    # Six Star admin. Only two of the ballot windows fall inside this plan; the rest of
+    # the calendar lives in the Majors section, because the plan stops on race day and
+    # the real work of collecting these starts the week after it.
+    "2027-02-01": ["\U0001f3c5 NEW YORK 2027 ballot opens around now \u2014 enter it. Your "
+                   "time qualifier (sub-2:53) needs a marathon run inside calendar 2026, which "
+                   "you do not have, so for 2027 the ballot is the only door. Free to enter, "
+                   "and you can decline the place.",
+                   "\U0001f3c5 While you are there: Chicago on 10 Oct 2027 takes sub-2:50 for "
+                   "guaranteed entry and its window runs to 30 Sep 2027 \u2014 so Tokyo in five "
+                   "weeks IS the qualifier. Entry opens in the autumn. This is the single "
+                   "cheapest star you will ever collect; do not let it pass."],
+    "2027-03-02": ["\U0001f3c5 Five days out, and worth knowing what you are running for "
+                   "beyond the time: a sub-2:50 here is a guaranteed Chicago entry (star 2) "
+                   "and a Boston qualifier for April 2028 (star 3). Two of the six, bought "
+                   "with one race. No action today \u2014 just run it."],
     # Flights are a price-watch, not a calendar date. The published windows for Asia
     # long-haul are 3-5 months (Points Guy / Travel Market News, both off Google Flights
     # data) and 60-180 days (Going), and Google's own route analysis found US-Europe fares
@@ -1241,6 +1337,15 @@ def content():
                                         "regardless of whether it's currently bothering you."),
         "fuel": C.fuel(football=False, volume_note="it matters more with 100+ km weeks", bodycomp=True, sweat=C.FUEL_FLUID_CAV),
         "research": C.RESEARCH_NOTES,
+        # Cav only. Nobody else in the dashboard is chasing the six star medal, and the
+        # entry routes below are keyed to HIS time, HIS age band and HIS residency.
+        "majors": {"intro": MAJORS_INTRO,
+                   "races": {"headers": ["Race", "Next realistic", "How you get in",
+                                         "Entry / qualifying window", "Where you stand"],
+                             "rows": MAJORS_RACES},
+                   "plan": {"headers": ["Year", "Races", "Why this pairing"],
+                            "rows": MAJORS_PLAN},
+                   "rules": {"headers": ["Rule", "Detail"], "rows": MAJORS_RULES}},
         "diet": {
             "intro": "Starting at 71 kg, aiming to bank a few kg of surplus before volume climbs into the "
                      "90–116 km/wk range — better to arrive there with some reserve than fight a deficit on "
