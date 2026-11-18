@@ -61697,7 +61697,7 @@
       "session": "Recovery 6 km easy — 5:35-6:05/km, HR under 140, slower than you think. 24 h after quality  +GYM G1-G6  +BAR pull  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 6,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -63402,7 +63402,7 @@
       "replaced_km": 0,
       "done": 1,
       "partial": 0,
-      "missed": 0,
+      "missed": 1,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 1,
@@ -63651,7 +63651,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-17T17:05:16+00:00",
+  "last_sync": "2026-11-18T02:46:57+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-17",
