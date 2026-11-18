@@ -422,6 +422,52 @@ STYLE = """<style>
   letter-spacing:.06em;text-transform:uppercase;color:var(--faint);}
 .sv .restday{text-align:center;padding:26px 18px;color:var(--muted);font-size:14.5px;}
 .sv .restday .big{font-size:30px;margin-bottom:8px;}
+/* ---- Tiles ARE the buttons: a link wrapping the whole card, so the tap target is the
+   thing you are looking at rather than a separate box underneath it. ---- */
+.sv a.tile{text-decoration:none;color:inherit;display:flex;flex-direction:column;gap:5px;
+  -webkit-tap-highlight-color:transparent;transition:transform .08s ease,box-shadow .12s ease;}
+.sv a.tile:active{transform:scale(.985);}
+.sv a.tile:hover{box-shadow:0 2px 14px rgba(0,0,0,.10);}
+.sv .tile .tile-top{display:flex;align-items:center;gap:8px;}
+.sv .tile .tile-top .ico{font-size:19px;line-height:1;}
+.sv .tile .tile-top .cnt{margin-left:auto;font-size:11px;font-weight:700;color:var(--faint);
+  font-family:var(--font-mono);}
+.sv .tile .go{margin-top:auto;padding-top:9px;font-size:12px;font-weight:750;
+  letter-spacing:.03em;color:var(--accent-ink);}
+.sv .tile.off .go{color:var(--faint);}
+/* ---- Back link, top and bottom: on a long checklist the bottom one is the one you
+   actually reach for. ---- */
+.sv a.back{display:block;text-align:center;text-decoration:none;font-weight:700;font-size:15px;
+  color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:13px;
+  padding:15px 16px;margin-bottom:14px;}
+.sv a.back.bottom{margin:16px 0 4px;}
+.sv a.back:active{background:var(--surface-2);}
+/* ---- The view header, and the numbered steps under it. ---- */
+.sv .vhead{margin:2px 0 14px;}
+.sv .vtitle{font-size:21px;font-weight:800;letter-spacing:-.015em;}
+.sv .vmeta{font-size:13px;color:var(--muted);margin-top:3px;}
+.sv .vmeta b{color:var(--accent-ink);font-family:var(--font-mono);}
+.sv .grp{font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;font-weight:750;
+  color:var(--faint);margin:18px 0 8px;padding-bottom:5px;border-bottom:1px solid var(--line);}
+.sv .step{display:grid;grid-template-columns:30px 1fr;gap:12px;align-items:start;
+  background:var(--surface);border:1px solid var(--line);border-radius:12px;
+  padding:13px 15px;margin-bottom:8px;}
+.sv .step .s-num{font-family:var(--font-mono);font-weight:800;font-size:13px;
+  color:var(--accent-ink);background:var(--accent-soft);border-radius:8px;
+  text-align:center;line-height:30px;height:30px;}
+.sv .step .s-title{font-size:15px;font-weight:700;line-height:1.35;}
+.sv .step .s-title .dose{font-family:var(--font-mono);font-weight:700;font-size:13px;
+  color:var(--accent-ink);white-space:nowrap;margin-left:4px;}
+.sv .step .s-detail{font-size:13.5px;color:var(--muted);line-height:1.5;margin-top:4px;}
+.sv .detail.warn{border-color:var(--warn);background:color-mix(in srgb,var(--warn) 9%,var(--surface));}
+/* Reference that is worth having to hand but is not a thing you DO: collapsed. */
+.sv details.drop{border:1px solid var(--line);border-radius:12px;background:var(--surface);
+  padding:0 15px;margin-top:10px;overflow:hidden;}
+.sv details.drop>summary{list-style:none;cursor:pointer;padding:14px 0;font-weight:700;
+  font-size:14.5px;}
+.sv details.drop>summary::-webkit-details-marker{display:none;}
+.sv details.drop[open]>summary{border-bottom:1px solid var(--line);margin-bottom:10px;}
+.sv details.drop table.data{margin-bottom:12px;}
 </style>"""
 
 # Streamlit's own chrome, which .sv CSS cannot reach: the nav buttons are the primary
@@ -1746,9 +1792,13 @@ def today_hero_html(plan, day, wk, pd_):
                wk["week"], esc(wk["phase"]), km, esc(run_txt), done))
 
 
-def today_tiles_html(plan, day, pd_):
-    """The two primary tiles. Drawn as cards here and wired to buttons underneath, since
-    Streamlit cannot make an HTML card switch the view by itself."""
+def today_tiles_html(plan, day, pd_, runner_id):
+    """The two primary tiles, and they ARE the buttons.
+
+    Each tile is an <a> carrying a query param, which is the only way a Streamlit page
+    can make an arbitrary HTML card tappable - st.button draws its own box and cannot
+    hold a card's worth of content. target="_self" keeps it in the same tab, and the
+    param change reruns the script, which is what switches the view."""
     if not day:
         return ""
     run_txt, _ = split_session(day["session"])
@@ -1756,129 +1806,229 @@ def today_tiles_html(plan, day, pd_):
     rest = day["type"] == "rest" or not day.get("target_km")
     actual = pd_.get("actual_km", 0)
     if rest:
-        run_big, run_note, run_cls = "Rest", "No running today.", "tile run off"
+        run_big, run_note, run_cls = "Rest", "No running today", "tile run off"
     else:
         run_big = "%g km" % day["target_km"]
-        run_note = run_txt.split("\u2014")[0].split(" w/ ")[0].strip()[:58]
+        run_note = run_txt.split("\u2014")[0].split(" w/ ")[0].strip()[:52]
         run_cls = "tile run"
         if actual:
             run_note = "Done \u2014 %.1f km logged" % actual
         if day.get("shoe"):
             run_note += " \u00b7 \U0001f45f %s" % day["shoe"]
+    n_steps = len(run_steps(plan, day, wk_of(plan, day)))
+    run_cnt = "%d step%s" % (n_steps, "" if n_steps == 1 else "s")
     if gym:
         gym_big = " \u00b7 ".join(a.split("(")[0].split("\u2014")[0].strip() for a in gym[:2])
-        gym_note = "%d block%s today" % (len(gym), "s" if len(gym) != 1 else "")
-        gym_cls = "tile gym"
+        n_items = len(gym_checklist(plan, day, wk_of(plan, day)))
+        gym_note = "%d exercise%s" % (n_items, "" if n_items == 1 else "s")
+        gym_cls, gym_cnt = "tile gym", "%d block%s" % (len(gym), "" if len(gym) == 1 else "s")
     else:
-        gym_big, gym_note, gym_cls = "None", "No strength work scheduled.", "tile gym off"
+        gym_big, gym_note, gym_cls, gym_cnt = "None", "Nothing scheduled", "tile gym off", ""
     return ('<div class="tiles">'
-            '<div class="%s"><div class="ico">\U0001f3c3</div><div class="lbl">Run</div>'
-            '<div class="big">%s</div><div class="note">%s</div></div>'
-            '<div class="%s"><div class="ico">\U0001f3cb\ufe0f</div><div class="lbl">Gym</div>'
-            '<div class="big">%s</div><div class="note">%s</div></div>'
-            '</div>' % (run_cls, esc(run_big), esc(run_note),
-                        gym_cls, esc(gym_big), esc(gym_note)))
+            '<a class="%s" href="?v=%s:run" target="_self">'
+            '<div class="tile-top"><span class="ico">\U0001f3c3</span>'
+            '<span class="lbl">Run</span><span class="cnt">%s</span></div>'
+            '<div class="big">%s</div><div class="note">%s</div>'
+            '<div class="go">Open \u203a</div></a>'
+            '<a class="%s" href="?v=%s:gym" target="_self">'
+            '<div class="tile-top"><span class="ico">\U0001f3cb\ufe0f</span>'
+            '<span class="lbl">Gym</span><span class="cnt">%s</span></div>'
+            '<div class="big">%s</div><div class="note">%s</div>'
+            '<div class="go">Open \u203a</div></a>'
+            '</div>' % (run_cls, runner_id, esc(run_cnt), esc(run_big), esc(run_note),
+                        gym_cls, runner_id, esc(gym_cnt), esc(gym_big), esc(gym_note)))
+
+
+def wk_of(plan, day):
+    """The week dict a given day belongs to."""
+    for wk in plan["weeks"]:
+        if day in wk["days"]:
+            return wk
+    return plan["weeks"][0]
+
+
+def step_html(n, title, detail, tone=""):
+    """One numbered step. The number is the point: these are done in order."""
+    d = '<div class="s-detail">%s</div>' % detail if detail else ""
+    return ('<div class="step %s"><div class="s-num">%s</div>'
+            '<div class="s-body"><div class="s-title">%s</div>%s</div></div>'
+            % (tone, n, title, d))
+
+
+# How a structured session writes its own parts, e.g.
+#   "Threshold: 4x1.5 km @ 3:50/km, 75s jog  w/u 3.5 km  jogs 1.0 km  c/d 1.2 km"
+_WU = re.compile(r"w/u\s+([\d.]+)\s*km")
+_CD = re.compile(r"c/d\s+([\d.]+)\s*km")
+_JOGS = re.compile(r"jogs\s+([\d.]+)\s*km")
+
+
+def run_steps(plan, day, wk):
+    """Every part of today's run, in the order it happens.
+
+    A quality session already states its own warm-up, recovery jogs and cool-down, so
+    those become their own steps instead of being buried in one long sentence. An easy
+    run is honestly one step and is not padded out to look like more."""
+    if not day or (day["type"] == "rest" and not day.get("target_km")):
+        return []
+    run_txt, _ = split_session(day["session"])
+    head = run_txt.split("\u00b7 w/u")[0].strip()
+    wu = _WU.search(run_txt)
+    cd = _CD.search(run_txt)
+    jogs = _JOGS.search(run_txt)
+    steps = []
+    # Before you go. The shoe is here and not in a footnote because the rotation only
+    # works if the right pair goes on, and the race shoe days are deliberate.
+    pre = []
+    if day.get("shoe"):
+        pre.append("\U0001f45f <b>%s</b>" % esc(day["shoe"]))
+    mins = (day.get("target_km") or 0) * 5.5
+    if mins >= 90:
+        pre.append("Weigh in naked before and after, and note what you drink \u2014 "
+                   "sweat loss (L) = kg lost + litres drunk")
+        pre.append("Carry fluid: ~700-900 ml/hr, and start fuelling at 40-45 min, "
+                   "not when you feel empty")
+    elif mins >= 75:
+        pre.append("One feed around 45 min; water is enough under 75 min")
+    if day["type"] in ("quality", "race"):
+        pre.append("M1/M2 ankle mobility first \u2014 the warm-up is not a substitute for it")
+    steps.append(("Before you go", "<br>".join(pre) if pre else
+                  "Nothing to carry. Water only."))
+    if wu:
+        steps.append(("Warm-up \u2014 %s km" % wu.group(1),
+                      "Easy, 5:00-5:35/km. Finish with 4\u00d7100 m strides if the "
+                      "session has reps."))
+    steps.append(("The session" if wu else "The run", esc(head)))
+    if jogs:
+        steps.append(("Recovery jogs \u2014 %s km total" % jogs.group(1),
+                      "One after every rep, the last one included. Keep jogging; "
+                      "standing still is not the prescription."))
+    if cd:
+        steps.append(("Cool-down \u2014 %s km" % cd.group(1),
+                      "Easy. This is where a niggle tells you the truth about the session."))
+    after = ["Carbs plus 20-30 g protein within the hour"]
+    if mins >= 75:
+        after.append("Replace ~1.25-1.5\u00d7 the fluid lost, with salt in it")
+    if day["type"] in ("quality", "long", "race"):
+        after.append("R1 isometric calf holds \u2014 5 \u00d7 45 s per leg")
+    steps.append(("After", "<br>".join(after)))
+    return steps
+
+
+def gym_checklist(plan, day, wk):
+    """Every single exercise today, flattened out of the blocks the add-ons name.
+
+    Returns (block_label, exercise, dose, cue) tuples. Flat and complete on purpose:
+    the tables were accurate but you had to assemble the day yourself from four of
+    them, which is exactly the work this is meant to remove."""
+    gym = gym_addons(day) if day else []
+    if not gym:
+        return []
+    tokens = " ".join(gym).upper()
+    out, seen = [], set()
+    for codes, hint, label in (
+            (["G1", "G2", "G3", "G4", "G5", "G6"], "heavy slow resistance", "Gym"),
+            (["M1", "M2", "M3"], "mobility", "Mobility"),
+            (["R1", "R3", "R4", "R5"], "daily", "Ankle rehab")):
+        if not any(c in tokens for c in codes):
+            continue
+        for _title, _hdrs, rows in _rows_with_codes(plan, codes, hint):
+            for r in rows:
+                if r[0] in seen:
+                    continue
+                seen.add(r[0])
+                out.append((label, r[0], r[1], r[2] if len(r) > 2 else ""))
+    if "BAR" in tokens:
+        _hdrs, rows = _upper_rows_for(plan, day["dow"])
+        for r in rows:
+            out.append(("Bar \u00b7 %s" % r[0], r[1], "", r[2] if len(r) > 2 else ""))
+    if not out:
+        sc = plan.get("content", {}).get("strength", {})
+        for blk in sc.get("blocks", []):
+            nums = [int(x) for x in re.findall(r"\d+", blk["title"])]
+            if len(nums) == 2 and nums[0] <= wk["week"] <= nums[1]:
+                for r in blk["rows"]:
+                    out.append(("S&C", r[0], r[1], r[2] if len(r) > 2 else ""))
+    return out
 
 
 def run_detail_html(plan, day, wk, pd_):
-    """Everything needed to get out of the door and run today's session."""
+    """Today's run, every part of it, in the order it happens."""
     if not day:
         return '<div class="restday"><div class="big">\U0001f4c5</div>Today is outside the plan.</div>'
+    oth = other_addons(day)
     extra = "".join('<div class="addon"><span class="bul">+</span><span>%s</span></div>' % esc(a)
-                    for a in other_addons(day))
+                    for a in oth)
     if day["type"] == "rest" and not day.get("target_km"):
         out = ('<div class="restday"><div class="big">\U0001f6cf\ufe0f</div>'
-               '<b>Rest day.</b><br>No run today \u2014 and a rest day is a session, not a gap.</div>')
+               '<b>Rest day.</b><br>No run today \u2014 and a rest day is a session, '
+               'not a gap.</div>')
         return out + ('<div class="detail"><h3>Still on today</h3>%s</div>' % extra if extra else "")
     run_txt, _ = split_session(day["session"])
-    label = TYPE_LABEL.get(day["type"], day["type"].title())
     actual, pace = pd_.get("actual_km", 0), pd_.get("pace_str")
-    kv = ('<div class="kv"><span class="k">Distance</span>'
-          '<span class="mono"><b>%g km</b></span>' % day["target_km"])
-    kv += '<span class="k">Type</span><span>%s</span>' % esc(label)
-    if day.get("shoe"):
-        kv += '<span class="k">Shoes</span><span>\U0001f45f %s</span>' % esc(day["shoe"])
-    kv += ('<span class="k">Week</span><span>%s of %s \u00b7 %s</span>'
-           % (wk["week"], plan["meta"]["total_weeks"], esc(wk["phase"])))
-    if actual:
-        kv += ('<span class="k">Logged</span>'
-               '<span class="mono" style="color:var(--good);font-weight:700">\u2713 %.1f km%s</span>'
-               % (actual, (" at " + pace + "/km") if pace else ""))
-    kv += "</div>"
-    body = ('<div class="detail"><h3>\U0001f3c3 Today\u2019s run</h3>'
-            '<div class="body">%s</div>%s</div>' % (esc(run_txt), kv))
+    label = TYPE_LABEL.get(day["type"], day["type"].title())
+    head = ('<div class="vhead"><div class="vtitle">\U0001f3c3 Today\u2019s run</div>'
+            '<div class="vmeta">%s \u00b7 <b>%g km</b> \u00b7 wk %s</div>%s</div>'
+            % (esc(label), day["target_km"], wk["week"],
+               ('<div class="done">\u2713 Logged \u2014 %.1f km%s</div>'
+                % (actual, (" at " + pace + "/km") if pace else "")) if actual else ""))
+    # Reminders go above the steps, not below: they are errands with deadlines and the
+    # whole reason they exist is to be read before the day runs away.
     rem = "".join('<div class="addon"><span class="bul">!</span><span>%s</span></div>' % esc(r)
                   for r in day.get("reminders", []))
-    if rem:
-        body += '<div class="detail"><h3>\u26a0\ufe0f Read this first</h3>%s</div>' % rem
-    if extra:
-        body += '<div class="detail"><h3>Also on today</h3>%s</div>' % extra
-    # The pace table, because a session reading "@ 3:50/km" is no use on its own when the
-    # legs disagree with the number on the day.
+    body = head + ('<div class="detail warn"><h3>\u26a0\ufe0f Read this first</h3>%s</div>' % rem
+                   if rem else "")
+    steps = run_steps(plan, day, wk)
+    body += "".join(step_html(i + 1, esc(t) if "<" not in t else t, d)
+                    for i, (t, d) in enumerate(steps))
+    if oth:
+        body += ('<div class="detail"><h3>\U0001f94b Also on today \u2014 not the run</h3>%s</div>'
+                 % extra)
     pz = plan.get("content", {}).get("paces", {})
     if pz.get("rows"):
-        body += ('<div class="detail"><h3>\U0001f3af Pace zones</h3>%s</div>'
+        body += ('<details class="drop"><summary>\U0001f3af Pace zones</summary>%s</details>'
                  % ref_table(pz["headers"], pz["rows"]))
     others = "".join(
         '<div class="addon"><span class="bul" style="color:var(--faint);'
         'font-family:var(--font-mono)">%s</span><span>%s</span></div>'
         % (esc(d["dow"]), esc(split_session(d["session"])[0]))
         for d in wk["days"] if d["date"] != day["date"])
-    body += ('<div class="detail"><h3>\U0001f4c6 Rest of week %s</h3>%s</div>'
+    body += ('<details class="drop"><summary>\U0001f4c6 Rest of week %s</summary>%s</details>'
              % (wk["week"], others))
     return body
 
 
 def gym_detail_html(plan, day, wk):
-    """Today's strength work, expanded from the add-on codes into the actual exercises."""
-    gym = gym_addons(day) if day else []
-    if not gym:
+    """Today's strength work as a checklist: every exercise, its dose, its cue.
+
+    Grouped by block and numbered straight through, because the question being answered
+    is "what do I do next", not "which table is this in"."""
+    items = gym_checklist(plan, day, wk) if day else []
+    if not items:
         return ('<div class="restday"><div class="big">\U0001f6cb\ufe0f</div>'
                 '<b>No strength work today.</b><br>Nothing is scheduled \u2014 '
                 'don\u2019t invent any.</div>')
-    body = ('<div class="detail"><h3>\U0001f4cb Today\u2019s blocks</h3>%s</div>'
-            % "".join('<div class="addon"><span class="bul">+</span><span>%s</span></div>' % esc(a)
-                      for a in gym))
-    tokens = " ".join(gym).upper()
-    # The load ladder goes first and loudest: it is the one thing that changes week to
+    gym = gym_addons(day)
+    body = ('<div class="vhead"><div class="vtitle">\U0001f3cb\ufe0f Today\u2019s gym</div>'
+            '<div class="vmeta">%s \u00b7 %d exercise%s \u00b7 wk %s</div></div>'
+            % (esc(day["dow"]), len(items), "" if len(items) == 1 else "s", wk["week"]))
+    # This week's loads first. It is the only thing on the page that changes week to
     # week, and getting it wrong is the difference between progressing and marking time.
-    if "GYM" in tokens or "G1" in tokens:
+    if any(c in " ".join(gym).upper() for c in ("GYM", "G1")):
         hdrs, row = _ladder_row(plan, wk["week"])
         if row:
             vals = "".join('<span>%s<small>%s</small></span>' % (esc(str(v)), esc(h))
                            for h, v in zip(hdrs[1:], row[1:]))
-            body += ('<div class="ladder"><div class="lbl">Week %s loads \u2014 today\u2019s '
-                     'numbers</div><div class="vals">%s</div></div>' % (wk["week"], vals))
-    # Then only the blocks the add-ons actually name. Eleven blocks on a phone screen is
-    # how you end up not reading any of them.
-    shown = set()
-    for codes, hint in ((["G1", "G2", "G3", "G4", "G5", "G6"], "heavy slow resistance"),
-                        (["M1", "M2", "M3"], "mobility"),
-                        (["R1", "R3", "R4", "R5"], "daily")):
-        if not any(c in tokens for c in codes):
-            continue
-        for title, hdrs, rows in _rows_with_codes(plan, codes, hint):
-            if title in shown:
-                continue
-            shown.add(title)
-            body += '<div class="detail"><h3>%s</h3>%s</div>' % (esc(title), ref_table(hdrs, rows))
-    if "BAR" in tokens:
-        hdrs, rows = _upper_rows_for(plan, day["dow"])
-        if rows:
-            body += ('<div class="detail"><h3>\U0001f3cb\ufe0f Bar \u2014 %s</h3>%s</div>'
-                     % (esc(day["dow"]), ref_table(hdrs, rows)))
-    # Runners without coded blocks (Jamie, Amber, Stephen) get the phase-appropriate
-    # session table instead, picked off the week numbers in the block titles.
-    if not shown and "BAR" not in tokens:
-        sc = plan.get("content", {}).get("strength", {})
-        if sc.get("sessions"):
-            body += ('<div class="detail"><h3>Your weekly sessions</h3>%s</div>'
-                     % ref_table(sc["sessions"]["headers"], sc["sessions"]["rows"]))
-        for blk in sc.get("blocks", []):
-            nums = [int(x) for x in re.findall(r"\d+", blk["title"])]
-            if len(nums) == 2 and nums[0] <= wk["week"] <= nums[1]:
-                body += ('<div class="detail"><h3>%s</h3>%s</div>'
-                         % (esc(blk["title"]), ref_table(blk["headers"], blk["rows"])))
+            body += ('<div class="ladder"><div class="lbl">Week %s loads \u2014 '
+                     'today\u2019s numbers</div><div class="vals">%s</div></div>'
+                     % (wk["week"], vals))
+    n, group = 0, None
+    for blk, ex, dose, cue in items:
+        if blk != group:
+            group = blk
+            body += '<div class="grp">%s</div>' % esc(blk)
+        n += 1
+        title = esc(ex) + (' <span class="dose">%s</span>' % esc(dose) if dose else "")
+        body += step_html(n, title, esc(cue))
     return body
 
 
@@ -1900,35 +2050,35 @@ def render_runner(runner_id):
     # not the Strava row, not the progress rings. Both are still here, further down.
     twk, tday = today_slot(plan)
     tpd = (progress.get("days", {}) or {}).get(tday["date"], {}) if tday else {}
-    vkey = f"view_{runner_id}"
-    view = st.session_state.get(vkey, "home")
+    # The view lives in the URL rather than in session_state, because that is what lets
+    # the tiles themselves be the buttons: an <a href="?v=cav:run"> can wrap a whole card,
+    # and st.button cannot. "?v=" is also a back link, and the browser's own back button
+    # starts working as a result, which it never did with tab state.
+    view = ""
+    try:
+        raw = st.query_params.get("v", "")
+        if raw and ":" in raw:
+            who, what = raw.split(":", 1)
+            if who == runner_id and what in ("run", "gym"):
+                view = what
+    except Exception:
+        view = ""
 
     # Run and gym are full-screen detail views rather than another tab, because the whole
     # point is one job per screen: what to do, in the order it happens, nothing else.
     if view in ("run", "gym"):
-        if st.button("‹  Today", key=f"back_{runner_id}_{view}", use_container_width=True):
-            st.session_state[vkey] = "home"
-            st.rerun()
         detail = (run_detail_html(plan, tday, twk, tpd) if view == "run"
                   else gym_detail_html(plan, tday, twk))
-        st.markdown(STYLE + '<div class="sv">' + detail + "</div>",
-                    unsafe_allow_html=True)
+        st.markdown(STYLE + '<div class="sv">'
+                    '<a class="back" href="?" target="_self">\u2039\u2002Today</a>'
+                    + detail +
+                    '<a class="back bottom" href="?" target="_self">\u2039\u2002Today</a>'
+                    "</div>", unsafe_allow_html=True)
         return
 
     st.markdown(STYLE + '<div class="sv">' +
                 today_hero_html(plan, tday, twk, tpd) +
-                today_tiles_html(plan, tday, tpd) + "</div>", unsafe_allow_html=True)
-
-    # The tiles above are drawn in HTML and these buttons sit directly under them: an
-    # HTML card cannot switch a Streamlit view, and a card that looks tappable but isn't
-    # is worse than no card. Same order, same labels.
-    nav_run, nav_gym = st.columns(2)
-    if nav_run.button("🏃  Open run", key=f"nav_run_{runner_id}", use_container_width=True):
-        st.session_state[vkey] = "run"
-        st.rerun()
-    if nav_gym.button("🏋️  Open gym", key=f"nav_gym_{runner_id}", use_container_width=True):
-        st.session_state[vkey] = "gym"
-        st.rerun()
+                today_tiles_html(plan, tday, tpd, runner_id) + "</div>", unsafe_allow_html=True)
 
     # ---- hero (facts strip + glam progress rings) now sits BELOW the two tiles ----
     banner = f'<div class="banner">{esc(content["banner"])}</div>' if content.get("banner") else ""
