@@ -1239,7 +1239,7 @@ def content():
                                         "the banded eversion work and single-leg balance in this routine "
                                         "aren't optional extras for you right now — do them every session "
                                         "regardless of whether it's currently bothering you."),
-        "fuel": C.fuel(football=False, volume_note="it matters more with 100+ km weeks", bodycomp=True),
+        "fuel": C.fuel(football=False, volume_note="it matters more with 100+ km weeks", bodycomp=True, sweat=C.FUEL_FLUID_CAV),
         "research": C.RESEARCH_NOTES,
         "diet": {
             "intro": "Starting at 71 kg, aiming to bank a few kg of surplus before volume climbs into the "

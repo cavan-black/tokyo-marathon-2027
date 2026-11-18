@@ -236,13 +236,21 @@ FUEL_CARBS = [
     ["Slower finish, more total fuel", "Per-hour rates don't change, but a 4:00 marathon is four hours of fuelling against three. Total need scales with time on feet, not distance."],
 ]
 # Fluid and sodium are a separate problem from carbs and in heat they bite first.
+# Cav only: his own weigh-ins. Jamie and Amber were being shown another runner's
+# sweat rate as though it were theirs, which is worse than no number at all.
+FUEL_FLUID_CAV = [
+    ["Cav's measured rate: 1.48 L/hr", "THE PLANNING NUMBER, and it is measured three times, not estimated. 18 Oct 2026, 19 km easy at 22°C/76%: 70.6 -> 69.3 kg having drunk 1.0 L = 2.3 L in 1.56 h. 20 Oct 2026, VO2 session at 17°C/86%, drank nothing: 70.6 -> 68.75 kg in 1.25 h. Both land on 1.48 L/hr. Use it for everything bar full sun."],
+    ["1.9 L/hr is the hot-sun ceiling", "11 Oct 2026, 22 km at ~25°C in direct sun: 3.4 L in 1.77 h. Not the default any more — it is one end of the range. Reach for it only when a long run is in open sun above ~24°C."],
+    ["Intensity drives it as hard as heat", "The finding that matters, and it is counter-intuitive: 18 Oct was heat index 135F at EASY pace, 20 Oct was 121F at HARD pace, and both gave 1.48 L/hr. Cooler air did not lower the rate. So do not assume cool weather solves this — plan Tokyo at 8-12°C around 1.2-1.4 L/hr at marathon effort, not the 0.8 L/hr a temperature table would hand you."],
+    ["Knock ~10% off all three", "Roughly 0.2 kg of a 75-min hard session is metabolic mass — exhaled carbon, not water. True sweat is ~10% below these figures. It applies equally to every measurement, so the comparison between them still holds."],
+    ["Still missing: the long cool one", "The only gap left, and it is the one that sets the race-day plan: easy/steady effort under 15°C for 2 h+. Sevilla week (Dec) or any cold Sunday long run. Sweat loss (L) = kg lost + litres drunk."],
+    ["Carry enough to matter", "At 1.48 L/hr a 500 ml handheld is 20 minutes of fluid. Past 90 min in warmth you need a 1.5-2 L vest or a route that loops past a stash. Target 700-900 ml/hr: you will not match the loss, but ~50% replacement keeps you inside the 2% line."],
+    ["You cannot drink your way even", "On 18 Oct he drank 640 ml/hr and still replaced only ~43% of the loss, finishing 1.84% down. On 20 Oct he drank nothing and finished 2.62% down. The race plan follows from that: start topped up and accept ~2%, rather than chase replacement and wreck a gut that already has a GI-trouble history."],
+]
 FUEL_FLUID = [
-    ["Cav's measured rate: 1.9 L/hr", "22 km on 11 Oct 2026 at ~25°C in sun: 71.1 kg -> 68.7 kg having drunk 1.0 L = 3.4 L sweat in 1.77 h. That is a HIGH rate. Plan every hot long run off it: 30 km ~4.8 L, 35 km ~5.8 L. Tokyo at 8-12°C will be roughly half."],
-    ["Re-measure when it's cool", "The 1.9 L/hr figure is a hot-weather number. Weigh in before and after an evening run under 18°C to get the other end of the range — sweat loss (L) = kg lost + litres drunk."],
-    ["Carry enough to matter", "At 1.9 L/hr a 500 ml handheld is 16 minutes of fluid. Past 90 min in heat you need a 1.5-2 L vest or a route that loops past a stash. Target 800-1000 ml/hr: you will not match the loss, but ~50% replacement keeps you inside the 2% line."],
     ["Cool, 15–18°C", "300–400 ml/hr."],
     ["Warm, 22–25°C", "500–700 ml/hr."],
-    ["Hot, ~25-30°C", "800–1,000 ml/hr — and accept you'll still finish down. At a 1.9 L/hr sweat rate even this is only half-replacement."],
+    ["Hot, ~25-30°C", "800–1,000 ml/hr — and accept you'll still finish down. In open sun, where his rate goes to 1.9 L/hr, even this is only half-replacement."],
     ["The 2% rule", "Lose more than 2% of body weight in fluid and both performance and heat regulation fall away sharply."],
     ["Don't overdrink either", "Large volumes of plain water in heat dilute blood sodium. That is genuinely dangerous, not merely suboptimal."],
     ["Sodium 500–1,000 mg/hr", "In heat. White crust on your cap or sunglasses and stinging eyes mean you're a salty sweater — work at the top of that range."],
@@ -309,7 +317,7 @@ def warmup(niggle_note=None):
     return {"intro": intro, "headers": WARMUP_HEADERS, "rows": WARMUP_ROUTINE}
 
 
-def fuel(football=False, volume_note="", bodycomp=False):
+def fuel(football=False, volume_note="", bodycomp=False, sweat=None):
     decide = list(FUEL_DECIDE)
     if football:
         decide.append(["Big football week", "If a match or tournament ate your legs, downgrade the next run to easy/recovery and protect the long run. Two hard efforts a week total — matches included."])
@@ -323,7 +331,8 @@ def fuel(football=False, volume_note="", bodycomp=False):
             {"title": "Daily diet · fuel the work", "headers": ["Topic", "Detail"], "rows": FUEL_DIET},
             {"title": "Before running · what & when", "headers": ["Topic", "Detail"], "rows": FUEL_PRE},
             {"title": "During the run · carbs", "headers": ["Duration / rule", "Detail"], "rows": FUEL_CARBS},
-            {"title": "During the run · fluid & sodium", "headers": ["Conditions / rule", "Detail"], "rows": FUEL_FLUID},
+            {"title": "During the run · fluid & sodium", "headers": ["Conditions / rule", "Detail"],
+             "rows": (sweat or []) + FUEL_FLUID},
             {"title": "Doing it cheaply · sugar beats gels", "headers": ["Topic", "Detail"], "rows": FUEL_CHEAP},
             {"title": "After · recover & rehydrate", "headers": ["Topic", "Detail"], "rows": FUEL_POST},
             {"title": "Alcohol · the honest version", "headers": ["Topic", "Detail"], "rows": FUEL_ALC},
