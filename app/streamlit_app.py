@@ -1778,7 +1778,7 @@ def _rows_with_codes(plan, codes, block_hint):
     return out
 
 
-def _bar_items(plan, dow):
+def _bar_items(plan, dow, role_override=None):
     """Every bar exercise for this day, one per item, warm-up and core included.
 
     Reads content["bar"], which is per-exercise, rather than the prose the reference table
@@ -1790,6 +1790,17 @@ def _bar_items(plan, dow):
     day = (bar.get("days") or {}).get(dow)
     if not day:
         return []
+    # A one-off swap (BAR_SWAP in the plan) renames the session on the day itself, so the
+    # checklist follows the SESSION TEXT rather than the weekday. Otherwise the day would
+    # say "+BAR push" and then list Wednesday's pull-ups underneath it.
+    if role_override:
+        # Match on the word anywhere in the role: the labels read "PRIMARY push" and
+        # "Posture · 8 min", so startswith finds neither.
+        want = role_override.lower()
+        for d2 in (bar.get("days") or {}).values():
+            if want in d2.get("role", "").lower():
+                day = d2
+                break
     # Flattening the prose exposed a duplication that was invisible before: Friday's
     # "posture" session is largely the warm-up again, so the list read scapular pull-ups
     # 10, then scapular pull-ups 2 x 10, four lines later. Where the day's own session
@@ -1972,7 +1983,10 @@ def gym_checklist(plan, day, wk):
                 seen.add(r[0])
                 out.append((label, r[0], r[1], r[2] if len(r) > 2 else ""))
     if "BAR" in tokens:
-        out += _bar_items(plan, day["dow"])
+        # "+BAR push" on a Wednesday is a deliberate one-off swap; take the word after
+        # BAR as the session to run, not the weekday.
+        m = re.search(r"BAR\s+(\w+)", tokens)
+        out += _bar_items(plan, day["dow"], m.group(1) if m else None)
     if not out:
         sc = plan.get("content", {}).get("strength", {})
         for blk in sc.get("blocks", []):

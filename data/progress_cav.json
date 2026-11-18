@@ -61694,7 +61694,7 @@
       "week": 18,
       "dow": "Wed",
       "type": "recovery",
-      "session": "Recovery 6 km easy — 5:35-6:05/km, HR under 140, slower than you think. 24 h after quality  +GYM G1-G6  +BAR pull  +M1/M2 mobility (2x daily) +R1 isometrics",
+      "session": "Recovery 6 km easy — 5:35-6:05/km, HR under 140, slower than you think. 24 h after quality  +GYM G1-G6  +BAR push  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 6,
       "actual_km": 0,
       "status": "Missed",
@@ -63651,7 +63651,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-18T10:47:27+00:00",
+  "last_sync": "2026-11-18T10:52:44+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-17",

@@ -1231,6 +1231,14 @@ def gym_for(w):
 # lives in UPPER_BODY rather than being repeated into every day's note.
 UPPER_DAYS = {"Mon": "BAR push", "Tue": "BAR light", "Wed": "BAR pull",
               "Thu": "BAR maintenance", "Fri": "BAR posture"}
+# ONE-OFF SWAPS, by date: which weekday's bar session to run instead of this one's. The
+# weekly template stays put - Monday is the push day because it is the only day with no
+# run attached, and Wednesday is the pull day because the run is easy - so a week where
+# the days shuffle is recorded here rather than by rewriting the template and quietly
+# changing every week that follows. The value is the weekday whose session to borrow.
+BAR_SWAP = {
+    "2026-11-18": "Mon",   # his call: push today instead of pull
+}
 
 def upper_for(w):
     """Which days carry the downstairs bar work. Starts at wk 18: wk 17 is half logged
@@ -1245,7 +1253,12 @@ def upper_for(w):
     if w in (31, 32) or w in RACE_WEEKS: return {"Mon": "BAR posture", "Thu": "BAR posture"}
     return dict(UPPER_DAYS)
 
-def _stamp_rehab(w, days):
+def bar_label_for(dow, iso):
+    """The bar session a given date actually runs, after any one-off swap."""
+    return UPPER_DAYS.get(BAR_SWAP.get(iso, dow))
+
+
+def _stamp_rehab(w, days, dates=None):
     gym_days, gym_txt = gym_for(w)
     # Mobility stays twice daily while the dorsiflexion deficit is being closed, then
     # drops to once a day as maintenance. The isometrics fold into the gym work once the
@@ -1256,6 +1269,9 @@ def _stamp_rehab(w, days):
     for dow in DOW:
         txt, typ, km = days[dow]
         bar = upper.get(dow)
+        iso = (dates or {}).get(dow)
+        if bar and iso and iso in BAR_SWAP:
+            bar = UPPER_DAYS.get(BAR_SWAP[iso], bar)
         if "+M1" in txt or "+M1/M2" in txt:
             # A hand-written day that already carries the mobility tail. It still needs
             # the bar stamp, which was added to the plan later than those notes were.
@@ -1441,7 +1457,12 @@ def build_week(w):
     # here rather than writing it into each note is the only way it does not get dropped
     # from half of them: "daily" has to mean daily or the mobility work does nothing.
     if w >= 16:
-        days = _stamp_rehab(w, days)
+        # The dates go in so a one-off BAR_SWAP can name a single day rather than a
+        # weekday. build_week works in weekdays; the swaps are calendar events.
+        _mon = START + timedelta(days=(w - 1) * 7)
+        days = _stamp_rehab(w, days,
+                            {d: (_mon + timedelta(days=i)).isoformat()
+                             for i, d in enumerate(DOW)})
     keep=KEEP_ONLY.get(w)
     if keep:
         why=KEEP_ONLY_WHY.get(w)
