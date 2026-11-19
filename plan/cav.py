@@ -332,12 +332,10 @@ DAY_OVERRIDE = {
                              "a session, finish at 11 and let the rest go", "easy", 12),
                      "Fri": ("Easy 13 km — 10 as written plus 3 of Wednesday's missed recovery "
                              "km  +GYM G1-G6  +R1", "easy", 13),
-                     "Sat": ("Easy 8 km + 6×20s strides — RACE SHOE DEBUT: run the 8 km in "
-                             "the GT-2000, change into the Metaspeeds for the 6 strides only, "
-                             "walk home in them. ~1 km in the racer: enough to find hotspots and "
-                             "check the heel collar against the achilles, at a pace where a "
-                             "plated shoe actually works. If they have not arrived, do the "
-                             "strides in trainers and slide this to wk 19 Sat", "easy", 8),
+                     "Sat": ("Easy 8 km + 6×20s strides, all in trainers — the Metaspeeds "
+                             "now land Sat 28 Nov, so the debut moves to that day. Run the "
+                             "strides properly anyway: they are the first fast running since "
+                             "the injury and they matter on their own", "easy", 8),
                      # 15 -> 17: 2 km moved off Thursday, his call, 19 Nov. It smooths the step
                      # into wk 19's 20 km (17 -> 20 beats 15 -> 20) and the km were loose to
                      # begin with. He also asked to run this in the Metaspeeds as a dress
@@ -364,15 +362,21 @@ DAY_OVERRIDE = {
                      # slow long runs are not what hurt him and the aerobic rebuild needs
                      # it. Week total HELD at 74: the 3 km taken off the quality days
                      # goes back onto the easy days rather than out of the week.
-                     "Tue": ("Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km — CUT FROM 5×1.5 and 3:48. RACE SHOE: the 6 km of reps "
-                             "only, warm-up and cool-down in trainers. First real test of the Metaspeeds "
-                             "at speed — only if Saturday's strides were clean", "quality", 11),
+                     "Tue": ("Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km — CUT FROM 5×1.5 "
+                             "and 3:48. In trainers: the racer does not arrive until Saturday", "quality", 11),
                      "Wed": ("Recovery 8 km easy — 5:35-6:05/km, 24 h after quality  +GYM G1-G6", "recovery", 8),
                      "Thu": ("Medium-long 13 km w/ middle 3 km @ MP — first marathon-pace work "
                              "back, CUT FROM 5 km. Continuous fast blocks are the shape that "
                              "injured him, so this one stays tiny", "quality", 13),
                      "Fri": ("Easy 12 km  +BJJ (drills only — no live rounds)", "easy", 12),
-                     "Sat": ("Easy 10 km + strides", "easy", 10),
+                     "Sat": ("Easy 10 km + strides — RACE SHOE DEBUT, arrival day. Run the "
+                             "10 km in trainers, change into the Metaspeeds for the strides "
+                             "only, walk home in them. ~1 km in the racer: enough to find "
+                             "hotspots and check the heel collar against the achilles, at a "
+                             "pace where a plated shoe actually works. If they turn up too "
+                             "late in the day, do the strides in trainers and take the first "
+                             "~1 km in them inside Tuesday's warm-up instead — do NOT let the "
+                             "first wear be the 9 km of MP on Thursday", "easy", 10),
                      "Sun": ("Long 20 km easy", "long", 20)},
                 # Week 20 was the single riskiest week in the plan: Thursday asked for
                 # 3x4 km @ MP, i.e. 12 km of marathon-pace running, MORE than the 10 km
@@ -388,8 +392,12 @@ DAY_OVERRIDE = {
                              "+GYM G1-G6  +R1", "rest", 0),
                      "Tue": ("VO2: 5×1000 m @ 3:26/km, 2:30 jog @ 6:00/km — CUT FROM 6 reps", "quality", 13),
                      "Wed": ("Recovery 8 km easy — 5:35-6:05/km, 24 h after quality  +GYM G1-G6", "recovery", 8),
-                     "Thu": ("MP tempo: 3×3 km @ MP, 2 min float @ 4:28/km — CUT FROM 3×4 km. 9 km of MP, still under the 10 km "
-                             "block that caused the injury", "quality", 14.3),
+                     "Thu": ("MP tempo: 3×3 km @ MP, 2 min float @ 4:28/km — CUT FROM 3×4 km. "
+                             "9 km of MP, still under the 10 km block that caused the injury. "
+                             "RACE SHOE: the 9 km of reps only, warm-up, floats and cool-down "
+                             "in trainers. First real test of the Metaspeeds at speed, and at "
+                             "3:59 it is the exact pace they will run at Sevilla and Tokyo — "
+                             "only if Saturday's strides were clean", "quality", 14.3),
                      "Fri": ("Easy 9.7 km  +BJJ (drills only — no live rounds)  +GYM G1-G6  +R1", "easy", 9.7),
                      "Sat": ("Easy 7 km + strides", "easy", 7),
                      "Sun": ("28 km easy — steady week, race is next Sunday", "long", 28)},
@@ -404,7 +412,10 @@ DAY_OVERRIDE = {
                              "DATE UNCONFIRMED — the 2026 edition ran Sun 18 Jan; check the "
                              "organiser in November and tell me if it lands elsewhere", "race", 14)},
                 21: {"Tue": ("Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km  +light S&C — "
-                            "half the usual threshold volume, five days out", "quality", 11),
+                            "half the usual threshold volume, five days out. RACE SHOE: the 4 km "
+                            "of reps only. Third and last outing before Sevilla — if anything "
+                            "about them is still wrong, this is the morning to find out, while "
+                            "there is time to race the half in the EVO SL instead", "quality", 11),
                      "Wed": ("Recovery 6 km easy — 5:35-6:05/km, 24 h after the sharpener", "recovery", 6),
                      "Thu": ("Easy 13 km — no medium-long this week, Sunday is the session", "easy", 13),
                      "Fri": ("Easy 8 km — two days out, descending into the race  "
@@ -1533,11 +1544,13 @@ def content():
                      "tagged with its shoe.",
             "headers": ["Shoe", "Used for", "km from here", "Total at Tokyo", "Status"],
             "rows": shoe_rows(),
-            "note": "The racer is the Metaspeed Sky Tokyo (red/black/white, 42), arriving 20-21 Nov. "
+            "note": "The racer is the Metaspeed Sky Tokyo (red/black/white, 42), arriving Sat 28 Nov. "
                     "It holds its bounce for ~250-300 km and the model is discontinued, so there is no "
-                    "cheap second pair: it appears five times and never on an easy run. It beds in "
-                    "backwards — strides only on Wk 18 Sat (~1 km), the threshold reps only on Wk 19 "
-                    "Tue (6 km), then Sevilla on 13 Dec, the Wk 29 dress rehearsal, and Tokyo. "
+                    "cheap second pair: it appears %d times and never on an easy run. It beds in "
+                    "backwards — strides only on arrival day, Wk 19 Sat (~1 km), the MP reps only on "
+                    "Wk 20 Thu (9 km at 3:59, the pace it will actually race at), the sharpener reps "
+                    "only on Wk 21 Tue (4 km), then Sevilla on 13 Dec, the Wk 29 dress rehearsal, and "
+                    "Tokyo. "
                     "Warm-ups and cool-downs stay in trainers. NOT the Wk 18 long run: a 38.7 mm "
                     "plated stack at easy pace, on the longest run since the injury, is two new "
                     "variables at once on an ankle still 1 cm down on dorsiflexion. "
@@ -1545,7 +1558,7 @@ def content():
                     "at the half and not three weeks out, since super shoes change calf and Achilles "
                     "loading noticeably and not everyone gets on with a given geometry. "
                     "Log mileage per pair in Strava (assign gear to each activity); most "
-                    "worn-shoe injuries happen because nobody was counting.",
+                    "worn-shoe injuries happen because nobody was counting." % race_shoe_outings(),
         },
         "paces": {"headers": ["Zone", "per km", "per mile", "Use"], "rows": [
             ["Recovery", "5:35–6:05", "8:59–9:47", "Easy shakeouts, doubles, day-after"],
@@ -1751,7 +1764,7 @@ EVOSL_LAST_WEEK = 21
 # The racer only comes out for the two races and the handful of sessions that bed it
 # in — it holds its bounce for ~250-300 km and must not be spent on training.
 #
-# The Metaspeed Sky Tokyo (red/black/white, arriving 20-21 Nov) breaks in BACKWARDS
+# The Metaspeed Sky Tokyo (red/black/white) breaks in BACKWARDS
 # from what this used to say. It had the wk 18 Sunday long run as the first outing;
 # that was wrong on four counts. A 15 km long run would have been the longest run
 # since the injury AND the shoe's debut on the same day, so a flare could not have
@@ -1762,16 +1775,33 @@ EVOSL_LAST_WEEK = 21
 # outsole with ~250-300 km in it is too scarce to spend on easy miles — the model is
 # discontinued, so there is no cheap second pair.
 #
-# So: strides first (wk 18 Sat, ~1 km of actual running in them, enough to find
-# hotspots and check the heel collar against the tendon at a pace where the shoe
-# works), then the threshold reps only (wk 19 Tue, 6 km), then Sevilla, the dress
-# rehearsal and Tokyo. Warm-ups and cool-downs stay in trainers throughout.
+# So: strides first (~1 km of actual running in them, enough to find hotspots and
+# check the heel collar against the tendon at a pace where the shoe works), then
+# reps only, then Sevilla, the dress rehearsal and Tokyo. Warm-ups and cool-downs
+# stay in trainers throughout.
+#
+# ARRIVAL SLIPPED TO SAT 28 NOV (told me 19 Nov; it was 20-21 Nov). That deleted the
+# first two outings - wk 18 Sat and wk 19 Tue both fall before the shoe exists - and
+# left 15 days between arrival and Sevilla to bed in a plated racer he intends to
+# race a half in. Rebuilt onto the three days in that window that are actually worth
+# spending the shoe on:
+#   wk 19 Sat (28 Nov) - arrival day, strides only, ~1 km. The hotspot check.
+#   wk 20 Thu (3 Dec)  - the MP tempo, reps only, 9 km at 3:59. This is a BETTER
+#                        first speed outing than the threshold reps it replaces:
+#                        3:59/km is the pace the shoe will actually run at Sevilla
+#                        and Tokyo, where 3:50 threshold work is not.
+#   wk 21 Tue (8 Dec)  - the pre-race sharpener, reps only, 4 km. Five days out,
+#                        last chance to find a problem while it can still be fixed.
+# Three bed-in sessions before the half, which is what the rotation always promised,
+# and 14 km of wear instead of 7 - worth it to arrive at Sevilla having run race
+# pace in them. Note this takes wk 21 Tue off the EVO SL, which is being retired
+# after Sevilla anyway, so the km land where they cost least.
 # Wk 29 rather than 30 before Tokyo: 29 is the dress rehearsal (35 km with 12 km @ MP)
 # and 30 is an easy run, so 29 is the one that actually rehearses race pace.
-RACE_SHOE_DAYS = {(18,"Sat"), (19,"Tue"), (21,"Sun"), (29,"Sun"), (33,"Sun")}
+RACE_SHOE_DAYS = {(19,"Sat"), (20,"Thu"), (21,"Tue"), (21,"Sun"), (29,"Sun"), (33,"Sun")}
 # Days where only PART of the session is run in the racer. Counting the whole day
 # against a 250-300 km shoe would overstate its wear by ~16 km across the two.
-RACE_SHOE_PARTIAL = {(18,"Sat"): 1, (19,"Tue"): 6}
+RACE_SHOE_PARTIAL = {(19,"Sat"): 1, (20,"Thu"): 9, (21,"Tue"): 4}
 # The Clifton is already on 447 km, so it is the pair that runs out first: it takes
 # half the easy running through the rebuild and hands over to the second new trainer
 # at wk 20, by which point it is near 600 km and done.
@@ -1808,6 +1838,16 @@ def shoe_for(w, dow, typ, sess):
     return second if (w % 2 == 1 or typ == "recovery") else SHOES["gt2000"]
 
 
+def race_shoe_outings():
+    """How many days the racer actually appears on — counted, not typed. The hand-typed
+    number was wrong before this ramp was rebuilt and wrong again after, because the
+    race-type days (Sevilla, Malaga, Tokyo) are picked up by shoe_for without being
+    listed in RACE_SHOE_DAYS."""
+    return sum(1 for w in range(16, 34)
+               for dow, (txt, typ, d) in build_week(w).items()
+               if shoe_for(w, dow, typ, txt) == SHOES["race"])
+
+
 def shoe_rows(from_week=16):
     """Rows for the Shoes table, counted off the plan rather than typed by hand.
     Hand-typed mileage is how a rotation quietly drifts out of date — and most
@@ -1837,7 +1877,7 @@ def shoe_rows(from_week=16):
         "machx":   "Owned — 245 km",
         "evosl":   "Owned — 511 km. RETIRE AFTER SEVILLA, not Tokyo.",
         "quality2": "Early Dec — replaces the EVO SL (Mach X 3 again, or similar)",
-        "race":    "OWNED — arriving 20-21 Nov. Red/black/white, 42, EUR 191.99.",
+        "race":    "OWNED — arriving Sat 28 Nov. Red/black/white, 42, EUR 191.99.",
     }
     rows = []
     for k in ("gt2000", "clifton", "daily2", "long", "machx", "evosl", "quality2", "race"):

@@ -1172,9 +1172,9 @@
           "date": "2026-11-21",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 8 km + 6×20s strides — RACE SHOE DEBUT: run the 8 km in the GT-2000, change into the Metaspeeds for the 6 strides only, walk home in them. ~1 km in the racer: enough to find hotspots and check the heel collar against the achilles, at a pace where a plated shoe actually works. If they have not arrived, do the strides in trainers and slide this to wk 19 Sat  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "session": "Easy 8 km + 6×20s strides, all in trainers — the Metaspeeds now land Sat 28 Nov, so the debut moves to that day. Run the strides properly anyway: they are the first fast running since the injury and they matter on their own  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 8,
-          "shoe": "Metaspeed Sky Tokyo"
+          "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-22",
@@ -1205,9 +1205,9 @@
           "date": "2026-11-24",
           "dow": "Tue",
           "type": "quality",
-          "session": "Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km — CUT FROM 5×1.5 and 3:48. RACE SHOE: the 6 km of reps only, warm-up and cool-down in trainers. First real test of the Metaspeeds at speed — only if Saturday's strides were clean · w/u 3 km · jogs 0.8 km · c/d 1.2 km  +BAR light  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "session": "Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km — CUT FROM 5×1.5 and 3:48. In trainers: the racer does not arrive until Saturday · w/u 3 km · jogs 0.8 km · c/d 1.2 km  +BAR light  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 11,
-          "shoe": "Metaspeed Sky Tokyo"
+          "shoe": "Mach X3"
         },
         {
           "date": "2026-11-25",
@@ -1237,9 +1237,9 @@
           "date": "2026-11-28",
           "dow": "Sat",
           "type": "easy",
-          "session": "Easy 10 km + strides  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "session": "Easy 10 km + strides — RACE SHOE DEBUT, arrival day. Run the 10 km in trainers, change into the Metaspeeds for the strides only, walk home in them. ~1 km in the racer: enough to find hotspots and check the heel collar against the achilles, at a pace where a plated shoe actually works. If they turn up too late in the day, do the strides in trainers and take the first ~1 km in them inside Tuesday's warm-up instead — do NOT let the first wear be the 9 km of MP on Thursday  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 10,
-          "shoe": "Clifton 9"
+          "shoe": "Metaspeed Sky Tokyo"
         },
         {
           "date": "2026-11-29",
@@ -1286,9 +1286,9 @@
           "date": "2026-12-03",
           "dow": "Thu",
           "type": "quality",
-          "session": "MP tempo: 3×3 km @ MP, 2 min float @ 4:28/km — CUT FROM 3×4 km. 9 km of MP, still under the 10 km block that caused the injury · w/u 3 km · jogs 1.3 km · c/d 1 km  +BAR maintenance  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "session": "MP tempo: 3×3 km @ MP, 2 min float @ 4:28/km — CUT FROM 3×4 km. 9 km of MP, still under the 10 km block that caused the injury. RACE SHOE: the 9 km of reps only, warm-up, floats and cool-down in trainers. First real test of the Metaspeeds at speed, and at 3:59 it is the exact pace they will run at Sevilla and Tokyo — only if Saturday's strides were clean · w/u 3 km · jogs 1.3 km · c/d 1 km  +BAR maintenance  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 14.3,
-          "shoe": "Mach X3"
+          "shoe": "Metaspeed Sky Tokyo"
         },
         {
           "date": "2026-12-04",
@@ -1338,9 +1338,9 @@
           "date": "2026-12-08",
           "dow": "Tue",
           "type": "quality",
-          "session": "Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km  +light S&C — half the usual threshold volume, five days out · w/u 4.5 km · jogs 1.0 km · c/d 1.5 km  +M1/M2 ankle mobility (daily)",
+          "session": "Pre-race sharpener: 4×1 km @ 3:50/km, 90s jog @ 6:00/km  +light S&C — half the usual threshold volume, five days out. RACE SHOE: the 4 km of reps only. Third and last outing before Sevilla — if anything about them is still wrong, this is the morning to find out, while there is time to race the half in the EVO SL instead · w/u 4.5 km · jogs 1.0 km · c/d 1.5 km  +M1/M2 ankle mobility (daily)",
           "target_km": 11,
-          "shoe": "EVO SL"
+          "shoe": "Metaspeed Sky Tokyo"
         },
         {
           "date": "2026-12-09",
@@ -2214,15 +2214,15 @@
         [
           "GT-2000 15",
           "Easy + recovery, and the comeback runs",
-          "318",
-          "318",
+          "326",
+          "326",
           "Owned — new on 30 Oct, 0 km"
         ],
         [
           "Clifton 9",
           "Easy + recovery until it runs out",
-          "50",
-          "497",
+          "40",
+          "487",
           "Owned — 447 km. Retire around 600."
         ],
         [
@@ -2242,15 +2242,15 @@
         [
           "Mach X3",
           "Most quality sessions",
-          "173",
-          "418",
+          "170",
+          "415",
           "Owned — 245 km"
         ],
         [
           "EVO SL",
           "Quality every third week, until Sevilla",
-          "21",
-          "532",
+          "10",
+          "521",
           "Owned — 511 km. RETIRE AFTER SEVILLA, not Tokyo."
         ],
         [
@@ -2263,12 +2263,12 @@
         [
           "Metaspeed Sky Tokyo",
           "Sevilla, Tokyo + 3 bed-in sessions",
-          "122",
-          "122",
-          "OWNED — arriving 20-21 Nov. Red/black/white, 42, EUR 191.99."
+          "129",
+          "129",
+          "OWNED — arriving Sat 28 Nov. Red/black/white, 42, EUR 191.99."
         ]
       ],
-      "note": "The racer is the Metaspeed Sky Tokyo (red/black/white, 42), arriving 20-21 Nov. It holds its bounce for ~250-300 km and the model is discontinued, so there is no cheap second pair: it appears five times and never on an easy run. It beds in backwards — strides only on Wk 18 Sat (~1 km), the threshold reps only on Wk 19 Tue (6 km), then Sevilla on 13 Dec, the Wk 29 dress rehearsal, and Tokyo. Warm-ups and cool-downs stay in trainers. NOT the Wk 18 long run: a 38.7 mm plated stack at easy pace, on the longest run since the injury, is two new variables at once on an ankle still 1 cm down on dorsiflexion. Owning it from November rather than January is deliberate — a bad fit turns up at the half and not three weeks out, since super shoes change calf and Achilles loading noticeably and not everyone gets on with a given geometry. Log mileage per pair in Strava (assign gear to each activity); most worn-shoe injuries happen because nobody was counting."
+      "note": "The racer is the Metaspeed Sky Tokyo (red/black/white, 42), arriving Sat 28 Nov. It holds its bounce for ~250-300 km and the model is discontinued, so there is no cheap second pair: it appears 7 times and never on an easy run. It beds in backwards — strides only on arrival day, Wk 19 Sat (~1 km), the MP reps only on Wk 20 Thu (9 km at 3:59, the pace it will actually race at), the sharpener reps only on Wk 21 Tue (4 km), then Sevilla on 13 Dec, the Wk 29 dress rehearsal, and Tokyo. Warm-ups and cool-downs stay in trainers. NOT the Wk 18 long run: a 38.7 mm plated stack at easy pace, on the longest run since the injury, is two new variables at once on an ankle still 1 cm down on dorsiflexion. Owning it from November rather than January is deliberate — a bad fit turns up at the half and not three weeks out, since super shoes change calf and Achilles loading noticeably and not everyone gets on with a given geometry. Log mileage per pair in Strava (assign gear to each activity); most worn-shoe injuries happen because nobody was counting."
     },
     "paces": {
       "headers": [
