@@ -314,8 +314,9 @@ DAY_OVERRIDE = {
                              "and Sun  "
                              "+GYM G1-G6", "recovery", 0),
                      # MISSED WED, 18 Nov: bereavement. The 6 km are added back across the
-                     # easy days - Thu +3, Fri +1, Sun +2 after he moved 2 of Friday's on to
-                     # the long run on 19 Nov. They go here because these are the days carrying
+                     # easy days - Thu +1, Fri +3, Sun +2 after he moved 2 km off Thursday,
+                     # the day he was about to run, on to the long run on 19 Nov. They go on
+                     # these three days because they are the only ones this week carrying
                      # nothing but easy running. Sat is a built session (race-shoe debut at
                      # stride pace) and Sun is the longest run since the injury, so neither
                      # absorbs stray volume without changing what it is testing. Note that
@@ -326,18 +327,18 @@ DAY_OVERRIDE = {
                      # anything to say on Thu, these two days go straight back to 11 and 10
                      # and the 6 km are gone for good. A missed recovery run is the one
                      # session in the plan that costs nothing to skip.
-                     "Thu": ("Easy 14 km — 11 as written plus 3 of Wednesday's missed recovery "
+                     "Thu": ("Easy 12 km — 11 as written plus 1 of Wednesday's missed recovery "
                              "km. All of it at easy pace or slower; if it starts feeling like "
-                             "a session, finish at 11 and let the rest go", "easy", 14),
-                     "Fri": ("Easy 11 km — 10 as written plus 1 of Wednesday's missed recovery "
-                             "km  +GYM G1-G6  +R1", "easy", 11),
+                             "a session, finish at 11 and let the rest go", "easy", 12),
+                     "Fri": ("Easy 13 km — 10 as written plus 3 of Wednesday's missed recovery "
+                             "km  +GYM G1-G6  +R1", "easy", 13),
                      "Sat": ("Easy 8 km + 6×20s strides — RACE SHOE DEBUT: run the 8 km in "
                              "the GT-2000, change into the Metaspeeds for the 6 strides only, "
                              "walk home in them. ~1 km in the racer: enough to find hotspots and "
                              "check the heel collar against the achilles, at a pace where a "
                              "plated shoe actually works. If they have not arrived, do the "
                              "strides in trainers and slide this to wk 19 Sat", "easy", 8),
-                     # 15 -> 17: 2 km moved off Friday, his call, 19 Nov. It smooths the step
+                     # 15 -> 17: 2 km moved off Thursday, his call, 19 Nov. It smooths the step
                      # into wk 19's 20 km (17 -> 20 beats 15 -> 20) and the km were loose to
                      # begin with. He also asked to run this in the Metaspeeds as a dress
                      # rehearsal. Declined, and the reason is written into the session so it
