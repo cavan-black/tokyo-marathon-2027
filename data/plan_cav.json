@@ -1148,24 +1148,24 @@
           "date": "2026-11-18",
           "dow": "Wed",
           "type": "recovery",
-          "session": "Recovery 6 km easy — 5:35-6:05/km, HR under 140, slower than you think. 24 h after quality  +GYM G1-G6  +BAR push  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 6,
+          "session": "No run — bereavement. The 6 recovery km moved to Thu and Fri  +GYM G1-G6  +BAR push  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 0,
           "shoe": "Clifton 9"
         },
         {
           "date": "2026-11-19",
           "dow": "Thu",
           "type": "easy",
-          "session": "Easy 11 km  +BAR maintenance  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 11,
+          "session": "Easy 14 km — 11 as written plus 3 of Wednesday's missed recovery km. All of it at easy pace or slower; if it starts feeling like a session, finish at 11 and let the rest go  +BAR maintenance  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 14,
           "shoe": "GT-2000 15"
         },
         {
           "date": "2026-11-20",
           "dow": "Fri",
           "type": "easy",
-          "session": "Easy 10 km  +GYM G1-G6  +BAR posture  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 10,
+          "session": "Easy 13 km — 10 as written plus 3 of Wednesday's missed recovery km  +GYM G1-G6  +BAR posture  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 13,
           "shoe": "GT-2000 15"
         },
         {
@@ -2214,15 +2214,15 @@
         [
           "GT-2000 15",
           "Easy + recovery, and the comeback runs",
-          "312",
-          "312",
+          "318",
+          "318",
           "Owned — new on 30 Oct, 0 km"
         ],
         [
           "Clifton 9",
           "Easy + recovery until it runs out",
-          "56",
-          "503",
+          "50",
+          "497",
           "Owned — 447 km. Retire around 600."
         ],
         [

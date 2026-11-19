@@ -307,10 +307,28 @@ DAY_OVERRIDE = {
                              "c/d 2 km — first quality since the injury, half the usual volume, "
                              "flat loop only. SHORT reps on purpose: 1 km chunks, not blocks "
                              "(reps 4.0 + jogs 1.0 + w/u 3.0 + c/d 2.0 = 10.0)", "quality", 10),
-                     "Wed": ("Recovery 6 km easy — 5:35-6:05/km, HR under 140, slower than you "
-                             "think. 24 h after quality  +GYM G1-G6", "recovery", 6),
-                     "Thu": ("Easy 11 km", "easy", 11),
-                     "Fri": ("Easy 10 km  +GYM G1-G6  +R1", "easy", 10),
+                     # Not run - bereavement, 18 Nov 2026. Kept in the week at zero rather
+                     # than deleted: the day happened, and a plan that quietly renumbers
+                     # around a missed session loses the only record that it was missed.
+                     "Wed": ("No run — bereavement. The 6 recovery km moved to Thu and Fri  "
+                             "+GYM G1-G6", "recovery", 0),
+                     # MISSED WED, 18 Nov: bereavement. The 6 km are added back here, plus 3
+                     # and plus 3, because Thu and Fri are the only days this week carrying
+                     # nothing but easy running. Sat is a built session (race-shoe debut at
+                     # stride pace) and Sun is the longest run since the injury, so neither
+                     # absorbs stray volume without changing what it is testing. Note that
+                     # this makes the week slightly HARDER than written, not equal to it:
+                     # recovery km exist to flush 24 h after quality, and moving them onto
+                     # easy days converts them into aerobic load. That is the trade he asked
+                     # for, and it is cheap at this pace - but if the left post-tib has
+                     # anything to say on Thu, these two days go straight back to 11 and 10
+                     # and the 6 km are gone for good. A missed recovery run is the one
+                     # session in the plan that costs nothing to skip.
+                     "Thu": ("Easy 14 km — 11 as written plus 3 of Wednesday's missed recovery "
+                             "km. All of it at easy pace or slower; if it starts feeling like "
+                             "a session, finish at 11 and let the rest go", "easy", 14),
+                     "Fri": ("Easy 13 km — 10 as written plus 3 of Wednesday's missed recovery "
+                             "km  +GYM G1-G6  +R1", "easy", 13),
                      "Sat": ("Easy 8 km + 6×20s strides — RACE SHOE DEBUT: run the 8 km in "
                              "the GT-2000, change into the Metaspeeds for the 6 strides only, "
                              "walk home in them. ~1 km in the racer: enough to find hotspots and "
