@@ -26917,7 +26917,7 @@
       "session": "Easy 8 km",
       "target_km": 8,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -28603,19 +28603,19 @@
     },
     "18": {
       "planned_km": 56,
-      "planned_km_due": 9,
+      "planned_km_due": 15,
       "actual_km": 9.0,
       "substituted_km": 0,
       "replaced_km": 0,
       "done": 1,
       "partial": 0,
-      "missed": 1,
+      "missed": 2,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 1,
       "quality_planned": 1,
       "long_done": false,
-      "flag": "✓ On track"
+      "flag": "⚠ Under-target — consider holding volume / repeating the week"
     },
     "19": {
       "planned_km": 46,
@@ -28858,7 +28858,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-18T15:20:30+00:00",
+  "last_sync": "2026-11-19T02:22:28+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-17",

@@ -61710,7 +61710,7 @@
       "session": "Easy 11 km  +BAR maintenance  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 11,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -63396,19 +63396,19 @@
     },
     "18": {
       "planned_km": 60,
-      "planned_km_due": 10,
+      "planned_km_due": 16,
       "actual_km": 11.0,
       "substituted_km": 0,
       "replaced_km": 0,
       "done": 1,
       "partial": 0,
-      "missed": 1,
+      "missed": 2,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 1,
       "quality_planned": 1,
       "long_done": false,
-      "flag": "✓ On track"
+      "flag": "⚠ Under-target — consider holding volume / repeating the week"
     },
     "19": {
       "planned_km": 74,
@@ -63651,7 +63651,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-18T15:20:29+00:00",
+  "last_sync": "2026-11-19T02:22:26+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-17",
