@@ -1148,7 +1148,7 @@
           "date": "2026-11-18",
           "dow": "Wed",
           "type": "recovery",
-          "session": "No run — bereavement. The 6 recovery km moved to Thu and Fri  +GYM G1-G6  +BAR push  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "session": "No run — bereavement. The 6 recovery km are spread over Thu, Fri and Sun  +GYM G1-G6  +BAR push  +M1/M2 mobility (2x daily) +R1 isometrics",
           "target_km": 0,
           "shoe": "Clifton 9"
         },
@@ -1164,8 +1164,8 @@
           "date": "2026-11-20",
           "dow": "Fri",
           "type": "easy",
-          "session": "Easy 13 km — 10 as written plus 3 of Wednesday's missed recovery km  +GYM G1-G6  +BAR posture  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 13,
+          "session": "Easy 11 km — 10 as written plus 1 of Wednesday's missed recovery km  +GYM G1-G6  +BAR posture  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 11,
           "shoe": "GT-2000 15"
         },
         {
@@ -1180,8 +1180,8 @@
           "date": "2026-11-22",
           "dow": "Sun",
           "type": "long",
-          "session": "Long 15 km easy — GT-2000, NOT the racer. Longest run since the injury; one new variable at a time  +M1/M2 mobility (2x daily) +R1 isometrics",
-          "target_km": 15,
+          "session": "Long 17 km easy — GT-2000, NOT the racer: a plated shoe at 5:35-6:05/km teaches you nothing it will do at 3:59, and this is the longest run since the injury. The racer's long-run dress rehearsal is wk 29 — 35 km, last 12 at MP. One new variable at a time  +M1/M2 mobility (2x daily) +R1 isometrics",
+          "target_km": 17,
           "shoe": "GT-2000 15"
         }
       ]

@@ -310,10 +310,12 @@ DAY_OVERRIDE = {
                      # Not run - bereavement, 18 Nov 2026. Kept in the week at zero rather
                      # than deleted: the day happened, and a plan that quietly renumbers
                      # around a missed session loses the only record that it was missed.
-                     "Wed": ("No run — bereavement. The 6 recovery km moved to Thu and Fri  "
+                     "Wed": ("No run — bereavement. The 6 recovery km are spread over Thu, Fri "
+                             "and Sun  "
                              "+GYM G1-G6", "recovery", 0),
-                     # MISSED WED, 18 Nov: bereavement. The 6 km are added back here, plus 3
-                     # and plus 3, because Thu and Fri are the only days this week carrying
+                     # MISSED WED, 18 Nov: bereavement. The 6 km are added back across the
+                     # easy days - Thu +3, Fri +1, Sun +2 after he moved 2 of Friday's on to
+                     # the long run on 19 Nov. They go here because these are the days carrying
                      # nothing but easy running. Sat is a built session (race-shoe debut at
                      # stride pace) and Sun is the longest run since the injury, so neither
                      # absorbs stray volume without changing what it is testing. Note that
@@ -327,16 +329,30 @@ DAY_OVERRIDE = {
                      "Thu": ("Easy 14 km — 11 as written plus 3 of Wednesday's missed recovery "
                              "km. All of it at easy pace or slower; if it starts feeling like "
                              "a session, finish at 11 and let the rest go", "easy", 14),
-                     "Fri": ("Easy 13 km — 10 as written plus 3 of Wednesday's missed recovery "
-                             "km  +GYM G1-G6  +R1", "easy", 13),
+                     "Fri": ("Easy 11 km — 10 as written plus 1 of Wednesday's missed recovery "
+                             "km  +GYM G1-G6  +R1", "easy", 11),
                      "Sat": ("Easy 8 km + 6×20s strides — RACE SHOE DEBUT: run the 8 km in "
                              "the GT-2000, change into the Metaspeeds for the 6 strides only, "
                              "walk home in them. ~1 km in the racer: enough to find hotspots and "
                              "check the heel collar against the achilles, at a pace where a "
                              "plated shoe actually works. If they have not arrived, do the "
                              "strides in trainers and slide this to wk 19 Sat", "easy", 8),
-                     "Sun": ("Long 15 km easy — GT-2000, NOT the racer. Longest run since the "
-                             "injury; one new variable at a time", "long", 15)},
+                     # 15 -> 17: 2 km moved off Friday, his call, 19 Nov. It smooths the step
+                     # into wk 19's 20 km (17 -> 20 beats 15 -> 20) and the km were loose to
+                     # begin with. He also asked to run this in the Metaspeeds as a dress
+                     # rehearsal. Declined, and the reason is written into the session so it
+                     # answers itself: a plated racer at 5:35-6:05/km is the wrong tool at the
+                     # wrong speed, this would be its first wear, and the dress rehearsal he
+                     # is describing already exists - wk 29, 35 km with the last 12 at MP, in
+                     # the racer, four weeks out. The racer ramp is 1 km of strides (Sat) ->
+                     # 6 km of threshold reps (wk 19 Tue) -> Sevilla Half all-out (wk 21) ->
+                     # Malaga 10K (wk 26) -> that rehearsal -> Tokyo. Every step is at or near
+                     # race pace, which is the only pace the shoe tells the truth at.
+                     "Sun": ("Long 17 km easy — GT-2000, NOT the racer: a plated shoe at "
+                             "5:35-6:05/km teaches you nothing it will do at 3:59, and this "
+                             "is the longest run since the injury. The racer's long-run dress "
+                             "rehearsal is wk 29 — 35 km, last 12 at MP. One new variable at "
+                             "a time", "long", 17)},
                 19: {"Mon": ("Rest from running · BJJ drills/technical, no live rounds  "
                              "+S&C (easy-day session) — BJJ returns here if the ankle has been "
                              "clean for three weeks", "rest", 0),
