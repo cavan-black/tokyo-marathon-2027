@@ -20,6 +20,12 @@ Format — a JSON list, each entry needing at least date, activity_type and movi
        "name": "BJJ sparring", "moving_time_s": 10800, "note": "3 h, no device"}
     ]
 
+An entry may also carry "estimated_km": the distance the athlete reckons he covered. It
+is shown wherever the session is described and added to nothing — not actual_km, not the
+week total, not ACWR. A football match is real work and a day that hosted one should not
+read as empty, but an estimate that moved the injury-risk number would make that number
+unreadable, which is the one thing it cannot be.
+
 activity_type must be one of sync/strava.py's CROSS_TYPES; whether it can stand in for a
 run follows the same CARDIO_CROSS_TYPES rule that synced activities obey, so writing an
 entry by hand grants no privilege a recorded one wouldn't have had.
@@ -56,6 +62,12 @@ def _normalise(entry, runner_id, i):
         "activity_type": typ,
         # deliberately fixed at zero — see module docstring
         "distance_km": 0.0,
+        # What he reckons he covered. Displayed, never summed: it is an estimate, and
+        # ACWR is only worth reading because nothing hand-typed can move it. Kept apart
+        # from distance_km so no later caller can add it in by accident — a field named
+        # estimated_km has to be opted into, whereas anything in distance_km is load.
+        "estimated_km": (float(entry["estimated_km"])
+                         if entry.get("estimated_km") not in (None, "") else None),
         "moving_time_s": secs,
         "pace_min_km": None,
         "avg_hr": entry.get("avg_hr"),

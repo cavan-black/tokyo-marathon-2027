@@ -15033,6 +15033,7 @@
           "name": "BJJ sparring",
           "activity_type": "MartialArts",
           "distance_km": 0.0,
+          "estimated_km": null,
           "moving_time_s": 10800,
           "pace_min_km": null,
           "avg_hr": null,
@@ -15754,6 +15755,7 @@
           "name": "BJJ — hard double session",
           "activity_type": "MartialArts",
           "distance_km": 0.0,
+          "estimated_km": null,
           "moving_time_s": 10800,
           "pace_min_km": null,
           "avg_hr": null,
@@ -49918,6 +49920,7 @@
           "name": "BJJ - hard sparring",
           "activity_type": "MartialArts",
           "distance_km": 0.0,
+          "estimated_km": null,
           "moving_time_s": 3600,
           "pace_min_km": null,
           "avg_hr": null,
@@ -51858,6 +51861,7 @@
           "name": "BJJ - 2 h session",
           "activity_type": "MartialArts",
           "distance_km": 0.0,
+          "estimated_km": null,
           "moving_time_s": 7200,
           "pace_min_km": null,
           "avg_hr": null,
@@ -59646,6 +59650,7 @@
           "name": "Football match",
           "activity_type": "Soccer",
           "distance_km": 0.0,
+          "estimated_km": 6.0,
           "moving_time_s": 5400,
           "pace_min_km": null,
           "avg_hr": null,
@@ -63624,6 +63629,7 @@
           "name": "Football match",
           "activity_type": "Soccer",
           "distance_km": 0.0,
+          "estimated_km": 5.0,
           "moving_time_s": 5400,
           "pace_min_km": null,
           "avg_hr": null,
@@ -65544,7 +65550,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-22T01:11:24+00:00",
+  "last_sync": "2026-11-22T01:15:53+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-17",

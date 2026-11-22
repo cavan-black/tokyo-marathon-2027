@@ -32,13 +32,15 @@
     "activity_type": "Soccer",
     "name": "Football match",
     "moving_time_s": 5400,
-    "note": "pickup match, no device; covered ~6 km by his own estimate. Stands in for the easy 7 km + strides. Left ankle symptom-free during and after."
+    "note": "pickup match, no device; covered ~6 km by his own estimate. Stands in for the easy 7 km + strides. Left ankle symptom-free during and after.",
+    "estimated_km": 6.0
   },
   {
     "date": "2026-11-21",
     "activity_type": "Soccer",
     "name": "Football match",
     "moving_time_s": 5400,
-    "note": "match, no device; ~7 km by his own estimate. Stands in for the easy 8 km + 6x20s strides. Second Saturday match in a row after 14 Nov."
+    "note": "match, no device. He reckons ~5 km covered, and rated it worth about 7 km of running. Stands in for the easy 8 km + 6x20s strides. Second Saturday match in a row after 14 Nov.",
+    "estimated_km": 5.0
   }
 ]

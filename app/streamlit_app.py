@@ -758,10 +758,12 @@ def _cross_summary(cross):
     if not acts:
         return {}
     lead = max(acts, key=lambda a: a.get("moving_time_s") or 0)
+    est = sum((a.get("estimated_km") or 0) for a in acts)
     return {"count": len(acts), "activity_type": lead.get("activity_type"),
             "name": lead.get("name"), "manual": any(a.get("manual") for a in acts),
             "moving_time_s": sum((a.get("moving_time_s") or 0) for a in acts),
-            "distance_km": round(sum((a.get("distance_km") or 0) for a in acts), 2)}
+            "distance_km": round(sum((a.get("distance_km") or 0) for a in acts), 2),
+            "estimated_km": round(est, 1) if est else None}
 
 
 def _sub_what(act):
@@ -790,6 +792,13 @@ def _shifted_sub_text(info):
     km = info.get("distance_km") or 0
     if km >= 0.1:
         bits.append(f"{km:.1f} km")
+    else:
+        # An estimate is shown with a ~ and never without one. The tilde is the whole
+        # point: it says this number was reckoned rather than recorded, so nobody reads
+        # it back later as a measured distance.
+        est = info.get("estimated_km") or 0
+        if est >= 0.1:
+            bits.append(f"~{est:.1f} km est.")
     return " · ".join(bits)
 
 
