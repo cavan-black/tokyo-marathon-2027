@@ -61697,7 +61697,7 @@
       "session": "No run — bereavement. The 6 recovery km are spread over Thu, Fri and Sun  +GYM G1-G6  +BAR push  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 0,
       "actual_km": 0,
-      "status": "Missed",
+      "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -63613,11 +63613,27 @@
       "session": "Easy 8 km + 6×20s strides, all in trainers — the Metaspeeds now land Sat 28 Nov, so the debut moves to that day. Run the strides properly anyway: they are the first fast running since the injury and they matter on their own  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 8,
       "actual_km": 0,
-      "status": "Missed",
+      "status": "Substituted",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
-      "cross_activities": []
+      "cross_activities": [
+        {
+          "id": "manual-cav-2026-11-21-5",
+          "date": "2026-11-21",
+          "name": "Football match",
+          "activity_type": "Soccer",
+          "distance_km": 0.0,
+          "moving_time_s": 5400,
+          "pace_min_km": null,
+          "avg_hr": null,
+          "max_hr": null,
+          "elev_gain_m": null,
+          "route": [],
+          "counts_as_substitute": true,
+          "manual": true
+        }
+      ]
     },
     "2026-11-22": {
       "week": 18,
@@ -65275,12 +65291,12 @@
       "planned_km": 60,
       "planned_km_due": 43,
       "actual_km": 36.1,
-      "substituted_km": 0,
+      "substituted_km": 8,
       "replaced_km": 0,
-      "done": 3,
+      "done": 4,
       "partial": 0,
-      "missed": 3,
-      "substituted": 0,
+      "missed": 1,
+      "substituted": 1,
       "replaced": 0,
       "quality_hit": 1,
       "quality_planned": 1,
@@ -65528,7 +65544,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-22T01:01:52+00:00",
+  "last_sync": "2026-11-22T01:10:49+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-17",

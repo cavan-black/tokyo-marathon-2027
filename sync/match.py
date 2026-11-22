@@ -19,10 +19,16 @@ def _fmt_pace(p):
 def classify(target_km, actual_km, typ):
     if typ == "rest":
         return "Rest"
+    # Zero prescribed km is checked FIRST. A day that asks for no running cannot be
+    # missed, and testing "ran nothing" ahead of "was asked for nothing" made the Rest
+    # branch below unreachable - every such day came out "Missed". It stayed hidden
+    # while only type="rest" days carried a 0 target; wk 18 Wed is the first non-rest
+    # day set to 0 (bereavement, with the km moved onto other days), and it reported as
+    # a missed session on a week where every prescribed run was actually run.
+    if target_km <= 0:
+        return "Done" if actual_km > 0.05 else "Rest"
     if actual_km <= 0.05:
         return "Missed"
-    if target_km <= 0:
-        return "Done" if actual_km > 0 else "Rest"
     ratio = actual_km / target_km
     if ratio >= 0.85:
         return "Done"

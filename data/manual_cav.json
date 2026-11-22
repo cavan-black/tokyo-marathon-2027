@@ -33,5 +33,12 @@
     "name": "Football match",
     "moving_time_s": 5400,
     "note": "pickup match, no device; covered ~6 km by his own estimate. Stands in for the easy 7 km + strides. Left ankle symptom-free during and after."
+  },
+  {
+    "date": "2026-11-21",
+    "activity_type": "Soccer",
+    "name": "Football match",
+    "moving_time_s": 5400,
+    "note": "match, no device; ~7 km by his own estimate. Stands in for the easy 8 km + 6x20s strides. Second Saturday match in a row after 14 Nov."
   }
 ]
