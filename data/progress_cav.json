@@ -64777,7 +64777,7 @@
       "session": "Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km — CUT FROM 5×1.5 and 3:48. In trainers: the racer does not arrive until Saturday · w/u 3 km · jogs 0.8 km · c/d 1.2 km  +BAR light  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 11,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -66420,11 +66420,11 @@
       "replaced_km": 0,
       "done": 0,
       "partial": 0,
-      "missed": 0,
+      "missed": 1,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
-      "quality_planned": 0,
+      "quality_planned": 1,
       "long_done": false,
       "flag": "✓ On track"
     },
@@ -66653,7 +66653,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-23T17:40:32+00:00",
+  "last_sync": "2026-11-24T05:10:41+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-17",

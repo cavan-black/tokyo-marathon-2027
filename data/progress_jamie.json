@@ -27027,7 +27027,7 @@
       "session": "Cruise: 5×600 m @ 5:00/km, 75s jog · w/u 3 km · c/d 2.1 km  +S&C (hard-day session)",
       "target_km": 9,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -28670,11 +28670,11 @@
       "replaced_km": 0,
       "done": 0,
       "partial": 0,
-      "missed": 0,
+      "missed": 1,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 0,
-      "quality_planned": 0,
+      "quality_planned": 1,
       "long_done": false,
       "flag": "✓ On track"
     },
@@ -28903,7 +28903,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-23T17:40:35+00:00",
+  "last_sync": "2026-11-24T05:10:42+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-17",
