@@ -65768,11 +65768,25 @@
       "type": "recovery",
       "session": "Recovery 8 km easy — 5:35-6:05/km, 24 h after quality  +GYM G1-G6  +BAR pull  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 8,
-      "actual_km": 0,
-      "status": "Missed",
-      "pace_min_km": null,
-      "pace_str": null,
-      "activities": [],
+      "actual_km": 8.0,
+      "status": "Done",
+      "pace_min_km": 5.607,
+      "pace_str": "5:36",
+      "activities": [
+        {
+          "id": 21119655719,
+          "date": "2026-11-25",
+          "name": "Afternoon Run",
+          "activity_type": "Run",
+          "distance_km": 8.0,
+          "moving_time_s": 2692,
+          "pace_min_km": 5.607,
+          "avg_hr": 125.4,
+          "max_hr": 143.0,
+          "elev_gain_m": 0,
+          "route": []
+        }
+      ],
       "cross_activities": []
     },
     "2026-11-26": {
@@ -67393,13 +67407,13 @@
     },
     "19": {
       "planned_km": 74,
-      "planned_km_due": 11,
-      "actual_km": 10.6,
+      "planned_km_due": 19,
+      "actual_km": 18.6,
       "substituted_km": 0,
       "replaced_km": 0,
-      "done": 1,
+      "done": 2,
       "partial": 0,
-      "missed": 1,
+      "missed": 0,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 1,
@@ -67632,7 +67646,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-25T03:59:38+00:00",
+  "last_sync": "2026-11-25T16:56:53+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-24",
