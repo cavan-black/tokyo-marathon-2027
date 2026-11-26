@@ -65796,7 +65796,7 @@
       "session": "Medium-long 13 km w/ middle 3 km @ MP — first marathon-pace work back, CUT FROM 5 km. Continuous fast blocks are the shape that injured him, so this one stays tiny  +BAR maintenance  +M1/M2 mobility (2x daily) +R1 isometrics",
       "target_km": 13,
       "actual_km": 0,
-      "status": "Upcoming",
+      "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
       "activities": [],
@@ -67413,11 +67413,11 @@
       "replaced_km": 0,
       "done": 2,
       "partial": 0,
-      "missed": 0,
+      "missed": 1,
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 1,
-      "quality_planned": 1,
+      "quality_planned": 2,
       "long_done": false,
       "flag": "✓ On track"
     },
@@ -67646,7 +67646,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-25T16:56:53+00:00",
+  "last_sync": "2026-11-26T03:24:59+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-24",
