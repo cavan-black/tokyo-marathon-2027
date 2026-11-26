@@ -208,9 +208,24 @@ def match(plan, runs, cross_runs=None):
             actual_km = round(sum(a["distance_km"] for a in acts), 2)
             # session-weighted pace (longest activity that day)
             pace = None
+            avg_hr = max_hr = None
             if acts:
                 lead = max(acts, key=lambda a: a["distance_km"])
                 pace = lead.get("pace_min_km")
+                # HR rides up to the day record alongside pace. It was recorded on every
+                # activity all along and simply stopped here, so day["avg_hr"] read None
+                # on days with a perfectly good chest-strap trace — which is worse than
+                # missing, because it reads as "no strap worn" rather than "not carried".
+                # Distance-weighted, like pace, so a day logged as two activities is not
+                # judged on whichever one happened to be longer.
+                with_hr = [a for a in acts if a.get("avg_hr")]
+                if with_hr:
+                    wk_km = sum(a["distance_km"] for a in with_hr) or 1
+                    avg_hr = round(sum(a["avg_hr"] * a["distance_km"]
+                                       for a in with_hr) / wk_km, 1)
+                mx = [a["max_hr"] for a in acts if a.get("max_hr")]
+                if mx:
+                    max_hr = max(mx)
             future = d["date"] > today_iso
             # Only CARDIO cross-training can stand in for a run (football yes, gym no —
             # see strava.CARDIO_CROSS_TYPES). Non-cardio activities still ride along in
@@ -229,6 +244,7 @@ def match(plan, runs, cross_runs=None):
                 "session": d["session"], "target_km": d["target_km"], "future": future,
                 "actual_km": actual_km, "status": status,
                 "pace_min_km": pace, "pace_str": _fmt_pace(pace),
+                "avg_hr": avg_hr, "max_hr": max_hr,
                 "activities": acts, "cross_activities": cross_acts,
             })
     # runs first: a real make-up run always beats a cross-training one for the same day

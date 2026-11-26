@@ -10,6 +10,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -23,6 +25,8 @@
       "status": "Done",
       "pace_min_km": 5.521,
       "pace_str": "5:31",
+      "avg_hr": 141.9,
+      "max_hr": 152.0,
       "activities": [
         {
           "id": 19400311316,
@@ -50,6 +54,8 @@
       "status": "Done",
       "pace_min_km": 5.332,
       "pace_str": "5:20",
+      "avg_hr": 148.9,
+      "max_hr": 176.0,
       "activities": [
         {
           "id": 19422132483,
@@ -790,6 +796,8 @@
       "status": "Done",
       "pace_min_km": 5.396,
       "pace_str": "5:24",
+      "avg_hr": 146.7,
+      "max_hr": 162.0,
       "activities": [
         {
           "id": 19436867072,
@@ -1593,6 +1601,8 @@
       "status": "Done",
       "pace_min_km": 5.092,
       "pace_str": "5:06",
+      "avg_hr": 143.1,
+      "max_hr": 154.0,
       "activities": [
         {
           "id": 19449674056,
@@ -1620,6 +1630,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -1633,6 +1645,8 @@
       "status": "Done",
       "pace_min_km": 5.155,
       "pace_str": "5:09",
+      "avg_hr": 149.9,
+      "max_hr": 169.0,
       "activities": [
         {
           "id": 19477703556,
@@ -2725,6 +2739,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -2738,6 +2754,8 @@
       "status": "Done",
       "pace_min_km": 5.272,
       "pace_str": "5:16",
+      "avg_hr": 148.1,
+      "max_hr": 164.0,
       "activities": [
         {
           "id": 19504552456,
@@ -3710,6 +3728,8 @@
       "status": "Done",
       "pace_min_km": 5.434,
       "pace_str": "5:26",
+      "avg_hr": 149.8,
+      "max_hr": 171.0,
       "activities": [
         {
           "id": 19520172707,
@@ -4586,6 +4606,8 @@
       "status": "Done",
       "pace_min_km": 5.439,
       "pace_str": "5:26",
+      "avg_hr": 151.0,
+      "max_hr": 163.0,
       "activities": [
         {
           "id": 19525557229,
@@ -5213,6 +5235,8 @@
       "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -5226,6 +5250,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -5239,6 +5265,8 @@
       "status": "Replaced",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [],
       "replaced_by": {
@@ -5259,6 +5287,8 @@
       "status": "Rest",
       "pace_min_km": 5.006,
       "pace_str": "5:00",
+      "avg_hr": 150.0,
+      "max_hr": 163.0,
       "activities": [
         {
           "id": 19588363794,
@@ -6374,6 +6404,8 @@
       "status": "Done",
       "pace_min_km": 5.113,
       "pace_str": "5:07",
+      "avg_hr": 143.0,
+      "max_hr": 161.0,
       "activities": [
         {
           "id": 19603128178,
@@ -7390,6 +7422,8 @@
       "status": "Done",
       "pace_min_km": 5.013,
       "pace_str": "5:01",
+      "avg_hr": 145.2,
+      "max_hr": 155.0,
       "activities": [
         {
           "id": 19618328227,
@@ -8337,6 +8371,8 @@
       "status": "Done",
       "pace_min_km": 5.32,
       "pace_str": "5:19",
+      "avg_hr": 134.1,
+      "max_hr": 145.0,
       "activities": [
         {
           "id": 19626895130,
@@ -8379,6 +8415,8 @@
       "status": "Done",
       "pace_min_km": 5.251,
       "pace_str": "5:15",
+      "avg_hr": 148.3,
+      "max_hr": 164.0,
       "activities": [
         {
           "id": 19644930543,
@@ -9419,6 +9457,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -9432,6 +9472,8 @@
       "status": "Done",
       "pace_min_km": 5.238,
       "pace_str": "5:14",
+      "avg_hr": 151.8,
+      "max_hr": 160.0,
       "activities": [
         {
           "id": 19673004232,
@@ -10484,6 +10526,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [
         {
@@ -10512,6 +10556,8 @@
       "status": "Done",
       "pace_min_km": 5.127,
       "pace_str": "5:08",
+      "avg_hr": 146.5,
+      "max_hr": 160.0,
       "activities": [
         {
           "id": 19700996789,
@@ -11556,6 +11602,8 @@
       "status": "Done",
       "pace_min_km": 5.104,
       "pace_str": "5:06",
+      "avg_hr": 146.9,
+      "max_hr": 166.0,
       "activities": [
         {
           "id": 19708543441,
@@ -12255,6 +12303,8 @@
       "status": "Done",
       "pace_min_km": 4.982,
       "pace_str": "4:59",
+      "avg_hr": 146.9,
+      "max_hr": 173.0,
       "activities": [
         {
           "id": 19730406088,
@@ -12923,6 +12973,8 @@
       "status": "Done",
       "pace_min_km": 4.91,
       "pace_str": "4:55",
+      "avg_hr": 147.7,
+      "max_hr": 172.0,
       "activities": [
         {
           "id": 19742629391,
@@ -13375,6 +13427,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -13388,6 +13442,8 @@
       "status": "Substituted",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [],
       "substituted_by": {
@@ -13411,6 +13467,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [
         {
@@ -15025,6 +15083,8 @@
       "status": "Substituted",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [
         {
@@ -15055,6 +15115,8 @@
       "status": "Done",
       "pace_min_km": 5.109,
       "pace_str": "5:07",
+      "avg_hr": 130.7,
+      "max_hr": 150.0,
       "activities": [
         {
           "id": 19805108301,
@@ -15747,6 +15809,8 @@
       "status": "Substituted",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [
         {
@@ -15777,6 +15841,8 @@
       "status": "Done",
       "pace_min_km": 5.084,
       "pace_str": "5:05",
+      "avg_hr": 136.5,
+      "max_hr": 159.0,
       "activities": [
         {
           "id": 19830664848,
@@ -16837,6 +16903,8 @@
       "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -16850,6 +16918,8 @@
       "status": "Replaced",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [],
       "replaced_by": {
@@ -16870,6 +16940,8 @@
       "status": "Rest",
       "pace_min_km": 5.188,
       "pace_str": "5:11",
+      "avg_hr": 140.2,
+      "max_hr": 163.0,
       "activities": [
         {
           "id": 19876858139,
@@ -19476,6 +19548,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -19489,6 +19563,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -19502,6 +19578,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -19515,6 +19593,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -19528,6 +19608,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -19541,6 +19623,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -19554,6 +19638,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -19567,6 +19653,8 @@
       "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -19580,6 +19668,8 @@
       "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -19593,6 +19683,8 @@
       "status": "Done",
       "pace_min_km": 4.578,
       "pace_str": "4:35",
+      "avg_hr": 166.6,
+      "max_hr": 178.0,
       "activities": [
         {
           "id": 20016560454,
@@ -20629,6 +20721,8 @@
       "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -20642,6 +20736,8 @@
       "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -20655,6 +20751,8 @@
       "status": "Replaced",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [],
       "replaced_by": {
@@ -20675,6 +20773,8 @@
       "status": "Rest",
       "pace_min_km": 4.9,
       "pace_str": "4:54",
+      "avg_hr": 148.6,
+      "max_hr": 158.0,
       "activities": [
         {
           "id": 20080484110,
@@ -21790,6 +21890,8 @@
       "status": "Done",
       "pace_min_km": 5.499,
       "pace_str": "5:30",
+      "avg_hr": 143.7,
+      "max_hr": 163.0,
       "activities": [
         {
           "id": 20093196364,
@@ -22602,6 +22704,8 @@
       "status": "Done",
       "pace_min_km": 4.57,
       "pace_str": "4:34",
+      "avg_hr": 154.9,
+      "max_hr": 171.0,
       "activities": [
         {
           "id": 20107818797,
@@ -23558,6 +23662,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -23571,6 +23677,8 @@
       "status": "Done",
       "pace_min_km": 5.266,
       "pace_str": "5:16",
+      "avg_hr": 145.7,
+      "max_hr": 157.0,
       "activities": [
         {
           "id": 20135272471,
@@ -24663,6 +24771,8 @@
       "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -24676,6 +24786,8 @@
       "status": "Replaced",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [],
       "replaced_by": {
@@ -24696,6 +24808,8 @@
       "status": "Rest",
       "pace_min_km": 4.914,
       "pace_str": "4:55",
+      "avg_hr": 151.2,
+      "max_hr": 165.0,
       "activities": [
         {
           "id": 20167798018,
@@ -25767,6 +25881,8 @@
       "status": "Done",
       "pace_min_km": 4.994,
       "pace_str": "5:00",
+      "avg_hr": 140.5,
+      "max_hr": 168.0,
       "activities": [
         {
           "id": 20190429200,
@@ -26371,6 +26487,8 @@
       "status": "Done",
       "pace_min_km": 4.278,
       "pace_str": "4:17",
+      "avg_hr": 153.2,
+      "max_hr": 178.0,
       "activities": [
         {
           "id": 20204909349,
@@ -27139,6 +27257,8 @@
       "status": "Done",
       "pace_min_km": 5.267,
       "pace_str": "5:16",
+      "avg_hr": 136.0,
+      "max_hr": 179.0,
       "activities": [
         {
           "id": 20220487839,
@@ -27843,6 +27963,8 @@
       "status": "Replaced",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [],
       "replaced_by": {
@@ -27863,6 +27985,8 @@
       "status": "Rest",
       "pace_min_km": 5.249,
       "pace_str": "5:15",
+      "avg_hr": 149.7,
+      "max_hr": 163.0,
       "activities": [
         {
           "id": 20237780398,
@@ -28958,6 +29082,8 @@
       "status": "Done",
       "pace_min_km": 4.99,
       "pace_str": "4:59",
+      "avg_hr": 140.1,
+      "max_hr": 158.0,
       "activities": [
         {
           "id": 20260465012,
@@ -30054,6 +30180,8 @@
       "status": "Done",
       "pace_min_km": 4.879,
       "pace_str": "4:53",
+      "avg_hr": 131.5,
+      "max_hr": 142.0,
       "activities": [
         {
           "id": 20272531409,
@@ -30570,6 +30698,8 @@
       "status": "Done",
       "pace_min_km": 4.867,
       "pace_str": "4:52",
+      "avg_hr": 128.5,
+      "max_hr": 148.0,
       "activities": [
         {
           "id": 20287552573,
@@ -31006,6 +31136,8 @@
       "status": "Done",
       "pace_min_km": 4.863,
       "pace_str": "4:52",
+      "avg_hr": 139.1,
+      "max_hr": 158.0,
       "activities": [
         {
           "id": 20302414234,
@@ -32082,6 +32214,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -32095,6 +32229,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -32108,6 +32244,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -32121,6 +32259,8 @@
       "status": "Replaced",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [],
       "replaced_by": {
@@ -32141,6 +32281,8 @@
       "status": "Rest",
       "pace_min_km": 4.903,
       "pace_str": "4:54",
+      "avg_hr": 146.0,
+      "max_hr": 160.0,
       "activities": [
         {
           "id": 20360955420,
@@ -33244,6 +33386,8 @@
       "status": "Done",
       "pace_min_km": 5.139,
       "pace_str": "5:08",
+      "avg_hr": 138.7,
+      "max_hr": 171.0,
       "activities": [
         {
           "id": 20383745224,
@@ -34060,6 +34204,8 @@
       "status": "Done",
       "pace_min_km": 5.225,
       "pace_str": "5:13",
+      "avg_hr": 136.5,
+      "max_hr": 165.0,
       "activities": [
         {
           "id": 20398374537,
@@ -35204,6 +35350,8 @@
       "status": "Done",
       "pace_min_km": 5.132,
       "pace_str": "5:08",
+      "avg_hr": 147.2,
+      "max_hr": 167.0,
       "activities": [
         {
           "id": 20409124626,
@@ -36008,6 +36156,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -36021,6 +36171,8 @@
       "status": "Done",
       "pace_min_km": 3.659,
       "pace_str": "3:40",
+      "avg_hr": 164.3,
+      "max_hr": 183.0,
       "activities": [
         {
           "id": 20428168170,
@@ -37620,6 +37772,8 @@
       "status": "Done",
       "pace_min_km": 4.934,
       "pace_str": "4:56",
+      "avg_hr": 143.3,
+      "max_hr": 165.0,
       "activities": [
         {
           "id": 20452935050,
@@ -39216,6 +39370,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -39229,6 +39385,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -39242,6 +39400,8 @@
       "status": "Done",
       "pace_min_km": 4.941,
       "pace_str": "4:56",
+      "avg_hr": 143.2,
+      "max_hr": 153.0,
       "activities": [
         {
           "id": 20494140244,
@@ -40314,6 +40474,8 @@
       "status": "Done",
       "pace_min_km": 3.981,
       "pace_str": "3:59",
+      "avg_hr": 149.7,
+      "max_hr": 172.0,
       "activities": [
         {
           "id": 20506835658,
@@ -41422,6 +41584,8 @@
       "status": "Done",
       "pace_min_km": 5.0,
       "pace_str": "5:00",
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [
         {
           "id": 20512878431,
@@ -41478,6 +41642,8 @@
       "status": "Done",
       "pace_min_km": 5.239,
       "pace_str": "5:14",
+      "avg_hr": 149.1,
+      "max_hr": 165.0,
       "activities": [
         {
           "id": 20530360516,
@@ -42146,6 +42312,8 @@
       "status": "Done",
       "pace_min_km": 4.952,
       "pace_str": "4:57",
+      "avg_hr": 155.1,
+      "max_hr": 180.0,
       "activities": [
         {
           "id": 20540071178,
@@ -44058,6 +44226,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -44071,6 +44241,8 @@
       "status": "Done",
       "pace_min_km": 4.714,
       "pace_str": "4:43",
+      "avg_hr": 145.5,
+      "max_hr": 171.0,
       "activities": [
         {
           "id": 20571602100,
@@ -45247,6 +45419,8 @@
       "status": "Done",
       "pace_min_km": 5.038,
       "pace_str": "5:02",
+      "avg_hr": 132.9,
+      "max_hr": 148.0,
       "activities": [
         {
           "id": 20591125467,
@@ -46078,6 +46252,8 @@
       "status": "Done",
       "pace_min_km": 5.15,
       "pace_str": "5:09",
+      "avg_hr": 134.9,
+      "max_hr": 156.0,
       "activities": [
         {
           "id": 20598486007,
@@ -47454,6 +47630,8 @@
       "status": "Done",
       "pace_min_km": 4.845,
       "pace_str": "4:51",
+      "avg_hr": 139.2,
+      "max_hr": 150.0,
       "activities": [
         {
           "id": 20605860156,
@@ -47966,6 +48144,8 @@
       "status": "Done",
       "pace_min_km": 3.927,
       "pace_str": "3:56",
+      "avg_hr": 158.8,
+      "max_hr": 176.0,
       "activities": [
         {
           "id": 20617019422,
@@ -48844,6 +49024,8 @@
       "status": "Done",
       "pace_min_km": 4.874,
       "pace_str": "4:52",
+      "avg_hr": 141.3,
+      "max_hr": 171.0,
       "activities": [
         {
           "id": 20639002105,
@@ -49912,6 +50094,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [
         {
@@ -49942,6 +50126,8 @@
       "status": "Done",
       "pace_min_km": 4.293,
       "pace_str": "4:18",
+      "avg_hr": 145.6,
+      "max_hr": 176.0,
       "activities": [
         {
           "id": 20657193938,
@@ -51082,6 +51268,8 @@
       "status": "Done",
       "pace_min_km": 4.907,
       "pace_str": "4:54",
+      "avg_hr": 138.5,
+      "max_hr": 168.0,
       "activities": [
         {
           "id": 20679217504,
@@ -51883,6 +52071,8 @@
       "status": "Done",
       "pace_min_km": 4.256,
       "pace_str": "4:15",
+      "avg_hr": 157.8,
+      "max_hr": 179.0,
       "activities": [
         {
           "id": 20684437969,
@@ -52971,6 +53161,8 @@
       "status": "Done",
       "pace_min_km": 4.743,
       "pace_str": "4:45",
+      "avg_hr": 139.5,
+      "max_hr": 150.0,
       "activities": [
         {
           "id": 20702188164,
@@ -53583,6 +53775,8 @@
       "status": "Done",
       "pace_min_km": 4.887,
       "pace_str": "4:53",
+      "avg_hr": 150.2,
+      "max_hr": 165.0,
       "activities": [
         {
           "id": 20711596612,
@@ -54247,6 +54441,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -54260,6 +54456,8 @@
       "status": "Done",
       "pace_min_km": 4.8,
       "pace_str": "4:48",
+      "avg_hr": 141.9,
+      "max_hr": 178.0,
       "activities": [
         {
           "id": 20734291539,
@@ -55352,6 +55550,8 @@
       "status": "Rest",
       "pace_min_km": 5.549,
       "pace_str": "5:33",
+      "avg_hr": 120.7,
+      "max_hr": 133.0,
       "activities": [
         {
           "id": 20754796579,
@@ -55379,6 +55579,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -55392,6 +55594,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -55405,6 +55609,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [
         {
@@ -55447,6 +55653,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -55460,6 +55668,8 @@
       "status": "Done",
       "pace_min_km": 5.77,
       "pace_str": "5:46",
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [
         {
           "id": 20819741354,
@@ -55502,6 +55712,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -55515,6 +55727,8 @@
       "status": "Done",
       "pace_min_km": 5.175,
       "pace_str": "5:10",
+      "avg_hr": 136.4,
+      "max_hr": 153.0,
       "activities": [
         {
           "id": 20851892564,
@@ -55542,6 +55756,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -55555,6 +55771,8 @@
       "status": "Done",
       "pace_min_km": 4.95,
       "pace_str": "4:57",
+      "avg_hr": 145.6,
+      "max_hr": 155.0,
       "activities": [
         {
           "id": 20871763128,
@@ -56147,6 +56365,8 @@
       "status": "Done",
       "pace_min_km": 4.562,
       "pace_str": "4:34",
+      "avg_hr": 153.2,
+      "max_hr": 170.0,
       "activities": [
         {
           "id": 20886128437,
@@ -56305,6 +56525,8 @@
       "status": "Done",
       "pace_min_km": 5.267,
       "pace_str": "5:16",
+      "avg_hr": 129.0,
+      "max_hr": 139.0,
       "activities": [
         {
           "id": 20899306759,
@@ -56332,6 +56554,8 @@
       "status": "Done",
       "pace_min_km": 5.014,
       "pace_str": "5:01",
+      "avg_hr": 141.4,
+      "max_hr": 153.0,
       "activities": [
         {
           "id": 20908207806,
@@ -57424,6 +57648,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [
         {
@@ -57452,6 +57678,8 @@
       "status": "Done",
       "pace_min_km": 5.141,
       "pace_str": "5:08",
+      "avg_hr": 135.3,
+      "max_hr": 145.0,
       "activities": [
         {
           "id": 20937381962,
@@ -58192,6 +58420,8 @@
       "status": "Done",
       "pace_min_km": 5.169,
       "pace_str": "5:10",
+      "avg_hr": 134.8,
+      "max_hr": 145.0,
       "activities": [
         {
           "id": 20942808446,
@@ -58784,6 +59014,8 @@
       "status": "Done",
       "pace_min_km": 5.14,
       "pace_str": "5:08",
+      "avg_hr": 146.8,
+      "max_hr": 160.0,
       "activities": [
         {
           "id": 20963111147,
@@ -59600,6 +59832,8 @@
       "status": "Done",
       "pace_min_km": 5.647,
       "pace_str": "5:39",
+      "avg_hr": 135.8,
+      "max_hr": 147.0,
       "activities": [
         {
           "id": 20974918150,
@@ -59642,6 +59876,8 @@
       "status": "Substituted",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [
         {
@@ -59672,6 +59908,8 @@
       "status": "Done",
       "pace_min_km": 5.047,
       "pace_str": "5:03",
+      "avg_hr": 141.1,
+      "max_hr": 150.0,
       "activities": [
         {
           "id": 20998286027,
@@ -60748,6 +60986,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -60761,6 +61001,8 @@
       "status": "Done",
       "pace_min_km": 4.739,
       "pace_str": "4:44",
+      "avg_hr": 154.0,
+      "max_hr": 182.0,
       "activities": [
         {
           "id": 21022441749,
@@ -61705,6 +61947,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [
         {
@@ -61733,6 +61977,8 @@
       "status": "Done",
       "pace_min_km": 5.202,
       "pace_str": "5:12",
+      "avg_hr": 138.6,
+      "max_hr": 154.0,
       "activities": [
         {
           "id": 21051594940,
@@ -62797,6 +63043,8 @@
       "status": "Done",
       "pace_min_km": 4.946,
       "pace_str": "4:57",
+      "avg_hr": 135.8,
+      "max_hr": 149.0,
       "activities": [
         {
           "id": 21064001842,
@@ -63621,6 +63869,8 @@
       "status": "Substituted",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": [
         {
@@ -63651,6 +63901,8 @@
       "status": "Done",
       "pace_min_km": 5.249,
       "pace_str": "5:15",
+      "avg_hr": 130.0,
+      "max_hr": 142.0,
       "activities": [
         {
           "id": 21088564540,
@@ -64767,6 +65019,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -64780,6 +65034,8 @@
       "status": "Done",
       "pace_min_km": 4.564,
       "pace_str": "4:34",
+      "avg_hr": 153.1,
+      "max_hr": 182.0,
       "activities": [
         {
           "id": 21110905437,
@@ -65772,6 +66028,8 @@
       "status": "Done",
       "pace_min_km": 5.607,
       "pace_str": "5:36",
+      "avg_hr": 125.4,
+      "max_hr": 143.0,
       "activities": [
         {
           "id": 21119655719,
@@ -65799,6 +66057,8 @@
       "status": "Missed",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65812,6 +66072,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65825,6 +66087,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65838,6 +66102,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65851,6 +66117,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65864,6 +66132,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65877,6 +66147,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65890,6 +66162,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65903,6 +66177,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65916,6 +66192,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65929,6 +66207,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65942,6 +66222,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65955,6 +66237,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65968,6 +66252,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65981,6 +66267,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -65994,6 +66282,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66007,6 +66297,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66020,6 +66312,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66033,6 +66327,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66046,6 +66342,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66059,6 +66357,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66072,6 +66372,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66085,6 +66387,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66098,6 +66402,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66111,6 +66417,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66124,6 +66432,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66137,6 +66447,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66150,6 +66462,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66163,6 +66477,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66176,6 +66492,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66189,6 +66507,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66202,6 +66522,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66215,6 +66537,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66228,6 +66552,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66241,6 +66567,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66254,6 +66582,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66267,6 +66597,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66280,6 +66612,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66293,6 +66627,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66306,6 +66642,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66319,6 +66657,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66332,6 +66672,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66345,6 +66687,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66358,6 +66702,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66371,6 +66717,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66384,6 +66732,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66397,6 +66747,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66410,6 +66762,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66423,6 +66777,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66436,6 +66792,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66449,6 +66807,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66462,6 +66822,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66475,6 +66837,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66488,6 +66852,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66501,6 +66867,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66514,6 +66882,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66527,6 +66897,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66540,6 +66912,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66553,6 +66927,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66566,6 +66942,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66579,6 +66957,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66592,6 +66972,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66605,6 +66987,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66618,6 +67002,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66631,6 +67017,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66644,6 +67032,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66657,6 +67047,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66670,6 +67062,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66683,6 +67077,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66696,6 +67092,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66709,6 +67107,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66722,6 +67122,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66735,6 +67137,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66748,6 +67152,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66761,6 +67167,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66774,6 +67182,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66787,6 +67197,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66800,6 +67212,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66813,6 +67227,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66826,6 +67242,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66839,6 +67257,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66852,6 +67272,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66865,6 +67287,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66878,6 +67302,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66891,6 +67317,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66904,6 +67332,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66917,6 +67347,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66930,6 +67362,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66943,6 +67377,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66956,6 +67392,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66969,6 +67407,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66982,6 +67422,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -66995,6 +67437,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -67008,6 +67452,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -67021,6 +67467,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -67034,6 +67482,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -67047,6 +67497,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -67060,6 +67512,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -67073,6 +67527,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -67086,6 +67542,8 @@
       "status": "Rest",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -67099,6 +67557,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     },
@@ -67112,6 +67572,8 @@
       "status": "Upcoming",
       "pace_min_km": null,
       "pace_str": null,
+      "avg_hr": null,
+      "max_hr": null,
       "activities": [],
       "cross_activities": []
     }
@@ -67646,7 +68108,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-26T03:24:59+00:00",
+  "last_sync": "2026-11-26T09:14:38+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-24",
