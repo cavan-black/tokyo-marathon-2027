@@ -66050,9 +66050,9 @@
     "2026-11-26": {
       "week": 19,
       "dow": "Thu",
-      "type": "quality",
-      "session": "Medium-long 13 km w/ middle 3 km @ MP — first marathon-pace work back, CUT FROM 5 km. Continuous fast blocks are the shape that injured him, so this one stays tiny  +BAR maintenance  +M1/M2 mobility (2x daily) +R1 isometrics",
-      "target_km": 13,
+      "type": "easy",
+      "session": "Easy 12 km — SWAPPED with Friday's session  +BJJ (drills only — no live rounds)  +BAR maintenance  +M1/M2 mobility (2x daily) +R1 isometrics",
+      "target_km": 12,
       "actual_km": 0,
       "status": "Missed",
       "pace_min_km": null,
@@ -66065,9 +66065,9 @@
     "2026-11-27": {
       "week": 19,
       "dow": "Fri",
-      "type": "easy",
-      "session": "Easy 12 km  +BJJ (drills only — no live rounds)  +GYM G1-G6  +BAR posture  +M1/M2 mobility (2x daily) +R1 isometrics",
-      "target_km": 12,
+      "type": "quality",
+      "session": "Medium-long 13 km w/ middle 3 km @ MP — SWAPPED from Thursday. First marathon-pace work back, CUT FROM 5 km. Continuous fast blocks are the shape that injured him, so this one stays tiny. Judge the MP block on effort, not the watch: if 3:59/km is costing more than it did on Tuesday's reps, run the 3 km at 4:10 and take the win  +GYM G1-G6  +BAR posture  +M1/M2 mobility (2x daily) +R1 isometrics",
+      "target_km": 13,
       "actual_km": 0,
       "status": "Upcoming",
       "pace_min_km": null,
@@ -67879,7 +67879,7 @@
       "substituted": 0,
       "replaced": 0,
       "quality_hit": 1,
-      "quality_planned": 2,
+      "quality_planned": 1,
       "long_done": false,
       "flag": "✓ On track"
     },
@@ -68108,7 +68108,7 @@
       "flag": "✓ On track"
     }
   },
-  "last_sync": "2026-11-26T09:15:02+00:00",
+  "last_sync": "2026-11-26T16:35:49+00:00",
   "tracker": {
     "threshold_latest": [
       "2026-11-24",
