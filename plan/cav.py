@@ -365,10 +365,22 @@ DAY_OVERRIDE = {
                      "Tue": ("Threshold: 4×1.5 km @ 3:50/km, 75s jog @ 6:00/km — CUT FROM 5×1.5 "
                              "and 3:48. In trainers: the racer does not arrive until Saturday", "quality", 11),
                      "Wed": ("Recovery 8 km easy — 5:35-6:05/km, 24 h after quality  +GYM G1-G6", "recovery", 8),
-                     "Thu": ("Medium-long 13 km w/ middle 3 km @ MP — first marathon-pace work "
-                             "back, CUT FROM 5 km. Continuous fast blocks are the shape that "
-                             "injured him, so this one stays tiny", "quality", 13),
-                     "Fri": ("Easy 12 km  +BJJ (drills only — no live rounds)", "easy", 12),
+                     # SWAPPED THU/FRI, his call, 26 Nov: drinks on Wednesday night. The
+                     # easy day comes forward and the MP session goes back 24 h, which costs
+                     # the week nothing - alcohol the night before is a bad pairing with
+                     # marathon-pace work in particular (higher HR for the same pace, worse
+                     # thermoregulation) and barely touches an easy run. The BJJ moved with
+                     # the easy running, not with the date: it sits on an easy day by design,
+                     # and stacking drills onto the first MP session back is exactly the kind
+                     # of load this week was cut to avoid.
+                     "Thu": ("Easy 12 km — SWAPPED with Friday's session  +BJJ (drills only — "
+                             "no live rounds)", "easy", 12),
+                     "Fri": ("Medium-long 13 km w/ middle 3 km @ MP — SWAPPED from Thursday. "
+                             "First marathon-pace work back, CUT FROM 5 km. Continuous fast "
+                             "blocks are the shape that injured him, so this one stays tiny. "
+                             "Judge the MP block on effort, not the watch: if 3:59/km is "
+                             "costing more than it did on Tuesday's reps, run the 3 km at "
+                             "4:10 and take the win", "quality", 13),
                      "Sat": ("Easy 10 km + strides — RACE SHOE DEBUT, arrival day. Run the "
                              "10 km in trainers, change into the Metaspeeds for the strides "
                              "only, walk home in them. ~1 km in the racer: enough to find "
